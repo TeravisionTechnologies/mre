@@ -6,8 +6,8 @@
      *  Time: 8:19 AM
      **/
 
-    // Loads css file
-    wp_enqueue_style( 'style', get_template_directory_uri() . 'style.css', array(), '1' );
+    // Loads css or js files
+	add_action('wp_enqueue_scripts', 'mre_enqueue_scripts');
 
     // Register custom navigation walker
     require_once('wp_bootstrap_navwalker.php');
@@ -18,3 +18,7 @@
     ) );
 
     add_theme_support( 'menus' );
+
+	function mre_enqueue_scripts() {
+		wp_enqueue_style( 'style', get_template_directory_uri() . 'style.css', array(), '1' );
+	}
