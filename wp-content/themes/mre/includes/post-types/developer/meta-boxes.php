@@ -70,13 +70,19 @@
 			)
 		);
 
-		// TANGIBLE Interior Details
+		// Interior Details
 		$cmb->add_field(
 			array(
-				'name'       => __( 'TANGIBLE' ),
-				'id'         => $prefix . 'TANGIBLE1',
-				'type'       => 'text',
-				'repeatable' => false
+				'name'         => __( 'Interior Details' ),
+				'id'           => $prefix . 'details',
+				'type'         => 'file_list',
+				'preview_size' => array(100,100),
+				'text'         =>
+					array(
+						'add_upload_files_text' => __( 'Add or Upload Images' ), // default: "Add or Upload Files"
+						'file_text'             => __( 'Image:' ), // default: "File:"
+					),
+				'repeatable'   => false
 			)
 		);
 
@@ -106,13 +112,19 @@
 			)
 		);
 
-		// TANGIBLE Nearby Places
+		// Nearby Places
 		$cmb->add_field(
 			array(
-				'name'       => __( 'TANGIBLE' ),
-				'id'         => $prefix . 'TANGIBLE2',
-				'type'       => 'text',
-				'repeatable' => false
+				'name'         => __( 'Nearby Places' ),
+				'id'           => $prefix . 'nearby',
+				'type'         => 'file_list',
+				'preview_size' => array(100,100),
+				'text'         =>
+					array(
+						'add_upload_files_text' => __( 'Add or Upload Images' ), // default: "Add or Upload Files"
+						'file_text'             => __( 'Image:' ), // default: "File:"
+					),
+				'repeatable'   => false
 			)
 		);
 
