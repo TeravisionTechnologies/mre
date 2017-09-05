@@ -12,17 +12,19 @@
     // Register custom navigation walker
     require_once('wp_bootstrap_navwalker.php');
 
-    register_nav_menus( array(
-        'primary'    => __( 'Primary Menu', '8digital' ),
-        'extra-menu' => __( 'Extra Menu' )
-    ) );
+    register_nav_menus(
+    	array(
+	        'primary'    => __( 'Primary Menu', 'mre' ),
+	        'extra-menu' => __( 'Extra Menu', 'mre'  )
+        )
+    );
 
     add_theme_support( 'menus' );
 
 	function mre_enqueue_scripts() {
 		wp_enqueue_style( 'style', get_template_directory_uri() . 'style.css', array(), '1' );
+		wp_enqueue_script( 'script', get_template_directory_uri() . '/js/basic.js', array(), '1' );
 	}
-
 
 	// Directories that contain post-types
 	$postTypeDir = array (

@@ -40,4 +40,67 @@
 
 <body>
     <header>
+        <div class="container">
+            <div>
+                <?php
+                    $headerPost = get_posts(
+	                    array(
+                            'post_type' => 'header_footer',
+                            'meta_key'  => '_hf_logo'
+                        )
+                    );
+                    $theMeta = get_post_meta($headerPost[0]->ID);
+                ?>
+                <a href="<?php echo esc_url( home_url( '/' ) ) ?>">
+                    <img id="logo" src="<?php echo $theMeta['_hf_logo'][0] ?>" />
+                </a>
+            </div>
+            <?php
+                wp_nav_menu(
+                        array(
+                            'menu'              => 'Primary',
+                            'theme_location'    => 'Primary Menu',
+                            'depth'             => 2,
+                            'container'         => 'div',
+                            'container_class'   => 'visible-desktop',
+                            'container_id'      => 'bs-header-navbar',
+                            'menu_class'        => 'nav navbar-nav',
+                            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                            'walker'            => new WP_Bootstrap_Navwalker()
+                        )
+                );
+            ?>
+            <div id="bs-header-navbar-nodesktop-parent" class="pull-right hidden-desktop">
+                <a>
+                    <span class="fa fa-bars" onclick="openNav()"></span>
+                </a>
+            </div>
+        </div>
     </header>
+
+    <!-- Overlay Menu (tablet and mobile) -->
+    <div id="overlay-nav" class="overlay">
+
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <!-- Overlay content -->
+        <div class="overlay-content">
+	        <?php
+	        wp_nav_menu(
+		        array(
+			        'menu'              => 'Primary',
+			        'theme_location'    => 'Primary Menu',
+			        'depth'             => 2,
+			        'container'         => 'div',
+			        'container_class'   => '',
+			        'container_id'      => 'bs-header-navbar-nodesktop',
+			        'menu_class'        => 'nav',
+			        'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+			        'walker'            => new WP_Bootstrap_Navwalker()
+		        )
+	        );
+	        ?>
+        </div>
+
+    </div>
