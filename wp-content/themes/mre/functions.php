@@ -23,7 +23,7 @@
 
 	function mre_enqueue_scripts() {
 		wp_enqueue_style( 'style', get_template_directory_uri() . 'style.css', array(), '1' );
-		wp_enqueue_script( 'script', get_template_directory_uri() . '/js/basic.js', array(), '1' );
+		wp_enqueue_script( 'script', get_template_directory_uri() . '/js/basic.css', array(), '1' );
 	}
 
 	// Directories that contain post-types
@@ -71,6 +71,12 @@
 		create_post_type_services();
 
 	}
+
+	/* Remove text area field from header and footer */
+	function remove_page_editor() {
+		remove_post_type_support( 'header_footer', 'editor' );
+	}
+	add_action( 'init', 'remove_page_editor' );
 
 
 /**
