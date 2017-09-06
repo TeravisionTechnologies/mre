@@ -22,13 +22,31 @@
 			)
 		);
 
-		// Regular text field
+        // Image
+        $cmb->add_field(
+            array(
+                'name'         => __( 'Property Images' ),
+                'id'           => $prefix . 'image',
+                'type'         => 'file',
+                'preview_size' => array(100,100),
+                'text'         =>
+                    array(
+                        'add_upload_file_text' => __( 'Add or Upload an Image' ), // default: "Add or Upload Files"
+                    ),
+                'repeatable'   => false,
+                'options'      => array(
+                    'url' => false, // Hide the text input for the url
+                )
+            )
+        );
+
+		// Description
 		$cmb->add_field(
 			array(
-				'name'       => __( 'Text Field' ),
-				'desc'       => __( 'field description (optional)' ),
-				'id'         => $prefix . 'text',
-				'type'       => 'text',
+				'name'       => __( 'Description' ),
+				'desc'       => __( 'Description of the service' ),
+				'id'         => $prefix . 'desc',
+				'type'       => 'textarea',
 				'repeatable' => false
 			)
 		);
