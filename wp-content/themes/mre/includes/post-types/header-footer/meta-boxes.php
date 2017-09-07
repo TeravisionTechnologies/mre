@@ -22,11 +22,11 @@
 			)
 		);
 
-		// Header Logo
+		// Site Logo
 		$cmb->add_field(
 			array(
-				'name'         => __( 'Header Logo' ),
-				'desc'         => __( 'Only fill this option for the header' ),
+				'name'         => __( 'Site Logo' ),
+				'desc'         => __( 'Logo to display in header and footer' ),
 				'id'           => $prefix . 'logo',
 				'type'         => 'file',
 				'preview_size' => array(100,100),
@@ -47,7 +47,7 @@
 		$cmb->add_field(
 			array(
 				'name'       => __( 'Footer Copyright' ),
-				'desc'       => __( 'Only fill this option for the footer' ),
+				'desc'       => __( 'Copyright to display in the footer' ),
 				'id'         => $prefix . 'copy',
 				'type'       => 'text',
 				'repeatable'      => false

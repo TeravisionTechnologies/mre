@@ -10,14 +10,14 @@
 		register_post_type( 'header_footer',
 			array(
 				'labels' => array(
-					'name'          => __( 'Headers & Footers' ),
-					'singular_name' => __( 'Header & Footer' ),
-					'add_new'       => __( 'Add a New Header or Footer' ),
-					'edit_item'     => __( 'Edit Footer or Header' ),
-					'new_item'      => __( 'New Footer or Header' ),
-					'view_item'     => __( 'View Header or Footer' ),
-					'view_items'    => __( 'View Headers & Footers' ),
-					'all_items'     => __( 'Headers & Footers' )
+					'name'          => __( 'Header & Footer Area' ),
+					'singular_name' => __( 'Header & Footer Area' ),
+					'add_new'       => __( 'Add a New Header & Footer Area' ),
+					'edit_item'     => __( 'Edit Header & Footer Area' ),
+					'new_item'      => __( 'New Header & Footer Area' ),
+					'view_item'     => __( 'View Header & Footer Area' ),
+					'view_items'    => __( 'View Header & Footer Area' ),
+					'all_items'     => __( 'Header & Footer Area' )
 				),
 				'public' => true
 			)

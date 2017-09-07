@@ -1,20 +1,20 @@
 
     <footer>
+	    <?php
+	    $headerPost = get_posts(
+		    array(
+			    'post_type' => 'header_footer',
+			    'meta_key'  => '_hf_copy'
+		    )
+	    );
+	    $theMeta = get_post_meta($headerPost[0]->ID);
+	    ?>
         <div class="footer-logo">
             <a href="<?php echo esc_url( home_url( '/' ) ) ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" />
+                <img src="<?php echo $theMeta['_hf_logo'][0] ?>" />
             </a>
         </div>
         <div class="footer-copy">
-	        <?php
-	        $headerPost = get_posts(
-		        array(
-			        'post_type' => 'header_footer',
-			        'meta_key'  => '_hf_copy'
-		        )
-	        );
-	        $theMeta = get_post_meta($headerPost[0]->ID);
-	        ?>
             <h5>
                 <?php echo $theMeta['_hf_copy'][0] ?>
                 <a href="#">Disclaimers</a>
