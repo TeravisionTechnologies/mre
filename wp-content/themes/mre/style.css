@@ -15,8 +15,21 @@
 #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea, #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
   font-size: 22px; }
 
-#logo {
+header #header-logo {
   width: 80%; }
+
+footer {
+  height: 224px; }
+  footer .footer-logo img {
+    height: 48px;
+    width: 142px; }
+  footer .footer-copy h5 {
+    font-size: 12px; }
+  footer .footer-icons a .fa {
+    font-size: 1.3em;
+    width: 30px;
+    height: 30px;
+    line-height: 30px; }
 
 #contact-us .title h1 {
   font-size: 32px; }
@@ -88,23 +101,58 @@ header {
   header .container {
     display: flex;
     align-items: center; }
+  header #bs-header-navbar {
+    margin-left: auto; }
+    header #bs-header-navbar ul li a {
+      color: #4a4a4a; }
+  header #bs-header-navbar li + li:after {
+    content: ".";
+    top: 8px;
+    position: absolute;
+    font-size: 20px; }
+  header #bs-header-navbar-nodesktop-parent {
+    margin-left: auto; }
+    header #bs-header-navbar-nodesktop-parent span {
+      color: #0976d1;
+      font-size: 25px; }
 
-#bs-header-navbar {
-  margin-left: auto; }
-  #bs-header-navbar ul li a {
-    color: #4a4a4a; }
-
-#bs-header-navbar li + li:after {
-  content: ".";
-  top: 8px;
-  position: absolute;
-  font-size: 20px; }
-
-#bs-header-navbar-nodesktop-parent {
-  margin-left: auto; }
-  #bs-header-navbar-nodesktop-parent span {
-    color: #0976d1;
-    font-size: 25px; }
+footer {
+  height: 273px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center; }
+  footer div {
+    margin: 10px; }
+  footer .footer-logo img {
+    height: 83px;
+    width: 240px; }
+  footer .footer-copy h5 {
+    color: #4a4a4a;
+    opacity: 0.5; }
+    footer .footer-copy h5 a {
+      display: block;
+      text-align: center;
+      color: inherit;
+      text-decoration: underline; }
+  footer .footer-icons a {
+    text-decoration: none; }
+    footer .footer-icons a .fa {
+      font-size: 1.7em;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background-color: #f7f7f7;
+      color: #0976d1;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+      margin: 0 8px; }
+    footer .footer-icons a .fa:hover, footer .footer-icons a .fa:active {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1); }
 
 .overlay {
   height: 100%;
@@ -251,8 +299,21 @@ header {
   #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea, #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
     font-size: 22px; } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  #logo {
+  header #header-logo {
     width: 80%; }
+
+  footer {
+    height: 224px; }
+    footer .footer-logo img {
+      height: 48px;
+      width: 142px; }
+    footer .footer-copy h5 {
+      font-size: 12px; }
+    footer .footer-icons a .fa {
+      font-size: 1.3em;
+      width: 30px;
+      height: 30px;
+      line-height: 30px; }
 
   #contact-us .title h1 {
     font-size: 32px; }
@@ -275,8 +336,21 @@ header {
       #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea, #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
         font-size: 16px; } }
 @media only screen and (max-width: 767px) {
-  #logo {
+  header #header-logo {
     width: 60%; }
+
+  footer {
+    height: 224px; }
+    footer .footer-logo img {
+      height: 48px;
+      width: 142px; }
+    footer .footer-copy h5 {
+      font-size: 11px; }
+    footer .footer-icons a .fa {
+      font-size: 1.3em;
+      width: 30px;
+      height: 30px;
+      line-height: 30px; }
 
   #contact-us .title h1 {
     font-size: 19px; }

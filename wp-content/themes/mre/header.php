@@ -52,7 +52,7 @@
                     $theMeta = get_post_meta($headerPost[0]->ID);
                 ?>
                 <a href="<?php echo esc_url( home_url( '/' ) ) ?>">
-                    <img id="logo" src="<?php echo $theMeta['_hf_logo'][0] ?>" />
+                    <img id="header-logo" src="<?php echo $theMeta['_hf_logo'][0] ?>" />
                 </a>
             </div>
             <?php

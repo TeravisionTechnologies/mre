@@ -1,5 +1,42 @@
 
     <footer>
+        <div class="footer-logo">
+            <a href="<?php echo esc_url( home_url( '/' ) ) ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" />
+            </a>
+        </div>
+        <div class="footer-copy">
+	        <?php
+	        $headerPost = get_posts(
+		        array(
+			        'post_type' => 'header_footer',
+			        'meta_key'  => '_hf_copy'
+		        )
+	        );
+	        $theMeta = get_post_meta($headerPost[0]->ID);
+	        ?>
+            <h5>
+                <?php echo $theMeta['_hf_copy'][0] ?>
+                <a href="#">Disclaimers</a>
+            </h5>
+        </div>
+        <div class="footer-icons">
+            <a href="#">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-youtube-play"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </div>
     </footer>
   </body>
 </html>
