@@ -126,36 +126,26 @@ footer
     background-color: rgba($black, 0.9)
     overflow-x: hidden
     transition: 0.5s
-
-
-.overlay-content
-    position: relative
-    top: 25%
-    width: 100%
-    text-align: center
-    margin-top: 30px
-
-
-.overlay a
-    padding: 8px
-    text-decoration: none
-    font-size: 36px
-    color: $lighter-grey
-    display: block
-    transition: 0.3s
-
-.overlay a:hover, .overlay a:focus
-    color: $white
-
-.overlay .overlay-content a:hover, .overlay a:focus
-    color: $light-black
-
-.overlay .closebtn
-    position: absolute
-    top: 20px
-    right: 45px
-    font-size: 60px
-
+    .overlay-content
+        position: relative
+        top: 25%
+        width: 100%
+        text-align: center
+        margin-top: 30px
+    a
+        padding: 8px
+        text-decoration: none
+        font-size: 36px
+        color: $lighter-grey
+        display: block
+        transition: 0.3s
+    a:hover, a:focus
+        color: $light-black
+    .closebtn
+        position: absolute
+        top: 20px
+        right: 45px
+        font-size: 60px
 
 @media screen and (max-height: 450px)
     .overlay a

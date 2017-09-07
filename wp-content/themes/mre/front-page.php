@@ -19,7 +19,7 @@ get_header();
 
 </section>
 
-<section style="height: 300px; background: #b78b66">
+<section id="before-contact-us">
 
 </section>
 
