@@ -50,6 +50,12 @@ p {
 input, button, select, textarea {
   font-family: "Montserrat", sans-serif; }
 
+.visible-desktop {
+  display: block !important; }
+
+.visible-mobile {
+  display: none !important; }
+
 header {
   height: 80px;
   display: flex;
@@ -120,7 +126,7 @@ footer {
   z-index: 1;
   left: 100%;
   top: 0;
-  background-color: black;
+  background-color: #000;
   background-color: rgba(0, 0, 0, 0.9);
   overflow-x: hidden;
   transition: 0.5s; }
@@ -265,6 +271,12 @@ footer {
   #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea, #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
     font-size: 22px; } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .visible-desktop {
+    display: none !important; }
+
+  .visible-mobile {
+    display: block !important; }
+
   header .header-logo img {
     height: 40px;
     width: 116px; }
@@ -308,9 +320,17 @@ footer {
       #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea, #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
         font-size: 16px; } }
 @media only screen and (max-width: 767px) {
-  header .header-logo img {
-    height: 33px;
-    width: 87px; }
+  .visible-desktop {
+    display: none !important; }
+
+  .visible-mobile {
+    display: block !important; }
+
+  header .container {
+    width: 90%; }
+    header .container .header-logo img {
+      height: 33px;
+      width: 87px; }
 
   footer {
     height: 224px; }
@@ -356,14 +376,5 @@ footer {
     height: 200px;
     width: 260px;
     margin: 0 auto; } }
-@media only screen and (max-width: 1023px) {
-  .visible-desktop {
-    display: none !important; } }
-@media only screen and (min-width: 1024px) {
-  .hidden-desktop {
-    display: none !important; } }
-@media (max-width: 767px) {
-  .container {
-    width: 90%; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -7,7 +7,7 @@
 body
     font-family: 'Montserrat', sans-serif
     font-size: 14px
-    color: #656d70
+    color: $light-grey
     line-height: 1.25
     letter-spacing: -0.1px
     font-weight: normal
@@ -38,6 +38,11 @@ p
 
 input,button,select,textarea
     font-family: 'Montserrat', sans-serif
+
+.visible-desktop
+    display: block !important
+.visible-mobile
+    display: none !important
 
 header
     height: 80px
@@ -103,7 +108,7 @@ footer
                 color: $light-blue
                 -webkit-transition: all 0.3s ease-in-out
                 transition: all 0.3s ease-in-out
-                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3)
+                box-shadow: 0 2px 4px 0 rgba($black, 0.3)
                 border-radius: 50%
                 margin: 0 8px
             .fa:hover, .fa:active
@@ -117,8 +122,8 @@ footer
     z-index: 1
     left: 100%
     top: 0
-    background-color: rgb(0,0,0)
-    background-color: rgba(0,0,0, 0.9)
+    background-color: $black
+    background-color: rgba($black, 0.9)
     overflow-x: hidden
     transition: 0.5s
 
@@ -135,7 +140,7 @@ footer
     padding: 8px
     text-decoration: none
     font-size: 36px
-    color: #818181
+    color: $lighter-grey
     display: block
     transition: 0.3s
 
@@ -196,7 +201,7 @@ footer
                 width: 361px
                 border-radius: 18px
                 background-color: $lighter-blue
-                box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3)
+                box-shadow: 0 4px 10px 0 rgba($black, 0.3)
                 .centered-content
                     *
                         padding: 10px 0
@@ -229,22 +234,22 @@ footer
                         box-sizing: border-box
                         border-radius: 6px
                         background-color: $dark-blue
-                        border: solid 1px rgba(207, 207, 207, 0.5)
+                        border: solid 1px rgba($dark-white, 0.5)
                         opacity: 0.9
                         font-size: 18px
                         font-weight: normal
                         line-height: 0.94
-                        color: $form-grey
+                        color: $dark-white
                         padding: 5px
                         width: 100%
                     input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
-                        color: $form-grey
+                        color: $dark-white
                     input::-moz-placeholder, textarea::-moz-placeholder
-                        color: $form-grey
+                        color: $dark-white
                     input:-ms-input-placeholder, textarea:-ms-input-placeholder
-                        color: $form-grey
+                        color: $dark-white
                     input:-moz-placeholder, textarea:-moz-placeholder
-                        color: $form-grey
+                        color: $dark-white
                     input[type="submit"]
                         color: $white
                         box-sizing: border-box

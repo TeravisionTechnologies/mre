@@ -70,7 +70,7 @@
                         )
                 );
             ?>
-            <div id="bs-header-navbar-nodesktop-parent" class="pull-right hidden-desktop">
+            <div id="bs-header-navbar-nodesktop-parent" class="pull-right visible-mobile">
                 <a>
                     <span class="fa fa-bars" onclick="openNav()"></span>
                 </a>
