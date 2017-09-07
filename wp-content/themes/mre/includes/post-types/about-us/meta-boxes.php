@@ -27,10 +27,10 @@
 				array(
 				'id'          => 'about_group_field',
 				'type'        => 'group',
-				'description' => __( 'Generates reusable form entries', 'cmb2' ),
+				'description' => __( 'Image and description', 'cmb2' ),
 				// 'repeatable'  => false, // use false if you want non-repeatable group
 				'options'     => array(
-					'group_title'   => __( 'Entry {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+					'group_title'   => __( 'Section {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
 					'add_button'    => __( 'Add Another Entry', 'cmb2' ),
 					'remove_button' => __( 'Remove Entry', 'cmb2' ),
 					'sortable'      => true, // beta

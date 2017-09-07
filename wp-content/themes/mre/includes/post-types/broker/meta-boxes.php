@@ -61,6 +61,63 @@
 			)
 		);
 
+		// Interior Details
+		$group_field = $cmb->add_field(
+			array(
+				'id'          => 'interior_group_field',
+				'type'        => 'group',
+				'description' => __( 'Image and name of the detail', 'cmb2' ),
+				// 'repeatable'  => false, // use false if you want non-repeatable group
+				'options'     => array(
+					'group_title'   => __( 'Detail {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+					'add_button'    => __( 'Add Another Entry', 'cmb2' ),
+					'remove_button' => __( 'Remove Entry', 'cmb2' ),
+					'sortable'      => true, // beta
+					// 'closed'     => true, // true to have the groups closed by default
+				)
+			)
+		);
+
+		// Image
+		$cmb->add_group_field( $group_field,
+			array(
+				'name'         => __( 'Image' ),
+				'id'           => $prefix . 'image',
+				'type'         => 'file',
+				'preview_size' => array(100,100),
+				'text'         =>
+					array(
+						'add_upload_files_text' => __( 'Add or Upload Image' ), // default: "Add or Upload Files"
+						'file_text'             => __( 'Image:' ), // default: "File:"
+					),
+				'options'      => array(
+					'url' => false, // Hide the text input for the url
+				),
+				'repeatable'   => false
+			)
+		);
+
+		// Name
+		$cmb->add_group_field( $group_field,
+			array(
+				'name'       => __( 'Detail Name' ),
+				'desc'       => __( 'Interior detail Name for the image uploaded above' ),
+				'id'         => $prefix . 'name',
+				'type'       => 'text',
+				'repeatable'      => false
+			)
+		);
+
+		// Amenities
+		$cmb->add_field(
+			array(
+				'name'    => 'Amenities',
+				'id'      => $prefix . 'amen',
+				'type'    => 'wysiwyg',
+				'options' => array(),
+			)
+		);
+
 		// Type of transaction
 		$cmb->add_field(
 			array(
