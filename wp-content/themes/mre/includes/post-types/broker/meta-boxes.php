@@ -39,17 +39,6 @@
 			)
 		);
 
-		// Property Name
-		$cmb->add_field(
-			array(
-				'name'       => __( 'Property Name' ),
-				'desc'       => __( 'The name of the current property' ),
-				'id'         => $prefix . 'name',
-				'type'       => 'text',
-				'repeatable' => false
-			)
-		);
-
 		// Property Price
 		$cmb->add_field(
 			array(
