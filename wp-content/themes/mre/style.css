@@ -9,50 +9,6 @@
 /*                                            */
 /*  Co-Author: José Pernía                    */
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
-#contact-us .inner-section .call-us .content {
-  height: 365px;
-  width: 520px; }
-#contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea, #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
-  font-size: 22px; }
-
-header .header-logo img {
-  height: 40px;
-  width: 116px; }
-
-footer {
-  height: 224px; }
-  footer .footer-logo img {
-    height: 48px;
-    width: 142px; }
-  footer .footer-copy h5 {
-    font-size: 12px; }
-  footer .footer-icons a .fa {
-    font-size: 1.3em;
-    width: 30px;
-    height: 30px;
-    line-height: 30px; }
-
-#contact-us .title h1 {
-  font-size: 32px; }
-#contact-us .inner-section .call-us {
-  flex: 1 100%;
-  padding-bottom: 30px;
-  margin-top: 0; }
-  #contact-us .inner-section .call-us .content {
-    margin: 0 auto;
-    height: 400px;
-    width: 620px; }
-    #contact-us .inner-section .call-us .content .centered-content h2 {
-      font-size: 23px; }
-#contact-us .inner-section .the-form {
-  flex: 1 100%;
-  margin-left: 0;
-  padding: 30px 0; }
-  #contact-us .inner-section .the-form .wpcf7 .form-elements-container {
-    margin: 0 auto; }
-    #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea, #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
-      font-size: 16px; }
-
 * {
   margin: 0;
   padding: 0;
@@ -217,7 +173,9 @@ footer {
     flex: 1 100%; }
     #contact-us .title h1 {
       text-align: center; }
-      #contact-us .title h1 span {
+      #contact-us .title h1 .first {
+        display: inline; }
+      #contact-us .title h1 .last {
         display: block;
         font-weight: bold; }
   #contact-us .inner-section {
@@ -249,6 +207,11 @@ footer {
             display: block; }
         #contact-us .inner-section .call-us .content .centered-content .bold-me {
           font-weight: 600; }
+        #contact-us .inner-section .call-us .content .centered-content img {
+          height: 64px;
+          width: 72px; }
+        #contact-us .inner-section .call-us .content .centered-content #contact-phone {
+          margin-top: -15px; }
     #contact-us .inner-section .the-form {
       flex: 1 53.263%;
       margin-left: 5%; }
@@ -321,6 +284,8 @@ footer {
 
   #contact-us .title h1 {
     font-size: 32px; }
+  #contact-us .title .first {
+    display: inline; }
   #contact-us .inner-section .call-us {
     flex: 1 100%;
     padding-bottom: 30px;
@@ -331,6 +296,9 @@ footer {
       width: 620px; }
       #contact-us .inner-section .call-us .content .centered-content h2 {
         font-size: 23px; }
+      #contact-us .inner-section .call-us .content .centered-content img {
+        height: 64px;
+        width: 72px; }
   #contact-us .inner-section .the-form {
     flex: 1 100%;
     margin-left: 0;
@@ -350,7 +318,7 @@ footer {
       height: 48px;
       width: 142px; }
     footer .footer-copy h5 {
-      font-size: 11px; }
+      font-size: 10px; }
     footer .footer-icons a .fa {
       font-size: 1.3em;
       width: 30px;
@@ -359,8 +327,8 @@ footer {
 
   #contact-us .title h1 {
     font-size: 19px; }
-    #contact-us .title h1 span {
-      display: inline; }
+    #contact-us .title h1 .first {
+      display: block; }
   #contact-us .inner-section .call-us {
     flex: 1 100%;
     padding-bottom: 30px;
@@ -368,6 +336,9 @@ footer {
     #contact-us .inner-section .call-us .content .centered-content h2 {
       font-size: 18px;
       margin: 0 auto; }
+    #contact-us .inner-section .call-us .content .centered-content img {
+      height: 64px;
+      width: 72px; }
   #contact-us .inner-section .the-form {
     flex: 1 100%;
     margin-left: 0;
@@ -383,7 +354,8 @@ footer {
 @media only screen and (max-width: 767px) and (max-width: 379px) {
   #contact-us .inner-section .call-us .content {
     height: 200px;
-    width: 260px; } }
+    width: 260px;
+    margin: 0 auto; } }
 @media only screen and (max-width: 1023px) {
   .visible-desktop {
     display: none !important; } }

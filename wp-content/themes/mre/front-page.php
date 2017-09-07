@@ -25,8 +25,9 @@ get_header();
 
 <section id="contact-us">
     <div class="title">
-        <h1>Nos gustaría asesorarte en tu próxima inversión
-            <span>¡Contáctanos!</span>
+        <h1>Nos gustaría asesorarte
+            <span class="first">en tu próxima inversión</span>
+            <span class="last">¡Contáctanos!</span>
         </h1>
     </div>
     <div class="inner-section">
@@ -35,7 +36,7 @@ get_header();
                 <div class="centered-content">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/d-iconphone.svg" />
                     <h2>Llámenos para asesoría <span class="bold-me">Inmediata</span></h2>
-                    <h2 class="bold-me">+1 786 376.22.22</h2>
+                    <h2 id="contact-phone" class="bold-me">+1 786 376.22.22</h2>
                 </div>
             </div>
         </div>

@@ -1,8 +1,3 @@
-@import media/desktop/_basic
-@import media/tablet/_basic
-@import media/tablet/_basicLandscape
-@import media/mobile/_basicLandscape
-
 *
     margin: 0
     padding: 0
@@ -178,7 +173,9 @@ footer
         flex: 1 100%
         h1
             text-align: center
-            span
+            .first
+                display: inline
+            .last
                 display: block
                 font-weight: bold
     .inner-section
@@ -211,6 +208,11 @@ footer
                             display: block
                     .bold-me
                         font-weight: 600
+                    img
+                        height: 64px
+                        width: 72px
+                    #contact-phone
+                        margin-top: -15px
         .the-form
             flex: 1 53.263%
             margin-left: 5%
