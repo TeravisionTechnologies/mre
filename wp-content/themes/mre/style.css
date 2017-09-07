@@ -159,12 +159,56 @@ footer {
     font-size: 40px;
     top: 15px;
     right: 35px; } }
+#before-contact-us {
+  height: 400px;
+  background: url("assets/before-contact-bg.jpg") center no-repeat #000;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly; }
+  #before-contact-us #countries {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center; }
+    #before-contact-us #countries > * {
+      margin: 20px 0; }
+    #before-contact-us #countries .indicators {
+      display: flex;
+      flex-flow: row nowrap;
+      list-style: none; }
+      #before-contact-us #countries .indicators .flag {
+        padding: 0 10px; }
+        #before-contact-us #countries .indicators .flag img {
+          height: 60px;
+          width: 60px; }
+      #before-contact-us #countries .indicators .flag.active:after {
+        content: ".";
+        color: #ffffff;
+        position: absolute;
+        margin-top: -72px;
+        padding: 22px;
+        font-size: 5em; }
+  #before-contact-us #offices .offices-detail {
+    display: flex;
+    flex-flow: row nowrap; }
+    #before-contact-us #offices .offices-detail .detail {
+      width: 302px;
+      height: 100px;
+      text-align: center;
+      margin: 0 25px; }
+      #before-contact-us #offices .offices-detail .detail h5 {
+        font-size: 16px;
+        line-height: 1.56;
+        letter-spacing: -0.1px; }
+      #before-contact-us #offices .offices-detail .detail span {
+        font-weight: bold;
+        display: block; }
+
 #contact-us {
   background: #0976d1;
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
-  padding: 20px 0; }
+  align-items: center; }
   #contact-us > * {
     text-align: center;
     padding: 30px 0; }
@@ -287,6 +331,24 @@ footer {
       height: 30px;
       line-height: 30px; }
 
+  #before-contact-us #countries .indicators .flag img {
+    height: 50px;
+    width: 50px; }
+  #before-contact-us #countries .indicators .flag.active:after {
+    margin-top: -68px;
+    padding: 17px;
+    font-size: 5em; }
+  #before-contact-us #countries h4 {
+    font-size: 16px; }
+  #before-contact-us #offices .offices-detail .detail {
+    width: 257px;
+    height: 100px;
+    text-align: center;
+    margin: 0 25px; }
+    #before-contact-us #offices .offices-detail .detail h5 {
+      font-size: 14px;
+      line-height: 1.79; }
+
   #contact-us .title h1 {
     font-size: 32px; }
   #contact-us .title .first {
@@ -337,6 +399,28 @@ footer {
       width: 30px;
       height: 30px;
       line-height: 30px; }
+
+  #before-contact-us {
+    height: 350px; }
+    #before-contact-us #countries .indicators .flag img {
+      height: 43px;
+      width: 43px; }
+    #before-contact-us #countries .indicators .flag.active:after {
+      margin-top: -62px;
+      padding: 15.3px;
+      font-size: 4.5em; }
+    #before-contact-us #countries h4 {
+      font-size: 12px; }
+    #before-contact-us #offices .offices-detail {
+      flex-flow: column nowrap; }
+      #before-contact-us #offices .offices-detail .detail {
+        width: 257px;
+        height: 80px;
+        text-align: center;
+        margin: 10px 0; }
+        #before-contact-us #offices .offices-detail .detail h5 {
+          font-size: 12px;
+          line-height: 1.79; }
 
   #contact-us .title h1 {
     font-size: 19px; }

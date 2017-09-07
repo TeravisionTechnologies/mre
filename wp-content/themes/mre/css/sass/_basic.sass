@@ -155,12 +155,57 @@ footer
         top: 15px
         right: 35px
 
+#before-contact-us
+    height: 400px
+    background: url('assets/before-contact-bg.jpg') center no-repeat $black
+    display: flex
+    flex-flow: column nowrap
+    align-items: center
+    justify-content: space-evenly
+    #countries
+        display: flex
+        flex-flow: column nowrap
+        align-items: center
+        > *
+            margin: 20px 0
+        .indicators
+            display: flex
+            flex-flow: row nowrap
+            list-style: none
+            .flag
+                padding: 0 10px
+                img
+                    height: 60px
+                    width: 60px
+            .flag.active:after
+                content: "."
+                color: $white
+                position: absolute
+                margin-top: -72px
+                padding: 22px
+                font-size: 5em
+    #offices
+        .offices-detail
+            display: flex
+            flex-flow: row nowrap
+            .detail
+                width: 302px
+                height: 100px
+                text-align: center
+                margin: 0 25px
+                h5
+                    font-size: 16px
+                    line-height: 1.56
+                    letter-spacing: -0.1px
+                span
+                    font-weight: bold
+                    display: block
+
 #contact-us
     background: $light-blue
     display: flex
     flex-flow: row wrap
     align-items: center
-    padding: 20px 0
     > *
         text-align: center
         padding: 30px 0
