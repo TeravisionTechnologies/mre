@@ -17,7 +17,7 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  font-size: 14px;
+  font-size: 0.9722222222vw;
   color: #656d70;
   line-height: 1.25;
   letter-spacing: -0.1px;
@@ -57,12 +57,12 @@ input, button, select, textarea {
   display: none !important; }
 
 header {
-  height: 80px;
+  height: 5.5555555556vw;
   display: flex;
   background-color: #ffffff; }
   header .header-logo img {
-    height: 55px;
-    width: 158px; }
+    height: 3.8194444444vw;
+    width: 10.9722222222vw; }
   header .container {
     display: flex;
     align-items: center; }
@@ -75,26 +75,22 @@ header {
     top: 8px;
     position: absolute;
     font-size: 20px; }
-  header #bs-header-navbar-nodesktop-parent {
-    margin-left: auto; }
-    header #bs-header-navbar-nodesktop-parent span {
-      color: #0976d1;
-      font-size: 25px; }
 
 footer {
-  height: 273px;
+  height: 18.9583333333vw;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   justify-content: center; }
   footer div {
-    margin: 10px; }
+    margin: 0.6944444444vw; }
   footer .footer-logo img {
-    height: 83px;
-    width: 240px; }
+    height: 5.7638888889vw;
+    width: 16.6666666667vw; }
   footer .footer-copy h5 {
     color: #4a4a4a;
-    opacity: 0.5; }
+    opacity: 0.5;
+    font-size: 0.9722222222vw; }
     footer .footer-copy h5 a {
       display: block;
       text-align: center;
@@ -103,10 +99,10 @@ footer {
   footer .footer-icons a {
     text-decoration: none; }
     footer .footer-icons a .fa {
-      font-size: 1.7em;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
+      font-size: 1.6666666667vw;
+      width: 2.7777777778vw;
+      height: 2.7777777778vw;
+      line-height: 2.7777777778vw;
       text-align: center;
       background-color: #f7f7f7;
       color: #0976d1;
@@ -114,7 +110,7 @@ footer {
       transition: all 0.3s ease-in-out;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
       border-radius: 50%;
-      margin: 0 8px; }
+      margin: 0 0.5555555556vw; }
     footer .footer-icons a .fa:hover, footer .footer-icons a .fa:active {
       -webkit-transform: scale(1.1);
       transform: scale(1.1); }
@@ -135,11 +131,11 @@ footer {
     top: 25%;
     width: 100%;
     text-align: center;
-    margin-top: 30px; }
+    margin-top: 2.0833333333vw; }
   .overlay a {
-    padding: 8px;
+    padding: 0.5555555556vw;
     text-decoration: none;
-    font-size: 36px;
+    font-size: 2.5vw;
     color: #818181;
     display: block;
     transition: 0.3s; }
@@ -147,21 +143,14 @@ footer {
     color: #333; }
   .overlay .closebtn {
     position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px; }
+    top: 1.3888888889vw;
+    right: 3.125vw;
+    font-size: 4.1666666667vw; }
 
-@media screen and (max-height: 450px) {
-  .overlay a {
-    font-size: 20px; }
-
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px; } }
 #before-contact-us {
-  height: 400px;
+  height: 27.7777777778vw;
   background: url("assets/before-contact-bg.jpg") center no-repeat #000;
+  background-size: cover;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -170,51 +159,55 @@ footer {
     display: flex;
     flex-flow: column nowrap;
     align-items: center; }
-    #before-contact-us #countries > * {
-      margin: 20px 0; }
     #before-contact-us #countries .indicators {
       display: flex;
       flex-flow: row nowrap;
-      list-style: none; }
+      list-style: none;
+      margin-bottom: 2.5vw; }
       #before-contact-us #countries .indicators .flag {
-        padding: 0 10px; }
+        padding: 0 0.6944444444vw; }
         #before-contact-us #countries .indicators .flag img {
-          height: 60px;
-          width: 60px; }
+          height: 4.1666666667vw;
+          width: 4.1666666667vw; }
       #before-contact-us #countries .indicators .flag.active:after {
         content: ".";
         color: #ffffff;
         position: absolute;
-        margin-top: -72px;
-        padding: 22px;
-        font-size: 5em; }
-  #before-contact-us #offices .offices-detail {
-    display: flex;
-    flex-flow: row nowrap; }
-    #before-contact-us #offices .offices-detail .detail {
-      width: 302px;
-      height: 100px;
-      text-align: center;
-      margin: 0 25px; }
-      #before-contact-us #offices .offices-detail .detail h5 {
-        font-size: 16px;
-        line-height: 1.56;
-        letter-spacing: -0.1px; }
-      #before-contact-us #offices .offices-detail .detail span {
-        font-weight: bold;
-        display: block; }
+        margin-top: -5vw;
+        padding: 1.5277777778vw;
+        font-size: 4.8611111111vw; }
+  #before-contact-us #offices {
+    margin-top: -3.9583333333vw; }
+    #before-contact-us #offices .offices-detail {
+      display: flex;
+      flex-flow: row nowrap; }
+      #before-contact-us #offices .offices-detail .detail {
+        width: 20.9722222222vw;
+        height: 6.9444444444vw;
+        text-align: center;
+        margin: 0 1.7361111111vw; }
+        #before-contact-us #offices .offices-detail .detail h5 {
+          font-size: 1.1111111111vw;
+          line-height: 1.56;
+          letter-spacing: -0.1px; }
+        #before-contact-us #offices .offices-detail .detail span {
+          font-weight: bold;
+          display: block; }
 
 #contact-us {
-  background: #0976d1;
   display: flex;
   flex-flow: row wrap;
-  align-items: center; }
+  align-items: center;
+  background: url("assets/contact-bg.png") bottom no-repeat #0976d1;
+  background-blend-mode: multiply;
+  background-size: contain; }
   #contact-us > * {
     text-align: center;
     padding: 30px 0; }
   #contact-us .title {
     flex: 1 100%; }
     #contact-us .title h1 {
+      font-size: 2.5vw;
       text-align: center; }
       #contact-us .title h1 .first {
         display: inline; }
@@ -226,23 +219,23 @@ footer {
     flex: 1 100%;
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
-    margin: 0 5.834%; }
+    align-items: flex-start;
+    margin: 0 8.8194444444vw; }
     #contact-us .inner-section .call-us {
-      flex: 1 25.069%;
-      margin-top: -50px; }
+      flex: 1 25.069%; }
       #contact-us .inner-section .call-us .content {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 312px;
-        width: 361px;
+        height: 23.6111111111vw;
+        width: 25.0694444444vw;
         border-radius: 18px;
         background-color: #2099ff;
         box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3); }
         #contact-us .inner-section .call-us .content .centered-content * {
           padding: 10px 0; }
         #contact-us .inner-section .call-us .content .centered-content h2 {
+          font-size: 1.6666666667vw;
           color: #00447e;
           letter-spacing: -1px;
           line-height: 0.8; }
@@ -251,33 +244,36 @@ footer {
         #contact-us .inner-section .call-us .content .centered-content .bold-me {
           font-weight: 600; }
         #contact-us .inner-section .call-us .content .centered-content img {
-          height: 64px;
-          width: 72px; }
+          height: 4.4444444444vw;
+          width: 5vw; }
         #contact-us .inner-section .call-us .content .centered-content #contact-phone {
+          font-size: 2.5vw;
           margin-top: -15px; }
     #contact-us .inner-section .the-form {
-      flex: 1 53.263%;
-      margin-left: 5%; }
+      flex: 1 53.263%; }
       #contact-us .inner-section .the-form .wpcf7 .form-elements-container {
         display: flex;
         flex-flow: row wrap; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container p {
           flex: 1 50%;
-          padding: 0 5px; }
+          padding: 0.2083333333vw 0.3472222222vw; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container p:nth-last-of-type(-n+2) {
           flex: 1 100%; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container p:last-child {
+          padding-top: 0.6944444444vw; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
           box-sizing: border-box;
           border-radius: 6px;
           background-color: #00447e;
           border: solid 1px rgba(207, 207, 207, 0.5);
           opacity: 0.9;
-          font-size: 18px;
+          font-size: 1.1111111111vw;
           font-weight: normal;
           line-height: 0.94;
           color: #cfcfcf;
-          padding: 5px;
-          width: 100%; }
+          padding: 0.8333333333vw 1.3888888889vw;
+          width: 25.7638888889vw;
+          height: 3.3333333333vw; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container input::-webkit-input-placeholder, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea::-webkit-input-placeholder {
           color: #cfcfcf; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container input::-moz-placeholder, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea::-moz-placeholder {
@@ -293,20 +289,18 @@ footer {
           background-color: transparent;
           border: solid 2px #ffffff;
           opacity: 0.9;
-          font-size: 16px;
+          font-size: 1.25vw;
           font-weight: normal;
           line-height: 0.94;
           padding: 5px;
-          width: 50%; }
+          width: 15vw;
+          height: 3.4722222222vw; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container select:hover {
           cursor: pointer; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
+          height: 9.375vw;
+          width: 52.7777777778vw; }
 
-@media only screen and (min-width: 1440px) {
-  #contact-us .inner-section .call-us .content {
-    height: 365px;
-    width: 520px; }
-  #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea, #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
-    font-size: 22px; } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .visible-desktop {
     display: none !important; }
@@ -314,66 +308,94 @@ footer {
   .visible-mobile {
     display: block !important; }
 
-  header .header-logo img {
-    height: 40px;
-    width: 116px; }
+  header {
+    height: 10.4166666667vw; }
+    header .header-logo img {
+      height: 5.2083333333vw;
+      width: 15.1041666667vw; }
+    header #bs-header-navbar-nodesktop-parent {
+      margin-left: auto; }
+      header #bs-header-navbar-nodesktop-parent span {
+        font-size: 4.1666666667vw; }
 
   footer {
-    height: 224px; }
+    height: 22.9166666667vw; }
     footer .footer-logo img {
-      height: 48px;
-      width: 142px; }
+      height: 6.25vw;
+      width: 18.4895833333vw; }
     footer .footer-copy h5 {
       font-size: 12px; }
     footer .footer-icons a .fa {
-      font-size: 1.3em;
+      font-size: 16px;
       width: 30px;
       height: 30px;
       line-height: 30px; }
 
-  #before-contact-us #countries .indicators .flag img {
-    height: 50px;
-    width: 50px; }
-  #before-contact-us #countries .indicators .flag.active:after {
-    margin-top: -68px;
-    padding: 17px;
-    font-size: 5em; }
-  #before-contact-us #countries h4 {
-    font-size: 16px; }
-  #before-contact-us #offices .offices-detail .detail {
-    width: 257px;
-    height: 100px;
-    text-align: center;
-    margin: 0 25px; }
-    #before-contact-us #offices .offices-detail .detail h5 {
-      font-size: 14px;
-      line-height: 1.79; }
+  #before-contact-us {
+    height: 52.0833333333vw; }
+    #before-contact-us #countries .indicators {
+      margin-bottom: 3.125vw; }
+      #before-contact-us #countries .indicators .flag img {
+        height: 6.5104166667vw;
+        width: 6.5104166667vw; }
+      #before-contact-us #countries .indicators .flag.active:after {
+        margin-top: -8.59375vw;
+        padding: 2.34375vw;
+        font-size: 8.3333333333vw; }
+    #before-contact-us #countries h4 {
+      font-size: 16px; }
+    #before-contact-us #offices {
+      margin-top: -9.6354166667vw; }
+      #before-contact-us #offices .offices-detail .detail {
+        width: 257px;
+        height: 100px;
+        text-align: center;
+        margin: 0 25px; }
+        #before-contact-us #offices .offices-detail .detail h5 {
+          font-size: 14px;
+          line-height: 1.79; }
 
   #contact-us .title h1 {
-    font-size: 32px; }
+    font-size: 2.8645833333vw; }
   #contact-us .title .first {
     display: inline; }
-  #contact-us .inner-section .call-us {
-    flex: 1 100%;
-    padding-bottom: 30px;
-    margin-top: 0; }
-    #contact-us .inner-section .call-us .content {
-      margin: 0 auto;
-      height: 400px;
-      width: 620px; }
-      #contact-us .inner-section .call-us .content .centered-content h2 {
-        font-size: 23px; }
-      #contact-us .inner-section .call-us .content .centered-content img {
-        height: 64px;
-        width: 72px; }
-  #contact-us .inner-section .the-form {
-    flex: 1 100%;
-    margin-left: 0;
-    padding: 30px 0; }
-    #contact-us .inner-section .the-form .wpcf7 .form-elements-container {
-      margin: 0 auto; }
-      #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea, #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
-        font-size: 16px; } }
+  #contact-us .inner-section {
+    margin: 0 5.2083333333vw; }
+    #contact-us .inner-section .call-us {
+      flex: 1 100%;
+      padding-bottom: 30px;
+      margin-top: 0; }
+      #contact-us .inner-section .call-us .content {
+        margin: 0 auto;
+        height: 33.8541666667vw;
+        width: 55.46875vw; }
+        #contact-us .inner-section .call-us .content .centered-content h2 {
+          font-size: 3.125vw; }
+        #contact-us .inner-section .call-us .content .centered-content img {
+          height: 9.375vw;
+          width: 8.3333333333vw; }
+        #contact-us .inner-section .call-us .content .centered-content #contact-phone {
+          font-size: 3.90625vw; }
+    #contact-us .inner-section .the-form {
+      flex: 1 100%;
+      margin-left: 0;
+      padding: 30px 0; }
+      #contact-us .inner-section .the-form .wpcf7 .form-elements-container {
+        margin: 0 auto; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container p {
+          padding: 0.5208333333vw 0.9114583333vw; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container p:last-child {
+          padding-top: 1.5625vw; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
+          height: 6.1197916667vw;
+          width: 41.5364583333vw;
+          font-size: 1.8229166667vw;
+          padding: 1.8229166667vw 2.6041666667vw; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
+          font-size: 2.0833333333vw; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
+          height: 17.3177083333vw;
+          width: 85.6770833333vw; } }
 @media only screen and (max-width: 767px) {
   .visible-desktop {
     display: none !important; }
@@ -381,77 +403,105 @@ footer {
   .visible-mobile {
     display: block !important; }
 
-  header .container {
-    width: 90%; }
-    header .container .header-logo img {
-      height: 33px;
-      width: 87px; }
+  header {
+    height: 16.6666666667vw; }
+    header .container {
+      width: 90%; }
+      header .container .header-logo img {
+        height: 6.6666666667vw;
+        width: 19.1666666667vw; }
+      header .container #bs-header-navbar-nodesktop-parent {
+        margin-left: auto; }
+        header .container #bs-header-navbar-nodesktop-parent span {
+          font-size: 5.5555555556vw; }
 
   footer {
-    height: 224px; }
+    height: 48.8888888889vw; }
     footer .footer-logo img {
-      height: 48px;
-      width: 142px; }
+      height: 9.1666666667vw;
+      width: 26.9444444444vw; }
     footer .footer-copy h5 {
       font-size: 10px; }
     footer .footer-icons a .fa {
-      font-size: 1.3em;
+      font-size: 14px;
       width: 30px;
       height: 30px;
       line-height: 30px; }
 
   #before-contact-us {
-    height: 350px; }
-    #before-contact-us #countries .indicators .flag img {
-      height: 43px;
-      width: 43px; }
-    #before-contact-us #countries .indicators .flag.active:after {
-      margin-top: -62px;
-      padding: 15.3px;
-      font-size: 4.5em; }
+    height: 97.2222222222vw;
+    background: url("assets/before-contact-bg-mob.jpg") center no-repeat #000;
+    background-size: cover; }
+    #before-contact-us #countries .indicators {
+      margin-bottom: 8.8888888889vw; }
+      #before-contact-us #countries .indicators .flag img {
+        height: 11.9444444444vw;
+        width: 11.9444444444vw; }
+      #before-contact-us #countries .indicators .flag.active:after {
+        margin-top: -17.2222222222vw;
+        padding: 4.1666666667vw;
+        font-size: 17.2222222222vw; }
     #before-contact-us #countries h4 {
-      font-size: 12px; }
-    #before-contact-us #offices .offices-detail {
-      flex-flow: column nowrap; }
-      #before-contact-us #offices .offices-detail .detail {
-        width: 257px;
-        height: 80px;
-        text-align: center;
-        margin: 10px 0; }
-        #before-contact-us #offices .offices-detail .detail h5 {
-          font-size: 12px;
-          line-height: 1.79; }
+      font-size: 3.3333333333vw; }
+    #before-contact-us #offices {
+      margin-top: -6.9444444444vw; }
+      #before-contact-us #offices .offices-detail {
+        flex-flow: column nowrap; }
+        #before-contact-us #offices .offices-detail .detail {
+          width: 71.3888888889vw;
+          height: 22.2222222222vw;
+          text-align: center;
+          margin: 10px 0; }
+          #before-contact-us #offices .offices-detail .detail h5 {
+            font-size: 3.3333333333vw;
+            line-height: 1.79; }
 
+  #contact-us > * {
+    padding: 30px 0 0; }
   #contact-us .title h1 {
-    font-size: 19px; }
+    font-size: 18px; }
     #contact-us .title h1 .first {
       display: block; }
-  #contact-us .inner-section .call-us {
-    flex: 1 100%;
-    padding-bottom: 30px;
-    margin-top: 0; }
-    #contact-us .inner-section .call-us .content .centered-content h2 {
-      font-size: 18px;
-      margin: 0 auto; }
-    #contact-us .inner-section .call-us .content .centered-content img {
-      height: 64px;
-      width: 72px; }
-  #contact-us .inner-section .the-form {
-    flex: 1 100%;
-    margin-left: 0;
-    padding: 30px 0; }
-    #contact-us .inner-section .the-form .wpcf7 .form-elements-container {
-      display: flex;
-      flex-flow: column nowrap;
+  #contact-us .inner-section {
+    margin: 0 6.9444444444vw; }
+    #contact-us .inner-section .call-us {
+      flex: 1 100%;
+      padding-bottom: 30px;
+      margin-top: 0; }
+      #contact-us .inner-section .call-us .content {
+        height: 55.5555555556vw;
+        width: 86.1111111111vw; }
+        #contact-us .inner-section .call-us .content .centered-content h2 {
+          font-size: 5vw;
+          margin: 0 auto; }
+        #contact-us .inner-section .call-us .content .centered-content img {
+          height: 16.9444444444vw;
+          width: 15vw; }
+        #contact-us .inner-section .call-us .content .centered-content #contact-phone {
+          font-size: 6.6666666667vw; }
+    #contact-us .inner-section .the-form {
+      flex: 1 100%;
+      margin-left: 0;
       padding: 0; }
-      #contact-us .inner-section .the-form .wpcf7 .form-elements-container p {
-        padding: 0 5px; }
-      #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea, #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
-        font-size: 14px; } }
-@media only screen and (max-width: 767px) and (max-width: 379px) {
-  #contact-us .inner-section .call-us .content {
-    height: 200px;
-    width: 260px;
-    margin: 0 auto; } }
+      #contact-us .inner-section .the-form .wpcf7 .form-elements-container {
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 0;
+        margin: 0 auto; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container p {
+          padding: 0.2777777778vw 0; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container p:last-child {
+          padding-top: 0.5555555556vw; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
+          height: 11.1111111111vw;
+          width: 86.1111111111vw;
+          font-size: 3.3333333333vw;
+          padding: 2.7777777778vw 3.8888888889vw; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
+          height: 11.1111111111vw;
+          width: 43.8888888889vw;
+          font-size: 3.8888888889vw; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
+          height: 36.9444444444vw; } }
 
 /*# sourceMappingURL=style.css.map */

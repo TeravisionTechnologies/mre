@@ -4,94 +4,113 @@
     display: block !important
 
 header
+    height: 16.666666666666668vw
     .container
         width: 90%
         .header-logo
             img
-                height: 33px
-                width: 87px
+                height: 6.666666666666666vw
+                width: 19.166666666666668vw
+        #bs-header-navbar-nodesktop-parent
+            margin-left: auto
+            span
+                font-size: 5.555555555555555vw
 
 footer
-    height: 224px
+    height: 48.888888888888886vw
     .footer-logo
         img
-            height: 48px
-            width: 142px
+            height: 9.166666666666666vw
+            width: 26.944444444444443vw
     .footer-copy
         h5
             font-size: 10px
     .footer-icons
         a
             .fa
-                font-size: 1.3em
+                font-size: 14px
                 width: 30px
                 height: 30px
                 line-height: 30px
 
 #before-contact-us
-    height: 350px
+    height: 97.22222222222221vw
+    background: url('assets/before-contact-bg-mob.jpg') center no-repeat $black
+    background-size: cover
     #countries
         .indicators
+            margin-bottom: 8.88888888888889vw
             .flag
                 img
-                    height: 43px
-                    width: 43px
+                    height: 11.944444444444445vw
+                    width: 11.944444444444445vw
             .flag.active:after
-                margin-top: -62px
-                padding: 15.3px
-                font-size: 4.5em
+                margin-top: -17.22222222222222vw
+                padding: 4.166666666666667vw
+                font-size: 17.22222222222222vw
         h4
-            font-size: 12px
+            font-size: 3.333333333333333vw
     #offices
+        margin-top: -6.944444444444445vw
         .offices-detail
             flex-flow: column nowrap
             .detail
-                width: 257px
-                height: 80px
+                width: 71.38888888888889vw
+                height: 22.22222222222222vw
                 text-align: center
                 margin: 10px 0
                 h5
-                    font-size: 12px
+                    font-size: 3.333333333333333vw
                     line-height: 1.79
 
 #contact-us
+    > *
+        padding: 30px 0 0
     .title
         h1
-            font-size: 19px
+            font-size: 18px
             .first
                 display: block
     .inner-section
+        margin: 0 6.944444444444445vw
         .call-us
             flex: 1 100%
             padding-bottom: 30px
             margin-top: 0
             .content
+                height: 55.55555555555556vw
+                width: 86.11111111111111vw
                 .centered-content
                     h2
-                        font-size: 18px
+                        font-size: 5vw
                         margin: 0 auto
                     img
-                        height: 64px
-                        width: 72px
+                        height: 16.944444444444443vw
+                        width: 15vw
+                    #contact-phone
+                        font-size: 6.666666666666666vw
         .the-form
             flex: 1 100%
             margin-left: 0
-            padding: 30px 0
+            padding: 0
             .wpcf7
                 .form-elements-container
                     display: flex
                     flex-flow: column nowrap
                     padding: 0
-                    p
-                        padding: 0 5px
-                    input:not([type="submit"]), select, textarea, input[type="submit"]
-                        font-size: 14px
-
-@media only screen and (max-width: 379px)
-    #contact-us
-        .inner-section
-            .call-us
-                .content
-                    height: 200px
-                    width: 260px
                     margin: 0 auto
+                    p
+                        padding: 0.2777777777777778vw 0
+                    p:last-child
+                        padding-top: 0.5555555555555556vw
+                    input:not([type="submit"]), select, textarea
+                        height: 11.11111111111111vw
+                        width: 86.11111111111111vw
+                        font-size: 3.333333333333333vw
+                        padding: 2.7777777777777777vw 3.888888888888889vw
+                    input[type="submit"]
+                        height: 11.11111111111111vw
+                        width: 43.888888888888886vw
+                        font-size: 3.888888888888889vw
+                    textarea
+                        height: 36.94444444444444vw
