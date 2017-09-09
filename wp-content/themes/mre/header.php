@@ -45,8 +45,7 @@
                 <?php
                     $headerPost = get_posts(
 	                    array(
-                            'post_type' => 'header_footer',
-                            'meta_key'  => '_hf_logo'
+                            'post_type' => 'header_footer'
                         )
                     );
                     $theMeta = get_post_meta($headerPost[0]->ID);

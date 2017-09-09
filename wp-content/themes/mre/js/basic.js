@@ -23,4 +23,6 @@ jQuery(document).ready(function() {
         thisFlag.addClass('active');
     });
 
+    jQuery('#about-sections .carousel-inner .item:first-child').addClass('active');
+
 });

@@ -147,6 +147,70 @@ footer {
     right: 3.125vw;
     font-size: 4.1666666667vw; }
 
+#about-us {
+  height: 71.0416666667vw;
+  background: url("assets/about-us-bg.png") center no-repeat #000;
+  background-size: cover;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  filter: brightness(120%); }
+  #about-us > * {
+    filter: brightness(80%); }
+  #about-us .title h4 {
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center; }
+  #about-us .title h1 {
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.11;
+    font-weight: bold; }
+    #about-us .title h1 span {
+      color: #1f9aff;
+      display: block; }
+  #about-us .extra-info {
+    height: 11.1111111111vw;
+    width: 81.25vw;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(247, 247, 247, 0.1);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 18px; }
+    #about-us .extra-info h2 {
+      text-align: center;
+      font-size: 3.4722222222vw;
+      font-weight: bold;
+      line-height: 1.33;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); }
+      #about-us .extra-info h2 span {
+        display: block;
+        font-size: 2.0833333333vw; }
+
+#after-about-us {
+  height: 25.1388888889vw;
+  background: #00447e;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly; }
+  #after-about-us h4 {
+    margin-bottom: -5.5555555556vw; }
+  #after-about-us h1 {
+    text-align: center; }
+  #after-about-us #partners-images {
+    margin-top: -1.7361111111vw; }
+    #after-about-us #partners-images img {
+      margin: 0 1.4583333333vw; }
+    #after-about-us #partners-images #hr-realty {
+      height: 6.25vw;
+      width: 6.6666666667vw; }
+    #after-about-us #partners-images #ala-19 {
+      height: 3.3333333333vw;
+      width: 10.0694444444vw; }
+
 #before-contact-us {
   height: 27.7777777778vw;
   background: url("assets/before-contact-bg.jpg") center no-repeat #000;
@@ -331,6 +395,39 @@ footer {
       height: 30px;
       line-height: 30px; }
 
+  #about-us {
+    height: 130.9895833333vw; }
+    #about-us .title h4 {
+      font-size: 1.8229166667vw; }
+    #about-us .title h1 {
+      font-size: 3.6458333333vw; }
+    #about-us .extra-info {
+      height: 18.2291666667vw;
+      width: 85.6770833333vw; }
+      #about-us .extra-info h2 {
+        font-size: 3.90625vw;
+        line-height: 1.36; }
+        #about-us .extra-info h2 span {
+          font-size: 2.8645833333vw; }
+
+  #after-about-us {
+    height: 39.0625vw; }
+    #after-about-us h4 {
+      font-size: 1.8229166667vw;
+      margin-bottom: -8.8541666667vw; }
+    #after-about-us h1 {
+      font-size: 3.6458333333vw; }
+    #after-about-us #partners-images {
+      margin-top: -5.2083333333vw; }
+      #after-about-us #partners-images img {
+        margin: 0 2.9947916667vw; }
+      #after-about-us #partners-images #hr-realty {
+        height: 11.328125vw;
+        width: 10.6770833333vw; }
+      #after-about-us #partners-images #ala-19 {
+        height: 5.5989583333vw;
+        width: 17.1875vw; }
+
   #before-contact-us {
     height: 52.0833333333vw; }
     #before-contact-us #countries .indicators {
@@ -427,6 +524,44 @@ footer {
       width: 30px;
       height: 30px;
       line-height: 30px; }
+
+  #about-us {
+    height: 347.5vw; }
+    #about-us .title h4 {
+      font-size: 3.3333333333vw; }
+    #about-us .title h1 {
+      font-size: 6.1111111111vw; }
+    #about-us .extra-info {
+      height: 100vw;
+      width: 86.1111111111vw;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-evenly;
+      align-items: center; }
+      #about-us .extra-info h2 {
+        font-size: 8.3333333333vw;
+        line-height: 1.25; }
+        #about-us .extra-info h2 span {
+          font-size: 6.6666666667vw; }
+
+  #after-about-us {
+    height: 70.2777777778vw; }
+    #after-about-us h4 {
+      font-size: 3.3333333333vw;
+      margin-bottom: -11.1111111111vw; }
+    #after-about-us h1 {
+      font-size: 6.1111111111vw;
+      width: 60%; }
+    #after-about-us #partners-images {
+      margin-top: -5.5555555556vw; }
+      #after-about-us #partners-images img {
+        margin: 0 4.4444444444vw; }
+      #after-about-us #partners-images #hr-realty {
+        height: 19.1666666667vw;
+        width: 18.0555555556vw; }
+      #after-about-us #partners-images #ala-19 {
+        height: 9.7222222222vw;
+        width: 28.8888888889vw; }
 
   #before-contact-us {
     height: 97.2222222222vw;
