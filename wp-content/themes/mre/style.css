@@ -75,6 +75,10 @@ header {
     top: 8px;
     position: absolute;
     font-size: 20px; }
+  header #bs-header-navbar li:last-child:after {
+    content: ""; }
+  header #bs-header-navbar li:last-child + li:after {
+    content: ""; }
 
 footer {
   height: 18.9583333333vw;
