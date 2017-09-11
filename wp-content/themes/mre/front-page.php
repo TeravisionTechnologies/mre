@@ -42,13 +42,17 @@ get_header();
 
 	                ?><div class="item"><?php
 
+	                    ?><div class="item-image"><?php
                         if ( isset( $entry['_about_image'] ) ) {
                             ?><img src="<?php echo $entry['_about_image']; ?>" /><?php
                         }
+		                ?></div><?php
 
+                        ?><div class="item-paragraph"><?php
                         if ( isset( $entry['_about_desc'] ) ) {
 	                        ?><p><?php echo wpautop( $entry['_about_desc'] ); ?></p><?php
                         }
+                        ?></div><?php
 
                     ?></div><?php
                 }

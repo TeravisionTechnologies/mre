@@ -66,6 +66,10 @@ header
         top: 8px
         position: absolute
         font-size: 20px
+    #bs-header-navbar li:last-child
+        margin-left: 2.0833333333333335vw
+    #bs-header-navbar li:last-child:after
+        content: ''
 
 footer
     height: 18.958333333333332vw
@@ -142,16 +146,13 @@ footer
         font-size: 4.166666666666667vw
 
 #about-us
-    height: 71.04166666666667vw
+    height: 71.11111111111111vw
     background: url('assets/about-us-bg.png') center no-repeat $black
     background-size: cover
     display: flex
     flex-flow: column wrap
     justify-content: space-evenly
     align-items: center
-    filter: brightness(120%)
-    > *
-        filter: brightness(80%)
     .title
         h4
             color: rgba($white,0.6)
@@ -165,7 +166,46 @@ footer
                 color: $lighter-blue2
                 display: block
     #about-sections
-
+        width: 68.05555555555556vw
+        .carousel-indicators
+            li
+                height: 0.6944444444444444vw
+                width: 0.6944444444444444vw
+                background-color: rgba($white, 0.4)
+                border: none
+                margin: 0 1px
+            li.active
+                    background-color: $white
+        .carousel-inner
+            height: 34.72222222222222vw
+            width: 62vw
+            margin: 0 auto
+            .item
+                .item-image
+                    width: 40%
+                    float: left
+                    img
+                        float: right
+                        height: 18.055555555555554vw
+                        width: 18.055555555555554vw
+                .item-paragraph
+                    width: 50%
+                    float: left
+                    padding-left: 5%
+                    color: $white
+                    font-size: 1.1111111111111112vw
+        .carousel-control
+            width: 0
+            opacity: 1
+            .glyphicon
+                background-color: $arrow-grey
+                color: transparent
+                border-radius: 50%
+                text-shadow: 0 0 0 rgba($black,.7)
+                font-size: 2.5vw
+                height: 3.125vw
+                width: 3.125vw
+                line-height: 1.2
     .extra-info
         height: 11.11111111111111vw
         width: 81.25vw

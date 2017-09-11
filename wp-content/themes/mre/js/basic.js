@@ -16,7 +16,7 @@ function closeNav() {
 jQuery(document).ready(function() {
 
     jQuery('.flag').on('click', function () {
-        let thisFlag = jQuery(this);
+        var thisFlag = jQuery(this);
         jQuery('.flag').each(function(){
             jQuery(this).removeClass('active');
         });
