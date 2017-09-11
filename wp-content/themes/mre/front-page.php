@@ -100,63 +100,54 @@ get_header();
 </section>
 
 <section id="before-contact-us">
-    <div id="countries">
-        <!-- Indicators -->
-        <ul class="indicators">
-            <li data-target="#offices" data-slide-to="0" class="flag">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/ven_flag.svg" />
-            </li>
-            <li data-target="#offices" data-slide-to="1" class="flag active">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
-            </li>
-            <li data-target="#offices" data-slide-to="2" class="flag">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
-            </li>
-        </ul>
-        <h4>Puedes encontrar Nuestras Oficinas en:</h4>
-    </div>
     <div id="offices" class="carousel slide" data-ride="carousel" data-interval="false">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#offices" data-slide-to="0" class="flag">
+                <img class="flag-ven" src="<?php echo get_template_directory_uri(); ?>/assets/ven_flag.svg" />
+            </li>
+            <li data-target="#offices" data-slide-to="1" class="flag flag-usa active">
+                <img class="flag-usa" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
+            </li>
+            <li data-target="#offices" data-slide-to="2" class="flag flag-spain">
+                <img class="flag-spain" src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
+            </li>
+        </ol>
+        <h4>Puedes encontrar Nuestras Oficinas en:</h4>
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item">
-                <div class="offices-detail">
-                    <div class="detail">
-                        <h5>
-                            <span>Caracas:</span>
-                        </h5>
-                        <h5>Centro Empresarial Parque Humboldt</h5>
-                        <h5>Piso 19, Oficinas 19-05 / 19-06</h5>
-                        <h5>Teléfonos: +58 212 975 39 40 / 212 975 41 651</h5>
-                    </div>
+                <div class="office-detail">
+                    <h5>
+                        <span>Caracas:</span>
+                    </h5>
+                    <h5>Centro Empresarial Parque Humboldt</h5>
+                    <h5>Piso 19, Oficinas 19-05 / 19-06</h5>
+                    <h5>Teléfonos: +58 212 975 39 40 / 212 975 41 651</h5>
                 </div>
             </div>
 
             <div class="item active">
-                <div class="offices-detail">
-                    <div class="offices-detail">
-                        <div class="detail">
-                            <h5>
-                                <span>Orlando:</span>
-                            </h5>
-                            <h5>2295 S. Hiawassee Road, Suite 407E</h5>
-                            <h5>Orlando, Florida</h5>
-                            <h5>Teléfonos: +1 407 255.08.71</h5>
-                        </div>
-                        <div class="detail">
-                            <h5>
-                                <span>Miami:</span>
-                            </h5>
-                            <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
-                            <h5>Miami, Florida</h5>
-                            <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
-                        </div>
-                    </div>
+                <div class="office-detail usa-office">
+                    <h5>
+                        <span>Orlando:</span>
+                    </h5>
+                    <h5>2295 S. Hiawassee Road, Suite 407E</h5>
+                    <h5>Orlando, Florida</h5>
+                    <h5>Teléfonos: +1 407 255.08.71</h5>
+                </div>
+                <div class="office-detail usa-office">
+                    <h5>
+                        <span>Miami:</span>
+                    </h5>
+                    <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
+                    <h5>Miami, Florida</h5>
+                    <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
                 </div>
             </div>
 
             <div class="item">
-                <div class="offices-detail">
-                <div class="detail">
+                <div class="office-detail">
                     <h5>
                         <span>Madrid:</span>
                     </h5>
@@ -164,7 +155,6 @@ get_header();
                     <h5>Primero Izquierda</h5>
                     <h5>Sample: +34 605 816 803</h5>
                 </div>
-            </div>
             </div>
         </div>
     </div>

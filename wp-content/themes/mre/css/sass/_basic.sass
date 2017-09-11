@@ -251,48 +251,54 @@ footer
     height: 27.77777777777778vw
     background: url('assets/before-contact-bg.jpg') center no-repeat $black
     background-size: cover
-    display: flex
-    flex-flow: column nowrap
-    align-items: center
-    justify-content: space-evenly
-    #countries
-        display: flex
-        flex-flow: column nowrap
-        align-items: center
-        .indicators
-            display: flex
-            flex-flow: row nowrap
-            list-style: none
-            margin-bottom: 2.5vw
+    #offices
+        height: 100%
+        width: 100%
+        .carousel-indicators
+            bottom: 16.666666666666668vw
+            li
+                margin: 1px 2.7777777777777777vw
+                border: none
+                height: 0.8333333333333333vw
+                width: 0.8333333333333333vw
             .flag
-                padding: 0 0.6944444444444444vw
                 img
+                    position: absolute
+                    bottom: 2.0833333333333335vw
                     height: 4.166666666666667vw
                     width: 4.166666666666667vw
-            .flag.active:after
-                content: "."
-                color: $white
-                position: absolute
-                margin-top: -5vw
-                padding: 1.5277777777777777vw
-                font-size: 4.861111111111111vw
-    #offices
-        margin-top: -3.958333333333333vw
-        .offices-detail
-            display: flex
-            flex-flow: row nowrap
-            .detail
-                width: 20.97222222222222vw
-                height: 6.944444444444445vw
-                text-align: center
-                margin: 0 1.7361111111111112vw
-                h5
-                    font-size: 1.1111111111111112vw
-                    line-height: 1.56
-                    letter-spacing: -0.1px
-                span
-                    font-weight: bold
-                    display: block
+                .flag-ven
+                    left: 21.52777777777778vw
+                .flag-usa
+                    left: 27.98611111111111vw
+                .flag-spain
+                    left: 34.513888888888886vw
+        h4
+            font-size: 1.25vw
+            text-align: center
+            padding-top: 11.458333333333334vw
+        .carousel-inner
+            width: 100%
+            bottom: -2.0833333333333335vw
+            .item
+                width: 100%
+                margin: 0 auto
+                .office-detail
+                    text-align: center
+                    h5
+                        font-size: 1.1111111111111112vw
+                        line-height: 1.56
+                        letter-spacing: -0.1px
+                    span
+                        font-weight: bold
+                        display: block
+                .office-detail.usa-office
+                    width: 49%
+                    display: inline-block
+                .office-detail.usa-office:first-child
+                    margin-left: 14.027777777777777vw
+                .office-detail.usa-office:last-child
+                    margin-left: -25.694444444444443vw
 
 #contact-us
     display: flex
