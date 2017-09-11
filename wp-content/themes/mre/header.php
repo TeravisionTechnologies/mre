@@ -40,39 +40,41 @@
 
 <body>
     <header>
-        <div class="container">
-            <div class="header-logo">
+        <div class="container col-xs-12">
+            <div class="center-header">
+                <div class="header-logo col-xs-8">
+                    <?php
+                        $headerPost = get_posts(
+                            array(
+                                'post_type' => 'header_footer'
+                            )
+                        );
+                        $theMeta = get_post_meta($headerPost[0]->ID);
+                    ?>
+                    <a href="<?php echo esc_url( home_url( '/' ) ) ?>">
+                        <img src="<?php echo $theMeta['_hf_logo'][0] ?>" />
+                    </a>
+                </div>
                 <?php
-                    $headerPost = get_posts(
-	                    array(
-                            'post_type' => 'header_footer'
-                        )
+                    wp_nav_menu(
+                            array(
+                                'menu'              => 'Primary',
+                                'theme_location'    => 'Primary Menu',
+                                'depth'             => 2,
+                                'container'         => 'div',
+                                'container_class'   => 'visible-desktop col-xs-4',
+                                'container_id'      => 'bs-header-navbar',
+                                'menu_class'        => 'nav navbar-nav',
+                                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                                'walker'            => new WP_Bootstrap_Navwalker()
+                            )
                     );
-                    $theMeta = get_post_meta($headerPost[0]->ID);
                 ?>
-                <a href="<?php echo esc_url( home_url( '/' ) ) ?>">
-                    <img src="<?php echo $theMeta['_hf_logo'][0] ?>" />
-                </a>
-            </div>
-            <?php
-                wp_nav_menu(
-                        array(
-                            'menu'              => 'Primary',
-                            'theme_location'    => 'Primary Menu',
-                            'depth'             => 2,
-                            'container'         => 'div',
-                            'container_class'   => 'visible-desktop',
-                            'container_id'      => 'bs-header-navbar',
-                            'menu_class'        => 'nav navbar-nav',
-                            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-                            'walker'            => new WP_Bootstrap_Navwalker()
-                        )
-                );
-            ?>
-            <div id="bs-header-navbar-nodesktop-parent" class="pull-right visible-mobile">
-                <a>
-                    <span class="fa fa-bars" onclick="openNav()"></span>
-                </a>
+                <div id="bs-header-navbar-nodesktop-parent" class="pull-right visible-mobile">
+                    <a>
+                        <span class="fa fa-bars" onclick="openNav()"></span>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
