@@ -87,8 +87,15 @@ get_header();
     <h4>Nuestros Socios</h4>
     <h1>Hacemos real tu Inversión soñada</h1>
     <div id="partners-images">
-        <img id="hr-realty" src="<?php echo get_template_directory_uri(); ?>/assets/hr-realty.png" />
-        <img id="ala-19" src="<?php echo get_template_directory_uri(); ?>/assets/ala-19.png" />
+	    <?php
+	        $aboutMeta = get_post_meta($aboutPost[0]->ID);
+
+	        if ( isset( $aboutMeta['_about_image-1'][0] ) ) {
+        ?><img id="hr-realty" src="<?php echo $aboutMeta['_about_image-1'][0] ?>" />
+        <?php }
+	        if ( isset( $aboutMeta['_about_image-1'][0] ) ) {
+        ?><img id="ala-19" src="<?php echo $aboutMeta['_about_image-2'][0] ?>" />
+        <?php } ?>
     </div>
 </section>
 
@@ -115,19 +122,11 @@ get_header();
                 <div class="offices-detail">
                     <div class="detail">
                         <h5>
-                            <span>Sample:</span>
+                            <span>Caracas:</span>
                         </h5>
-                        <h5>sample sample sample sample</h5>
-                        <h5>sample, sample</h5>
-                        <h5>Sample: +1 111 11.11.11</h5>
-                    </div>
-                    <div class="detail">
-                        <h5>
-                            <span>Sample:</span>
-                        </h5>
-                        <h5>sample sample sample sample</h5>
-                        <h5>sample, sample</h5>
-                        <h5>Sample: +1 111 11.11.11</h5>
+                        <h5>Centro Empresarial Parque Humboldt</h5>
+                        <h5>Piso 19, Oficinas 19-05 / 19-06</h5>
+                        <h5>Teléfonos: +58 212 975 39 40 / 212 975 41 651</h5>
                     </div>
                 </div>
             </div>
@@ -159,19 +158,11 @@ get_header();
                 <div class="offices-detail">
                 <div class="detail">
                     <h5>
-                        <span>Sample:</span>
+                        <span>Madrid:</span>
                     </h5>
-                    <h5>sample sample sample sample</h5>
-                    <h5>sample, sample</h5>
-                    <h5>Sample: +1 111 11.11.11</h5>
-                </div>
-                <div class="detail">
-                    <h5>
-                        <span>Sample:</span>
-                    </h5>
-                    <h5>sample sample sample sample</h5>
-                    <h5>sample, sample</h5>
-                    <h5>Sample: +1 111 11.11.11</h5>
+                    <h5>Calle Ortega y Gasset #6</h5>
+                    <h5>Primero Izquierda</h5>
+                    <h5>Sample: +34 605 816 803</h5>
                 </div>
             </div>
             </div>
