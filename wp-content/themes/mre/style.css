@@ -62,6 +62,7 @@ header {
     background-color: #ffffff;
     height: 5.5555555556vw;
     position: fixed;
+    padding: 0 9.375vw;
     z-index: 99; }
     header .container .center-header {
       margin-top: 0.8333333333vw; }
@@ -422,18 +423,20 @@ footer {
 
   footer {
     height: 22.9166666667vw; }
-    footer .container .footer-center {
-      margin-top: 3.125vw; }
-      footer .container .footer-center .footer-logo img {
-        height: 6.25vw;
-        width: 18.4895833333vw; }
-      footer .container .footer-center .footer-copy h5 {
-        font-size: 12px; }
-      footer .container .footer-center .footer-icons a .fa {
-        font-size: 16px;
-        width: 30px;
-        height: 30px;
-        line-height: 30px; }
+    footer .container {
+      padding: 0 7.1614583333vw; }
+      footer .container .footer-center {
+        margin-top: 3.125vw; }
+        footer .container .footer-center .footer-logo img {
+          height: 6.25vw;
+          width: 18.4895833333vw; }
+        footer .container .footer-center .footer-copy h5 {
+          font-size: 12px; }
+        footer .container .footer-center .footer-icons a .fa {
+          font-size: 16px;
+          width: 30px;
+          height: 30px;
+          line-height: 30px; }
 
   #about-us {
     height: 130.9895833333vw; }
@@ -585,18 +588,20 @@ footer {
 
   footer {
     height: 48.8888888889vw; }
-    footer .container .footer-center {
-      margin-top: 11.1111111111vw; }
-      footer .container .footer-center .footer-logo img {
-        height: 9.1666666667vw;
-        width: 26.9444444444vw; }
-      footer .container .footer-center .footer-copy h5 {
-        font-size: 10px; }
-      footer .container .footer-center .footer-icons a .fa {
-        font-size: 14px;
-        width: 30px;
-        height: 30px;
-        line-height: 30px; }
+    footer .container {
+      padding: 0 6.9444444444vw; }
+      footer .container .footer-center {
+        margin-top: 11.1111111111vw; }
+        footer .container .footer-center .footer-logo img {
+          height: 9.1666666667vw;
+          width: 26.9444444444vw; }
+        footer .container .footer-center .footer-copy h5 {
+          font-size: 10px; }
+        footer .container .footer-center .footer-icons a .fa {
+          font-size: 14px;
+          width: 30px;
+          height: 30px;
+          line-height: 30px; }
 
   #about-us {
     height: 347.5vw; }

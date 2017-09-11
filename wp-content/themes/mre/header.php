@@ -42,7 +42,7 @@
     <header>
         <div class="container col-xs-12">
             <div class="center-header">
-                <div class="header-logo col-xs-8">
+                <div class="header-logo pull-left">
                     <?php
                         $headerPost = get_posts(
                             array(
@@ -62,7 +62,7 @@
                                 'theme_location'    => 'Primary Menu',
                                 'depth'             => 2,
                                 'container'         => 'div',
-                                'container_class'   => 'visible-desktop col-xs-4',
+                                'container_class'   => 'visible-desktop pull-right',
                                 'container_id'      => 'bs-header-navbar',
                                 'menu_class'        => 'nav navbar-nav',
                                 'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
