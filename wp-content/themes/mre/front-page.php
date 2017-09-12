@@ -6,9 +6,30 @@
  * Time: 09:10 AM
  */
 get_header();
-?>
-<section>
 
+$headerPost = get_posts(
+  array(
+    'post_type' => 'header_footer',
+    'numberposts' => 1
+  )
+);
+$theMeta = get_post_meta($headerPost[0]->ID);
+?>
+
+<section id="hero-container" class="row">
+  <div class="col-xs-12 col-md-6 hero-box hero-box-left" style="background-image: url('<?php echo ($theMeta['_hf_hero_image_left'][0]) ?>');">
+      <div class="overlay-left">
+          <h3 class="center-block"><?php echo $theMeta['_hf_text_hero_left'][0] ?></h3>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-icon-left.svg">
+      </div>
+  </div>
+  <div class="col-xs-12 col-md-6 hero-box hero-box-right" style="background-image: url('<?php echo ($theMeta['_hf_hero_image_right'][0]) ?>');">
+      <div class="overlay-right">
+          <h3 class="center-block"><?php echo $theMeta['_hf_text_hero_right'][0] ?></h3>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-icon-right.svg">
+      </div>
+  </div>
+  <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-arrow.svg" class="hero-button">
 </section>
 
 <section id="about-us">

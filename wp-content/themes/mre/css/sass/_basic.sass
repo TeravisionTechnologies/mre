@@ -141,6 +141,45 @@ footer
         right: 3.125vw
         font-size: 4.166666666666667vw
 
+#hero-container
+    position: relative
+    .hero-box
+        position: relative
+        height: 55.55555555555556vw
+        text-align: center
+        h3
+            margin-top: 21.180555555555554vw
+            width: 31.944444444444443vw
+            font-family: 'Montserrat'
+            font-size: 1.6666666666666665vw
+            color: $white
+        img
+            margin-top: 2.0833333333333335vw
+    .hero-box-left
+        background-size: cover
+        z-index: 1
+        box-shadow: 12px 0 8px 0 rgba(0, 0, 0, 0.4)
+    .hero-box-right
+        background-size: cover
+    .hero-button
+        z-index: 1
+        position: absolute
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+        height: 2.9166666666666665vw
+        width: 6.527777777777778vw
+    .overlay-left, .overlay-right
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+    .overlay-left
+        background: linear-gradient(to top, $light-blue, rgba(9, 118, 209, 0.59) 82%, rgba(9, 118, 209, 0.8))
+    .overlay-right
+        background: linear-gradient(to top, $dark-blue, rgba(0, 69, 126, 0.59) 82%, rgba(0, 69, 126, 0.8))
+
 #about-us
     height: 71.04166666666667vw
     background: url('assets/about-us-bg.png') center no-repeat $black
@@ -164,8 +203,8 @@ footer
             span
                 color: $lighter-blue2
                 display: block
-    #about-sections
 
+#about-sections
     .extra-info
         height: 11.11111111111111vw
         width: 81.25vw
