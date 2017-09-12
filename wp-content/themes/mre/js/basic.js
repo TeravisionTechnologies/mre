@@ -18,4 +18,7 @@ jQuery(document).ready(function() {
     jQuery('footer .fa-caret-up').on('click', function () {
         window.scrollTo(0,0);
     });
+
+    jQuery('#about-us').bcSwiping();
+    jQuery('#before-contact-us').bcSwiping();
 });
