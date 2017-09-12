@@ -7,7 +7,7 @@
 /*  Version: 1.0                              */
 /*  License: Copy Right                       */
 /*                                            */
-/*  Co-Author: José Pernía                    */
+/*  Co-Author: Jos├⌐ Pern├¡a                    */
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 * {
   margin: 0;
@@ -152,9 +152,13 @@ footer {
   height: 71.1111111111vw;
   background: url("assets/about-us-bg.png") center no-repeat #000;
   background-size: cover;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-flow: column wrap;
   flex-flow: column wrap;
-  justify-content: space-evenly;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
   align-items: center; }
   #about-us .title h4 {
     color: rgba(255, 255, 255, 0.6);
@@ -229,24 +233,20 @@ footer {
 #after-about-us {
   height: 25.1388888889vw;
   background: #00447e;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-evenly; }
+  text-align: center; }
   #after-about-us h4 {
-    margin-bottom: -5.5555555556vw; }
+    padding-top: 5.2083333333vw; }
   #after-about-us h1 {
-    text-align: center; }
-  #after-about-us #partners-images {
-    margin-top: -1.7361111111vw; }
-    #after-about-us #partners-images img {
-      margin: 0 1.4583333333vw; }
-    #after-about-us #partners-images #hr-realty {
-      height: 6.25vw;
-      width: 6.6666666667vw; }
-    #after-about-us #partners-images #ala-19 {
-      height: 3.3333333333vw;
-      width: 10.0694444444vw; }
+    text-align: center;
+    padding-bottom: 2.7777777778vw; }
+  #after-about-us #partners-images img {
+    margin: 0 1.5972222222vw; }
+  #after-about-us #partners-images #hr-realty {
+    height: 6.25vw;
+    width: 6.6666666667vw; }
+  #after-about-us #partners-images #ala-19 {
+    height: 3.3333333333vw;
+    width: 10.0694444444vw; }
 
 #before-contact-us {
   height: 27.7777777778vw;
@@ -258,7 +258,7 @@ footer {
     #before-contact-us #offices .carousel-indicators {
       bottom: 16.6666666667vw; }
       #before-contact-us #offices .carousel-indicators li {
-        margin: 1px 2.7777777778vw;
+        margin: 0 2.5vw;
         border: none;
         height: 0.8333333333vw;
         width: 0.8333333333vw; }
@@ -268,11 +268,11 @@ footer {
         height: 4.1666666667vw;
         width: 4.1666666667vw; }
       #before-contact-us #offices .carousel-indicators .flag .flag-ven {
-        left: 21.5277777778vw; }
+        left: 21.5972222222vw; }
       #before-contact-us #offices .carousel-indicators .flag .flag-usa {
-        left: 27.9861111111vw; }
+        left: 27.6388888889vw; }
       #before-contact-us #offices .carousel-indicators .flag .flag-spain {
-        left: 34.5138888889vw; }
+        left: 33.6805555556vw; }
     #before-contact-us #offices h4 {
       font-size: 1.25vw;
       text-align: center;
@@ -306,7 +306,8 @@ footer {
   align-items: center;
   background: url("assets/contact-bg.png") bottom no-repeat #0976d1;
   background-blend-mode: multiply;
-  background-size: contain; }
+  background-size: contain;
+  height: 48.5416666667vw; }
   #contact-us > * {
     text-align: center;
     padding: 30px 0; }
@@ -333,8 +334,9 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 23.6111111111vw;
+        height: 22.6388888889vw;
         width: 25.0694444444vw;
+        margin-top: 0.2083333333vw;
         border-radius: 18px;
         background-color: #2099ff;
         box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3); }
@@ -379,7 +381,10 @@ footer {
           color: #cfcfcf;
           padding: 0.8333333333vw 1.3888888889vw;
           width: 25.7638888889vw;
-          height: 3.3333333333vw; }
+          height: 3.3333333333vw;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container input::-webkit-input-placeholder, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea::-webkit-input-placeholder {
           color: #cfcfcf; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container input::-moz-placeholder, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea::-moz-placeholder {
@@ -406,6 +411,20 @@ footer {
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
           height: 9.375vw;
           width: 52.7777777778vw; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-schedule::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-interest::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-country::before {
+          content: "";
+          font-family: FontAwesome;
+          font-style: normal;
+          font-weight: normal;
+          text-decoration: inherit;
+          z-index: 1;
+          position: absolute;
+          color: #cfcfcf;
+          bottom: 0.9027777778vw;
+          left: 23.6111111111vw;
+          font-size: 1.6666666667vw; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-schedule:hover::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-interest:hover::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-country:hover::before {
+          cursor: pointer; }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .visible-desktop {
@@ -493,85 +512,99 @@ footer {
     height: 39.0625vw; }
     #after-about-us h4 {
       font-size: 1.8229166667vw;
-      margin-bottom: -8.8541666667vw; }
+      padding-top: 7.8125vw; }
     #after-about-us h1 {
-      font-size: 3.6458333333vw; }
-    #after-about-us #partners-images {
-      margin-top: -5.2083333333vw; }
-      #after-about-us #partners-images img {
-        margin: 0 2.9947916667vw; }
-      #after-about-us #partners-images #hr-realty {
-        height: 11.328125vw;
-        width: 10.6770833333vw; }
-      #after-about-us #partners-images #ala-19 {
-        height: 5.5989583333vw;
-        width: 17.1875vw; }
+      font-size: 3.6458333333vw;
+      padding-bottom: 5.859375vw; }
+    #after-about-us #partners-images img {
+      margin: 0 1.5972222222vw; }
+    #after-about-us #partners-images #hr-realty {
+      height: 11.328125vw;
+      width: 10.6770833333vw; }
+    #after-about-us #partners-images #ala-19 {
+      height: 5.5989583333vw;
+      width: 17.1875vw; }
 
   #before-contact-us {
     height: 52.0833333333vw; }
-    #before-contact-us #countries .indicators {
-      margin-bottom: 3.125vw; }
-      #before-contact-us #countries .indicators .flag img {
-        height: 6.5104166667vw;
-        width: 6.5104166667vw; }
-      #before-contact-us #countries .indicators .flag.active:after {
-        margin-top: -8.59375vw;
-        padding: 2.34375vw;
-        font-size: 8.3333333333vw; }
-    #before-contact-us #countries h4 {
-      font-size: 16px; }
     #before-contact-us #offices {
-      margin-top: -9.6354166667vw; }
-      #before-contact-us #offices .offices-detail .detail {
-        width: 257px;
-        height: 100px;
-        text-align: center;
-        margin: 0 25px; }
-        #before-contact-us #offices .offices-detail .detail h5 {
+      height: 100%;
+      width: 100%; }
+      #before-contact-us #offices .carousel-indicators {
+        bottom: 33.203125vw; }
+        #before-contact-us #offices .carousel-indicators li {
+          margin: -0.78125vw 3.5vw;
+          height: 1.171875vw;
+          width: 1.171875vw; }
+        #before-contact-us #offices .carousel-indicators .flag img {
+          height: 6.5104166667vw;
+          width: 6.5104166667vw; }
+        #before-contact-us #offices .carousel-indicators .flag .flag-ven {
+          left: 17.578125vw; }
+        #before-contact-us #offices .carousel-indicators .flag .flag-usa {
+          left: 26.3020833333vw; }
+        #before-contact-us #offices .carousel-indicators .flag .flag-spain {
+          left: 34.6354166667vw; }
+      #before-contact-us #offices h4 {
+        font-size: 2.0833333333vw;
+        padding-top: 21.484375vw; }
+      #before-contact-us #offices .carousel-inner {
+        bottom: -6.25vw; }
+        #before-contact-us #offices .carousel-inner .item .office-detail h5 {
           font-size: 14px;
           line-height: 1.79; }
+        #before-contact-us #offices .carousel-inner .item .office-detail.usa-office:first-child {
+          margin-left: 4.027778vw; }
+        #before-contact-us #offices .carousel-inner .item .office-detail.usa-office:last-child {
+          margin-left: -4.694444vw; }
 
-  #contact-us .title h1 {
-    font-size: 2.8645833333vw; }
-  #contact-us .title .first {
-    display: inline; }
-  #contact-us .inner-section {
-    margin: 0 5.2083333333vw; }
-    #contact-us .inner-section .call-us {
-      flex: 1 100%;
-      padding-bottom: 30px;
-      margin-top: 0; }
-      #contact-us .inner-section .call-us .content {
-        margin: 0 auto;
-        height: 33.8541666667vw;
-        width: 55.46875vw; }
-        #contact-us .inner-section .call-us .content .centered-content h2 {
-          font-size: 3.125vw; }
-        #contact-us .inner-section .call-us .content .centered-content img {
-          height: 9.375vw;
-          width: 8.3333333333vw; }
-        #contact-us .inner-section .call-us .content .centered-content #contact-phone {
-          font-size: 3.90625vw; }
-    #contact-us .inner-section .the-form {
-      flex: 1 100%;
-      margin-left: 0;
-      padding: 30px 0; }
-      #contact-us .inner-section .the-form .wpcf7 .form-elements-container {
-        margin: 0 auto; }
-        #contact-us .inner-section .the-form .wpcf7 .form-elements-container p {
-          padding: 0.5208333333vw 0.9114583333vw; }
-        #contact-us .inner-section .the-form .wpcf7 .form-elements-container p:last-child {
-          padding-top: 1.5625vw; }
-        #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
-          height: 6.1197916667vw;
-          width: 41.5364583333vw;
-          font-size: 1.8229166667vw;
-          padding: 1.8229166667vw 2.6041666667vw; }
-        #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
-          font-size: 2.0833333333vw; }
-        #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
-          height: 17.3177083333vw;
-          width: 85.6770833333vw; } }
+  #contact-us {
+    height: 137.109375vw; }
+    #contact-us .title h1 {
+      font-size: 2.8645833333vw; }
+    #contact-us .title .first {
+      display: inline; }
+    #contact-us .inner-section {
+      margin: 0 5.2083333333vw; }
+      #contact-us .inner-section .call-us {
+        flex: 1 100%;
+        padding-bottom: 30px;
+        margin-top: 0; }
+        #contact-us .inner-section .call-us .content {
+          margin: 0 auto;
+          height: 33.8541666667vw;
+          width: 55.46875vw; }
+          #contact-us .inner-section .call-us .content .centered-content h2 {
+            font-size: 3.125vw; }
+          #contact-us .inner-section .call-us .content .centered-content img {
+            height: 9.375vw;
+            width: 8.3333333333vw; }
+          #contact-us .inner-section .call-us .content .centered-content #contact-phone {
+            font-size: 3.90625vw; }
+      #contact-us .inner-section .the-form {
+        flex: 1 100%;
+        margin-left: 0;
+        padding: 30px 0; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container {
+          margin: 0 auto; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container p {
+            padding: 0.5208333333vw 0.9114583333vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container p:last-child {
+            padding-top: 1.5625vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
+            height: 6.1197916667vw;
+            width: 41.5364583333vw;
+            font-size: 1.8229166667vw;
+            padding: 1.8229166667vw 2.6041666667vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
+            font-size: 2.0833333333vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
+            height: 17.3177083333vw;
+            width: 85.6770833333vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-schedule::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-interest::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-country::before {
+            bottom: 2.0833333333vw;
+            left: 38.8020833333vw;
+            font-size: 2.34375vw; } }
 @media only screen and (max-width: 767px) {
   .visible-desktop {
     display: none !important; }
@@ -659,98 +692,112 @@ footer {
           font-size: 6.6666666667vw; }
 
   #after-about-us {
-    height: 70.2777777778vw; }
+    height: 70.3vw; }
     #after-about-us h4 {
       font-size: 3.3333333333vw;
-      margin-bottom: -11.1111111111vw; }
+      padding-top: 7.8125vw; }
     #after-about-us h1 {
       font-size: 6.1111111111vw;
-      width: 60%; }
-    #after-about-us #partners-images {
-      margin-top: -5.5555555556vw; }
-      #after-about-us #partners-images img {
-        margin: 0 4.4444444444vw; }
-      #after-about-us #partners-images #hr-realty {
-        height: 19.1666666667vw;
-        width: 18.0555555556vw; }
-      #after-about-us #partners-images #ala-19 {
-        height: 9.7222222222vw;
-        width: 28.8888888889vw; }
+      padding-bottom: 5.859375vw; }
+    #after-about-us #partners-images img {
+      margin: 0 1.5972222222vw; }
+    #after-about-us #partners-images #hr-realty {
+      height: 19.1666666667vw;
+      width: 18.0555555556vw; }
+    #after-about-us #partners-images #ala-19 {
+      height: 9.7222222222vw;
+      width: 28.8888888889vw; }
 
   #before-contact-us {
-    height: 97.2222222222vw;
-    background: url("assets/before-contact-bg-mob.jpg") center no-repeat #000;
-    background-size: cover; }
-    #before-contact-us #countries .indicators {
-      margin-bottom: 8.8888888889vw; }
-      #before-contact-us #countries .indicators .flag img {
-        height: 11.9444444444vw;
-        width: 11.9444444444vw; }
-      #before-contact-us #countries .indicators .flag.active:after {
-        margin-top: -17.2222222222vw;
-        padding: 4.1666666667vw;
-        font-size: 17.2222222222vw; }
-    #before-contact-us #countries h4 {
-      font-size: 3.3333333333vw; }
+    height: 97.2222222222vw; }
     #before-contact-us #offices {
-      margin-top: -6.9444444444vw; }
-      #before-contact-us #offices .offices-detail {
-        flex-flow: column nowrap; }
-        #before-contact-us #offices .offices-detail .detail {
-          width: 71.3888888889vw;
-          height: 22.2222222222vw;
-          text-align: center;
-          margin: 10px 0; }
-          #before-contact-us #offices .offices-detail .detail h5 {
+      height: 100%;
+      width: 100%; }
+      #before-contact-us #offices .carousel-indicators {
+        bottom: 69.4444444444vw; }
+        #before-contact-us #offices .carousel-indicators li {
+          margin: -2.7777777778vw 6.9444444444vw;
+          height: 2.2222222222vw;
+          width: 2.2222222222vw; }
+        #before-contact-us #offices .carousel-indicators .flag img {
+          height: 11.9444444444vw;
+          width: 11.9444444444vw; }
+        #before-contact-us #offices .carousel-indicators .flag .flag-ven {
+          left: 6.3888888889vw; }
+        #before-contact-us #offices .carousel-indicators .flag .flag-usa {
+          left: 22.7777777778vw; }
+        #before-contact-us #offices .carousel-indicators .flag .flag-spain {
+          left: 38.8888888889vw; }
+      #before-contact-us #offices h4 {
+        font-size: 3.3333333333vw;
+        padding-top: 30.5555555556vw; }
+      #before-contact-us #offices .carousel-inner {
+        bottom: -5.5555555556vw; }
+        #before-contact-us #offices .carousel-inner .item {
+          height: 47.2222222222vw; }
+          #before-contact-us #offices .carousel-inner .item .office-detail h5 {
             font-size: 3.3333333333vw;
             line-height: 1.79; }
+          #before-contact-us #offices .carousel-inner .item .office-detail.usa-office {
+            width: 100%;
+            display: block; }
+          #before-contact-us #offices .carousel-inner .item .office-detail.usa-office:first-child {
+            margin-left: 0; }
+          #before-contact-us #offices .carousel-inner .item .office-detail.usa-office:last-child {
+            margin-left: 0; }
 
-  #contact-us > * {
-    padding: 30px 0 0; }
-  #contact-us .title h1 {
-    font-size: 18px; }
-    #contact-us .title h1 .first {
-      display: block; }
-  #contact-us .inner-section {
-    margin: 0 6.9444444444vw; }
-    #contact-us .inner-section .call-us {
-      flex: 1 100%;
-      padding-bottom: 30px;
-      margin-top: 0; }
-      #contact-us .inner-section .call-us .content {
-        height: 55.5555555556vw;
-        width: 86.1111111111vw; }
-        #contact-us .inner-section .call-us .content .centered-content h2 {
-          font-size: 5vw;
+  #contact-us {
+    height: 275.2777777778vw; }
+    #contact-us > * {
+      padding: 30px 0 0; }
+    #contact-us .title h1 {
+      font-size: 18px; }
+      #contact-us .title h1 .first {
+        display: block; }
+    #contact-us .inner-section {
+      margin: 0 4.1666666667vw; }
+      #contact-us .inner-section .call-us {
+        flex: 1 100%;
+        padding-bottom: 30px;
+        margin-top: 0; }
+        #contact-us .inner-section .call-us .content {
+          height: 55.5555555556vw;
+          width: 86.1111111111vw; }
+          #contact-us .inner-section .call-us .content .centered-content h2 {
+            font-size: 5vw;
+            margin: 0 auto; }
+          #contact-us .inner-section .call-us .content .centered-content img {
+            height: 16.9444444444vw;
+            width: 15vw; }
+          #contact-us .inner-section .call-us .content .centered-content #contact-phone {
+            font-size: 6.6666666667vw; }
+      #contact-us .inner-section .the-form {
+        flex: 1 100%;
+        margin-left: 0;
+        padding: 0; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container {
+          display: flex;
+          flex-flow: column nowrap;
+          padding: 0;
           margin: 0 auto; }
-        #contact-us .inner-section .call-us .content .centered-content img {
-          height: 16.9444444444vw;
-          width: 15vw; }
-        #contact-us .inner-section .call-us .content .centered-content #contact-phone {
-          font-size: 6.6666666667vw; }
-    #contact-us .inner-section .the-form {
-      flex: 1 100%;
-      margin-left: 0;
-      padding: 0; }
-      #contact-us .inner-section .the-form .wpcf7 .form-elements-container {
-        display: flex;
-        flex-flow: column nowrap;
-        padding: 0;
-        margin: 0 auto; }
-        #contact-us .inner-section .the-form .wpcf7 .form-elements-container p {
-          padding: 0.2777777778vw 0; }
-        #contact-us .inner-section .the-form .wpcf7 .form-elements-container p:last-child {
-          padding-top: 0.5555555556vw; }
-        #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
-          height: 11.1111111111vw;
-          width: 86.1111111111vw;
-          font-size: 3.3333333333vw;
-          padding: 2.7777777778vw 3.8888888889vw; }
-        #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
-          height: 11.1111111111vw;
-          width: 43.8888888889vw;
-          font-size: 3.8888888889vw; }
-        #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
-          height: 36.9444444444vw; } }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container p {
+            padding: 0.2777777778vw 0; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container p:last-child {
+            padding-top: 0.5555555556vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
+            height: 11.1111111111vw;
+            width: 86.1111111111vw;
+            font-size: 3.3333333333vw;
+            padding: 2.7777777778vw 3.8888888889vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
+            height: 11.1111111111vw;
+            width: 43.8888888889vw;
+            font-size: 3.8888888889vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
+            height: 36.9444444444vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-schedule::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-interest::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-country::before {
+            bottom: 2.5vw;
+            left: 79.1666666667vw;
+            font-size: 5vw; } }
 
 /*# sourceMappingURL=style.css.map */

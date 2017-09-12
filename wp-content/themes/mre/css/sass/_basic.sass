@@ -148,9 +148,13 @@ footer
     height: 71.11111111111111vw
     background: url('assets/about-us-bg.png') center no-repeat $black
     background-size: cover
+    display: -webkit-flex
     display: flex
+    -webkit-flex-flow: column wrap
     flex-flow: column wrap
-    justify-content: space-evenly
+    -webkit-justify-content: space-around
+    justify-content: space-around
+    -webkit-align-items: center
     align-items: center
     .title
         h4
@@ -228,18 +232,15 @@ footer
 #after-about-us
     height: 25.13888888888889vw
     background: $dark-blue
-    display: flex
-    flex-flow: column nowrap
-    align-items: center
-    justify-content: space-evenly
+    text-align: center
     h4
-        margin-bottom: -5.555555555555555vw
+        padding-top: 5.208333333333333vw
     h1
         text-align: center
+        padding-bottom: 2.7777777777777777vw
     #partners-images
-        margin-top: -1.7361111111111112vw
         img
-            margin: 0 1.4583333333333333vw
+            margin: 0 1.597222222222222vw
         #hr-realty
             height: 6.25vw
             width: 6.666666666666666vw
@@ -257,7 +258,7 @@ footer
         .carousel-indicators
             bottom: 16.666666666666668vw
             li
-                margin: 1px 2.7777777777777777vw
+                margin: 0 2.5vw
                 border: none
                 height: 0.8333333333333333vw
                 width: 0.8333333333333333vw
@@ -268,11 +269,11 @@ footer
                     height: 4.166666666666667vw
                     width: 4.166666666666667vw
                 .flag-ven
-                    left: 21.52777777777778vw
+                    left: 21.59722222222222vw
                 .flag-usa
-                    left: 27.98611111111111vw
+                    left: 27.63888888888889vw
                 .flag-spain
-                    left: 34.513888888888886vw
+                    left: 33.68055555555556vw
         h4
             font-size: 1.25vw
             text-align: center
@@ -307,6 +308,7 @@ footer
     background: url('assets/contact-bg.png') bottom no-repeat $light-blue
     background-blend-mode: multiply
     background-size: contain
+    height: 48.541666666666664vw
     > *
         text-align: center
         padding: 30px 0
@@ -333,8 +335,9 @@ footer
                 display: flex
                 align-items: center
                 justify-content: center
-                height: 23.61111111111111vw
+                height: 22.63888888888889vw
                 width: 25.069444444444443vw
+                margin-top: 0.20833333333333331vw
                 border-radius: 18px
                 background-color: $lighter-blue
                 box-shadow: 0 4px 10px 0 rgba($black, 0.3)
@@ -382,6 +385,9 @@ footer
                         padding: 0.8333333333333333vw 1.3888888888888888vw
                         width: 25.76388888888889vw
                         height: 3.333333333333333vw
+                        -webkit-appearance: none
+                        -moz-appearance: none
+                        appearance: none
                     input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
                         color: $dark-white
                     input::-moz-placeholder, textarea::-moz-placeholder
@@ -408,3 +414,17 @@ footer
                     textarea
                         height: 9.375vw
                         width: 52.77777777777778vw
+                    .your-schedule::before, .your-interest::before, .your-country::before
+                        content: "\f0d7"
+                        font-family: FontAwesome
+                        font-style: normal
+                        font-weight: normal
+                        text-decoration: inherit
+                        z-index: 1
+                        position: absolute
+                        color: $dark-white
+                        bottom: 0.9027777777777778vw
+                        left: 23.61111111111111vw
+                        font-size: 1.6666666666666665vw
+                    .your-schedule:hover::before, .your-interest:hover::before, .your-country:hover::before
+                        cursor: pointer
