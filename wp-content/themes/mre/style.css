@@ -115,18 +115,33 @@ footer {
       footer .container .footer-center .footer-icons a .fa:hover, footer .container .footer-center .footer-icons a .fa:active {
         -webkit-transform: scale(1.1);
         transform: scale(1.1); }
+  footer .fa-caret-up {
+    content: "";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.4305555556vw;
+    text-decoration: inherit;
+    position: relative;
+    color: #0976d1;
+    border: solid 2px #0976d1;
+    border-radius: 50%;
+    bottom: 13.6111111111vw;
+    left: 87.6388888889vw;
+    padding: 0 8px 3px 8px;
+    cursor: pointer; }
 
 .overlay {
   height: 100%;
   width: 100%;
   position: fixed;
-  z-index: 1;
   left: 100%;
   top: 0;
   background-color: #000;
   background-color: rgba(0, 0, 0, 0.9);
   overflow-x: hidden;
-  transition: 0.5s; }
+  transition: 0.5s;
+  z-index: 99; }
   .overlay .overlay-content {
     position: relative;
     top: 25%;
@@ -136,7 +151,7 @@ footer {
   .overlay a {
     padding: 0.5555555556vw;
     text-decoration: none;
-    font-size: 2.5vw;
+    font-size: 5vw;
     color: #818181;
     display: block;
     transition: 0.3s; }
@@ -146,7 +161,7 @@ footer {
     position: absolute;
     top: 1.3888888889vw;
     right: 3.125vw;
-    font-size: 4.1666666667vw; }
+    font-size: 11.1111111111vw; }
 
 #about-us {
   height: 71.1111111111vw;
@@ -214,8 +229,11 @@ footer {
     height: 11.1111111111vw;
     width: 81.25vw;
     display: flex;
+    display: -webkit-flex;
+    -webkit-flex-flow: row nowrap;
     flex-flow: row nowrap;
-    justify-content: space-evenly;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
     align-items: center;
     background-color: rgba(247, 247, 247, 0.1);
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
@@ -258,7 +276,7 @@ footer {
     #before-contact-us #offices .carousel-indicators {
       bottom: 16.6666666667vw; }
       #before-contact-us #offices .carousel-indicators li {
-        margin: 0 2.5vw;
+        margin: 0 2.4305555556vw;
         border: none;
         height: 0.8333333333vw;
         width: 0.8333333333vw; }
@@ -266,13 +284,8 @@ footer {
         position: absolute;
         bottom: 2.0833333333vw;
         height: 4.1666666667vw;
-        width: 4.1666666667vw; }
-      #before-contact-us #offices .carousel-indicators .flag .flag-ven {
-        left: 21.5972222222vw; }
-      #before-contact-us #offices .carousel-indicators .flag .flag-usa {
-        left: 27.6388888889vw; }
-      #before-contact-us #offices .carousel-indicators .flag .flag-spain {
-        left: 33.6805555556vw; }
+        width: 4.1666666667vw;
+        margin: 0 -2.0138888889vw; }
     #before-contact-us #offices h4 {
       font-size: 1.25vw;
       text-align: center;
@@ -301,8 +314,10 @@ footer {
           margin-left: -25.6944444444vw; }
 
 #contact-us {
+  display: -webkit-flex;
   display: flex;
-  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  -webkit-align-items: center;
   align-items: center;
   background: url("assets/contact-bg.png") bottom no-repeat #0976d1;
   background-blend-mode: multiply;
@@ -322,7 +337,7 @@ footer {
         display: block;
         font-weight: bold; }
   #contact-us .inner-section {
-    padding: 30px 0;
+    padding: 0;
     flex: 1 100%;
     display: flex;
     flex-flow: row wrap;
@@ -461,6 +476,8 @@ footer {
           width: 30px;
           height: 30px;
           line-height: 30px; }
+    footer .fa-caret-up {
+      display: none; }
 
   #about-us {
     height: 130.9895833333vw; }
@@ -538,13 +555,8 @@ footer {
           width: 1.171875vw; }
         #before-contact-us #offices .carousel-indicators .flag img {
           height: 6.5104166667vw;
-          width: 6.5104166667vw; }
-        #before-contact-us #offices .carousel-indicators .flag .flag-ven {
-          left: 17.578125vw; }
-        #before-contact-us #offices .carousel-indicators .flag .flag-usa {
-          left: 26.3020833333vw; }
-        #before-contact-us #offices .carousel-indicators .flag .flag-spain {
-          left: 34.6354166667vw; }
+          width: 6.5104166667vw;
+          margin: 0 -3.2552083333vw; }
       #before-contact-us #offices h4 {
         font-size: 2.0833333333vw;
         padding-top: 21.484375vw; }
@@ -559,7 +571,7 @@ footer {
           margin-left: -4.694444vw; }
 
   #contact-us {
-    height: 137.109375vw; }
+    height: 120vw; }
     #contact-us .title h1 {
       font-size: 2.8645833333vw; }
     #contact-us .title .first {
@@ -640,6 +652,8 @@ footer {
           width: 30px;
           height: 30px;
           line-height: 30px; }
+    footer .fa-caret-up {
+      display: none; }
 
   #about-us {
     height: 347.5vw; }
@@ -725,13 +739,8 @@ footer {
           width: 2.2222222222vw; }
         #before-contact-us #offices .carousel-indicators .flag img {
           height: 11.9444444444vw;
-          width: 11.9444444444vw; }
-        #before-contact-us #offices .carousel-indicators .flag .flag-ven {
-          left: 6.3888888889vw; }
-        #before-contact-us #offices .carousel-indicators .flag .flag-usa {
-          left: 22.7777777778vw; }
-        #before-contact-us #offices .carousel-indicators .flag .flag-spain {
-          left: 38.8888888889vw; }
+          width: 11.9444444444vw;
+          margin: 0 -5.8333333333vw; }
       #before-contact-us #offices h4 {
         font-size: 3.3333333333vw;
         padding-top: 30.5555555556vw; }
@@ -751,7 +760,7 @@ footer {
             margin-left: 0; }
 
   #contact-us {
-    height: 275.2777777778vw; }
+    height: 260vw; }
     #contact-us > * {
       padding: 30px 0 0; }
     #contact-us .title h1 {
@@ -766,7 +775,8 @@ footer {
         margin-top: 0; }
         #contact-us .inner-section .call-us .content {
           height: 55.5555555556vw;
-          width: 86.1111111111vw; }
+          width: 86.1111111111vw;
+          margin: 0 auto; }
           #contact-us .inner-section .call-us .content .centered-content h2 {
             font-size: 5vw;
             margin: 0 auto; }

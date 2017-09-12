@@ -13,5 +13,9 @@ function closeNav() {
 }
 
 jQuery(document).ready(function() {
-    jQuery('#about-us  .item:first-child').addClass('active');
+    jQuery('#about-us .item:first-child').addClass('active');
+
+    jQuery('footer .fa-caret-up').on('click', function () {
+        window.scrollTo(0,0);
+    });
 });
