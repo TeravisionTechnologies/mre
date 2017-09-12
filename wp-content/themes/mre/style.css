@@ -148,7 +148,8 @@ footer {
     font-size: 4.16667vw; }
 
 #hero-container {
-  position: relative; }
+  position: relative;
+  margin: 0; }
   #hero-container .hero-box {
     position: relative;
     height: 55.55556vw;
