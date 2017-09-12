@@ -1,13 +1,12 @@
 @charset "UTF-8";
 /*                                            */
 /*  Theme Name: MRE Theme                     */
-/*  Author: mtoledo                           */
-/*  Author URI: http://msmtdev.com            */
-/*  Description: Template form NAME project.  */
+/*  Author: Teravision Technologies           */
+/*  Author URI: http://www.teravisiontech.com */
+/*  Description: Template form MRE project.   */
 /*  Version: 1.0                              */
 /*  License: Copy Right                       */
 /*                                            */
-/*  Co-Author: José Pernía                    */
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 * {
   margin: 0;
@@ -162,6 +161,46 @@ footer {
     top: 1.3888888889vw;
     right: 3.125vw;
     font-size: 11.1111111111vw; }
+
+#hero-container {
+  position: relative;
+  margin: 0; }
+  #hero-container .hero-box {
+    position: relative;
+    height: 55.5555555556vw;
+    text-align: center; }
+    #hero-container .hero-box h3 {
+      margin-top: 21.1805555556vw;
+      width: 31.9444444444vw;
+      font-family: "Montserrat";
+      font-size: 1.6666666667vw;
+      color: #ffffff; }
+    #hero-container .hero-box img {
+      margin-top: 2.0833333333vw; }
+  #hero-container .hero-box-left {
+    background-size: cover;
+    z-index: 1;
+    box-shadow: 12px 0 8px 0 rgba(0, 0, 0, 0.4); }
+  #hero-container .hero-box-right {
+    background-size: cover; }
+  #hero-container .hero-button {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2.9166666667vw;
+    width: 6.5277777778vw; }
+  #hero-container .overlay-left, #hero-container .overlay-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  #hero-container .overlay-left {
+    background: linear-gradient(to top, #0976d1, rgba(9, 118, 209, 0.59) 82%, rgba(9, 118, 209, 0.8)); }
+  #hero-container .overlay-right {
+    background: linear-gradient(to top, #00447e, rgba(0, 69, 126, 0.59) 82%, rgba(0, 69, 126, 0.8)); }
 
 #about-us {
   height: 71.1111111111vw;
@@ -441,6 +480,18 @@ footer {
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-schedule:hover::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-interest:hover::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-country:hover::before {
           cursor: pointer; }
 
+@media only screen and (min-width: 1440px) {
+  #hero-container .hero-box {
+    height: 800px; }
+    #hero-container .hero-box h3 {
+      margin-top: 305px;
+      width: 460px;
+      font-size: 24px; }
+    #hero-container .hero-box img {
+      margin-top: 30px; }
+    #hero-container .hero-box .hero-button {
+      height: 42px;
+      width: 94px; } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .visible-desktop {
     display: none !important; }
@@ -478,6 +529,20 @@ footer {
           line-height: 30px; }
     footer .fa-caret-up {
       display: none; }
+
+  #hero-container .hero-box {
+    height: 52.0833333333vw; }
+    #hero-container .hero-box h3 {
+      margin-top: 15.625vw;
+      width: 55.46875vw;
+      font-size: 3.125vw; }
+    #hero-container .hero-box img {
+      margin-top: 3.90625vw; }
+  #hero-container .hero-box-left {
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.4); }
+  #hero-container .hero-button {
+    height: 3.2552083333vw;
+    width: 7.421875vw; }
 
   #about-us {
     height: 130.9895833333vw; }
@@ -654,6 +719,22 @@ footer {
           line-height: 30px; }
     footer .fa-caret-up {
       display: none; }
+
+  #hero-container .hero-box {
+    height: 78.0555555556vw; }
+    #hero-container .hero-box h3 {
+      margin-top: 22.2222222222vw;
+      width: 86.33333vw;
+      font-size: 5.5555555556vw; }
+    #hero-container .hero-box img {
+      margin-top: 5.8333333333vw;
+      width: 15.2777777778vw;
+      height: 15.2777777778vw; }
+  #hero-container .hero-box-left {
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.4); }
+  #hero-container .hero-button {
+    height: 5vw;
+    width: 9.4444444444vw; }
 
   #about-us {
     height: 347.5vw; }
