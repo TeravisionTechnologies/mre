@@ -5,31 +5,38 @@
 
 header
     height: 10.416666666666668vw
-    .header-logo
-        img
-            height: 5.208333333333334vw
-            width: 15.104166666666668vw
-    #bs-header-navbar-nodesktop-parent
-        margin-left: auto
-        span
-            font-size: 4.166666666666667vw
+    .container
+        height: 10.416666666666668vw
+        .center-header
+            margin-top: 2.604166666666667vw
+            .header-logo
+                img
+                    height: 5.208333333333334vw
+                    width: 15.104166666666668vw
+            #bs-header-navbar-nodesktop-parent
+                span
+                    font-size: 4.166666666666667vw
 
 footer
     height: 22.916666666666668vw
-    .footer-logo
-        img
-            height: 6.25vw
-            width: 18.489583333333336vw
-    .footer-copy
-        h5
-            font-size: 12px
-    .footer-icons
-        a
-            .fa
-                font-size: 16px
-                width: 30px
-                height: 30px
-                line-height: 30px
+    .container
+        padding: 0 7.161458333333334vw
+        .footer-center
+            margin-top: 3.125vw
+            .footer-logo
+                img
+                    height: 6.25vw
+                    width: 18.489583333333336vw
+            .footer-copy
+                h5
+                    font-size: 12px
+            .footer-icons
+                a
+                    .fa
+                        font-size: 16px
+                        width: 30px
+                        height: 30px
+                        line-height: 30px
 
 #hero-container
     .hero-box
@@ -53,8 +60,39 @@ footer
             font-size: 1.8229166666666667vw
         h1
             font-size: 3.6458333333333335vw
-
-#about-sections
+    #about-sections
+        width: 68.05555555555556vw
+        .carousel-indicators
+            bottom: 0
+            li
+                height: 1.0416666666666667vw
+                width: 1.0416666666666667vw
+        .carousel-inner
+            height: 65.10416666666667vw
+            width: 65.36458333333334vw
+            margin: 0 auto
+            .item
+                .item-image
+                    width: 18.489583333333336vw
+                    float: none
+                    margin: 3.90625vw auto 3.90625vw  auto
+                    img
+                        height: 18.489583333333336vw
+                        width: 18.489583333333336vw
+                        float: none
+                .item-paragraph
+                    width: 55.72916666666667vw
+                    float: none
+                    padding: 0
+                    font-size: 1.8229166666666667vw
+                    text-align: center
+                    margin: 0 auto
+        .carousel-control
+            .glyphicon
+                font-size: 3.385416666666667vw
+                height: 4.166666666666667vw
+                width: 4.166666666666667vw
+                line-height: 1.2
     .extra-info
         height: 18.229166666666668vw
         width: 85.67708333333334vw
@@ -68,13 +106,13 @@ footer
     height: 39.0625vw
     h4
         font-size: 1.8229166666666667vw
-        margin-bottom: -8.854166666666668vw
+        padding-top: 7.8125vw
     h1
         font-size: 3.6458333333333335vw
+        padding-bottom: 5.859375vw
     #partners-images
-        margin-top: -5.208333333333334vw
         img
-            margin: 0 2.994791666666667vw
+            margin: 0 1.597222222222222vw
         #hr-realty
             height: 11.328125vw
             width: 10.677083333333334vw
@@ -84,32 +122,43 @@ footer
 
 #before-contact-us
     height: 52.083333333333336vw
-    #countries
-        .indicators
-            margin-bottom: 3.125vw
+    #offices
+        height: 100%
+        width: 100%
+        .carousel-indicators
+            bottom: 33.203125vw
+            li
+                margin: -0.78125vw 3.5vw
+                height: 1.171875vw
+                width: 1.171875vw
             .flag
                 img
                     height: 6.510416666666667vw
                     width: 6.510416666666667vw
-            .flag.active:after
-                margin-top: -8.59375vw
-                padding: 2.34375vw
-                font-size: 8.333333333333334vw
+                .flag-ven
+                    left: 17.578125vw
+                .flag-usa
+                    left: 26.302083333333336vw
+                .flag-spain
+                    left: 34.63541666666667vw
         h4
-            font-size: 16px
-    #offices
-        margin-top: -9.635416666666668vw
-        .offices-detail
-            .detail
-                width: 257px
-                height: 100px
-                text-align: center
-                margin: 0 25px
-                h5
-                    font-size: 14px
-                    line-height: 1.79
+            font-size: 2.0833333333333335vw
+            padding-top: 21.484375vw
+        .carousel-inner
+            bottom: -6.25vw
+            .item
+                .office-detail
+                    h5
+                        font-size: 14px
+                        line-height: 1.79
+                .office-detail.usa-office:first-child
+                    margin-left: 4.027778vw
+                .office-detail.usa-office:last-child
+                    margin-left: -4.694444vw
+
 
 #contact-us
+    height: 137.109375vw
     .title
         h1
             font-size: 2.8645833333333335vw
@@ -154,3 +203,7 @@ footer
                     textarea
                         height: 17.317708333333336vw
                         width: 85.67708333333334vw
+                    .your-schedule::before, .your-interest::before, .your-country::before
+                        bottom: 2.0833333333333335vw
+                        left: 38.802083333333336vw
+                        font-size: 2.34375vw

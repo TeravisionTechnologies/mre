@@ -6,32 +6,37 @@
 header
     height: 16.666666666666668vw
     .container
-        width: 90%
-        .header-logo
-            img
-                height: 6.666666666666666vw
-                width: 19.166666666666668vw
-        #bs-header-navbar-nodesktop-parent
-            margin-left: auto
-            span
-                font-size: 5.555555555555555vw
+        height: 16.666666666666668vw
+        .center-header
+            margin-top: 5vw
+            .header-logo
+                img
+                    height: 6.666666666666666vw
+                    width: 19.166666666666668vw
+            #bs-header-navbar-nodesktop-parent
+                span
+                    font-size: 5.555555555555555vw
 
 footer
     height: 48.888888888888886vw
-    .footer-logo
-        img
-            height: 9.166666666666666vw
-            width: 26.944444444444443vw
-    .footer-copy
-        h5
-            font-size: 10px
-    .footer-icons
-        a
-            .fa
-                font-size: 14px
-                width: 30px
-                height: 30px
-                line-height: 30px
+    .container
+        padding: 0 6.944444444444445vw
+        .footer-center
+            margin-top: 11.11111111111111vw
+            .footer-logo
+                img
+                    height: 9.166666666666666vw
+                    width: 26.944444444444443vw
+            .footer-copy
+                h5
+                    font-size: 10px
+            .footer-icons
+                a
+                    .fa
+                        font-size: 14px
+                        width: 30px
+                        height: 30px
+                        line-height: 30px
 
 #hero-container
     .hero-box
@@ -57,7 +62,43 @@ footer
             font-size: 3.333333333333333vw
         h1
             font-size: 6.111111111111111vw
-#about-sections
+    #about-sections
+        width: 83.33333333333333vw
+        .carousel-indicators
+            bottom: 98.61111111111111vw
+            li
+                height: 2.2222222222222223vw
+                width: 2.2222222222222223vw
+        .carousel-inner
+            height: 144.44444444444443vw
+            width: 82vw
+            margin: 0 auto
+            .item
+                .item-image
+                    width: 31.666666666666664vw
+                    float: none
+                    margin: 0 auto 18.88888888888889vw auto
+                    img
+                        height: 31.666666666666664vw
+                        width: 31.666666666666664vw
+                        float: none
+                .item-paragraph
+                    width: 71.66666666666667vw
+                    float: none
+                    padding: 0
+                    font-size: 3.333333333333333vw
+                    text-align: center
+                    margin: 0 auto
+        .carousel-control
+            .glyphicon
+                font-size: 5.555555555555555vw
+                height: 7.222222222222222vw
+                width: 7.222222222222222vw
+                line-height: 1.2
+        .carousel-control.left
+            margin-left: -2.7777777777777777vw
+        .carousel-control.right
+            margin-right: -2.7777777777777777vw
     .extra-info
         height: 100vw
         width: 86.11111111111111vw
@@ -72,17 +113,16 @@ footer
                 font-size: 6.666666666666666vw
 
 #after-about-us
-    height: 70.27777777777777vw
+    height: 70.3vw
     h4
         font-size: 3.333333333333333vw
-        margin-bottom: -11.11111111111111vw
+        padding-top: 7.8125vw
     h1
         font-size: 6.111111111111111vw
-        width: 60%
+        padding-bottom: 5.859375vw
     #partners-images
-        margin-top: -5.555555555555555vw
         img
-            margin: 0 4.444444444444445vw
+            margin: 0 1.597222222222222vw
         #hr-realty
             height: 19.166666666666668vw
             width: 18.055555555555554vw
@@ -90,37 +130,49 @@ footer
             height: 9.722222222222221vw
             width: 28.88888888888889vw
 
+
 #before-contact-us
     height: 97.22222222222221vw
-    background: url('assets/before-contact-bg-mob.jpg') center no-repeat $black
-    background-size: cover
-    #countries
-        .indicators
-            margin-bottom: 8.88888888888889vw
+    #offices
+        height: 100%
+        width: 100%
+        .carousel-indicators
+            bottom: 69.44444444444444vw
+            li
+                margin: -2.7777777777777777vw 6.944444444444445vw
+                height: 2.2222222222222223vw
+                width: 2.2222222222222223vw
             .flag
                 img
                     height: 11.944444444444445vw
                     width: 11.944444444444445vw
-            .flag.active:after
-                margin-top: -17.22222222222222vw
-                padding: 4.166666666666667vw
-                font-size: 17.22222222222222vw
+                .flag-ven
+                    left: 6.388888888888888vw
+                .flag-usa
+                    left: 22.77777777777778vw
+                .flag-spain
+                    left: 38.888888888888886vw
         h4
             font-size: 3.333333333333333vw
-    #offices
-        margin-top: -6.944444444444445vw
-        .offices-detail
-            flex-flow: column nowrap
-            .detail
-                width: 71.38888888888889vw
-                height: 22.22222222222222vw
-                text-align: center
-                margin: 10px 0
-                h5
-                    font-size: 3.333333333333333vw
-                    line-height: 1.79
+            padding-top: 30.555555555555554vw
+        .carousel-inner
+            bottom: -5.555555555555555vw
+            .item
+                height: 47.22222222222222vw
+                .office-detail
+                    h5
+                        font-size: 3.333333333333333vw
+                        line-height: 1.79
+                .office-detail.usa-office
+                    width: 100%
+                    display: block
+                .office-detail.usa-office:first-child
+                    margin-left: 0
+                .office-detail.usa-office:last-child
+                    margin-left: 0
 
 #contact-us
+    height: 275.27777777777777vw
     > *
         padding: 30px 0 0
     .title
@@ -129,7 +181,7 @@ footer
             .first
                 display: block
     .inner-section
-        margin: 0 6.944444444444445vw
+        margin: 0 4.166666666666667vw
         .call-us
             flex: 1 100%
             padding-bottom: 30px
@@ -171,3 +223,7 @@ footer
                         font-size: 3.888888888888889vw
                     textarea
                         height: 36.94444444444444vw
+                    .your-schedule::before, .your-interest::before, .your-country::before
+                        bottom: 2.5vw
+                        left: 79.16666666666667vw
+                        font-size: 5vw
