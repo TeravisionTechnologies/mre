@@ -729,7 +729,9 @@ footer {
             font-size: 1.82292vw;
             padding: 1.82292vw 2.60417vw; }
           #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
-            font-size: 2.08333vw; }
+            font-size: 2.08333vw;
+            width: 26.04167vw;
+            height: 6.51042vw; }
           #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
             height: 17.31771vw;
             width: 85.67708vw; }
