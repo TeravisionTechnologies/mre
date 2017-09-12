@@ -46,72 +46,70 @@ input,button,select,textarea
 
 header
     height: 5.555555555555555vw
-    display: flex
-    background-color: $white
-    .header-logo
-        img
-            height: 3.819444444444444vw
-            width: 10.972222222222221vw
     .container
-        display: flex
-        align-items: center
-    #bs-header-navbar
-        margin-left: auto
-        ul
-            li
-                a
-                    color: $grey
-    #bs-header-navbar li + li:after
-        content: '.'
-        top: 8px
-        position: absolute
-        font-size: 20px
-    #bs-header-navbar li:last-child
-        margin-left: 2.0833333333333335vw
-    #bs-header-navbar li:last-child:after
-        content: ''
+        background-color: $white
+        height: 5.555555555555555vw
+        position: fixed
+        z-index: 99
+        .center-header
+            margin-top: 0.8333333333333333vw
+            .header-logo
+                img
+                    height: 3.819444444444444vw
+                    width: 10.972222222222221vw
+            #bs-header-navbar
+                ul
+                    li
+                        a
+                            color: $grey
+            #bs-header-navbar li + li:after
+                content: '.'
+                top: 8px
+                position: absolute
+                font-size: 20px
+            #bs-header-navbar li:last-child:after
+                content: ''
 
 footer
     height: 18.958333333333332vw
-    display: flex
-    flex-flow: column wrap
-    align-items: center
-    justify-content: center
     div
         margin: 0.6944444444444444vw
-    .footer-logo
-        img
-            height: 5.763888888888888vw
-            width: 16.666666666666668vw
-    .footer-copy
-        h5
-            color: $grey
-            opacity: 0.5
-            font-size: 0.9722222222222222vw
-            a
-                display: block
-                text-align: center
-                color: inherit
-                text-decoration: underline
-    .footer-icons
-        a
-            text-decoration: none
-            .fa
-                font-size: 1.6666666666666665vw
-                width: 2.7777777777777777vw
-                height: 2.7777777777777777vw
-                line-height: 2.7777777777777777vw
-                text-align: center
-                background-color: $white7
-                color: $light-blue
-                -webkit-transition: all 0.3s ease-in-out
-                transition: all 0.3s ease-in-out
-                box-shadow: 0 2px 4px 0 rgba($black, 0.3)
-                border-radius: 50%
-                margin: 0 0.5555555555555556vw
-            .fa:hover, .fa:active
-                -webkit-transform: scale(1.1)
-                transform: scale(1.1)
+        text-align: center
+    .container
+        .footer-center
+            margin-top: 3.125vw
+            .footer-logo
+                img
+                    height: 5.763888888888888vw
+                    width: 16.666666666666668vw
+            .footer-copy
+                h5
+                    color: $grey
+                    opacity: 0.5
+                    font-size: 0.9722222222222222vw
+                    a
+                        display: block
+                        color: inherit
+                        text-decoration: underline
+            .footer-icons
+                a
+                    text-decoration: none
+                    .fa
+                        font-size: 1.6666666666666665vw
+                        width: 2.7777777777777777vw
+                        height: 2.7777777777777777vw
+                        line-height: 2.7777777777777777vw
+                        text-align: center
+                        background-color: $white7
+                        color: $light-blue
+                        -webkit-transition: all 0.3s ease-in-out
+                        transition: all 0.3s ease-in-out
+                        box-shadow: 0 2px 4px 0 rgba($black, 0.3)
+                        border-radius: 50%
+                        margin: 0 0.5555555555555556vw
+                    .fa:hover, .fa:active
+                        -webkit-transform: scale(1.1)
+                        transform: scale(1.1)
 
 .overlay
     height: 100%

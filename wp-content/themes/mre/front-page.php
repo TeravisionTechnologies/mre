@@ -7,7 +7,8 @@
  */
 get_header();
 ?>
-<section>
+
+<section id="hero-image">
 
 </section>
 
