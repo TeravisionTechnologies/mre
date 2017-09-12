@@ -11,3 +11,7 @@ function openNav() {
 function closeNav() {
     document.getElementById('overlay-nav').style.left = '100%';
 }
+
+jQuery(document).ready(function() {
+    jQuery('#about-us  .item:first-child').addClass('active');
+});

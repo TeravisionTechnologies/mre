@@ -7,7 +7,7 @@
 /*  Version: 1.0                              */
 /*  License: Copy Right                       */
 /*                                            */
-/*  Co-Author: Jos├⌐ Pern├¡a                    */
+/*  Co-Author: José Pernía                    */
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 * {
   margin: 0;
@@ -650,12 +650,12 @@ footer {
     #about-us #about-sections {
       width: 83.3333333333vw; }
       #about-us #about-sections .carousel-indicators {
-        bottom: -6.9444444444vw; }
+        bottom: 98.6111111111vw; }
         #about-us #about-sections .carousel-indicators li {
           height: 2.2222222222vw;
           width: 2.2222222222vw; }
       #about-us #about-sections .carousel-inner {
-        height: 100%;
+        height: 144.4444444444vw;
         width: 82vw;
         margin: 0 auto; }
         #about-us #about-sections .carousel-inner .item .item-image {
@@ -678,6 +678,10 @@ footer {
         height: 7.2222222222vw;
         width: 7.2222222222vw;
         line-height: 1.2; }
+      #about-us #about-sections .carousel-control.left {
+        margin-left: -2.7777777778vw; }
+      #about-us #about-sections .carousel-control.right {
+        margin-right: -2.7777777778vw; }
     #about-us .extra-info {
       height: 100vw;
       width: 86.1111111111vw;
