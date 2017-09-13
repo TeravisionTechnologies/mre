@@ -131,17 +131,27 @@ footer
   #offices
     height: 100%
     width: 100%
-    .carousel-indicators
-      bottom: 69.44444444444444vw
+    .flags.carousel-indicators
+      bottom: 69.44vw
       li
-        margin: -2.7777777777777777vw 6.944444444444445vw
-        height: 2.2222222222222223vw
-        width: 2.2222222222222223vw
-      .flag
-        img
-          height: 11.944444444444445vw
-          width: 11.944444444444445vw
-          margin: 0 -5.833333333333333vw
+        border: none
+        height: 10px
+        width: 10px
+        margin: 0
+      li.active
+        height: 10px
+        width: 10px
+        margin: 0
+      .flag-usa
+        margin: 0 13.88vw
+      .flag-usa.active
+        margin: 0 13.88vw
+      img
+        position: absolute
+        bottom: 5vw
+        height: 11.94vw
+        width: 11.94vw
+        margin: 0 -5.83vw
     h4
       font-size: 3.333333333333333vw
       padding-top: 30.555555555555554vw

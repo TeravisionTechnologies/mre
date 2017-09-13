@@ -291,7 +291,7 @@ footer {
     #about-us #about-sections .carousel-indicators li.active {
       background-color: #ffffff; }
     #about-us #about-sections .carousel-inner {
-      height: 34.7222222222vw;
+      height: 27vw;
       width: 62vw;
       margin: 0 auto; }
       #about-us #about-sections .carousel-inner .item .item-image {
@@ -361,7 +361,7 @@ footer {
     width: 10.0694444444vw; }
 
 #before-contact-us {
-  height: 27.7777777778vw;
+  height: 27.77vw;
   background: url("assets/before-contact-bg.jpg") center no-repeat #000;
   background-size: cover; }
   #before-contact-us #offices {
@@ -369,19 +369,35 @@ footer {
     width: 100%; }
     #before-contact-us #offices .carousel-control {
       display: none; }
-    #before-contact-us #offices .carousel-indicators {
-      bottom: 16.6666666667vw; }
-      #before-contact-us #offices .carousel-indicators li {
-        margin: 0 2.4305555556vw;
+    #before-contact-us #offices .flags.carousel-indicators {
+      bottom: 17.4vw;
+      position: absolute;
+      left: 50%;
+      z-index: 15;
+      width: 60%;
+      padding-left: 0;
+      margin-left: -30%;
+      text-align: center;
+      list-style: none; }
+      #before-contact-us #offices .flags.carousel-indicators li {
         border: none;
-        height: 0.8333333333vw;
-        width: 0.8333333333vw; }
-      #before-contact-us #offices .carousel-indicators .flag img {
+        height: 12px;
+        width: 12px;
+        margin: 0; }
+      #before-contact-us #offices .flags.carousel-indicators li.active {
+        height: 12px;
+        width: 12px;
+        margin: 0; }
+      #before-contact-us #offices .flags.carousel-indicators .flag-usa {
+        margin: 0 5vw; }
+      #before-contact-us #offices .flags.carousel-indicators .flag-usa.active {
+        margin: 0 5vw; }
+      #before-contact-us #offices .flags.carousel-indicators img {
         position: absolute;
-        bottom: 2.0833333333vw;
-        height: 4.1666666667vw;
-        width: 4.1666666667vw;
-        margin: 0 -2.0138888889vw; }
+        bottom: 2vw;
+        height: 4.16vw;
+        width: 4.16vw;
+        margin: 0 -2vw; }
     #before-contact-us #offices h4 {
       font-size: 1.25vw;
       text-align: center;
@@ -603,7 +619,7 @@ footer {
           height: 1.0416666667vw;
           width: 1.0416666667vw; }
       #about-us #about-sections .carousel-inner {
-        height: 65.1041666667vw;
+        height: 62vw;
         width: 65.3645833333vw;
         margin: 0 auto; }
         #about-us #about-sections .carousel-inner .item .item-image {
@@ -657,16 +673,27 @@ footer {
     #before-contact-us #offices {
       height: 100%;
       width: 100%; }
-      #before-contact-us #offices .carousel-indicators {
-        bottom: 33.203125vw; }
-        #before-contact-us #offices .carousel-indicators li {
-          margin: -0.78125vw 3.5vw;
-          height: 1.171875vw;
-          width: 1.171875vw; }
-        #before-contact-us #offices .carousel-indicators .flag img {
-          height: 6.5104166667vw;
-          width: 6.5104166667vw;
-          margin: 0 -3.2552083333vw; }
+      #before-contact-us #offices .flags.carousel-indicators {
+        bottom: 33.2vw; }
+        #before-contact-us #offices .flags.carousel-indicators li {
+          border: none;
+          height: 12px;
+          width: 12px;
+          margin: 0; }
+        #before-contact-us #offices .flags.carousel-indicators li.active {
+          height: 12px;
+          width: 12px;
+          margin: 0; }
+        #before-contact-us #offices .flags.carousel-indicators .flag-usa {
+          margin: 0 7.81vw; }
+        #before-contact-us #offices .flags.carousel-indicators .flag-usa.active {
+          margin: 0 7.81vw; }
+        #before-contact-us #offices .flags.carousel-indicators img {
+          position: absolute;
+          bottom: 3vw;
+          height: 6.51vw;
+          width: 6.51vw;
+          margin: 0 -3.15vw; }
       #before-contact-us #offices h4 {
         font-size: 2.0833333333vw;
         padding-top: 21.484375vw; }
@@ -859,16 +886,27 @@ footer {
     #before-contact-us #offices {
       height: 100%;
       width: 100%; }
-      #before-contact-us #offices .carousel-indicators {
-        bottom: 69.4444444444vw; }
-        #before-contact-us #offices .carousel-indicators li {
-          margin: -2.7777777778vw 6.9444444444vw;
-          height: 2.2222222222vw;
-          width: 2.2222222222vw; }
-        #before-contact-us #offices .carousel-indicators .flag img {
-          height: 11.9444444444vw;
-          width: 11.9444444444vw;
-          margin: 0 -5.8333333333vw; }
+      #before-contact-us #offices .flags.carousel-indicators {
+        bottom: 69.44vw; }
+        #before-contact-us #offices .flags.carousel-indicators li {
+          border: none;
+          height: 10px;
+          width: 10px;
+          margin: 0; }
+        #before-contact-us #offices .flags.carousel-indicators li.active {
+          height: 10px;
+          width: 10px;
+          margin: 0; }
+        #before-contact-us #offices .flags.carousel-indicators .flag-usa {
+          margin: 0 13.88vw; }
+        #before-contact-us #offices .flags.carousel-indicators .flag-usa.active {
+          margin: 0 13.88vw; }
+        #before-contact-us #offices .flags.carousel-indicators img {
+          position: absolute;
+          bottom: 5vw;
+          height: 11.94vw;
+          width: 11.94vw;
+          margin: 0 -5.83vw; }
       #before-contact-us #offices h4 {
         font-size: 3.3333333333vw;
         padding-top: 30.5555555556vw; }

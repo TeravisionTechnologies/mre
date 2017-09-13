@@ -297,7 +297,7 @@ footer
       height: 3.333333333333333vw
       width: 10.069444444444445vw
 #before-contact-us
-  height: 27.77777777777778vw
+  height: 27.77vw
   background: url('assets/before-contact-bg.jpg') center no-repeat $black
   background-size: cover
   #offices
@@ -305,20 +305,35 @@ footer
     width: 100%
     .carousel-control
       display: none
-    .carousel-indicators
-      bottom: 16.666666666666668vw
+    .flags.carousel-indicators
+      bottom: 17.4vw
+      position: absolute
+      left: 50%
+      z-index: 15
+      width: 60%
+      padding-left: 0
+      margin-left: -30%
+      text-align: center
+      list-style: none
       li
-        margin: 0 2.4305555555555554vw
         border: none
-        height: 0.8333333333333333vw
-        width: 0.8333333333333333vw
-      .flag
-        img
-          position: absolute
-          bottom: 2.0833333333333335vw
-          height: 4.166666666666667vw
-          width: 4.166666666666667vw
-          margin: 0 -2.013888888888889vw
+        height: 12px
+        width: 12px
+        margin: 0
+      li.active
+        height: 12px
+        width: 12px
+        margin: 0
+      .flag-usa
+        margin: 0 5vw
+      .flag-usa.active
+        margin: 0 5vw
+      img
+        position: absolute
+        bottom: 2vw
+        height: 4.16vw
+        width: 4.16vw
+        margin: 0 -2vw
     h4
       font-size: 1.25vw
       text-align: center

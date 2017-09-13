@@ -121,18 +121,21 @@ $theMeta = get_post_meta($headerPost[0]->ID);
 
 <section id="before-contact-us">
     <div id="offices" class="carousel slide" data-ride="carousel" data-interval="false">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#offices" data-slide-to="0" class="flag">
-                <img class="flag-ven" src="<?php echo get_template_directory_uri(); ?>/assets/ven_flag.svg" />
+
+        <!-- Flags Indicators -->
+        <ol class="flags carousel-indicators">
+            <li data-target="#offices" data-slide-to="0" class="flag-ven">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/ven_flag.svg" />
             </li>
-            <li data-target="#offices" data-slide-to="1" class="flag flag-usa active">
-                <img class="flag-usa" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
+            <li data-target="#offices" data-slide-to="1" class="flag-usa active">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
             </li>
-            <li data-target="#offices" data-slide-to="2" class="flag flag-spain">
-                <img class="flag-spain" src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
+            <li data-target="#offices" data-slide-to="2" class="flag-spain">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
             </li>
         </ol>
+
+
         <h4>Puedes encontrar Nuestras Oficinas en:</h4>
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
