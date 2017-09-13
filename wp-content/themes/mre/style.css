@@ -805,6 +805,8 @@ footer {
       margin-top: 22.22222vw;
       width: 86.33333vw;
       font-size: 5.55556vw; }
+      #hero-container .hero-box h3 strong {
+        font-weight: 900; }
     #hero-container .hero-box img {
       margin-top: 5.83333vw;
       width: 15.27778vw;
