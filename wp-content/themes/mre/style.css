@@ -489,6 +489,7 @@ footer {
           height: 4.4444444444vw;
           width: 5vw; }
         #contact-us .inner-section .call-us .content .centered-content #contact-phone {
+          font-family: Montserrat-Black;
           font-size: 2.5vw;
           margin-top: -15px; }
     #contact-us .inner-section .the-form {
