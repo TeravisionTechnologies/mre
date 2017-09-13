@@ -6,10 +6,30 @@
  * Time: 09:10 AM
  */
 get_header();
+
+$headerPost = get_posts(
+  array(
+    'post_type' => 'header_footer',
+    'numberposts' => 1
+  )
+);
+$theMeta = get_post_meta($headerPost[0]->ID);
 ?>
 
-<section id="hero-image">
-
+<section id="hero-container" class="row">
+  <div class="col-xs-12 col-md-6 hero-box hero-box-left" style="background-image: url('<?php echo ($theMeta['_hf_hero_image_left'][0]) ?>');">
+      <div class="overlay-left">
+          <h3 class="center-block"><?php echo $theMeta['_hf_text_hero_left'][0] ?></h3>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-icon-left.svg">
+      </div>
+  </div>
+  <div class="col-xs-12 col-md-6 hero-box hero-box-right" style="background-image: url('<?php echo ($theMeta['_hf_hero_image_right'][0]) ?>');">
+      <div class="overlay-right">
+          <h3 class="center-block"><?php echo $theMeta['_hf_text_hero_right'][0] ?></h3>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-icon-right.svg">
+      </div>
+  </div>
+  <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-arrow.svg" class="hero-button">
 </section>
 
 <section id="about-us">
@@ -51,7 +71,7 @@ get_header();
 
                         ?><div class="item-paragraph"><?php
                         if ( isset( $entry['_about_desc'] ) ) {
-	                        ?><p><?php echo wpautop( $entry['_about_desc'] ); ?></p><?php
+	                        ?><p><?php echo esc_html( $entry['_about_desc'] ); ?></p><?php
                         }
                         ?></div><?php
 
@@ -157,6 +177,15 @@ get_header();
                 </div>
             </div>
         </div>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#offices" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#offices" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 </section>
 

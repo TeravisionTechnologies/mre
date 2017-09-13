@@ -1,0 +1,807 @@
+@charset "UTF-8";
+/*                                            */
+/*  Theme Name: MRE Theme                     */
+/*  Author: mtoledo                           */
+/*  Author URI: http://msmtdev.com            */
+/*  Description: Template form NAME project.  */
+/*  Version: 1.0                              */
+/*  License: Copy Right                       */
+/*                                            */
+/*  Co-Author: José Pernía                    */
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none; }
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9722222222vw;
+  color: #656d70;
+  line-height: 1.25;
+  letter-spacing: -0.1px;
+  font-weight: normal;
+  background: #ffffff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  -webkit-font-smoothing: antialiased; }
+
+a {
+  text-decoration: none;
+  cursor: pointer; }
+
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  color: #ffffff;
+  background: none;
+  line-height: 1.25;
+  letter-spacing: -0.1px; }
+
+p {
+  position: relative;
+  line-height: 1.25;
+  letter-spacing: -0.1px; }
+
+input, button, select, textarea {
+  font-family: "Montserrat", sans-serif; }
+
+.visible-desktop {
+  display: block !important; }
+
+.visible-mobile {
+  display: none !important; }
+
+header {
+  height: 5.5555555556vw; }
+  header .container {
+    background-color: #ffffff;
+    height: 5.5555555556vw;
+    position: fixed;
+    padding: 0 9.375vw;
+    z-index: 99; }
+    header .container .center-header {
+      margin-top: 0.8333333333vw; }
+      header .container .center-header .header-logo img {
+        height: 3.8194444444vw;
+        width: 10.9722222222vw; }
+      header .container .center-header #bs-header-navbar ul li a {
+        color: #4a4a4a; }
+      header .container .center-header #bs-header-navbar li + li:after {
+        content: ".";
+        top: 8px;
+        position: absolute;
+        font-size: 20px; }
+      header .container .center-header #bs-header-navbar li:last-child:after {
+        content: ""; }
+
+footer {
+  height: 18.9583333333vw; }
+  footer div {
+    margin: 0.6944444444vw;
+    text-align: center; }
+  footer .container .footer-center {
+    margin-top: 3.125vw; }
+    footer .container .footer-center .footer-logo img {
+      height: 5.7638888889vw;
+      width: 16.6666666667vw; }
+    footer .container .footer-center .footer-copy h5 {
+      color: #4a4a4a;
+      opacity: 0.5;
+      font-size: 0.9722222222vw; }
+      footer .container .footer-center .footer-copy h5 a {
+        display: block;
+        color: inherit;
+        text-decoration: underline; }
+    footer .container .footer-center .footer-icons a {
+      text-decoration: none; }
+      footer .container .footer-center .footer-icons a .fa {
+        font-size: 1.6666666667vw;
+        width: 2.7777777778vw;
+        height: 2.7777777778vw;
+        line-height: 2.7777777778vw;
+        text-align: center;
+        background-color: #f7f7f7;
+        color: #0976d1;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+        border-radius: 50%;
+        margin: 0 0.5555555556vw; }
+      footer .container .footer-center .footer-icons a .fa:hover, footer .container .footer-center .footer-icons a .fa:active {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1); }
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 100%;
+  top: 0;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s; }
+  .overlay .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 2.0833333333vw; }
+  .overlay a {
+    padding: 0.5555555556vw;
+    text-decoration: none;
+    font-size: 2.5vw;
+    color: #818181;
+    display: block;
+    transition: 0.3s; }
+  .overlay a:hover, .overlay a:focus {
+    color: #333; }
+  .overlay .closebtn {
+    position: absolute;
+    top: 1.3888888889vw;
+    right: 3.125vw;
+    font-size: 4.1666666667vw; }
+
+#about-us {
+  height: 71.1111111111vw;
+  background: url("assets/about-us-bg.png") center no-repeat #000;
+  background-size: cover;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  align-items: center; }
+  #about-us .title h4 {
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center; }
+  #about-us .title h1 {
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.11;
+    font-weight: bold; }
+    #about-us .title h1 span {
+      color: #1f9aff;
+      display: block; }
+  #about-us #about-sections {
+    width: 68.0555555556vw; }
+    #about-us #about-sections .carousel-indicators li {
+      height: 0.6944444444vw;
+      width: 0.6944444444vw;
+      background-color: rgba(255, 255, 255, 0.4);
+      border: none;
+      margin: 0 1px; }
+    #about-us #about-sections .carousel-indicators li.active {
+      background-color: #ffffff; }
+    #about-us #about-sections .carousel-inner {
+      height: 34.7222222222vw;
+      width: 62vw;
+      margin: 0 auto; }
+      #about-us #about-sections .carousel-inner .item .item-image {
+        width: 40%;
+        float: left; }
+        #about-us #about-sections .carousel-inner .item .item-image img {
+          float: right;
+          height: 18.0555555556vw;
+          width: 18.0555555556vw; }
+      #about-us #about-sections .carousel-inner .item .item-paragraph {
+        width: 50%;
+        float: left;
+        padding-left: 5%;
+        color: #ffffff;
+        font-size: 1.1111111111vw; }
+    #about-us #about-sections .carousel-control {
+      width: 0;
+      opacity: 1; }
+      #about-us #about-sections .carousel-control .glyphicon {
+        background-color: #8f8f8f;
+        color: transparent;
+        border-radius: 50%;
+        text-shadow: 0 0 0 rgba(0, 0, 0, 0.7);
+        font-size: 2.5vw;
+        height: 3.125vw;
+        width: 3.125vw;
+        line-height: 1.2; }
+  #about-us .extra-info {
+    height: 11.1111111111vw;
+    width: 81.25vw;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(247, 247, 247, 0.1);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 18px; }
+    #about-us .extra-info h2 {
+      text-align: center;
+      font-size: 3.4722222222vw;
+      font-weight: bold;
+      line-height: 1.33;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); }
+      #about-us .extra-info h2 span {
+        display: block;
+        font-size: 2.0833333333vw; }
+
+#after-about-us {
+  height: 25.1388888889vw;
+  background: #00447e;
+  text-align: center; }
+  #after-about-us h4 {
+    padding-top: 5.2083333333vw; }
+  #after-about-us h1 {
+    text-align: center;
+    padding-bottom: 2.7777777778vw; }
+  #after-about-us #partners-images img {
+    margin: 0 1.5972222222vw; }
+  #after-about-us #partners-images #hr-realty {
+    height: 6.25vw;
+    width: 6.6666666667vw; }
+  #after-about-us #partners-images #ala-19 {
+    height: 3.3333333333vw;
+    width: 10.0694444444vw; }
+
+#before-contact-us {
+  height: 27.7777777778vw;
+  background: url("assets/before-contact-bg.jpg") center no-repeat #000;
+  background-size: cover; }
+  #before-contact-us #offices {
+    height: 100%;
+    width: 100%; }
+    #before-contact-us #offices .carousel-indicators {
+      bottom: 16.6666666667vw; }
+      #before-contact-us #offices .carousel-indicators li {
+        margin: 0 2.5vw;
+        border: none;
+        height: 0.8333333333vw;
+        width: 0.8333333333vw; }
+      #before-contact-us #offices .carousel-indicators .flag img {
+        position: absolute;
+        bottom: 2.0833333333vw;
+        height: 4.1666666667vw;
+        width: 4.1666666667vw; }
+      #before-contact-us #offices .carousel-indicators .flag .flag-ven {
+        left: 21.5972222222vw; }
+      #before-contact-us #offices .carousel-indicators .flag .flag-usa {
+        left: 27.6388888889vw; }
+      #before-contact-us #offices .carousel-indicators .flag .flag-spain {
+        left: 33.6805555556vw; }
+    #before-contact-us #offices h4 {
+      font-size: 1.25vw;
+      text-align: center;
+      padding-top: 11.4583333333vw; }
+    #before-contact-us #offices .carousel-inner {
+      width: 100%;
+      bottom: -2.0833333333vw; }
+      #before-contact-us #offices .carousel-inner .item {
+        width: 100%;
+        margin: 0 auto; }
+        #before-contact-us #offices .carousel-inner .item .office-detail {
+          text-align: center; }
+          #before-contact-us #offices .carousel-inner .item .office-detail h5 {
+            font-size: 1.1111111111vw;
+            line-height: 1.56;
+            letter-spacing: -0.1px; }
+          #before-contact-us #offices .carousel-inner .item .office-detail span {
+            font-weight: bold;
+            display: block; }
+        #before-contact-us #offices .carousel-inner .item .office-detail.usa-office {
+          width: 49%;
+          display: inline-block; }
+        #before-contact-us #offices .carousel-inner .item .office-detail.usa-office:first-child {
+          margin-left: 14.0277777778vw; }
+        #before-contact-us #offices .carousel-inner .item .office-detail.usa-office:last-child {
+          margin-left: -25.6944444444vw; }
+
+#contact-us {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  background: url("assets/contact-bg.png") bottom no-repeat #0976d1;
+  background-blend-mode: multiply;
+  background-size: contain;
+  height: 48.5416666667vw; }
+  #contact-us > * {
+    text-align: center;
+    padding: 30px 0; }
+  #contact-us .title {
+    flex: 1 100%; }
+    #contact-us .title h1 {
+      font-size: 2.5vw;
+      text-align: center; }
+      #contact-us .title h1 .first {
+        display: inline; }
+      #contact-us .title h1 .last {
+        display: block;
+        font-weight: bold; }
+  #contact-us .inner-section {
+    padding: 30px 0;
+    flex: 1 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin: 0 8.8194444444vw; }
+    #contact-us .inner-section .call-us {
+      flex: 1 25.069%; }
+      #contact-us .inner-section .call-us .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 22.6388888889vw;
+        width: 25.0694444444vw;
+        margin-top: 0.2083333333vw;
+        border-radius: 18px;
+        background-color: #2099ff;
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3); }
+        #contact-us .inner-section .call-us .content .centered-content * {
+          padding: 10px 0; }
+        #contact-us .inner-section .call-us .content .centered-content h2 {
+          font-size: 1.6666666667vw;
+          color: #00447e;
+          letter-spacing: -1px;
+          line-height: 0.8; }
+          #contact-us .inner-section .call-us .content .centered-content h2 span {
+            display: block; }
+        #contact-us .inner-section .call-us .content .centered-content .bold-me {
+          font-weight: 600; }
+        #contact-us .inner-section .call-us .content .centered-content img {
+          height: 4.4444444444vw;
+          width: 5vw; }
+        #contact-us .inner-section .call-us .content .centered-content #contact-phone {
+          font-size: 2.5vw;
+          margin-top: -15px; }
+    #contact-us .inner-section .the-form {
+      flex: 1 53.263%; }
+      #contact-us .inner-section .the-form .wpcf7 .form-elements-container {
+        display: flex;
+        flex-flow: row wrap; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container p {
+          flex: 1 50%;
+          padding: 0.2083333333vw 0.3472222222vw; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container p:nth-last-of-type(-n+2) {
+          flex: 1 100%; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container p:last-child {
+          padding-top: 0.6944444444vw; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
+          box-sizing: border-box;
+          border-radius: 6px;
+          background-color: #00447e;
+          border: solid 1px rgba(207, 207, 207, 0.5);
+          opacity: 0.9;
+          font-size: 1.1111111111vw;
+          font-weight: normal;
+          line-height: 0.94;
+          color: #cfcfcf;
+          padding: 0.8333333333vw 1.3888888889vw;
+          width: 25.7638888889vw;
+          height: 3.3333333333vw;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container input::-webkit-input-placeholder, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea::-webkit-input-placeholder {
+          color: #cfcfcf; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container input::-moz-placeholder, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea::-moz-placeholder {
+          color: #cfcfcf; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:-ms-input-placeholder, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea:-ms-input-placeholder {
+          color: #cfcfcf; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:-moz-placeholder, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea:-moz-placeholder {
+          color: #cfcfcf; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
+          color: #ffffff;
+          box-sizing: border-box;
+          border-radius: 6px;
+          background-color: transparent;
+          border: solid 2px #ffffff;
+          opacity: 0.9;
+          font-size: 1.25vw;
+          font-weight: normal;
+          line-height: 0.94;
+          padding: 5px;
+          width: 15vw;
+          height: 3.4722222222vw; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container select:hover {
+          cursor: pointer; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
+          height: 9.375vw;
+          width: 52.7777777778vw; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-schedule::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-interest::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-country::before {
+          content: "";
+          font-family: FontAwesome;
+          font-style: normal;
+          font-weight: normal;
+          text-decoration: inherit;
+          z-index: 1;
+          position: absolute;
+          color: #cfcfcf;
+          bottom: 0.9027777778vw;
+          left: 23.6111111111vw;
+          font-size: 1.6666666667vw; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-schedule:hover::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-interest:hover::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-country:hover::before {
+          cursor: pointer; }
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .visible-desktop {
+    display: none !important; }
+
+  .visible-mobile {
+    display: block !important; }
+
+  header {
+    height: 10.4166666667vw; }
+    header .container {
+      height: 10.4166666667vw; }
+      header .container .center-header {
+        margin-top: 2.6041666667vw; }
+        header .container .center-header .header-logo img {
+          height: 5.2083333333vw;
+          width: 15.1041666667vw; }
+        header .container .center-header #bs-header-navbar-nodesktop-parent span {
+          font-size: 4.1666666667vw; }
+
+  footer {
+    height: 22.9166666667vw; }
+    footer .container {
+      padding: 0 7.1614583333vw; }
+      footer .container .footer-center {
+        margin-top: 3.125vw; }
+        footer .container .footer-center .footer-logo img {
+          height: 6.25vw;
+          width: 18.4895833333vw; }
+        footer .container .footer-center .footer-copy h5 {
+          font-size: 12px; }
+        footer .container .footer-center .footer-icons a .fa {
+          font-size: 16px;
+          width: 30px;
+          height: 30px;
+          line-height: 30px; }
+
+  #about-us {
+    height: 130.9895833333vw; }
+    #about-us .title h4 {
+      font-size: 1.8229166667vw; }
+    #about-us .title h1 {
+      font-size: 3.6458333333vw; }
+    #about-us #about-sections {
+      width: 68.0555555556vw; }
+      #about-us #about-sections .carousel-indicators {
+        bottom: 0; }
+        #about-us #about-sections .carousel-indicators li {
+          height: 1.0416666667vw;
+          width: 1.0416666667vw; }
+      #about-us #about-sections .carousel-inner {
+        height: 65.1041666667vw;
+        width: 65.3645833333vw;
+        margin: 0 auto; }
+        #about-us #about-sections .carousel-inner .item .item-image {
+          width: 18.4895833333vw;
+          float: none;
+          margin: 3.90625vw auto 3.90625vw auto; }
+          #about-us #about-sections .carousel-inner .item .item-image img {
+            height: 18.4895833333vw;
+            width: 18.4895833333vw;
+            float: none; }
+        #about-us #about-sections .carousel-inner .item .item-paragraph {
+          width: 55.7291666667vw;
+          float: none;
+          padding: 0;
+          font-size: 1.8229166667vw;
+          text-align: center;
+          margin: 0 auto; }
+      #about-us #about-sections .carousel-control .glyphicon {
+        font-size: 3.3854166667vw;
+        height: 4.1666666667vw;
+        width: 4.1666666667vw;
+        line-height: 1.2; }
+    #about-us .extra-info {
+      height: 18.2291666667vw;
+      width: 85.6770833333vw; }
+      #about-us .extra-info h2 {
+        font-size: 3.90625vw;
+        line-height: 1.36; }
+        #about-us .extra-info h2 span {
+          font-size: 2.8645833333vw; }
+
+  #after-about-us {
+    height: 39.0625vw; }
+    #after-about-us h4 {
+      font-size: 1.8229166667vw;
+      padding-top: 7.8125vw; }
+    #after-about-us h1 {
+      font-size: 3.6458333333vw;
+      padding-bottom: 5.859375vw; }
+    #after-about-us #partners-images img {
+      margin: 0 1.5972222222vw; }
+    #after-about-us #partners-images #hr-realty {
+      height: 11.328125vw;
+      width: 10.6770833333vw; }
+    #after-about-us #partners-images #ala-19 {
+      height: 5.5989583333vw;
+      width: 17.1875vw; }
+
+  #before-contact-us {
+    height: 52.0833333333vw; }
+    #before-contact-us #offices {
+      height: 100%;
+      width: 100%; }
+      #before-contact-us #offices .carousel-indicators {
+        bottom: 33.203125vw; }
+        #before-contact-us #offices .carousel-indicators li {
+          margin: -0.78125vw 3.5vw;
+          height: 1.171875vw;
+          width: 1.171875vw; }
+        #before-contact-us #offices .carousel-indicators .flag img {
+          height: 6.5104166667vw;
+          width: 6.5104166667vw; }
+        #before-contact-us #offices .carousel-indicators .flag .flag-ven {
+          left: 17.578125vw; }
+        #before-contact-us #offices .carousel-indicators .flag .flag-usa {
+          left: 26.3020833333vw; }
+        #before-contact-us #offices .carousel-indicators .flag .flag-spain {
+          left: 34.6354166667vw; }
+      #before-contact-us #offices h4 {
+        font-size: 2.0833333333vw;
+        padding-top: 21.484375vw; }
+      #before-contact-us #offices .carousel-inner {
+        bottom: -6.25vw; }
+        #before-contact-us #offices .carousel-inner .item .office-detail h5 {
+          font-size: 14px;
+          line-height: 1.79; }
+        #before-contact-us #offices .carousel-inner .item .office-detail.usa-office:first-child {
+          margin-left: 4.027778vw; }
+        #before-contact-us #offices .carousel-inner .item .office-detail.usa-office:last-child {
+          margin-left: -4.694444vw; }
+
+  #contact-us {
+    height: 137.109375vw; }
+    #contact-us .title h1 {
+      font-size: 2.8645833333vw; }
+    #contact-us .title .first {
+      display: inline; }
+    #contact-us .inner-section {
+      margin: 0 5.2083333333vw; }
+      #contact-us .inner-section .call-us {
+        flex: 1 100%;
+        padding-bottom: 30px;
+        margin-top: 0; }
+        #contact-us .inner-section .call-us .content {
+          margin: 0 auto;
+          height: 33.8541666667vw;
+          width: 55.46875vw; }
+          #contact-us .inner-section .call-us .content .centered-content h2 {
+            font-size: 3.125vw; }
+          #contact-us .inner-section .call-us .content .centered-content img {
+            height: 9.375vw;
+            width: 8.3333333333vw; }
+          #contact-us .inner-section .call-us .content .centered-content #contact-phone {
+            font-size: 3.90625vw; }
+      #contact-us .inner-section .the-form {
+        flex: 1 100%;
+        margin-left: 0;
+        padding: 30px 0; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container {
+          margin: 0 auto; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container p {
+            padding: 0.5208333333vw 0.9114583333vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container p:last-child {
+            padding-top: 1.5625vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
+            height: 6.1197916667vw;
+            width: 41.5364583333vw;
+            font-size: 1.8229166667vw;
+            padding: 1.8229166667vw 2.6041666667vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
+            font-size: 2.0833333333vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
+            height: 17.3177083333vw;
+            width: 85.6770833333vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-schedule::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-interest::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-country::before {
+            bottom: 2.0833333333vw;
+            left: 38.8020833333vw;
+            font-size: 2.34375vw; } }
+@media only screen and (max-width: 767px) {
+  .visible-desktop {
+    display: none !important; }
+
+  .visible-mobile {
+    display: block !important; }
+
+  header {
+    height: 16.6666666667vw; }
+    header .container {
+      height: 16.6666666667vw; }
+      header .container .center-header {
+        margin-top: 5vw; }
+        header .container .center-header .header-logo img {
+          height: 6.6666666667vw;
+          width: 19.1666666667vw; }
+        header .container .center-header #bs-header-navbar-nodesktop-parent span {
+          font-size: 5.5555555556vw; }
+
+  footer {
+    height: 48.8888888889vw; }
+    footer .container {
+      padding: 0 6.9444444444vw; }
+      footer .container .footer-center {
+        margin-top: 11.1111111111vw; }
+        footer .container .footer-center .footer-logo img {
+          height: 9.1666666667vw;
+          width: 26.9444444444vw; }
+        footer .container .footer-center .footer-copy h5 {
+          font-size: 10px; }
+        footer .container .footer-center .footer-icons a .fa {
+          font-size: 14px;
+          width: 30px;
+          height: 30px;
+          line-height: 30px; }
+
+  #about-us {
+    height: 347.5vw; }
+    #about-us .title h4 {
+      font-size: 3.3333333333vw; }
+    #about-us .title h1 {
+      font-size: 6.1111111111vw; }
+    #about-us #about-sections {
+      width: 83.3333333333vw; }
+      #about-us #about-sections .carousel-indicators {
+        bottom: 98.6111111111vw; }
+        #about-us #about-sections .carousel-indicators li {
+          height: 2.2222222222vw;
+          width: 2.2222222222vw; }
+      #about-us #about-sections .carousel-inner {
+        height: 144.4444444444vw;
+        width: 82vw;
+        margin: 0 auto; }
+        #about-us #about-sections .carousel-inner .item .item-image {
+          width: 31.6666666667vw;
+          float: none;
+          margin: 0 auto 18.8888888889vw auto; }
+          #about-us #about-sections .carousel-inner .item .item-image img {
+            height: 31.6666666667vw;
+            width: 31.6666666667vw;
+            float: none; }
+        #about-us #about-sections .carousel-inner .item .item-paragraph {
+          width: 71.6666666667vw;
+          float: none;
+          padding: 0;
+          font-size: 3.3333333333vw;
+          text-align: center;
+          margin: 0 auto; }
+      #about-us #about-sections .carousel-control .glyphicon {
+        font-size: 5.5555555556vw;
+        height: 7.2222222222vw;
+        width: 7.2222222222vw;
+        line-height: 1.2; }
+      #about-us #about-sections .carousel-control.left {
+        margin-left: -2.7777777778vw; }
+      #about-us #about-sections .carousel-control.right {
+        margin-right: -2.7777777778vw; }
+    #about-us .extra-info {
+      height: 100vw;
+      width: 86.1111111111vw;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-evenly;
+      align-items: center; }
+      #about-us .extra-info h2 {
+        font-size: 8.3333333333vw;
+        line-height: 1.25; }
+        #about-us .extra-info h2 span {
+          font-size: 6.6666666667vw; }
+
+  #after-about-us {
+    height: 70.3vw; }
+    #after-about-us h4 {
+      font-size: 3.3333333333vw;
+      padding-top: 7.8125vw; }
+    #after-about-us h1 {
+      font-size: 6.1111111111vw;
+      padding-bottom: 5.859375vw; }
+    #after-about-us #partners-images img {
+      margin: 0 1.5972222222vw; }
+    #after-about-us #partners-images #hr-realty {
+      height: 19.1666666667vw;
+      width: 18.0555555556vw; }
+    #after-about-us #partners-images #ala-19 {
+      height: 9.7222222222vw;
+      width: 28.8888888889vw; }
+
+  #before-contact-us {
+    height: 97.2222222222vw; }
+    #before-contact-us #offices {
+      height: 100%;
+      width: 100%; }
+      #before-contact-us #offices .carousel-indicators {
+        bottom: 69.4444444444vw; }
+        #before-contact-us #offices .carousel-indicators li {
+          margin: -2.7777777778vw 6.9444444444vw;
+          height: 2.2222222222vw;
+          width: 2.2222222222vw; }
+        #before-contact-us #offices .carousel-indicators .flag img {
+          height: 11.9444444444vw;
+          width: 11.9444444444vw; }
+        #before-contact-us #offices .carousel-indicators .flag .flag-ven {
+          left: 6.3888888889vw; }
+        #before-contact-us #offices .carousel-indicators .flag .flag-usa {
+          left: 22.7777777778vw; }
+        #before-contact-us #offices .carousel-indicators .flag .flag-spain {
+          left: 38.8888888889vw; }
+      #before-contact-us #offices h4 {
+        font-size: 3.3333333333vw;
+        padding-top: 30.5555555556vw; }
+      #before-contact-us #offices .carousel-inner {
+        bottom: -5.5555555556vw; }
+        #before-contact-us #offices .carousel-inner .item {
+          height: 47.2222222222vw; }
+          #before-contact-us #offices .carousel-inner .item .office-detail h5 {
+            font-size: 3.3333333333vw;
+            line-height: 1.79; }
+          #before-contact-us #offices .carousel-inner .item .office-detail.usa-office {
+            width: 100%;
+            display: block; }
+          #before-contact-us #offices .carousel-inner .item .office-detail.usa-office:first-child {
+            margin-left: 0; }
+          #before-contact-us #offices .carousel-inner .item .office-detail.usa-office:last-child {
+            margin-left: 0; }
+
+  #contact-us {
+    height: 275.2777777778vw; }
+    #contact-us > * {
+      padding: 30px 0 0; }
+    #contact-us .title h1 {
+      font-size: 18px; }
+      #contact-us .title h1 .first {
+        display: block; }
+    #contact-us .inner-section {
+      margin: 0 4.1666666667vw; }
+      #contact-us .inner-section .call-us {
+        flex: 1 100%;
+        padding-bottom: 30px;
+        margin-top: 0; }
+        #contact-us .inner-section .call-us .content {
+          height: 55.5555555556vw;
+          width: 86.1111111111vw; }
+          #contact-us .inner-section .call-us .content .centered-content h2 {
+            font-size: 5vw;
+            margin: 0 auto; }
+          #contact-us .inner-section .call-us .content .centered-content img {
+            height: 16.9444444444vw;
+            width: 15vw; }
+          #contact-us .inner-section .call-us .content .centered-content #contact-phone {
+            font-size: 6.6666666667vw; }
+      #contact-us .inner-section .the-form {
+        flex: 1 100%;
+        margin-left: 0;
+        padding: 0; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container {
+          display: flex;
+          flex-flow: column nowrap;
+          padding: 0;
+          margin: 0 auto; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container p {
+            padding: 0.2777777778vw 0; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container p:last-child {
+            padding-top: 0.5555555556vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
+            height: 11.1111111111vw;
+            width: 86.1111111111vw;
+            font-size: 3.3333333333vw;
+            padding: 2.7777777778vw 3.8888888889vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
+            height: 11.1111111111vw;
+            width: 43.8888888889vw;
+            font-size: 3.8888888889vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
+            height: 36.9444444444vw; }
+          #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-schedule::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-interest::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-country::before {
+            bottom: 2.5vw;
+            left: 79.1666666667vw;
+            font-size: 5vw; } }
+
+/*# sourceMappingURL=style.css.map */
