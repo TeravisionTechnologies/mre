@@ -180,7 +180,10 @@ footer {
     bottom: 13.61111vw;
     left: 87.63889vw;
     padding: 0 0.69vw 0.2vw 0.69vw;
-    cursor: pointer; }
+    cursor: pointer;
+    background: white;
+    position: fixed;
+    box-shadow: 0 0.27vw 0.69vw 0 rgba(0, 0, 0, 0.3); }
 
 .overlay {
   height: 100%;
