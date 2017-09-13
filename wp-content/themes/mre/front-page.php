@@ -71,7 +71,7 @@ $theMeta = get_post_meta($headerPost[0]->ID);
 
                         ?><div class="item-paragraph"><?php
                         if ( isset( $entry['_about_desc'] ) ) {
-	                        ?><p><?php echo esc_html( $entry['_about_desc'] ); ?></p><?php
+	                        echo wpautop( $entry['_about_desc'] );
                         }
                         ?></div><?php
 
