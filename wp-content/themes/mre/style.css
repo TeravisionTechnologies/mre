@@ -180,7 +180,10 @@ footer {
     bottom: 13.6111111111vw;
     left: 87.6388888889vw;
     padding: 0 0.69vw 0.2vw 0.69vw;
-    cursor: pointer; }
+    cursor: pointer;
+    background: white;
+    position: fixed;
+    box-shadow: 0 0.27vw 0.69vw 0 rgba(0, 0, 0, 0.3); }
 
 .overlay {
   height: 100%;
@@ -436,9 +439,8 @@ footer {
   -webkit-flex-flow: row wrap;
   -webkit-align-items: center;
   align-items: center;
-  background: url("assets/contact-bg.png") bottom no-repeat #0976d1;
-  background-blend-mode: multiply;
-  background-size: contain;
+  background: url(assets/contact-bg.png) bottom no-repeat #00447e;
+  background-size: cover;
   height: 48.5416666667vw; }
   #contact-us > * {
     text-align: center;
