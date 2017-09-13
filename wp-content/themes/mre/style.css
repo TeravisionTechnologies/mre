@@ -517,25 +517,13 @@ footer {
           padding: 5px;
           width: 15vw;
           height: 3.4722222222vw; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container select {
+          background: url("assets/form-caret-down.png") no-repeat right center #00447e; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container select:hover {
           cursor: pointer; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
           height: 9.33vw;
           width: 52.7777777778vw; }
-        #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-schedule::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-interest::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-country::before {
-          content: "";
-          font-family: FontAwesome;
-          font-style: normal;
-          font-weight: normal;
-          text-decoration: inherit;
-          z-index: 1;
-          position: absolute;
-          color: #cfcfcf;
-          bottom: 0.9027777778vw;
-          left: 23.6111111111vw;
-          font-size: 1.6666666667vw; }
-        #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-schedule:hover::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-interest:hover::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-country:hover::before {
-          cursor: pointer; }
 
 @media only screen and (min-width: 1440px) {
   #hero-container .hero-box {
