@@ -180,7 +180,7 @@ footer {
     border-radius: 50%;
     bottom: 13.6111111111vw;
     left: 87.6388888889vw;
-    padding: 0 8px 3px 8px;
+    padding: 0 10px 3px 10px;
     cursor: pointer; }
 
 .overlay {
@@ -445,9 +445,9 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 22.6388888889vw;
+        height: 22.1vw;
         width: 25.0694444444vw;
-        margin-top: 0.2083333333vw;
+        margin-top: 3px;
         border-radius: 18px;
         background-color: #2099ff;
         box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3); }
@@ -475,7 +475,7 @@ footer {
         flex-flow: row wrap; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container p {
           flex: 1 50%;
-          padding: 0.2083333333vw 0.3472222222vw; }
+          padding: 0.2vw 0.4vw; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container p:nth-last-of-type(-n+2) {
           flex: 1 100%; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container p:last-child {
@@ -520,7 +520,7 @@ footer {
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container select:hover {
           cursor: pointer; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
-          height: 9.375vw;
+          height: 9.33vw;
           width: 52.7777777778vw; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-schedule::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-interest::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-country::before {
           content: "";
@@ -796,7 +796,7 @@ footer {
     width: 9.4444444444vw; }
 
   #about-us {
-    height: 347.5vw; }
+    height: 300vw; }
     #about-us .title h4 {
       font-size: 3.3333333333vw; }
     #about-us .title h1 {
