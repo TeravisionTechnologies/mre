@@ -8,104 +8,52 @@
 get_header();
 ?>
 
-<section id="hero-image">
-
-</section>
-
 <section id="about-us">
-    <div class="title">
-        <h4>Sobre Nosotros</h4>
-        <h1>Bienvenido a
-            <span>Grupo Merand Real State</span>
-        </h1>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+        <?php
+        $aboutPost = get_posts(
+            array(
+                'post_type' => 'about_us'
+            )
+        );
+
+        $entries = get_post_meta( $aboutPost[0]->ID, 'about_group_field', true );
+
+        foreach ( (array) $entries as $key => $entry ) {
+
+
+            ?>
+            ?><div class="swiper-slide" style="background-image:url(<?php echo $entry['_about_image'] ?>)"><?php
+            if ( isset( $entry['_about_desc'] ) ) {
+
+                ?>
+                <div class="slider-swiper-center">
+                <?php echo wpautop( $entry['_about_desc'] ); ?>
+                </div>
+                <?php
+            }
+            ?></div><?php
+
+        }
+        ?>
     </div>
-    <div id="about-sections" class="carousel slide" data-ride="carousel" data-interval="false">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#about-sections" data-slide-to="0" class="active"></li>
-            <li data-target="#about-sections" data-slide-to="1"></li>
-            <li data-target="#about-sections" data-slide-to="2"></li>
-        </ol>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-
-	        <?php
-                $aboutPost = get_posts(
-                    array(
-                        'post_type' => 'about_us'
-                    )
-                );
-
-                $entries = get_post_meta( $aboutPost[0]->ID, 'about_group_field', true );
-
-                foreach ( (array) $entries as $key => $entry ) {
-
-	                ?><div class="item"><?php
-
-	                    ?><div class="item-image"><?php
-                        if ( isset( $entry['_about_image'] ) ) {
-                            ?><img src="<?php echo $entry['_about_image']; ?>" /><?php
-                        }
-		                ?></div><?php
-
-                        ?><div class="item-paragraph"><?php
-                        if ( isset( $entry['_about_desc'] ) ) {
-	                        ?><p><?php echo wpautop( $entry['_about_desc'] ); ?></p><?php
-                        }
-                        ?></div><?php
-
-                    ?></div><?php
-                }
-	        ?>
-        </div>
-
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#about-sections" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#about-sections" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-white"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
     </div>
-    <div class="extra-info">
-        <h2>+500
-            <span>Inversionistas</span>
-        </h2>
-        <h2>+800
-            <span>Rentas por Mes</span>
-        </h2>
-        <h2>+160.000
-            <span>Ventas al Año</span>
-        </h2>
-    </div>
-</section>
 
-<section id="after-about-us">
-    <h4>Nuestros Socios</h4>
-    <h1>Hacemos real tu Inversión soñada</h1>
-    <div id="partners-images">
-	    <?php
-	        $aboutMeta = get_post_meta($aboutPost[0]->ID);
 
-	        if ( isset( $aboutMeta['_about_image-1'][0] ) ) {
-        ?><img id="hr-realty" src="<?php echo $aboutMeta['_about_image-1'][0] ?>" />
-        <?php }
-	        if ( isset( $aboutMeta['_about_image-1'][0] ) ) {
-        ?><img id="ala-19" src="<?php echo $aboutMeta['_about_image-2'][0] ?>" />
-        <?php } ?>
-    </div>
 </section>
 
 <section id="before-contact-us">
     <div id="offices" class="carousel slide" data-ride="carousel" data-interval="false">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#offices" data-slide-to="0" class="flag">
-                <img class="flag-ven" src="<?php echo get_template_directory_uri(); ?>/assets/ven_flag.svg" />
-            </li>
             <li data-target="#offices" data-slide-to="1" class="flag flag-usa active">
                 <img class="flag-usa" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
             </li>
@@ -116,46 +64,21 @@ get_header();
         <h4>Puedes encontrar Nuestras Oficinas en:</h4>
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-            <div class="item">
-                <div class="office-detail">
-                    <h5>
-                        <span>Caracas:</span>
-                    </h5>
-                    <h5>Centro Empresarial Parque Humboldt</h5>
-                    <h5>Piso 19, Oficinas 19-05 / 19-06</h5>
-                    <h5>Teléfonos: +58 212 975 39 40 / 212 975 41 651</h5>
-                </div>
-            </div>
-
-            <div class="item active">
+<!--            style="margin-left: 25%"-->
+            <div class="item active" >
                 <div class="office-detail usa-office">
-                    <h5>
-                        <span>Orlando:</span>
-                    </h5>
-                    <h5>2295 S. Hiawassee Road, Suite 407E</h5>
-                    <h5>Orlando, Florida</h5>
-                    <h5>Teléfonos: +1 407 255.08.71</h5>
-                </div>
-                <div class="office-detail usa-office">
-                    <h5>
-                        <span>Miami:</span>
-                    </h5>
-                    <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
-                    <h5>Miami, Florida</h5>
-                    <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="office-detail">
-                    <h5>
+                    <h5 class="center">
                         <span>Madrid:</span>
                     </h5>
-                    <h5>Calle Ortega y Gasset #6</h5>
-                    <h5>Primero Izquierda</h5>
-                    <h5>Sample: +34 605 816 803</h5>
+                    <h5 class="center">Calle Ortega y Gasset #6</h5>
+                    <h5 class="center">Primero Izquierda</h5>
+                    <h5 class="center">Sample: +34 605 816 803</h5>
+                </div>
+                <div class="office-detail usa-office">
+
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -185,4 +108,5 @@ get_header();
 
 <?php get_footer(); ?>
 	</body>
+
 </html>

@@ -8,6 +8,10 @@
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/favicon.ico">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="./wp-content/themes/ala19/css/swiper.min.css">
+
+
     <!-- FIX HTML STYLES IE9 -->
     <!--[if gte IE 9]>
     <style type="text/css">

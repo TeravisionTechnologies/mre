@@ -1,13 +1,12 @@
 @charset "UTF-8";
 /*                                            */
-/*  Theme Name: MRE Theme                     */
+/*  Theme Name: ALA19 Theme                     */
 /*  Author: mtoledo                           */
-/*  Author URI: http://msmtdev.com            */
-/*  Description: Template form NAME project.  */
+/*  Author URI: http://teravision.com            */
+/*  Description: Template form ALA19 project.  */
 /*  Version: 1.0                              */
 /*  License: Copy Right                       */
 /*                                            */
-/*  Co-Author: José Pernía                    */
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 * {
   margin: 0;
@@ -28,9 +27,24 @@ body {
   background-position: center top;
   -webkit-font-smoothing: antialiased; }
 
+.swiper-container {
+  width: 100%;
+  height: 100%; }
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover; }
+
+.slider-swiper-center {
+  text-align: center;
+  margin-top: 30%; }
+
 a {
   text-decoration: none;
   cursor: pointer; }
+
+.center {
+  margin-left: 50%; }
 
 h1, h2, h3, h4, h5, h6 {
   position: relative;
@@ -150,7 +164,7 @@ footer {
 
 #about-us {
   height: 71.1111111111vw;
-  background: url("assets/about-us-bg.png") center no-repeat #000;
+  background: #000;
   background-size: cover;
   display: -webkit-flex;
   display: flex;
@@ -172,7 +186,11 @@ footer {
       color: #1f9aff;
       display: block; }
   #about-us #about-sections {
-    width: 68.0555555556vw; }
+    width: 90%;
+    height: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: #1f9aff; }
     #about-us #about-sections .carousel-indicators li {
       height: 0.6944444444vw;
       width: 0.6944444444vw;
@@ -183,7 +201,7 @@ footer {
       background-color: #ffffff; }
     #about-us #about-sections .carousel-inner {
       height: 34.7222222222vw;
-      width: 62vw;
+      width: 100%;
       margin: 0 auto; }
       #about-us #about-sections .carousel-inner .item .item-image {
         width: 40%;
@@ -193,11 +211,10 @@ footer {
           height: 18.0555555556vw;
           width: 18.0555555556vw; }
       #about-us #about-sections .carousel-inner .item .item-paragraph {
-        width: 50%;
-        float: left;
+        text-align: center;
+        padding-top: 30%;
         padding-left: 5%;
-        color: #ffffff;
-        font-size: 1.1111111111vw; }
+        color: #ffffff; }
     #about-us #about-sections .carousel-control {
       width: 0;
       opacity: 1; }
