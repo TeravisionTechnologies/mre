@@ -15,10 +15,19 @@ function closeNav() {
 jQuery(document).ready(function() {
     jQuery('#about-us .item:first-child').addClass('active');
 
-    jQuery('footer .fa-caret-up').on('click', function () {
-        window.scrollTo(0,0);
-    });
+    // Footer button functionality
 
-    jQuery('#about-us').bcSwiping();
-    jQuery('#before-contact-us').bcSwiping();
+        // Hide or Show depending if user scrolled after about section
+        jQuery(document).on('scroll', function() {
+            if ( jQuery('body').scrollTop() <= jQuery('#about-us').position().top ) {
+                jQuery('footer .fa-caret-up').hide();
+            } else {
+                jQuery('footer .fa-caret-up').show();
+            }
+        });
+
+        // Scroll slow to the beggining of the page when the button is clicked
+        jQuery('footer .fa-caret-up').on('click', function () {
+            jQuery('body').animate({scrollTop:0}, 'slow');
+        });
 });

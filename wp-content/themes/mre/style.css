@@ -183,7 +183,8 @@ footer {
     cursor: pointer;
     background: white;
     position: fixed;
-    box-shadow: 0 0.27vw 0.69vw 0 rgba(0, 0, 0, 0.3); }
+    box-shadow: 0 0.27vw 0.69vw 0 rgba(0, 0, 0, 0.3);
+    display: none; }
 
 .overlay {
   height: 100%;
