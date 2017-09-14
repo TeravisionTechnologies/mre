@@ -1097,7 +1097,7 @@ footer {
     #contact-us .inner-section {
       margin: 0 4.16vw; }
       #contact-us .inner-section > div {
-        margin: 0; }
+        margin: 0 2.77vw; }
       #contact-us .inner-section .call-us {
         float: none;
         margin-bottom: 20vw; }
@@ -1142,10 +1142,6 @@ footer {
         top: 76vw;
         left: 15.5vw;
         width: 55vw;
-        height: 7vw; }
-
-  @-moz-document url-prefix() {
-    #contact-us .inner-section .the-form .wpcf7 p {
-      padding: 0.2777777778vw 2.6vw; } } }
+        height: 7vw; } }
 
 /*# sourceMappingURL=style.css.map */
