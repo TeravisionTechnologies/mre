@@ -89,7 +89,8 @@ jQuery(document).ready(function() {
     // form validation
 
        // remove invalid effects and colors on keypress
-       jQuery('.the-form input').on('keypress', function () {
+       var formInput = jQuery('.the-form input');
+       formInput.on('keypress', function () {
            var _this = jQuery(this);
             if ( _this.hasClass('wpcf7-not-valid') ){
                 _this.removeClass('wpcf7-not-valid');
@@ -98,7 +99,7 @@ jQuery(document).ready(function() {
        });
 
        // show invalid effects and colors
-       if ( jQuery('.the-form input').hasClass('wpcf7-not-valid') ) {
+       if ( formInput.hasClass('wpcf7-not-valid') ) {
            var invalidInput = jQuery('.the-form').find('input.wpcf7-not-valid').parent();
            jQuery('.form-errors').show();
            invalidInput.addClass('invalid-input');
