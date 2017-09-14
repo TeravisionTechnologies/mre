@@ -165,20 +165,21 @@ $theMeta = get_post_meta($headerPost[0]->ID);
 </section>
 
 <section id="contact-us">
-    <div class="title">
-        <h1>Nos gustaría asesorarte
-            <span class="first">en tu próxima inversión</span>
-            <span class="last">¡Contáctanos!</span>
-        </h1>
-    </div>
+    <div class="spacer initial"></div>
+    <h1 class="title">Nos gustaría asesorarte
+        <span class="first">en tu próxima inversión</span>
+        <span class="last">¡Contáctanos!</span>
+    </h1>
+    <div class="spacer"></div>
     <div class="inner-section">
+        <div class="form-errors">Uno o más campos tiene un error</div>
         <div class="call-us">
             <div class="content">
-                <div class="centered-content">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/d-iconphone.svg" />
-                    <h2>Llámenos para asesoría <span class="bold-me">Inmediata</span></h2>
-                    <h2 id="contact-phone" class="bold-me">+1 786 376.22.22</h2>
-                </div>
+                <div class="spacer-before-image"></div>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/d-iconphone.svg" />
+                <h2 id="advice-call">Llámenos para asesoría <span class="bold-me">Inmediata</span></h2>
+                <h2 id="contact-phone" class="bold-me">+1 786 376.22.22</h2>
+                <div class="spacer-end"></div>
             </div>
         </div>
         <div class="the-form">

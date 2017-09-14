@@ -134,53 +134,62 @@ footer
         width: 1.04vw
 #contact-us
   height: 120vw
+  .spacer.initial
+    height: 6vw
+  .spacer
+    height: 5.20vw
   .title
-    h1
-      font-size: 2.8645833333333335vw
+    font-size: 2.8645833333333335vw
     .first
       display: inline
   .inner-section
-    margin: 0 5.208333333333334vw
+    margin: 0 5.20vw
     .call-us
-      flex: 1 100%
-      padding-bottom: 30px
-      margin-top: 0
+      float: none
+      margin-bottom: 10vw
       .content
         margin: 0 auto
-        height: 33.85416666666667vw
+        height: 33.85vw
         width: 55.46875vw
-        .centered-content
-          h2
-            font-size: 3.125vw
-          img
-            height: 9.375vw
-            width: 8.333333333333334vw
-          #contact-phone
-            font-size: 3.90625vw
+        h2
+          font-size: 3.125vw
+        img
+          height: 9.375vw
+          width: 8.333333333333334vw
+        #contact-phone
+          font-size: 3.90625vw
     .the-form
-      flex: 1 100%
-      margin-left: 0
-      padding: 30px 0
+      width: 100%
       .wpcf7
-        .form-elements-container
-          margin: 0 auto
-          p
-            padding: 0.5208333333333334vw 0.9114583333333334vw
-          p:last-child
-            padding-top: 1.5625vw
-          input:not([type="submit"]), select, textarea
-            height: 6.119791666666667vw
-            width: 41.536458333333336vw
-            font-size: 1.8229166666666667vw
-            padding: 1.8229166666666667vw 2.604166666666667vw
-          input[type="submit"]
-            font-size: 2.0833333333333335vw
-            width: 26.041666666666668vw
-            height: 6.510416666666667vw
-          textarea
-            height: 17.317708333333336vw
-            width: 85.67708333333334vw
-          .your-schedule::before, .your-interest::before, .your-country::before
-            bottom: 2.0833333333333335vw
-            left: 38.802083333333336vw
-            font-size: 2.34375vw
+        p
+          span.invalid-input::before
+            font-size: 1.82vw
+            left: 1.8vw
+            top: 2.2vw
+        p:last-child
+          padding: 0.5208333333333334vw 0.9114583333333334vw
+        p:last-child
+          padding-top: 1.5625vw
+        input:not([type="submit"]), select, textarea
+          height: 6.11vw
+          width: 41.53vw
+          font-size: 1.82vw
+          padding: 1.82vw 2.60vw
+        input[type="submit"]
+          font-size: 2.08vw
+          width: 26.04vw
+          height: 6.510vw
+          margin: 0.69vw 0 0 30vw
+        textarea
+          height: 17.31vw
+          width: 85vw
+        .your-schedule::before, .your-interest::before, .your-country::before
+          bottom: 2.0833333333333335vw
+          left: 38.802083333333336vw
+          font-size: 2.34375vw
+    .form-errors
+      font-size: 1.5625vw
+      top: 43.973958vw
+      left: 29.5vw
+      width: 26.041vw
+      height: 3vw

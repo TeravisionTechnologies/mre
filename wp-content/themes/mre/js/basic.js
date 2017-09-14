@@ -64,6 +64,20 @@ jQuery(document).ready(function() {
         });
 
     footer_functions();
+
+    jQuery('.the-form input').on('keypress', function () {
+        var _this = jQuery(this);
+        if ( _this.hasClass('wpcf7-not-valid') ){
+            _this.removeClass('wpcf7-not-valid');
+            _this.parent().removeClass('invalid-input');
+        }
+    });
+
+    if ( jQuery('.the-form').find('input').hasClass('wpcf7-not-valid') ) {
+        var invalidInput = jQuery('.the-form').find('input.wpcf7-not-valid').parent();
+        jQuery('.form-errors').show();
+        invalidInput.addClass('invalid-input');
+    }
 });
 
 // Call footer functionality on resize so only shows up in 1024px and ahead
