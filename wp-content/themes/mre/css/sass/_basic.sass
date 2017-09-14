@@ -238,6 +238,10 @@ footer
           padding-left: 5%
           color: $white
           font-size: 1.1111111111111112vw
+    .swiper-button-prev
+      background-image: url('assets/swiper-arrow-left.svg')
+    .swiper-button-next
+      background-image: url('assets/swiper-arrow-right.svg')
     .swiper-pagination
       .swiper-pagination-bullet
         background: rgba($white, 0.4)
@@ -297,6 +301,13 @@ footer
       padding-top: 5vw
       img
         margin: 0 1vw
+        -ms-user-select: none
+        -moz-user-select: none
+        -webkit-user-drag: none
+        -webkit-user-select: none
+        user-select: none
+        user-drag: none
+        cursor: pointer
     h4
       font-size: 1.25vw
       text-align: center
@@ -353,7 +364,7 @@ footer
     .call-us
       float: left
       .content
-        height: 23.6vw
+        height: 24.5vw
         width: 25vw
         border-radius: 18px
         background-color: $lighter-blue

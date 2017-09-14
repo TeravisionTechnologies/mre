@@ -39,13 +39,27 @@ function footer_functions () {
 
 jQuery(document).ready(function() {
 
-    // Add Swiper
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        paginationClickable: true
-    });
+    // Swiper
+
+        // Add Swiper
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            paginationClickable: true
+        });
+
+        // Adding Swiper functionality to flags
+        jQuery('.flags-indicators img').on('click touchstart', function () {
+            var iter = jQuery(this).data('pagination');
+            var iterBull=1;
+            jQuery('#offices .swiper-pagination .swiper-pagination-bullet').each(function () {
+                if ( iter === iterBull ) {
+                    jQuery(this).trigger('click');
+                }
+                iterBull+=1;
+            });
+        });
 
     // Menu scroll effects
 

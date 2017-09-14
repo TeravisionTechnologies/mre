@@ -111,11 +111,10 @@ $theMeta = get_post_meta($headerPost[0]->ID);
 <section id="before-contact-us">
     <div id="offices" class="swiper-container">
         <div class="flags-indicators">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/ven_flag.svg" />
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
+            <img data-pagination="1" src="<?php echo get_template_directory_uri(); ?>/assets/ven_flag.svg" />
+            <img data-pagination="2" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
+            <img data-pagination="3" src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
         </div>
-
         <h4>Puedes encontrar Nuestras Oficinas en:</h4>
         <!-- Wrapper for slides -->
         <div class="swiper-wrapper">
@@ -129,7 +128,6 @@ $theMeta = get_post_meta($headerPost[0]->ID);
                     <h5>Teléfonos: +58 212 975 39 40 / 212 975 41 651</h5>
                 </div>
             </div>
-
             <div class="swiper-slide">
                 <div class="office-detail usa-office">
                     <h5>
@@ -148,7 +146,6 @@ $theMeta = get_post_meta($headerPost[0]->ID);
                     <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
                 </div>
             </div>
-
             <div class="swiper-slide">
                 <div class="office-detail">
                     <h5>
