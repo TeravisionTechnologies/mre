@@ -39,16 +39,10 @@ $theMeta = get_post_meta($headerPost[0]->ID);
             <span>Grupo Merand Real State</span>
         </h1>
     </div>
-    <div id="about-sections" class="carousel slide" data-ride="carousel" data-interval="false">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#about-sections" data-slide-to="0" class="active"></li>
-            <li data-target="#about-sections" data-slide-to="1"></li>
-            <li data-target="#about-sections" data-slide-to="2"></li>
-        </ol>
+    <div id="about-sections" class="swiper-container">
 
         <!-- Wrapper for slides -->
-        <div class="carousel-inner">
+        <div class="swiper-wrapper">
 
 	        <?php
                 $aboutPost = get_posts(
@@ -61,7 +55,7 @@ $theMeta = get_post_meta($headerPost[0]->ID);
 
                 foreach ( (array) $entries as $key => $entry ) {
 
-	                ?><div class="item"><?php
+	                ?><div class="swiper-slide"><?php
 
 	                    ?><div class="item-image"><?php
                         if ( isset( $entry['_about_image'] ) ) {
@@ -71,7 +65,7 @@ $theMeta = get_post_meta($headerPost[0]->ID);
 
                         ?><div class="item-paragraph"><?php
                         if ( isset( $entry['_about_desc'] ) ) {
-	                        ?><p><?php echo wpautop( $entry['_about_desc'] ); ?></p><?php
+	                        echo wpautop( $entry['_about_desc'] );
                         }
                         ?></div><?php
 
@@ -79,16 +73,11 @@ $theMeta = get_post_meta($headerPost[0]->ID);
                 }
 	        ?>
         </div>
-
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#about-sections" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#about-sections" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Left and Right Buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
     <div class="extra-info">
         <h2>+500
@@ -120,23 +109,17 @@ $theMeta = get_post_meta($headerPost[0]->ID);
 </section>
 
 <section id="before-contact-us">
-    <div id="offices" class="carousel slide" data-ride="carousel" data-interval="false">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#offices" data-slide-to="0" class="flag">
-                <img class="flag-ven" src="<?php echo get_template_directory_uri(); ?>/assets/ven_flag.svg" />
-            </li>
-            <li data-target="#offices" data-slide-to="1" class="flag flag-usa active">
-                <img class="flag-usa" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
-            </li>
-            <li data-target="#offices" data-slide-to="2" class="flag flag-spain">
-                <img class="flag-spain" src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
-            </li>
-        </ol>
+    <div id="offices" class="swiper-container">
+        <div class="flags-indicators">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/ven_flag.svg" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
+        </div>
+
         <h4>Puedes encontrar Nuestras Oficinas en:</h4>
         <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
                 <div class="office-detail">
                     <h5>
                         <span>Caracas:</span>
@@ -147,7 +130,7 @@ $theMeta = get_post_meta($headerPost[0]->ID);
                 </div>
             </div>
 
-            <div class="item active">
+            <div class="swiper-slide">
                 <div class="office-detail usa-office">
                     <h5>
                         <span>Orlando:</span>
@@ -166,7 +149,7 @@ $theMeta = get_post_meta($headerPost[0]->ID);
                 </div>
             </div>
 
-            <div class="item">
+            <div class="swiper-slide">
                 <div class="office-detail">
                     <h5>
                         <span>Madrid:</span>
@@ -177,24 +160,27 @@ $theMeta = get_post_meta($headerPost[0]->ID);
                 </div>
             </div>
         </div>
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
     </div>
 </section>
 
 <section id="contact-us">
-    <div class="title">
-        <h1>Nos gustaría asesorarte
-            <span class="first">en tu próxima inversión</span>
-            <span class="last">¡Contáctanos!</span>
-        </h1>
-    </div>
+    <div class="spacer initial"></div>
+    <h1 class="title">Nos gustaría asesorarte
+        <span class="first">en tu próxima inversión</span>
+        <span class="last">¡Contáctanos!</span>
+    </h1>
+    <div class="spacer"></div>
     <div class="inner-section">
+        <div class="form-errors">Uno o más campos tiene un error</div>
         <div class="call-us">
             <div class="content">
-                <div class="centered-content">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/d-iconphone.svg" />
-                    <h2>Llámenos para asesoría <span class="bold-me">Inmediata</span></h2>
-                    <h2 id="contact-phone" class="bold-me">+1 786 376.22.22</h2>
-                </div>
+                <div class="spacer-before-image"></div>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/d-iconphone.svg" />
+                <h2 id="advice-call">Llámenos para asesoría <span class="bold-me">Inmediata</span></h2>
+                <h2 id="contact-phone" class="bold-me">+1 786 376.22.22</h2>
+                <div class="spacer-end"></div>
             </div>
         </div>
         <div class="the-form">
