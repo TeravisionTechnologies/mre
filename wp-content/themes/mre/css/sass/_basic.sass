@@ -220,45 +220,31 @@ footer
         display: block
   #about-sections
     width: 68.05555555555556vw
-    .carousel-indicators
-      li
-        height: 0.6944444444444444vw
-        width: 0.6944444444444444vw
-        background-color: rgba($white, 0.4)
-        border: none
-        margin: 0 1px
-      li.active
-        background-color: $white
-    .carousel-inner
+    .swiper-wrapper
       height: 27vw
       width: 62vw
       margin: 0 auto
-      .item
+      .swiper-slide
         .item-image
-          width: 40%
+          width: 34%
           float: left
           img
             float: right
-            height: 18.055555555555554vw
-            width: 18.055555555555554vw
+            height: 18.055vw
+            width: 18.055vw
         .item-paragraph
           width: 50%
           float: left
           padding-left: 5%
           color: $white
           font-size: 1.1111111111111112vw
-    .carousel-control
-      width: 0
-      opacity: 1
-      .glyphicon
-        background-color: $arrow-grey
-        color: transparent
-        border-radius: 50%
-        text-shadow: 0 0 0 rgba($black, .7)
-        font-size: 2.5vw
-        height: 3.125vw
-        width: 3.125vw
-        line-height: 1.2
+    .swiper-pagination
+      .swiper-pagination-bullet
+        background: rgba($white, 0.4)
+        height: 0.83vw
+        width: 0.83vw
+      .swiper-pagination-bullet-active
+        background: $white
   .extra-info
     height: 11.11111111111111vw
     width: 81.25vw

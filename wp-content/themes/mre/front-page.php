@@ -39,16 +39,10 @@ $theMeta = get_post_meta($headerPost[0]->ID);
             <span>Grupo Merand Real State</span>
         </h1>
     </div>
-    <div id="about-sections" class="carousel slide" data-ride="carousel" data-interval="false">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#about-sections" data-slide-to="0" class="active"></li>
-            <li data-target="#about-sections" data-slide-to="1"></li>
-            <li data-target="#about-sections" data-slide-to="2"></li>
-        </ol>
+    <div id="about-sections" class="swiper-container">
 
         <!-- Wrapper for slides -->
-        <div class="carousel-inner">
+        <div class="swiper-wrapper">
 
 	        <?php
                 $aboutPost = get_posts(
@@ -61,7 +55,7 @@ $theMeta = get_post_meta($headerPost[0]->ID);
 
                 foreach ( (array) $entries as $key => $entry ) {
 
-	                ?><div class="item"><?php
+	                ?><div class="swiper-slide"><?php
 
 	                    ?><div class="item-image"><?php
                         if ( isset( $entry['_about_image'] ) ) {
@@ -79,16 +73,11 @@ $theMeta = get_post_meta($headerPost[0]->ID);
                 }
 	        ?>
         </div>
-
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#about-sections" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#about-sections" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Left and Right Buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
     <div class="extra-info">
         <h2>+500

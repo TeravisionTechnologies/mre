@@ -19,7 +19,7 @@ function footer_functions () {
 
         // Scroll slow to the beginning of the page when the button is clicked
         footerButton.on('click', function () {
-            jQuery('body').animate({scrollTop:0}, 'slow');
+            jQuery('body').animate({scrollTop:10}, 'slow');
         });
 
         // Hide or Show depending if user scrolled after about section
@@ -39,8 +39,13 @@ function footer_functions () {
 
 jQuery(document).ready(function() {
 
-    // Add active class to the first carousel item of #about-us
-    jQuery('#about-us .item:first-child').addClass('active');
+    // Add Swiper
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true
+    });
 
     // Menu scroll effects
 
@@ -63,7 +68,5 @@ jQuery(document).ready(function() {
 
 // Call footer functionality on resize so only shows up in 1024px and ahead
 jQuery(window).resize(function() {
-    console.log('resized');
-    console.log(jQuery(window).width());
     footer_functions();
 });
