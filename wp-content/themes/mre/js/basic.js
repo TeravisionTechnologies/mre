@@ -12,28 +12,25 @@ function closeNav() {
     document.getElementById('overlay-nav').style.left = '100%';
 }
 
+function showOrHideFooterButton (fb) {
+    if (jQuery(document).scrollTop() <= jQuery('#about-us').position().top) {
+        fb.hide();
+    } else {
+        fb.show();
+    }
+}
+
 // Footer button functions
-function footer_functions () {
-    var footerButton = jQuery('footer .fa-caret-up');
+function footerOnloadAndScroll (fb) {
     if ( jQuery(window).width() > 1023 ) {
-
-        // Scroll slow to the beginning of the page when the button is clicked
-        footerButton.on('click', function () {
-            jQuery('body').animate({scrollTop:10}, 'slow');
-        });
-
+        showOrHideFooterButton(fb);
         // Hide or Show depending if user scrolled after about section
         jQuery(document).on('scroll', function() {
-            if ( jQuery(window).width() > 1023 ) {
-                if (jQuery(document).scrollTop() <= jQuery('#about-us').position().top) {
-                    footerButton.hide();
-                } else {
-                    footerButton.show();
-                }
-            }
+            showOrHideFooterButton(fb);
         });
     } else {
-        footerButton.css({'display':'none'});
+        // Hide if user is in mobile
+        fb.css({'display':'none'});
     }
 }
 
@@ -63,38 +60,52 @@ jQuery(document).ready(function() {
 
     // Menu scroll effects
 
-        var menuItem = jQuery('.menu-item');
-        // close overlay in mobile when something is clicked
-        menuItem.on('click', function () {
-            jQuery('#overlay-nav').css({'left':'100%'});
-        });
+       var menuItem = jQuery('.menu-item');
+       menuItem.on('click', function (e) {
+           e.preventDefault();
+           // close overlay in mobile when something is clicked
+           jQuery('#overlay-nav').css({'left':'100%'});
 
-       menuItem.on('click', function () {
+           // slow scroll effect
+
            var _this    = jQuery(this).find('a').attr('href');
            if ( _this !== '#') {
                var scrollTo = jQuery(_this).position().top - jQuery(window).width() / 20 ;
                jQuery('body').animate({scrollTop:scrollTo}, 'slow');
            }
-        });
+       });
 
-    footer_functions();
+    // footer functions
 
-    jQuery('.the-form input').on('keypress', function () {
-        var _this = jQuery(this);
-        if ( _this.hasClass('wpcf7-not-valid') ){
-            _this.removeClass('wpcf7-not-valid');
-            _this.parent().removeClass('invalid-input');
-        }
-    });
+       // Scroll slow to the beginning of the page when the button is clicked
+       var footerButton = jQuery('footer .caretCircle');
+       footerButton.on('click', function () {
+           jQuery('body').animate({scrollTop:0}, 'slow');
+       });
 
-    if ( jQuery('.the-form').find('input').hasClass('wpcf7-not-valid') ) {
-        var invalidInput = jQuery('.the-form').find('input.wpcf7-not-valid').parent();
-        jQuery('.form-errors').show();
-        invalidInput.addClass('invalid-input');
-    }
+       // Function used to hide or show the footer button
+       footerOnloadAndScroll(footerButton);
+
+    // form validation
+
+       // remove invalid effects and colors on keypress
+       jQuery('.the-form input').on('keypress', function () {
+           var _this = jQuery(this);
+            if ( _this.hasClass('wpcf7-not-valid') ){
+                _this.removeClass('wpcf7-not-valid');
+                _this.parent().removeClass('invalid-input');
+            }
+       });
+
+       // show invalid effects and colors
+       if ( jQuery('.the-form input').hasClass('wpcf7-not-valid') ) {
+           var invalidInput = jQuery('.the-form').find('input.wpcf7-not-valid').parent();
+           jQuery('.form-errors').show();
+           invalidInput.addClass('invalid-input');
+       }
 });
 
 // Call footer functionality on resize so only shows up in 1024px and ahead
 jQuery(window).resize(function() {
-    footer_functions();
+    footerOnloadAndScroll(jQuery('footer .caretCircle'));
 });

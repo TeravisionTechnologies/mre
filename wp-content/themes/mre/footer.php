@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <span class="fa fa-caret-up"></span>
+        <div class="caretCircle"><span class="fa fa-caret-up"></span></div>
     </footer>
   </body>
 </html>

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*                                            */
 /*  Theme Name: MRE Theme                     */
 /*  Author: Teravision Technologies           */
@@ -166,25 +165,22 @@ footer {
       footer .container .footer-center .footer-icons a .fa:hover, footer .container .footer-center .footer-icons a .fa:active {
         -webkit-transform: scale(1.1);
         transform: scale(1.1); }
-  footer .fa-caret-up {
-    content: "";
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 2.4305555556vw;
-    text-decoration: inherit;
-    position: relative;
-    color: #0976d1;
-    border: solid 0.13vw #0976d1;
+  footer .caretCircle {
+    display: none;
+    height: 3em;
+    width: 3em;
+    background-color: #ffffff;
     border-radius: 50%;
+    border: solid 0.16em #0976d1;
+    position: fixed;
     bottom: 13.6111111111vw;
     left: 92vw;
-    padding: 0 0.69vw 0.2vw 0.69vw;
     cursor: pointer;
-    background: white;
-    position: fixed;
-    box-shadow: 0 0.27vw 0.69vw 0 rgba(0, 0, 0, 0.3);
-    display: none; }
+    box-shadow: 0 0.27vw 0.69vw 0 rgba(0, 0, 0, 0.3); }
+    footer .caretCircle .fa-caret-up {
+      font-size: 2.4305555556vw;
+      color: #0976d1;
+      line-height: 0.99; }
 
 .overlay {
   height: 100%;
