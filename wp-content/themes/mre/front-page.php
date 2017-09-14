@@ -109,26 +109,16 @@ $theMeta = get_post_meta($headerPost[0]->ID);
 </section>
 
 <section id="before-contact-us">
-    <div id="offices" class="carousel slide" data-ride="carousel" data-interval="false">
+    <div id="offices" class="swiper-container">
 
-        <!-- Flags Indicators -->
-        <ol class="flags carousel-indicators">
-            <li data-target="#offices" data-slide-to="0" class="flag-ven">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/ven_flag.svg" />
-            </li>
-            <li data-target="#offices" data-slide-to="1" class="flag-usa active">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
-            </li>
-            <li data-target="#offices" data-slide-to="2" class="flag-spain">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
-            </li>
-        </ol>
-
+        <!--<img src="<?php /*echo get_template_directory_uri(); */?>/assets/ven_flag.svg" />
+        <img src="<?php /*echo get_template_directory_uri(); */?>/assets/usa_flag.svg" />
+        <img src="<?php /*echo get_template_directory_uri(); */?>/assets/spain_flag.svg" />-->
 
         <h4>Puedes encontrar Nuestras Oficinas en:</h4>
         <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
                 <div class="office-detail">
                     <h5>
                         <span>Caracas:</span>
@@ -139,7 +129,7 @@ $theMeta = get_post_meta($headerPost[0]->ID);
                 </div>
             </div>
 
-            <div class="item active">
+            <div class="swiper-slide">
                 <div class="office-detail usa-office">
                     <h5>
                         <span>Orlando:</span>
@@ -158,7 +148,7 @@ $theMeta = get_post_meta($headerPost[0]->ID);
                 </div>
             </div>
 
-            <div class="item">
+            <div class="swiper-slide">
                 <div class="office-detail">
                     <h5>
                         <span>Madrid:</span>
@@ -169,15 +159,8 @@ $theMeta = get_post_meta($headerPost[0]->ID);
                 </div>
             </div>
         </div>
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#offices" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#offices" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
     </div>
 </section>
 

@@ -292,51 +292,14 @@ footer
   #offices
     height: 100%
     width: 100%
-    .carousel-control
-      display: none
-    .flags.carousel-indicators
-      bottom: 17.4vw
-      position: absolute
-      left: 50%
-      z-index: 15
-      width: 60%
-      padding-left: 0
-      margin-left: -30%
-      text-align: center
-      list-style: none
-      li
-        border: none
-        height: 12px
-        width: 12px
-        margin: 0
-      li.active
-        height: 12px
-        width: 12px
-        margin: 0
-      .flag-usa
-        margin: 0 5vw
-      .flag-usa.active
-        margin: 0 5vw
-      img
-        position: absolute
-        bottom: 2vw
-        height: 4.16vw
-        width: 4.16vw
-        margin: 0 -2vw
-        -ms-user-select: none
-        -moz-user-select: none
-        -webkit-user-drag: none
-        -webkit-user-select: none
-        user-drag: none
-        user-select: none
     h4
       font-size: 1.25vw
       text-align: center
       padding-top: 11.458333333333334vw
-    .carousel-inner
+    .swiper-wrapper
       width: 100%
       bottom: -2.0833333333333335vw
-      .item
+      .swiper-slide
         width: 100%
         margin: 0 auto
         .office-detail
@@ -355,6 +318,13 @@ footer
           margin-left: 14.027777777777777vw
         .office-detail.usa-office:last-child
           margin-left: -25.694444444444443vw
+    .swiper-pagination
+      .swiper-pagination-bullet
+        background: rgba($white, 0.4)
+        height: 0.83vw
+        width: 0.83vw
+      .swiper-pagination-bullet-active
+        background: $white
 #contact-us
   display: -webkit-flex
   display: flex

@@ -114,33 +114,12 @@ footer
   #offices
     height: 100%
     width: 100%
-    .flags.carousel-indicators
-      bottom: 33.2vw
-      li
-        border: none
-        height: 12px
-        width: 12px
-        margin: 0
-      li.active
-        height: 12px
-        width: 12px
-        margin: 0
-      .flag-usa
-        margin: 0 7.81vw
-      .flag-usa.active
-        margin: 0 7.81vw
-      img
-        position: absolute
-        bottom: 3vw
-        height: 6.51vw
-        width: 6.51vw
-        margin: 0 -3.15vw
     h4
       font-size: 2.0833333333333335vw
       padding-top: 21.484375vw
-    .carousel-inner
+    .swiper-wrapper
       bottom: -6.25vw
-      .item
+      .swiper-slide
         .office-detail
           h5
             font-size: 14px
@@ -149,6 +128,10 @@ footer
           margin-left: 4.027778vw
         .office-detail.usa-office:last-child
           margin-left: -4.694444vw
+    .swiper-pagination
+      .swiper-pagination-bullet
+        height: 1.04vw
+        width: 1.04vw
 #contact-us
   height: 120vw
   .title
