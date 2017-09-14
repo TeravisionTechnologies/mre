@@ -72,7 +72,7 @@ jQuery(document).ready(function() {
        menuItem.on('click', function () {
            var _this    = jQuery(this).find('a').attr('href');
            if ( _this !== '#') {
-               var scrollTo = jQuery(_this).position().top;
+               var scrollTo = jQuery(_this).position().top - jQuery(window).width() / 20 ;
                jQuery('body').animate({scrollTop:scrollTo}, 'slow');
            }
         });
