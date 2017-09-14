@@ -476,6 +476,8 @@ footer {
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none; }
+        #contact-us .inner-section .the-form .wpcf7 .form-elements-container select::-ms-expand {
+          display: none; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container input::-webkit-input-placeholder, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea::-webkit-input-placeholder {
           color: #cfcfcf; }
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container input::-moz-placeholder, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea::-moz-placeholder {
