@@ -110,10 +110,11 @@ $theMeta = get_post_meta($headerPost[0]->ID);
 
 <section id="before-contact-us">
     <div id="offices" class="swiper-container">
-
-        <!--<img src="<?php /*echo get_template_directory_uri(); */?>/assets/ven_flag.svg" />
-        <img src="<?php /*echo get_template_directory_uri(); */?>/assets/usa_flag.svg" />
-        <img src="<?php /*echo get_template_directory_uri(); */?>/assets/spain_flag.svg" />-->
+        <div class="flags-indicators">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/ven_flag.svg" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
+        </div>
 
         <h4>Puedes encontrar Nuestras Oficinas en:</h4>
         <!-- Wrapper for slides -->
