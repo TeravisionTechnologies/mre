@@ -125,6 +125,26 @@ jQuery(document).ready(function() {
         if ( formAnchor.hasClass('failed') || formAnchor.hasClass('invalid') || formAnchor.hasClass('sent') ) {
             var scrollToForm = jQuery('#contact-us').offset().top - headerHeight;
             setTimeout(function(){ globalScroll.scrollTop(scrollToForm); }, 0);
+
+            // form fail/success changer html changer
+            var formErrors = jQuery('.form-errors');
+            if ( formAnchor.hasClass('invalid') ) {
+                formErrors.css({'background':'#d9534f'});
+                formErrors.html('Estos campos son requeridos');
+            } else if ( formAnchor.hasClass('sent') ) {
+                formErrors.css({'background':'#549B03'});
+                formErrors.html('Su mensaje ha sido enviado');
+            }
+
+            var inputText  = formAnchor.find('input[type="text"]').val();
+            var inputEmail = formAnchor.find('input[type="email"]').val();
+            var inputTel   = formAnchor.find('input[type="tel"]').val();
+            var textArea   = formAnchor.find('textarea').val();
+
+            if ( inputText !== '' || inputEmail !== '' || inputTel !== '' || textArea !== '' ) {
+                formErrors.html('Verifique los campos requeridos');
+            }
+
         }
 
 });

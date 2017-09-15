@@ -174,7 +174,7 @@ $theMeta = get_post_meta($headerPost[0]->ID);
     </h1>
     <div class="spacer"></div>
     <div class="inner-section">
-        <div class="form-errors">Uno o más campos tiene un error</div>
+        <div class="form-errors"></div>
         <div class="call-us">
             <div class="content">
                 <div class="spacer-before-image"></div>
