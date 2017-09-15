@@ -17,18 +17,22 @@ $theMeta = get_post_meta($headerPost[0]->ID);
 ?>
 
 <section id="hero-container" class="row">
-  <div class="col-xs-12 col-md-6 hero-box hero-box-left" style="background-image: url('<?php echo ($theMeta['_hf_hero_image_left'][0]) ?>');">
+  <a href="<?php echo $theMeta['_hf_left_hero_link'][0] ?>">
+    <div class="col-xs-12 col-md-6 hero-box hero-box-left" style="background-image: url('<?php echo ($theMeta['_hf_hero_image_left'][0]) ?>');">
       <div class="overlay-left">
-          <h3 class="center-block"><?php echo $theMeta['_hf_text_hero_left'][0] ?></h3>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-icon-left.svg">
+        <h3 class="center-block"><?php echo $theMeta['_hf_text_hero_left'][0] ?></h3>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-icon-left.svg">
       </div>
-  </div>
-  <div class="col-xs-12 col-md-6 hero-box hero-box-right" style="background-image: url('<?php echo ($theMeta['_hf_hero_image_right'][0]) ?>');">
+    </div>
+  </a>
+  <a href="<?php echo $theMeta['_hf_right_hero_link'][0] ?>">
+    <div class="col-xs-12 col-md-6 hero-box hero-box-right" style="background-image: url('<?php echo ($theMeta['_hf_hero_image_right'][0]) ?>');">
       <div class="overlay-right">
-          <h3 class="center-block"><?php echo $theMeta['_hf_text_hero_right'][0] ?></h3>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-icon-right.svg">
+        <h3 class="center-block"><?php echo $theMeta['_hf_text_hero_right'][0] ?></h3>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-icon-right.svg">
       </div>
-  </div>
+    </div>
+  </a>
   <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-arrow.svg" class="hero-button">
 </section>
 

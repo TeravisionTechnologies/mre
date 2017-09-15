@@ -109,4 +109,24 @@
       'type'    => 'wysiwyg',
       'options' => array(),
     ) );
+
+    // Left Hero Link
+    $cmb->add_field(
+      array(
+        'name'       => __( 'Left Hero Link' ),
+        'id'         => $prefix . 'left_hero_link',
+        'type'       => 'text',
+        'repeatable'      => false
+      )
+    );
+
+    // Right Hero Link
+    $cmb->add_field(
+      array(
+        'name'       => __( 'Right Hero Link' ),
+        'id'         => $prefix . 'right_hero_link',
+        'type'       => 'text',
+        'repeatable'      => false
+      )
+    );
 	}
