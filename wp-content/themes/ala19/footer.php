@@ -52,8 +52,7 @@
             paginationClickable: true,
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
-            spaceBetween: 30,
-            effect: 'fade'
+            spaceBetween: 30
         });
     </script>
   </body>

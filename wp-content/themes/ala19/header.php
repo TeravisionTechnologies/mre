@@ -46,7 +46,7 @@
     <header>
         <div class="container col-xs-12">
             <div class="center-header">
-                <div class="header-logo pull-left">
+                <div class="header-logo">
                     <?php
                         $headerPost = get_posts(
                             array(
@@ -56,7 +56,7 @@
                         $theMeta = get_post_meta($headerPost[0]->ID);
                     ?>
                     <a href="<?php echo esc_url( home_url( '/' ) ) ?>">
-                        <img src="<?php echo $theMeta['_hf_logo'][0] ?>" />
+                        <img src="wp-content/themes/ala19/assets/ala-19-logo@3x.png" class="logo"/>
                     </a>
                 </div>
                 <?php
