@@ -105,16 +105,12 @@
   function custom_form_validation_filter($result, $tag) {
     $name = $tag['name'];
     $value = $_POST[$name];
-    var_dump($tag);
     if($name == 'your-name') {
       if (!preg_match('/[a-zA-Z]/', $value)){
         $result->invalidate( $tag, "You can only use characters." );
       }
     }
     if($name == 'your-email') {
-      /*if (!preg_match('/[a-zA-Z]/', $value)){
-        $result->invalidate( $tag, "You can only use characters." );
-      }*/
       if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
         $result->invalidate( $tag, "Invalid email format." );
       }
