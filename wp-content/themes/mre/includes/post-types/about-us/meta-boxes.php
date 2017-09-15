@@ -99,11 +99,11 @@
 		// Description
 		$cmb->add_group_field( $group_field,
 			array(
-				'name'       => __( 'Description' ),
-				'desc'       => __( 'Description for the image uploaded above' ),
-				'id'         => $prefix . 'desc',
-				'type'       => 'textarea',
-				'repeatable'      => false
+				'name'      => __( 'Description' ),
+				'desc'      => __( 'Description for the image uploaded above' ),
+				'id'        => $prefix . 'desc',
+				'type'      => 'wysiwyg',
+				'options'   => array(),
 			)
 		);
 	}
