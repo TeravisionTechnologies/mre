@@ -192,7 +192,7 @@ footer
     background: linear-gradient(to top, $dark-blue, rgba(0, 69, 126, 0.59) 82%, rgba(0, 69, 126, 0.8))
 #about-us
   height: 71.11111111111111vw
-  background: url('assets/about-us-bg.png') center no-repeat $black
+  background: url('assets/about-us-bg.jpg') center no-repeat $black
   background-size: cover
   display: -webkit-flex
   display: flex
@@ -394,7 +394,7 @@ footer
           height: 3.5vw
     .the-form
       .wpcf7
-        .screen-reader-response, span.wpcf7-not-valid-tip, .wpcf7-response-output.wpcf7-validation-errors, .wpcf7-response-output.wpcf7-mail-sent-ng
+        .screen-reader-response, span.wpcf7-not-valid-tip, .wpcf7-response-output.wpcf7-validation-errors, .wpcf7-response-output.wpcf7-mail-sent-ng, .wpcf7-mail-sent-ok
           display:  none
         p
           float: left
@@ -421,7 +421,7 @@ footer
           box-sizing: border-box
           border-radius: 6px
           background-color: $dark-blue
-          border: solid 1px rgba($dark-white, 0.5)
+          border: solid 1.5px rgba($dark-white, 0.5)
           opacity: 0.9
           font-size: 1.11vw
           font-weight: normal
@@ -443,6 +443,7 @@ footer
           color: $dark-white
         input.wpcf7-not-valid, textarea.wpcf7-not-valid
           color: $red
+          border-color: $red
         input.wpcf7-not-valid::-webkit-input-placeholder, textarea.wpcf7-not-valid::-webkit-input-placeholder
           color: $red
         input.wpcf7-not-valid::-moz-placeholder, textarea.wpcf7-not-valid::-moz-placeholder
@@ -477,10 +478,14 @@ footer
       color: $white
       z-index: 1
       text-align: center
-      border-radius: 2px
       padding: 5px
       font-size: 0.97vw
       bottom: 0
       left: 27.5vw
       width: 15.27vw
       height: 1.94vw
+
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled
+  opacity: 1
+  cursor: pointer
+  pointer-events: auto

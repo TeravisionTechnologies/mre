@@ -257,7 +257,7 @@ footer {
 
 #about-us {
   height: 71.1111111111vw;
-  background: url("assets/about-us-bg.png") center no-repeat #000;
+  background: url("assets/about-us-bg.jpg") center no-repeat #000;
   background-size: cover;
   display: -webkit-flex;
   display: flex;
@@ -456,7 +456,7 @@ footer {
           margin-top: -15px; }
         #contact-us .inner-section .call-us .content .spacer-end {
           height: 3.5vw; }
-    #contact-us .inner-section .the-form .wpcf7 .screen-reader-response, #contact-us .inner-section .the-form .wpcf7 span.wpcf7-not-valid-tip, #contact-us .inner-section .the-form .wpcf7 .wpcf7-response-output.wpcf7-validation-errors, #contact-us .inner-section .the-form .wpcf7 .wpcf7-response-output.wpcf7-mail-sent-ng {
+    #contact-us .inner-section .the-form .wpcf7 .screen-reader-response, #contact-us .inner-section .the-form .wpcf7 span.wpcf7-not-valid-tip, #contact-us .inner-section .the-form .wpcf7 .wpcf7-response-output.wpcf7-validation-errors, #contact-us .inner-section .the-form .wpcf7 .wpcf7-response-output.wpcf7-mail-sent-ng, #contact-us .inner-section .the-form .wpcf7 .wpcf7-mail-sent-ok {
       display: none; }
     #contact-us .inner-section .the-form .wpcf7 p {
       float: left;
@@ -483,7 +483,7 @@ footer {
       box-sizing: border-box;
       border-radius: 6px;
       background-color: #00447e;
-      border: solid 1px rgba(207, 207, 207, 0.5);
+      border: solid 1.5px rgba(207, 207, 207, 0.5);
       opacity: 0.9;
       font-size: 1.11vw;
       font-weight: normal;
@@ -504,7 +504,8 @@ footer {
     #contact-us .inner-section .the-form .wpcf7 input:-ms-input-placeholder, #contact-us .inner-section .the-form .wpcf7 textarea:-ms-input-placeholder {
       color: #cfcfcf; }
     #contact-us .inner-section .the-form .wpcf7 input.wpcf7-not-valid, #contact-us .inner-section .the-form .wpcf7 textarea.wpcf7-not-valid {
-      color: #d9534f; }
+      color: #d9534f;
+      border-color: #d9534f; }
     #contact-us .inner-section .the-form .wpcf7 input.wpcf7-not-valid::-webkit-input-placeholder, #contact-us .inner-section .the-form .wpcf7 textarea.wpcf7-not-valid::-webkit-input-placeholder {
       color: #d9534f; }
     #contact-us .inner-section .the-form .wpcf7 input.wpcf7-not-valid::-moz-placeholder, #contact-us .inner-section .the-form .wpcf7 textarea.wpcf7-not-valid::-moz-placeholder {
@@ -539,13 +540,17 @@ footer {
       color: #ffffff;
       z-index: 1;
       text-align: center;
-      border-radius: 2px;
       padding: 5px;
       font-size: 0.97vw;
       bottom: 0;
       left: 27.5vw;
       width: 15.27vw;
       height: 1.94vw; }
+
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: auto; }
 
 @media only screen and (min-width: 1440px) {
   #hero-container .hero-box {
@@ -1155,5 +1160,24 @@ footer {
         left: 2vw;
         width: 55vw;
         height: 7vw; } }
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  #before-contact-us #offices .swiper-pagination {
+    bottom: 91.5vw; }
+    #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
+      margin: 0 5.59vw;
+      height: 2vw;
+      width: 2vw; } }
+@media only screen and (min-width: 700px) and (max-width: 740px) and (orientation: landscape) {
+  #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
+    margin: 0 5.15vw;
+    height: 2vw;
+    width: 2vw; } }
+@media only screen and (max-width: 570px) and (orientation: landscape) {
+  #before-contact-us #offices .swiper-pagination {
+    bottom: 90vw; }
+    #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
+      margin: 0 6.4vw;
+      height: 2vw;
+      width: 2vw; } }
 
 /*# sourceMappingURL=style.css.map */
