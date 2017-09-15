@@ -132,7 +132,7 @@ jQuery(document).ready(function() {
                 formErrors.css({'background':'#d9534f'});
                 formErrors.html('Estos campos son requeridos');
             } else if ( formAnchor.hasClass('sent') ) {
-                formErrors.css({'background':'#549B03'});
+                formErrors.css({'background':'#549B03','display':'block'});
                 formErrors.html('Su mensaje ha sido enviado');
             }
 
