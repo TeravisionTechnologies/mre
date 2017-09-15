@@ -74,7 +74,7 @@ jQuery(document).ready(function() {
                headerMargin     = headerMargin.replace(headerMargin.slice(-2),'');
                var headerHeight = jQuery('header').innerHeight() - headerMargin  - 3;
                var scrollTo     = jQuery(_this).offset().top - headerHeight;
-               jQuery('body').stop().animate({scrollTop:scrollTo}, 'slow');
+               jQuery('body,html').stop().animate({scrollTop:scrollTo}, 'slow');
            }
        });
 
@@ -83,7 +83,7 @@ jQuery(document).ready(function() {
        // Scroll slow to the beginning of the page when the button is clicked
        var footerButton = jQuery('footer .caretCircle');
        footerButton.on('click', function () {
-           jQuery('body').stop().animate({scrollTop:0}, 'slow');
+           jQuery('body,html').stop().animate({scrollTop:0}, 'slow');
        });
 
        // Function used to hide or show the footer button
