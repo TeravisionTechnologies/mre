@@ -67,7 +67,7 @@
   outline: none; }
 
 body {
-  font-size: 0.97222vw;
+  font-size: 0.9722222222vw;
   color: #656d70;
   line-height: 1.25;
   letter-spacing: -0.1px;
@@ -129,19 +129,19 @@ header {
         content: ""; }
 
 footer {
-  height: 18.95833vw; }
+  height: 18.9583333333vw; }
   footer div {
-    margin: 0.69444vw;
+    margin: 0.6944444444vw;
     text-align: center; }
   footer .container .footer-center {
     margin-top: 3.125vw; }
     footer .container .footer-center .footer-logo img {
-      height: 5.76389vw;
-      width: 16.66667vw; }
+      height: 5.7638888889vw;
+      width: 16.6666666667vw; }
     footer .container .footer-center .footer-copy h5 {
       color: #4a4a4a;
       opacity: 0.5;
-      font-size: 0.97222vw; }
+      font-size: 0.9722222222vw; }
       footer .container .footer-center .footer-copy h5 a {
         display: block;
         color: inherit;
@@ -149,10 +149,10 @@ footer {
     footer .container .footer-center .footer-icons a {
       text-decoration: none; }
       footer .container .footer-center .footer-icons a .fa {
-        font-size: 1.66667vw;
-        width: 2.77778vw;
-        height: 2.77778vw;
-        line-height: 2.77778vw;
+        font-size: 1.6666666667vw;
+        width: 2.7777777778vw;
+        height: 2.7777777778vw;
+        line-height: 2.7777777778vw;
         text-align: center;
         background-color: #f7f7f7;
         color: #0976d1;
@@ -160,7 +160,7 @@ footer {
         transition: all 0.3s ease-in-out;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
         border-radius: 50%;
-        margin: 0 0.55556vw; }
+        margin: 0 0.5555555556vw; }
       footer .container .footer-center .footer-icons a .fa:hover, footer .container .footer-center .footer-icons a .fa:active {
         -webkit-transform: scale(1.1);
         transform: scale(1.1); }
@@ -172,12 +172,12 @@ footer {
     border-radius: 50%;
     border: solid 0.16em #0976d1;
     position: fixed;
-    bottom: 13.61111vw;
+    bottom: 13.6111111111vw;
     left: 92vw;
     cursor: pointer;
     box-shadow: 0 0.27vw 0.69vw 0 rgba(0, 0, 0, 0.3); }
     footer .caretCircle .fa-caret-up {
-      font-size: 2.43056vw;
+      font-size: 2.4305555556vw;
       color: #0976d1;
       line-height: 0.99; }
 
@@ -197,9 +197,9 @@ footer {
     top: 25%;
     width: 100%;
     text-align: center;
-    margin-top: 2.08333vw; }
+    margin-top: 2.0833333333vw; }
   .overlay a {
-    padding: 0.55556vw;
+    padding: 0.5555555556vw;
     text-decoration: none;
     font-size: 5vw;
     color: #818181;
@@ -209,27 +209,27 @@ footer {
     color: #333; }
   .overlay .closebtn {
     position: absolute;
-    top: 1.38889vw;
+    top: 1.3888888889vw;
     right: 3.125vw;
-    font-size: 11.11111vw; }
+    font-size: 11.1111111111vw; }
 
 #hero-container {
   position: relative;
   margin: 0; }
   #hero-container .hero-box {
     position: relative;
-    height: 55.55556vw;
+    height: 55.5555555556vw;
     text-align: center; }
     #hero-container .hero-box h3 {
-      margin-top: 21.18056vw;
-      width: 31.94444vw;
+      margin-top: 21.1805555556vw;
+      width: 31.9444444444vw;
       font-family: Montserrat-Regular, sans-serif;
-      font-size: 1.66667vw;
+      font-size: 1.6666666667vw;
       color: #ffffff; }
       #hero-container .hero-box h3 strong {
         font-family: Montserrat-Black, sans-serif; }
     #hero-container .hero-box img {
-      margin-top: 2.08333vw; }
+      margin-top: 2.0833333333vw; }
   #hero-container .hero-box-left {
     background-size: cover;
     z-index: 1;
@@ -242,8 +242,8 @@ footer {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    height: 2.91667vw;
-    width: 6.52778vw; }
+    height: 2.9166666667vw;
+    width: 6.5277777778vw; }
   #hero-container .overlay-left, #hero-container .overlay-right {
     position: absolute;
     top: 0;
@@ -256,7 +256,7 @@ footer {
     background: linear-gradient(to top, #00447e, rgba(0, 69, 126, 0.59) 82%, rgba(0, 69, 126, 0.8)); }
 
 #about-us {
-  height: 71.11111vw;
+  height: 71.1111111111vw;
   background: url("assets/about-us-bg.png") center no-repeat #000;
   background-size: cover;
   display: -webkit-flex;
@@ -279,7 +279,7 @@ footer {
       color: #1f9aff;
       display: block; }
   #about-us #about-sections {
-    width: 68.05556vw; }
+    width: 68.0555555556vw; }
     #about-us #about-sections .swiper-wrapper {
       height: 27vw;
       width: 62vw;
@@ -296,7 +296,9 @@ footer {
         float: left;
         padding-left: 5%;
         color: #ffffff;
-        font-size: 1.11111vw; }
+        font-size: 1.1111111111vw; }
+        #about-us #about-sections .swiper-wrapper .swiper-slide .item-paragraph strong {
+          font-family: Montserrat-Black, sans-serif; }
     #about-us #about-sections .swiper-button-prev {
       background-image: url("assets/swiper-arrow-left.svg"); }
     #about-us #about-sections .swiper-button-next {
@@ -308,7 +310,7 @@ footer {
     #about-us #about-sections .swiper-pagination .swiper-pagination-bullet-active {
       background: #ffffff; }
   #about-us .extra-info {
-    height: 11.11111vw;
+    height: 11.1111111111vw;
     width: 81.25vw;
     display: flex;
     display: -webkit-flex;
@@ -322,31 +324,31 @@ footer {
     border-radius: 18px; }
     #about-us .extra-info h2 {
       text-align: center;
-      font-size: 3.47222vw;
+      font-size: 3.4722222222vw;
       font-weight: bold;
       line-height: 1.33;
       text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); }
       #about-us .extra-info h2 span {
         display: block;
-        font-size: 2.08333vw; }
+        font-size: 2.0833333333vw; }
 
 #after-about-us {
-  height: 25.13889vw;
+  height: 25.1388888889vw;
   background: #00447e;
   text-align: center; }
   #after-about-us h4 {
-    padding-top: 5.20833vw; }
+    padding-top: 5.2083333333vw; }
   #after-about-us h1 {
     text-align: center;
-    padding-bottom: 2.77778vw; }
+    padding-bottom: 2.7777777778vw; }
   #after-about-us #partners-images img {
-    margin: 0 1.59722vw; }
+    margin: 0 1.5972222222vw; }
   #after-about-us #partners-images #hr-realty {
     height: 6.25vw;
-    width: 6.66667vw; }
+    width: 6.6666666667vw; }
   #after-about-us #partners-images #ala-19 {
-    height: 3.33333vw;
-    width: 10.06944vw; }
+    height: 3.3333333333vw;
+    width: 10.0694444444vw; }
 
 #before-contact-us {
   height: 27.77vw;
@@ -373,14 +375,14 @@ footer {
       padding-top: 4vw; }
     #before-contact-us #offices .swiper-wrapper {
       width: 100%;
-      bottom: -2.08333vw; }
+      bottom: -2.0833333333vw; }
       #before-contact-us #offices .swiper-wrapper .swiper-slide {
         width: 100%;
         margin: 0 auto; }
         #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail {
           text-align: center; }
           #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail h5 {
-            font-size: 1.11111vw;
+            font-size: 1.1111111111vw;
             line-height: 1.56;
             letter-spacing: -0.1px; }
           #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail span {
@@ -390,9 +392,9 @@ footer {
           width: 49%;
           display: inline-block; }
         #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail.usa-office:first-child {
-          margin-left: 14.02778vw; }
+          margin-left: 14.0277777778vw; }
         #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail.usa-office:last-child {
-          margin-left: -25.69444vw; }
+          margin-left: -25.6944444444vw; }
     #before-contact-us #offices .swiper-pagination {
       bottom: 15.97vw; }
       #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
@@ -435,7 +437,7 @@ footer {
           width: 5vw;
           margin-bottom: 1.38vw; }
         #contact-us .inner-section .call-us .content h2 {
-          font-size: 1.66667vw;
+          font-size: 1.6666666667vw;
           color: #00447e;
           letter-spacing: -1px;
           line-height: 1.42; }
@@ -476,7 +478,7 @@ footer {
         left: 1.1vw;
         top: 0.7vw; }
     #contact-us .inner-section .the-form .wpcf7 p:last-child {
-      padding-top: 0.69444vw; }
+      padding-top: 0.6944444444vw; }
     #contact-us .inner-section .the-form .wpcf7 input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 select, #contact-us .inner-section .the-form .wpcf7 textarea {
       box-sizing: border-box;
       border-radius: 6px;
@@ -487,9 +489,9 @@ footer {
       font-weight: normal;
       line-height: 0.94;
       color: #cfcfcf;
-      padding: 0.83333vw 1.38889vw;
-      width: 25.76389vw;
-      height: 3.33333vw;
+      padding: 0.8333333333vw 1.3888888889vw;
+      width: 25.7638888889vw;
+      height: 3.3333333333vw;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none; }
@@ -742,26 +744,26 @@ footer {
     display: block !important; }
 
   header {
-    height: 10.41667vw; }
+    height: 10.4166666667vw; }
     header .container {
-      height: 10.41667vw; }
+      height: 10.4166666667vw; }
       header .container .center-header {
-        margin-top: 2.60417vw; }
+        margin-top: 2.6041666667vw; }
         header .container .center-header .header-logo img {
-          height: 5.20833vw;
-          width: 15.10417vw; }
+          height: 5.2083333333vw;
+          width: 15.1041666667vw; }
         header .container .center-header #bs-header-navbar-nodesktop-parent span {
-          font-size: 4.16667vw; }
+          font-size: 4.1666666667vw; }
 
   footer {
-    height: 22.91667vw; }
+    height: 22.9166666667vw; }
     footer .container {
-      padding: 0 7.16146vw; }
+      padding: 0 7.1614583333vw; }
       footer .container .footer-center {
         margin-top: 3.125vw; }
         footer .container .footer-center .footer-logo img {
           height: 6.25vw;
-          width: 18.48958vw; }
+          width: 18.4895833333vw; }
         footer .container .footer-center .footer-copy h5 {
           font-size: 12px; }
         footer .container .footer-center .footer-icons a .fa {
@@ -773,7 +775,7 @@ footer {
       display: none; }
 
   #hero-container .hero-box {
-    height: 52.08333vw; }
+    height: 52.0833333333vw; }
     #hero-container .hero-box h3 {
       margin-top: 15.625vw;
       width: 55.46875vw;
@@ -783,72 +785,72 @@ footer {
   #hero-container .hero-box-left {
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.4); }
   #hero-container .hero-button {
-    height: 3.25521vw;
-    width: 7.42188vw; }
+    height: 3.2552083333vw;
+    width: 7.421875vw; }
 
   #about-us {
-    height: 130.98958vw; }
+    height: 130.9895833333vw; }
     #about-us .title h4 {
-      font-size: 1.82292vw; }
+      font-size: 1.8229166667vw; }
     #about-us .title h1 {
-      font-size: 3.64583vw; }
+      font-size: 3.6458333333vw; }
     #about-us #about-sections {
-      width: 68.05556vw; }
+      width: 68.0555555556vw; }
       #about-us #about-sections .swiper-wrapper {
         height: 68vw;
-        width: 65.36458vw;
+        width: 65.3645833333vw;
         margin: 0 auto; }
         #about-us #about-sections .swiper-wrapper .swiper-slide .item-image {
-          width: 18.48958vw;
+          width: 18.4895833333vw;
           float: none;
           margin: 0 auto 3.90625vw auto; }
           #about-us #about-sections .swiper-wrapper .swiper-slide .item-image img {
-            height: 18.48958vw;
-            width: 18.48958vw;
+            height: 18.4895833333vw;
+            width: 18.4895833333vw;
             float: none; }
         #about-us #about-sections .swiper-wrapper .swiper-slide .item-paragraph {
           width: 45vw;
           float: none;
           padding: 0;
-          font-size: 1.82292vw;
+          font-size: 1.8229166667vw;
           text-align: center;
           margin: 0 auto; }
       #about-us #about-sections .swiper-pagination .swiper-pagination-bullet {
         height: 1.04vw;
         width: 1.04vw; }
     #about-us .extra-info {
-      height: 18.22917vw;
-      width: 85.67708vw; }
+      height: 18.2291666667vw;
+      width: 85.6770833333vw; }
       #about-us .extra-info h2 {
         font-size: 3.90625vw;
         line-height: 1.36; }
         #about-us .extra-info h2 span {
-          font-size: 2.86458vw; }
+          font-size: 2.8645833333vw; }
 
   #after-about-us {
     height: 39.0625vw; }
     #after-about-us h4 {
-      font-size: 1.82292vw;
+      font-size: 1.8229166667vw;
       padding-top: 7.8125vw; }
     #after-about-us h1 {
-      font-size: 3.64583vw;
-      padding-bottom: 5.85938vw; }
+      font-size: 3.6458333333vw;
+      padding-bottom: 5.859375vw; }
     #after-about-us #partners-images img {
-      margin: 0 1.59722vw; }
+      margin: 0 1.5972222222vw; }
     #after-about-us #partners-images #hr-realty {
-      height: 11.32813vw;
-      width: 10.67708vw; }
+      height: 11.328125vw;
+      width: 10.6770833333vw; }
     #after-about-us #partners-images #ala-19 {
-      height: 5.59896vw;
+      height: 5.5989583333vw;
       width: 17.1875vw; }
 
   #before-contact-us {
-    height: 52.08333vw; }
+    height: 52.0833333333vw; }
     #before-contact-us #offices {
       height: 100%;
       width: 100%; }
       #before-contact-us #offices h4 {
-        font-size: 2.08333vw;
+        font-size: 2.0833333333vw;
         padding-top: 9vw; }
       #before-contact-us #offices .swiper-wrapper {
         bottom: -6.25vw; }
@@ -856,9 +858,9 @@ footer {
           font-size: 14px;
           line-height: 1.79; }
         #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail.usa-office:first-child {
-          margin-left: 4.02778vw; }
+          margin-left: 4.027778vw; }
         #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail.usa-office:last-child {
-          margin-left: -4.69444vw; }
+          margin-left: -4.694444vw; }
       #before-contact-us #offices .swiper-pagination {
         bottom: 35.15625vw; }
         #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
@@ -873,7 +875,7 @@ footer {
     #contact-us .spacer {
       height: 5.2vw; }
     #contact-us .title {
-      font-size: 2.86458vw; }
+      font-size: 2.8645833333vw; }
       #contact-us .title .first {
         display: inline; }
     #contact-us .inner-section {
@@ -889,7 +891,7 @@ footer {
             font-size: 3.125vw; }
           #contact-us .inner-section .call-us .content img {
             height: 9.375vw;
-            width: 8.33333vw; }
+            width: 8.3333333333vw; }
           #contact-us .inner-section .call-us .content #contact-phone {
             font-size: 3.90625vw; }
       #contact-us .inner-section .the-form {
@@ -903,7 +905,7 @@ footer {
           left: 1.8vw;
           top: 1.8vw; }
         #contact-us .inner-section .the-form .wpcf7 p:last-child {
-          padding: 0.52083vw 0.91146vw; }
+          padding: 0.5208333333vw 0.9114583333vw; }
         #contact-us .inner-section .the-form .wpcf7 p:last-child {
           padding-top: 1.5625vw; }
         #contact-us .inner-section .the-form .wpcf7 input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 select, #contact-us .inner-section .the-form .wpcf7 textarea {
@@ -920,15 +922,20 @@ footer {
           height: 17.31vw;
           width: 85vw; }
         #contact-us .inner-section .the-form .wpcf7 .your-schedule::before, #contact-us .inner-section .the-form .wpcf7 .your-interest::before, #contact-us .inner-section .the-form .wpcf7 .your-country::before {
-          bottom: 2.08333vw;
-          left: 38.80208vw;
+          bottom: 2.0833333333vw;
+          left: 38.8020833333vw;
           font-size: 2.34375vw; }
       #contact-us .inner-section .form-errors {
         font-size: 1.5625vw;
-        top: 43.97396vw;
+        top: 43.973958vw;
         left: 2vw;
         width: 26.041vw;
         height: 3vw; } }
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  #before-contact-us #offices .swiper-pagination {
+    bottom: 14.6vw; }
+    #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
+      margin: 0 3.65vw; } }
 @media only screen and (max-width: 767px) {
   .visible-desktop {
     display: none !important; }
@@ -937,26 +944,26 @@ footer {
     display: block !important; }
 
   header {
-    height: 16.66667vw; }
+    height: 16.6666666667vw; }
     header .container {
-      height: 16.66667vw; }
+      height: 16.6666666667vw; }
       header .container .center-header {
         margin-top: 5vw; }
         header .container .center-header .header-logo img {
-          height: 6.66667vw;
-          width: 19.16667vw; }
+          height: 6.6666666667vw;
+          width: 19.1666666667vw; }
         header .container .center-header #bs-header-navbar-nodesktop-parent span {
-          font-size: 5.55556vw; }
+          font-size: 5.5555555556vw; }
 
   footer {
-    height: 48.88889vw; }
+    height: 48.8888888889vw; }
     footer .container {
-      padding: 0 6.94444vw; }
+      padding: 0 6.9444444444vw; }
       footer .container .footer-center {
-        margin-top: 11.11111vw; }
+        margin-top: 11.1111111111vw; }
         footer .container .footer-center .footer-logo img {
-          height: 9.16667vw;
-          width: 26.94444vw; }
+          height: 9.1666666667vw;
+          width: 26.9444444444vw; }
         footer .container .footer-center .footer-copy h5 {
           font-size: 10px; }
         footer .container .footer-center .footer-icons a .fa {
@@ -968,48 +975,48 @@ footer {
       display: none; }
 
   #hero-container .hero-box {
-    height: 78.05556vw; }
+    height: 78.0555555556vw; }
     #hero-container .hero-box h3 {
-      margin-top: 22.22222vw;
+      margin-top: 22.2222222222vw;
       width: 86.33333vw;
-      font-size: 5.55556vw; }
+      font-size: 5.5555555556vw; }
       #hero-container .hero-box h3 strong {
         font-weight: 900; }
     #hero-container .hero-box img {
-      margin-top: 5.83333vw;
-      width: 15.27778vw;
-      height: 15.27778vw; }
+      margin-top: 5.8333333333vw;
+      width: 15.2777777778vw;
+      height: 15.2777777778vw; }
   #hero-container .hero-box-left {
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.4); }
   #hero-container .hero-button {
     height: 5vw;
-    width: 9.44444vw; }
+    width: 9.4444444444vw; }
 
   #about-us {
     height: 300vw; }
     #about-us .title h4 {
-      font-size: 3.33333vw; }
+      font-size: 3.3333333333vw; }
     #about-us .title h1 {
-      font-size: 6.11111vw; }
+      font-size: 6.1111111111vw; }
     #about-us #about-sections {
-      width: 83.33333vw; }
+      width: 83.3333333333vw; }
       #about-us #about-sections .swiper-wrapper {
         height: 144.44vw;
         width: 82vw;
         margin: 0 auto; }
         #about-us #about-sections .swiper-wrapper .swiper-slide .item-image {
-          width: 31.66667vw;
+          width: 31.6666666667vw;
           float: none;
-          margin: 0 auto 18.88889vw auto; }
+          margin: 0 auto 18.8888888889vw auto; }
           #about-us #about-sections .swiper-wrapper .swiper-slide .item-image img {
-            height: 31.66667vw;
-            width: 31.66667vw;
+            height: 31.6666666667vw;
+            width: 31.6666666667vw;
             float: none; }
         #about-us #about-sections .swiper-wrapper .swiper-slide .item-paragraph {
           width: 62vw;
           float: none;
           padding: 0;
-          font-size: 3.33333vw;
+          font-size: 3.3333333333vw;
           text-align: center;
           margin: 0 auto; }
       #about-us #about-sections .swiper-pagination {
@@ -1023,7 +1030,7 @@ footer {
         right: 0; }
     #about-us .extra-info {
       height: 100vw;
-      width: 86.11111vw;
+      width: 86.1111111111vw;
       display: -webkit-flex;
       display: flex;
       -webkit-flex-flow: column nowrap;
@@ -1032,27 +1039,27 @@ footer {
       justify-content: space-around;
       align-items: center; }
       #about-us .extra-info h2 {
-        font-size: 8.33333vw;
+        font-size: 8.3333333333vw;
         line-height: 1.25; }
         #about-us .extra-info h2 span {
-          font-size: 6.66667vw; }
+          font-size: 6.6666666667vw; }
 
   #after-about-us {
     height: 70.3vw; }
     #after-about-us h4 {
-      font-size: 3.33333vw;
+      font-size: 3.3333333333vw;
       padding-top: 12vw; }
     #after-about-us h1 {
-      font-size: 6.11111vw;
-      padding-bottom: 5.85938vw; }
+      font-size: 6.1111111111vw;
+      padding-bottom: 5.859375vw; }
     #after-about-us #partners-images img {
-      margin: 0 1.59722vw; }
+      margin: 0 1.5972222222vw; }
     #after-about-us #partners-images #hr-realty {
-      height: 19.16667vw;
-      width: 18.05556vw; }
+      height: 19.1666666667vw;
+      width: 18.0555555556vw; }
     #after-about-us #partners-images #ala-19 {
-      height: 9.72222vw;
-      width: 28.88889vw; }
+      height: 9.7222222222vw;
+      width: 28.8888888889vw; }
 
   #before-contact-us {
     height: 110vw; }
@@ -1062,14 +1069,14 @@ footer {
       #before-contact-us #offices .flags-indicators img {
         margin: 0 2vw; }
       #before-contact-us #offices h4 {
-        font-size: 3.33333vw;
+        font-size: 3.3333333333vw;
         padding-top: 15vw; }
       #before-contact-us #offices .swiper-wrapper {
         padding-top: 10vw; }
         #before-contact-us #offices .swiper-wrapper .swiper-slide {
-          height: 47.22222vw; }
+          height: 47.2222222222vw; }
           #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail h5 {
-            font-size: 3.33333vw;
+            font-size: 3.3333333333vw;
             line-height: 1.79; }
           #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail.usa-office {
             width: 100%;
@@ -1079,11 +1086,11 @@ footer {
           #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail.usa-office:last-child {
             margin-left: 0; }
       #before-contact-us #offices .swiper-pagination {
-        bottom: 80vw; }
+        bottom: 81vw; }
         #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
           height: 3vw;
           width: 3vw;
-          margin: 0 9vw; }
+          margin: 0 8.7vw; }
 
   #contact-us {
     height: 260vw; }
@@ -1114,7 +1121,7 @@ footer {
           #contact-us .inner-section .call-us .content #contact-phone {
             font-size: 6.66vw; }
       #contact-us .inner-section .the-form .wpcf7 p {
-        padding: 0.27778vw 0; }
+        padding: 0.2777777778vw 0; }
         #contact-us .inner-section .the-form .wpcf7 p span.invalid-input::before {
           font-size: 4vw;
           left: 1.66vw;
