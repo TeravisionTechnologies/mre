@@ -107,18 +107,17 @@ input, button, select, textarea {
   display: none !important; }
 
 header {
-  height: 5.5555555556vw; }
+  height: 5.55vw; }
   header .container {
     background-color: #ffffff;
-    height: 5.5555555556vw;
     position: fixed;
     padding: 0 9.375vw;
     z-index: 99; }
     header .container .center-header {
-      margin-top: 0.8333333333vw; }
+      margin-top: 0.83vw; }
       header .container .center-header .header-logo img {
-        height: 3.8194444444vw;
-        width: 10.9722222222vw; }
+        height: 3.81vw;
+        width: 10.97vw; }
       header .container .center-header #bs-header-navbar ul li a {
         color: #4a4a4a; }
       header .container .center-header #bs-header-navbar li + li:after {
@@ -464,10 +463,18 @@ footer {
         content: "*";
         color: #d9534f;
         position: absolute;
-        font-size: 1.11vw;
         z-index: 1;
+        font-size: 1.6vw;
         left: 1.1vw;
-        top: 1.2vw; }
+        top: 0.9vw; }
+      #contact-us .inner-section .the-form .wpcf7 p span.invalid-texarea::before {
+        content: "*";
+        color: #d9534f;
+        position: absolute;
+        z-index: 1;
+        font-size: 1.6vw;
+        left: 1.1vw;
+        top: 0.7vw; }
     #contact-us .inner-section .the-form .wpcf7 p:last-child {
       padding-top: 0.6944444444vw; }
     #contact-us .inner-section .the-form .wpcf7 input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 select, #contact-us .inner-section .the-form .wpcf7 textarea {
@@ -488,19 +495,19 @@ footer {
       appearance: none; }
     #contact-us .inner-section .the-form .wpcf7 select::-ms-expand {
       display: none; }
-    #contact-us .inner-section .the-form .wpcf7 input.wpcf7-not-valid {
-      color: #d9534f; }
     #contact-us .inner-section .the-form .wpcf7 input::-webkit-input-placeholder, #contact-us .inner-section .the-form .wpcf7 textarea::-webkit-input-placeholder {
       color: #cfcfcf; }
     #contact-us .inner-section .the-form .wpcf7 input::-moz-placeholder, #contact-us .inner-section .the-form .wpcf7 textarea::-moz-placeholder {
       color: #cfcfcf; }
     #contact-us .inner-section .the-form .wpcf7 input:-ms-input-placeholder, #contact-us .inner-section .the-form .wpcf7 textarea:-ms-input-placeholder {
       color: #cfcfcf; }
-    #contact-us .inner-section .the-form .wpcf7 input.wpcf7-not-valid::-webkit-input-placeholder {
+    #contact-us .inner-section .the-form .wpcf7 input.wpcf7-not-valid, #contact-us .inner-section .the-form .wpcf7 textarea.wpcf7-not-valid {
       color: #d9534f; }
-    #contact-us .inner-section .the-form .wpcf7 input.wpcf7-not-valid::-moz-placeholder {
+    #contact-us .inner-section .the-form .wpcf7 input.wpcf7-not-valid::-webkit-input-placeholder, #contact-us .inner-section .the-form .wpcf7 textarea.wpcf7-not-valid::-webkit-input-placeholder {
       color: #d9534f; }
-    #contact-us .inner-section .the-form .wpcf7 input.wpcf7-not-valid:-ms-input-placeholder {
+    #contact-us .inner-section .the-form .wpcf7 input.wpcf7-not-valid::-moz-placeholder, #contact-us .inner-section .the-form .wpcf7 textarea.wpcf7-not-valid::-moz-placeholder {
+      color: #d9534f; }
+    #contact-us .inner-section .the-form .wpcf7 input.wpcf7-not-valid:-ms-input-placeholder, #contact-us .inner-section .the-form .wpcf7 textarea.wpcf7-not-valid:-ms-input-placeholder {
       color: #d9534f; }
     #contact-us .inner-section .the-form .wpcf7 input[type="submit"] {
       color: #ffffff;
@@ -534,7 +541,7 @@ footer {
       padding: 5px;
       font-size: 0.97vw;
       bottom: 0;
-      left: 28.47vw;
+      left: 27.5vw;
       width: 15.27vw;
       height: 1.94vw; }
 
@@ -657,13 +664,15 @@ footer {
         float: left;
         padding: 0 10px 10px 10px; }
         #contact-us .inner-section .the-form .wpcf7 p span.invalid-input::before {
-          content: "*";
-          color: #d9534f;
-          position: absolute;
-          font-size: 16px;
+          font-size: 24px;
           z-index: 1;
-          left: 16px;
-          top: 18px; }
+          left: 18px;
+          top: 14px; }
+        #contact-us .inner-section .the-form .wpcf7 p span.invalid-texarea::before {
+          font-size: 24px;
+          z-index: 1;
+          left: 18px;
+          top: 12px; }
       #contact-us .inner-section .the-form .wpcf7 p:last-child {
         padding-top: 10px; }
       #contact-us .inner-section .the-form .wpcf7 input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 select, #contact-us .inner-section .the-form .wpcf7 textarea {
@@ -720,17 +729,9 @@ footer {
         width: 760px;
         resize: none; }
       #contact-us .inner-section .form-errors {
-        display: none;
-        position: relative;
-        background: #d9534f;
-        color: #ffffff;
-        z-index: 1;
-        text-align: center;
-        border-radius: 2px;
-        padding: 5px;
         font-size: 14px;
         bottom: 0;
-        left: 410px;
+        left: 400px;
         width: 220px;
         height: 28px; } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -894,9 +895,13 @@ footer {
       #contact-us .inner-section .the-form {
         width: 100%; }
         #contact-us .inner-section .the-form .wpcf7 p span.invalid-input::before {
-          font-size: 1.82vw;
+          font-size: 2.2vw;
           left: 1.8vw;
-          top: 2.2vw; }
+          top: 2vw; }
+        #contact-us .inner-section .the-form .wpcf7 p span.invalid-texarea::before {
+          font-size: 2.2vw;
+          left: 1.8vw;
+          top: 1.8vw; }
         #contact-us .inner-section .the-form .wpcf7 p:last-child {
           padding: 0.5208333333vw 0.9114583333vw; }
         #contact-us .inner-section .the-form .wpcf7 p:last-child {
@@ -921,7 +926,7 @@ footer {
       #contact-us .inner-section .form-errors {
         font-size: 1.5625vw;
         top: 43.973958vw;
-        left: 29.5vw;
+        left: 2vw;
         width: 26.041vw;
         height: 3vw; } }
 @media only screen and (max-width: 767px) {
@@ -1111,9 +1116,13 @@ footer {
       #contact-us .inner-section .the-form .wpcf7 p {
         padding: 0.2777777778vw 0; }
         #contact-us .inner-section .the-form .wpcf7 p span.invalid-input::before {
-          font-size: 3.33vw;
+          font-size: 4vw;
           left: 1.66vw;
           top: 4.16vw; }
+        #contact-us .inner-section .the-form .wpcf7 p span.invalid-texarea::before {
+          font-size: 4vw;
+          left: 1.66vw;
+          top: 3vw; }
       #contact-us .inner-section .the-form .wpcf7 p:last-child {
         padding-top: 1.5625vw; }
       #contact-us .inner-section .the-form .wpcf7 input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 select, #contact-us .inner-section .the-form .wpcf7 textarea {
@@ -1136,7 +1145,7 @@ footer {
       #contact-us .inner-section .form-errors {
         font-size: 3.33vw;
         top: 76vw;
-        left: 15.5vw;
+        left: 2vw;
         width: 55vw;
         height: 7vw; } }
 

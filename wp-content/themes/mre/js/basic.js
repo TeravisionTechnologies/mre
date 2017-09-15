@@ -13,7 +13,7 @@ function closeNav() {
 }
 
 function showOrHideFooterButton (fb) {
-    if (jQuery(document).scrollTop() <= jQuery('#about-us').position().top) {
+    if ( jQuery(document).scrollTop() <= jQuery('#about-us').offset().top ) {
         fb.hide();
     } else {
         fb.show();
@@ -50,7 +50,7 @@ jQuery(document).ready(function() {
         jQuery('.flags-indicators img').on('click touchstart', function () {
             var iter = jQuery(this).data('pagination');
             var iterBull=1;
-            jQuery('#offices .swiper-pagination .swiper-pagination-bullet').each(function () {
+            jQuery('#offices .swiper-pagination-bullet').each(function () {
                 if ( iter === iterBull ) {
                     jQuery(this).trigger('click');
                 }
@@ -70,8 +70,11 @@ jQuery(document).ready(function() {
 
            var _this    = jQuery(this).find('a').attr('href');
            if ( _this !== '#') {
-               var scrollTo = jQuery(_this).position().top - jQuery(window).width() / 20 ;
-               jQuery('body').animate({scrollTop:scrollTo}, 'slow');
+               var headerMargin = jQuery('.center-header').css('margin-top');
+               headerMargin     = headerMargin.replace(headerMargin.slice(-2),'');
+               var headerHeight = jQuery('header').innerHeight() - headerMargin  - 3;
+               var scrollTo     = jQuery(_this).offset().top - headerHeight;
+               jQuery('body').stop().animate({scrollTop:scrollTo}, 'slow');
            }
        });
 
@@ -80,7 +83,7 @@ jQuery(document).ready(function() {
        // Scroll slow to the beginning of the page when the button is clicked
        var footerButton = jQuery('footer .caretCircle');
        footerButton.on('click', function () {
-           jQuery('body').animate({scrollTop:0}, 'slow');
+           jQuery('body').stop().animate({scrollTop:0}, 'slow');
        });
 
        // Function used to hide or show the footer button
@@ -89,20 +92,23 @@ jQuery(document).ready(function() {
     // form validation
 
        // remove invalid effects and colors on keypress
-       var formInput = jQuery('.the-form input');
-       formInput.on('keypress', function () {
+       var formField = jQuery('.the-form').find('input,textarea');
+       formField.on('keypress', function () {
            var _this = jQuery(this);
             if ( _this.hasClass('wpcf7-not-valid') ){
                 _this.removeClass('wpcf7-not-valid');
                 _this.parent().removeClass('invalid-input');
+                _this.parent().removeClass('invalid-texarea');
             }
        });
 
        // show invalid effects and colors
-       if ( formInput.hasClass('wpcf7-not-valid') ) {
-           var invalidInput = jQuery('.the-form').find('input.wpcf7-not-valid').parent();
+       if ( formField.hasClass('wpcf7-not-valid') ) {
+           var invalidInput    = jQuery('.the-form').find('input.wpcf7-not-valid').parent();
+           var invalidTextarea = jQuery('.the-form').find('textarea.wpcf7-not-valid').parent();
            jQuery('.form-errors').show();
            invalidInput.addClass('invalid-input');
+           invalidTextarea.addClass('invalid-texarea');
        }
 });
 

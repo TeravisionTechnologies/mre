@@ -37,19 +37,18 @@ input, button, select, textarea
 .visible-mobile
   display: none !important
 header
-  height: 5.555555555555555vw
+  height: 5.55vw
   .container
     background-color: $white
-    height: 5.555555555555555vw
     position: fixed
     padding: 0 9.375vw
     z-index: 99
     .center-header
-      margin-top: 0.8333333333333333vw
+      margin-top: 0.83vw
       .header-logo
         img
-          height: 3.819444444444444vw
-          width: 10.972222222222221vw
+          height: 3.81vw
+          width: 10.97vw
       #bs-header-navbar
         ul
           li
@@ -402,10 +401,18 @@ footer
             content: '*'
             color: $red
             position: absolute
-            font-size: 1.11vw
             z-index: 1
+            font-size: 1.6vw
             left: 1.1vw
-            top: 1.2vw
+            top: 0.9vw
+          span.invalid-texarea::before
+            content: '*'
+            color: $red
+            position: absolute
+            z-index: 1
+            font-size: 1.6vw
+            left: 1.1vw
+            top: 0.7vw
         p:last-child
           padding-top: 0.6944444444444444vw
         input:not([type="submit"]), select, textarea
@@ -426,19 +433,19 @@ footer
           appearance: none
         select::-ms-expand
           display: none
-        input.wpcf7-not-valid
-          color: $red
         input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
           color: $dark-white
         input::-moz-placeholder, textarea::-moz-placeholder
           color: $dark-white
         input:-ms-input-placeholder, textarea:-ms-input-placeholder
           color: $dark-white
-        input.wpcf7-not-valid::-webkit-input-placeholder
+        input.wpcf7-not-valid, textarea.wpcf7-not-valid
           color: $red
-        input.wpcf7-not-valid::-moz-placeholder
+        input.wpcf7-not-valid::-webkit-input-placeholder, textarea.wpcf7-not-valid::-webkit-input-placeholder
           color: $red
-        input.wpcf7-not-valid:-ms-input-placeholder
+        input.wpcf7-not-valid::-moz-placeholder, textarea.wpcf7-not-valid::-moz-placeholder
+          color: $red
+        input.wpcf7-not-valid:-ms-input-placeholder, textarea.wpcf7-not-valid:-ms-input-placeholder
           color: $red
         input[type="submit"]
           color: $white
@@ -472,6 +479,6 @@ footer
       padding: 5px
       font-size: 0.97vw
       bottom: 0
-      left: 28.47vw
+      left: 27.5vw
       width: 15.27vw
       height: 1.94vw
