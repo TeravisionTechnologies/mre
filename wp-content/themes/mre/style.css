@@ -333,22 +333,22 @@ footer {
         font-size: 2.0833333333vw; }
 
 #after-about-us {
-  height: 25.1388888889vw;
+  height: 25.138vw;
   background: #00447e;
   text-align: center; }
   #after-about-us h4 {
-    padding-top: 5.2083333333vw; }
+    padding-top: 5.2vw; }
   #after-about-us h1 {
     text-align: center;
-    padding-bottom: 2.7777777778vw; }
+    padding-bottom: 2.77vw; }
   #after-about-us #partners-images img {
-    margin: 0 1.5972222222vw; }
+    margin: 0 1.597vw; }
   #after-about-us #partners-images #hr-realty {
     height: 6.25vw;
-    width: 6.6666666667vw; }
+    width: 6.66vw; }
   #after-about-us #partners-images #ala-19 {
-    height: 3.3333333333vw;
-    width: 10.0694444444vw; }
+    height: 3.333vw;
+    width: 10.069vw; }
 
 #before-contact-us {
   height: 27.77vw;
@@ -491,7 +491,7 @@ footer {
       color: #cfcfcf;
       padding: 0.8333333333vw 1.3888888889vw;
       width: 25.7638888889vw;
-      height: 3.3333333333vw;
+      height: 3.33vw;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none; }

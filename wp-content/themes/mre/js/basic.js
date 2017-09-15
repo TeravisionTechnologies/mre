@@ -36,6 +36,9 @@ function footerOnloadAndScroll (fb) {
 
 jQuery(document).ready(function() {
 
+    // Declaring the global scroll of the html to use in further functions
+    var globalScroll = jQuery('body,html');
+
     // Swiper
 
         // Add Swiper
@@ -58,58 +61,72 @@ jQuery(document).ready(function() {
             });
         });
 
+
     // Menu scroll effects
 
-       var menuItem = jQuery('.menu-item');
-       menuItem.on('click', function (e) {
-           e.preventDefault();
-           // close overlay in mobile when something is clicked
-           jQuery('#overlay-nav').css({'left':'100%'});
+        // I am going to use this in other js section down the code
+        var headerMargin = jQuery('.center-header').css('margin-top');
+        headerMargin     = headerMargin.replace(headerMargin.slice(-2),'');
+        var headerHeight = jQuery('header').innerHeight() - headerMargin  - 3;
 
-           // slow scroll effect
+        var menuItem = jQuery('.menu-item');
+        menuItem.on('click', function (e) {
+            e.preventDefault();
+            // close overlay in mobile when something is clicked
+            jQuery('#overlay-nav').css({'left':'100%'});
 
-           var _this    = jQuery(this).find('a').attr('href');
-           if ( _this !== '#') {
-               var headerMargin = jQuery('.center-header').css('margin-top');
-               headerMargin     = headerMargin.replace(headerMargin.slice(-2),'');
-               var headerHeight = jQuery('header').innerHeight() - headerMargin  - 3;
-               var scrollTo     = jQuery(_this).offset().top - headerHeight;
-               jQuery('body,html').stop().animate({scrollTop:scrollTo}, 'slow');
-           }
-       });
+            // slow scroll effect
+            var _this = jQuery(this).find('a').attr('href');
+            if ( _this !== '#') {
+                var scrollTo = jQuery(_this).offset().top - headerHeight;
+                globalScroll.stop().animate({scrollTop:scrollTo}, 'slow');
+            }
+        });
+
 
     // footer functions
 
-       // Scroll slow to the beginning of the page when the button is clicked
-       var footerButton = jQuery('footer .caretCircle');
-       footerButton.on('click', function () {
-           jQuery('body,html').stop().animate({scrollTop:0}, 'slow');
-       });
+        // Scroll slow to the beginning of the page when the button is clicked
+        var footerButton = jQuery('footer .caretCircle');
+        footerButton.on('click', function () {
+            globalScroll.stop().animate({scrollTop:0}, 'slow');
+        });
 
-       // Function used to hide or show the footer button
-       footerOnloadAndScroll(footerButton);
+        // Function used to hide or show the footer button
+        footerOnloadAndScroll(footerButton);
+
 
     // form validation
 
-       // remove invalid effects and colors on keypress
-       var formField = jQuery('.the-form').find('input,textarea');
-       formField.on('keypress', function () {
-           var _this = jQuery(this);
-            if ( _this.hasClass('wpcf7-not-valid') ){
-                _this.removeClass('wpcf7-not-valid');
-                _this.parent().removeClass('invalid-input');
-                _this.parent().removeClass('invalid-texarea');
-            }
-       });
+        var theForm = jQuery('.the-form');
 
-       // show invalid effects and colors
-       if ( formField.hasClass('wpcf7-not-valid') ) {
-           var invalidInput    = jQuery('.the-form').find('input.wpcf7-not-valid').parent();
-           var invalidTextarea = jQuery('.the-form').find('textarea.wpcf7-not-valid').parent();
-           jQuery('.form-errors').show();
-           invalidInput.addClass('invalid-input');
-           invalidTextarea.addClass('invalid-texarea');
-       }
+        // remove invalid effects and colors on keypress
+        var formField = theForm.find('input,textarea');
+        formField.on('keypress', function () {
+            var _this = jQuery(this);
+             if ( _this.hasClass('wpcf7-not-valid') ){
+                 _this.removeClass('wpcf7-not-valid');
+                 _this.parent().removeClass('invalid-input');
+                 _this.parent().removeClass('invalid-texarea');
+             }
+        });
+
+        // show invalid effects and colors
+        if ( formField.hasClass('wpcf7-not-valid') ) {
+            var invalidInput    = theForm.find('input.wpcf7-not-valid').parent();
+            var invalidTextarea = theForm.find('textarea.wpcf7-not-valid').parent();
+            jQuery('.form-errors').show();
+            invalidInput.addClass('invalid-input');
+            invalidTextarea.addClass('invalid-texarea');
+        }
+
+        // override behavior after contact form submit button is clicked
+        var formAnchor = theForm.find('form');
+        if ( formAnchor.hasClass('failed') || formAnchor.hasClass('invalid') || formAnchor.hasClass('sent') ) {
+            var scrollToForm = jQuery('#contact-us').offset().top - headerHeight;
+            setTimeout(function(){ globalScroll.scrollTop(scrollToForm); }, 0);
+        }
+
 });
 
 // Call footer functionality on resize so only shows up in 1024px and ahead
