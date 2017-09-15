@@ -63,7 +63,7 @@
 #contact-us
   background: url('assets/contact-bg.png') bottom no-repeat $light-blue
   background-size: cover
-  height: 800px
+  height: 699px
   .spacer
     height: 60px
   h1
@@ -118,13 +118,15 @@
           float: left
           padding: 0 10px 10px 10px
           span.invalid-input::before
-            content: '*'
-            color: $red
-            position: absolute
-            font-size: 16px
+            font-size: 24px
             z-index: 1
-            left: 16px
-            top: 18px
+            left: 18px
+            top: 14px
+          span.invalid-texarea::before
+            font-size: 24px
+            z-index: 1
+            left: 18px
+            top: 12px
         p:last-child
           padding-top: 10px
         input:not([type="submit"]), select, textarea
@@ -181,16 +183,8 @@
           width: 760px
           resize: none
     .form-errors
-      display: none
-      position: relative
-      background: $red
-      color: $white
-      z-index: 1
-      text-align: center
-      border-radius: 2px
-      padding: 5px
       font-size: 14px
       bottom: 0
-      left: 410px
+      left: 400px
       width: 220px
       height: 28px
