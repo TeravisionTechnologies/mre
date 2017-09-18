@@ -188,7 +188,7 @@ footer {
   left: 100%;
   top: 0;
   background-color: #000;
-  background-color: rgba(0, 0, 0, 0.9);
+  background: rgba(48, 48, 48, 0.95);
   overflow-x: hidden;
   transition: 0.5s;
   z-index: 99; }
@@ -198,20 +198,27 @@ footer {
     width: 100%;
     text-align: center;
     margin-top: 2.0833333333vw; }
+    .overlay .overlay-content #bs-header-navbar-nodesktop ul li {
+      border-top: solid 2px rgba(255, 255, 255, 0.15); }
+      .overlay .overlay-content #bs-header-navbar-nodesktop ul li a:hover, .overlay .overlay-content #bs-header-navbar-nodesktop ul li a:focus {
+        color: #ffffff;
+        font-weight: bold;
+        background-color: transparent; }
   .overlay a {
-    padding: 0.5555555556vw;
     text-decoration: none;
     font-size: 5vw;
-    color: #818181;
+    color: rgba(255, 255, 255, 0.6);
     display: block;
     transition: 0.3s; }
-  .overlay a:hover, .overlay a:focus {
-    color: #333; }
   .overlay .closebtn {
     position: absolute;
-    top: 1.3888888889vw;
-    right: 3.125vw;
-    font-size: 11.1111111111vw; }
+    top: -2.6vw;
+    right: 5vw;
+    font-size: 11.1111111111vw;
+    color: #ffffff; }
+    .overlay .closebtn img {
+      width: 30px;
+      height: 30px; }
 
 #hero-container {
   position: relative;
@@ -977,6 +984,12 @@ footer {
           line-height: 30px; }
     footer .fa-caret-up {
       display: none; }
+
+  .overlay .closebtn {
+    top: 0; }
+    .overlay .closebtn img {
+      width: 20px;
+      height: 20px; }
 
   #hero-container .hero-box {
     height: 78.0555555556vw; }
