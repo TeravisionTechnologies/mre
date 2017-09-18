@@ -23,19 +23,19 @@
             </div>
             <div class="footer-icons">
                 <a href="#">
-                    <i class="fa fa-facebook"></i>
+                    <img src="wp-content/themes/ala19/assets/facebook.png" class="social-networks"/>
                 </a>
                 <a href="#">
-                    <i class="fa fa-twitter"></i>
+                    <img src="wp-content/themes/ala19/assets/twitter.png" class="social-networks"/>
                 </a>
                 <a href="#">
-                    <i class="fa fa-instagram"></i>
+                    <img src="wp-content/themes/ala19/assets/instagram.png" class="social-networks"/>
                 </a>
                 <a href="#">
-                    <i class="fa fa-youtube-play"></i>
+                    <img src="wp-content/themes/ala19/assets/youtube.png" class="social-networks"/>
                 </a>
                 <a href="#">
-                    <i class="fa fa-linkedin"></i>
+                    <img src="wp-content/themes/ala19/assets/linkedin.png" class="social-networks"/>
                 </a>
             </div>
         </div>

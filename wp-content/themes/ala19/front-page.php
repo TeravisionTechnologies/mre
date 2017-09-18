@@ -93,7 +93,7 @@ get_header();
     <br>
     <div>
         <p class="gallery-p-left">Las Vegas</p>
-        <p class="line-border"></p>
+<!--        <p class="line-border"></p>-->
         <p class="gallery-p-right">España</p>
     </div>
     <br><br>
