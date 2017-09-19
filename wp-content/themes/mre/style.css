@@ -1259,6 +1259,49 @@ footer {
     padding-left: 5px;
     font-family: Montserrat-Black, sans-serif;
     font-size: 26px; }
+  #blog-recommended-posts .swiper-container-blog-most-viewed {
+    height: 233px;
+    margin-top: 40px;
+    margin-bottom: 100px; }
+    #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper {
+      width: 970px;
+      margin: 0 auto; }
+      #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide {
+        width: 300px !important; }
+        #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-image {
+          height: 129px;
+          position: relative; }
+          #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-image .blog-most-viewed-category {
+            min-width: 101px;
+            height: 25px;
+            background-color: #0976d1;
+            position: absolute;
+            bottom: 0;
+            font-family: Montserrat-Bold, sans-serif;
+            font-size: 12px;
+            padding: 0 10px;
+            line-height: 25px;
+            color: #ffffff;
+            text-align: center;
+            text-transform: uppercase; }
+        #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text {
+          height: 104px;
+          padding: 20px 0 0 25px;
+          border: solid 1px #cfcfcf; }
+          #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text .blog-most-viewed-text-title {
+            font-family: Montserrat-Bold, sans-serif;
+            font-size: 18px;
+            line-height: 21px;
+            color: #4d484a; }
+          #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text .blog-most-viewed-text-author {
+            font-family: Montserrat-Bold, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            color: #4d484a;
+            opacity: 0.5; }
+            #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text .blog-most-viewed-text-author .blog-most-viewed-text-date {
+              font-family: Montserrat-Regular, sans-serif;
+              padding-left: 5px; }
 
 .swiper-overlay {
   background: rgba(9, 118, 209, 0.5);

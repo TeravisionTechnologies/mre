@@ -118,6 +118,58 @@ get_header();
     <div class="container-mre center-block" style="height: 100%;">
       <h2 class="recommended-posts-title">Artículos Recomendados</h2>
       <span class="recommended-posts-subtitle">Los más vistos</span>
+      <div class="swiper-container swiper-container-blog-most-viewed">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="blog-most-viewed-image" style="background-image: url('http://lorempixel.com/300/129/');">
+              <span class="blog-most-viewed-category">Inversión</span>
+            </div>
+            <div class="blog-most-viewed-text">
+              <h1 class="blog-most-viewed-text-title">Crowdfunding, la fuente de financiamiento del Futuro</h1>
+              <h2 class="blog-most-viewed-text-author">Por: Miguel Doe<span class="blog-most-viewed-text-date">14 January, 2016</span></h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="blog-most-viewed-image" style="background-image: url('http://lorempixel.com/300/129/');">
+              <span class="blog-most-viewed-category">Inversión</span>
+            </div>
+            <div class="blog-most-viewed-text">
+              <h1 class="blog-most-viewed-text-title">Crowdfunding, la fuente de financiamiento del Futuro</h1>
+              <h2 class="blog-most-viewed-text-author">Por: Miguel Doe<span class="blog-most-viewed-text-date">14 January, 2016</span></h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="blog-most-viewed-image" style="background-image: url('http://lorempixel.com/300/129/');">
+              <span class="blog-most-viewed-category">Inversión</span>
+            </div>
+            <div class="blog-most-viewed-text">
+              <h1 class="blog-most-viewed-text-title">Crowdfunding, la fuente de financiamiento del Futuro</h1>
+              <h2 class="blog-most-viewed-text-author">Por: Miguel Doe<span class="blog-most-viewed-text-date">14 January, 2016</span></h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="blog-most-viewed-image" style="background-image: url('http://lorempixel.com/300/129/');">
+              <span class="blog-most-viewed-category">Inversión</span>
+            </div>
+            <div class="blog-most-viewed-text">
+              <h1 class="blog-most-viewed-text-title">Crowdfunding, la fuente de financiamiento del Futuro</h1>
+              <h2 class="blog-most-viewed-text-author">Por: Miguel Doe<span class="blog-most-viewed-text-date">14 January, 2016</span></h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="blog-most-viewed-image" style="background-image: url('http://lorempixel.com/300/129/');">
+              <span class="blog-most-viewed-category">Inversión</span>
+            </div>
+            <div class="blog-most-viewed-text">
+              <h1 class="blog-most-viewed-text-title">Crowdfunding, la fuente de financiamiento del Futuro</h1>
+              <h2 class="blog-most-viewed-text-author">Por: Miguel Doe<span class="blog-most-viewed-text-date">14 January, 2016</span></h2>
+            </div>
+          </div>
+        </div>
+        <!--<div class="swiper-pagination"></div>-->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
     </div>
   </section>
 

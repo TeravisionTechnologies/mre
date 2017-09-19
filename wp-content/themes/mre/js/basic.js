@@ -72,6 +72,11 @@ jQuery(document).ready(function() {
                 centeredSlides: true,
           });
 
+        //Swiper Blog Post Most Viewed
+          var swiper_blog_most_viewed = new Swiper('.swiper-container-blog-most-viewed', {
+            slidesPerView: 3,
+            spaceBetween: 35
+          });
 
     // Menu scroll effects
 
