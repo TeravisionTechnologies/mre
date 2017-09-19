@@ -332,11 +332,12 @@ footer {
     #about-us .extra-info h2 {
       text-align: center;
       font-size: 3.47222vw;
-      font-weight: bold;
+      font-family: Montserrat-Bold, sans-serif;
       line-height: 1.33;
       text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); }
       #about-us .extra-info h2 span {
         display: block;
+        font-family: Montserrat-Regular, sans-serif;
         font-size: 2.08333vw; }
 
 #after-about-us {
