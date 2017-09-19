@@ -61,6 +61,17 @@ jQuery(document).ready(function() {
             });
         });
 
+        //Swiper Blog Categories
+        var swiper_blog_categories = new Swiper('.swiper-container-blog-categories', {
+                pagination: '.swiper-pagination',
+                paginationClickable: true,
+                slidesPerView: 5,
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                initialSlide: 2,
+                centeredSlides: true,
+          });
+
 
     // Menu scroll effects
 
