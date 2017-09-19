@@ -185,7 +185,7 @@ $theMeta = get_post_meta($headerPost[0]->ID);
             </div>
         </div>
         <div class="the-form">
-            <?php echo do_shortcode( '[contact-form-7 id="11" title="Home - Contact form"]' ); ?>
+            <?php echo do_shortcode( '[contact-form-7 id="5" title="Home - Contact form"]' ); ?>
         </div>
     </div>
 </section>
