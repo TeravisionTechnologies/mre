@@ -35,20 +35,6 @@ body {
   background-position: center;
   background-size: cover; }
 
-.slider-swiper-center {
-  text-align: center;
-  margin-top: 25%; }
-  .slider-swiper-center p {
-    font-family: Archivo;
-    font-size: 40px;
-    color: #ffffff;
-    letter-spacing: -0.3px; }
-    .slider-swiper-center p abbr {
-      font-size: 80px;
-      font-weight: bold;
-      letter-spacing: -0.5px;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8); }
-
 a {
   text-decoration: none;
   cursor: pointer; }
@@ -279,8 +265,10 @@ footer {
     width: 10.0694444444vw; }
 
 .our-partners {
-  height: 380px;
-  padding-top: 1px;
+  width: 100%;
+  height: auto;
+  padding-bottom: 4%;
+  padding-top: 2%;
   background-color: #ffffff;
   box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.5); }
   .our-partners .text-our-partners-one {
@@ -288,8 +276,7 @@ footer {
     text-align: center;
     font-family: Archivo;
     font-size: 18px;
-    letter-spacing: -0.1px;
-    margin-top: 50px; }
+    letter-spacing: -0.1px; }
   .our-partners .text-our-partners-two {
     color: #000 !important;
     text-align: center;
@@ -298,7 +285,9 @@ footer {
     letter-spacing: -0.2px; }
 
 #before-contact-us {
-  height: 27.77vw;
+  width: 100%;
+  height: auto;
+  padding: 0;
   background: url("assets/before-contact-bg.jpg") center no-repeat #000;
   background-size: cover; }
   #before-contact-us #offices {
@@ -501,11 +490,14 @@ footer {
 
 @media only screen and (min-width: 1440px) {
   #before-contact-us {
-    height: 380px;
+    width: 100%;
+    height: auto;
+    padding: 0;
     background: url("assets/before-contact-bg.jpg") center no-repeat #000;
     background-size: cover; }
     #before-contact-us #offices {
-      height: 100%;
+      padding-bottom: 3%;
+      height: auto;
       width: 100%; }
       #before-contact-us #offices .flags-indicators {
         text-align: center;
@@ -524,10 +516,6 @@ footer {
           margin: 0 auto; }
           #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail {
             text-align: center; }
-            #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail h5 {
-              font-size: 16px;
-              line-height: 1.56;
-              letter-spacing: -0.1px; }
             #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail span {
               font-weight: bold;
               display: block; }
@@ -543,7 +531,7 @@ footer {
         #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
           height: 12px;
           width: 12px;
-          margin: -14px 41px !important; }
+          margin: 45px 41px !important; }
 
   #contact-us {
     background: url("assets/contact-bg.png") bottom no-repeat #ffffff;
@@ -685,21 +673,20 @@ footer {
   .d-logo-left {
     width: 170px;
     height: 90px;
-    object-fit: contain;
     margin-top: 2%;
-    float: left;
-    margin-left: 37%; }
+    float: right;
+    margin-right: 3%; }
 
   .d-logo-right {
-    width: 170px;
-    height: 60px;
-    object-fit: contain;
-    margin-top: 3%;
+    width: 199px;
+    height: 91px;
+    margin-top: 2%;
     float: left;
-    margin-left: 5%; }
+    margin-left: 3%; }
 
   .gallery {
-    height: 882px;
+    height: auto;
+    padding-bottom: 5%;
     background-color: #ffffff; }
 
   .gallery-p-left {
@@ -752,7 +739,9 @@ footer {
   #gallery-img {
     min-height: 250px;
     max-height: 290px;
-    max-width: 80%; }
+    max-width: 80%;
+    margin-bottom: 5%;
+    margin-left: 20%; }
 
   .social-networks {
     width: 40px;
@@ -770,7 +759,21 @@ footer {
     text-align: center;
     color: white;
     margin-top: 9%;
-    font-size: 20px; } }
+    font-size: 20px; }
+
+  .slider-swiper-center {
+    text-align: center;
+    margin-top: 25%; }
+    .slider-swiper-center p {
+      font-family: Archivo;
+      font-size: 40px;
+      color: #ffffff;
+      letter-spacing: -0.3px; }
+      .slider-swiper-center p abbr {
+        font-size: 80px;
+        font-weight: bold;
+        letter-spacing: -0.5px;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8); } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .visible-desktop {
     display: none !important; }
@@ -957,17 +960,22 @@ footer {
   .visible-mobile {
     display: block !important; }
 
-  header {
-    height: 16.6666666667vw; }
-    header .container {
-      height: 16.6666666667vw; }
-      header .container .center-header {
-        margin-top: 5vw; }
-        header .container .center-header .header-logo img {
-          height: 6.6666666667vw;
-          width: 19.1666666667vw; }
-        header .container .center-header #bs-header-navbar-nodesktop-parent span {
-          font-size: 5.5555555556vw; }
+  header .container {
+    width: 100%;
+    height: 60px; }
+    header .container .center-header .header-logo {
+      width: 120px;
+      height: 77px;
+      margin-top: -17px;
+      padding-left: 15px; }
+      header .container .center-header .header-logo img {
+        width: 70px;
+        height: 22px;
+        margin-top: 30px;
+        margin-left: 15px; }
+    header .container .center-header #bs-header-navbar-nodesktop-parent span {
+      font-size: 7vw;
+      margin-top: 20px; }
 
   footer {
     height: 48.8888888889vw; }
@@ -1178,6 +1186,18 @@ footer {
         width: 55vw;
         height: 7vw; }
 
+  .slider-swiper-center {
+    text-align: center;
+    margin-top: 127%; }
+    .slider-swiper-center p {
+      font-family: Archivo;
+      font-size: 18px;
+      color: #ffffff; }
+      .slider-swiper-center p abbr {
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8); }
+
   .d-logo-left {
     float: left;
     width: 48px;
@@ -1194,9 +1214,11 @@ footer {
 
   .our-partners {
     width: 100%;
-    height: 189px;
+    height: auto;
+    padding-bottom: 15%;
+    padding-top: 5%;
     background-color: #ffffff;
-    box-shadow: 0 -2px 10px 0 rgba(0, 0, 0, 0.5); }
+    box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.5); }
     .our-partners .text-our-partners-two {
       width: 292px;
       height: 20px;
@@ -1259,15 +1281,15 @@ footer {
     margin-bottom: 5%;
     max-width: 80%; }
 
-  .jr {
+  .container-projects {
     width: 100%;
     height: 120px !important; }
 
-  .swiper-pagination-bullet {
-    background-color: #000 !important; }
-
   .swiper-pagination-bullet .swiper-pagination-bullet-active {
     background-color: #ffffff !important; }
+
+  .swiper-pagination-bullet {
+    background-color: #000; }
 
   .slide-p-one {
     font-size: 14px;

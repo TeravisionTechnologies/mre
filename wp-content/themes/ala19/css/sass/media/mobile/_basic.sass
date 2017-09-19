@@ -3,18 +3,27 @@
 .visible-mobile
     display: block !important
 header
-    height: 16.666666666666668vw
+    //height: 16.666666666666668vw
     .container
-        height: 16.666666666666668vw
+        //height: 16.666666666666668vw
+        width: 100%
+        height: 60px
         .center-header
-            margin-top: 5vw
+            //margin-top: 5vw
             .header-logo
+                width: 120px
+                height: 77px
+                margin-top: -17px
+                padding-left: 15px
                 img
-                    height: 6.666666666666666vw
-                    width: 19.166666666666668vw
+                    width: 70px
+                    height: 22px
+                    margin-top: 30px
+                    margin-left: 15px
             #bs-header-navbar-nodesktop-parent
                 span
-                    font-size: 5.555555555555555vw
+                    font-size: 7vw
+                    margin-top: 20px
 footer
     height: 48.888888888888886vw
     .container
@@ -232,6 +241,19 @@ footer
             width: 55vw
             height: 7vw
 
+.slider-swiper-center
+    text-align: center
+    margin-top: 127%
+    p
+        font-family: Archivo
+        font-size: 18px
+        color: $white
+        abbr
+            font-size: 24px
+            font-weight: bold
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8)
+
+
 .d-logo-left
     float: left
     width: 48px
@@ -248,9 +270,11 @@ footer
 
 .our-partners
     width: 100%
-    height: 189px
+    height: auto
+    padding-bottom: 15%
+    padding-top: 5%
     background-color: $white
-    box-shadow: 0 -2px 10px 0 rgba(0, 0, 0, 0.5)
+    box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.5)
     .text-our-partners-two
         width: 292px
         height: 20px
@@ -313,15 +337,15 @@ footer
     margin-bottom: 5%
     max-width: 80%
 
-.jr
+.container-projects
     width: 100%
     height: 120px !important
 
-.swiper-pagination-bullet
-    background-color: $black !important
-
 .swiper-pagination-bullet .swiper-pagination-bullet-active
     background-color: $white !important
+
+.swiper-pagination-bullet
+    background-color: $black
 
 .slide-p-one
     font-size: 14px
