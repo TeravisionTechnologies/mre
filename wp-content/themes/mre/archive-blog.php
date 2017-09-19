@@ -11,7 +11,7 @@
 <section class="container-fluid">
   <div class="container">
     <div class="col-md-12">
-      
+
     </div>
   </div>
   <!--<section id="blog-list-categories" class="row">
