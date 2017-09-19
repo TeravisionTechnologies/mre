@@ -86,7 +86,9 @@
     <div id="overlay-nav" class="overlay">
 
         <!-- Button to close the overlay navigation -->
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/close-btn.svg" />
+        </a>
 
         <!-- Overlay content -->
         <div class="overlay-content">
