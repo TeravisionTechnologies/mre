@@ -345,7 +345,8 @@ footer {
   background: #00447e;
   text-align: center; }
   #after-about-us h4 {
-    padding-top: 5.2vw; }
+    padding-top: 5.2vw;
+    opacity: 0.6; }
   #after-about-us h1 {
     text-align: center;
     padding-bottom: 2.77vw; }
