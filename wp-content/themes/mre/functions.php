@@ -32,7 +32,8 @@
 		__DIR__.'/includes/post-types/broker/',
 		__DIR__.'/includes/post-types/developer/',
 		__DIR__.'/includes/post-types/header-footer/',
-		__DIR__.'/includes/post-types/services/'
+    __DIR__.'/includes/post-types/services/',
+		__DIR__.'/includes/post-types/blog/'
 	);
 
 	// File names inside post-types dirs
@@ -69,6 +70,8 @@
 		create_post_type_header_footer();
 		// Post Type for Services
 		create_post_type_services();
+    // Post Type for Blog
+    create_post_type_blog();
 
 	}
 
@@ -99,6 +102,8 @@
 		header_footer_metaboxes();
 		// Metaboxes for Services
 		services_metaboxes();
+		// Metaboxes fot Blog
+    blog_metaboxes();
 
 	}
 
