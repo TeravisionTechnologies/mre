@@ -47,7 +47,7 @@ get_header();
 
 <section class="projects">
     <!-- Swiper -->
-    <div class="swiper-container">
+    <div class="swiper-container jr">
         <div class="swiper-wrapper">
             <?php
             $aboutPost = get_posts(
@@ -66,13 +66,13 @@ get_header();
 
                     if ($entry['_about_desc'] == $entries[1]['_about_desc']) {
                     ?>
-                    <div style="text-align: center;color: white;margin-top: 6%; font-size: 30px">
+                    <div class="slide-p-one">
                         <?php echo wpautop( $entry['_about_desc'] ); ?>
                     </div>
                     <?php
                     } else {
                         ?>
-                        <div style="text-align: center;color: white;margin-top: 9%; font-size: 20px">
+                        <div class="slide-p-two">
                             <?php echo wpautop( $entry['_about_desc'] ); ?>
                         </div>
                     <?php
@@ -115,7 +115,7 @@ get_header();
 
                 ?>
 
-                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter">
+                <div class="gallery_product">
                     <img src="<?php echo $entry['_about_image'] ?>" class="img-responsive" id="gallery-img">
                 </div>
             <?php

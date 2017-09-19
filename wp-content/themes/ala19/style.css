@@ -758,7 +758,19 @@ footer {
     width: 40px;
     height: 40px;
     object-fit: contain;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3); } }
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3); }
+
+  .slide-p-one {
+    text-align: center;
+    color: white;
+    margin-top: 6%;
+    font-size: 30px; }
+
+  .slide-p-two {
+    text-align: center;
+    color: white;
+    margin-top: 9%;
+    font-size: 20px; } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .visible-desktop {
     display: none !important; }
@@ -973,54 +985,73 @@ footer {
           width: 30px;
           height: 30px;
           line-height: 30px; }
+    footer .fa-caret-up {
+      display: none; }
+
+  #hero-container .hero-box {
+    height: 78.0555555556vw; }
+    #hero-container .hero-box h3 {
+      margin-top: 22.2222222222vw;
+      width: 86.33333vw;
+      font-size: 5.5555555556vw; }
+      #hero-container .hero-box h3 strong {
+        font-weight: 900; }
+    #hero-container .hero-box img {
+      margin-top: 5.8333333333vw;
+      width: 15.2777777778vw;
+      height: 15.2777777778vw; }
+  #hero-container .hero-box-left {
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.4); }
+  #hero-container .hero-button {
+    height: 5vw;
+    width: 9.4444444444vw; }
 
   #about-us {
-    height: 347.5vw; }
+    height: 300vw; }
     #about-us .title h4 {
       font-size: 3.3333333333vw; }
     #about-us .title h1 {
       font-size: 6.1111111111vw; }
     #about-us #about-sections {
       width: 83.3333333333vw; }
-      #about-us #about-sections .carousel-indicators {
-        bottom: 98.6111111111vw; }
-        #about-us #about-sections .carousel-indicators li {
-          height: 2.2222222222vw;
-          width: 2.2222222222vw; }
-      #about-us #about-sections .carousel-inner {
-        height: 144.4444444444vw;
+      #about-us #about-sections .swiper-wrapper {
+        height: 144.44vw;
         width: 82vw;
         margin: 0 auto; }
-        #about-us #about-sections .carousel-inner .item .item-image {
+        #about-us #about-sections .swiper-wrapper .swiper-slide .item-image {
           width: 31.6666666667vw;
           float: none;
           margin: 0 auto 18.8888888889vw auto; }
-          #about-us #about-sections .carousel-inner .item .item-image img {
+          #about-us #about-sections .swiper-wrapper .swiper-slide .item-image img {
             height: 31.6666666667vw;
             width: 31.6666666667vw;
             float: none; }
-        #about-us #about-sections .carousel-inner .item .item-paragraph {
-          width: 71.6666666667vw;
+        #about-us #about-sections .swiper-wrapper .swiper-slide .item-paragraph {
+          width: 62vw;
           float: none;
           padding: 0;
           font-size: 3.3333333333vw;
           text-align: center;
           margin: 0 auto; }
-      #about-us #about-sections .carousel-control .glyphicon {
-        font-size: 5.5555555556vw;
-        height: 7.2222222222vw;
-        width: 7.2222222222vw;
-        line-height: 1.2; }
-      #about-us #about-sections .carousel-control.left {
-        margin-left: -2.7777777778vw; }
-      #about-us #about-sections .carousel-control.right {
-        margin-right: -2.7777777778vw; }
+      #about-us #about-sections .swiper-pagination {
+        bottom: 104.16vw; }
+        #about-us #about-sections .swiper-pagination .swiper-pagination-bullet {
+          height: 12px;
+          width: 12px;
+          margin: -14px 41px !important; }
+      #about-us #about-sections .swiper-button-prev {
+        left: 0; }
+      #about-us #about-sections .swiper-button-next {
+        right: 0; }
     #about-us .extra-info {
       height: 100vw;
       width: 86.1111111111vw;
+      display: -webkit-flex;
       display: flex;
+      -webkit-flex-flow: column nowrap;
       flex-flow: column nowrap;
-      justify-content: space-evenly;
+      -webkit-justify-content: space-around;
+      justify-content: space-around;
       align-items: center; }
       #about-us .extra-info h2 {
         font-size: 8.3333333333vw;
@@ -1032,7 +1063,7 @@ footer {
     height: 70.3vw; }
     #after-about-us h4 {
       font-size: 3.3333333333vw;
-      padding-top: 7.8125vw; }
+      padding-top: 12vw; }
     #after-about-us h1 {
       font-size: 6.1111111111vw;
       padding-bottom: 5.859375vw; }
@@ -1046,95 +1077,215 @@ footer {
       width: 28.8888888889vw; }
 
   #before-contact-us {
-    height: 97.2222222222vw; }
+    height: 305px;
+    width: 100%; }
     #before-contact-us #offices {
       height: 100%;
       width: 100%; }
-      #before-contact-us #offices .carousel-indicators {
-        bottom: 69.4444444444vw; }
-        #before-contact-us #offices .carousel-indicators li {
-          margin: -2.7777777778vw 6.9444444444vw;
-          height: 2.2222222222vw;
-          width: 2.2222222222vw; }
-        #before-contact-us #offices .carousel-indicators .flag img {
-          height: 11.9444444444vw;
-          width: 11.9444444444vw; }
-        #before-contact-us #offices .carousel-indicators .flag .flag-ven {
-          left: 6.3888888889vw; }
-        #before-contact-us #offices .carousel-indicators .flag .flag-usa {
-          left: 22.7777777778vw; }
-        #before-contact-us #offices .carousel-indicators .flag .flag-spain {
-          left: 38.8888888889vw; }
+      #before-contact-us #offices .flags-indicators img {
+        margin: 0 2vw; }
       #before-contact-us #offices h4 {
         font-size: 3.3333333333vw;
-        padding-top: 30.5555555556vw; }
-      #before-contact-us #offices .carousel-inner {
-        bottom: -5.5555555556vw; }
-        #before-contact-us #offices .carousel-inner .item {
+        padding-top: 15vw; }
+      #before-contact-us #offices .swiper-wrapper {
+        padding-top: 10vw; }
+        #before-contact-us #offices .swiper-wrapper .swiper-slide {
           height: 47.2222222222vw; }
-          #before-contact-us #offices .carousel-inner .item .office-detail h5 {
+          #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail h5 {
             font-size: 3.3333333333vw;
             line-height: 1.79; }
-          #before-contact-us #offices .carousel-inner .item .office-detail.usa-office {
+          #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail.usa-office {
             width: 100%;
             display: block; }
-          #before-contact-us #offices .carousel-inner .item .office-detail.usa-office:first-child {
+          #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail.usa-office:first-child {
             margin-left: 0; }
-          #before-contact-us #offices .carousel-inner .item .office-detail.usa-office:last-child {
+          #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail.usa-office:last-child {
             margin-left: 0; }
+      #before-contact-us #offices .swiper-pagination {
+        bottom: 55vw; }
+        #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
+          height: 3vw;
+          width: 3vw; }
 
   #contact-us {
-    height: 275.2777777778vw; }
-    #contact-us > * {
-      padding: 30px 0 0; }
-    #contact-us .title h1 {
+    height: 955px;
+    width: 100%; }
+    #contact-us .spacer.initial {
+      height: 6vw; }
+    #contact-us .spacer {
+      height: 5.2vw; }
+    #contact-us .title {
       font-size: 18px; }
-      #contact-us .title h1 .first {
+      #contact-us .title .first {
         display: block; }
     #contact-us .inner-section {
-      margin: 0 4.1666666667vw; }
+      margin: 0 4.16vw; }
+      #contact-us .inner-section > div {
+        margin: 0 2.77vw; }
       #contact-us .inner-section .call-us {
-        flex: 1 100%;
-        padding-bottom: 30px;
-        margin-top: 0; }
+        float: none;
+        margin-bottom: 20vw; }
         #contact-us .inner-section .call-us .content {
-          height: 55.5555555556vw;
-          width: 86.1111111111vw; }
-          #contact-us .inner-section .call-us .content .centered-content h2 {
-            font-size: 5vw;
-            margin: 0 auto; }
-          #contact-us .inner-section .call-us .content .centered-content img {
-            height: 16.9444444444vw;
+          margin: 0 auto;
+          height: 55.55vw;
+          width: 86.11vw; }
+          #contact-us .inner-section .call-us .content h2 {
+            font-size: 5vw; }
+          #contact-us .inner-section .call-us .content img {
+            height: 16.94vw;
             width: 15vw; }
-          #contact-us .inner-section .call-us .content .centered-content #contact-phone {
-            font-size: 6.6666666667vw; }
-      #contact-us .inner-section .the-form {
-        flex: 1 100%;
-        margin-left: 0;
-        padding: 0; }
-        #contact-us .inner-section .the-form .wpcf7 .form-elements-container {
-          display: flex;
-          flex-flow: column nowrap;
-          padding: 0;
-          margin: 0 auto; }
-          #contact-us .inner-section .the-form .wpcf7 .form-elements-container p {
-            padding: 0.2777777778vw 0; }
-          #contact-us .inner-section .the-form .wpcf7 .form-elements-container p:last-child {
-            padding-top: 0.5555555556vw; }
-          #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
-            height: 11.1111111111vw;
-            width: 86.1111111111vw;
-            font-size: 3.3333333333vw;
-            padding: 2.7777777778vw 3.8888888889vw; }
-          #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
-            height: 11.1111111111vw;
-            width: 43.8888888889vw;
-            font-size: 3.8888888889vw; }
-          #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
-            height: 36.9444444444vw; }
-          #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-schedule::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-interest::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-country::before {
-            bottom: 2.5vw;
-            left: 79.1666666667vw;
-            font-size: 5vw; } }
+          #contact-us .inner-section .call-us .content #contact-phone {
+            font-size: 6.66vw; }
+      #contact-us .inner-section .the-form .wpcf7 p {
+        padding: 0.2777777778vw 0; }
+        #contact-us .inner-section .the-form .wpcf7 p span.invalid-input::before {
+          border: solid 1px #000;
+          font-size: 4vw;
+          left: 1.66vw;
+          top: 4.16vw; }
+        #contact-us .inner-section .the-form .wpcf7 p span.invalid-texarea::before {
+          border: solid 1px #000;
+          font-size: 4vw;
+          left: 1.66vw;
+          top: 3vw; }
+      #contact-us .inner-section .the-form .wpcf7 p:last-child {
+        padding-top: 1.5625vw; }
+      #contact-us .inner-section .the-form .wpcf7 input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 select, #contact-us .inner-section .the-form .wpcf7 textarea {
+        border: solid 1px #000;
+        height: 11.11vw;
+        width: 86.11vw;
+        font-size: 3.33vw;
+        padding: 2.77vw 3.88vw; }
+      #contact-us .inner-section .the-form .wpcf7 textarea {
+        border: solid 1px #000;
+        height: 36.94vw;
+        width: 86.11vw; }
+      #contact-us .inner-section .the-form .wpcf7 input[type="submit"] {
+        width: 158px;
+        height: 40px;
+        border: solid 2px #000;
+        font-size: 3.88vw;
+        padding: 0 !important;
+        margin: 1vw 0 0 22vw; }
+      #contact-us .inner-section .the-form .wpcf7 .your-schedule::before, #contact-us .inner-section .the-form .wpcf7 .your-interest::before, #contact-us .inner-section .the-form .wpcf7 .your-country::before {
+        bottom: 2.5vw;
+        left: 79.16vw;
+        font-size: 5vw; }
+      #contact-us .inner-section .form-errors {
+        font-size: 3.33vw;
+        top: 76vw;
+        left: 2vw;
+        width: 55vw;
+        height: 7vw; }
+
+  .d-logo-left {
+    float: left;
+    width: 48px;
+    height: 50px;
+    margin-left: 15%;
+    object-fit: contain;
+    transform: rotate(-360deg); }
+
+  .d-logo-right {
+    width: 106px;
+    height: 52px;
+    margin-left: 15%;
+    object-fit: contain; }
+
+  .our-partners {
+    width: 100%;
+    height: 189px;
+    background-color: #ffffff;
+    box-shadow: 0 -2px 10px 0 rgba(0, 0, 0, 0.5); }
+    .our-partners .text-our-partners-two {
+      width: 292px;
+      height: 20px;
+      font-family: Archivo;
+      font-size: 18px;
+      letter-spacing: -0.1px !important;
+      text-align: center;
+      color: #000; }
+
+  .social-networks {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3); }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    margin-left: 47%;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #000;
+    border-left: 20px solid transparent;
+    border-bottom: 20px solid transparent; }
+
+  .gallery {
+    width: 100%;
+    height: 2900px;
+    background-color: #ffffff; }
+
+  .gallery-p-left {
+    width: 72px;
+    height: 17px;
+    border-right: solid 2px #8f8f8f;
+    position: absolute;
+    margin-top: -5%;
+    margin-left: 31%;
+    font-family: Archivo;
+    font-size: 16px;
+    line-height: 0.83;
+    letter-spacing: -0.1px;
+    color: #8f8f8f; }
+
+  .gallery-p-right {
+    idth: 70px;
+    height: 17px;
+    position: absolute;
+    margin-top: -5%;
+    margin-left: 55%;
+    font-family: Archivo;
+    font-size: 16px;
+    line-height: 0.83;
+    letter-spacing: #8f8f8f;
+    float: left; }
+
+  #gallery-img {
+    width: 310px;
+    height: 302px;
+    object-fit: contain;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    max-width: 80%; }
+
+  .jr {
+    width: 100%;
+    height: 120px !important; }
+
+  .swiper-pagination-bullet {
+    background-color: #000 !important; }
+
+  .swiper-pagination-bullet .swiper-pagination-bullet-active {
+    background-color: #ffffff !important; }
+
+  .slide-p-one {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -0.1px;
+    text-align: center;
+    margin-top: 4%; }
+
+  .slide-p-two {
+    text-align: center;
+    mmargin-top: 10%;
+    font-size: 14px; } }
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  #before-contact-us #offices .swiper-pagination {
+    bottom: 91.5vw; }
+    #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
+      margin: 0 5.59vw;
+      height: 2vw;
+      width: 2vw; } }
 
 /*# sourceMappingURL=style.css.map */
