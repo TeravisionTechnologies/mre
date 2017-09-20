@@ -67,7 +67,7 @@ input, button, select, textarea {
   display: none !important; }
 
 header .container {
-  background-color: black;
+  background-color: #000;
   height: 80px;
   position: fixed;
   padding-right: 9.375vw;
@@ -78,13 +78,13 @@ header .container {
     width: 388px;
     padding-top: 1%;
     padding-bottom: 1%;
-    background-color: #fff;
+    background-color: #ffffff;
     margin-bottom: 0;
     padding-left: 122px;
     padding-right: 122px;
     float: left; }
   header .container .center-header #bs-header-navbar ul li a {
-    color: #FFFFFF;
+    color: #ffffff;
     opacity: 0.6;
     font-family: Archivo;
     font-size: 14px;
@@ -181,7 +181,7 @@ footer {
   line-height: 1.28;
   letter-spacing: -0.2px;
   text-align: center;
-  color: #000000; }
+  color: #000; }
   .contact-title .contact-last {
     font-weight: bold; }
   .contact-title #about-sections {
@@ -473,7 +473,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.5); }
 
 .projects {
-  background-color: #000000;
+  background-color: #000;
   text-align: center;
   color: #ffffff; }
   .projects .swiper-container {
@@ -531,7 +531,7 @@ footer {
         #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
           height: 12px;
           width: 12px;
-          margin: 45px 41px !important; }
+          margin: -25px 41px !important; }
 
   #contact-us {
     background: url("assets/contact-bg.png") bottom no-repeat #ffffff;
@@ -962,16 +962,16 @@ footer {
 
   header .container {
     width: 100%;
-    height: 60px; }
+    height: auto; }
     header .container .center-header .header-logo {
       width: 120px;
-      height: 77px;
-      margin-top: -17px;
+      height: auto;
       padding-left: 15px; }
       header .container .center-header .header-logo img {
         width: 70px;
-        height: 22px;
-        margin-top: 30px;
+        height: auto;
+        margin-top: 20px;
+        padding-bottom: 10px;
         margin-left: 15px; }
     header .container .center-header #bs-header-navbar-nodesktop-parent span {
       font-size: 7vw;
@@ -1067,6 +1067,14 @@ footer {
         #about-us .extra-info h2 span {
           font-size: 6.6666666667vw; }
 
+  .contact-title {
+    font-family: Archivo;
+    font-size: 18px;
+    line-height: 1.28;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: #000; }
+
   #after-about-us {
     height: 70.3vw; }
     #after-about-us h4 {
@@ -1085,7 +1093,7 @@ footer {
       width: 28.8888888889vw; }
 
   #before-contact-us {
-    height: 305px;
+    height: auto;
     width: 100%; }
     #before-contact-us #offices {
       height: 100%;
@@ -1094,7 +1102,7 @@ footer {
         margin: 0 2vw; }
       #before-contact-us #offices h4 {
         font-size: 3.3333333333vw;
-        padding-top: 15vw; }
+        padding-top: 10vw; }
       #before-contact-us #offices .swiper-wrapper {
         padding-top: 10vw; }
         #before-contact-us #offices .swiper-wrapper .swiper-slide {
@@ -1116,8 +1124,9 @@ footer {
           width: 3vw; }
 
   #contact-us {
-    height: 955px;
-    width: 100%; }
+    height: auto;
+    width: 100%;
+    padding-bottom: 160%; }
     #contact-us .spacer.initial {
       height: 6vw; }
     #contact-us .spacer {
@@ -1127,9 +1136,9 @@ footer {
       #contact-us .title .first {
         display: block; }
     #contact-us .inner-section {
-      margin: 0 4.16vw; }
+      margin: 0 2.16vw; }
       #contact-us .inner-section > div {
-        margin: 0 2.77vw; }
+        margin-left: 0 !important; }
       #contact-us .inner-section .call-us {
         float: none;
         margin-bottom: 20vw; }
@@ -1187,8 +1196,10 @@ footer {
         height: 7vw; }
 
   .slider-swiper-center {
+    position: absolute;
     text-align: center;
-    margin-top: 127%; }
+    margin-left: 20%;
+    top: 47%; }
     .slider-swiper-center p {
       font-family: Archivo;
       font-size: 18px;
@@ -1245,7 +1256,8 @@ footer {
 
   .gallery {
     width: 100%;
-    height: 2900px;
+    height: auto;
+    padding-bottom: 2%;
     background-color: #ffffff; }
 
   .gallery-p-left {

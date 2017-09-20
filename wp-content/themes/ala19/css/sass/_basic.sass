@@ -57,30 +57,21 @@ input,button,select,textarea
   display: none !important
 
 header
-  //height: 5.555555555555555vw
   .container
-    background-color: black
+    background-color: $black
 
     height: 80px
-    //height: 5.555555555555555vw
     position: fixed
     padding-right: 9.375vw
     padding-left: 0
     z-index: 99
     .center-header
-      //margin-top: 0.8333333333333333vw
       .header-logo
-        //img
-            //height: 3.819444444444444vw
-            //width: 10.972222222222221vw
-        //height: 5.555555555555555vw
         height: 80px
         width: 388px
-
-        //margin-top: -11px
         padding-top: 1%
         padding-bottom: 1%
-        background-color: #fff
+        background-color: $white
         margin-bottom: 0
         padding-left: 122px
         padding-right: 122px
@@ -89,7 +80,7 @@ header
         ul
           li
             a
-              color: #FFFFFF
+              color: $white
               opacity: 0.6
               font-family: Archivo
               font-size: 14px
@@ -188,7 +179,7 @@ footer
   line-height: 1.28
   letter-spacing: -0.2px
   text-align: center
-  color: #000000
+  color: $black
   .contact-last
     font-weight: bold
   #about-sections
@@ -196,7 +187,7 @@ footer
     height: 100%
     margin-left: 5%
     margin-right: 5%
-    background-color: #1f9aff
+    background-color: $lighter-blue2
     .carousel-indicators
       li
         height: 0.6944444444444444vw
@@ -344,7 +335,6 @@ footer
         background: $white
 #contact-us
   background: url('assets/contact-bg.png') bottom no-repeat $white
-  //background-size: cover
   height: 48.6vw
   .spacer
     height: 4vw
@@ -418,7 +408,7 @@ footer
           font-size: 1.11vw
           font-weight: normal
           line-height: 0.94
-          color: #4a4a4a !important
+          color: $partners-one !important
           padding: 0.8333333333333333vw 1.3888888888888888vw
           width: 25.76388888888889vw
           height: 3.333333333333333vw
@@ -442,12 +432,11 @@ footer
         input.wpcf7-not-valid:-ms-input-placeholder
           color: $red
         input[type="submit"]
-          color: #4a4a4a !important
+          color: $partners-one !important
           box-sizing: border-box
           border-radius: 6px
           background-color: transparent
           border: solid 2px $white
-          //opacity: 0.9
           font-size: 1.25vw
           font-weight: normal
           line-height: 0.94
@@ -484,7 +473,7 @@ footer
 #slide-img
   background-color: rgba(0, 0, 0, 0.5)
 .projects
-  background-color: #000000
+  background-color: $black
   text-align: center
   color: $white
   .swiper-container
@@ -499,4 +488,3 @@ footer
     width: 20px
     background-color: white
     padding-top: 20px !important
-
