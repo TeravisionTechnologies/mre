@@ -1198,11 +1198,11 @@ footer {
   .slider-swiper-center {
     position: absolute;
     text-align: center;
-    margin-left: 20%;
+    margin-left: 10%;
     top: 47%; }
     .slider-swiper-center p {
       font-family: Archivo;
-      font-size: 18px;
+      font-size: 16px;
       color: #ffffff; }
       .slider-swiper-center p abbr {
         font-size: 24px;
@@ -1304,16 +1304,20 @@ footer {
     background-color: #000; }
 
   .slide-p-one {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
-    letter-spacing: -0.1px;
     text-align: center;
-    margin-top: 4%; }
+    margin-top: 10%; }
 
   .slide-p-two {
+    font-size: 16px;
+    font-weight: bold;
     text-align: center;
-    mmargin-top: 10%;
-    font-size: 14px; } }
+    margin-top: 10%; }
+
+  .swiper-pagination .swiper-pagination-bullet, .projects .swiper-pagination-bullet, .swiper-pagination-clickable .swiper-pagination-bullet, .swiper-pagination-bullets .swiper-pagination-bullet {
+    background-color: #000;
+    position: fixed; } }
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   #before-contact-us #offices .swiper-pagination {
     bottom: 91.5vw; }
