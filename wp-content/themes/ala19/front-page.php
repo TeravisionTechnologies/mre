@@ -47,7 +47,7 @@ get_header();
 
 <section class="projects">
     <!-- Swiper -->
-    <div class="swiper-container">
+    <div class="swiper-container container-projects">
         <div class="swiper-wrapper">
             <?php
             $aboutPost = get_posts(
@@ -66,13 +66,13 @@ get_header();
 
                     if ($entry['_about_desc'] == $entries[1]['_about_desc']) {
                     ?>
-                    <div style="text-align: center;color: white;margin-top: 6%; font-size: 30px">
+                    <div class="slide-p-one">
                         <?php echo wpautop( $entry['_about_desc'] ); ?>
                     </div>
                     <?php
                     } else {
                         ?>
-                        <div style="text-align: center;color: white;margin-top: 9%; font-size: 20px">
+                        <div class="slide-p-two">
                             <?php echo wpautop( $entry['_about_desc'] ); ?>
                         </div>
                     <?php
@@ -115,7 +115,7 @@ get_header();
 
                 ?>
 
-                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter">
+                <div class="col-md-4">
                     <img src="<?php echo $entry['_about_image'] ?>" class="img-responsive" id="gallery-img">
                 </div>
             <?php
@@ -126,17 +126,17 @@ get_header();
     </div>
 </section>
 
-<section class="our-partners">
+<section class="col-md-12 our-partners">
 
-        <p class="text-our-partners-one">Nuestros Socios</p>
-        <p class="text-our-partners-two">Hacemos real tu inversión soñada</p>
+        <p class="col-md-12 text-our-partners-one">Nuestros Socios</p>
+        <p class="col-md-12 text-our-partners-two">Hacemos real tu inversión soñada</p>
         <!-- Wrapper for slides -->
-        <div class="image">
-            <div class="image-align-center-label">
+        <div class="col-md-12 image">
+            <div class="col-md-6 image-align-center-label">
                 <img src="wp-content/themes/ala19/assets/e-84-b-74-f-963-option-1-002@3x.png" class="d-logo-left" />
             </div>
 
-            <div class="image-align-right-label">
+            <div class="col-md-6 image-align-right-label">
                 <img src="wp-content/themes/ala19/assets/d-logo-1@2x.png" class="d-logo-right"/>
             </div>
 
@@ -144,35 +144,35 @@ get_header();
 
 </section>
 
-<section id="before-contact-us">
+<section class="col-md-12" id="before-contact-us">
     <div id="offices" class="swiper-container">
         <div class="flags-indicators">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
             <img src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
         </div>
 
-        <h4>Puedes encontrar Nuestras Oficinas en:</h4>
+        <h4 class="col-md-12"> Puedes encontrar Nuestras Oficinas en:</h4>
         <!-- Wrapper for slides -->
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
+        <div class="col-md-12 swiper-wrapper">
+            <div class="col-md-6 swiper-slide">
                 <div class="office-detail">
-                    <h5>
+                    <h5 class="col-md-12">
                         <span>Las Vegas:</span>
                     </h5>
-                    <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
-                    <h5>Miami, Florida</h5>
-                    <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
+                    <h5 class="col-md-12">55 Merrick Way, Suite 214 Coral Gables</h5>
+                    <h5 class="col-md-12">Miami, Florida</h5>
+                    <h5 class="col-md-12">Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
                 </div>
             </div>
 
-            <div class="swiper-slide">
-                <div class="office-detail usa-office">
-                    <h5>
+            <div class="col-md-12 swiper-slide">
+                <div class="col-md-6 office-detail usa-office">
+                    <h5 class="col-md-12">
                         <span>Madrid:</span>
                     </h5>
-                    <h5>Calle Ortega y Gasset #6</h5>
-                    <h5>Primero Izquierda</h5>
-                    <h5>Teléfonos: +34 605 016 803</h5>
+                    <h5 class="col-md-12">Calle Ortega y Gasset #6</h5>
+                    <h5 class="col-md-12">Primero Izquierda</h5>
+                    <h5 class="col-md-12">Teléfonos: +34 605 016 803</h5>
                 </div>
             </div>
 
@@ -182,7 +182,7 @@ get_header();
     </div>
 </section>
 
-<section id="contact-us">
+<section class="col-md-12" id="contact-us">
     <div class="spacer initial"></div>
     <p class="contact-title">Nos gustaría asesorarte
         <span class="contact-first">en tu próxima inversión</span>

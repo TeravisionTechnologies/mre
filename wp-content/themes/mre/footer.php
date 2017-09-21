@@ -22,19 +22,19 @@
                     </h5>
                 </div>
                 <div class="footer-icons">
-                    <a href="#">
+                    <a href="https://www.facebook.com/MerandRealEstate/">
                         <i class="fa fa-facebook"></i>
                     </a>
-                    <a href="#">
+                    <a href="https://twitter.com/grupomre">
                         <i class="fa fa-twitter"></i>
                     </a>
-                    <a href="#">
+                    <a href="https://www.instagram.com/grupomre/">
                         <i class="fa fa-instagram"></i>
                     </a>
-                    <a href="#">
+                    <a href="https://www.youtube.com/channel/UCj1GOp1JCfAaSmBdQn5uU9w?view_as=subscriber">
                         <i class="fa fa-youtube-play"></i>
                     </a>
-                    <a href="#">
+                    <a href="https://www.linkedin.com/company/11285534/">
                         <i class="fa fa-linkedin"></i>
                     </a>
                 </div>

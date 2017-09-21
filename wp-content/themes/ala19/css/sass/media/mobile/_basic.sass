@@ -2,21 +2,28 @@
     display: none !important
 .visible-mobile
     display: block !important
-
 header
-    height: 16.666666666666668vw
+    //height: 16.666666666666668vw
     .container
-        height: 16.666666666666668vw
+        //height: 16.666666666666668vw
+        width: 100%
+        height: 60px
         .center-header
-            margin-top: 5vw
+            //margin-top: 5vw
             .header-logo
+                width: 120px
+                height: 77px
+                margin-top: -17px
+                padding-left: 15px
                 img
-                    height: 6.666666666666666vw
-                    width: 19.166666666666668vw
+                    width: 70px
+                    height: 22px
+                    margin-top: 30px
+                    margin-left: 15px
             #bs-header-navbar-nodesktop-parent
                 span
-                    font-size: 5.555555555555555vw
-
+                    font-size: 7vw
+                    margin-top: 20px
 footer
     height: 48.888888888888886vw
     .container
@@ -37,9 +44,28 @@ footer
                         width: 30px
                         height: 30px
                         line-height: 30px
-
+    .fa-caret-up
+        display: none
+#hero-container
+    .hero-box
+        height: 78.05555555555556vw
+        h3
+            margin-top: 22.22222222222222vw
+            width: 86.33333vw
+            font-size: 5.555555555555555vw
+            strong
+                font-weight: 900
+        img
+            margin-top: 5.833333333333333vw
+            width: 15.277777777777777vw
+            height: 15.277777777777777vw
+    .hero-box-left
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.4)
+    .hero-button
+        height: 5vw
+        width: 9.444444444444445vw
 #about-us
-    height: 347.5vw
+    height: 300vw
     .title
         h4
             font-size: 3.333333333333333vw
@@ -47,16 +73,11 @@ footer
             font-size: 6.111111111111111vw
     #about-sections
         width: 83.33333333333333vw
-        .carousel-indicators
-            bottom: 98.61111111111111vw
-            li
-                height: 2.2222222222222223vw
-                width: 2.2222222222222223vw
-        .carousel-inner
-            height: 144.44444444444443vw
+        .swiper-wrapper
+            height: 144.44vw
             width: 82vw
             margin: 0 auto
-            .item
+            .swiper-slide
                 .item-image
                     width: 31.666666666666664vw
                     float: none
@@ -66,40 +87,42 @@ footer
                         width: 31.666666666666664vw
                         float: none
                 .item-paragraph
-                    width: 71.66666666666667vw
+                    width: 62vw
                     float: none
                     padding: 0
                     font-size: 3.333333333333333vw
                     text-align: center
                     margin: 0 auto
-        .carousel-control
-            .glyphicon
-                font-size: 5.555555555555555vw
-                height: 7.222222222222222vw
-                width: 7.222222222222222vw
-                line-height: 1.2
-        .carousel-control.left
-            margin-left: -2.7777777777777777vw
-        .carousel-control.right
-            margin-right: -2.7777777777777777vw
+        .swiper-pagination
+            bottom: 104.16vw
+            .swiper-pagination-bullet
+                height: 12px
+                width: 12px
+                margin: -14px 41px !important
+        .swiper-button-prev
+            left: 0
+        .swiper-button-next
+            right: 0
     .extra-info
         height: 100vw
         width: 86.11111111111111vw
+        display: -webkit-flex
         display: flex
+        -webkit-flex-flow: column nowrap
         flex-flow: column nowrap
-        justify-content: space-evenly
+        -webkit-justify-content: space-around
+        justify-content: space-around
         align-items: center
         h2
             font-size: 8.333333333333334vw
             line-height: 1.25
             span
                 font-size: 6.666666666666666vw
-
 #after-about-us
     height: 70.3vw
     h4
         font-size: 3.333333333333333vw
-        padding-top: 7.8125vw
+        padding-top: 12vw
     h1
         font-size: 6.111111111111111vw
         padding-bottom: 5.859375vw
@@ -112,35 +135,21 @@ footer
         #ala-19
             height: 9.722222222222221vw
             width: 28.88888888888889vw
-
-
 #before-contact-us
-    height: 97.22222222222221vw
+    height: 305px
+    width: 100%
     #offices
         height: 100%
         width: 100%
-        .carousel-indicators
-            bottom: 69.44444444444444vw
-            li
-                margin: -2.7777777777777777vw 6.944444444444445vw
-                height: 2.2222222222222223vw
-                width: 2.2222222222222223vw
-            .flag
-                img
-                    height: 11.944444444444445vw
-                    width: 11.944444444444445vw
-                .flag-ven
-                    left: 6.388888888888888vw
-                .flag-usa
-                    left: 22.77777777777778vw
-                .flag-spain
-                    left: 38.888888888888886vw
+        .flags-indicators
+            img
+                margin: 0 2vw
         h4
             font-size: 3.333333333333333vw
-            padding-top: 30.555555555555554vw
-        .carousel-inner
-            bottom: -5.555555555555555vw
-            .item
+            padding-top: 15vw
+        .swiper-wrapper
+            padding-top: 10vw
+            .swiper-slide
                 height: 47.22222222222222vw
                 .office-detail
                     h5
@@ -153,60 +162,199 @@ footer
                     margin-left: 0
                 .office-detail.usa-office:last-child
                     margin-left: 0
+        .swiper-pagination
+            bottom: 55vw
+            .swiper-pagination-bullet
+                height: 3vw
+                width: 3vw
 
 #contact-us
-    height: 275.27777777777777vw
-    > *
-        padding: 30px 0 0
+    height: 955px
+    width: 100%
+    .spacer.initial
+        height: 6vw
+    .spacer
+        height: 5.20vw
     .title
-        h1
-            font-size: 18px
-            .first
-                display: block
+        font-size: 18px
+        .first
+            display: block
     .inner-section
-        margin: 0 4.166666666666667vw
+        margin: 0 4.16vw
+        > div
+            margin: 0 2.77vw
         .call-us
-            flex: 1 100%
-            padding-bottom: 30px
-            margin-top: 0
+            float: none
+            margin-bottom: 20vw
             .content
-                height: 55.55555555555556vw
-                width: 86.11111111111111vw
-                .centered-content
-                    h2
-                        font-size: 5vw
-                        margin: 0 auto
-                    img
-                        height: 16.944444444444443vw
-                        width: 15vw
-                    #contact-phone
-                        font-size: 6.666666666666666vw
+                margin: 0 auto
+                height: 55.55vw
+                width: 86.11vw
+                h2
+                    font-size: 5vw
+                img
+                    height: 16.94vw
+                    width: 15vw
+                #contact-phone
+                    font-size: 6.66vw
         .the-form
-            flex: 1 100%
-            margin-left: 0
-            padding: 0
             .wpcf7
-                .form-elements-container
-                    display: flex
-                    flex-flow: column nowrap
-                    padding: 0
-                    margin: 0 auto
-                    p
-                        padding: 0.2777777777777778vw 0
-                    p:last-child
-                        padding-top: 0.5555555555555556vw
-                    input:not([type="submit"]), select, textarea
-                        height: 11.11111111111111vw
-                        width: 86.11111111111111vw
-                        font-size: 3.333333333333333vw
-                        padding: 2.7777777777777777vw 3.888888888888889vw
-                    input[type="submit"]
-                        height: 11.11111111111111vw
-                        width: 43.888888888888886vw
-                        font-size: 3.888888888888889vw
-                    textarea
-                        height: 36.94444444444444vw
-                    .your-schedule::before, .your-interest::before, .your-country::before
-                        bottom: 2.5vw
-                        left: 79.16666666666667vw
-                        font-size: 5vw
+                p
+                    padding: 0.2777777777777778vw 0
+                    span.invalid-input::before
+                        border: solid 1px $black
+                        font-size: 4vw
+                        left: 1.66vw
+                        top: 4.16vw
+                    span.invalid-texarea::before
+                        border: solid 1px $black
+                        font-size: 4vw
+                        left: 1.66vw
+                        top: 3vw
+                p:last-child
+                    padding-top: 1.5625vw
+                input:not([type="submit"]), select, textarea
+                    border: solid 1px $black
+                    height: 11.11vw
+                    width: 86.11vw
+                    font-size: 3.33vw
+                    padding: 2.77vw 3.88vw
+                textarea
+                    border: solid 1px $black
+                    height: 36.94vw
+                    width: 86.11vw
+                input[type="submit"]
+                    width: 158px
+                    height: 40px
+                    border: solid 2px $black
+                    font-size: 3.88vw
+                    padding: 0 !important
+                    margin: 1vw 0 0 22vw
+                .your-schedule::before, .your-interest::before, .your-country::before
+                    bottom: 2.5vw
+                    left: 79.16vw
+                    font-size: 5vw
+        .form-errors
+            font-size: 3.33vw
+            top: 76vw
+            left: 2vw
+            width: 55vw
+            height: 7vw
+
+.slider-swiper-center
+    text-align: center
+    margin-top: 127%
+    p
+        font-family: Archivo
+        font-size: 18px
+        color: $white
+        abbr
+            font-size: 24px
+            font-weight: bold
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8)
+
+
+.d-logo-left
+    float: left
+    width: 48px
+    height: 50px
+    margin-left: 15%
+    object-fit: contain
+    transform: rotate(-360deg)
+
+.d-logo-right
+    width: 106px
+    height: 52px
+    margin-left: 15%
+    object-fit: contain
+
+.our-partners
+    width: 100%
+    height: auto
+    padding-bottom: 15%
+    padding-top: 5%
+    background-color: $white
+    box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.5)
+    .text-our-partners-two
+        width: 292px
+        height: 20px
+        font-family: Archivo
+        font-size: 18px
+        letter-spacing: -0.1px !important
+        //margin-left: 10%
+        text-align: center
+        color: $black
+
+.social-networks
+    width: 23px
+    height: 23px
+    object-fit: contain
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3)
+
+.triangle
+    width: 0
+    height: 0
+    margin-left: 47%
+    border-right: 20px solid transparent
+    border-top: 20px solid $black
+    border-left: 20px solid transparent
+    border-bottom: 20px solid transparent
+.gallery
+    width: 100%
+    height: 2900px
+    background-color: $white
+
+.gallery-p-left
+    width: 72px
+    height: 17px
+    border-right: solid 2px $gallery-p
+    position: absolute
+    margin-top: -5%
+    margin-left: 31%
+    font-family: Archivo
+    font-size: 16px
+    line-height: 0.83
+    letter-spacing: -0.1px
+    color: $gallery-p
+
+.gallery-p-right
+    idth: 70px
+    height: 17px
+    position: absolute
+    margin-top: -5%
+    margin-left: 55%
+    font-family: Archivo
+    font-size: 16px
+    line-height: 0.83
+    letter-spacing: $gallery-p
+    float: left
+
+#gallery-img
+    width: 310px
+    height: 302px
+    object-fit: contain
+    margin-left: 10%
+    margin-bottom: 5%
+    max-width: 80%
+
+.container-projects
+    width: 100%
+    height: 120px !important
+
+.swiper-pagination-bullet .swiper-pagination-bullet-active
+    background-color: $white !important
+
+.swiper-pagination-bullet
+    background-color: $black
+
+.slide-p-one
+    font-size: 14px
+    font-weight: bold
+    letter-spacing: -0.1px
+    text-align: center
+    margin-top: 4%
+
+.slide-p-two
+    text-align: center
+    mmargin-top: 10%
+    font-size: 14px
