@@ -1,181 +1,233 @@
 #blog-list-categories
-  height: 363px
-  background: $categories-grey
+  background: $overlay
+  height: 343px
+  position: relative
   .blog-list-category-title, .blog-list-category-text
-    text-align: center
     line-height: 36px
+    text-align: center
   .blog-list-category-title
-    color: $grey
+    color: $white
     font-family: Montserrat-Regular, sans-serif
     font-size: 18px
-    margin-top: 65px
+    line-height: 30px
+    margin-top: 50px
+    opacity: 0.6
   .blog-list-category-text
-    color: $categories-blue
+    color: $white
     font-family: Montserrat-Bold, sans-serif
     font-size: 30px
-
-.swiper-container-blog-categories
-  height: 128px
-  margin-top: 25px
-  margin-bottom: 73px
-  width: 970px
-  .swiper-wrapper
-    width: 800px
-    .swiper-slide
-      width: 128px !important
-      margin: 0 16px
-      border-radius: 100%
-
-      /* Center slide text vertically */
-      display: -webkit-box
-      display: -ms-flexbox
-      display: -webkit-flex
-      display: flex
-      -webkit-box-pack: center
-      -ms-flex-pack: center
-      -webkit-justify-content: center
-      justify-content: center
-      -webkit-box-align: center
-      -ms-flex-align: center
-      -webkit-align-items: center
-      align-items: center
-
-
-
-
-.blog-list-divider
-  margin: 0 auto
-  opacity: 0.5
-  border: solid 1px $grey
-
-#blog-recommended-posts
-  height: 469px
-  .recommended-posts-title, .recommended-posts-subtitle
-    color: $grey
-    line-height: 36px
-  .recommended-posts-title
-    display: inline-block
-    padding: 60px 0 0 100px
-    font-family: Montserrat-Regular, sans-serif
-    font-size: 30px
-  .recommended-posts-subtitle
-    padding-left: 5px
-    font-family: Montserrat-Black, sans-serif
-    font-size: 26px
-  .swiper-container-blog-most-viewed
-    height: 233px
-    margin-top: 40px
-    margin-bottom: 100px
+    line-height: 30px
+  .swiper-container-blog-categories
+    height: 128px
+    margin-bottom: 70px
+    margin-top: 35px
+    position: initial
+    width: 768px
     .swiper-wrapper
-      width: 970px
+      width: 800px
+      .swiper-slide
+        border-radius: 100%
+        position: relative
+        width: 128px
+        .swiper-overlay
+          background: $overlay-blue
+          border-radius: 50%
+          height: 100%
+          position: absolute
+          top: 0
+          width: 100%
+    .swiper-button-prev, .swiper-button-next
+      background-image: none
+      color: $white
+      font-size: 36px
+      height: 36px
+      text-align: center
+      top: 63%
+      width: 60px
+    .swiper-button-prev
+      left: 230px
+    .swiper-button-next
+      right: 230px
+.blog-list-triangle
+  left: 50%
+  position: relative
+  top: -1px
+  transform: translateX(-50%)
+#blog-list
+  background: $white
+  .input-group
+    border-collapse: separate
+    border-bottom: 2px solid $select-grey
+    display: table
+    height: 48px
+    margin-top: 69px
+    position: relative
+    width: 861px
+    i
+      border: none
+      color: $search-icon-grey
+      display: table-cell
+      height: 17px
+      padding-left: 11px
+      padding-top: 8px
+      vertical-align: middle
+      width: 17px
+    input[type="text"]
+      border: none
+      box-shadow: none
+      font-family: Montserrat-Regular, sans-serif
+      font-size: 16px
+      height: 46px
+      line-height: 15px
+      padding-top: 15px
+  .blog-search, .blog-select
+    padding: 0
+  .blog-filter
+    border: solid 2px $select-grey
+    color: $select-grey-text
+    font-family: Montserrat-Regular, sans-serif
+    font-size: 16px
+    height: 48px
+    margin-top: 69px
+    width: 261px
+  .blog-post
+    height: 430px
+    margin-top: 40px
+    padding: 0
+    width: 565px
+    &:nth-child(odd)
+      margin-right: 40px
+    .blog-image
+      height: 241px
+      position: relative
+      .blog-category
+        background-color: $light-blue
+        bottom: 0
+        color: #ffffff
+        font-family: Montserrat-Bold, sans-serif
+        font-size: 12px
+        height: 30px
+        line-height: 30px
+        min-width: 92px
+        padding: 0 10px
+        position: absolute
+        text-align: center
+        text-transform: uppercase
+    .blog-text
+      border: solid 1px #cfcfcf
+      height: 189px
+      padding: 20px 44px 0 44px
+      .blog-text-title
+        color: #4d484a
+        font-family: Montserrat-Bold, sans-serif
+        font-size: 18px
+        line-height: 24px
+      .blog-text-author
+        color: #4d484a
+        font-family: Montserrat-Bold, sans-serif
+        font-size: 14px
+        line-height: 20px
+        opacity: 0.5
+        .blog-text-date, .blog-text-comments
+          font-family: Montserrat-Regular, sans-serif
+          padding-left: 7px
+      .blog-text-summary
+        color: #4d484a
+        font-family: Montserrat-Regular, sans-serif
+        font-size: 14px
+        line-height: 20px
+        margin-top: 10px
+  #blog-pagination
+    clear: both
+    text-align: center
+    .pagination
+      margin: 60px 0 80px 0
+      li
+        font-size: 16px
+        line-height: 21px
+        a
+          background: #efefef
+          color: #000
+          height: 42px
+          padding-top: 10px
+          width: 41px
+        .pagination-active
+          background: $light-blue
+          color: $white
+        .pagination-previous
+          color: $pagination-grey
+#blog-recommended-posts
+  height: 450px
+  position: relative
+  .recommended-posts-overlay
+    position: absolute
+    width: 100%
+    background: $blue-overlay
+    height: 100%
+  .recommended-posts-title
+    color: $white
+    font-family: Montserrat-Bold, sans-serif
+    font-size: 24px
+    line-height: 36px
+    padding-top: 50px
+    text-align: center
+  .swiper-container-blog-most-viewed
+    height: 253px
+    margin-bottom: 71px
+    margin-top: 40px
+    position: initial
+    width: 970px
+    .swiper-wrapper
       margin: 0 auto
       .swiper-slide
-        width: 300px !important
+        width: 300px
         .blog-most-viewed-image
           height: 129px
           position: relative
           .blog-most-viewed-category
-            min-width: 101px
-            height: 25px
             background-color: $light-blue
-            position: absolute
             bottom: 0
+            color: #ffffff
             font-family: Montserrat-Bold, sans-serif
             font-size: 12px
-            padding: 0 10px
+            height: 25px
             line-height: 25px
-            color: #ffffff
+            min-width: 101px
+            padding: 0 10px
+            position: absolute
             text-align: center
             text-transform: uppercase
         .blog-most-viewed-text
-          height: 104px
-          padding: 20px 0 0 25px
+          background: $white
           border: solid 1px #cfcfcf
-          .blog-most-viewed-text-title
-            font-family: Montserrat-Bold, sans-serif
-            font-size: 18px
-            line-height: 21px
-            color: #4d484a
+          height: 124px
+          padding: 20px 0 0 25px
+          a
+            text-decoration: none
+            .blog-most-viewed-text-title
+              color: #4d484a
+              font-family: Montserrat-Bold, sans-serif
+              font-size: 18px
+              line-height: 21px
           .blog-most-viewed-text-author
+            color: #4d484a
             font-family: Montserrat-Bold, sans-serif
             font-size: 14px
             line-height: 20px
-            color: #4d484a
             opacity: 0.5
-            .blog-most-viewed-text-date
+            width: 235px
+            .blog-most-viewed-text-date, .blog-most-viewed-text-comments
               font-family: Montserrat-Regular, sans-serif
               padding-left: 5px
-
-
-.swiper-overlay
-  background: rgba(9, 118, 209, 0.5)
-  width: 100%
-  height: 100%
-  position: absolute
-  border-radius: 50%
-
-#blog-list
-  min-height: 500px
-  background: $white
-
-.blog-post
-  height: 430px
-  width: 565px
-  margin-top: 40px
-  .blog-image
-    height: 241px
-    position: relative
-    .blog-category
-      min-width: 92px
-      height: 30px
-      background-color: $light-blue
-      position: absolute
-      bottom: 0
-      font-family: Montserrat-Bold, sans-serif
-      font-size: 12px
-      padding: 0 10px
-      line-height: 30px
-      color: #ffffff
+    .swiper-button-prev, .swiper-button-next
+      background-image: none
+      color: $white
+      font-size: 36px
+      height: 36px
       text-align: center
-      text-transform: uppercase
-  .blog-text
-    height: 189px
-    padding: 20px 0 0 44px
-    border: solid 1px #cfcfcf
-    .blog-text-title
-      font-family: Montserrat-Bold, sans-serif
-      font-size: 18px
-      line-height: 24px
-      color: #4d484a
-    .blog-text-author
-      font-family: Montserrat-Bold, sans-serif
-      font-size: 14px
-      line-height: 20px
-      color: #4d484a
-      opacity: 0.5
-      .blog-text-date
-        font-family: Montserrat-Regular, sans-serif
-        padding-left: 5px
-    .blog-text-summary
-      margin-top: 10px
-      font-family: Montserrat-Regular, sans-serif
-      font-size: 14px
-      line-height: 20px
-      color: #4d484a
-
-#blog-pagination
-  text-align: center
-  .pagination
-    margin: 60px 0 80px 0
-    li
-      font-size: 16px
-      line-height: 21px
-      a
-        background: #efefef
-        color: #000
-        width: 41px
-        height: 42px
-      .pagination-previous
-        color: #777777
-
-
+      top: 54%
+      width: 60px
+    .swiper-button-prev
+      left: 125px
+    .swiper-button-next
+      right: 125px
