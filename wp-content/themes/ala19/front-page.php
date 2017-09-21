@@ -45,7 +45,7 @@ get_header();
     </div>
 </section>
 
-<section class="projects">
+<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 projects">
     <!-- Swiper -->
     <div class="swiper-container container-projects">
         <div class="swiper-wrapper">
@@ -87,20 +87,17 @@ get_header();
     </div>
 </section>
 
-<section class="gallery">
+<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 gallery">
     <div class="triangle">
     </div>
-    <br>
-    <div>
-        <p class="gallery-p-left">Las Vegas</p>
-<!--        <p class="line-border"></p>-->
-        <p class="gallery-p-right">España</p>
-    </div>
-    <br><br>
 
-    <div class="container">
-        <div class="row">
-            <br/>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 gallery-line">
+        <p class="col-lg-6 col-md-6 col-sm-6 col-xs-6 gallery-p-left">Las Vegas</p>
+<!--        <p class="line-border"></p>-->
+        <p class="col-lg-6 col-md-6 col-sm-6 col-xs-6 gallery-p-right">España</p>
+    </div>
+
+    <div class="container-gallery-img">
 
             <?php
             $aboutPost = get_posts(
@@ -115,28 +112,27 @@ get_header();
 
                 ?>
 
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <img src="<?php echo $entry['_about_image'] ?>" class="img-responsive" id="gallery-img">
                 </div>
             <?php
             }
             ?>
 
-        </div>
     </div>
 </section>
 
-<section class="col-md-12 our-partners">
+<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 our-partners">
 
-        <p class="col-md-12 text-our-partners-one">Nuestros Socios</p>
-        <p class="col-md-12 text-our-partners-two">Hacemos real tu inversión soñada</p>
+        <p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-our-partners-one">Nuestros Socios</p>
+        <p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-our-partners-two">Hacemos real tu inversión soñada</p>
         <!-- Wrapper for slides -->
-        <div class="col-md-12 image">
-            <div class="col-md-6 image-align-center-label">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 image-align-center-label">
                 <img src="wp-content/themes/ala19/assets/e-84-b-74-f-963-option-1-002@3x.png" class="d-logo-left" />
             </div>
 
-            <div class="col-md-6 image-align-right-label">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 image-align-right-label">
                 <img src="wp-content/themes/ala19/assets/d-logo-1@2x.png" class="d-logo-right"/>
             </div>
 
@@ -144,35 +140,35 @@ get_header();
 
 </section>
 
-<section class="col-md-12" id="before-contact-us">
+<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="before-contact-us">
     <div id="offices" class="swiper-container">
         <div class="flags-indicators">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
             <img src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
         </div>
 
-        <h4 class="col-md-12"> Puedes encontrar Nuestras Oficinas en:</h4>
+        <h4 class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> Puedes encontrar Nuestras Oficinas en:</h4>
         <!-- Wrapper for slides -->
-        <div class="col-md-12 swiper-wrapper">
-            <div class="col-md-6 swiper-slide">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 swiper-wrapper">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 swiper-slide">
                 <div class="office-detail">
-                    <h5 class="col-md-12">
+                    <h5 class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <span>Las Vegas:</span>
                     </h5>
-                    <h5 class="col-md-12">55 Merrick Way, Suite 214 Coral Gables</h5>
-                    <h5 class="col-md-12">Miami, Florida</h5>
-                    <h5 class="col-md-12">Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
+                    <h5 class="col-lg-12 col-md-12 col-sm-12 col-xs-12">55 Merrick Way, Suite 214 Coral Gables</h5>
+                    <h5 class="col-lg-12 col-md-12 col-sm-12 col-xs-12">Miami, Florida</h5>
+                    <h5 class="col-lg-12 col-md-12 col-sm-12 col-xs-12">Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
                 </div>
             </div>
 
-            <div class="col-md-12 swiper-slide" style="margin-left: 24%">
-                <div class="col-md-6 office-detail usa-office">
-                    <h5 class="col-md-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 swiper-slide">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 office-detail usa-office">
+                    <h5 class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <span>Madrid:</span>
                     </h5>
-                    <h5 class="col-md-12">Calle Ortega y Gasset #6</h5>
-                    <h5 class="col-md-12">Primero Izquierda</h5>
-                    <h5 class="col-md-12">Teléfonos: +34 605 016 803</h5>
+                    <h5 class="col-lg-12 col-md-12 col-sm-12 col-xs-12">Calle Ortega y Gasset #6</h5>
+                    <h5 class="col-lg-12 col-md-12 col-sm-12 col-xs-12">Primero Izquierda</h5>
+                    <h5 class="col-lg-12 col-md-12 col-sm-12 col-xs-12">Teléfonos: +34 605 016 803</h5>
                 </div>
             </div>
 
@@ -182,12 +178,12 @@ get_header();
     </div>
 </section>
 
-<section class="col-md-12" id="contact-us">
+<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contact-us">
     <div class="spacer initial"></div>
-    <div class="col-md-12">
+    <div class="contact-us-title">
         <p class=" contact-title">
-            <span class=" contact-first">Nos gustaría asesorarte en tu próxima inversión</span>
-            <span class="col-md-12 contact-last">¡Contáctanos!</span>
+            <span class="contact-first">Nos gustaría asesorarte en tu próxima inversión</span>
+            <span class="col-lg-12 col-md-12 contact-last">¡Contáctanos!</span>
         </p>
     </div>
 
