@@ -3,22 +3,19 @@
 .visible-mobile
     display: block !important
 header
-    //height: 16.666666666666668vw
     .container
-        //height: 16.666666666666668vw
         width: 100%
-        height: 60px
+        height: auto
         .center-header
-            //margin-top: 5vw
             .header-logo
                 width: 120px
-                height: 77px
-                margin-top: -17px
+                height: auto
                 padding-left: 15px
                 img
                     width: 70px
-                    height: 22px
-                    margin-top: 30px
+                    height: auto
+                    margin-top: 20px
+                    padding-bottom: 10px
                     margin-left: 15px
             #bs-header-navbar-nodesktop-parent
                 span
@@ -118,6 +115,14 @@ footer
             line-height: 1.25
             span
                 font-size: 6.666666666666666vw
+
+.contact-title
+    font-family: Archivo
+    font-size: 18px
+    line-height: 1.28
+    letter-spacing: -0.2px
+    text-align: center
+    color: $black
 #after-about-us
     height: 70.3vw
     h4
@@ -136,7 +141,7 @@ footer
             height: 9.722222222222221vw
             width: 28.88888888888889vw
 #before-contact-us
-    height: 305px
+    height: auto
     width: 100%
     #offices
         height: 100%
@@ -146,7 +151,7 @@ footer
                 margin: 0 2vw
         h4
             font-size: 3.333333333333333vw
-            padding-top: 15vw
+            padding-top: 10vw
         .swiper-wrapper
             padding-top: 10vw
             .swiper-slide
@@ -169,8 +174,9 @@ footer
                 width: 3vw
 
 #contact-us
-    height: 955px
+    height: auto
     width: 100%
+    padding-bottom: 160%
     .spacer.initial
         height: 6vw
     .spacer
@@ -180,9 +186,9 @@ footer
         .first
             display: block
     .inner-section
-        margin: 0 4.16vw
+        margin: 0 2.16vw
         > div
-            margin: 0 2.77vw
+            margin-left: 0 !important
         .call-us
             float: none
             margin-bottom: 20vw
@@ -242,11 +248,13 @@ footer
             height: 7vw
 
 .slider-swiper-center
+    position: absolute
     text-align: center
-    margin-top: 127%
+    margin-left: 10%
+    top: 47%
     p
         font-family: Archivo
-        font-size: 18px
+        font-size: 16px
         color: $white
         abbr
             font-size: 24px
@@ -281,7 +289,6 @@ footer
         font-family: Archivo
         font-size: 18px
         letter-spacing: -0.1px !important
-        //margin-left: 10%
         text-align: center
         color: $black
 
@@ -301,8 +308,10 @@ footer
     border-bottom: 20px solid transparent
 .gallery
     width: 100%
-    height: 2900px
+    height: auto
+    padding-bottom: 2%
     background-color: $white
+
 
 .gallery-p-left
     width: 72px
@@ -348,13 +357,18 @@ footer
     background-color: $black
 
 .slide-p-one
-    font-size: 14px
+    font-size: 16px
     font-weight: bold
-    letter-spacing: -0.1px
     text-align: center
-    margin-top: 4%
+    margin-top: 10%
 
 .slide-p-two
+    font-size: 16px
+    font-weight: bold
     text-align: center
-    mmargin-top: 10%
-    font-size: 14px
+    margin-top: 10%
+
+.swiper-pagination, .projects, .swiper-pagination-clickable, .swiper-pagination-bullets
+    .swiper-pagination-bullet
+        background-color: $black
+        position: fixed

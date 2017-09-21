@@ -15,7 +15,7 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.97222vw;
+  font-size: 0.9722222222vw;
   color: #656d70;
   line-height: 1.25;
   letter-spacing: -0.1px;
@@ -67,7 +67,7 @@ input, button, select, textarea {
   display: none !important; }
 
 header .container {
-  background-color: black;
+  background-color: #000;
   height: 80px;
   position: fixed;
   padding-right: 9.375vw;
@@ -78,13 +78,13 @@ header .container {
     width: 388px;
     padding-top: 1%;
     padding-bottom: 1%;
-    background-color: #fff;
+    background-color: #ffffff;
     margin-bottom: 0;
     padding-left: 122px;
     padding-right: 122px;
     float: left; }
   header .container .center-header #bs-header-navbar ul li a {
-    color: #FFFFFF;
+    color: #ffffff;
     opacity: 0.6;
     font-family: Archivo;
     font-size: 14px;
@@ -96,7 +96,7 @@ footer {
   height: 40px;
   background-color: #000; }
   footer div {
-    margin: 0.69444vw;
+    margin: 0.6944444444vw;
     text-align: center; }
   footer .container .footer-center {
     margin-top: 3.125vw; }
@@ -115,9 +115,9 @@ footer {
       text-decoration: none; }
       footer .container .footer-center .footer-icons a .fa {
         font-size: 14px;
-        width: 2.77778vw;
-        height: 2.77778vw;
-        line-height: 2.77778vw;
+        width: 2.7777777778vw;
+        height: 2.7777777778vw;
+        line-height: 2.7777777778vw;
         text-align: center;
         background-color: #f7f7f7;
         color: #0976d1;
@@ -125,7 +125,7 @@ footer {
         transition: all 0.3s ease-in-out;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
         border-radius: 50%;
-        margin: 0 0.55556vw; }
+        margin: 0 0.5555555556vw; }
       footer .container .footer-center .footer-icons a .fa:hover, footer .container .footer-center .footer-icons a .fa:active {
         -webkit-transform: scale(1.1);
         transform: scale(1.1); }
@@ -146,9 +146,9 @@ footer {
     top: 25%;
     width: 100%;
     text-align: center;
-    margin-top: 2.08333vw; }
+    margin-top: 2.0833333333vw; }
   .overlay a {
-    padding: 0.55556vw;
+    padding: 0.5555555556vw;
     text-decoration: none;
     font-size: 2.5vw;
     color: #818181;
@@ -158,12 +158,12 @@ footer {
     color: #333; }
   .overlay .closebtn {
     position: absolute;
-    top: 1.38889vw;
+    top: 1.3888888889vw;
     right: 3.125vw;
-    font-size: 4.16667vw; }
+    font-size: 4.1666666667vw; }
 
 #about-us {
-  height: 71.11111vw;
+  height: 71.1111111111vw;
   background: #000;
   background-size: cover;
   display: -webkit-flex;
@@ -181,7 +181,7 @@ footer {
   line-height: 1.28;
   letter-spacing: -0.2px;
   text-align: center;
-  color: #000000; }
+  color: #000; }
   .contact-title .contact-last {
     font-weight: bold; }
   .contact-title #about-sections {
@@ -191,15 +191,15 @@ footer {
     margin-right: 5%;
     background-color: #1f9aff; }
     .contact-title #about-sections .carousel-indicators li {
-      height: 0.69444vw;
-      width: 0.69444vw;
+      height: 0.6944444444vw;
+      width: 0.6944444444vw;
       background-color: rgba(255, 255, 255, 0.4);
       border: none;
       margin: 0 1px; }
     .contact-title #about-sections .carousel-indicators li.active {
       background-color: #ffffff; }
     .contact-title #about-sections .carousel-inner {
-      height: 34.72222vw;
+      height: 34.7222222222vw;
       width: 100%;
       margin: 0 auto; }
       .contact-title #about-sections .carousel-inner .item .item-image {
@@ -207,8 +207,8 @@ footer {
         float: left; }
         .contact-title #about-sections .carousel-inner .item .item-image img {
           float: right;
-          height: 18.05556vw;
-          width: 18.05556vw; }
+          height: 18.0555555556vw;
+          width: 18.0555555556vw; }
       .contact-title #about-sections .carousel-inner .item .item-paragraph {
         text-align: center;
         padding-top: 30%;
@@ -227,7 +227,7 @@ footer {
         width: 3.125vw;
         line-height: 1.2; }
   .contact-title .extra-info {
-    height: 11.11111vw;
+    height: 11.1111111111vw;
     width: 81.25vw;
     display: flex;
     flex-flow: row nowrap;
@@ -238,31 +238,31 @@ footer {
     border-radius: 18px; }
     .contact-title .extra-info h2 {
       text-align: center;
-      font-size: 3.47222vw;
+      font-size: 3.4722222222vw;
       font-weight: bold;
       line-height: 1.33;
       text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); }
       .contact-title .extra-info h2 span {
         display: block;
-        font-size: 2.08333vw; }
+        font-size: 2.0833333333vw; }
 
 #after-about-us {
-  height: 25.13889vw;
+  height: 25.1388888889vw;
   background: #00447e;
   text-align: center; }
   #after-about-us h4 {
-    padding-top: 5.20833vw; }
+    padding-top: 5.2083333333vw; }
   #after-about-us h1 {
     text-align: center;
-    padding-bottom: 2.77778vw; }
+    padding-bottom: 2.7777777778vw; }
   #after-about-us #partners-images img {
-    margin: 0 1.59722vw; }
+    margin: 0 1.5972222222vw; }
   #after-about-us #partners-images #hr-realty {
     height: 6.25vw;
-    width: 6.66667vw; }
+    width: 6.6666666667vw; }
   #after-about-us #partners-images #ala-19 {
-    height: 3.33333vw;
-    width: 10.06944vw; }
+    height: 3.3333333333vw;
+    width: 10.0694444444vw; }
 
 .our-partners {
   width: 100%;
@@ -304,14 +304,14 @@ footer {
       padding-top: 4vw; }
     #before-contact-us #offices .swiper-wrapper {
       width: 100%;
-      bottom: -2.08333vw; }
+      bottom: -2.0833333333vw; }
       #before-contact-us #offices .swiper-wrapper .swiper-slide {
         width: 100%;
         margin: 0 auto; }
         #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail {
           text-align: center; }
           #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail h5 {
-            font-size: 1.11111vw;
+            font-size: 1.1111111111vw;
             line-height: 1.56;
             letter-spacing: -0.1px; }
           #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail span {
@@ -321,9 +321,9 @@ footer {
           width: 49%;
           display: inline-block; }
         #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail.usa-office:first-child {
-          margin-left: 14.02778vw; }
+          margin-left: 14.0277777778vw; }
         #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail.usa-office:last-child {
-          margin-left: -25.69444vw; }
+          margin-left: -25.6944444444vw; }
     #before-contact-us #offices .swiper-pagination {
       bottom: 15.97vw; }
       #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
@@ -364,7 +364,7 @@ footer {
           width: 5vw;
           margin-bottom: 1.38vw; }
         #contact-us .inner-section .call-us .content h2 {
-          font-size: 1.66667vw;
+          font-size: 1.6666666667vw;
           color: #000000 !important;
           letter-spacing: -1px;
           line-height: 1.42; }
@@ -397,7 +397,7 @@ footer {
         left: 1.1vw;
         top: 1.2vw; }
     #contact-us .inner-section .the-form .wpcf7 p:last-child {
-      padding-top: 0.69444vw; }
+      padding-top: 0.6944444444vw; }
     #contact-us .inner-section .the-form .wpcf7 input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 select, #contact-us .inner-section .the-form .wpcf7 textarea {
       box-sizing: border-box;
       border-radius: 6px;
@@ -408,9 +408,9 @@ footer {
       font-weight: normal;
       line-height: 0.94;
       color: #4a4a4a !important;
-      padding: 0.83333vw 1.38889vw;
-      width: 25.76389vw;
-      height: 3.33333vw;
+      padding: 0.8333333333vw 1.3888888889vw;
+      width: 25.7638888889vw;
+      height: 3.3333333333vw;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none; }
@@ -473,7 +473,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.5); }
 
 .projects {
-  background-color: #000000;
+  background-color: #000;
   text-align: center;
   color: #ffffff; }
   .projects .swiper-container {
@@ -531,7 +531,7 @@ footer {
         #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
           height: 12px;
           width: 12px;
-          margin: 45px 41px !important; }
+          margin: -25px 41px !important; }
 
   #contact-us {
     background: url("assets/contact-bg.png") bottom no-repeat #ffffff;
@@ -782,26 +782,26 @@ footer {
     display: block !important; }
 
   header {
-    height: 10.41667vw; }
+    height: 10.4166666667vw; }
     header .container {
-      height: 10.41667vw; }
+      height: 10.4166666667vw; }
       header .container .center-header {
-        margin-top: 2.60417vw; }
+        margin-top: 2.6041666667vw; }
         header .container .center-header .header-logo img {
-          height: 5.20833vw;
-          width: 15.10417vw; }
+          height: 5.2083333333vw;
+          width: 15.1041666667vw; }
         header .container .center-header #bs-header-navbar-nodesktop-parent span {
-          font-size: 4.16667vw; }
+          font-size: 4.1666666667vw; }
 
   footer {
-    height: 22.91667vw; }
+    height: 22.9166666667vw; }
     footer .container {
-      padding: 0 7.16146vw; }
+      padding: 0 7.1614583333vw; }
       footer .container .footer-center {
         margin-top: 3.125vw; }
         footer .container .footer-center .footer-logo img {
           height: 6.25vw;
-          width: 18.48958vw; }
+          width: 18.4895833333vw; }
         footer .container .footer-center .footer-copy h5 {
           font-size: 12px; }
         footer .container .footer-center .footer-icons a .fa {
@@ -811,122 +811,122 @@ footer {
           line-height: 30px; }
 
   #about-us {
-    height: 130.98958vw; }
+    height: 130.9895833333vw; }
     #about-us .title h4 {
-      font-size: 1.82292vw; }
+      font-size: 1.8229166667vw; }
     #about-us .title h1 {
-      font-size: 3.64583vw; }
+      font-size: 3.6458333333vw; }
     #about-us #about-sections {
-      width: 68.05556vw; }
+      width: 68.0555555556vw; }
       #about-us #about-sections .carousel-indicators {
         bottom: 0; }
         #about-us #about-sections .carousel-indicators li {
-          height: 1.04167vw;
-          width: 1.04167vw; }
+          height: 1.0416666667vw;
+          width: 1.0416666667vw; }
       #about-us #about-sections .carousel-inner {
-        height: 65.10417vw;
-        width: 65.36458vw;
+        height: 65.1041666667vw;
+        width: 65.3645833333vw;
         margin: 0 auto; }
         #about-us #about-sections .carousel-inner .item .item-image {
-          width: 18.48958vw;
+          width: 18.4895833333vw;
           float: none;
           margin: 3.90625vw auto 3.90625vw auto; }
           #about-us #about-sections .carousel-inner .item .item-image img {
-            height: 18.48958vw;
-            width: 18.48958vw;
+            height: 18.4895833333vw;
+            width: 18.4895833333vw;
             float: none; }
         #about-us #about-sections .carousel-inner .item .item-paragraph {
-          width: 55.72917vw;
+          width: 55.7291666667vw;
           float: none;
           padding: 0;
-          font-size: 1.82292vw;
+          font-size: 1.8229166667vw;
           text-align: center;
           margin: 0 auto; }
       #about-us #about-sections .carousel-control .glyphicon {
-        font-size: 3.38542vw;
-        height: 4.16667vw;
-        width: 4.16667vw;
+        font-size: 3.3854166667vw;
+        height: 4.1666666667vw;
+        width: 4.1666666667vw;
         line-height: 1.2; }
     #about-us .extra-info {
-      height: 18.22917vw;
-      width: 85.67708vw; }
+      height: 18.2291666667vw;
+      width: 85.6770833333vw; }
       #about-us .extra-info h2 {
         font-size: 3.90625vw;
         line-height: 1.36; }
         #about-us .extra-info h2 span {
-          font-size: 2.86458vw; }
+          font-size: 2.8645833333vw; }
 
   #after-about-us {
     height: 39.0625vw; }
     #after-about-us h4 {
-      font-size: 1.82292vw;
+      font-size: 1.8229166667vw;
       padding-top: 7.8125vw; }
     #after-about-us h1 {
-      font-size: 3.64583vw;
-      padding-bottom: 5.85938vw; }
+      font-size: 3.6458333333vw;
+      padding-bottom: 5.859375vw; }
     #after-about-us #partners-images img {
-      margin: 0 1.59722vw; }
+      margin: 0 1.5972222222vw; }
     #after-about-us #partners-images #hr-realty {
-      height: 11.32813vw;
-      width: 10.67708vw; }
+      height: 11.328125vw;
+      width: 10.6770833333vw; }
     #after-about-us #partners-images #ala-19 {
-      height: 5.59896vw;
+      height: 5.5989583333vw;
       width: 17.1875vw; }
 
   #before-contact-us {
-    height: 52.08333vw; }
+    height: 52.0833333333vw; }
     #before-contact-us #offices {
       height: 100%;
       width: 100%; }
       #before-contact-us #offices .carousel-indicators {
-        bottom: 33.20313vw; }
+        bottom: 33.203125vw; }
         #before-contact-us #offices .carousel-indicators li {
           margin: -0.78125vw 3.5vw;
-          height: 1.17188vw;
-          width: 1.17188vw; }
+          height: 1.171875vw;
+          width: 1.171875vw; }
         #before-contact-us #offices .carousel-indicators .flag img {
-          height: 6.51042vw;
-          width: 6.51042vw; }
+          height: 6.5104166667vw;
+          width: 6.5104166667vw; }
         #before-contact-us #offices .carousel-indicators .flag .flag-ven {
-          left: 17.57813vw; }
+          left: 17.578125vw; }
         #before-contact-us #offices .carousel-indicators .flag .flag-usa {
-          left: 26.30208vw; }
+          left: 26.3020833333vw; }
         #before-contact-us #offices .carousel-indicators .flag .flag-spain {
-          left: 34.63542vw; }
+          left: 34.6354166667vw; }
       #before-contact-us #offices h4 {
-        font-size: 2.08333vw;
-        padding-top: 21.48438vw; }
+        font-size: 2.0833333333vw;
+        padding-top: 21.484375vw; }
       #before-contact-us #offices .carousel-inner {
         bottom: -6.25vw; }
         #before-contact-us #offices .carousel-inner .item .office-detail h5 {
           font-size: 14px;
           line-height: 1.79; }
         #before-contact-us #offices .carousel-inner .item .office-detail.usa-office:first-child {
-          margin-left: 4.02778vw; }
+          margin-left: 4.027778vw; }
         #before-contact-us #offices .carousel-inner .item .office-detail.usa-office:last-child {
-          margin-left: -4.69444vw; }
+          margin-left: -4.694444vw; }
 
   #contact-us {
-    height: 137.10938vw; }
+    height: 137.109375vw; }
     #contact-us .title h1 {
-      font-size: 2.86458vw; }
+      font-size: 2.8645833333vw; }
     #contact-us .title .first {
       display: inline; }
     #contact-us .inner-section {
-      margin: 0 5.20833vw; }
+      margin: 0 5.2083333333vw; }
       #contact-us .inner-section .call-us {
         flex: 1 100%;
         padding-bottom: 30px;
         margin-top: 0; }
         #contact-us .inner-section .call-us .content {
           margin: 0 auto;
-          height: 33.85417vw;
+          height: 33.8541666667vw;
           width: 55.46875vw; }
           #contact-us .inner-section .call-us .content .centered-content h2 {
             font-size: 3.125vw; }
           #contact-us .inner-section .call-us .content .centered-content img {
             height: 9.375vw;
-            width: 8.33333vw; }
+            width: 8.3333333333vw; }
           #contact-us .inner-section .call-us .content .centered-content #contact-phone {
             font-size: 3.90625vw; }
       #contact-us .inner-section .the-form {
@@ -936,22 +936,22 @@ footer {
         #contact-us .inner-section .the-form .wpcf7 .form-elements-container {
           margin: 0 auto; }
           #contact-us .inner-section .the-form .wpcf7 .form-elements-container p {
-            padding: 0.52083vw 0.91146vw; }
+            padding: 0.5208333333vw 0.9114583333vw; }
           #contact-us .inner-section .the-form .wpcf7 .form-elements-container p:last-child {
             padding-top: 1.5625vw; }
           #contact-us .inner-section .the-form .wpcf7 .form-elements-container input:not([type="submit"]), #contact-us .inner-section .the-form .wpcf7 .form-elements-container select, #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
-            height: 6.11979vw;
-            width: 41.53646vw;
-            font-size: 1.82292vw;
-            padding: 1.82292vw 2.60417vw; }
+            height: 6.1197916667vw;
+            width: 41.5364583333vw;
+            font-size: 1.8229166667vw;
+            padding: 1.8229166667vw 2.6041666667vw; }
           #contact-us .inner-section .the-form .wpcf7 .form-elements-container input[type="submit"] {
-            font-size: 2.08333vw; }
+            font-size: 2.0833333333vw; }
           #contact-us .inner-section .the-form .wpcf7 .form-elements-container textarea {
-            height: 17.31771vw;
-            width: 85.67708vw; }
+            height: 17.3177083333vw;
+            width: 85.6770833333vw; }
           #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-schedule::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-interest::before, #contact-us .inner-section .the-form .wpcf7 .form-elements-container .your-country::before {
-            bottom: 2.08333vw;
-            left: 38.80208vw;
+            bottom: 2.0833333333vw;
+            left: 38.8020833333vw;
             font-size: 2.34375vw; } }
 @media only screen and (max-width: 767px) {
   .visible-desktop {
@@ -962,30 +962,30 @@ footer {
 
   header .container {
     width: 100%;
-    height: 60px; }
+    height: auto; }
     header .container .center-header .header-logo {
       width: 120px;
-      height: 77px;
-      margin-top: -17px;
+      height: auto;
       padding-left: 15px; }
       header .container .center-header .header-logo img {
         width: 70px;
-        height: 22px;
-        margin-top: 30px;
+        height: auto;
+        margin-top: 20px;
+        padding-bottom: 10px;
         margin-left: 15px; }
     header .container .center-header #bs-header-navbar-nodesktop-parent span {
       font-size: 7vw;
       margin-top: 20px; }
 
   footer {
-    height: 48.88889vw; }
+    height: 48.8888888889vw; }
     footer .container {
-      padding: 0 6.94444vw; }
+      padding: 0 6.9444444444vw; }
       footer .container .footer-center {
-        margin-top: 11.11111vw; }
+        margin-top: 11.1111111111vw; }
         footer .container .footer-center .footer-logo img {
-          height: 9.16667vw;
-          width: 26.94444vw; }
+          height: 9.1666666667vw;
+          width: 26.9444444444vw; }
         footer .container .footer-center .footer-copy h5 {
           font-size: 10px; }
         footer .container .footer-center .footer-icons a .fa {
@@ -997,48 +997,48 @@ footer {
       display: none; }
 
   #hero-container .hero-box {
-    height: 78.05556vw; }
+    height: 78.0555555556vw; }
     #hero-container .hero-box h3 {
-      margin-top: 22.22222vw;
+      margin-top: 22.2222222222vw;
       width: 86.33333vw;
-      font-size: 5.55556vw; }
+      font-size: 5.5555555556vw; }
       #hero-container .hero-box h3 strong {
         font-weight: 900; }
     #hero-container .hero-box img {
-      margin-top: 5.83333vw;
-      width: 15.27778vw;
-      height: 15.27778vw; }
+      margin-top: 5.8333333333vw;
+      width: 15.2777777778vw;
+      height: 15.2777777778vw; }
   #hero-container .hero-box-left {
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.4); }
   #hero-container .hero-button {
     height: 5vw;
-    width: 9.44444vw; }
+    width: 9.4444444444vw; }
 
   #about-us {
     height: 300vw; }
     #about-us .title h4 {
-      font-size: 3.33333vw; }
+      font-size: 3.3333333333vw; }
     #about-us .title h1 {
-      font-size: 6.11111vw; }
+      font-size: 6.1111111111vw; }
     #about-us #about-sections {
-      width: 83.33333vw; }
+      width: 83.3333333333vw; }
       #about-us #about-sections .swiper-wrapper {
         height: 144.44vw;
         width: 82vw;
         margin: 0 auto; }
         #about-us #about-sections .swiper-wrapper .swiper-slide .item-image {
-          width: 31.66667vw;
+          width: 31.6666666667vw;
           float: none;
-          margin: 0 auto 18.88889vw auto; }
+          margin: 0 auto 18.8888888889vw auto; }
           #about-us #about-sections .swiper-wrapper .swiper-slide .item-image img {
-            height: 31.66667vw;
-            width: 31.66667vw;
+            height: 31.6666666667vw;
+            width: 31.6666666667vw;
             float: none; }
         #about-us #about-sections .swiper-wrapper .swiper-slide .item-paragraph {
           width: 62vw;
           float: none;
           padding: 0;
-          font-size: 3.33333vw;
+          font-size: 3.3333333333vw;
           text-align: center;
           margin: 0 auto; }
       #about-us #about-sections .swiper-pagination {
@@ -1053,7 +1053,7 @@ footer {
         right: 0; }
     #about-us .extra-info {
       height: 100vw;
-      width: 86.11111vw;
+      width: 86.1111111111vw;
       display: -webkit-flex;
       display: flex;
       -webkit-flex-flow: column nowrap;
@@ -1062,30 +1062,38 @@ footer {
       justify-content: space-around;
       align-items: center; }
       #about-us .extra-info h2 {
-        font-size: 8.33333vw;
+        font-size: 8.3333333333vw;
         line-height: 1.25; }
         #about-us .extra-info h2 span {
-          font-size: 6.66667vw; }
+          font-size: 6.6666666667vw; }
+
+  .contact-title {
+    font-family: Archivo;
+    font-size: 18px;
+    line-height: 1.28;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: #000; }
 
   #after-about-us {
     height: 70.3vw; }
     #after-about-us h4 {
-      font-size: 3.33333vw;
+      font-size: 3.3333333333vw;
       padding-top: 12vw; }
     #after-about-us h1 {
-      font-size: 6.11111vw;
-      padding-bottom: 5.85938vw; }
+      font-size: 6.1111111111vw;
+      padding-bottom: 5.859375vw; }
     #after-about-us #partners-images img {
-      margin: 0 1.59722vw; }
+      margin: 0 1.5972222222vw; }
     #after-about-us #partners-images #hr-realty {
-      height: 19.16667vw;
-      width: 18.05556vw; }
+      height: 19.1666666667vw;
+      width: 18.0555555556vw; }
     #after-about-us #partners-images #ala-19 {
-      height: 9.72222vw;
-      width: 28.88889vw; }
+      height: 9.7222222222vw;
+      width: 28.8888888889vw; }
 
   #before-contact-us {
-    height: 305px;
+    height: auto;
     width: 100%; }
     #before-contact-us #offices {
       height: 100%;
@@ -1093,14 +1101,14 @@ footer {
       #before-contact-us #offices .flags-indicators img {
         margin: 0 2vw; }
       #before-contact-us #offices h4 {
-        font-size: 3.33333vw;
-        padding-top: 15vw; }
+        font-size: 3.3333333333vw;
+        padding-top: 10vw; }
       #before-contact-us #offices .swiper-wrapper {
         padding-top: 10vw; }
         #before-contact-us #offices .swiper-wrapper .swiper-slide {
-          height: 47.22222vw; }
+          height: 47.2222222222vw; }
           #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail h5 {
-            font-size: 3.33333vw;
+            font-size: 3.3333333333vw;
             line-height: 1.79; }
           #before-contact-us #offices .swiper-wrapper .swiper-slide .office-detail.usa-office {
             width: 100%;
@@ -1116,8 +1124,9 @@ footer {
           width: 3vw; }
 
   #contact-us {
-    height: 955px;
-    width: 100%; }
+    height: auto;
+    width: 100%;
+    padding-bottom: 160%; }
     #contact-us .spacer.initial {
       height: 6vw; }
     #contact-us .spacer {
@@ -1127,9 +1136,9 @@ footer {
       #contact-us .title .first {
         display: block; }
     #contact-us .inner-section {
-      margin: 0 4.16vw; }
+      margin: 0 2.16vw; }
       #contact-us .inner-section > div {
-        margin: 0 2.77vw; }
+        margin-left: 0 !important; }
       #contact-us .inner-section .call-us {
         float: none;
         margin-bottom: 20vw; }
@@ -1145,7 +1154,7 @@ footer {
           #contact-us .inner-section .call-us .content #contact-phone {
             font-size: 6.66vw; }
       #contact-us .inner-section .the-form .wpcf7 p {
-        padding: 0.27778vw 0; }
+        padding: 0.2777777778vw 0; }
         #contact-us .inner-section .the-form .wpcf7 p span.invalid-input::before {
           border: solid 1px #000;
           font-size: 4vw;
@@ -1187,11 +1196,13 @@ footer {
         height: 7vw; }
 
   .slider-swiper-center {
+    position: absolute;
     text-align: center;
-    margin-top: 127%; }
+    margin-left: 10%;
+    top: 47%; }
     .slider-swiper-center p {
       font-family: Archivo;
-      font-size: 18px;
+      font-size: 16px;
       color: #ffffff; }
       .slider-swiper-center p abbr {
         font-size: 24px;
@@ -1245,7 +1256,8 @@ footer {
 
   .gallery {
     width: 100%;
-    height: 2900px;
+    height: auto;
+    padding-bottom: 2%;
     background-color: #ffffff; }
 
   .gallery-p-left {
@@ -1292,16 +1304,20 @@ footer {
     background-color: #000; }
 
   .slide-p-one {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
-    letter-spacing: -0.1px;
     text-align: center;
-    margin-top: 4%; }
+    margin-top: 10%; }
 
   .slide-p-two {
+    font-size: 16px;
+    font-weight: bold;
     text-align: center;
-    mmargin-top: 10%;
-    font-size: 14px; } }
+    margin-top: 10%; }
+
+  .swiper-pagination .swiper-pagination-bullet, .projects .swiper-pagination-bullet, .swiper-pagination-clickable .swiper-pagination-bullet, .swiper-pagination-bullets .swiper-pagination-bullet {
+    background-color: #000;
+    position: fixed; } }
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   #before-contact-us #offices .swiper-pagination {
     bottom: 91.5vw; }

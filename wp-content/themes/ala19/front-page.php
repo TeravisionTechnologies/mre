@@ -165,7 +165,7 @@ get_header();
                 </div>
             </div>
 
-            <div class="col-md-12 swiper-slide">
+            <div class="col-md-12 swiper-slide" style="margin-left: 24%">
                 <div class="col-md-6 office-detail usa-office">
                     <h5 class="col-md-12">
                         <span>Madrid:</span>
@@ -184,12 +184,13 @@ get_header();
 
 <section class="col-md-12" id="contact-us">
     <div class="spacer initial"></div>
-    <p class="contact-title">Nos gustaría asesorarte
-        <span class="contact-first">en tu próxima inversión</span>
-        <br>
-        <span class="contact-last">¡Contáctanos!</span>
-    </p>
-    <div class="spacer"></div>
+    <div class="col-md-12">
+        <p class=" contact-title">
+            <span class=" contact-first">Nos gustaría asesorarte en tu próxima inversión</span>
+            <span class="col-md-12 contact-last">¡Contáctanos!</span>
+        </p>
+    </div>
+
     <div class="inner-section">
         <div class="form-errors">Uno o más campos tiene un error</div>
         <div class="call-us">
