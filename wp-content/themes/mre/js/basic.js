@@ -61,6 +61,43 @@ jQuery(document).ready(function() {
             });
         });
 
+        //Swiper Blog Categories
+        var swiper_blog_categories = new Swiper('.swiper-container-blog-categories', {
+                slidesPerView: 5,
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                spaceBetween: 32,
+                centeredSlides: true,
+                loop: true,
+                /*breakpoints: {
+                 1024: {
+                 slidesPerView: 3,
+                 spaceBetween: 30,
+                 },
+                 }*/
+        });
+        $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
+        $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
+        $('.swiper-button-next, .swiper-button-prev').click(function () {
+          $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
+          $('.swiper-slide').find('div').addClass('swiper-overlay');
+          $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
+        });
+
+        //Swiper Blog Post Most Viewed
+          var swiper_blog_most_viewed = new Swiper('.swiper-container-blog-most-viewed', {
+            slidesPerView: 3,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            spaceBetween: 35,
+            loop: true,
+            /*breakpoints: {
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }*/
+          });
 
     // Menu scroll effects
 
