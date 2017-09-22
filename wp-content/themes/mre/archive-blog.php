@@ -68,7 +68,7 @@ get_header();
         </div>
         <div class="col-md-6 blog-post">
           <div class="blog-image"
-               style="background-image: url('http://lorempixel.com/565/241/')">
+               style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-1.jpg')">
             <span class="blog-category">Inversión</span>
           </div>
           <div class="blog-text">
@@ -81,7 +81,7 @@ get_header();
         </div>
         <div class="col-md-6 blog-post">
           <div class="blog-image"
-               style="background-image: url('http://lorempixel.com/565/241/')">
+               style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-2.jpg')">
             <span class="blog-category">Inversión</span>
           </div>
           <div class="blog-text">
@@ -94,7 +94,7 @@ get_header();
         </div>
         <div class="col-md-6 blog-post">
           <div class="blog-image"
-               style="background-image: url('http://lorempixel.com/565/241/')">
+               style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-3.jpg')">
             <span class="blog-category">Inversión</span>
           </div>
           <div class="blog-text">
@@ -107,7 +107,7 @@ get_header();
         </div>
         <div class="col-md-6 blog-post">
           <div class="blog-image"
-               style="background-image: url('http://lorempixel.com/565/241/')">
+               style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-4.jpg')">
             <span class="blog-category">Inversión</span>
           </div>
           <div class="blog-text">
@@ -148,55 +148,55 @@ get_header();
       <div class="swiper-container swiper-container-blog-most-viewed">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="blog-most-viewed-image" style="background-image: url('http://lorempixel.com/300/129/');">
+            <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-1.jpg');">
               <span class="blog-most-viewed-category">Inversión</span>
             </div>
             <div class="blog-most-viewed-text">
-              <a href="http://www.marca.com">
+              <a href="#">
                 <h1 class="blog-most-viewed-text-title">Crowdfunding, la fuente de financiamiento del Futuro</h1>
               </a>
               <h2 class="blog-most-viewed-text-author">Por: Miguel Doe<span class="blog-most-viewed-text-date">14 January, 2016</span><span class="blog-most-viewed-text-comments">- 3 Comments</span></h2>
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="blog-most-viewed-image" style="background-image: url('http://lorempixel.com/300/129/');">
+            <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-2.jpg');">
               <span class="blog-most-viewed-category">Inversión</span>
             </div>
             <div class="blog-most-viewed-text">
-              <a href="http://www.marca.com">
+              <a href="#">
                 <h1 class="blog-most-viewed-text-title">Crowdfunding, la fuente de financiamiento del Futuro</h1>
               </a>
               <h2 class="blog-most-viewed-text-author">Por: Miguel Doe<span class="blog-most-viewed-text-date">14 January, 2016</span><span class="blog-most-viewed-text-comments">- 3 Comments</span></h2>
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="blog-most-viewed-image" style="background-image: url('http://lorempixel.com/300/129/');">
+            <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-3.jpg');">
               <span class="blog-most-viewed-category">Inversión</span>
             </div>
             <div class="blog-most-viewed-text">
-              <a href="http://www.marca.com">
+              <a href="#">
                 <h1 class="blog-most-viewed-text-title">Crowdfunding, la fuente de financiamiento del Futuro</h1>
               </a>
               <h2 class="blog-most-viewed-text-author">Por: Miguel Doe<span class="blog-most-viewed-text-date">14 January, 2016</span><span class="blog-most-viewed-text-comments">- 3 Comments</span></h2>
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="blog-most-viewed-image" style="background-image: url('http://lorempixel.com/300/129/');">
+            <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-4.jpg');">
               <span class="blog-most-viewed-category">Inversión</span>
             </div>
             <div class="blog-most-viewed-text">
-              <a href="http://www.marca.com">
+              <a href="#">
                 <h1 class="blog-most-viewed-text-title">Crowdfunding, la fuente de financiamiento del Futuro</h1>
               </a>
               <h2 class="blog-most-viewed-text-author">Por: Miguel Doe<span class="blog-most-viewed-text-date">14 January, 2016</span><span class="blog-most-viewed-text-comments">- 3 Comments</span></h2>
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="blog-most-viewed-image" style="background-image: url('http://lorempixel.com/300/129/');">
+            <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-1.jpg');">
               <span class="blog-most-viewed-category">Inversión</span>
             </div>
             <div class="blog-most-viewed-text">
-              <a href="http://www.marca.com">
+              <a href="#">
                 <h1 class="blog-most-viewed-text-title">Crowdfunding, la fuente de financiamiento del Futuro</h1>
               </a>
               <h2 class="blog-most-viewed-text-author">Por: Miguel Doe<span class="blog-most-viewed-text-date">14 January, 2016</span><span class="blog-most-viewed-text-comments">- 3 Comments</span></h2>
