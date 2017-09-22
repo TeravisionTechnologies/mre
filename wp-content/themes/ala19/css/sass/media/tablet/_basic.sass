@@ -1,3 +1,26 @@
+.footer-copy
+    h5
+        font-size: 16px !important
+
+.our-partners
+    width: 100%
+    height: auto
+    padding-bottom: 4%
+    padding-top: 2%
+    background-color: $white
+    box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.5)
+    .text-our-partners-one
+        color: $partners-one
+        text-align: center
+        font-family: Archivo
+        font-size: 14px
+        letter-spacing: -0.1px
+    .text-our-partners-two
+        color: $black !important
+        text-align: center
+        font-family: Archivo
+        font-size: 28px
+        letter-spacing: -0.2px
 #before-contact-us
     width: 100%
     height: auto
@@ -67,8 +90,8 @@
             float: left
             .content
                 height: auto
-                width: 360px
-                margin-left: 15%
+                width: 78.125vw
+                margin-left: 4%
                 margin-bottom: 2%
                 background-color: $white
                 box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3)
@@ -85,19 +108,25 @@
                     span
                         display: block
                 #advice-call
-                    margin-bottom: 40px
-                    line-height: 1.42
+                    margin-top: 10px
+                    font-size: 3.125vw
+                    font-family: Archivo-Regular
+                    line-height: 1.28
+                    letter-spacing: -0.1px
+                    text-align: center
                 .bold-me
                     font-weight: 600
                 .spacer-before-image
                     height: 58px
                 #contact-phone
-                    font-family: Montserrat-Black
-                    font-size: 36px
-                    margin-top: -15px
+                    font-family: Archivo-Bold
+                    font-size: 3.90625vw
                 .spacer-end
                     height: 50px
         .the-form
+            .jr
+                max-width: 800px
+                height: auto
             .wpcf7
                 .screen-reader-response, span.wpcf7-not-valid-tip, .wpcf7-response-output.wpcf7-validation-errors, .wpcf7-response-output.wpcf7-mail-sent-ng
                     display:  none
@@ -117,16 +146,16 @@
                 input:not([type="submit"]), select, textarea
                     box-sizing: border-box
                     border-radius: 6px
-                    background-color: $dark-blue
+                    background-color: $white
                     border: solid 1px #000000
                     opacity: 0.9
-                    font-size: 20px
+                    font-size: 14px
                     font-weight: normal
                     line-height: 0.94
                     color: $dark-white
                     padding: 12px 20px
-                    width: 370px
-                    height: 48px
+                    width: 319px
+                    height: 47px
                     -webkit-appearance: none
                     -moz-appearance: none
                     appearance: none
@@ -147,25 +176,23 @@
                 input.wpcf7-not-valid:-ms-input-placeholder
                     color: $red
                 input[type="submit"]
-                    font-family: Archivo
-                    line-height: 1.11
-                    color: $black !important
-                    font-weight: bold
-                    text-align: center
-                    box-sizing: border-box
-                    border-radius: 6px
-                    border: solid 2px #000000
-                    font-size: 18px
-                    width: 216px
+                    width: 200px
                     height: 50px
-                    margin: 10px 0 0 648px
+                    border: solid 2px $black
+                    font-family: Archivo
+                    font-size: 16px
+                    font-weight: bold
+                    line-height: 1.25
+                    text-align: center
+                    margin-left: 28.645833333333336vw
+                    color: $black
                 select
                     background: url("assets/form-caret-down.png") no-repeat right center $dark-blue
                 select:hover
                     cursor: pointer
                 textarea
-                    height: 135px
-                    width: 760px
+                    height: 133px
+                    width: 658px
                     resize: none
         .form-errors
             display: none
@@ -187,51 +214,26 @@
     max-height: 50px !important
     object-fit: contain
 .d-logo-left
-    width: 170px
-    height: 90px
+    width: 82px
+    height: 87px
+    object-fit: contain
+    transform: rotate(-360deg)
     margin-top: 2%
     float: right
-    margin-right: 3%
+    margin-right: 10%
 
 .d-logo-right
-    width: 199px
-    height: 91px
-    margin-top: 2%
+    width: 141px
+    height: 47px
+    object-fit: contain
+    margin-top: 5%
     float: left
-    margin-left: 3%
+    margin-left: 5%
 
 .gallery
     height: auto
     padding-bottom: 5%
     background-color: $white
-
-//.gallery-p-left
-//    width: 100px
-//    height: 20px
-//    position: absolute
-//    margin-top: -1.5%
-//    margin-left: 42%
-//    font-family: Archivo
-//    font-size: 24px
-//    line-height: 0.83
-//    letter-spacing: -0.1px
-//    color: $gallery-p
-//
-//.gallery-p-right
-//    width: 100px
-//    height: 50.5px
-//    position: absolute
-//    margin-top: -2.4%
-//    margin-left: 50.2%
-//    font-family: Archivo
-//    font-size: 24px
-//    line-height: 0.83
-//    letter-spacing: -0.1px
-//    color: $gallery-p
-//    float: left
-//    border-left: solid 2px $gallery-p
-//    padding-left: 40px
-//    padding-top: 14px
 
 .triangle
     width: 0
@@ -261,33 +263,40 @@
     margin-left: 20%
 
 .social-networks
-    width: 40px
-    height: 40px
+    width: 30px
+    height: 30px
     object-fit: contain
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3)
+
+
+.projects
+    .swiper-container
+        .swiper-wrapper
+            .swiper-slide
+                height: 20.833333333333336vw !important
 
 .slide-p-one
     text-align: center
     color: white
     margin-top: 8%
-    font-size: 30px
+    font-size: 2.34375vw
 
 .slide-p-two
     text-align: center
     color: white
     margin-top: 8%
-    font-size: 30px
+    font-size: 2.34375vw
 
 .slider-swiper-center
     text-align: center
-    margin-top: 25%
+    margin-top: 47%
     p
         font-family: Archivo
-        font-size: 40px
+        font-size: 26px
         color: $white
         letter-spacing: -0.3px
         abbr
-            font-size: 80px
+            font-size: 40px
             font-weight: bold
             letter-spacing: -0.5px
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8)
@@ -298,3 +307,17 @@
 .container-gallery-img
     width: 100%
     margin-left: -2.604166666666667vw
+
+.slide
+    height: 104.16666666666667vw
+    .swiper-container
+        .swiper-button-next
+            width: 57.3px !important
+            height: 57.3px !important
+            background-size: 57.3px 57.3px !important
+            margin-right: 55px !important
+        .swiper-button-prev
+            width: 57.3px !important
+            height: 57.3px !important
+            background-size: 57.3px 57.3px !important
+            margin-left: 55px !important

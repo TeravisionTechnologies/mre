@@ -49,10 +49,12 @@
     <script>
         var swiper = new Swiper('.swiper-container', {
             pagination: '.swiper-pagination',
-            paginationClickable: true,
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
-            spaceBetween: 30
+            slidesPerView: 1,
+            paginationClickable: true,
+            spaceBetween: 30,
+            loop: true
         });
     </script>
   </body>

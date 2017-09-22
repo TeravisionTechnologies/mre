@@ -25,7 +25,7 @@ get_header();
 
 
             ?>
-            <div class="swiper-slide" id="slide-img" style="background-image:url(<?php echo $entry['_about_image'] ?>)"><?php
+            <div class="swiper-slide" id="slide-img" style="background-image:url(<?php echo $entry['_about_image'] ?>); background-color: rgba(0,0,0,0.5)"><?php
             if ( isset( $entry['_about_desc'] ) ) {
 
                 ?>
@@ -85,6 +85,9 @@ get_header();
         <!-- Add Pagination -->
         <div class="swiper-pagination projects"></div>
     </div>
+
+    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
 </section>
 
 <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 gallery">
@@ -179,17 +182,17 @@ get_header();
 </section>
 
 <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contact-us">
-    <div class="spacer initial"></div>
-    <div class="contact-us-title">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 spacer initial"></div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contact-us-title">
         <p class=" contact-title">
-            <span class="contact-first">Nos gustaría asesorarte en tu próxima inversión</span>
-            <span class="col-lg-12 col-md-12 contact-last">¡Contáctanos!</span>
+            <span class="col-lg-12 col-md-12 col-sm-12 contact-first">Nos gustaría asesorarte en tu próxima inversión</span>
+            <span class="col-lg-12 col-md-12 col-sm-12 contact-last">¡Contáctanos!</span>
         </p>
     </div>
 
-    <div class="inner-section">
-        <div class="form-errors">Uno o más campos tiene un error</div>
-        <div class="call-us">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inner-section">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-errors">Uno o más campos tiene un error</div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 call-us">
             <div class="content">
                 <div class="spacer-before-image"></div>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/d-iconphone.png" />
@@ -198,8 +201,11 @@ get_header();
                 <div class="spacer-end"></div>
             </div>
         </div>
-        <div class="the-form">
-            <?php echo do_shortcode( '[contact-form-7 id="11" title="Home - Contact form"]' ); ?>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 the-form">
+            <div class="jr">
+                <?php echo do_shortcode( '[contact-form-7 id="11" title="Home - Contact form"]' ); ?>
+            </div>
+
         </div>
     </div>
 </section>
