@@ -9,7 +9,7 @@ get_header();
 ?>
 
 <section class="container-fluid">
-  <section class="col-sm-12" id="blog-list-categories">
+  <section class="col-xs-12" id="blog-list-categories">
     <div class="container-mre center-block">
       <h3 class="blog-list-category-title">Categoría</h3>
       <h2 class="blog-list-category-text">Inversión</h2>
@@ -54,15 +54,15 @@ get_header();
     </div>
   </section>
   <img class="blog-list-triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.png">
-  <section class="col-sm-12" id="blog-list">
+  <section class="col-xs-12" id="blog-list">
     <div class="container-mre center-block">
-      <div class="col-sm-9 blog-search">
+      <div class="col-xs-12 col-sm-9 blog-search">
         <div class="input-group">
           <i class="fa fa-search" aria-hidden="true"></i>
           <input type="text" class="form-control" placeholder="Buscar...">
         </div>
       </div>
-      <div class="col-sm-3 blog-select">
+      <div class="col-xs-12 col-sm-3 blog-select">
         <select class="form-control blog-filter pull-right">
           <option>Ordenar por...</option>
           <option>Autor</option>
@@ -71,7 +71,7 @@ get_header();
           <option>Fecha</option>
         </select>
       </div>
-      <div class="col-sm-6 blog-post">
+      <div class="col-xs-12 col-sm-6 blog-post">
         <div class="blog-image"
              style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-1.jpg')">
           <span class="blog-category">Inversión</span>
@@ -80,13 +80,13 @@ get_header();
           <h1 class="blog-text-title">Visado de trabajo en Chile</h1>
           <h2 class="blog-text-author">Por: Miguel Doe<span
               class="blog-text-date">14 January, 2016</span><span
-              class="blog-text-comments hidden-sm">- 3 Comments</span></h2>
+              class="blog-text-comments hidden-xs hidden-sm">- 3 Comments</span></h2>
           <p class="blog-text-summary">Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Pellentesque efficitur neque eget magna tincidunt
             condimentum. Ut quis lacus ac metus tempus dictum eget nec.</p>
         </div>
       </div>
-      <div class="col-sm-6 blog-post">
+      <div class="col-xs-12 col-sm-6 blog-post">
         <div class="blog-image"
              style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-2.jpg')">
           <span class="blog-category">Inversión</span>
@@ -95,13 +95,13 @@ get_header();
           <h1 class="blog-text-title">Visado de trabajo en Chile</h1>
           <h2 class="blog-text-author">Por: Miguel Doe<span
               class="blog-text-date">14 January, 2016</span><span
-              class="blog-text-comments hidden-sm">- 3 Comments</span></h2>
+              class="blog-text-comments hidden-xs hidden-sm">- 3 Comments</span></h2>
           <p class="blog-text-summary">Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Pellentesque efficitur neque eget magna tincidunt
             condimentum. Ut quis lacus ac metus tempus dictum eget nec.</p>
         </div>
       </div>
-      <div class="col-sm-6 blog-post">
+      <div class="col-xs-12 col-sm-6 blog-post">
         <div class="blog-image"
              style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-3.jpg')">
           <span class="blog-category">Inversión</span>
@@ -110,13 +110,13 @@ get_header();
           <h1 class="blog-text-title">Visado de trabajo en Chile</h1>
           <h2 class="blog-text-author">Por: Miguel Doe<span
               class="blog-text-date">14 January, 2016</span><span
-              class="blog-text-comments hidden-sm">- 3 Comments</span></h2>
+              class="blog-text-comments hidden-xs hidden-sm">- 3 Comments</span></h2>
           <p class="blog-text-summary">Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Pellentesque efficitur neque eget magna tincidunt
             condimentum. Ut quis lacus ac metus tempus dictum eget nec.</p>
         </div>
       </div>
-      <div class="col-sm-6 blog-post">
+      <div class="col-xs-12 col-sm-6 blog-post">
         <div class="blog-image"
              style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-4.jpg')">
           <span class="blog-category">Inversión</span>
@@ -125,7 +125,7 @@ get_header();
           <h1 class="blog-text-title">Visado de trabajo en Chile</h1>
           <h2 class="blog-text-author">Por: Miguel Doe<span
               class="blog-text-date">14 January, 2016</span><span
-              class="blog-text-comments hidden-sm">- 3 Comments</span></h2>
+              class="blog-text-comments hidden-xs hidden-sm">- 3 Comments</span></h2>
           <p class="blog-text-summary">Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Pellentesque efficitur neque eget magna tincidunt
             condimentum. Ut quis lacus ac metus tempus dictum eget nec.</p>
@@ -153,7 +153,7 @@ get_header();
       </nav>
     </div>
   </section>
-  <section class="col-sm-12" id="blog-recommended-posts" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/notice.jpg')">
+  <section class="col-xs-12" id="blog-recommended-posts" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/notice.jpg')">
     <div class="recommended-posts-overlay"></div>
     <div class="container-mre center-block">
       <h2 class="recommended-posts-title">Artículos Recomendados</h2>

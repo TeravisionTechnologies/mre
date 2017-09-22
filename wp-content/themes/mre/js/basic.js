@@ -71,7 +71,11 @@ jQuery(document).ready(function() {
                 loop: true,
                 breakpoints: {
                     1024: {
-                        spaceBetween: 19,
+                      spaceBetween: 19,
+                    },
+                    375: {
+                      slidesPerView: 1,
+                      spaceBetween: 0,
                     },
                 }
         });
@@ -95,6 +99,10 @@ jQuery(document).ready(function() {
                 slidesPerView: 2,
                 spaceBetween: 29,
               },
+              375: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+              }
             }
           });
 
