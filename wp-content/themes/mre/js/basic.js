@@ -69,12 +69,11 @@ jQuery(document).ready(function() {
                 spaceBetween: 32,
                 centeredSlides: true,
                 loop: true,
-                /*breakpoints: {
-                 1024: {
-                 slidesPerView: 3,
-                 spaceBetween: 30,
-                 },
-                 }*/
+                breakpoints: {
+                    1024: {
+                        spaceBetween: 19,
+                    },
+                }
         });
         $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
         $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
@@ -91,12 +90,12 @@ jQuery(document).ready(function() {
             prevButton: '.swiper-button-prev',
             spaceBetween: 35,
             loop: true,
-            /*breakpoints: {
+            breakpoints: {
               1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
+                slidesPerView: 2,
+                spaceBetween: 29,
               },
-            }*/
+            }
           });
 
     // Menu scroll effects
