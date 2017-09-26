@@ -73,7 +73,7 @@ jQuery(document).ready(function() {
                     1023: {
                       spaceBetween: 19,
                     },
-                    375: {
+                    640: {
                       slidesPerView: 1,
                       spaceBetween: 0,
                     },
@@ -99,7 +99,7 @@ jQuery(document).ready(function() {
                 slidesPerView: 2,
                 spaceBetween: 29,
               },
-              375: {
+              640: {
                 slidesPerView: 1,
                 spaceBetween: 0,
               }
