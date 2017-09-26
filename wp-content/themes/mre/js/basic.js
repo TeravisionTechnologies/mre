@@ -70,10 +70,10 @@ jQuery(document).ready(function() {
                 centeredSlides: true,
                 loop: true,
                 breakpoints: {
-                    1024: {
+                    1023: {
                       spaceBetween: 19,
                     },
-                    375: {
+                    640: {
                       slidesPerView: 1,
                       spaceBetween: 0,
                     },
@@ -95,11 +95,11 @@ jQuery(document).ready(function() {
             spaceBetween: 35,
             loop: true,
             breakpoints: {
-              1024: {
+              1023: {
                 slidesPerView: 2,
                 spaceBetween: 29,
               },
-              375: {
+              640: {
                 slidesPerView: 1,
                 spaceBetween: 0,
               }
