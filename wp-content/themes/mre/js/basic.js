@@ -12,16 +12,16 @@ function closeNav() {
     document.getElementById('overlay-nav').style.left = '100%';
 }
 
-function showOrHideFooterButton (fb) {
+/*function showOrHideFooterButton (fb) {
     if ( jQuery(document).scrollTop() <= jQuery('#about-us').offset().top ) {
         fb.hide();
     } else {
         fb.show();
     }
-}
+}*/
 
 // Footer button functions
-function footerOnloadAndScroll (fb) {
+/*function footerOnloadAndScroll (fb) {
     if ( jQuery(window).width() > 1023 ) {
         showOrHideFooterButton(fb);
         // Hide or Show depending if user scrolled after about section
@@ -32,7 +32,7 @@ function footerOnloadAndScroll (fb) {
         // Hide if user is in mobile
         fb.css({'display':'none'});
     }
-}
+}*/
 
 jQuery(document).ready(function() {
 
@@ -131,13 +131,13 @@ jQuery(document).ready(function() {
     // footer functions
 
         // Scroll slow to the beginning of the page when the button is clicked
-        var footerButton = jQuery('footer .caretCircle');
+        /*var footerButton = jQuery('footer .caretCircle');
         footerButton.on('click', function () {
             globalScroll.stop().animate({scrollTop:0}, 'slow');
-        });
+        });*/
 
         // Function used to hide or show the footer button
-        footerOnloadAndScroll(footerButton);
+        //footerOnloadAndScroll(footerButton);
 
 
     // form validation
@@ -191,9 +191,13 @@ jQuery(document).ready(function() {
 
         }
 
+    //Footer Go to top functionality
+    $(".mre-footer-go-top").click(function () {
+      $("html, body").animate({scrollTop: 0}, 2000);
+    });
 });
 
 // Call footer functionality on resize so only shows up in 1024px and ahead
-jQuery(window).resize(function() {
+/*jQuery(window).resize(function() {
     footerOnloadAndScroll(jQuery('footer .caretCircle'));
-});
+});*/

@@ -1,4 +1,10 @@
 <?php
+  /**
+   * Template Name: Blog Post
+   * @package MRE
+   * @subpackage Blog
+   * @since MRE 1.0
+   */
 get_header();
 ?>
 
