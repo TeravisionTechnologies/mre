@@ -55,28 +55,25 @@ get_header();
       <div class="blog-detail-comments-post">
         <h2 class="blog-detail-comments-post-author">Jack Cooper<span class="blog-detail-comments-post-date">2 months ago</span></h2>
         <p class="blog-detail-comments-post-text">Cherish the moments we relax, especially the meal let’s go through a fascinating dish. All you have to do is to purse some blueberries in almond milk and then stir in the seeds. For extra zing a little cinnamon and honey. Let it soak overnight or for at least a couple of hours. Then top with whole blueberries and some toasted almonds to eat.</p>
-        <span class="blog-detail-comments-post-reply"><i class="fa fa-reply" aria-hidden="true"></i>Respuesta</span>
       </div>
-
-      <div class="blog-detail-comments-form center-block">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/close.png" class="close-icon">
-        <h2 class="blog-detail-comments-form-title">Escribe un comentario</h2>
-        <h3 class="blog-detail-comments-form-subtitle">Su dirección de correo electrónico no será publicada</h3>
-        <form action="" class="comments-form">
-          <div class="form-group">
-            <input type="text" class="form-control" id="input-fullname" placeholder="Nombre y Apellido">
-            <input type="email" class="form-control" id="input-email" placeholder="Email">
-            <textarea class="form-control" placeholder="Tu comentario..."></textarea>
-          </div>
-          <button type="submit" class="comments-form-button">Publicar comentario</button>
-        </form>
-      </div>
-
       <div class="blog-detail-comments-post">
         <h2 class="blog-detail-comments-post-author">Ismael Tooper<span class="blog-detail-comments-post-date">5 months ago</span></h2>
         <p class="blog-detail-comments-post-text">Cherish the moments we relax, especially the meal let’s go through a fascinating dish. All you have to do is to purse some blueberries in almond milk and then stir in the seeds. For extra zing a little cinnamon and honey. Let it soak overnight or for at least a couple of hours. Then top with whole blueberries and some toasted almonds to eat.</p>
-        <span class="blog-detail-comments-post-reply"><i class="fa fa-reply" aria-hidden="true"></i>Respuesta</span>
       </div>
+    </div>
+  </section>
+  <section class="col-xs-12" id="blog-detail-form">
+    <div class="blog-detail-comments-form center-block">
+      <h2 class="blog-detail-comments-form-title">Escribe un comentario</h2>
+      <h3 class="blog-detail-comments-form-subtitle">Su dirección de correo electrónico no será publicada</h3>
+      <form action="" class="comments-form">
+        <div class="form-group">
+          <input type="text" class="form-control" id="input-fullname" placeholder="Nombre y Apellido">
+          <input type="email" class="form-control" id="input-email" placeholder="Email">
+          <textarea class="form-control" placeholder="Tu comentario..."></textarea>
+        </div>
+        <button type="submit" class="comments-form-button">Publicar comentario</button>
+      </form>
     </div>
   </section>
   <section class="col-xs-12" id="blog-recommended-posts" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/notice.jpg')">
