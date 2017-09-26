@@ -141,6 +141,7 @@ body
 .al-footer-container
   height: 210px
   padding: 50px 0
+  position: relative
   background-color: $black
   img
     max-width: 150px
@@ -161,4 +162,22 @@ body
   font-size: 14px
   line-height: 1.43
   font-family: 'Archivo', sans-serif
+
+.al-go-top-btn
+  top: 50%
+  left: 50%
+  position: absolute
+  font-size: 35px !important
+  transform: translate(-50%, -55%)
+
+.al-go-top-div
+  top: 40px
+  width: 50px
+  right: 140px
+  height: 50px
+  position: absolute
+  border-radius: 50%
+  background-color: $white
+  &:hover
+    cursor: pointer
 // END Generals Classes

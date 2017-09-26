@@ -15,6 +15,7 @@
           <a href="" class="al-text-white">Disclaimers</a>
         </div>
       </div>
+      <div id="go-to-top" class="al-go-top-div"><span class="fa fa-caret-up al-go-top-btn"></span></div>
     </footer>
   </body>
 </html>
