@@ -1998,7 +1998,7 @@ footer {
     width: 70.57292vw; }
 
   #blog-detail-comments {
-    padding: 5.20833vw 0 2.60417vw 0; }
+    padding: 5.20833vw 0; }
     #blog-detail-comments .blog-detail-comments-number {
       font-size: 2.60417vw;
       line-height: 3.90625vw;
@@ -2006,7 +2006,7 @@ footer {
     #blog-detail-comments .blog-detail-comments-post {
       border-radius: 0.78125vw;
       margin: 0 auto 2.60417vw auto;
-      min-height: 34.24479vw;
+      min-height: 29.6875vw;
       padding: 3.90625vw 4.55729vw 3.90625vw 5.20833vw;
       width: 70.57292vw; }
       #blog-detail-comments .blog-detail-comments-post .blog-detail-comments-post-author {
@@ -2020,59 +2020,48 @@ footer {
         font-size: 2.08333vw;
         line-height: 2.99479vw;
         margin: 0;
-        padding: 1.30208vw 0 2.60417vw 0; }
-      #blog-detail-comments .blog-detail-comments-post .blog-detail-comments-post-reply {
-        font-size: 1.82292vw;
-        line-height: 1.82292vw; }
-        #blog-detail-comments .blog-detail-comments-post .blog-detail-comments-post-reply i {
-          font-size: 1.69271vw;
-          height: 1.69271vw;
-          margin-right: 0.65104vw;
-          width: 1.82292vw; }
-    #blog-detail-comments .blog-detail-comments-form {
-      height: 59.63542vw;
-      margin-bottom: 2.60417vw;
-      padding: 0 3.25521vw;
-      width: 70.57292vw; }
-      #blog-detail-comments .blog-detail-comments-form .close-icon {
-        right: 1.69271vw;
-        top: 1.69271vw; }
-      #blog-detail-comments .blog-detail-comments-form .blog-detail-comments-form-title {
-        font-size: 2.60417vw;
-        line-height: 3.90625vw;
-        padding: 6.90104vw 0 0.65104vw 0; }
-      #blog-detail-comments .blog-detail-comments-form .blog-detail-comments-form-subtitle {
-        font-size: 1.82292vw;
-        line-height: 2.60417vw; }
-      #blog-detail-comments .blog-detail-comments-form .comments-form input[type="text"] {
-        font-size: 1.82292vw;
-        height: 6.11979vw;
-        line-height: 1.95313vw;
-        margin-right: 2.60417vw;
-        margin-top: 3.90625vw;
-        padding-left: 1.95313vw;
-        width: 30.46875vw; }
-      #blog-detail-comments .blog-detail-comments-form .comments-form input[type="email"] {
-        font-size: 1.82292vw;
-        height: 6.11979vw;
-        line-height: 1.95313vw;
-        margin-top: 3.90625vw;
-        padding-left: 1.95313vw;
-        width: 30.46875vw; }
-      #blog-detail-comments .blog-detail-comments-form .comments-form textarea {
-        font-size: 1.82292vw;
-        height: 17.31771vw;
-        line-height: 2.08333vw;
-        margin-top: 2.60417vw;
-        padding-left: 1.95313vw;
-        padding-top: 1.95313vw; }
-      #blog-detail-comments .blog-detail-comments-form .comments-form-button {
-        border-radius: 1.30208vw;
-        font-size: 2.08333vw;
-        height: 6.51042vw;
-        line-height: 2.60417vw;
-        margin-top: 1.95313vw;
-        width: 33.85417vw; } }
+        padding-top: 1.30208vw; }
+
+  #blog-detail-form .blog-detail-comments-form {
+    height: 60.54688vw;
+    padding: 0;
+    width: 70.57292vw; }
+    #blog-detail-form .blog-detail-comments-form .blog-detail-comments-form-title {
+      font-size: 2.60417vw;
+      line-height: 3.90625vw;
+      padding: 6.90104vw 0 0.65104vw 0; }
+    #blog-detail-form .blog-detail-comments-form .blog-detail-comments-form-subtitle {
+      font-size: 1.82292vw;
+      line-height: 2.60417vw; }
+    #blog-detail-form .blog-detail-comments-form .comments-form input[type="text"] {
+      font-size: 1.82292vw;
+      height: 6.11979vw;
+      line-height: 1.95313vw;
+      margin-right: 2.60417vw 2.60417vw;
+      margin-top: 3.90625vw;
+      padding-left: 1.95313vw;
+      width: 33.72396vw; }
+    #blog-detail-form .blog-detail-comments-form .comments-form input[type="email"] {
+      font-size: 1.82292vw;
+      height: 6.11979vw;
+      line-height: 1.95313vw;
+      margin-top: 3.90625vw;
+      padding-left: 1.95313vw;
+      width: 33.72396vw; }
+    #blog-detail-form .blog-detail-comments-form .comments-form textarea {
+      font-size: 1.82292vw;
+      height: 17.31771vw;
+      line-height: 2.08333vw;
+      margin-top: 2.60417vw;
+      padding-left: 1.95313vw;
+      padding-top: 1.95313vw; }
+    #blog-detail-form .blog-detail-comments-form .comments-form-button {
+      border-radius: 1.30208vw;
+      font-size: 2.08333vw;
+      height: 6.51042vw;
+      line-height: 2.60417vw;
+      margin-top: 1.95313vw;
+      width: 33.85417vw; } }
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   #before-contact-us #offices .swiper-pagination {
     bottom: 14.6vw; }
