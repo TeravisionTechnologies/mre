@@ -183,6 +183,124 @@ body {
   .al-go-top-div:hover {
     cursor: pointer; }
 
+.al-contact-div {
+  height: 100%;
+  padding-top: 3.95vw;
+  background-repeat: no-repeat;
+  background-position-y: bottom; }
+
+.al-contact-text {
+  color: #000000;
+  font-size: 2.5vw;
+  line-height: 1.28;
+  margin-bottom: 2px;
+  letter-spacing: -0.2px;
+  font-family: "Archivo", sans-serif; }
+
+.al-contact-text-bold {
+  color: #000000;
+  font-size: 2.5vw;
+  line-height: 1.28;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  font-family: "Archivo", sans-serif; }
+
+.al-phone-div {
+  margin-right: 36px;
+  vertical-align: top;
+  padding-top: 3.125vw;
+  display: inline-block; }
+
+.al-phone-box {
+  max-width: 361px;
+  margin-top: 40px;
+  padding: 3.125vw 2.083vw;
+  background-color: #ffffff;
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3); }
+  .al-phone-box p {
+    padding-top: 11px;
+    line-height: 1.21;
+    font-size: 1.66vw;
+    padding-bottom: 13px;
+    letter-spacing: -0.2px;
+    font-family: "Archivo", sans-serif; }
+
+a.al-phone-num {
+  color: #000000;
+  cursor: pointer;
+  font-size: 2.79vw;
+  font-weight: bold;
+  line-height: 0.83;
+  letter-spacing: -0.2px;
+  font-family: "Archivo", sans-serif; }
+  a.al-phone-num:hover {
+    text-decoration: none; }
+
+.al-contact-form-div {
+  margin-top: 40px;
+  display: inline-block; }
+
+.wpcf7-form p {
+  margin-right: 20px;
+  display: inline-block; }
+.wpcf7-form input[type="text"], .wpcf7-form input[type="email"], .wpcf7-form input[type="tel"], .wpcf7-form select {
+  width: 100%;
+  height: 48px;
+  color: #4a4a4a;
+  padding: 0 20px;
+  font-size: 16px;
+  line-height: 0.94;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: inline-block;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  font-family: "Archivo", sans-serif; }
+.wpcf7-form textarea {
+  width: 100%;
+  color: #4a4a4a;
+  font-size: 16px;
+  line-height: 0.94;
+  padding: 15px 20px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  font-family: "Archivo", sans-serif; }
+  .wpcf7-form textarea option {
+    padding-left: 20px; }
+.wpcf7-form .your-name, .wpcf7-form .your-phone {
+  margin-right: 20px; }
+.wpcf7-form .wpcf7-submit {
+  height: 50px;
+  font-size: 18px;
+  margin-top: 40px;
+  font-weight: bold;
+  padding: 0px 74px;
+  line-height: 1.11;
+  border: solid 2px #000000;
+  background-color: transparent;
+  font-family: "Archivo", sans-serif; }
+  .wpcf7-form .wpcf7-submit:hover {
+    background-color: rgba(255, 255, 255, 0.7); }
+
+@media only screen and (min-width: 1440px) {
+  .al-contact-div {
+    padding-top: 57px; }
+
+  .al-contact-text, .al-contact-text-bold {
+    font-size: 36px; }
+
+  .al-phone-div {
+    padding-top: 40px; }
+    .al-phone-div .al-phone-box {
+      padding: 45px 30px; }
+      .al-phone-div .al-phone-box p {
+        font-size: 24px; }
+
+  a.al-phone-num {
+    font-size: 36px; } }
 @media only screen and (max-width: 767px) {
   .al-text-white {
     font-size: 10px; }
@@ -191,6 +309,41 @@ body {
     height: 126px;
     padding: 27px 0; }
     .al-footer-container img {
-      max-width: 80px; } }
+      max-width: 80px; }
+
+  .al-contact-div {
+    height: auto; }
+
+  .al-contact-text, .al-contact-text-bold {
+    font-size: 18px; }
+
+  .al-phone-box {
+    padding: 32px 40px;
+    max-width: calc(100vw - 50px); }
+    .al-phone-box img {
+      max-width: 40px; }
+    .al-phone-box p {
+      font-size: 18px; }
+
+  a.al-phone-num {
+    font-size: 24px; }
+
+  .wpcf7-form input[type="text"], .wpcf7-form input[type="email"], .wpcf7-form input[type="tel"], .wpcf7-form select {
+    height: 40px;
+    font-size: 12px;
+    padding: 0 14px; }
+  .wpcf7-form textarea {
+    padding: 14px;
+    font-size: 12px; }
+  .wpcf7-form .wpcf7-submit {
+    font-size: 14px;
+    padding: 0px 47px;
+    margin-bottom: 50px; }
+
+  .al-go-top-div {
+    top: 20px;
+    width: 40px;
+    right: 20px;
+    height: 40px; } }
 
 /*# sourceMappingURL=style.css.map */
