@@ -12,7 +12,24 @@ $postList = get_posts(
     'post_type' => 'post',
     'numberposts' => -1,
     'post_status' => 'publish',
-    'order' => 'ASC'
+    'order' => 'ASC',
+
+  )
+);
+
+$postRecommended = get_posts(
+  array(
+    'post_type' => 'post',
+    'numberposts' => -1,
+    'post_status' => 'publish',
+    'order' => 'ASC',
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'post_tag',
+        'field' => 'slug',
+        'terms' => 'articulo-recomendado',
+      )
+    )
   )
 );
 ?>
@@ -123,7 +140,7 @@ $postList = get_posts(
       <h2 class="recommended-posts-title">Artículos Recomendados</h2>
       <div class="swiper-container swiper-container-blog-most-viewed">
         <div class="swiper-wrapper">
-          <?php foreach($postList as $post) { ?>
+          <?php foreach($postRecommended as $post) { ?>
             <div class="swiper-slide">
               <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID); ?>');">
                 <span class="blog-most-viewed-category"><?php $taxonomy = get_post_taxonomies($post); $term = get_the_terms($post->ID, $taxonomy[0]); echo $term[0]->name; ?></span>
