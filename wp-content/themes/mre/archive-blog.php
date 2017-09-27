@@ -13,7 +13,6 @@ $postList = get_posts(
     'numberposts' => -1,
     'post_status' => 'publish',
     'order' => 'ASC',
-
   )
 );
 
@@ -32,6 +31,7 @@ $postRecommended = get_posts(
     )
   )
 );
+
 ?>
 
 <section class="container-fluid">
@@ -104,7 +104,7 @@ $postRecommended = get_posts(
             <span class="blog-category"><?php $taxonomy = get_post_taxonomies($post); $term = get_the_terms($post->ID, $taxonomy[0]); echo $term[0]->name; ?></span>
           </div>
           <div class="blog-text">
-            <h1 class="blog-text-title"><?php echo $post->post_title; ?></h1>
+            <a href="<?php $link = get_permalink($post->ID); echo $link; ?>"><h1 class="blog-text-title"><?php echo $post->post_title; ?></h1></a>
             <h2 class="blog-text-author">Por: <?php $author = get_user_by('ID', $post->post_author); echo $author->display_name?><span
                 class="blog-text-date"><?php $date = strtotime($post->post_date); echo date('d F, Y', $date)?></span><span
                 class="blog-text-comments hidden-xs hidden-sm">- <?php echo $post->comment_count ?> Comments</span></h2>
@@ -146,7 +146,7 @@ $postRecommended = get_posts(
                 <span class="blog-most-viewed-category"><?php $taxonomy = get_post_taxonomies($post); $term = get_the_terms($post->ID, $taxonomy[0]); echo $term[0]->name; ?></span>
               </div>
               <div class="blog-most-viewed-text">
-                <a href="#">
+                <a href="<?php $link = get_permalink($post->ID); echo $link; ?>">
                   <h1 class="blog-most-viewed-text-title"><?php echo $post->post_title; ?></h1>
                 </a>
                 <h2 class="blog-most-viewed-text-author">Por: <?php $author = get_user_by('ID', $post->post_author); echo $author->display_name?><span class="blog-most-viewed-text-date"><?php $date = strtotime($post->post_date); echo date('d F, Y', $date)?></span><span class="blog-most-viewed-text-comments">- <?php echo $post->comment_count ?> Comments</span></h2>
