@@ -6,6 +6,15 @@
    * @since MRE 1.0
    */
 get_header();
+
+$postList = get_posts(
+  array(
+    'post_type' => 'post',
+    'numberposts' => -1,
+    'post_status' => 'publish',
+    'order' => 'ASC'
+  )
+);
 ?>
 
 <section class="container-fluid">
@@ -71,66 +80,21 @@ get_header();
           <option>Fecha</option>
         </select>
       </div>
-      <div class="col-xs-12 col-sm-6 blog-post">
-        <div class="blog-image"
-             style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-1.jpg')">
-          <span class="blog-category">Inversión</span>
+      <?php
+      foreach($postList as $post) { ?>
+        <div class="col-xs-12 col-sm-6 blog-post">
+          <div class="blog-image" style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID); ?>')">
+            <span class="blog-category"><?php $taxonomy = get_post_taxonomies($post); $term = get_the_terms($post->ID, $taxonomy[0]); echo $term[0]->name; ?></span>
+          </div>
+          <div class="blog-text">
+            <h1 class="blog-text-title"><?php echo $post->post_title; ?></h1>
+            <h2 class="blog-text-author">Por: <?php $author = get_user_by('ID', $post->post_author); echo $author->display_name?><span
+                class="blog-text-date"><?php $date = strtotime($post->post_date); echo date('d F, Y', $date)?></span><span
+                class="blog-text-comments hidden-xs hidden-sm">- <?php echo $post->comment_count ?> Comments</span></h2>
+            <p class="blog-text-summary"><?php echo $post->post_excerpt ?></p>
+          </div>
         </div>
-        <div class="blog-text">
-          <h1 class="blog-text-title">Visado de trabajo en Chile</h1>
-          <h2 class="blog-text-author">Por: Miguel Doe<span
-              class="blog-text-date">14 January, 2016</span><span
-              class="blog-text-comments hidden-xs hidden-sm">- 3 Comments</span></h2>
-          <p class="blog-text-summary">Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Pellentesque efficitur neque eget magna tincidunt
-            condimentum. Ut quis lacus ac metus tempus dictum eget nec.</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 blog-post">
-        <div class="blog-image"
-             style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-2.jpg')">
-          <span class="blog-category">Inversión</span>
-        </div>
-        <div class="blog-text">
-          <h1 class="blog-text-title">Visado de trabajo en Chile</h1>
-          <h2 class="blog-text-author">Por: Miguel Doe<span
-              class="blog-text-date">14 January, 2016</span><span
-              class="blog-text-comments hidden-xs hidden-sm">- 3 Comments</span></h2>
-          <p class="blog-text-summary">Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Pellentesque efficitur neque eget magna tincidunt
-            condimentum. Ut quis lacus ac metus tempus dictum eget nec.</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 blog-post">
-        <div class="blog-image"
-             style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-3.jpg')">
-          <span class="blog-category">Inversión</span>
-        </div>
-        <div class="blog-text">
-          <h1 class="blog-text-title">Visado de trabajo en Chile</h1>
-          <h2 class="blog-text-author">Por: Miguel Doe<span
-              class="blog-text-date">14 January, 2016</span><span
-              class="blog-text-comments hidden-xs hidden-sm">- 3 Comments</span></h2>
-          <p class="blog-text-summary">Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Pellentesque efficitur neque eget magna tincidunt
-            condimentum. Ut quis lacus ac metus tempus dictum eget nec.</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 blog-post">
-        <div class="blog-image"
-             style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-4.jpg')">
-          <span class="blog-category">Inversión</span>
-        </div>
-        <div class="blog-text">
-          <h1 class="blog-text-title">Visado de trabajo en Chile</h1>
-          <h2 class="blog-text-author">Por: Miguel Doe<span
-              class="blog-text-date">14 January, 2016</span><span
-              class="blog-text-comments hidden-xs hidden-sm">- 3 Comments</span></h2>
-          <p class="blog-text-summary">Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Pellentesque efficitur neque eget magna tincidunt
-            condimentum. Ut quis lacus ac metus tempus dictum eget nec.</p>
-        </div>
-      </div>
+      <?php } ?>
       <nav id="blog-pagination">
         <ul class="pagination">
           <li>
@@ -159,61 +123,19 @@ get_header();
       <h2 class="recommended-posts-title">Artículos Recomendados</h2>
       <div class="swiper-container swiper-container-blog-most-viewed">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-1.jpg');">
-              <span class="blog-most-viewed-category">Inversión</span>
+          <?php foreach($postList as $post) { ?>
+            <div class="swiper-slide">
+              <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID); ?>');">
+                <span class="blog-most-viewed-category"><?php $taxonomy = get_post_taxonomies($post); $term = get_the_terms($post->ID, $taxonomy[0]); echo $term[0]->name; ?></span>
+              </div>
+              <div class="blog-most-viewed-text">
+                <a href="#">
+                  <h1 class="blog-most-viewed-text-title"><?php echo $post->post_title; ?></h1>
+                </a>
+                <h2 class="blog-most-viewed-text-author">Por: <?php $author = get_user_by('ID', $post->post_author); echo $author->display_name?><span class="blog-most-viewed-text-date"><?php $date = strtotime($post->post_date); echo date('d F, Y', $date)?></span><span class="blog-most-viewed-text-comments">- <?php echo $post->comment_count ?> Comments</span></h2>
+              </div>
             </div>
-            <div class="blog-most-viewed-text">
-              <a href="#">
-                <h1 class="blog-most-viewed-text-title">Crowdfunding, la fuente de financiamiento del Futuro</h1>
-              </a>
-              <h2 class="blog-most-viewed-text-author">Por: Miguel Doe<span class="blog-most-viewed-text-date">14 January, 2016</span><span class="blog-most-viewed-text-comments">- 3 Comments</span></h2>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-2.jpg');">
-              <span class="blog-most-viewed-category">Inversión</span>
-            </div>
-            <div class="blog-most-viewed-text">
-              <a href="#">
-                <h1 class="blog-most-viewed-text-title">Crowdfunding, la fuente de financiamiento del Futuro</h1>
-              </a>
-              <h2 class="blog-most-viewed-text-author">Por: Miguel Doe<span class="blog-most-viewed-text-date">14 January, 2016</span><span class="blog-most-viewed-text-comments">- 3 Comments</span></h2>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-3.jpg');">
-              <span class="blog-most-viewed-category">Inversión</span>
-            </div>
-            <div class="blog-most-viewed-text">
-              <a href="#">
-                <h1 class="blog-most-viewed-text-title">Crowdfunding, la fuente de financiamiento del Futuro</h1>
-              </a>
-              <h2 class="blog-most-viewed-text-author">Por: Miguel Doe<span class="blog-most-viewed-text-date">14 January, 2016</span><span class="blog-most-viewed-text-comments">- 3 Comments</span></h2>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-4.jpg');">
-              <span class="blog-most-viewed-category">Inversión</span>
-            </div>
-            <div class="blog-most-viewed-text">
-              <a href="#">
-                <h1 class="blog-most-viewed-text-title">Crowdfunding, la fuente de financiamiento del Futuro</h1>
-              </a>
-              <h2 class="blog-most-viewed-text-author">Por: Miguel Doe<span class="blog-most-viewed-text-date">14 January, 2016</span><span class="blog-most-viewed-text-comments">- 3 Comments</span></h2>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-1.jpg');">
-              <span class="blog-most-viewed-category">Inversión</span>
-            </div>
-            <div class="blog-most-viewed-text">
-              <a href="#">
-                <h1 class="blog-most-viewed-text-title">Crowdfunding, la fuente de financiamiento del Futuro</h1>
-              </a>
-              <h2 class="blog-most-viewed-text-author">Por: Miguel Doe<span class="blog-most-viewed-text-date">14 January, 2016</span><span class="blog-most-viewed-text-comments">- 3 Comments</span></h2>
-            </div>
-          </div>
+          <?php } ?>
         </div>
         <i class="fa fa-chevron-circle-left swiper-button-prev" aria-hidden="true"></i>
         <i class="fa fa-chevron-circle-right swiper-button-next" aria-hidden="true"></i>
