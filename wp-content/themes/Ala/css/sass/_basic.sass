@@ -1,0 +1,322 @@
+// Header
+html, body
+  height: 100%
+  position: relative
+
+body
+  margin: 0
+  padding: 0
+  color: $black
+  background: $white
+
+.swiper-container
+  width: 100%
+  height: 100%
+
+.swiper-slide
+  background: $white
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  -webkit-justify-content: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  -webkit-align-items: center
+  align-items: center
+
+.menu-button
+  top: 0px
+  left: 0px
+  height: 80px
+  padding: 15px
+  width: 37.43vw
+  cursor: pointer
+  transition: .3s
+  padding-top: 27px
+  position: absolute
+  -webkit-transition: .3s
+  background-color: $black
+
+.menu
+  min-width: 100px
+  width: 70%
+  max-width: 320px
+  background-color: $black
+  color: $white
+
+.content
+  width: 100%
+
+.menu-button .bar:nth-of-type(1)
+  margin-top: 0px
+
+.menu-button .bar:nth-of-type(3)
+  margin-bottom: 0px
+
+.bar
+  width: 50px
+  height: 5px
+  display: block
+  transition: .3s
+  margin-top: 6px
+  margin-left: 50px
+  position: relative
+  margin-bottom: 6px
+  border-radius: 10px
+  background-color: $white
+  -webkit-transition: .3s
+
+.menu-button:hover .bar:nth-of-type(1)
+  -webkit-transform: translateY(1.5px) rotate(-4.5deg)
+  -ms-transform: translateY(1.5px) rotate(-4.5deg)
+  transform: translateY(1.5px) rotate(-4.5deg)
+
+.menu-button:hover .bar:nth-of-type(2)
+  opacity: .9
+
+.menu-button:hover .bar:nth-of-type(3)
+  -webkit-transform: translateY(-1.5px) rotate(4.5deg)
+  -ms-transform: translateY(-1.5px) rotate(4.5deg)
+  transform: translateY(-1.5px) rotate(4.5deg)
+
+.cross .bar:nth-of-type(1)
+  -webkit-transform: translateY(15px) rotate(-45deg)
+  -ms-transform: translateY(15px) rotate(-45deg)
+  transform: translateY(15px) rotate(-45deg)
+
+.cross .bar:nth-of-type(2)
+  opacity: 0
+
+.cross .bar:nth-of-type(3)
+  -webkit-transform: translateY(-15px) rotate(45deg)
+  -ms-transform: translateY(-15px) rotate(45deg)
+  transform: translateY(-15px) rotate(45deg)
+
+.cross:hover .bar:nth-of-type(1)
+  -webkit-transform: translateY(13.5px) rotate(-40.5deg)
+  -ms-transform: translateY(13.5px) rotate(-40.5deg)
+  transform: translateY(13.5px) rotate(-40.5deg)
+
+.cross:hover .bar:nth-of-type(2)
+  opacity: .1
+
+.cross:hover .bar:nth-of-type(3)
+  -webkit-transform: translateY(-13.5px) rotate(40.5deg)
+  -ms-transform: translateY(-13.5px) rotate(40.5deg)
+  transform: translateY(-13.5px) rotate(40.5deg)
+
+.div-header
+  top: 0
+  position: absolute
+
+.logo-header
+  top: 0
+  height: 80px
+  left: 37.43vw
+  position: absolute
+  width: calc(100vw - 37.43vw)
+  background-color: black
+
+.img-div
+  height: 80px
+  position: relative
+  display: inline-block
+  background-color: $white
+  width: calc(100vw - 74.86vw)
+  img
+    max-width: 120px
+
+.sm-div
+  height: 72px
+  width: 37.1vw
+  display: inline-block
+  background-color: $black
+
+// END Header
+
+// Footer
+.al-footer-container
+  height: 210px
+  padding: 50px 0
+  position: relative
+  background-color: $black
+  img
+    max-width: 150px
+    padding-bottom: 11px
+  a
+    font-weight: bold
+    &:hover
+      color: $white
+      cursor: pointer
+      text-decoration: underline
+  p.al-text-white
+    margin-bottom: 0px
+// END Footer
+
+// Generals Classes
+.al-text-white
+  color: $white
+  font-size: 14px
+  line-height: 1.43
+  font-family: 'Archivo', sans-serif
+
+.al-go-top-btn
+  top: 50%
+  left: 50%
+  position: absolute
+  font-size: 35px !important
+  transform: translate(-50%, -55%)
+
+.al-go-top-div
+  top: 40px
+  width: 50px
+  right: 140px
+  height: 50px
+  position: absolute
+  border-radius: 50%
+  background-color: $white
+  &:hover
+    cursor: pointer
+// END Generals Classes
+// Contact Us
+.al-contact-div
+  height: auto
+  padding-top: 3.95vw
+  background-repeat: no-repeat
+  background-position-y: bottom
+.al-contact-text
+  color: $black
+  font-size: 2.5vw
+  margin-top: 60px
+  line-height: 1.28
+  margin-bottom: 2px
+  letter-spacing: -0.2px
+  font-family: 'Archivo', sans-serif
+.al-contact-text-bold
+  color: $black
+  font-size: 2.5vw
+  line-height: 1.28
+  font-weight: bold
+  letter-spacing: -0.2px
+  font-family: 'Archivo', sans-serif
+
+.al-phone-div
+  margin-right: 36px
+  vertical-align: top
+  padding-top: 3.125vw
+  display: inline-block
+.al-phone-box
+  max-width: 361px
+  margin-top: 40px
+  padding: 3.125vw 2.083vw
+  background-color: $white
+  box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+  -moz-box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+  -webkit-box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+  p
+    padding-top: 11px
+    line-height: 1.21
+    font-size: 1.66vw
+    padding-bottom: 13px
+    letter-spacing: -0.2px
+    font-family: 'Archivo', sans-serif
+
+a.al-phone-num
+  color: $black
+  cursor: pointer
+  font-size: 2.79vw
+  font-weight: bold
+  line-height: 0.83
+  letter-spacing: -0.2px
+  font-family: 'Archivo', sans-serif
+  &:hover
+    text-decoration: none
+
+.al-contact-form-div
+  margin-top: 40px
+  display: inline-block
+
+.wpcf7-form
+  p
+    margin-right: 20px
+    display: inline-block
+  input[type="text"], input[type="email"], input[type="tel"], select
+    width: 100%
+    height: 48px
+    color: $grey
+    padding: 0 20px
+    font-size: 16px
+    line-height: 0.94
+    border-radius: 4px
+    margin-bottom: 20px
+    display: inline-block
+    background-color: $white
+    border: 1px solid $black
+    font-family: 'Archivo', sans-serif
+  textarea
+    width: 100%
+    color: $grey
+    font-size: 16px
+    line-height: 0.94
+    padding: 15px 20px
+    border-radius: 6px
+    background-color: $white
+    border: 1px solid $black
+    font-family: 'Archivo', sans-serif
+    option
+      padding-left: 20px
+  .your-name, .your-phone
+    margin-right: 20px
+  .wpcf7-submit
+    height: 50px
+    font-size: 18px
+    margin-top: 40px
+    font-weight: bold
+    padding: 0px 74px
+    line-height: 1.11
+    margin-bottom: 50px
+    border: solid 2px $black
+    background-color: transparent
+    font-family: 'Archivo', sans-serif
+    &:hover
+      background-color: rgba($white, .7)
+
+.al-swiper-contact
+  height: 360px
+  background-size: auto
+  background-position: center
+  background-repeat: no-repeat
+// END Contact Us
+
+// Partners
+.al-partners-section
+  z-index: 1
+  height: auto
+  padding: 58px 0
+  background-color: $white
+  box-shadow: -4px -10px 23px -7px rgba($black,0.37)
+  -moz-box-shadow: -4px -10px 23px -7px rgba($black,0.37)
+  -webkit-box-shadow: -4px -10px 23px -7px rgba($black,0.37)
+
+.al-partners-title
+  color: $grey
+  font-size: 18px
+  margin-bottom: 0
+  letter-spacing: -0.1px
+  font-family: 'Archivo', sans-serif
+
+.partners-images-one
+  margin-right: 95px
+
+.partners-images
+  padding-top: 28px
+
+.al-partners-subtitle
+  color: $black
+  font-size: 36px
+  letter-spacing: -0.2px
+  font-family: 'Archivo', sans-serif
+// END Partners
