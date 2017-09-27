@@ -1,8 +1,4 @@
 <?php
-  /**
-   * Ala19 General Settings CPT
-   * This file contain the Header and Footer information
-   */
 
 	function create_post_type_header_footer() {
 		register_post_type( 'header_footer',
