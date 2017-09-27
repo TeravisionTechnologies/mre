@@ -321,6 +321,45 @@ a.al-phone-num {
   letter-spacing: -0.2px;
   font-family: "Archivo", sans-serif; }
 
+.al-swiper-contact {
+  background-size: cover; }
+  .al-swiper-contact .flags-indicators {
+    padding-top: 4.23611vw; }
+    .al-swiper-contact .flags-indicators .flag-image {
+      height: 4.09722vw;
+      margin: 0 1.38889vw;
+      width: 4.16667vw; }
+  .al-swiper-contact h4 {
+    color: #ffffff;
+    font-family: "Archivo", sans-serif;
+    font-size: 1.25vw;
+    line-height: 1.38889vw;
+    margin: 2.77778vw 0 1.38889vw 0; }
+  .al-swiper-contact .swiper-wrapper {
+    width: 100%; }
+    .al-swiper-contact .swiper-wrapper .swiper-slide {
+      background: transparent;
+      margin: 0 auto;
+      width: 100%; }
+      .al-swiper-contact .swiper-wrapper .swiper-slide .office-detail {
+        width: 20.97222vw; }
+        .al-swiper-contact .swiper-wrapper .swiper-slide .office-detail h5 {
+          color: #ffffff;
+          font-family: "Archivo", sans-serif;
+          font-size: 1.11111vw;
+          line-height: 1.73611vw;
+          margin: 0; }
+        .al-swiper-contact .swiper-wrapper .swiper-slide .office-detail span {
+          font-weight: bold; }
+        .al-swiper-contact .swiper-wrapper .swiper-slide .office-detail h5 {
+          color: #ffffff;
+          font-family: "Archivo", sans-serif;
+          font-size: 1.11111vw;
+          line-height: 1.73611vw;
+          margin: 0; }
+        .al-swiper-contact .swiper-wrapper .swiper-slide .office-detail span {
+          font-weight: bold; }
+
 @media only screen and (min-width: 1440px) {
   .al-contact-div {
     padding-top: 57px; }
@@ -336,7 +375,45 @@ a.al-phone-num {
         font-size: 24px; }
 
   a.al-phone-num {
-    font-size: 36px; } }
+    font-size: 36px; }
+
+  .al-swiper-contact .flags-indicators {
+    padding-top: 61px; }
+    .al-swiper-contact .flags-indicators .flag-image {
+      margin: 0 20.5px; }
+  .al-swiper-contact h4 {
+    font-size: 18px;
+    line-height: 20px;
+    margin: 40px 0 20px 0; }
+  .al-swiper-contact .swiper-wrapper .swiper-slide .office-detail {
+    width: 302px; }
+    .al-swiper-contact .swiper-wrapper .swiper-slide .office-detail h5 {
+      font-size: 16px;
+      line-height: 25px;
+      margin: 0; } }
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .al-swiper-contact {
+    height: 42.70833vw; }
+    .al-swiper-contact .flags-indicators {
+      padding-top: 7.8125vw; }
+      .al-swiper-contact .flags-indicators .flag-image {
+        height: 6.38021vw;
+        margin: 0 1.82292vw;
+        width: 6.51042vw; }
+    .al-swiper-contact h4 {
+      font-size: 2.08333vw;
+      line-height: 2.60417vw;
+      margin: 4.94792vw 0 2.60417vw 0; }
+    .al-swiper-contact .swiper-wrapper {
+      width: 33.46354vw; }
+      .al-swiper-contact .swiper-wrapper .swiper-slide {
+        width: 33.46354vw; }
+        .al-swiper-contact .swiper-wrapper .swiper-slide .office-detail {
+          width: 33.46354vw; }
+          .al-swiper-contact .swiper-wrapper .swiper-slide .office-detail h5 {
+            font-size: 1.82292vw;
+            line-height: 2.60417vw;
+            margin: 0; } }
 @media only screen and (max-width: 767px) {
   .al-text-white {
     font-size: 10px; }
@@ -396,6 +473,29 @@ a.al-phone-num {
     margin-right: 34px; }
 
   .partners-images-two {
-    width: 26%; } }
+    width: 26%; }
+
+  .al-swiper-contact {
+    height: 84.72222vw; }
+    .al-swiper-contact .flags-indicators {
+      padding-top: 16.66667vw; }
+      .al-swiper-contact .flags-indicators .flag-image {
+        height: 11.94444vw;
+        margin: 0 1.94444vw;
+        width: 11.94444vw; }
+    .al-swiper-contact h4 {
+      font-size: 3.33333vw;
+      line-height: 5vw;
+      margin: 6.66667vw 0 5.55556vw 0; }
+    .al-swiper-contact .swiper-wrapper {
+      width: 71.38889vw; }
+      .al-swiper-contact .swiper-wrapper .swiper-slide {
+        width: 71.38889vw; }
+        .al-swiper-contact .swiper-wrapper .swiper-slide .office-detail {
+          width: 71.38889vw; }
+          .al-swiper-contact .swiper-wrapper .swiper-slide .office-detail h5 {
+            font-size: 3.33333vw;
+            line-height: 5.55556vw;
+            margin: 0; } }
 
 /*# sourceMappingURL=style.css.map */
