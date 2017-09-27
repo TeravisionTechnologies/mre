@@ -47,7 +47,7 @@
 
     </header>
     <!-- Swiper -->
-    <div class="swiper-container">
+    <div class="swiper-container swiper-container-menu">
       <div class="swiper-wrapper">
         <div class="swiper-slide menu">Menu slide</div>
         <div class="swiper-slide content">
@@ -76,7 +76,7 @@
           swiper.slidePrev()
       }
         , menuButton = document.getElementsByClassName('menu-button')[0]
-        , swiper = new Swiper('.swiper-container', {
+        , swiper = new Swiper('.swiper-container-menu', {
         slidesPerView: 'auto'
         , initialSlide: 1
         , resistanceRatio: .00000000000001
