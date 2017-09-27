@@ -18,7 +18,7 @@ body {
 
 .swiper-container {
   width: 100%;
-  height: 100%; }
+  height: 880px; }
 
 .swiper-slide {
   background: #ffffff;
@@ -141,6 +141,40 @@ body {
   width: 37.1vw;
   display: inline-block;
   background-color: #000000; }
+
+#al-carousel-hero {
+  height: 880px;
+  width: 100%; }
+  #al-carousel-hero .item {
+    position: relative; }
+    #al-carousel-hero .item .item-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%; }
+    #al-carousel-hero .item img {
+      background-size: cover;
+      height: 880px;
+      width: 100%; }
+    #al-carousel-hero .item .carousel-caption {
+      color: #ffffff;
+      font-family: Archivo, sans-serif;
+      font-size: 80px;
+      font-weight: bold;
+      letter-spacing: 18px;
+      padding: 0;
+      top: 380px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+      text-transform: uppercase; }
+  #al-carousel-hero .carousel-control {
+    background: transparent;
+    color: #ffffff;
+    opacity: 1;
+    top: 409px; }
+    #al-carousel-hero .carousel-control:hover {
+      background: transparent;
+      opacity: 1; }
 
 .al-footer-container {
   height: 210px;

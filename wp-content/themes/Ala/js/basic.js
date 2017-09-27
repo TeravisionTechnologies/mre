@@ -7,9 +7,7 @@ jQuery(document).ready(function() {
     return false;
   });
 
-  // Swiper
-
-  // Add Swiper
+  // Add Swiper Flags
   var swiperFlag = new Swiper('.swiper-container-flags', {
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',

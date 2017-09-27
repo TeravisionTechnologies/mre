@@ -52,37 +52,32 @@
             </div>
             <div class="sm-div">test</div>
           </div>
-          Content slide
+          <div id="al-carousel-hero" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/spain-1.jpg">
+                <div class="item-overlay"></div>
+                <div class="carousel-caption">Madrid</div>
+              </div>
+              <div class="item">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/spain-2.jpg">
+                <div class="item-overlay"></div>
+                <div class="carousel-caption">Madrid</div>
+              </div>
+              <div class="item">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/spain-3.jpg">
+                <div class="item-overlay"></div>
+                <div class="carousel-caption">Madrid</div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#al-carousel-hero" role="button" data-slide="prev">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/al-hero-left.png">
+            </a>
+            <a class="right carousel-control" href="#al-carousel-hero" role="button" data-slide="next">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/al-hero-right.png">
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    <!-- Swiper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-      var toggleMenu = function(){
-        if (swiper.previousIndex == 0)
-          swiper.slidePrev()
-      }
-        , menuButton = document.getElementsByClassName('menu-button')[0]
-        , swiper = new Swiper('.swiper-container-menu', {
-        slidesPerView: 'auto'
-        , initialSlide: 1
-        , resistanceRatio: .00000000000001
-        , onSlideChangeStart: function(slider) {
-          if (slider.activeIndex == 0) {
-            menuButton.classList.add('cross')
-            menuButton.removeEventListener('click', toggleMenu, false)
-          } else
-            menuButton.classList.remove('cross')
-        }
-        , onSlideChangeEnd: function(slider) {
-          if (slider.activeIndex == 0)
-            menuButton.removeEventListener('click', toggleMenu, false)
-          else
-            menuButton.addEventListener('click', toggleMenu, false)
-        }
-        , slideToClickedSlide: true
-      })
-    </script>
+    
