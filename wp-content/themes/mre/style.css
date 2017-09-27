@@ -718,6 +718,8 @@ footer {
       border: solid 1px #cfcfcf;
       height: 13.125vw;
       padding: 1.38889vw 3.05556vw 0 3.05556vw; }
+      #blog-list .blog-post .blog-text a {
+        text-decoration: none; }
       #blog-list .blog-post .blog-text .blog-text-title {
         color: #4d484a;
         font-family: Montserrat-Bold, sans-serif;
