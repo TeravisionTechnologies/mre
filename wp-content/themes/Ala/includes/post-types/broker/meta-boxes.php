@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jose
- * Date: 29/08/17
- * Time: 03:51 PM
- */
 
 	function broker_metaboxes() {
 
@@ -15,8 +9,8 @@
 		$cmb = new_cmb2_box(
 			array(
 				'id'            => 'broker_boxes',
-				'title'         => __( 'Information and Images' ),
-				'object_types'  => 'broker', // Post type
+				'title'         => __( 'Property Information' ),
+				'object_types'  => 'broker',
 				'context'       => 'normal',
 				'priority'      => 'high'
 			)

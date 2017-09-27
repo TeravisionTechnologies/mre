@@ -28,12 +28,8 @@ function mre_enqueue_scripts() {
 
 // Directories that contain post-types
 $postTypeDir = array (
-  __DIR__.'/includes/post-types/about-us/',
   __DIR__.'/includes/post-types/broker/',
-  __DIR__.'/includes/post-types/developer/',
-  __DIR__.'/includes/post-types/header-footer/',
-  __DIR__.'/includes/post-types/services/',
-  __DIR__.'/includes/post-types/blog/'
+  __DIR__.'/includes/post-types/header-footer/'
 );
 
 // File names inside post-types dirs
@@ -59,25 +55,16 @@ foreach ($postTypeDir as $directory) {
 add_action( 'init', 'call_create_post_types' );
 
 function call_create_post_types() {
-
-  // Post Type for About Us
-  create_post_type_about_us();
   // Post Type for Broker
   create_post_type_broker();
-  // Post Type for Developer
-  create_post_type_developer();
-  // Post Type for Header and Footer
+  // Post Type for General Settings
   create_post_type_header_footer();
-  // Post Type for Services
-  create_post_type_services();
-  // Post Type for Blog
-  create_post_type_blog();
-
 }
 
 /* Remove text area field from header and footer */
 function remove_page_editor() {
   remove_post_type_support( 'header_footer', 'editor' );
+  remove_post_type_support( 'broker', 'editor' );
 }
 add_action( 'init', 'remove_page_editor' );
 
@@ -91,20 +78,10 @@ add_action( 'init', 'remove_page_editor' );
 add_action( 'cmb2_admin_init', 'call_metaboxes' );
 
 function call_metaboxes() {
-
-  // Metaboxes for About Us
-  about_us_metaboxes();
   // Metaboxes for Broker
   broker_metaboxes();
-  // Metaboxes for Developer
-  developer_metaboxes();
-  // Metaboxes for Header and Footer
+  // Metaboxes for General Settings
   header_footer_metaboxes();
-  // Metaboxes for Services
-  services_metaboxes();
-  // Metaboxes fot Blog
-  blog_metaboxes();
-
 }
 
 function custom_form_validation_filter($result, $tag) {
