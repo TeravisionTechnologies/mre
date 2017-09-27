@@ -32,8 +32,7 @@
 		__DIR__.'/includes/post-types/broker/',
 		__DIR__.'/includes/post-types/developer/',
 		__DIR__.'/includes/post-types/header-footer/',
-    __DIR__.'/includes/post-types/services/',
-		__DIR__.'/includes/post-types/blog/'
+    __DIR__.'/includes/post-types/services/'
 	);
 
 	// File names inside post-types dirs
@@ -70,9 +69,6 @@
 		create_post_type_header_footer();
 		// Post Type for Services
 		create_post_type_services();
-    // Post Type for Blog
-    create_post_type_blog();
-
 	}
 
 	/* Remove text area field from header and footer */
@@ -102,9 +98,6 @@
 		header_footer_metaboxes();
 		// Metaboxes for Services
 		services_metaboxes();
-		// Metaboxes fot Blog
-    blog_metaboxes();
-
 	}
 
   function custom_form_validation_filter($result, $tag) {
@@ -125,3 +118,6 @@
   add_filter('wpcf7_validate_text','custom_form_validation_filter', 10, 2);
   add_filter('wpcf7_validate_text*', 'custom_form_validation_filter', 10, 2);
   add_filter('wpcf7_validate_email', 'custom_form_validation_filter', 10, 2);
+
+  //Featured images theme support
+  add_theme_support( 'post-thumbnails' );
