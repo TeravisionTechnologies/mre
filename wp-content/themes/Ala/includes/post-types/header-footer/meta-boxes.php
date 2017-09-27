@@ -183,5 +183,66 @@
       )
     );
 
+    // Initiate the metabox for social media
+    $cmb_sm = new_cmb2_box(
+      array(
+        'id'            => 'Social Media Information',
+        'title'         => __( 'Social Media Information Setup' ),
+        'object_types'  => 'header_footer',
+        'context'       => 'normal',
+        'priority'      => 'high'
+      )
+    );
+
+    // Facebook uri
+    $cmb_sm->add_field(
+      array(
+        'name'       => __( 'Facebook URL' ),
+        'id'         => $prefix . 'fb_uri',
+        'type'       => 'text',
+        'repeatable' => false
+      )
+    );
+
+    // Twitter uri
+    $cmb_sm->add_field(
+      array(
+        'name'       => __( 'Twitter URL' ),
+        'id'         => $prefix . 'tw_uri',
+        'type'       => 'text',
+        'repeatable' => false
+      )
+    );
+
+    // Linkedin uri
+    $cmb_sm->add_field(
+      array(
+        'name'       => __( 'LinkedIn URL' ),
+        'id'         => $prefix . 'in_uri',
+        'type'       => 'text',
+        'repeatable' => false
+      )
+    );
+
+    // Youtube uri
+    $cmb_sm->add_field(
+      array(
+        'name'       => __( 'Youtube URL' ),
+        'id'         => $prefix . 'yb_uri',
+        'type'       => 'text',
+        'repeatable' => false
+      )
+    );
+
+    // Instagram uri
+    $cmb_sm->add_field(
+      array(
+        'name'       => __( 'Instagram URL' ),
+        'id'         => $prefix . 'ig_uri',
+        'type'       => 'text',
+        'repeatable' => false
+      )
+    );
+
 
 	}
