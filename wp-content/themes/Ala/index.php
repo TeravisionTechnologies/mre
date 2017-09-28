@@ -18,6 +18,7 @@
   $footer_info = get_post_meta($footer_query[0]->ID);
 ?>
 <div class="col-xs-12 al-properties-section text-center">
+  <img class="triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.svg">
   <div class="container no-padding">
     <div class="center-block">
       <h2 class="properties-country-filter filter-left">España</h2><h2 class="properties-country-filter">Las Vegas</h2>

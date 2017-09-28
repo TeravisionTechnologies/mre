@@ -13,13 +13,27 @@ jQuery(document).ready(function() {
     prevButton: '.swiper-button-prev',
   });
 
+  // Add Swiper Projects
+  var swiperProjects = new Swiper('.swiper-container-projects', {
+    pagination: '.swiper-pagination',
+    slidesPerView: 3,
+    paginationClickable: true,
+    spaceBetween: 52,
+    initialSlide: 1,
+    centeredSlides: true
+  });
+
   // Adding Swiper functionality to flags
   $('.flag-image').on('click', function() {
     var index = $(this).data('pagination');
     swiperFlag.slideTo(index-1);
-    //alert(index);
-    /*var iterBull=1;*/
-
   });
+
+  $('.swiper-container-projects').find('.swiper-slide-active h2').css('opacity', 1);
+  /*$('.swiper-container-projects').find('.swiper-slide h2').on('click', function(){
+    $(this).css('opacity', 1)
+
+  });*/
+
 });
 
