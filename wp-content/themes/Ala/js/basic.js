@@ -20,7 +20,13 @@ jQuery(document).ready(function() {
     paginationClickable: true,
     spaceBetween: 52,
     initialSlide: 1,
-    centeredSlides: true
+    centeredSlides: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 26
+      },
+    }
   });
 
   // Adding Swiper functionality to flags

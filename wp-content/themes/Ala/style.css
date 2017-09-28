@@ -435,28 +435,28 @@ a.al-phone-num {
     color: #7f8182;
     display: inline-block;
     font-family: "Archivo", sans-serif;
-    font-size: 20px;
-    line-height: 20px;
-    margin: 66px 15px 60px 15px; }
+    font-size: 1.38889vw;
+    line-height: 1.38889vw;
+    margin: 4.58333vw 1.04167vw 4.16667vw 1.04167vw; }
   .al-properties-section .filter-left {
     border-right: 2px solid #7f8182;
     margin-right: 0;
     opacity: 0.5;
-    padding-right: 15px; }
+    padding-right: 1.04167vw; }
   .al-properties-section .properties-filter {
     border: solid 2px rgba(74, 74, 74, 0.4);
     font-family: Montserrat-Regular, sans-serif;
-    font-size: 16px;
-    height: 46px;
-    width: 261px; }
+    font-size: 1.11111vw;
+    height: 3.19444vw;
+    width: 18.125vw; }
   .al-properties-section .properties-list {
-    margin-top: 40px; }
+    margin-top: 2.77778vw; }
     .al-properties-section .properties-list .property-image {
       position: relative;
-      width: 360px;
-      height: 350px;
-      margin-bottom: 50px;
-      margin-right: 45px; }
+      width: 25vw;
+      height: 24.30556vw;
+      margin-bottom: 3.47222vw;
+      margin-right: 3.125vw; }
       .al-properties-section .properties-list .property-image:nth-child(3n+3) {
         margin: 0; }
       .al-properties-section .properties-list .property-image:hover .property-overlay {
@@ -476,22 +476,22 @@ a.al-phone-num {
         -webkit-transition: all ease 0.3s; }
         .al-properties-section .properties-list .property-image .property-overlay .property-title {
           font-family: "Archivo", sans-serif;
-          font-size: 20px;
+          font-size: 1.38889vw;
           font-weight: bold;
           color: #ffffff;
-          margin: 129px 0 6px 0; }
+          margin: 8.95833vw 0 0.41667vw 0; }
         .al-properties-section .properties-list .property-image .property-overlay .property-address, .al-properties-section .properties-list .property-image .property-overlay .property-city {
           font-family: "Archivo", sans-serif;
-          font-size: 14px;
-          line-height: 18px;
+          font-size: 0.97222vw;
+          line-height: 1.25vw;
           color: #ffffff;
           opacity: 0.5;
           margin: 0; }
         .al-properties-section .properties-list .property-image .property-overlay .property-category {
           font-family: "Archivo", sans-serif;
-          margin-top: 10px;
-          font-size: 12px;
-          line-height: 18px;
+          margin-top: 0.69444vw;
+          font-size: 0.83333vw;
+          line-height: 1.25vw;
           font-weight: bold;
           font-style: italic;
           color: #ffffff;
@@ -588,7 +588,70 @@ a.al-phone-num {
     .al-swiper-contact .swiper-wrapper .swiper-slide .office-detail h5 {
       font-size: 16px;
       line-height: 25px;
-      margin: 0; } }
+      margin: 0; }
+
+  .al-properties-section .triangle {
+    left: 49%;
+    transform: translateX(-50%); }
+  .al-properties-section .properties-country-filter {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 66px 15px 60px 15px; }
+  .al-properties-section .filter-left {
+    border-right: 2px solid #7f8182;
+    margin-right: 0;
+    opacity: 0.5;
+    padding-right: 15px; }
+  .al-properties-section .properties-filter {
+    border: solid 2px rgba(74, 74, 74, 0.4);
+    font-size: 16px;
+    height: 46px;
+    width: 261px; }
+  .al-properties-section .properties-list {
+    margin-top: 40px; }
+    .al-properties-section .properties-list .property-image {
+      width: 360px;
+      height: 350px;
+      margin-bottom: 50px;
+      margin-right: 45px; }
+      .al-properties-section .properties-list .property-image:nth-child(3n+3) {
+        margin: 0; }
+      .al-properties-section .properties-list .property-image:hover .property-overlay {
+        opacity: 1; }
+      .al-properties-section .properties-list .property-image .property-overlay {
+        opacity: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        transition: all ease 0.3s;
+        -moz-transition: all ease 0.3s;
+        -ms-transition: all ease 0.3s;
+        -o-transition: all ease 0.3s;
+        -webkit-transition: all ease 0.3s; }
+        .al-properties-section .properties-list .property-image .property-overlay .property-title {
+          font-size: 20px;
+          margin: 129px 0 6px 0; }
+        .al-properties-section .properties-list .property-image .property-overlay .property-address, .al-properties-section .properties-list .property-image .property-overlay .property-city {
+          font-size: 14px;
+          line-height: 18px;
+          opacity: 0.5;
+          margin: 0; }
+        .al-properties-section .properties-list .property-image .property-overlay .property-category {
+          margin-top: 10px;
+          font-size: 12px;
+          line-height: 18px;
+          opacity: 0.7; }
+
+  #al-pagination .pagination {
+    margin: 30px 0 100px 0; }
+    #al-pagination .pagination li {
+      font-size: 16px;
+      line-height: 21px; }
+      #al-pagination .pagination li a {
+        height: 42px;
+        padding-top: 10px;
+        width: 41px; } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .swiper-container {
     height: 114.58333vw; }
@@ -621,6 +684,18 @@ a.al-phone-num {
       right: 2.60417vw; }
     #al-carousel-hero .left {
       left: 2.60417vw; }
+
+  .al-projects {
+    height: 14.32292vw;
+    margin-top: 0.52083vw; }
+    .al-projects .swiper-container-projects {
+      height: 14.32292vw;
+      width: 85.67708vw; }
+      .al-projects .swiper-container-projects .swiper-slide {
+        width: 26.30208vw; }
+        .al-projects .swiper-container-projects .swiper-slide h2 {
+          opacity: 0.4;
+          font-size: 2.34375vw; }
 
   .al-swiper-contact {
     height: 42.70833vw; }
