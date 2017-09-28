@@ -41,6 +41,7 @@
         <?php the_content(); ?>
       </div>
       <div class="blog-detail-content-share">
+        <?php do_shortcode('[USM_plus_form]');?>
         <h2 class="blog-detail-content-share-title">Share this article</h2>
         <ul class="blog-detail-content-share-list">
           <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/google.svg"></a></li>
