@@ -26,6 +26,10 @@ jQuery(document).ready(function() {
         slidesPerView: 3,
         spaceBetween: 26
       },
+      375: {
+        slidesPerView: 3,
+        spaceBetween: 13
+      }
     }
   });
 
