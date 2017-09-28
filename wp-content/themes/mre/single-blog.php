@@ -126,7 +126,7 @@
             foreach ($articles_most_view as $post_item) {
               ?>
               <div class="swiper-slide">
-                <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/blog-1.jpg');">
+                <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_the_post_thumbnail_url($post_item->ID); ?>');">
                   <?php
                     $categories = get_the_category($post_item->ID);
                     foreach( $categories as $category ) {
