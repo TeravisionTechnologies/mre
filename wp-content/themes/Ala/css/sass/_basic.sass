@@ -143,7 +143,7 @@ body
   height: 61.11111111111111vw
   width: 100%
   .item
-    height: 880px
+    height: 61.11111111111111vw
     background-size: cover
     position: relative
     .item-overlay
@@ -175,9 +175,28 @@ body
       background: transparent
       opacity: 1
   .right
-    right: 60px
+    right: 4.166666666666667vw
   .left
-    left: 60px
+    left: 4.166666666666667vw
+
+.al-projects
+  background: $black
+  color: $white
+  height: 8.333333333333334vw
+  margin-top: 0.2777777777777778vw
+  .swiper-container-projects
+    height: 8.333333333333334vw
+    width: 61.388888888888886vw
+    .swiper-slide
+      background: $black
+      width: 18.055555555555554vw
+      h2
+        opacity: 0.4
+        font-family: 'Archivo', sans-serif
+        font-size: 1.5277777777777777vw
+        font-weight: bold
+        color: $white
+        cursor: pointer
 // END Header
 
 // Footer
@@ -367,6 +386,8 @@ a.al-phone-num
 // Our offices
 .al-swiper-contact
   background-size: cover
+  .swiper-container-flags
+    height: 100%
   .flags-indicators
     padding-top: 4.236111111111111vw
     .flag-image
@@ -407,32 +428,37 @@ a.al-phone-num
 
 // Properties
 .al-properties-section
+  position: relative
+  .triangle
+    position: absolute
+    left: 49%
+    transform: translateX(-50%)
   .properties-country-filter
     color: #7f8182
     display: inline-block
     font-family: 'Archivo', sans-serif
-    font-size: 20px
-    line-height: 20px
-    margin: 66px 15px 60px 15px
+    font-size: 1.3888888888888888vw
+    line-height: 1.3888888888888888vw
+    margin: 4.583333333333333vw 1.0416666666666667vw 4.166666666666667vw 1.0416666666666667vw
   .filter-left
     border-right: 2px solid #7f8182
     margin-right: 0
     opacity: 0.5
-    padding-right: 15px
+    padding-right: 1.0416666666666667vw
   .properties-filter
     border: solid 2px rgba(74, 74, 74, 0.4)
     font-family: Montserrat-Regular, sans-serif
-    font-size: 16px
-    height: 46px
-    width: 261px
+    font-size: 1.1111111111111112vw
+    height: 3.194444444444444vw
+    width: 18.125vw
   .properties-list
-    margin-top: 40px
+    margin-top: 2.7777777777777777vw
     .property-image
       position: relative
-      width: 360px
-      height: 350px
-      margin-bottom: 50px
-      margin-right: 45px
+      width: 25vw
+      height: 24.305555555555554vw
+      margin-bottom: 3.4722222222222223vw
+      margin-right: 3.125vw
       &:nth-child(3n+3)
         margin: 0
       &:hover
@@ -442,7 +468,6 @@ a.al-phone-num
         cursor: pointer
         opacity: 0
         position: absolute
-        top: 0
         width: 100%
         height: 100%
         background: rgba(0, 0, 0, 0.8)
@@ -453,22 +478,22 @@ a.al-phone-num
         -webkit-transition: all ease .3s
         .property-title
           font-family: 'Archivo', sans-serif
-          font-size: 20px
+          font-size: 1.3888888888888888vw
           font-weight: bold
           color: $white
-          margin: 129px 0 6px 0
+          margin: 8.958333333333334vw 0 0.41666666666666663vw 0
         .property-address, .property-city
           font-family: 'Archivo', sans-serif
-          font-size: 14px
-          line-height: 18px
+          font-size: 0.9722222222222222vw
+          line-height: 1.25vw
           color: $white
           opacity: 0.5
           margin: 0
         .property-category
           font-family: 'Archivo', sans-serif
-          margin-top: 10px
-          font-size: 12px
-          line-height: 18px
+          margin-top: 0.6944444444444444vw
+          font-size: 0.8333333333333333vw
+          line-height: 1.25vw
           font-weight: bold
           font-style: italic
           color: $white
@@ -492,5 +517,4 @@ a.al-phone-num
         color: $white
       .pagination-previous
         color: black
-
 // END Properties

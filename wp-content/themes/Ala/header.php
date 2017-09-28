@@ -77,6 +77,21 @@
         </div>
       </div>
     </div>
+    <section class="col-xs-12 al-projects">
+      <div class="swiper-container swiper-container-projects">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <h2>Proyectos pasados</h2>
+          </div>
+          <div class="swiper-slide">
+            <h2>Proyectos actuales</h2>
+          </div>
+          <div class="swiper-slide">
+            <h2>Muy Pronto</h2>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Swiper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>

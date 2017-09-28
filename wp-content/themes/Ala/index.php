@@ -18,7 +18,8 @@
   $footer_info = get_post_meta($footer_query[0]->ID);
 ?>
 <div class="col-xs-12 al-properties-section text-center">
-  <div class="container no-padding">
+  <img class="triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.svg">
+  <div class="container no-padding container-properties">
     <div class="center-block">
       <h2 class="properties-country-filter filter-left">España</h2><h2 class="properties-country-filter">Las Vegas</h2>
     </div>
@@ -32,7 +33,7 @@
       </select>
     </div>
     <div class="col-xs-12 properties-list no-padding">
-      <div class="col-md-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
+      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
         <div class="property-overlay">
           <h2 class="property-title">Stratosphere Tower</h2>
           <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
@@ -40,7 +41,7 @@
           <h4 class="property-category">Proyecto actual</h4>
         </div>
       </div>
-      <div class="col-md-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
+      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
         <div class="property-overlay">
           <h2 class="property-title">Stratosphere Tower</h2>
           <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
@@ -48,7 +49,7 @@
           <h4 class="property-category">Proyecto actual</h4>
         </div>
       </div>
-      <div class="col-md-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
+      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
         <div class="property-overlay">
           <h2 class="property-title">Stratosphere Tower</h2>
           <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
@@ -56,7 +57,7 @@
           <h4 class="property-category">Proyecto actual</h4>
         </div>
       </div>
-      <div class="col-md-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
+      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
         <div class="property-overlay">
           <h2 class="property-title">Stratosphere Tower</h2>
           <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
@@ -64,7 +65,7 @@
           <h4 class="property-category">Proyecto actual</h4>
         </div>
       </div>
-      <div class="col-md-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
+      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
         <div class="property-overlay">
           <h2 class="property-title">Stratosphere Tower</h2>
           <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
@@ -72,7 +73,7 @@
           <h4 class="property-category">Proyecto actual</h4>
         </div>
       </div>
-      <div class="col-md-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
+      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
         <div class="property-overlay">
           <h2 class="property-title">Stratosphere Tower</h2>
           <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
@@ -80,7 +81,7 @@
           <h4 class="property-category">Proyecto actual</h4>
         </div>
       </div>
-      <div class="col-md-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
+      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
         <div class="property-overlay">
           <h2 class="property-title">Stratosphere Tower</h2>
           <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
@@ -88,7 +89,7 @@
           <h4 class="property-category">Proyecto actual</h4>
         </div>
       </div>
-      <div class="col-md-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
+      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
         <div class="property-overlay">
           <h2 class="property-title">Stratosphere Tower</h2>
           <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
@@ -96,7 +97,7 @@
           <h4 class="property-category">Proyecto actual</h4>
         </div>
       </div>
-      <div class="col-md-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
+      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
         <div class="property-overlay">
           <h2 class="property-title">Stratosphere Tower</h2>
           <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
@@ -128,7 +129,7 @@
 </div>
 <div class="col-xs-12 al-partners-section text-center">
   <div class="container">
-    <p class="al-partners-title">Nuestros Socios</p>
+    <p class="al-partners-title">Nuestros Aliados</p>
     <p class="al-partners-subtitle">Hacemos real tu Inversión soñada</p>
   </div>
   <div class="partners-images">
