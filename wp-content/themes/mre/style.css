@@ -106,27 +106,26 @@ input, button, select, textarea {
 .visible-mobile {
   display: none !important; }
 
-header {
-  height: 5.55vw; }
-  header .container {
-    background-color: #ffffff;
-    position: fixed;
-    padding: 0 9.375vw;
-    z-index: 99; }
-    header .container .center-header {
-      margin-top: 0.83vw; }
-      header .container .center-header .header-logo img {
-        height: 3.81vw;
-        width: 10.97vw; }
-      header .container .center-header #bs-header-navbar ul li a {
-        color: #4a4a4a; }
-      header .container .center-header #bs-header-navbar li + li:after {
-        content: ".";
-        top: 8px;
-        position: absolute;
-        font-size: 20px; }
-      header .container .center-header #bs-header-navbar li:last-child:after {
-        content: ""; }
+header .container {
+  height: 5.55vw;
+  background-color: #ffffff;
+  position: fixed;
+  padding: 0 9.375vw;
+  z-index: 99; }
+  header .container .center-header {
+    margin-top: 0.83vw; }
+    header .container .center-header .header-logo img {
+      height: 3.81vw;
+      width: 10.97vw; }
+    header .container .center-header #bs-header-navbar ul li a {
+      color: #4a4a4a; }
+    header .container .center-header #bs-header-navbar li + li:after {
+      content: ".";
+      top: 8px;
+      position: absolute;
+      font-size: 20px; }
+    header .container .center-header #bs-header-navbar li:last-child:after {
+      content: ""; }
 
 footer {
   height: 18.95833vw; }
@@ -591,9 +590,9 @@ footer {
       text-decoration: underline; }
   #mre-footer .mre-footer-go-top {
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     right: 9.72222vw;
-    top: 2.77778vw; }
+    bottom: 8.77778vw; }
 
 #blog-detail-form .blog-detail-comments-form .comments-form-button:hover {
   color: #2099FF;
@@ -664,7 +663,7 @@ footer {
     border-bottom: 2px solid rgba(74, 74, 74, 0.4);
     display: table;
     height: 3.33333vw;
-    margin-top: 4.79167vw;
+    margin-top: 3.89167vw;
     position: relative;
     width: 59.79167vw; }
     #blog-list .input-group i {
@@ -1255,7 +1254,7 @@ footer {
         line-height: 20px; }
     #mre-footer .mre-footer-go-top {
       right: 140px;
-      top: 40px; }
+      bottom: 40px; }
 
   #blog-list-categories {
     height: 343px; }
@@ -1562,17 +1561,15 @@ footer {
   .visible-mobile {
     display: block !important; }
 
-  header {
+  header .container {
     height: 10.41667vw; }
-    header .container {
-      height: 10.41667vw; }
-      header .container .center-header {
-        margin-top: 2.60417vw; }
-        header .container .center-header .header-logo img {
-          height: 5.20833vw;
-          width: 15.10417vw; }
-        header .container .center-header #bs-header-navbar-nodesktop-parent span {
-          font-size: 4.16667vw; }
+    header .container .center-header {
+      margin-top: 2.60417vw; }
+      header .container .center-header .header-logo img {
+        height: 5.20833vw;
+        width: 15.10417vw; }
+      header .container .center-header #bs-header-navbar-nodesktop-parent span {
+        font-size: 4.16667vw; }
 
   footer {
     height: 22.91667vw; }
@@ -2080,17 +2077,15 @@ footer {
   .visible-mobile {
     display: block !important; }
 
-  header {
+  header .container {
     height: 16.66667vw; }
-    header .container {
-      height: 16.66667vw; }
-      header .container .center-header {
-        margin-top: 5vw; }
-        header .container .center-header .header-logo img {
-          height: 6.66667vw;
-          width: 19.16667vw; }
-        header .container .center-header #bs-header-navbar-nodesktop-parent span {
-          font-size: 5.55556vw; }
+    header .container .center-header {
+      margin-top: 5vw; }
+      header .container .center-header .header-logo img {
+        height: 6.66667vw;
+        width: 19.16667vw; }
+      header .container .center-header #bs-header-navbar-nodesktop-parent span {
+        font-size: 5.55556vw; }
 
   footer {
     height: 48.88889vw; }
@@ -2455,7 +2450,8 @@ footer {
       margin-top: 8.33333vw;
       width: 71.11111vw; }
       #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide {
-        width: 71.11111vw; }
+        width: 71.11111vw;
+        padding: 0 5px; }
         #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-image {
           height: 30.27778vw; }
           #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-image .blog-most-viewed-category {
