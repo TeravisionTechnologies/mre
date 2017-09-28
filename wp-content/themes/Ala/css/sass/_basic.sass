@@ -11,7 +11,7 @@ body
 
 .swiper-container
   width: 100%
-  height: 100%
+  height: 960px
 
 .swiper-slide
   background: $white
@@ -49,6 +49,7 @@ body
 
 .content
   width: 100%
+  padding-top: 80px
 
 .menu-button .bar:nth-of-type(1)
   margin-top: 0px
@@ -135,6 +136,43 @@ body
   display: inline-block
   background-color: $black
 
+#al-carousel-hero
+  height: 61.11111111111111vw
+  width: 100%
+  .item
+    position: relative
+    .item-overlay
+      background: rgba(0,0,0,0.5)
+      height: 100%
+      position: absolute
+      top: 0
+      width: 100%
+    img
+      background-size: cover
+      height: 61.11111111111111vw
+      width: 100%
+    .carousel-caption
+      color: $white
+      font-family: Archivo, sans-serif
+      font-size: 5.555555555555555vw
+      font-weight: bold
+      letter-spacing: 1.25vw
+      padding: 0
+      top: 26.38888888888889vw
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8)
+      text-transform: uppercase
+  .carousel-control
+    background: transparent
+    color: $white
+    opacity: 1
+    top: 28.40277777777778vw
+    &:hover
+      background: transparent
+      opacity: 1
+  .right
+    right: 60px
+  .left
+    left: 60px
 // END Header
 
 // Footer

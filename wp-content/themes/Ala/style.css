@@ -18,7 +18,7 @@ body {
 
 .swiper-container {
   width: 100%;
-  height: 100%; }
+  height: 960px; }
 
 .swiper-slide {
   background: #ffffff;
@@ -55,7 +55,8 @@ body {
   color: #ffffff; }
 
 .content {
-  width: 100%; }
+  width: 100%;
+  padding-top: 80px; }
 
 .menu-button .bar:nth-of-type(1) {
   margin-top: 0px; }
@@ -141,6 +142,44 @@ body {
   width: 37.1vw;
   display: inline-block;
   background-color: #000000; }
+
+#al-carousel-hero {
+  height: 61.11111vw;
+  width: 100%; }
+  #al-carousel-hero .item {
+    position: relative; }
+    #al-carousel-hero .item .item-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%; }
+    #al-carousel-hero .item img {
+      background-size: cover;
+      height: 61.11111vw;
+      width: 100%; }
+    #al-carousel-hero .item .carousel-caption {
+      color: #ffffff;
+      font-family: Archivo, sans-serif;
+      font-size: 5.55556vw;
+      font-weight: bold;
+      letter-spacing: 1.25vw;
+      padding: 0;
+      top: 26.38889vw;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+      text-transform: uppercase; }
+  #al-carousel-hero .carousel-control {
+    background: transparent;
+    color: #ffffff;
+    opacity: 1;
+    top: 28.40278vw; }
+    #al-carousel-hero .carousel-control:hover {
+      background: transparent;
+      opacity: 1; }
+  #al-carousel-hero .right {
+    right: 60px; }
+  #al-carousel-hero .left {
+    left: 60px; }
 
 .al-footer-container {
   height: 210px;
@@ -361,6 +400,26 @@ a.al-phone-num {
           font-weight: bold; }
 
 @media only screen and (min-width: 1440px) {
+  #al-carousel-hero {
+    height: 880px; }
+    #al-carousel-hero .item .item-overlay {
+      top: 0; }
+    #al-carousel-hero .item img {
+      height: 880px; }
+    #al-carousel-hero .item .carousel-caption {
+      font-size: 80px;
+      letter-spacing: 18px;
+      padding: 0;
+      top: 380px; }
+    #al-carousel-hero .carousel-control {
+      top: 409px; }
+      #al-carousel-hero .carousel-control:hover {
+        opacity: 1; }
+    #al-carousel-hero .right {
+      right: 4.16667vw; }
+    #al-carousel-hero .left {
+      left: 4.16667vw; }
+
   .al-contact-div {
     padding-top: 57px; }
 
@@ -392,6 +451,35 @@ a.al-phone-num {
       line-height: 25px;
       margin: 0; } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .swiper-container {
+    height: 114.58333vw; }
+
+  .content {
+    padding-top: 10.41667vw; }
+
+  #al-carousel-hero {
+    height: 104.16667vw; }
+    #al-carousel-hero .item .item-overlay {
+      top: 0; }
+    #al-carousel-hero .item img {
+      height: 104.16667vw; }
+    #al-carousel-hero .item .carousel-caption {
+      font-size: 6.25vw;
+      letter-spacing: 2.34375vw;
+      padding: 0;
+      top: 48.69792vw; }
+    #al-carousel-hero .carousel-control {
+      top: 48.69792vw; }
+      #al-carousel-hero .carousel-control img {
+        height: 7.55208vw;
+        width: 7.55208vw; }
+      #al-carousel-hero .carousel-control:hover {
+        opacity: 1; }
+    #al-carousel-hero .right {
+      right: 2.60417vw; }
+    #al-carousel-hero .left {
+      left: 2.60417vw; }
+
   .al-swiper-contact {
     height: 42.70833vw; }
     .al-swiper-contact .flags-indicators {
@@ -415,6 +503,35 @@ a.al-phone-num {
             line-height: 2.60417vw;
             margin: 0; } }
 @media only screen and (max-width: 767px) {
+  .swiper-container {
+    height: 172.77778vw; }
+
+  .content {
+    padding-top: 16.66667vw; }
+
+  #al-carousel-hero {
+    height: 156.11111vw; }
+    #al-carousel-hero .item .item-overlay {
+      top: 0; }
+    #al-carousel-hero .item img {
+      height: 156.11111vw; }
+    #al-carousel-hero .item .carousel-caption {
+      font-size: 6.66667vw;
+      letter-spacing: 5vw;
+      padding: 0;
+      top: 74.44444vw; }
+    #al-carousel-hero .carousel-control {
+      top: 74.44444vw; }
+      #al-carousel-hero .carousel-control img {
+        height: 7.77778vw;
+        width: 7.77778vw; }
+      #al-carousel-hero .carousel-control:hover {
+        opacity: 1; }
+    #al-carousel-hero .right {
+      right: 4.16667vw; }
+    #al-carousel-hero .left {
+      left: 4.16667vw; }
+
   .al-text-white {
     font-size: 10px; }
 

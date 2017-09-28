@@ -52,10 +52,35 @@
             </div>
             <div class="sm-div">test</div>
           </div>
-          Content slide
+          <div id="al-carousel-hero" class="carousel vertical" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/spain-1.jpg">
+                <div class="item-overlay"></div>
+                <div class="carousel-caption">Madrid</div>
+              </div>
+              <div class="item">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/spain-2.jpg">
+                <div class="item-overlay"></div>
+                <div class="carousel-caption">Madrid</div>
+              </div>
+              <div class="item">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/spain-3.jpg">
+                <div class="item-overlay"></div>
+                <div class="carousel-caption">Madrid</div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#al-carousel-hero" role="button" data-slide="prev">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/al-hero-left.png">
+            </a>
+            <a class="right carousel-control" href="#al-carousel-hero" role="button" data-slide="next">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/al-hero-right.png">
+            </a>
+          </div>
         </div>
       </div>
     </div>
+
     <!-- Swiper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
 
@@ -86,3 +111,4 @@
         , slideToClickedSlide: true
       })
     </script>
+    
