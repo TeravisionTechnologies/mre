@@ -1,3 +1,6 @@
+.no-padding
+  padding: 0
+
 // Header
 html, body
   height: 100%
@@ -140,6 +143,8 @@ body
   height: 61.11111111111111vw
   width: 100%
   .item
+    height: 880px
+    background-size: cover
     position: relative
     .item-overlay
       background: rgba(0,0,0,0.5)
@@ -399,3 +404,93 @@ a.al-phone-num
         span
           font-weight: bold
 // END Our offices
+
+// Properties
+.al-properties-section
+  .properties-country-filter
+    color: #7f8182
+    display: inline-block
+    font-family: 'Archivo', sans-serif
+    font-size: 20px
+    line-height: 20px
+    margin: 66px 15px 60px 15px
+  .filter-left
+    border-right: 2px solid #7f8182
+    margin-right: 0
+    opacity: 0.5
+    padding-right: 15px
+  .properties-filter
+    border: solid 2px rgba(74, 74, 74, 0.4)
+    font-family: Montserrat-Regular, sans-serif
+    font-size: 16px
+    height: 46px
+    width: 261px
+  .properties-list
+    margin-top: 40px
+    .property-image
+      position: relative
+      width: 360px
+      height: 350px
+      margin-bottom: 50px
+      margin-right: 45px
+      &:nth-child(3n+3)
+        margin: 0
+      &:hover
+        .property-overlay
+          opacity: 1
+      .property-overlay
+        cursor: pointer
+        opacity: 0
+        position: absolute
+        top: 0
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, 0.8)
+        transition: all ease .3s
+        -moz-transition: all ease .3s
+        -ms-transition: all ease .3s
+        -o-transition: all ease .3s
+        -webkit-transition: all ease .3s
+        .property-title
+          font-family: 'Archivo', sans-serif
+          font-size: 20px
+          font-weight: bold
+          color: $white
+          margin: 129px 0 6px 0
+        .property-address, .property-city
+          font-family: 'Archivo', sans-serif
+          font-size: 14px
+          line-height: 18px
+          color: $white
+          opacity: 0.5
+          margin: 0
+        .property-category
+          font-family: 'Archivo', sans-serif
+          margin-top: 10px
+          font-size: 12px
+          line-height: 18px
+          font-weight: bold
+          font-style: italic
+          color: $white
+          opacity: 0.7
+#al-pagination
+  clear: both
+  text-align: center
+  .pagination
+    margin: 2.0833333333333335vw 0 6.944444444444445vw 0
+    li
+      font-size: 1.1111111111111112vw
+      line-height: 1.4583333333333333vw
+      a
+        background: $white
+        color: #000
+        height: 2.9166666666666665vw
+        padding-top: 0.6944444444444444vw
+        width: 2.8472222222222223vw
+      .pagination-active
+        background: black
+        color: $white
+      .pagination-previous
+        color: black
+
+// END Properties
