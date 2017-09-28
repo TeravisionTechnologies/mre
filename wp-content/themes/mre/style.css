@@ -595,6 +595,10 @@ footer {
     right: 9.72222vw;
     top: 2.77778vw; }
 
+#blog-detail-form .blog-detail-comments-form .comments-form-button:hover {
+  color: #2099FF;
+  border: solid 2px #2099FF; }
+
 #blog-list-categories {
   background: #303030;
   height: 23.81944vw;
