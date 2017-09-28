@@ -54,18 +54,15 @@
           </div>
           <div id="al-carousel-hero" class="carousel vertical" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
-              <div class="item active">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/spain-1.jpg">
+              <div class="item active" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/spain-1.jpg')">
                 <div class="item-overlay"></div>
                 <div class="carousel-caption">Madrid</div>
               </div>
-              <div class="item">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/spain-2.jpg">
+              <div class="item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/spain-2.jpg')">
                 <div class="item-overlay"></div>
                 <div class="carousel-caption">Madrid</div>
               </div>
-              <div class="item">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/spain-3.jpg">
+              <div class="item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/spain-3.jpg')">
                 <div class="item-overlay"></div>
                 <div class="carousel-caption">Madrid</div>
               </div>
