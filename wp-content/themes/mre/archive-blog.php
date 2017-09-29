@@ -31,7 +31,12 @@ $postRecommended = get_posts(
     )
   )
 );
-
+$categories = get_categories(
+  array(
+    'orderby' => 'name',
+    'order' => 'ASC',
+  )
+);
 ?>
 
 <section class="container-fluid">
@@ -43,34 +48,49 @@ $postRecommended = get_posts(
         <div class="swiper-wrapper">
           <div class="swiper-slide" name="Todas las Categorías">
             <img
-              src="<?php echo get_template_directory_uri(); ?>/assets/todas.png">
+                src="<?php echo get_template_directory_uri(); ?>/assets/todas.png">
+            <div class="swiper-overlay"></div>
+          </div>
+          <?php
+          foreach( $categories as $category ) {
+            $name = $category->name;
+            $slug = $category->slug;
+            ?>
+            <div class="swiper-slide" name="<?php echo $name; ?>">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/<?php echo $slug; ?>.png">
+              <div class="swiper-overlay"></div>
+            </div>
+          <?php } ?>
+          <!--<div class="swiper-slide" name="Todas las Categorías">
+            <img
+              src="<?php /*echo get_template_directory_uri(); */?>/assets/todas.png">
             <div class="swiper-overlay"></div>
           </div>
           <div class="swiper-slide" name="Arquitectura">
             <img
-              src="<?php echo get_template_directory_uri(); ?>/assets/arquitectura.png">
+              src="<?php /*echo get_template_directory_uri(); */?>/assets/arquitectura.png">
             <div class="swiper-overlay"></div>
           </div>
           <div class="swiper-slide" name="Ecología">
             <img
-              src="<?php echo get_template_directory_uri(); ?>/assets/ecologia.png">
+              src="<?php /*echo get_template_directory_uri(); */?>/assets/ecologia.png">
             <div class="swiper-overlay"></div>
           </div>
           <div class="swiper-slide" name="Inversión">
             <img
-              src="<?php echo get_template_directory_uri(); ?>/assets/inversion.png">
+              src="<?php /*echo get_template_directory_uri(); */?>/assets/inversion.png">
             <div class="swiper-overlay"></div>
           </div>
           <div class="swiper-slide" name="Migración">
             <img
-              src="<?php echo get_template_directory_uri(); ?>/assets/migracion.png">
+              src="<?php /*echo get_template_directory_uri(); */?>/assets/migracion.png">
             <div class="swiper-overlay"></div>
           </div>
           <div class="swiper-slide" name="Ciudades · Países">
             <img
-              src="<?php echo get_template_directory_uri(); ?>/assets/paises.png">
+              src="<?php /*echo get_template_directory_uri(); */?>/assets/paises.png">
             <div class="swiper-overlay"></div>
-          </div>
+          </div>-->
         </div>
         <i class="fa fa-chevron-circle-left swiper-button-prev"
            aria-hidden="true"></i>

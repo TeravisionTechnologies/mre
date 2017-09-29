@@ -25,5 +25,6 @@
     </script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/basic.js"></script>
     <?php wp_enqueue_script("jquery"); ?>
+    <?php wp_footer(); ?>
   </body>
 </html>
