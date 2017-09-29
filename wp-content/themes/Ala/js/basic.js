@@ -7,6 +7,15 @@ jQuery(document).ready(function() {
     return false;
   });
 
+  $(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    if (scroll > 900)  {
+      $('..al-go-top-div').css('display', 'block');
+    } else {
+      $('..al-go-top-div').css('display', 'none');
+    }
+  });
+
   //Header and Menu Swiper
   var toggleMenu = function () {
     if (swiper.previousIndex == 0)

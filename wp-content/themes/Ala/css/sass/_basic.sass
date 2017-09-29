@@ -14,7 +14,7 @@ body
 
 .swiper-container
   width: 100%
-  height: 960px
+  height: auto
 
 .swiper-slide
   background: $white
@@ -293,12 +293,14 @@ body
   transform: translate(-50%, -55%)
 
 .al-go-top-div
-  top: 40px
   width: 50px
+  z-index: 10
   right: 140px
   height: 50px
-  position: absolute
+  bottom: 100px
+  position: fixed
   border-radius: 50%
+  border: 2px solid $black
   background-color: $white
   &:hover
     cursor: pointer
