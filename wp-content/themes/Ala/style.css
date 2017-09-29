@@ -742,8 +742,10 @@ a.al-phone-num {
         .al-projects .al-project-list .al-project-list-item .item-active {
           opacity: 1; }
         .al-projects .al-project-list .al-project-list-item .triangle {
+          width: 5.20833vw;
+          height: 1.5625vw;
           opacity: 0;
-          bottom: -1.95313vw;
+          bottom: -1.43229vw;
           left: 50%;
           transform: translateX(-50%); }
 
