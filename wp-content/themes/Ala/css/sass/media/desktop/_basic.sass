@@ -28,19 +28,34 @@
   color: $white
   height: 120px
   margin-top: 4px
-  .swiper-container-projects
-    height: 120px
-    width: 884px
-    .swiper-slide
-      background: $black
+  text-align: center
+  .al-project-list
+    height: 100%
+    .al-project-list-item
+      position: relative
+      margin: 0 26px
+      height: 100%
+      display: inline-block
+      text-align: center
       width: 260px
-      h2
+      cursor: pointer
+      &:hover
+        text-decoration: none
+      .item-text
         opacity: 0.4
         font-family: 'Archivo', sans-serif
         font-size: 22px
         font-weight: bold
-        color: $white
-        cursor: pointer
+        text-align: center
+        color: #ffffff
+        margin-top: 48px
+      .item-active
+        opacity: 1
+      .triangle
+        position: absolute
+        bottom: -15px
+        left: 50%
+        transform: translateX(-50%)
 // END Header
 
 // Contact Us

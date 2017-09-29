@@ -182,10 +182,15 @@ body
     height: 4.166666666666667vw
 
 .al-projects
-  background: $black
+  background: red
   color: $white
   height: 8.333333333333334vw
   margin-top: 0.2777777777777778vw
+  .al-project-list
+    list-style: none
+    .al-project-list-item
+      display: inline-block
+
   .swiper-container-projects
     height: 8.333333333333334vw
     width: 61.388888888888886vw
@@ -430,11 +435,6 @@ a.al-phone-num
 
 // Properties
 .al-properties-section
-  position: relative
-  .triangle
-    position: absolute
-    left: 49%
-    transform: translateX(-50%)
   .properties-country-filter
     color: #7f8182
     display: inline-block
