@@ -41,11 +41,11 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide menu">
           <ul class="al-menu">
-            <li class="al-menu-item">Sobre nosotros</li>
-            <li class="al-menu-item">Proyectos</li>
-            <li class="al-menu-item">HR19 realty</li>
-            <li class="al-menu-item">Grupo MRE</li>
-            <li class="al-menu-item">Contáctanos</li>
+            <li class="al-menu-item"><a href="#">Sobre nosotros</a></li>
+            <li class="al-menu-item" id="menu-projects"><a href="#">Proyectos</a></li>
+            <li class="al-menu-item"><a href="#">HR19 realty</a></li>
+            <li class="al-menu-item"><a href="#">Grupo MRE</a></li>
+            <li class="al-menu-item" id="menu-contact"><a href="#">Contáctanos</a></li>
           </ul>
           <div class="al-menu-language">
             <h2 class="al-menu-language-text">Seleccione su idioma de preferencia:</h2>
