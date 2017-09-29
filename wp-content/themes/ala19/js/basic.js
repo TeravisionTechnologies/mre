@@ -14,4 +14,6 @@ function closeNav() {
 
 jQuery(document).ready(function() {
     jQuery('#about-us  .item:first-child').addClass('active');
+
+
 });

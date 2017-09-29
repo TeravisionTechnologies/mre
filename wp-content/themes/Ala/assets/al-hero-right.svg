@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>D22D54C8-63B2-4E73-84C9-A1677E73EA6A</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <filter x="-25.0%" y="-21.7%" width="158.3%" height="158.3%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="2" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ALA19--Home-desktop-6" transform="translate(-1238.000000, -483.000000)">
+            <g id="Group-2-Copy" filter="url(#filter-1)" transform="translate(1276.000000, 519.000000) scale(-1, 1) translate(-1276.000000, -519.000000) translate(1246.000000, 489.000000)">
+                <text id="" fill="#FFFFFF" font-family="FontAwesome" font-size="24" font-weight="normal" line-spacing="14">
+                    <tspan x="18" y="46"></tspan>
+                </text>
+                <rect id="Rectangle-2" stroke="#FFFFFF" stroke-width="3" x="1.5" y="1.5" width="57" height="57"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

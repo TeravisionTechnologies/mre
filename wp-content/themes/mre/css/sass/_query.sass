@@ -1,12 +1,29 @@
+// IE 10+
+@media screen\0
+  #blog-recommended-posts .swiper-container-blog-most-viewed
+    position: static
+  #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-prev
+    left: 13.194444444444445vw !important
+  #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-next
+    right: 13.194444444444445vw !important
+  #blog-list-categories .swiper-container-blog-categories
+    position: static
+  #blog-list-categories .swiper-container-blog-categories .swiper-button-prev
+    left: 19.444444444444443vw !important
+  #blog-list-categories .swiper-container-blog-categories .swiper-button-next
+    right: 19.444444444444443vw !important
+
 // iMac
 @media only screen and (min-width: 1440px)
   @import "media/desktop/_basic.sass"
   @import "media/desktop/_blog-list.sass"
+  @import "media/desktop/_blog-detail.sass"
 
 // Tablets
 @media only screen and (min-width: 768px) and (max-width: 1023px)
   @import "media/tablet/_basic.sass"
   @import "media/tablet/_blog-list.sass"
+  @import "media/tablet/_blog-detail.sass"
 
 // Tablets Landscape
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape)
@@ -16,6 +33,7 @@
 @media only screen and (max-width: 767px)
   @import "media/mobile/_basic.sass"
   @import "media/mobile/_blog-list.sass"
+  @import "media/mobile/_blog-detail.sass"
 
 // Mobile Landscape
 @media only screen and (max-width: 767px) and (orientation: landscape)
@@ -41,3 +59,24 @@
           margin: 0 6.4vw
           height: 2vw
           width: 2vw
+
+// IE 10+
+@media screen\0
+  #blog-recommended-posts .swiper-container-blog-most-viewed
+    position: static
+
+  #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-prev
+    left: 13.194444444444445vw !important
+
+  #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-next
+    right: 13.194444444444445vw !important
+
+  #blog-list-categories .swiper-container-blog-categories
+    position: static
+
+  #blog-list-categories .swiper-container-blog-categories .swiper-button-prev
+    left: 19.444444444444443vw !important
+
+  #blog-list-categories .swiper-container-blog-categories .swiper-button-next
+    right: 19.444444444444443vw !important
+

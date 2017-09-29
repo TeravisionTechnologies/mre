@@ -12,28 +12,6 @@ function closeNav() {
     document.getElementById('overlay-nav').style.left = '100%';
 }
 
-function showOrHideFooterButton (fb) {
-    if ( jQuery(document).scrollTop() <= jQuery('#about-us').offset().top ) {
-        fb.hide();
-    } else {
-        fb.show();
-    }
-}
-
-// Footer button functions
-function footerOnloadAndScroll (fb) {
-    if ( jQuery(window).width() > 1023 ) {
-        showOrHideFooterButton(fb);
-        // Hide or Show depending if user scrolled after about section
-        jQuery(document).on('scroll', function() {
-            showOrHideFooterButton(fb);
-        });
-    } else {
-        // Hide if user is in mobile
-        fb.css({'display':'none'});
-    }
-}
-
 jQuery(document).ready(function() {
 
     // Declaring the global scroll of the html to use in further functions
@@ -66,14 +44,15 @@ jQuery(document).ready(function() {
                 slidesPerView: 5,
                 nextButton: '.swiper-button-next',
                 prevButton: '.swiper-button-prev',
-                spaceBetween: 32,
+                spaceBetween: 0,
                 centeredSlides: true,
                 loop: true,
+                loopSlides: 5,
                 breakpoints: {
-                    1024: {
+                    1023: {
                       spaceBetween: 19,
                     },
-                    375: {
+                    640: {
                       slidesPerView: 1,
                       spaceBetween: 0,
                     },
@@ -95,11 +74,11 @@ jQuery(document).ready(function() {
             spaceBetween: 35,
             loop: true,
             breakpoints: {
-              1024: {
+              1023: {
                 slidesPerView: 2,
                 spaceBetween: 29,
               },
-              375: {
+              640: {
                 slidesPerView: 1,
                 spaceBetween: 0,
               }
@@ -130,14 +109,14 @@ jQuery(document).ready(function() {
 
     // footer functions
 
-        // Scroll slow to the beginning of the page when the button is clicked
-        var footerButton = jQuery('footer .caretCircle');
-        footerButton.on('click', function () {
-            globalScroll.stop().animate({scrollTop:0}, 'slow');
-        });
-
-        // Function used to hide or show the footer button
-        footerOnloadAndScroll(footerButton);
+      $(window).scroll(function (event) {
+        var scroll = $(window).scrollTop();
+        if (scroll > 900)  {
+          $('.mre-footer-go-top').css('display', 'block');
+        } else {
+          $('.mre-footer-go-top').css('display', 'none');
+        }
+      });
 
 
     // form validation
@@ -191,9 +170,13 @@ jQuery(document).ready(function() {
 
         }
 
+    //Footer Go to top functionality
+    $(".mre-footer-go-top").click(function () {
+      $("html, body").animate({scrollTop: 0}, 2000);
+    });
 });
 
 // Call footer functionality on resize so only shows up in 1024px and ahead
-jQuery(window).resize(function() {
+/*jQuery(window).resize(function() {
     footerOnloadAndScroll(jQuery('footer .caretCircle'));
-});
+});*/

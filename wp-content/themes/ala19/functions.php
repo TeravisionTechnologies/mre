@@ -67,13 +67,12 @@
 		create_post_type_developer();
 		// Post Type for Header and Footer
 		create_post_type_header_footer();
-		// Post Type for Services
-		create_post_type_services();
 
 	}
 
 	/* Remove text area field from header and footer */
 	function remove_page_editor() {
+        remove_post_type_support( 'about_us', 'editor' );
 		remove_post_type_support( 'header_footer', 'editor' );
 	}
 	add_action( 'init', 'remove_page_editor' );
@@ -97,7 +96,5 @@
 		developer_metaboxes();
 		// Metaboxes for Header and Footer
 		header_footer_metaboxes();
-		// Metaboxes for Services
-		services_metaboxes();
 
 	}
