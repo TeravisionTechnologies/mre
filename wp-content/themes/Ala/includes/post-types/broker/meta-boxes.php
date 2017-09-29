@@ -12,7 +12,7 @@
 				'title'         => __( 'Property Information' ),
 				'object_types'  => 'broker',
 				'context'       => 'normal',
-				'priority'      => 'high'
+				'priority'      => 'high',
 			)
 		);
 
@@ -164,5 +164,4 @@
 				'repeatable' => false
 			)
 		);
-
 	}

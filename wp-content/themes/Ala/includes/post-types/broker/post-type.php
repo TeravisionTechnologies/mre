@@ -11,9 +11,10 @@
 					'new_item'      => __( 'New Property' ),
 					'view_item'     => __( 'View Property' ),
 					'view_items'    => __( 'View Properties' ),
-					'all_items'     => __( 'Properties' )
+					'all_items'     => __( 'Properties' ),
 				),
-				'public' => true
+				'public' => true,
+        'taxonomies' => array('category'),
 			)
 		);
 	}
