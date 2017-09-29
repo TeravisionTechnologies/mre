@@ -37,6 +37,14 @@ jQuery(document).ready(function() {
   $('.flag-image').on('click', function() {
     var index = $(this).data('pagination');
     swiperFlag.slideTo(index-1);
+    console.log(index);
+    if (index == 1) {
+      $('#flag-image-1').addClass('flag-image-opacity');
+      $('#flag-image-2').removeClass('flag-image-opacity');
+    } else {
+      $('#flag-image-1').removeClass('flag-image-opacity');
+      $('#flag-image-2').addClass('flag-image-opacity');
+    }
   });
 
   // Projects change effect
