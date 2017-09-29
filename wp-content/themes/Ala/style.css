@@ -170,7 +170,7 @@ body {
       font-weight: bold;
       letter-spacing: 1.25vw;
       padding: 0;
-      top: 26.38889vw;
+      top: 26.73611vw;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
       text-transform: uppercase; }
   #al-carousel-hero .carousel-control {
@@ -182,9 +182,11 @@ body {
       background: transparent;
       opacity: 1; }
   #al-carousel-hero .right {
-    right: 4.16667vw; }
+    right: 4.16667vw;
+    height: 4.16667vw; }
   #al-carousel-hero .left {
-    left: 4.16667vw; }
+    left: 4.16667vw;
+    height: 4.16667vw; }
 
 .al-projects {
   background: #000000;
@@ -530,15 +532,17 @@ a.al-phone-num {
         font-size: 80px;
         letter-spacing: 18px;
         padding: 0;
-        top: 380px; }
+        top: 385px; }
     #al-carousel-hero .carousel-control {
       top: 409px; }
       #al-carousel-hero .carousel-control:hover {
         opacity: 1; }
     #al-carousel-hero .right {
-      right: 60px; }
+      right: 60px;
+      height: 60px; }
     #al-carousel-hero .left {
-      left: 60px; }
+      left: 60px;
+      height: 60px; }
 
   .al-projects {
     background: #000000;
@@ -680,9 +684,11 @@ a.al-phone-num {
       #al-carousel-hero .carousel-control:hover {
         opacity: 1; }
     #al-carousel-hero .right {
-      right: 2.60417vw; }
+      right: 2.60417vw;
+      height: 2.60417vw; }
     #al-carousel-hero .left {
-      left: 2.60417vw; }
+      left: 2.60417vw;
+      height: 2.60417vw; }
 
   .al-projects {
     height: 14.32292vw;
@@ -815,9 +821,11 @@ a.al-phone-num {
       #al-carousel-hero .carousel-control:hover {
         opacity: 1; }
     #al-carousel-hero .right {
-      right: 4.16667vw; }
+      right: 4.16667vw;
+      height: 4.16667vw; }
     #al-carousel-hero .left {
-      left: 4.16667vw; }
+      left: 4.16667vw;
+      height: 4.16667vw; }
 
   .al-projects {
     height: 22.22222vw;
