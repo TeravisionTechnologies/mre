@@ -1177,7 +1177,8 @@ a.al-phone-num {
       margin-bottom: 5.27778vw;
       margin-right: 0; }
       .al-properties-section .properties-list .property-image:nth-child(3n+3) {
-        margin-right: 0; }
+        margin-right: 0;
+        margin-bottom: 5.55556vw; }
       .al-properties-section .properties-list .property-image .property-overlay {
         opacity: 1;
         bottom: 0;
