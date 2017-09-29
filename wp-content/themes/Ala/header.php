@@ -64,7 +64,6 @@
             <div class="img-div">
               <img src="wp-content/themes/Ala/assets/logo.png" alt="Ala19 Logo">
             </div>
-            <div class="sm-div">test</div>
           </div>
           <div id="al-carousel-hero" class="carousel vertical" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
