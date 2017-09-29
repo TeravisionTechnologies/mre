@@ -89,21 +89,11 @@
   <div class="container">
     <div id="offices" class="swiper-container swiper-container-flags">
       <div class="flags-indicators">
-        <img class="flag-image" data-pagination="1" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
-        <img class="flag-image" data-pagination="2" src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
+        <img id="flag-image-2" class="flag-image" data-pagination="1" src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
+        <img id="flag-image-1" class="flag-image flag-image-opacity" data-pagination="2" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
       </div>
       <h4>Puedes encontrar Nuestras Oficinas en:</h4>
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="office-detail usa-office">
-            <h5>
-              <span>Las Vegas:</span>
-            </h5>
-            <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
-            <h5>Miami, Florida</h5>
-            <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
-          </div>
-        </div>
         <div class="swiper-slide">
           <div class="office-detail">
             <h5>
@@ -112,6 +102,16 @@
             <h5>Calle Ortega y Gasset #6</h5>
             <h5>Primero Izquierda</h5>
             <h5>Sample: +34 605 816 803</h5>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="office-detail usa-office">
+            <h5>
+              <span>Las Vegas:</span>
+            </h5>
+            <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
+            <h5>Miami, Florida</h5>
+            <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
           </div>
         </div>
       </div>

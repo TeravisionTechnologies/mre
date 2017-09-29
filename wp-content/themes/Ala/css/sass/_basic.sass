@@ -251,6 +251,15 @@ body
     cursor: pointer
 // END Generals Classes
 // Contact Us
+.screen-reader-response
+  display: none
+
+.wpcf7-response-output
+  top: -25px
+  left: 30px
+  position: absolute
+
+
 .al-contact-div
   height: auto
   padding-top: 3.95vw
@@ -280,13 +289,13 @@ body
 .al-phone-box
   max-width: 361px
   margin-top: 40px
-  padding: 3.125vw 2.083vw
+  padding: 3.425vw 2.083vw
   background-color: $white
   box-shadow: 0 1px 10px 0 rgba($black, 0.3)
   -moz-box-shadow: 0 1px 10px 0 rgba($black, 0.3)
   -webkit-box-shadow: 0 1px 10px 0 rgba($black, 0.3)
   p
-    padding-top: 11px
+    padding-top: 16px
     line-height: 1.21
     font-size: 1.66vw
     padding-bottom: 13px
@@ -307,6 +316,9 @@ a.al-phone-num
 .al-contact-form-div
   margin-top: 40px
   display: inline-block
+
+.flag-image-opacity
+  opacity: .6
 
 .wpcf7-form
   p
@@ -329,6 +341,7 @@ a.al-phone-num
     width: 100%
     color: $grey
     font-size: 16px
+    max-height: 137px
     line-height: 0.94
     padding: 15px 20px
     border-radius: 6px
@@ -401,6 +414,7 @@ a.al-phone-num
       height: 4.097222222222222vw
       margin: 0 1.3888888888888888vw
       width: 4.166666666666667vw
+      cursor: pointer
   h4
     color: $white
     font-family: 'Archivo', sans-serif
