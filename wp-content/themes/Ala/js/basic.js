@@ -10,9 +10,9 @@ jQuery(document).ready(function() {
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
     if (scroll > 900)  {
-      $('..al-go-top-div').css('display', 'block');
+      $('.al-go-top-div').css('display', 'block');
     } else {
-      $('..al-go-top-div').css('display', 'none');
+      $('.al-go-top-div').css('display', 'none');
     }
   });
 

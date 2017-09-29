@@ -21,7 +21,7 @@ body {
 
 .swiper-container {
   width: 100%;
-  height: auto; }
+  height: 960px; }
 
 .swiper-slide {
   background: #ffffff;
@@ -304,7 +304,8 @@ body {
   position: fixed;
   border-radius: 50%;
   border: 2px solid #000000;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  display: none; }
   .al-go-top-div:hover {
     cursor: pointer; }
 
