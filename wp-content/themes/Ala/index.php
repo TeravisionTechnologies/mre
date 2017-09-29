@@ -16,6 +16,14 @@
     )
   );
   $footer_info = get_post_meta($footer_query[0]->ID);
+
+  $properties_list = get_posts(
+    array(
+      'post_type' => 'broker',
+      'order' => 'ASC',
+      'numberposts' => -1
+    )
+  );
 ?>
 <div class="col-xs-12 al-properties-section text-center">
   <img class="triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.svg">
@@ -33,78 +41,19 @@
       </select>
     </div>
     <div class="col-xs-12 properties-list no-padding">
-      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
+      <?php foreach($properties_list as $property){ 
+      	$property_info = get_post_meta($property->ID);
+      	$background_image = array_pop(unserialize($property_info["_br_images"][0]));
+      ?>
+      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo $background_image; ?>')">
         <div class="property-overlay">
-          <h2 class="property-title">Stratosphere Tower</h2>
-          <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
-          <h3 class="property-city">Las Vegas, EE.UU</h3>
-          <h4 class="property-category">Proyecto actual</h4>
+          <h2 class="property-title"><?php echo $property->post_title ?></h2>
+          <h3 class="property-address"><?php echo $property_info['_br_address'][0]; ?></h3>
+          <h3 class="property-city"><?php echo $property_info['_br_price'][0]; ?></h3>
+          <h4 class="property-category"><?php $taxonomy = get_post_taxonomies($property); $term = get_the_terms($property->ID, $taxonomy[0]); echo $term[0]->name; ?></h4>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
-        <div class="property-overlay">
-          <h2 class="property-title">Stratosphere Tower</h2>
-          <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
-          <h3 class="property-city">Las Vegas, EE.UU</h3>
-          <h4 class="property-category">Proyecto actual</h4>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
-        <div class="property-overlay">
-          <h2 class="property-title">Stratosphere Tower</h2>
-          <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
-          <h3 class="property-city">Las Vegas, EE.UU</h3>
-          <h4 class="property-category">Proyecto actual</h4>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
-        <div class="property-overlay">
-          <h2 class="property-title">Stratosphere Tower</h2>
-          <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
-          <h3 class="property-city">Las Vegas, EE.UU</h3>
-          <h4 class="property-category">Proyecto actual</h4>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
-        <div class="property-overlay">
-          <h2 class="property-title">Stratosphere Tower</h2>
-          <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
-          <h3 class="property-city">Las Vegas, EE.UU</h3>
-          <h4 class="property-category">Proyecto actual</h4>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
-        <div class="property-overlay">
-          <h2 class="property-title">Stratosphere Tower</h2>
-          <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
-          <h3 class="property-city">Las Vegas, EE.UU</h3>
-          <h4 class="property-category">Proyecto actual</h4>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
-        <div class="property-overlay">
-          <h2 class="property-title">Stratosphere Tower</h2>
-          <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
-          <h3 class="property-city">Las Vegas, EE.UU</h3>
-          <h4 class="property-category">Proyecto actual</h4>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
-        <div class="property-overlay">
-          <h2 class="property-title">Stratosphere Tower</h2>
-          <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
-          <h3 class="property-city">Las Vegas, EE.UU</h3>
-          <h4 class="property-category">Proyecto actual</h4>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 property-image no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/property-1.jpg')">
-        <div class="property-overlay">
-          <h2 class="property-title">Stratosphere Tower</h2>
-          <h3 class="property-address">3600 S Las Vegas Blvd NV 89109</h3>
-          <h3 class="property-city">Las Vegas, EE.UU</h3>
-          <h4 class="property-category">Proyecto actual</h4>
-        </div>
-      </div>
+      </div>	
+      <?php } ?>
     </div>
   </div>
 </div>
