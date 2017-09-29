@@ -59,6 +59,7 @@ body {
   .menu .al-menu {
     position: absolute;
     top: 10.97222vw;
+    left: 0;
     list-style: none;
     padding: 0;
     width: 100%; }
@@ -74,8 +75,10 @@ body {
     .menu .al-menu:first-child {
       border-top: 2px solid rgba(255, 255, 255, 0.15); }
   .menu .al-menu-language {
+    width: 100%;
     position: absolute;
     bottom: 0;
+    left: 0;
     height: 21.875vw;
     text-align: center; }
     .menu .al-menu-language .al-menu-language-text {
@@ -980,7 +983,7 @@ a.al-phone-num {
         height: 156.11111vw; }
       #al-carousel-hero .item .carousel-caption {
         font-size: 6.66667vw;
-        letter-spacing: 5vw;
+        letter-spacing: 2vw;
         padding: 0;
         top: 74.44444vw; }
     #al-carousel-hero .carousel-control {
