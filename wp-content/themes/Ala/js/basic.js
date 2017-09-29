@@ -14,7 +14,7 @@ jQuery(document).ready(function() {
   });
 
   // Add Swiper Projects
-  var swiperProjects = new Swiper('.swiper-container-projects', {
+  /*var swiperProjects = new Swiper('.swiper-container-projects', {
     pagination: '.swiper-pagination',
     slidesPerView: 3,
     paginationClickable: true,
@@ -31,7 +31,7 @@ jQuery(document).ready(function() {
         spaceBetween: 13
       }
     }
-  });
+  });*/
 
   // Adding Swiper functionality to flags
   $('.flag-image').on('click', function() {
@@ -39,11 +39,11 @@ jQuery(document).ready(function() {
     swiperFlag.slideTo(index-1);
   });
 
-  $('.swiper-container-projects').find('.swiper-slide-active h2').css('opacity', 1);
-  /*$('.swiper-container-projects').find('.swiper-slide h2').on('click', function(){
-    $(this).css('opacity', 1)
-
-  });*/
+  $('.al-project-list-item').find('item-active').
+  $('.al-project-list-item').click(function(){
+    $('.al-project-list-item').find('h2').removeClass('item-active');
+    $(this).find('h2').addClass('item-active');
+  });
 
 });
 

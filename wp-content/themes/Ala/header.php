@@ -78,18 +78,10 @@
       </div>
     </div>
     <section class="col-xs-12 al-projects">
-      <div class="swiper-container swiper-container-projects">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <h2>Proyectos pasados</h2>
-          </div>
-          <div class="swiper-slide">
-            <h2>Proyectos actuales</h2>
-          </div>
-          <div class="swiper-slide">
-            <h2>Muy Pronto</h2>
-          </div>
-        </div>
+      <div class="container center-block al-project-list">
+        <a class="al-project-list-item"><h2 class="item-text">Proyectos pasados</h2><img class="triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.svg"></a>
+        <a class="al-project-list-item"><h2 class="item-text item-active">Proyectos pasados</h2><img class="triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.svg"></a>
+        <a class="al-project-list-item"><h2 class="item-text">Proyectos pasados</h2><img class="triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.svg"></a>
       </div>
     </section>
 

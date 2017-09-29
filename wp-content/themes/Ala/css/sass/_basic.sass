@@ -163,7 +163,7 @@ body
       font-weight: bold
       letter-spacing: 1.25vw
       padding: 0
-      top: 26.38888888888889vw
+      top: 26.73611111111111vw
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8)
       text-transform: uppercase
   .carousel-control
@@ -176,14 +176,21 @@ body
       opacity: 1
   .right
     right: 4.166666666666667vw
+    height: 4.166666666666667vw
   .left
     left: 4.166666666666667vw
+    height: 4.166666666666667vw
 
 .al-projects
-  background: $black
+  background: red
   color: $white
   height: 8.333333333333334vw
   margin-top: 0.2777777777777778vw
+  .al-project-list
+    list-style: none
+    .al-project-list-item
+      display: inline-block
+
   .swiper-container-projects
     height: 8.333333333333334vw
     width: 61.388888888888886vw
@@ -428,11 +435,6 @@ a.al-phone-num
 
 // Properties
 .al-properties-section
-  position: relative
-  .triangle
-    position: absolute
-    left: 49%
-    transform: translateX(-50%)
   .properties-country-filter
     color: #7f8182
     display: inline-block
