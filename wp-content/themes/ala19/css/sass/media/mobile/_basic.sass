@@ -22,9 +22,9 @@ header
                     font-size: 7vw
                     margin-top: 20px
 footer
-    height: 48.888888888888886vw
+    height: auto
     .container
-        padding: 0 6.944444444444445vw
+        padding-bottom: 5%
         .footer-center
             margin-top: 11.11111111111111vw
             .footer-logo
@@ -118,11 +118,15 @@ footer
 
 .contact-title
     font-family: Archivo
-    font-size: 18px
+    font-size: 16px
     line-height: 1.28
     letter-spacing: -0.2px
     text-align: center
     color: $black
+    margin-bottom: 9.375vw
+    .contact-last
+        font-weight: bold
+        margin-left: -20px
 #after-about-us
     height: 70.3vw
     h4
@@ -157,6 +161,9 @@ footer
             .swiper-slide
                 height: 47.22222222222222vw
                 .office-detail
+                    text-align: center
+                    margin-top: -3.305556vw
+                    margin-left: -7.305556vw
                     h5
                         font-size: 3.333333333333333vw
                         line-height: 1.79
@@ -164,19 +171,23 @@ footer
                     width: 100%
                     display: block
                 .office-detail.usa-office:first-child
-                    margin-left: 0
+                    text-align: center
+                    margin-top: -6.305556vw
+                    margin-left: -4.305556vw
                 .office-detail.usa-office:last-child
-                    margin-left: 0
+                    text-align: center
+                    margin-top: -6.305556vw
+                    margin-left: -4.305556vw
         .swiper-pagination
             bottom: 55vw
             .swiper-pagination-bullet
                 height: 3vw
                 width: 3vw
 
-#contact-us
+.contact-us
     height: auto
     width: 100%
-    padding-bottom: 160%
+    padding-bottom: 5%
     .spacer.initial
         height: 6vw
     .spacer
@@ -188,21 +199,41 @@ footer
     .inner-section
         margin: 0 2.16vw
         > div
-            margin-left: 0 !important
+            margin-left: -30px !important
         .call-us
             float: none
-            margin-bottom: 20vw
+            margin-bottom: 10vw
             .content
                 margin: 0 auto
-                height: 55.55vw
+                height: 62.5vw
                 width: 86.11vw
+                background-color: #ffffff
+                box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3)
+                text-align: center
                 h2
                     font-size: 5vw
                 img
                     height: 16.94vw
                     width: 15vw
+                    margin-top: 6.25vw
+                #advice-call
+                    margin-top: 10px
+                    font-size: 18px
+                    font-family: Archivo-Regular
+                    line-height: 1.28
+                    letter-spacing: -0.1px
+                    text-align: center
+                .bold-me
+                    font-weight: 600
+                .spacer-before-image
+                    height: auto
+                    width: 100%
+                    float: left
                 #contact-phone
-                    font-size: 6.66vw
+                    font-family: Archivo-Bold
+                    font-size: 7.5vw
+                .spacer-end
+                    height: 3.5vw
         .the-form
             .wpcf7
                 p
@@ -234,13 +265,21 @@ footer
                     height: 40px
                     border: solid 2px $black
                     font-size: 3.88vw
-                    padding: 0 !important
-                    margin: 1vw 0 0 22vw
+                    margin: 1vw 0 0 20vw
                 .your-schedule::before, .your-interest::before, .your-country::before
                     bottom: 2.5vw
                     left: 79.16vw
                     font-size: 5vw
         .form-errors
+            display: none
+            position: relative
+            background: $red
+            color: $white
+            z-index: 1
+            border-radius: 2px
+            padding: 5px
+            font-size: 0.97vw
+            text-align: center
             font-size: 3.33vw
             top: 76vw
             left: 2vw
@@ -250,11 +289,11 @@ footer
 .slider-swiper-center
     position: absolute
     text-align: center
-    margin-left: 10%
-    top: 47%
+    margin-left: 21%
+    top: 43%
     p
         font-family: Archivo
-        font-size: 16px
+        font-size: 18px
         color: $white
         abbr
             font-size: 24px
@@ -301,7 +340,8 @@ footer
 .triangle
     width: 0
     height: 0
-    margin-left: 47%
+    margin-top: -0.625vw
+    margin-left: 44%
     border-right: 20px solid transparent
     border-top: 20px solid $black
     border-left: 20px solid transparent
@@ -312,38 +352,11 @@ footer
     padding-bottom: 2%
     background-color: $white
 
-
-.gallery-p-left
-    width: 72px
-    height: 17px
-    border-right: solid 2px $gallery-p
-    position: absolute
-    margin-top: -5%
-    margin-left: 31%
-    font-family: Archivo
-    font-size: 16px
-    line-height: 0.83
-    letter-spacing: -0.1px
-    color: $gallery-p
-
-.gallery-p-right
-    idth: 70px
-    height: 17px
-    position: absolute
-    margin-top: -5%
-    margin-left: 55%
-    font-family: Archivo
-    font-size: 16px
-    line-height: 0.83
-    letter-spacing: $gallery-p
-    float: left
-
 #gallery-img
     width: 310px
     height: 302px
     object-fit: contain
     margin-left: 10%
-    margin-bottom: 5%
     max-width: 80%
 
 .container-projects
@@ -357,18 +370,47 @@ footer
     background-color: $black
 
 .slide-p-one
-    font-size: 16px
+    font-size: 15px
     font-weight: bold
     text-align: center
     margin-top: 10%
-
 .slide-p-two
-    font-size: 16px
+    font-size: 15px
     font-weight: bold
     text-align: center
     margin-top: 10%
 
 .swiper-pagination, .projects, .swiper-pagination-clickable, .swiper-pagination-bullets
     .swiper-pagination-bullet
-        background-color: $black
         position: fixed
+        background-color: $black
+
+.slide
+    height: 156.11111111111111vw
+    .swiper-container
+        .swiper-button-next
+            width: 28px !important
+            height: 28px !important
+            background-size: 28px 28px !important
+            margin-right: 25px !important
+        .swiper-button-prev
+            width: 28px !important
+            height: 28px !important
+            background-size: 28px 28px !important
+            margin-left: 25px !important
+
+.projects
+    .swiper-container
+        height: 15.277777777777777vw
+    .swiper-button-next
+        width: 23px !important
+        height: 10px !important
+        background-size: 23px 10px !important
+        margin-right: 10px !important
+        background-image: url('assets/button-next-mobile.png') !important
+    .swiper-button-prev
+        width: 23px !important
+        height: 10px !important
+        background-size: 23px 10px !important
+        margin-left: 10px !important
+        background-image: url('assets/button-prev-mobile.png') !important

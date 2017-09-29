@@ -1,0 +1,238 @@
+#blog-list-categories
+  background: $overlay
+  height: 23.819444444444443vw
+  position: relative
+  .blog-list-category-title, .blog-list-category-text
+    line-height: 2.5vw
+    text-align: center
+  .blog-list-category-title
+    color: $white
+    font-family: Montserrat-Regular, sans-serif
+    font-size: 1.25vw
+    margin-top: 3.4722222222222223vw
+    opacity: 0.6
+  .blog-list-category-text
+    color: $white
+    font-family: Montserrat-Bold, sans-serif
+    font-size: 2.0833333333333335vw
+  .swiper-container-blog-categories
+    height: 8.88888888888889vw
+    margin-bottom: 4.861111111111111vw
+    margin-top: 2.4305555555555554vw
+    position: initial
+    width: 53.33333333333333vw
+    .swiper-wrapper
+      width: 55.55555555555556vw
+      .swiper-slide
+        border-radius: 100%
+        position: relative
+        width: 8.88888888888889vw
+        img
+          height: 8.88888888888889vw
+          width: 8.88888888888889vw
+        .swiper-overlay
+          background: $overlay-blue
+          border-radius: 50%
+          height: 8.88888888888889vw
+          position: absolute
+          top: 0
+          width: 8.88888888888889vw
+    .swiper-button-prev, .swiper-button-next
+      background-image: none
+      color: $white
+      font-size: 2.5vw
+      height: 2.5vw
+      text-align: center
+      top: 63%
+      width: 4.166666666666667vw
+    .swiper-button-prev
+      left: 15.972222222222221vw
+    .swiper-button-next
+      right: 15.972222222222221vw
+.blog-list-triangle
+  left: 50%
+  position: relative
+  top: -1px
+  transform: translateX(-50%)
+#blog-list
+  background: $white
+  .input-group
+    border-collapse: separate
+    border-bottom: 2px solid $select-grey
+    display: table
+    height: 3.333333333333333vw
+    margin-top: 4.791666666666667vw
+    position: relative
+    width: 59.791666666666664vw
+    i
+      border: none
+      color: $search-icon-grey
+      display: table-cell
+      height: 1.1805555555555556vw
+      padding-left: 0.7638888888888888vw
+      padding-top: 0.5555555555555556vw
+      vertical-align: middle
+      width: 1.1805555555555556vw
+    input[type="text"]
+      border: none
+      box-shadow: none
+      font-family: Montserrat-Regular, sans-serif
+      font-size: 1.1111111111111112vw
+      height: 3.194444444444444vw
+      line-height: 1.0416666666666667vw
+      padding-top: 1.0416666666666667vw
+  .blog-search, .blog-select
+    padding: 0
+  .blog-filter
+    border: solid 2px $select-grey
+    color: $select-grey-text
+    font-family: Montserrat-Regular, sans-serif
+    font-size: 1.1111111111111112vw
+    height: 3.333333333333333vw
+    margin-top: 4.791666666666667vw
+    width: 18.125vw
+  .blog-post
+    height: 29.86111111111111vw
+    margin-top: 2.7777777777777777vw
+    padding: 0
+    width: 39.23611111111111vw
+    &:nth-child(odd)
+      margin-right: 2.7777777777777777vw
+    .blog-image
+      background-size: cover
+      height: 16.73611111111111vw
+      position: relative
+      .blog-category
+        background-color: $light-blue
+        bottom: 0
+        color: #ffffff
+        font-family: Montserrat-Bold, sans-serif
+        font-size: 0.8333333333333333vw
+        height: 2.0833333333333335vw
+        line-height: 2.0833333333333335vw
+        min-width: 6.388888888888888vw
+        padding: 0 0.6944444444444444vw
+        position: absolute
+        text-align: center
+        text-transform: uppercase
+    .blog-text
+      border: solid 1px #cfcfcf
+      height: 13.125vw
+      padding: 1.3888888888888888vw 3.0555555555555554vw 0 3.0555555555555554vw
+      .blog-text-title
+        color: #4d484a
+        font-family: Montserrat-Bold, sans-serif
+        font-size: 1.25vw
+        line-height: 1.6666666666666665vw
+      .blog-text-author
+        color: #4d484a
+        font-family: Montserrat-Bold, sans-serif
+        font-size: 0.9722222222222222vw
+        line-height: 0.9722222222222222vw
+        opacity: 0.5
+        .blog-text-date, .blog-text-comments
+          font-family: Montserrat-Regular, sans-serif
+          padding-left: 0.4861111111111111vw
+      .blog-text-summary
+        color: #4d484a
+        font-family: Montserrat-Regular, sans-serif
+        font-size: 0.9722222222222222vw
+        line-height: 1.3888888888888888vw
+        margin-top: 0.6944444444444444vw
+  #blog-pagination
+    clear: both
+    text-align: center
+    .pagination
+      margin: 4.166666666666667vw 0 5.555555555555555vw 0
+      li
+        font-size: 1.1111111111111112vw
+        line-height: 1.4583333333333333vw
+        a
+          background: #efefef
+          color: #000
+          height: 2.9166666666666665vw
+          padding-top: 0.6944444444444444vw
+          width: 2.8472222222222223vw
+        .pagination-active
+          background: $light-blue
+          color: $white
+        .pagination-previous
+          color: $pagination-grey
+#blog-recommended-posts
+  background-size: cover
+  height: 31.25vw
+  padding: 0
+  position: relative
+  .recommended-posts-overlay
+    position: absolute
+    width: 100%
+    background: $blue-overlay
+    height: 100%
+  .recommended-posts-title
+    color: $white
+    font-family: Montserrat-Bold, sans-serif
+    font-size: 1.6666666666666665vw
+    line-height: 2.5vw
+    padding-top: 3.4722222222222223vw
+    text-align: center
+  .swiper-container-blog-most-viewed
+    height: 17.569444444444443vw
+    margin-bottom: 4.930555555555555vw
+    margin-top: 2.7777777777777777vw
+    position: initial
+    width: 67.36111111111111vw
+    .swiper-wrapper
+      margin: 0 auto
+      .swiper-slide
+        width: 20.833333333333332vw
+        .blog-most-viewed-image
+          background-size: cover
+          height: 8.958333333333334vw
+          position: relative
+          .blog-most-viewed-category
+            background-color: $light-blue
+            bottom: 0
+            color: #ffffff
+            font-family: Montserrat-Bold, sans-serif
+            font-size: 0.8333333333333333vw
+            height: 1.7361111111111112vw
+            line-height: 1.7361111111111112vw
+            min-width: 7.013888888888888vw
+            padding: 0 0.6944444444444444vw
+            position: absolute
+            text-align: center
+            text-transform: uppercase
+        .blog-most-viewed-text
+          background: $white
+          border: solid 1px #cfcfcf
+          height: 8.61111111111111vw
+          padding: 1.3888888888888888vw 0 0 1.7361111111111112vw
+          a
+            text-decoration: none
+            .blog-most-viewed-text-title
+              color: #4d484a
+              font-family: Montserrat-Bold, sans-serif
+              font-size: 1.25vw
+              line-height: 1.4583333333333333vw
+          .blog-most-viewed-text-author
+            color: #4d484a
+            font-family: Montserrat-Bold, sans-serif
+            font-size: 0.9722222222222222vw
+            line-height: 1.3888888888888888vw
+            opacity: 0.5
+            width: 16.319444444444443vw
+            .blog-most-viewed-text-date, .blog-most-viewed-text-comments
+              font-family: Montserrat-Regular, sans-serif
+              padding-left: 0.3472222222222222vw
+    .swiper-button-prev, .swiper-button-next
+      background-image: none
+      color: $white
+      font-size: 2.5vw
+      height: 2.5vw
+      text-align: center
+      top: 54%
+      width: 4.166666666666667vw
+    .swiper-button-prev
+      left: 8.680555555555555vw
+    .swiper-button-next
+      right: 8.680555555555555vw

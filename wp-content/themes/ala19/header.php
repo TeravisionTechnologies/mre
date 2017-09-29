@@ -57,7 +57,7 @@
                         $theMeta = get_post_meta($headerPost[0]->ID);
                     ?>
                     <a href="<?php echo esc_url( home_url( '/' ) ) ?>">
-                        <img src="wp-content/themes/ala19/assets/ala-19-logo@3x.png" class="logo"/>
+                        <img src="<?php echo $theMeta['_hf_logo'][0] ?>" class="logo"/>
                     </a>
                 </div>
                 <?php
