@@ -12,9 +12,11 @@
   if ( have_posts() ) : the_post(); endif;
 
   $categories = get_the_category();
+  $args_form_comments = array('class_submit' => 'comments-form', 'label_submit' => 'Publicar comentario');
 ?>
 
 <section class="container-fluid">
+    <!-- this is single-blog -->
   <section class="col-xs-12" id="blog-detail-breadcrumb">
     <div class="container-mre center-block">
       <a href="<?php echo get_site_url(); ?>/blog"><i class="fa fa-chevron-circle-left blog-detail-breadcrumb-prev" aria-hidden="true"></i></a>
@@ -90,14 +92,15 @@
     <div class="blog-detail-comments-form center-block">
       <h2 class="blog-detail-comments-form-title">Escribe un comentario</h2>
       <h3 class="blog-detail-comments-form-subtitle">Su dirección de correo electrónico no será publicada</h3>
-      <form action="" class="comments-form">
+        <?php comment_form($args_form_comments, $post_id); ?>
+     <!-- <form action="" class="comments-form">
         <div class="form-group">
           <input type="text" class="form-control" id="input-fullname" placeholder="Nombre y Apellido">
           <input type="email" class="form-control" id="input-email" placeholder="Email">
           <textarea class="form-control" placeholder="Tu comentario..."></textarea>
         </div>
         <button type="submit" class="comments-form-button">Publicar comentario</button>
-      </form>
+      </form>-->
     </div>
   </section>
 
