@@ -37,15 +37,28 @@
 .al-projects
   height: 22.22222222222222vw
   margin-top: 0.8333333333333333vw
-  text-align: center
-  .swiper-container-projects
-    height: 22.22222222222222vw
-    width: 100%
-    .swiper-slide
-      width: 39.44444444444444vw
-      h2
+  padding: 0
+  .al-project-list
+    height: 100%
+    padding: 0
+    .al-project-list-item
+      margin: 0 0.8333333333333333vw
+      height: 100%
+      width: 27.77777777777778vw
+      .item-text
         opacity: 0.4
-        font-size: 3.888888888888889vw
+        font-size: 2.7777777777777777vw
+        color: #ffffff
+        margin-top: 9.166666666666666vw
+      .item-active
+        opacity: 1
+      .triangle
+        width: 5.555555555555555vw
+        height: 2.2222222222222223vw
+        opacity: 0
+        bottom: -1.9444444444444444vw
+        left: 50%
+        transform: translateX(-50%)
 // END Header
 
 // Generals Classes
@@ -144,12 +157,6 @@ a.al-phone-num
 
 // Properties
 .al-properties-section
-  .triangle
-    height: 2.2222222222222223vw
-    left: 49%
-    top: -1px
-    transform: translateX(-50%)
-    width: 5.555555555555555vw
   .container-properties
     width: 100%
     padding: 0 2.7777777777777777vw

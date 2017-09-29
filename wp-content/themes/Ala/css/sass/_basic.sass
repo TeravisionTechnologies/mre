@@ -182,28 +182,39 @@ body
     height: 4.166666666666667vw
 
 .al-projects
-  background: red
+  background: $black
   color: $white
   height: 8.333333333333334vw
   margin-top: 0.2777777777777778vw
+  text-align: center
   .al-project-list
-    list-style: none
+    height: 100%
     .al-project-list-item
+      position: relative
+      margin: 0 1.8055555555555556vw
+      height: 100%
       display: inline-block
-
-  .swiper-container-projects
-    height: 8.333333333333334vw
-    width: 61.388888888888886vw
-    .swiper-slide
-      background: $black
+      text-align: center
       width: 18.055555555555554vw
-      h2
+      cursor: pointer
+      &:hover
+        text-decoration: none
+      .item-text
         opacity: 0.4
         font-family: 'Archivo', sans-serif
         font-size: 1.5277777777777777vw
         font-weight: bold
-        color: $white
-        cursor: pointer
+        text-align: center
+        color: #ffffff
+        margin-top: 3.333333333333333vw
+      .item-active
+        opacity: 1
+      .triangle
+        opacity: 0
+        position: absolute
+        bottom: -1.0416666666666667vw
+        left: 50%
+        transform: translateX(-50%)
 // END Header
 
 // Footer

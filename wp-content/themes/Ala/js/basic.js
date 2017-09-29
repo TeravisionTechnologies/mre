@@ -39,10 +39,13 @@ jQuery(document).ready(function() {
     swiperFlag.slideTo(index-1);
   });
 
-  $('.al-project-list-item').find('item-active').
-  $('.al-project-list-item').click(function(){
+  // Projects change effect
+  $('.item-active').next().css('opacity', 1);
+  $('.al-project-list-item').click(function () {
     $('.al-project-list-item').find('h2').removeClass('item-active');
     $(this).find('h2').addClass('item-active');
+    $('.triangle').css('opacity', 0);
+    $(this).find('img').css('opacity', 1);
   });
 
 });
