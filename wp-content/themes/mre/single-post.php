@@ -13,7 +13,12 @@ $author_id=$post->post_author;
 if ( have_posts() ) : the_post(); endif;
 
 $categories = get_the_category();
-$args_form_comments = array('class_submit' => 'comments-form', 'label_submit' => 'Publicar comentario');
+$args_form_comments = array('class_submit' => 'comments-form-button',
+                            'title_reply' => '',
+                            'title_reply_before' => '',
+                            'label_submit' => 'Publicar comentario',
+                            'class_form' => 'comments-form',
+                            'comment_field' => '<textarea id="comment" name="comment" class="form-control" placeholder="Tu comentario..."></textarea></div>');
 ?>
 
 <section class="container-fluid">
@@ -48,10 +53,6 @@ $args_form_comments = array('class_submit' => 'comments-form', 'label_submit' =>
                 <h2 class="blog-detail-content-share-title">Share this article</h2>
                 <ul class="blog-detail-content-share-list">
                     <li><?php echo do_shortcode('[ssba]'); ?></li>
-                    <!--<li><a href="#"><img src="<?php /*echo get_template_directory_uri(); */?>/assets/google.svg"></a></li>
-          <li><a href="#"><img src="<?php /*echo get_template_directory_uri(); */?>/assets/facebook.svg"></a></li>
-          <li><a href="#"><img src="<?php /*echo get_template_directory_uri(); */?>/assets/linkedin.svg"></a></li>
-          <li><a href="#"><img src="<?php /*echo get_template_directory_uri(); */?>/assets/twitter.svg"></a></li>-->
                 </ul>
             </div>
         </div>
