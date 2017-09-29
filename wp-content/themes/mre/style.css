@@ -601,7 +601,8 @@ footer {
 #blog-list-categories {
   background: #303030;
   height: 23.81944vw;
-  position: relative; }
+  position: relative;
+  margin-top: 80px; }
   #blog-list-categories .blog-list-category-title, #blog-list-categories .blog-list-category-text {
     line-height: 2.5vw;
     text-align: center; }
@@ -843,6 +844,7 @@ footer {
       right: 8.68056vw; }
 
 #blog-detail-breadcrumb {
+  margin-top: 80px;
   padding: 3.47222vw 0 1.38889vw 0; }
   #blog-detail-breadcrumb .blog-detail-breadcrumb-prev {
     color: #ffffff;
@@ -2061,7 +2063,7 @@ footer {
       margin-right: 2.60417vw 2.60417vw;
       margin-top: 3.90625vw;
       padding-left: 1.95313vw;
-      width: 33.72396vw; }
+      width: 34.42396vw; }
     #blog-detail-form .blog-detail-comments-form .comments-form input[type="email"] {
       font-size: 1.82292vw;
       height: 6.11979vw;
