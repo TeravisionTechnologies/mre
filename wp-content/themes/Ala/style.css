@@ -70,8 +70,11 @@ body {
       font-family: "Archivo", sans-serif;
       font-size: 1.66667vw;
       line-height: 2.77778vw;
-      color: #ffffff;
       cursor: pointer; }
+      .menu .al-menu .al-menu-item a {
+        color: #ffffff; }
+        .menu .al-menu .al-menu-item a:hover {
+          text-decoration: none; }
     .menu .al-menu:first-child {
       border-top: 2px solid rgba(255, 255, 255, 0.15); }
   .menu .al-menu-language {
@@ -1144,7 +1147,7 @@ a.al-phone-num {
       margin-bottom: 5.27778vw;
       margin-right: 0; }
       .al-properties-section .properties-list .property-image:nth-child(3n+3) {
-        margin: 0; }
+        margin-right: 0; }
       .al-properties-section .properties-list .property-image .property-overlay {
         opacity: 1;
         bottom: 0;

@@ -7,7 +7,7 @@
       $footer_info = get_post_meta($footer_query[0]->ID);
 
     ?>
-    <div id="contact-us" class="al-contact-div" style="background-image: url('<?php echo $footer_info['_hf_contact'][0] ?>')">
+    <div id="contact-us" class="col-xs-12 al-contact-div" style="background-image: url('<?php echo $footer_info['_hf_contact'][0] ?>')">
       <div class="container">
         <div class="row">
           <p class="col-xs-12 text-center al-contact-text">Nos gustaría asesorarte en tu próxima inversión</p>
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <footer class="al-footer-container">
+    <footer class="al-footer-container col-xs-12">
       <div class="container">
         <div class="col-xs-12 text-center">
           <img src="<?php echo $footer_info['_hf_logo'][0] ?>" alt="Logo Ala19 Footer" class="img-responsive center-block">

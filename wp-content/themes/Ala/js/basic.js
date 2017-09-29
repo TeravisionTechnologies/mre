@@ -3,7 +3,7 @@
  */
 jQuery(document).ready(function() {
   $("#go-to-top").click(function () {
-    $('html,body').animate({ scrollTop: 0 }, 'slow');
+    $('html,body').animate({scrollTop: 0}, 'slow');
     return false;
   });
 
@@ -17,7 +17,7 @@ jQuery(document).ready(function() {
   });
 
   //Header and Menu Swiper
-  var toggleMenu = function(){
+  var toggleMenu = function () {
     if (swiper.previousIndex == 0)
       swiper.slidePrev();
   }
@@ -26,14 +26,15 @@ jQuery(document).ready(function() {
     slidesPerView: 'auto'
     , initialSlide: 1
     , resistanceRatio: .00000000000001
-    , onSlideChangeStart: function(slider) {
+    , onSlideChangeStart: function (slider) {
       if (slider.activeIndex == 0) {
         menuButton.classList.add('cross');
         menuButton.removeEventListener('click', toggleMenu, false);
-      } else
+      }
+      else
         menuButton.classList.remove('cross');
     }
-    , onSlideChangeEnd: function(slider) {
+    , onSlideChangeEnd: function (slider) {
       if (slider.activeIndex == 0)
         menuButton.removeEventListener('click', toggleMenu, false);
       else
@@ -50,14 +51,15 @@ jQuery(document).ready(function() {
   });
 
   // Adding Swiper functionality to flags
-  $('.flag-image').on('click', function() {
+  $('.flag-image').on('click', function () {
     var index = $(this).data('pagination');
-    swiperFlag.slideTo(index-1);
+    swiperFlag.slideTo(index - 1);
     console.log(index);
     if (index == 1) {
       $('#flag-image-1').addClass('flag-image-opacity');
       $('#flag-image-2').removeClass('flag-image-opacity');
-    } else {
+    }
+    else {
       $('#flag-image-1').removeClass('flag-image-opacity');
       $('#flag-image-2').addClass('flag-image-opacity');
     }
@@ -76,6 +78,18 @@ jQuery(document).ready(function() {
   $('.al-menu-language-flag').click(function () {
     $('.al-menu-language-flag').css('opacity', 0.4);
     $(this).css('opacity', 1);
+  });
+
+
+  $("#menu-contact").click(function() {
+    $('html, body').animate({
+      scrollTop: $("#contact-us").offset().top
+    }, 2000);
+  });
+  $("#menu-projects").click(function() {
+    $('html, body').animate({
+      scrollTop: $(".al-properties-section").offset().top
+    }, 2000);
   });
 
 });
