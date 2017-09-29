@@ -60,15 +60,15 @@
   <nav id="al-pagination">
     <ul class="pagination">
       <li>
-        <a href="#" aria-label="Previous"><span aria-hidden="true"class="pagination-previous">&laquo;</span></a>
+        <a aria-label="Previous"><span aria-hidden="true"class="pagination-previous">&laquo;</span></a>
       </li>
-      <li><a href="#" class="pagination-active">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
+      <li><a class="pagination-active">1</a></li>
+      <li><a>2</a></li>
+      <li><a>3</a></li>
+      <li><a>4</a></li>
+      <li><a>5</a></li>
       <li>
-        <a href="#" aria-label="Next">
+        <a aria-label="Next">
           <span aria-hidden="true">&raquo;</span>
         </a>
       </li>
