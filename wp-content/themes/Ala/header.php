@@ -62,7 +62,7 @@
           </div>
           <div class="logo-header">
             <div class="img-div">
-              <img src="wp-content/themes/Ala/assets/logo.png" alt="Ala19 Logo">
+              <img src="wp-content/themes/Ala/assets/logo.jpg" alt="Ala19 Logo">
             </div>
           </div>
           <div id="al-carousel-hero" class="carousel vertical" data-ride="carousel">
@@ -101,12 +101,3 @@
         <a class="al-project-list-item"><h2 class="item-text">Muy pronto</h2><img class="triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.svg"></a>
       </div>
     </section>
-
-    <!-- Swiper JS --><!--
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>-->
-
-    <!-- Initialize Swiper -->
-    <script>
-
-    </script>
-    

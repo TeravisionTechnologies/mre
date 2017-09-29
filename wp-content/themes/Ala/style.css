@@ -21,7 +21,7 @@ body {
 
 .swiper-container {
   width: 100%;
-  height: 960px; }
+  height: auto; }
 
 .swiper-slide {
   background: #ffffff;
@@ -51,6 +51,7 @@ body {
   background-color: #000000; }
 
 .menu {
+  height: auto;
   min-width: 6.94444vw;
   width: 70%;
   max-width: 22.22222vw;
@@ -180,7 +181,12 @@ body {
   background-color: #ffffff;
   width: calc(100vw - 74.86vw); }
   .img-div img {
-    max-width: 120px; }
+    max-width: 120px;
+    max-height: 41px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
 
 .sm-div {
   height: 72px;
@@ -791,6 +797,10 @@ a.al-phone-num {
       .menu .al-menu-language .language-flag-active {
         opacity: 1; }
 
+  .img-div img {
+    max-width: 14.32292vw;
+    max-height: 4.94792vw; }
+
   .content {
     padding-top: 10.41667vw; }
 
@@ -980,6 +990,18 @@ a.al-phone-num {
         height: 8.88889vw; }
       .menu .al-menu-language .language-flag-active {
         opacity: 1; }
+
+  .logo-header {
+    left: 30.55556vw;
+    height: 16.66667vw;
+    width: calc(100vw - 30.43vw); }
+
+  .img-div {
+    height: 16.66667vw;
+    width: calc(100vw - 61.86vw); }
+    .img-div img {
+      max-width: 22.22222vw;
+      max-height: 7.5vw; }
 
   .content {
     padding-top: 16.66667vw; }
@@ -1189,6 +1211,13 @@ a.al-phone-num {
 
   .logo-header {
     width: 66.11111vw; }
+
+  .logo-header {
+    height: 80px;
+    left: 29.85556vw;
+    width: 70.11111vw; }
+    .logo-header .img-div {
+      height: 80px; }
 
   .content {
     padding-top: 7.66667vw; }
