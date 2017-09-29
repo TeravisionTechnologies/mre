@@ -20,7 +20,8 @@
   $properties_list = get_posts(
     array(
       'post_type' => 'broker',
-      'order' => 'ASC'
+      'order' => 'ASC',
+      'numberposts' => -1
     )
   );
 ?>
