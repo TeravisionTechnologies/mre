@@ -403,7 +403,8 @@ a.al-phone-num {
   display: inline-block;
   background-color: #ffffff;
   border: 1px solid #000000;
-  font-family: "Archivo", sans-serif; }
+  font-family: "Archivo", sans-serif;
+  margin-bottom: 20px; }
 .wpcf7-form textarea {
   width: 100%;
   color: #4a4a4a;
@@ -1089,7 +1090,8 @@ a.al-phone-num {
   .wpcf7-form input[type="text"], .wpcf7-form input[type="email"], .wpcf7-form input[type="tel"], .wpcf7-form select {
     height: 40px;
     font-size: 12px;
-    padding: 0 14px; }
+    padding: 0 14px;
+    margin-bottom: 4.16667vw; }
   .wpcf7-form textarea {
     padding: 14px;
     font-size: 12px; }
