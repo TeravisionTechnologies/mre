@@ -39,7 +39,21 @@
     <!-- Swiper -->
     <div class="swiper-container swiper-container-menu">
       <div class="swiper-wrapper">
-        <div class="swiper-slide menu">Menu slide</div>
+        <div class="swiper-slide menu">
+          <ul class="al-menu">
+            <li class="al-menu-item">Sobre nosotros</li>
+            <li class="al-menu-item">Proyectos</li>
+            <li class="al-menu-item">HR19 realty</li>
+            <li class="al-menu-item">Grupo MRE</li>
+            <li class="al-menu-item">Contáctanos</li>
+          </ul>
+          <div class="al-menu-language">
+            <h2 class="al-menu-language-text">Seleccione su idioma de preferencia:</h2>
+            <img class="al-menu-language-flag " src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" alt="Español">
+            <img class="al-menu-language-flag language-flag-active" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" alt="Inglés">
+          </div>
+
+        </div>
         <div class="swiper-slide content">
           <div id="mainContainer" class="menu-button">
             <div class="bar "></div>
@@ -66,6 +80,10 @@
                 <div class="item-overlay"></div>
                 <div class="carousel-caption">Madrid</div>
               </div>
+              <div class="item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/vegas-1.jpg')">
+                <div class="item-overlay"></div>
+                <div class="carousel-caption">Las Vegas</div>
+              </div>
             </div>
             <a class="left carousel-control" href="#al-carousel-hero" role="button" data-slide="prev">
               <img src="<?php echo get_template_directory_uri(); ?>/assets/al-hero-left.png">
@@ -85,34 +103,11 @@
       </div>
     </section>
 
-    <!-- Swiper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+    <!-- Swiper JS --><!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>-->
 
     <!-- Initialize Swiper -->
     <script>
-      var toggleMenu = function(){
-        if (swiper.previousIndex == 0)
-          swiper.slidePrev()
-      }
-        , menuButton = document.getElementsByClassName('menu-button')[0]
-        , swiper = new Swiper('.swiper-container-menu', {
-        slidesPerView: 'auto'
-        , initialSlide: 1
-        , resistanceRatio: .00000000000001
-        , onSlideChangeStart: function(slider) {
-          if (slider.activeIndex == 0) {
-            menuButton.classList.add('cross')
-            menuButton.removeEventListener('click', toggleMenu, false)
-          } else
-            menuButton.classList.remove('cross')
-        }
-        , onSlideChangeEnd: function(slider) {
-          if (slider.activeIndex == 0)
-            menuButton.removeEventListener('click', toggleMenu, false)
-          else
-            menuButton.addEventListener('click', toggleMenu, false)
-        }
-        , slideToClickedSlide: true
-      })
+
     </script>
     

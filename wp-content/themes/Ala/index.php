@@ -77,7 +77,7 @@
 </div>
 <div class="col-xs-12 al-partners-section text-center">
   <div class="container">
-    <p class="al-partners-title">Nuestros Aliados</p>
+    <p class="al-partners-title">Nuestros aliados</p>
     <p class="al-partners-subtitle">Hacemos real tu Inversión soñada</p>
   </div>
   <div class="partners-images">

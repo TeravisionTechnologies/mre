@@ -51,11 +51,47 @@ body {
   background-color: #000000; }
 
 .menu {
-  min-width: 100px;
+  min-width: 6.94444vw;
   width: 70%;
-  max-width: 320px;
-  background-color: #000000;
-  color: #ffffff; }
+  max-width: 22.22222vw;
+  background-color: rgba(0, 0, 0, 0.95);
+  position: relative; }
+  .menu .al-menu {
+    position: absolute;
+    top: 10.97222vw;
+    list-style: none;
+    padding: 0;
+    width: 100%; }
+    .menu .al-menu .al-menu-item {
+      border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+      padding: 1.80556vw 0 0 3.47222vw;
+      height: 6.59722vw;
+      font-family: "Archivo", sans-serif;
+      font-size: 1.66667vw;
+      line-height: 2.77778vw;
+      color: #ffffff;
+      cursor: pointer; }
+    .menu .al-menu:first-child {
+      border-top: 2px solid rgba(255, 255, 255, 0.15); }
+  .menu .al-menu-language {
+    position: absolute;
+    bottom: 0;
+    height: 21.875vw;
+    text-align: center; }
+    .menu .al-menu-language .al-menu-language-text {
+      padding-top: 3.47222vw;
+      font-family: "Archivo", sans-serif;
+      font-size: 1.11111vw;
+      line-height: 1.38889vw;
+      color: #ffffff; }
+    .menu .al-menu-language .al-menu-language-flag {
+      margin: 1.38889vw 0.83333vw 0 0.83333vw;
+      opacity: 0.4;
+      width: 3.47222vw;
+      height: 3.47222vw;
+      cursor: pointer; }
+    .menu .al-menu-language .language-flag-active {
+      opacity: 1; }
 
 .content {
   width: 100%;
@@ -543,6 +579,37 @@ a.al-phone-num {
         color: black; }
 
 @media only screen and (min-width: 1440px) {
+  .menu {
+    min-width: 100px;
+    width: 70%;
+    max-width: 320px; }
+    .menu .al-menu {
+      top: 158px;
+      padding: 0;
+      width: 100%; }
+      .menu .al-menu .al-menu-item {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+        padding: 26px 0 0 50px;
+        height: 95px;
+        font-size: 24px;
+        line-height: 40px; }
+      .menu .al-menu:first-child {
+        border-top: 2px solid rgba(255, 255, 255, 0.15); }
+    .menu .al-menu-language {
+      bottom: 0;
+      height: 315px; }
+      .menu .al-menu-language .al-menu-language-text {
+        padding-top: 50px;
+        font-size: 16px;
+        line-height: 20px; }
+      .menu .al-menu-language .al-menu-language-flag {
+        margin: 20px 12.5px 0 12.5px;
+        opacity: 0.4;
+        width: 50px;
+        height: 50px; }
+      .menu .al-menu-language .language-flag-active {
+        opacity: 1; }
+
   #al-carousel-hero {
     height: 880px; }
     #al-carousel-hero .item {
@@ -681,6 +748,37 @@ a.al-phone-num {
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .swiper-container {
     height: 114.58333vw; }
+
+  .menu {
+    min-width: 13.02083vw;
+    width: 70%;
+    max-width: 44.79167vw; }
+    .menu .al-menu {
+      top: 15.75521vw;
+      padding: 0;
+      width: 100%; }
+      .menu .al-menu .al-menu-item {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+        padding: 3.25521vw 0 0 6.51042vw;
+        height: 12.36979vw;
+        font-size: 3.125vw;
+        line-height: 5.20833vw; }
+      .menu .al-menu:first-child {
+        border-top: 2px solid rgba(255, 255, 255, 0.15); }
+    .menu .al-menu-language {
+      bottom: 0;
+      height: 35.41667vw; }
+      .menu .al-menu-language .al-menu-language-text {
+        padding-top: 6.51042vw;
+        font-size: 2.08333vw;
+        line-height: 2.60417vw; }
+      .menu .al-menu-language .al-menu-language-flag {
+        margin: 3.90625vw 1.69271vw 0 1.69271vw;
+        opacity: 0.4;
+        width: 6.51042vw;
+        height: 6.51042vw; }
+      .menu .al-menu-language .language-flag-active {
+        opacity: 1; }
 
   .content {
     padding-top: 10.41667vw; }
@@ -836,6 +934,37 @@ a.al-phone-num {
 @media only screen and (max-width: 767px) {
   .swiper-container {
     height: 172.77778vw; }
+
+  .menu {
+    min-width: 27.77778vw;
+    width: 70%;
+    max-width: 70.83333vw; }
+    .menu .al-menu {
+      top: 32.5vw;
+      padding: 0;
+      width: 100%; }
+      .menu .al-menu .al-menu-item {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+        padding: 5.55556vw 0 0 8.33333vw;
+        height: 16.66667vw;
+        font-size: 5vw;
+        line-height: 5.55556vw; }
+      .menu .al-menu:first-child {
+        border-top: 2px solid rgba(255, 255, 255, 0.15); }
+    .menu .al-menu-language {
+      bottom: 0;
+      height: 59.44444vw; }
+      .menu .al-menu-language .al-menu-language-text {
+        padding-top: 8.33333vw;
+        font-size: 3.33333vw;
+        line-height: 5.55556vw; }
+      .menu .al-menu-language .al-menu-language-flag {
+        margin: 4.16667vw 2.22222vw 0 2.22222vw;
+        opacity: 0.4;
+        width: 8.88889vw;
+        height: 8.88889vw; }
+      .menu .al-menu-language .language-flag-active {
+        opacity: 1; }
 
   .content {
     padding-top: 16.66667vw; }
@@ -1039,5 +1168,17 @@ a.al-phone-num {
         height: 9.72222vw;
         padding-top: 1.94444vw;
         width: 9.72222vw; } }
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .menu-button {
+    width: 33.88889vw; }
+
+  .logo-header {
+    width: 66.11111vw; }
+
+  .content {
+    padding-top: 7.66667vw; }
+
+  #al-carousel-hero .item .carousel-caption {
+    top: 74vw; } }
 
 /*# sourceMappingURL=style.css.map */

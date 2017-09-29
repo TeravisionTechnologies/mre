@@ -44,11 +44,47 @@ body
   background-color: $black
 
 .menu
-  min-width: 100px
+  min-width: 6.944444444444445vw
   width: 70%
-  max-width: 320px
-  background-color: $black
-  color: $white
+  max-width: 22.22222222222222vw
+  background-color: rgba(0, 0, 0, 0.95)
+  position: relative
+  .al-menu
+    position: absolute
+    top: 10.972222222222221vw
+    list-style: none
+    padding: 0
+    width: 100%
+    .al-menu-item
+      border-bottom: 2px solid rgba(255, 255, 255, 0.15)
+      padding: 1.8055555555555556vw 0 0 3.4722222222222223vw
+      height: 6.597222222222222vw
+      font-family: 'Archivo', sans-serif
+      font-size: 1.6666666666666665vw
+      line-height: 2.7777777777777777vw
+      color: $white
+      cursor: pointer
+    &:first-child
+      border-top: 2px solid rgba(255, 255, 255, 0.15)
+  .al-menu-language
+    position: absolute
+    bottom: 0
+    height: 21.875vw
+    text-align: center
+    .al-menu-language-text
+      padding-top: 3.4722222222222223vw
+      font-family: 'Archivo', sans-serif
+      font-size: 1.1111111111111112vw
+      line-height: 1.3888888888888888vw
+      color: $white
+    .al-menu-language-flag
+      margin: 1.3888888888888888vw 0.8333333333333333vw 0 0.8333333333333333vw
+      opacity: 0.4
+      width: 3.4722222222222223vw
+      height: 3.4722222222222223vw
+      cursor: pointer
+    .language-flag-active
+      opacity: 1
 
 .content
   width: 100%
