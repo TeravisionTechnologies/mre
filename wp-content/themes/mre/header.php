@@ -76,25 +76,45 @@
           </div>
           <div class="swiper-container swiper-container-hero">
             <div class="swiper-wrapper">
-              <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/spain-1.jpg'); background-size: cover;">
+              <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-1.jpg');">
+                <div class="slide-overlay"></div>
+                <div class="slide-text">
+                  <h2>Comprometidos con tu</h2>
+                  <h3>TU FUTURO</h3>
+                </div>
               </div>
-              <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/spain-1.jpg'); background-size: cover;">
+              <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-2.jpg');">
+                <div class="slide-overlay"></div>
+                <div class="slide-text">
+                  <h2>Especialistas en</h2>
+                  <h3>LUXURY RENTAL</h3>
+                </div>
               </div>
-              <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/spain-1.jpg'); background-size: cover;">
+              <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-3.jpg');">
+                <div class="slide-overlay"></div>
+                <div class="slide-text">
+                  <h2>Innovación y diseño</h2>
+                  <h3>VANGUARDISTA</h3>
+                </div>
+              </div>
+              <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-4.jpg');">
+                <div class="slide-overlay"></div>
+                <div class="slide-text">
+                  <h2>Estamos contigo en</h2>
+                  <h3>TODO MOMENTO</h3>
+                </div>
               </div>
             </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
-            <!-- Add Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <i class="fa fa-chevron-circle-left swiper-button-prev" aria-hidden="true"></i>
+            <i class="fa fa-chevron-circle-right swiper-button-next" aria-hidden="true"></i>
           </div>
+          <a href=""><img src="<?php echo get_template_directory_uri(); ?>/assets/hero-arrow.svg" class="hero-button"></a>
         </div>
       </div>
     </div>
   </header>
-<div style="height: 100px; background: red;">
-    hola
+  <div style="height: 100px; background: red;">
+      hola
   </div>
 
 

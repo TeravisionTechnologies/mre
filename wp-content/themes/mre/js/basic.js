@@ -31,11 +31,9 @@ jQuery(document).ready(function() {
 
   //Hero Swiper
   var swiperHero = new Swiper('.swiper-container-hero', {
-    pagination: '.swiper-pagination',
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
     slidesPerView: 1,
-    paginationClickable: true,
     loop: true,
     nested: true
   });
