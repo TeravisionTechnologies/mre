@@ -1,34 +1,54 @@
-/**
- * Created by mtoledo on 3/8/17.
- */
-
-// Open when user clicks on the burger menu
-function openNav() {
-    document.getElementById('overlay-nav').style.left = '0%';
-}
-
-// Close when user clicks on the "x" symbol inside the overlay
-function closeNav() {
-    document.getElementById('overlay-nav').style.left = '100%';
-}
-
 jQuery(document).ready(function() {
 
+  //Header Swiper
+  var toggleMenu = function() {
+    if (swiperHeader.previousIndex == 0) {
+      swiperHeader.slidePrev()
+    }
+  }
+    , menuButton = document.getElementsByClassName('menu-button')[0]
+    , swiperHeader = new Swiper('.swiper-container-menu', {
+    slidesPerView: 'auto'
+    , initialSlide: 1
+    , resistanceRatio: .00000000000001
+    , onSlideChangeStart: function(slider) {
+      if (slider.activeIndex == 0) {
+        menuButton.classList.add('cross');
+        menuButton.removeEventListener('click', toggleMenu, false);
+      } else {
+        menuButton.classList.remove('cross');
+      }
+    }
+    , onSlideChangeEnd: function(slider) {
+      if (slider.activeIndex == 0) {
+        menuButton.removeEventListener('click', toggleMenu, false);
+      } else {
+        menuButton.addEventListener('click', toggleMenu, false);
+      }
+    }
+    , slideToClickedSlide: true
+  });
+
+  //Hero Swiper
+  var swiperHero = new Swiper('.swiper-container-hero', {
+    pagination: '.swiper-pagination',
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    slidesPerView: 1,
+    paginationClickable: true,
+    loop: true,
+    nested: true
+  });
+
+
     // Declaring the global scroll of the html to use in further functions
-    var globalScroll = jQuery('body,html');
+    //var globalScroll = jQuery('body,html');
 
-    // Swiper
 
-        // Add Swiper
-        var swiper = new Swiper('.swiper-container', {
-            pagination: '.swiper-pagination',
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            paginationClickable: true
-        });
+
 
         // Adding Swiper functionality to flags
-        jQuery('.flags-indicators img').on('click touchstart', function () {
+        /*jQuery('.flags-indicators img').on('click touchstart', function () {
             var iter = jQuery(this).data('pagination');
             var iterBull=1;
             jQuery('#offices .swiper-pagination-bullet').each(function () {
@@ -37,7 +57,7 @@ jQuery(document).ready(function() {
                 }
                 iterBull+=1;
             });
-        });
+        });*/
 
         //Swiper Blog Categories
         var swiper_blog_categories = new Swiper('.swiper-container-blog-categories', {
@@ -85,31 +105,11 @@ jQuery(document).ready(function() {
             }
           });
 
-    // Menu scroll effects
-
-        // I am going to use this in other js section down the code
-        var headerMargin = jQuery('.center-header').css('margin-top');
-        headerMargin     = headerMargin.replace(headerMargin.slice(-2),'');
-        var headerHeight = jQuery('header').innerHeight() - headerMargin  - 3;
-
-        var menuItem = jQuery('.menu-item');
-        menuItem.on('click', function (e) {
-            e.preventDefault();
-            // close overlay in mobile when something is clicked
-            jQuery('#overlay-nav').css({'left':'100%'});
-
-            // slow scroll effect
-            var _this = jQuery(this).find('a').attr('href');
-            if ( _this !== '#') {
-                var scrollTo = jQuery(_this).offset().top - headerHeight;
-                globalScroll.stop().animate({scrollTop:scrollTo}, 'slow');
-            }
-        });
 
 
     // footer functions
 
-      $(window).scroll(function (event) {
+      /*$(window).scroll(function (event) {
         var scroll = $(window).scrollTop();
         if (scroll > 900)  {
           $('.mre-footer-go-top').css('display', 'block');
@@ -173,10 +173,9 @@ jQuery(document).ready(function() {
     //Footer Go to top functionality
     $(".mre-footer-go-top").click(function () {
       $("html, body").animate({scrollTop: 0}, 2000);
-    });
+    });*/
 });
 
-// Call footer functionality on resize so only shows up in 1024px and ahead
-/*jQuery(window).resize(function() {
-    footerOnloadAndScroll(jQuery('footer .caretCircle'));
-});*/
+
+
+

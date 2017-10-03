@@ -1,9 +1,244 @@
-*
+// Swiper General
+html, body
+  position: relative
+  height: 100%
+
+body
+  background: $white-1
+  font-family: Montserrat-Regular, sans-serif
+  font-size: 14px
+  color: $black
+  margin: 0
+  padding: 0
+
+.swiper-container
+  width: 100%
+  height: 960px
+
+.swiper-slide
+  text-align: center
+  font-size: 18px
+  background: $white
+  display: -webkit-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  -webkit-justify-content: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  -webkit-align-items: center
+  align-items: center
+
+.menu
+  min-width: 100px
+  width: 70%
+  max-width: 320px
+  height: auto
+  background: rgba(255, 255, 255, 0.95)
+  position: relative
+  .mre-menu
+    position: absolute
+    top: 78px
+    left: 0
+    list-style: none
+    padding: 0
+    width: 100%
+    text-align: left
+    .mre-menu-item
+      border-bottom: 2px solid rgba(127, 129, 130, 0.15)
+      padding: 26px 0 0 50px
+      height: 95px
+      font-family: 'Archivo', sans-serif
+      font-size: 24px
+      line-height: 40px
+      cursor: pointer
+      a
+        color: $grey-1
+        &:hover
+          text-decoration: none
+    &:first-child
+      border-top: 2px solid rgba(127, 129, 130, 0.15)
+  .mre-menu-language
+    width: 100%
+    position: absolute
+    bottom: 170px
+    left: 0
+    height: 235px
+    text-align: center
+    .mre-menu-language-text
+      padding-top: 40px
+      font-family: 'Archivo', sans-serif
+      font-size: 16px
+      line-height: 20px
+      color: $grey-1
+    .mre-menu-language-flag
+      margin: 25px 12.5px 0 12.5px
+      opacity: 0.4
+      width: 50px
+      height: 50px
+      cursor: pointer
+    .language-flag-active
+      opacity: 1
+  .mre-menu-social
+    display: none
+    height: 63px
+    position: absolute
+    bottom: 0
+    width: 100%
+    .menu-social-icons
+      list-style: none
+      font-size: 22px
+      padding: 0
+      .menu-social-icon
+        height: 38px
+        width: 38px
+        display: inline-block
+        a
+          color: $grey-1
+
+
+
+
+.content
+  width: 100%
+
+.menu-button
+  position: absolute
+  top: 0
+  left: 0
+  padding: 27px 0 15px 0
+  height: 80px
+  cursor: pointer
+  -webkit-transition: .3s
+  transition: .3s
+  background-color: $white
+  z-index: 2
+  width: 80px
+
+.menu-button .bar:nth-of-type(1)
+  margin-top: 0
+
+.menu-button .bar:nth-of-type(3)
+  margin-bottom: 0
+
+.bar
+  position: relative
+  display: block
+  width: 39px
+  height: 5px
+  margin: 10px auto 5px
+  background-color: $light-blue
+  border-radius: 10px
+  -webkit-transition: .3s
+  transition: .3s
+
+.menu-button:hover .bar:nth-of-type(1)
+  -webkit-transform: translateY(1.5px) rotate(-4.5deg)
+  -ms-transform: translateY(1.5px) rotate(-4.5deg)
+  transform: translateY(1.5px) rotate(-4.5deg)
+
+.menu-button:hover .bar:nth-of-type(2)
+  opacity: .9
+
+.menu-button:hover .bar:nth-of-type(3)
+  -webkit-transform: translateY(-1.5px) rotate(4.5deg)
+  -ms-transform: translateY(-1.5px) rotate(4.5deg)
+  transform: translateY(-1.5px) rotate(4.5deg)
+
+.cross .bar:nth-of-type(1)
+  -webkit-transform: translateY(15px) rotate(-45deg)
+  -ms-transform: translateY(15px) rotate(-45deg)
+  transform: translateY(15px) rotate(-45deg)
+
+.cross .bar:nth-of-type(2)
+  opacity: 0
+
+.cross .bar:nth-of-type(3)
+  -webkit-transform: translateY(-15px) rotate(45deg)
+  -ms-transform: translateY(-15px) rotate(45deg)
+  transform: translateY(-15px) rotate(45deg)
+
+.cross:hover .bar:nth-of-type(1)
+  -webkit-transform: translateY(13.5px) rotate(-40.5deg)
+  -ms-transform: translateY(13.5px) rotate(-40.5deg)
+  transform: translateY(13.5px) rotate(-40.5deg)
+
+.cross:hover .bar:nth-of-type(2)
+  opacity: .1
+
+.cross:hover .bar:nth-of-type(3)
+  -webkit-transform: translateY(-13.5px) rotate(40.5deg)
+  -ms-transform: translateY(-13.5px) rotate(40.5deg)
+  transform: translateY(-13.5px) rotate(40.5deg)
+// END Swiper General
+
+// Header
+#mre-header
+  height: 100vh
+  .logo-header
+    top: 0
+    height: 80px
+    left: 80px
+    position: absolute
+    width: 820px
+    background-color: $white
+    z-index: 2
+    .img-div
+      width: 360px
+      position: relative
+      height: 80px
+      img
+        width: 145px
+        height: 50px
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+  .social-header
+    top: 0
+    left: 900px
+    height: 80px
+    position: absolute
+    width: 540px
+    background-color: $white
+    z-index: 2
+    .social-icons
+      height: 33.9px
+      position: absolute
+      list-style: none
+      right: 50.3px
+      top: 23.3px
+      .social-icon
+        position: relative
+        height: 100%
+        width: 33.9px
+        border-radius: 50%
+        background: $white-2
+        display: inline-block
+        margin-right: 12px
+        a
+          color: $light-blue
+          i
+            font-size: 22px
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+
+// END Header
+
+
+
+
+//*
   margin: 0
   padding: 0
   border: none
   outline: none
-body
+//body
   font-size: 0.9722222222222222vw
   color: $light-grey
   line-height: 1.25
@@ -14,10 +249,10 @@ body
   background-repeat: no-repeat
   background-position: center top
   -webkit-font-smoothing: antialiased
-a
+//a
   text-decoration: none
   cursor: pointer
-h1, h2, h3, h4, h5, h6
+//h1, h2, h3, h4, h5, h6
   position: relative
   font-family: 'Montserrat-Regular', sans-serif
   font-weight: normal
@@ -26,17 +261,17 @@ h1, h2, h3, h4, h5, h6
   background: none
   line-height: 1.25
   letter-spacing: -0.1px
-p
+//p
   position: relative
   line-height: 1.25
   letter-spacing: -0.1px
-input, button, select, textarea
+//input, button, select, textarea
   font-family: 'Montserrat-Regular', sans-serif
-.visible-desktop
+//.visible-desktop
   display: block !important
-.visible-mobile
+//.visible-mobile
   display: none !important
-header
+//header
   .container
     height: 5.55vw
     background-color: $white
@@ -62,7 +297,7 @@ header
         font-size: 20px
       #bs-header-navbar li:last-child:after
         content: ''
-footer
+//footer
   height: 18.958333333333332vw
   div
     margin: 0.6944444444444444vw
@@ -118,7 +353,7 @@ footer
       font-size: 2.4305555555555554vw
       color: $light-blue
       line-height: 0.99
-.overlay
+//.overlay
   height: 100%
   width: 100%
   position: fixed
@@ -158,7 +393,7 @@ footer
     img
       width: 30px
       height: 30px
-#hero-container
+//#hero-container
   position: relative
   margin: 0
   .hero-box
@@ -200,7 +435,7 @@ footer
     background: linear-gradient(to top, $light-blue, rgba(9, 118, 209, 0.59) 82%, rgba(9, 118, 209, 0.8))
   .overlay-right
     background: linear-gradient(to top, $dark-blue, rgba(0, 69, 126, 0.59) 82%, rgba(0, 69, 126, 0.8))
-#about-us
+//#about-us
   height: 71.11111111111111vw
   background: url('assets/about-us-bg.jpg') center no-repeat $black
   background-size: cover
@@ -280,7 +515,7 @@ footer
         display: block
         font-family: Montserrat-Regular, sans-serif
         font-size: 2.0833333333333335vw
-#after-about-us
+//#after-about-us
   height: 25.138vw
   background: $dark-blue
   text-align: center
@@ -299,7 +534,7 @@ footer
     #ala-19
       height: 3.333vw
       width: 10.069vw
-#before-contact-us
+//#before-contact-us
   height: 27.77vw
   background: url('assets/before-contact-bg.jpg') center no-repeat $black
   background-size: cover
@@ -353,7 +588,7 @@ footer
         margin: 0 2.8vw
       .swiper-pagination-bullet-active
         background: $white
-#contact-us
+//#contact-us
   background: url('assets/contact-bg.png') bottom no-repeat $light-blue
   background-size: cover
   height: 48.54vw
@@ -496,19 +731,19 @@ footer
       width: 15.27vw
       height: 1.94vw
 
-.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled
+//.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled
   opacity: 1
   cursor: pointer
   pointer-events: auto
 
-.container-fluid
+//.container-fluid
   padding: 0
 
-.container-mre
+//.container-mre
   width: 81.25vw
   height: 100%
 
-#mre-footer
+//#mre-footer
   box-shadow: 0 -8px 10px 0 rgba(0, 0, 0, 0.2)
   height: 16.180555555555554vw
   position: relative
@@ -536,7 +771,7 @@ footer
     right: 9.722222222222221vw
     bottom: 8.77778vw
 
-#blog-detail-form
+//#blog-detail-form
   .blog-detail-comments-form
     .comments-form-button
       &:hover

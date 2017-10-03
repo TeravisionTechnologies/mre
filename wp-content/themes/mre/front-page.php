@@ -16,24 +16,24 @@ $headerPost = get_posts(
 $theMeta = get_post_meta($headerPost[0]->ID);
 ?>
 
-<section id="hero-container" class="row">
-  <a href="<?php echo $theMeta['_hf_left_hero_link'][0] ?>">
-    <div class="col-xs-12 col-md-6 hero-box hero-box-left" style="background-image: url('<?php echo ($theMeta['_hf_hero_image_left'][0]) ?>');">
+<!--<section id="hero-container" class="row">
+  <a href="<?php /*echo $theMeta['_hf_left_hero_link'][0] */?>">
+    <div class="col-xs-12 col-md-6 hero-box hero-box-left" style="background-image: url('<?php /*echo ($theMeta['_hf_hero_image_left'][0]) */?>');">
       <div class="overlay-left">
-        <h3 class="center-block"><?php echo $theMeta['_hf_text_hero_left'][0] ?></h3>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-icon-left.svg">
+        <h3 class="center-block"><?php /*echo $theMeta['_hf_text_hero_left'][0] */?></h3>
+        <img src="<?php /*echo get_template_directory_uri(); */?>/assets/hero-icon-left.svg">
       </div>
     </div>
   </a>
-  <a href="<?php echo $theMeta['_hf_right_hero_link'][0] ?>">
-    <div class="col-xs-12 col-md-6 hero-box hero-box-right" style="background-image: url('<?php echo ($theMeta['_hf_hero_image_right'][0]) ?>');">
+  <a href="<?php /*echo $theMeta['_hf_right_hero_link'][0] */?>">
+    <div class="col-xs-12 col-md-6 hero-box hero-box-right" style="background-image: url('<?php /*echo ($theMeta['_hf_hero_image_right'][0]) */?>');">
       <div class="overlay-right">
-        <h3 class="center-block"><?php echo $theMeta['_hf_text_hero_right'][0] ?></h3>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-icon-right.svg">
+        <h3 class="center-block"><?php /*echo $theMeta['_hf_text_hero_right'][0] */?></h3>
+        <img src="<?php /*echo get_template_directory_uri(); */?>/assets/hero-icon-right.svg">
       </div>
     </div>
   </a>
-  <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-arrow.svg" class="hero-button">
+  <img src="<?php /*echo get_template_directory_uri(); */?>/assets/hero-arrow.svg" class="hero-button">
 </section>
 
 <section id="about-us">
@@ -45,11 +45,11 @@ $theMeta = get_post_meta($headerPost[0]->ID);
     </div>
     <div id="about-sections" class="swiper-container">
 
-        <!-- Wrapper for slides -->
+
         <div class="swiper-wrapper">
 
 	        <?php
-                $aboutPost = get_posts(
+/*                $aboutPost = get_posts(
                     array(
                         'post_type' => 'about_us'
                     )
@@ -59,27 +59,27 @@ $theMeta = get_post_meta($headerPost[0]->ID);
 
                 foreach ( (array) $entries as $key => $entry ) {
 
-	                ?><div class="swiper-slide"><?php
-
-	                    ?><div class="item-image"><?php
-                        if ( isset( $entry['_about_image'] ) ) {
-                            ?><img src="<?php echo $entry['_about_image']; ?>" /><?php
-                        }
-		                ?></div><?php
-
-                        ?><div class="item-paragraph"><?php
-                        if ( isset( $entry['_about_desc'] ) ) {
+	                */?><div class="swiper-slide"><?php
+/*
+	                    */?><div class="item-image"><?php
+/*                        if ( isset( $entry['_about_image'] ) ) {
+                            */?><img src="<?php /*echo $entry['_about_image']; */?>" /><?php
+/*                        }
+		                */?></div><?php
+/*
+                        */?><div class="item-paragraph"><?php
+/*                        if ( isset( $entry['_about_desc'] ) ) {
 	                        echo wpautop( $entry['_about_desc'] );
                         }
-                        ?></div><?php
-
-                    ?></div><?php
-                }
-	        ?>
+                        */?></div><?php
+/*
+                    */?></div><?php
+/*                }
+	        */?>
         </div>
-        <!-- Pagination -->
+
         <div class="swiper-pagination"></div>
-        <!-- Left and Right Buttons -->
+
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
     </div>
@@ -101,26 +101,26 @@ $theMeta = get_post_meta($headerPost[0]->ID);
     <h1>Hacemos real tu Inversión soñada</h1>
     <div id="partners-images">
 	    <?php
-	        $aboutMeta = get_post_meta($aboutPost[0]->ID);
+/*	        $aboutMeta = get_post_meta($aboutPost[0]->ID);
 
 	        if ( isset( $aboutMeta['_about_image-1'][0] ) ) {
-        ?><img id="hr-realty" src="<?php echo $aboutMeta['_about_image-1'][0] ?>" />
-        <?php }
+        */?><img id="hr-realty" src="<?php /*echo $aboutMeta['_about_image-1'][0] */?>" />
+        <?php /*}
 	        if ( isset( $aboutMeta['_about_image-1'][0] ) ) {
-        ?><img id="ala-19" src="<?php echo $aboutMeta['_about_image-2'][0] ?>" />
-        <?php } ?>
+        */?><img id="ala-19" src="<?php /*echo $aboutMeta['_about_image-2'][0] */?>" />
+        <?php /*} */?>
     </div>
 </section>
 
 <section id="before-contact-us">
     <div id="offices" class="swiper-container">
         <div class="flags-indicators">
-            <img data-pagination="1" src="<?php echo get_template_directory_uri(); ?>/assets/ven_flag.svg" />
-            <img data-pagination="2" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
-            <img data-pagination="3" src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
+            <img data-pagination="1" src="<?php /*echo get_template_directory_uri(); */?>/assets/ven_flag.svg" />
+            <img data-pagination="2" src="<?php /*echo get_template_directory_uri(); */?>/assets/usa_flag.svg" />
+            <img data-pagination="3" src="<?php /*echo get_template_directory_uri(); */?>/assets/spain_flag.svg" />
         </div>
         <h4>Puedes encontrar Nuestras Oficinas en:</h4>
-        <!-- Wrapper for slides -->
+
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="office-detail">
@@ -161,7 +161,7 @@ $theMeta = get_post_meta($headerPost[0]->ID);
                 </div>
             </div>
         </div>
-        <!-- Pagination -->
+
         <div class="swiper-pagination"></div>
     </div>
 </section>
@@ -178,18 +178,18 @@ $theMeta = get_post_meta($headerPost[0]->ID);
         <div class="call-us">
             <div class="content">
                 <div class="spacer-before-image"></div>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/d-iconphone.svg" />
+                <img src="<?php /*echo get_template_directory_uri(); */?>/assets/d-iconphone.svg" />
                 <h2 id="advice-call">Llámenos para asesoría <span class="bold-me">Inmediata</span></h2>
                 <h2 id="contact-phone" class="bold-me">+1 786 376.22.22</h2>
                 <div class="spacer-end"></div>
             </div>
         </div>
         <div class="the-form">
-            <?php echo do_shortcode( '[contact-form-7 id="5" title="Home - Contact form"]' ); ?>
+            <?php /*echo do_shortcode( '[contact-form-7 id="5" title="Home - Contact form"]' ); */?>
         </div>
     </div>
 </section>
 
-<?php get_footer(); ?>
+--><?php get_footer(); ?>
 	</body>
 </html>
