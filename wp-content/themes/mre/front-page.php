@@ -37,6 +37,22 @@ $theMeta = get_post_meta($headerPost[0]->ID);
     </li>
   </ul>
 </section>
+<section id="mre-partners" class="container-fluid no-padding">
+  <div class="col-xs-12 col-md-6 partner-left" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-1.jpg');">
+    <div class="overlay-left">
+      <h3 class="partners-title-first">Proyectos inmobiliarios</h3>
+      <h2 class="partners-title-second">EXCLUSIVOS</h2>
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/logo-hr19.png">
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-6 partner-right" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-2.jpg');">
+    <div class="overlay-right">
+      <h3 class="partners-title-first">Encuentra la propiedad</h3>
+      <h2 class="partners-title-second">PERFECTA PARA TI</h2>
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/logo-ala19.png">
+    </div>
+  </div>
+</section>
 
 <!--<section id="hero-container" class="row">
   <a href="<?php /*echo $theMeta['_hf_left_hero_link'][0] */?>">
