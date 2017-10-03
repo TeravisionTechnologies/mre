@@ -38,6 +38,12 @@ jQuery(document).ready(function() {
     nested: true
   });
 
+  // Menu flags functionality
+  $('.mre-menu-language-flag').click(function () {
+    $('.mre-menu-language-flag').css('opacity', 0.4);
+    $(this).css('opacity', 1);
+  });
+
 
     // Declaring the global scroll of the html to use in further functions
     //var globalScroll = jQuery('body,html');
