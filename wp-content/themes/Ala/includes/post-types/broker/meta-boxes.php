@@ -17,10 +17,10 @@
 		);
 
 
-		// Property Images
+		// Property Image
 		$cmb->add_field(
 			array(
-				'name'         => __( 'Property Images' ),
+				'name'         => __( 'Property Default Image' ),
 				'id'           => $prefix . 'images',
 				'type'         => 'file_list',
 				'preview_size' => array(100,100),
