@@ -1,8 +1,203 @@
-.visible-desktop
+// General
+.container-mre
+  width: get-vw-tablet(659px)
+  height: 100%
+// END General
+
+// Swiper General
+body
+  font-size: get-vw-tablet(14px)
+  margin: 0
+  padding: 0
+
+.swiper-container
+  width: 100%
+  height: get-vw-tablet(880px)
+
+.swiper-slide
+  font-size: get-vw-tablet(18px)
+
+.menu
+  min-width: get-vw-tablet(100px)
+  width: 70%
+  max-width: get-vw-tablet(344px)
+  height: auto
+  .mre-menu
+    top: get-vw-tablet(78px)
+    left: 0
+    padding: 0
+    width: 100%
+    .mre-menu-item
+      border-bottom: 2px solid rgba(127, 129, 130, 0.15)
+      padding: get-vw-tablet(25px) 0 0 get-vw-tablet(50px)
+      height: get-vw-tablet(80px)
+      font-size: get-vw-tablet(22px)
+      line-height: get-vw-tablet(30px)
+    &:first-child
+      border-top: 2px solid rgba(127, 129, 130, 0.15)
+  .mre-menu-language
+    width: 100%
+    bottom: get-vw-tablet(165px)
+    left: 0
+    height: get-vw-tablet(235px)
+    .mre-menu-language-text
+      padding-top: get-vw-tablet(40px)
+      font-size: get-vw-tablet(16px)
+      line-height: get-vw-tablet(20px)
+    .mre-menu-language-flag
+      margin: get-vw-tablet(25px) get-vw-tablet(12.5px) 0 get-vw-tablet(12.5px)
+      opacity: 0.4
+      width: get-vw-tablet(50px)
+      height: get-vw-tablet(50px)
+    .language-flag-active
+      opacity: 1
+  .mre-menu-social
+    display: block
+    height: get-vw-tablet(63px)
+    bottom: 0
+    width: 100%
+    .menu-social-icons
+      font-size: get-vw-tablet(22px)
+      padding: 0
+      .menu-social-icon
+        height: get-vw-tablet(38px)
+        width: get-vw-tablet(38px)
+
+.content
+  width: 100%
+
+.menu-button
+  top: 0
+  left: 0
+  padding: get-vw-tablet(27px) 0 get-vw-tablet(27px) get-vw-tablet(48px)
+  height: get-vw-tablet(80px)
+  -webkit-transition: .3s
+  transition: .3s
+  z-index: 2
+  width: 10.68vw
+
+.menu-button .bar:nth-of-type(1)
+  margin-top: 0
+
+.menu-button .bar:nth-of-type(3)
+  margin-bottom: 0
+
+.bar
+  width: get-vw-tablet(39px)
+  height: get-vw-tablet(4px)
+  margin: get-vw-tablet(6px) auto
+  border-radius: get-vw-tablet(10px)
+  -webkit-transition: .3s
+  transition: .3s
+
+.menu-button:hover .bar:nth-of-type(1)
+  -webkit-transform: translateY(1.5px) rotate(-4.5deg)
+  -ms-transform: translateY(1.5px) rotate(-4.5deg)
+  transform: translateY(1.5px) rotate(-4.5deg)
+
+.menu-button:hover .bar:nth-of-type(2)
+  opacity: .9
+
+.menu-button:hover .bar:nth-of-type(3)
+  -webkit-transform: translateY(-1.5px) rotate(4.5deg)
+  -ms-transform: translateY(-1.5px) rotate(4.5deg)
+  transform: translateY(-1.5px) rotate(4.5deg)
+
+.cross .bar:nth-of-type(1)
+  -webkit-transform: translateY(get-vw-tablet(15px)) rotate(-45deg)
+  -ms-transform: translateY(get-vw-tablet(15px)) rotate(-45deg)
+  transform: translateY(get-vw-tablet(15px)) rotate(-45deg)
+
+.cross .bar:nth-of-type(2)
+  opacity: 0
+
+.cross .bar:nth-of-type(3)
+  -webkit-transform: translateY(get-vw-tablet(-15px)) rotate(45deg)
+  -ms-transform: translateY(get-vw-tablet(-15px)) rotate(45deg)
+  transform: translateY(get-vw-tablet(-15px)) rotate(45deg)
+
+.cross:hover .bar:nth-of-type(1)
+  -webkit-transform: translateY(get-vw-tablet(13.5px)) rotate(-40.5deg)
+  -ms-transform: translateY(get-vw-tablet(13.5px)) rotate(-40.5deg)
+  transform: translateY(get-vw-tablet(13.5px)) rotate(-40.5deg)
+
+.cross:hover .bar:nth-of-type(2)
+  opacity: .1
+
+.cross:hover .bar:nth-of-type(3)
+  -webkit-transform: translateY(get-vw-tablet(-13.5px)) rotate(40.5deg)
+  -ms-transform: translateY(get-vw-tablet(-13.5px)) rotate(40.5deg)
+  transform: translateY(get-vw-tablet(-13.5px)) rotate(40.5deg)
+// END Swiper General
+
+// Header
+#mre-header
+  .logo-header
+    top: 0
+    height: get-vw-tablet(80px)
+    left: 10.68vw
+    width: 52.31vw
+    .img-div
+      width: 25vw
+      height: get-vw-tablet(80px)
+      img
+        width: get-vw-tablet(116px)
+        height: get-vw-tablet(40px)
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+  .social-header
+    top: 0
+    left: 62.5vw
+    height: get-vw-tablet(80px)
+    width: 37.5vw
+    z-index: 2
+    .social-icons
+      display: none
+  .swiper-container-hero
+    padding-top: get-vw-tablet(80px)
+    .swiper-slide
+      background-position: 50%
+      .slide-overlay
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, 0.4)
+      .slide-text
+        top: get-vw-tablet(347px)
+        left: 50%
+        transform: translateX(-50%)
+        h2
+          font-size: get-vw-tablet(30px)
+          line-height: get-vw-tablet(40px)
+          text-shadow: 0 2px get-vw-tablet(10px) rgba(0, 0, 0, 0.5)
+        h3
+          margin-top: get-vw-tablet(5px)
+          font-size: get-vw-tablet(60px)
+          line-height: get-vw-tablet(60px)
+          text-shadow: 0 2px get-vw-tablet(10px) rgba(0, 0, 0, 0.5)
+    .swiper-button-prev, .swiper-button-next
+      font-size: get-vw-tablet(32px)
+      height: get-vw-tablet(32px)
+      top: get-vw-tablet(480px)
+      width: get-vw-tablet(31px)
+    .swiper-button-prev
+      left: get-vw-tablet(55px)
+    .swiper-button-next
+      right: get-vw-tablet(55px)
+  .hero-button
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 1
+    width: get-vw-tablet(57px)
+    height: get-vw-tablet(25px)
+// END Header
+
+//.visible-desktop
   display: none !important
-.visible-mobile
+//.visible-mobile
   display: block !important
-header
+//header
   .container
     height: 10.416666666666668vw
     .center-header
@@ -14,7 +209,7 @@ header
       #bs-header-navbar-nodesktop-parent
         span
           font-size: 4.166666666666667vw
-footer
+//footer
   height: 22.916666666666668vw
   .container
     padding: 0 7.161458333333334vw
@@ -36,7 +231,7 @@ footer
             line-height: 30px
   .fa-caret-up
     display: none
-#hero-container
+//#hero-container
   .hero-box
     height: 52.083333333333336vw
     h3
@@ -50,7 +245,7 @@ footer
   .hero-button
     height: 3.2552083333333335vw
     width: 7.421875vw
-#about-us
+//#about-us
   height: 130.98958333333334vw
   .title
     h4
@@ -91,7 +286,7 @@ footer
       line-height: 1.36
       span
         font-size: 2.8645833333333335vw
-#after-about-us
+//#after-about-us
   height: 39.0625vw
   h4
     font-size: 1.8229166666666667vw
@@ -108,7 +303,7 @@ footer
     #ala-19
       height: 5.598958333333334vw
       width: 17.1875vw
-#before-contact-us
+//#before-contact-us
   height: 52.083333333333336vw
   #offices
     height: 100%
@@ -133,7 +328,7 @@ footer
         height: 1.5vw
         width: 1.5vw
         margin: 0 4.25vw
-#contact-us
+//#contact-us
   height: 120vw
   .spacer.initial
     height: 6vw
@@ -199,11 +394,11 @@ footer
       width: 26.041vw
       height: 3vw
 
-.container-mre
+//.container-mre
   width: 85.80729166666667vw
   height: 100%
 
-#mre-footer
+//#mre-footer
   height: 22.65625vw
   .mre-footer-elements
     width: 52.21354166666667vw
