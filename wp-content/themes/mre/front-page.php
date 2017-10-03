@@ -16,6 +16,28 @@ $headerPost = get_posts(
 $theMeta = get_post_meta($headerPost[0]->ID);
 ?>
 
+<section id="mre-about-us" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/about-us-bg.jpg');" alt="About Us Background">
+  <h3 class="about-us-title no-margin">Sobre Nosotros</h3>
+  <h2 class="about-us-sub-first no-margin">Bienvenido a</h2>
+  <h2 class="about-us-sub-second no-margin">Grupo Merand Real Estate</h2>
+  <img class="about-us-image" src="<?php echo get_template_directory_uri(); ?>/assets/about-us.png" alt="About Us">
+  <p class="about-us-text"><strong>Somos un holding inmobiliario Premium</strong>, con más de 15 años de experiencia en el manejo de portafolios inmobiliarios exclusivos y de lujo en Miami, Orlando, Caracas y Madrid. Desarrollamos las últimas tendencias del Real Estate y el Luxury Lifestyle para ofrecerles a nuestros clientes una experiencia personalizada y acorde a sus deseos.</p>
+  <ul class="about-us-numbers">
+    <li>
+      <h2 class="numbers no-margin">+500</h2>
+      <h3 class="title no-margin">Inversionistas</h3>
+    </li>
+    <li>
+      <h2 class="numbers no-margin">+160.000</h2>
+      <h3 class="title no-margin">Ventas al Año</h3>
+    </li>
+    <li>
+      <h2 class="numbers no-margin">+800</h2>
+      <h3 class="title no-margin">Rentas por Mes</h3>
+    </li>
+  </ul>
+</section>
+
 <!--<section id="hero-container" class="row">
   <a href="<?php /*echo $theMeta['_hf_left_hero_link'][0] */?>">
     <div class="col-xs-12 col-md-6 hero-box hero-box-left" style="background-image: url('<?php /*echo ($theMeta['_hf_hero_image_left'][0]) */?>');">
