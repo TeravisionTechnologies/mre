@@ -442,6 +442,46 @@ body {
     height: 4.93056vw;
     margin-top: 2.98611vw; }
 
+#mre-offices {
+  height: 31.25vw;
+  background-size: cover; }
+  #mre-offices .swiper-container-flags {
+    height: 100%;
+    text-align: center; }
+  #mre-offices h4 {
+    margin: 6.25vw 0 2.77778vw 0;
+    font-family: Montserrat-Regular, sans-serif;
+    font-size: 2.5vw;
+    line-height: 2.77778vw;
+    color: #ffffff; }
+    #mre-offices h4 strong {
+      font-family: Montserrat-Bold, sans-serif; }
+  #mre-offices .flags-indicators .flag-image {
+    height: 4.16667vw;
+    margin: 0 1.38889vw 0.69444vw 1.38889vw;
+    width: 4.16667vw;
+    cursor: pointer; }
+  #mre-offices .flags-indicators .flag-image-opacity {
+    opacity: 0.6; }
+  #mre-offices .swiper-wrapper {
+    width: 100%; }
+    #mre-offices .swiper-wrapper .swiper-slide {
+      background: transparent;
+      margin: 0 auto;
+      height: 10.41667vw;
+      width: 100%; }
+      #mre-offices .swiper-wrapper .swiper-slide .office-detail {
+        width: 20.97222vw;
+        margin: 0 1.52778vw; }
+        #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
+          color: #ffffff;
+          font-family: Montserrat-Regular, sans-serif;
+          font-size: 1.11111vw;
+          line-height: 1.73611vw;
+          margin: 0; }
+        #mre-offices .swiper-wrapper .swiper-slide .office-detail span {
+          font-family: Montserrat-Bold, sans-serif; }
+
 #blog-list-categories {
   background: #303030;
   height: 23.81944vw;
@@ -1173,6 +1213,34 @@ body {
       height: 71px;
       margin-top: 43px; }
 
+  #mre-offices {
+    height: 450px; }
+    #mre-offices .swiper-container-flags {
+      height: 100%; }
+    #mre-offices h4 {
+      margin: 90px 0 40px 0;
+      font-size: 36px;
+      line-height: 40px; }
+    #mre-offices .flags-indicators .flag-image {
+      height: 60px;
+      margin: 0 20px 10px 20px;
+      width: 60px; }
+    #mre-offices .flags-indicators .flag-image-opacity {
+      opacity: 0.6; }
+    #mre-offices .swiper-wrapper {
+      width: 100%; }
+      #mre-offices .swiper-wrapper .swiper-slide {
+        margin: 0 auto;
+        height: 150px;
+        width: 100%; }
+        #mre-offices .swiper-wrapper .swiper-slide .office-detail {
+          width: 302px;
+          margin: 0 22px; }
+          #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
+            font-size: 16px;
+            line-height: 25px;
+            margin: 0; }
+
   #blog-list-categories {
     height: 343px; }
     #blog-list-categories .blog-list-category-title, #blog-list-categories .blog-list-category-text {
@@ -1725,6 +1793,34 @@ body {
       width: 23.4375vw;
       height: 7.55208vw;
       margin-top: 5.07813vw; }
+
+  #mre-offices {
+    height: 52.08333vw; }
+    #mre-offices .swiper-container-flags {
+      height: 100%; }
+    #mre-offices h4 {
+      margin: 9.11458vw 0 5.20833vw 0;
+      font-size: 3.125vw;
+      line-height: 5.20833vw; }
+    #mre-offices .flags-indicators .flag-image {
+      height: 6.51042vw;
+      margin: 0 1.6276vw 1.30208vw 1.6276vw;
+      width: 6.51042vw; }
+    #mre-offices .flags-indicators .flag-image-opacity {
+      opacity: 0.6; }
+    #mre-offices .swiper-wrapper {
+      width: 100%; }
+      #mre-offices .swiper-wrapper .swiper-slide {
+        margin: 0 auto;
+        height: 15.625vw;
+        width: 100%; }
+        #mre-offices .swiper-wrapper .swiper-slide .office-detail {
+          width: 34.50521vw;
+          margin: 0 1.82292vw; }
+          #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
+            font-size: 1.82292vw;
+            line-height: 3.25521vw;
+            margin: 0; }
 
   #blog-list-categories {
     height: 29.94792vw; }
@@ -2280,6 +2376,34 @@ body {
       width: 33.33333vw;
       height: 10.55556vw;
       margin-top: 7.77778vw; }
+
+  #mre-offices {
+    height: 111.11111vw; }
+    #mre-offices .swiper-container-flags {
+      height: 100%; }
+    #mre-offices h4 {
+      margin: 14.16667vw 0 11.11111vw 0;
+      font-size: 6.11111vw;
+      line-height: 5.55556vw; }
+    #mre-offices .flags-indicators .flag-image {
+      height: 11.94444vw;
+      margin: 0 2.91667vw 2.77778vw 2.91667vw;
+      width: 11.94444vw; }
+    #mre-offices .flags-indicators .flag-image-opacity {
+      opacity: 0.6; }
+    #mre-offices .swiper-wrapper {
+      width: 100%; }
+      #mre-offices .swiper-wrapper .swiper-slide {
+        margin: 0 auto;
+        height: 50vw;
+        width: 100%; }
+        #mre-offices .swiper-wrapper .swiper-slide .office-detail {
+          width: 71.11111vw;
+          margin: 0 14.44444vw 1.38889vw 14.44444vw; }
+          #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
+            font-size: 3.33333vw;
+            line-height: 5.55556vw;
+            margin: 0; }
 
   #blog-list-categories {
     height: 70.55556vw; }
