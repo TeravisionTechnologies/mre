@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
 
-  //Header Swiper
+  // Header Swiper
   var toggleMenu = function() {
     if (swiperHeader.previousIndex == 0) {
       swiperHeader.slidePrev()
@@ -29,7 +29,7 @@ jQuery(document).ready(function() {
     , slideToClickedSlide: true
   });
 
-  //Hero Swiper
+  // Hero Swiper
   var swiperHero = new Swiper('.swiper-container-hero', {
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
@@ -46,8 +46,6 @@ jQuery(document).ready(function() {
 
   // Add Swiper Flags
   var swiperFlag = new Swiper('.swiper-container-flags', {
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
     initialSlide: 1
   });
 
@@ -72,87 +70,80 @@ jQuery(document).ready(function() {
     }
   });
 
+  // Swiper Blog Categories
+  var swiper_blog_categories = new Swiper('.swiper-container-blog-categories', {
+    slidesPerView: 5,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    spaceBetween: 0,
+    centeredSlides: true,
+    loop: true,
+    loopSlides: 5,
+    breakpoints: {
+      1023: {
+        spaceBetween: 19,
+      },
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+    }
+  });
+  $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
+  $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
+  $('.swiper-button-next, .swiper-button-prev').click(function () {
+    $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
+    $('.swiper-slide').find('div').addClass('swiper-overlay');
+    $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
+  });
 
-    // Declaring the global scroll of the html to use in further functions
-    //var globalScroll = jQuery('body,html');
+  // Swiper Blog Post Most Viewed
+  var swiper_blog_most_viewed = new Swiper('.swiper-container-blog-most-viewed', {
+    slidesPerView: 3,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    spaceBetween: 35,
+    loop: true,
+    breakpoints: {
+      1023: {
+        slidesPerView: 2,
+        spaceBetween: 29,
+      },
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      }
+    }
+  });
 
+  // Go top button visibility
+  $(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    if (scroll > 900)  {
+      $('.mre-footer-go-top').css('display', 'block');
+    } else {
+      $('.mre-footer-go-top').css('display', 'none');
+    }
+  });
 
+  // Footer Go to top functionality
+  $(".mre-footer-go-top").click(function () {
+    $("html, body").animate({scrollTop: 0}, 2000);
+  });
 
-
-        // Adding Swiper functionality to flags
-        /*jQuery('.flags-indicators img').on('click touchstart', function () {
-            var iter = jQuery(this).data('pagination');
-            var iterBull=1;
-            jQuery('#offices .swiper-pagination-bullet').each(function () {
-                if ( iter === iterBull ) {
-                    jQuery(this).trigger('click');
-                }
-                iterBull+=1;
-            });
-        });*/
-
-        //Swiper Blog Categories
-        var swiper_blog_categories = new Swiper('.swiper-container-blog-categories', {
-                slidesPerView: 5,
-                nextButton: '.swiper-button-next',
-                prevButton: '.swiper-button-prev',
-                spaceBetween: 0,
-                centeredSlides: true,
-                loop: true,
-                loopSlides: 5,
-                breakpoints: {
-                    1023: {
-                      spaceBetween: 19,
-                    },
-                    640: {
-                      slidesPerView: 1,
-                      spaceBetween: 0,
-                    },
-                }
-        });
-        $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
-        $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
-        $('.swiper-button-next, .swiper-button-prev').click(function () {
-          $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
-          $('.swiper-slide').find('div').addClass('swiper-overlay');
-          $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
-        });
-
-        //Swiper Blog Post Most Viewed
-          var swiper_blog_most_viewed = new Swiper('.swiper-container-blog-most-viewed', {
-            slidesPerView: 3,
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            spaceBetween: 35,
-            loop: true,
-            breakpoints: {
-              1023: {
-                slidesPerView: 2,
-                spaceBetween: 29,
-              },
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 0,
-              }
-            }
-          });
-
-
-
-    // footer functions
-
-      /*$(window).scroll(function (event) {
-        var scroll = $(window).scrollTop();
-        if (scroll > 900)  {
-          $('.mre-footer-go-top').css('display', 'block');
-        } else {
-          $('.mre-footer-go-top').css('display', 'none');
-        }
-      });
-
-
+  // Menu links scroll down
+  $("#menu-about").click(function() {
+    $('html, body').animate({
+      scrollTop: $("#mre-about-us").offset().top
+    }, 2000);
+  });
+  $("#menu-contact").click(function() {
+    $('html, body').animate({
+      scrollTop: $("#contact-us").offset().top
+    }, 2000);
+  });
+/*
     // form validation
-
         var theForm = jQuery('.the-form');
 
         // remove invalid effects and colors on keypress
@@ -200,12 +191,7 @@ jQuery(document).ready(function() {
                 formErrors.html('Verifique los campos requeridos');
             }
 
-        }
-
-    //Footer Go to top functionality
-    $(".mre-footer-go-top").click(function () {
-      $("html, body").animate({scrollTop: 0}, 2000);
-    });*/
+        }*/
 });
 
 

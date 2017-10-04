@@ -640,6 +640,7 @@ a.al-phone-num {
       line-height: 1.38889vw;
       text-decoration: underline; }
   #mre-footer .mre-footer-go-top {
+    display: none;
     cursor: pointer;
     position: fixed;
     right: 9.72222vw;
