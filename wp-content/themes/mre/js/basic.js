@@ -35,7 +35,9 @@ jQuery(document).ready(function() {
     prevButton: '.swiper-button-prev',
     slidesPerView: 1,
     loop: true,
-    nested: true
+    nested: true,
+    autoplay: 5000,
+    effect: 'fade'
   });
 
   // Menu flags functionality

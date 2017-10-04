@@ -14,7 +14,7 @@
         <h2 class="mre-footer-copyright"><?php echo $theMeta['_hf_copy'][0] ?></h2>
         <a href="#">Disclaimers</a>
       </div>
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/go-top-arrow.svg" class="mre-footer-go-top" alt="Go to top button">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/go-top-arrow.png" class="mre-footer-go-top" alt="Go to top button">
     </footer>
 
     <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.2.1.min.js"></script>

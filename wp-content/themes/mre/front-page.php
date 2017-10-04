@@ -16,9 +16,9 @@ $theMeta = get_post_meta($headerPost[0]->ID);
       <div class="swiper-slide menu">
         <ul class="mre-menu">
           <li class="mre-menu-item" id="menu-about"><a href="#">Sobre nosotros</a></li>
-          <li class="mre-menu-item"><a href="#">Proyectos</a></li>
-          <li class="mre-menu-item"><a href="#">HR19 realty</a></li>
-          <li class="mre-menu-item"><a href="#">Grupo MRE</a></li>
+          <li class="mre-menu-item"><a href="#">Developer</a></li>
+          <li class="mre-menu-item"><a href="#">Inmobiliaria</a></li>
+          <li class="mre-menu-item"><a href="#">Blog</a></li>
           <li class="mre-menu-item" id="menu-contact"><a href="#">Contáctanos</a></li>
         </ul>
         <div class="mre-menu-language">
@@ -28,11 +28,11 @@ $theMeta = get_post_meta($headerPost[0]->ID);
         </div>
         <div class="mre-menu-social">
           <ul class="menu-social-icons">
-            <li class="menu-social-icon"><a href="https://www.facebook.com/MerandRealEstate/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-            <li class="menu-social-icon"><a href="https://twitter.com/grupomre"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-            <li class="menu-social-icon"><a href="https://www.instagram.com/grupomre/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-            <li class="menu-social-icon"><a href="https://www.youtube.com/channel/UCj1GOp1JCfAaSmBdQn5uU9w?view_as=subscriber"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
             <li class="menu-social-icon"><a href="https://www.linkedin.com/company/11285534/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li class="menu-social-icon"><a href="https://www.facebook.com/MerandRealEstate/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li class="menu-social-icon"><a href="https://www.instagram.com/grupomre/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li class="menu-social-icon"><a href="https://twitter.com/grupomre"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li class="menu-social-icon"><a href="https://www.youtube.com/channel/UCj1GOp1JCfAaSmBdQn5uU9w?view_as=subscriber"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
           </ul>
         </div>
       </div>
@@ -44,16 +44,16 @@ $theMeta = get_post_meta($headerPost[0]->ID);
         </div>
         <div class="logo-header">
           <div class="img-div pull-right">
-            <a href=""><img src="wp-content/themes/mre/assets/logo.png" alt="MRE Logo"></a>
+            <a href=""><img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="MRE Logo"></a>
           </div>
         </div>
         <div class="social-header pull-right">
           <ul class="social-icons">
-            <li class="social-icon"><a href="https://www.facebook.com/MerandRealEstate/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-            <li class="social-icon"><a href="https://twitter.com/grupomre"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-            <li class="social-icon"><a href="https://www.instagram.com/grupomre/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-            <li class="social-icon"><a href="https://www.youtube.com/channel/UCj1GOp1JCfAaSmBdQn5uU9w?view_as=subscriber"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
             <li class="social-icon"><a href="https://www.linkedin.com/company/11285534/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li class="social-icon"><a href="https://www.facebook.com/MerandRealEstate/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li class="social-icon"><a href="https://www.instagram.com/grupomre/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li class="social-icon"><a href="https://twitter.com/grupomre"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li class="social-icon"><a href="https://www.youtube.com/channel/UCj1GOp1JCfAaSmBdQn5uU9w?view_as=subscriber"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
           </ul>
         </div>
         <div class="swiper-container swiper-container-hero">
@@ -96,11 +96,9 @@ $theMeta = get_post_meta($headerPost[0]->ID);
   </div>
 </header>
 <section id="mre-about-us" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/about-us-bg.jpg');" alt="About Us Background">
-  <h3 class="about-us-title no-margin">Sobre Nosotros</h3>
-  <h2 class="about-us-sub-first no-margin">Bienvenido a</h2>
-  <h2 class="about-us-sub-second no-margin">Grupo Merand Real Estate</h2>
   <img class="about-us-image" src="<?php echo get_template_directory_uri(); ?>/assets/about-us.png" alt="About Us">
-  <p class="about-us-text"><strong>Somos un holding inmobiliario Premium</strong>, con más de 15 años de experiencia en el manejo de portafolios inmobiliarios exclusivos y de lujo en Miami, Orlando, Caracas y Madrid. Desarrollamos las últimas tendencias del Real Estate y el Luxury Lifestyle para ofrecerles a nuestros clientes una experiencia personalizada y acorde a sus deseos.</p>
+  <h2 class="about-us-title no-margin">Grupo Merand Real Estate</h2>
+  <p class="about-us-text"><strong>Somos un holding inmobiliario Premium</strong>, con más de 15 años de experiencia en el manejo de portafolios inmobiliarios exclusivos en Miami, Orlando, Las Vegas y Madrid. Ponemos en práctica las últimas tendencias del Real Estate y el Luxury Lifestyle para ofrecerles a nuestros clientes una experiencia personalizada, superando sus expectativas.</p>
   <ul class="about-us-numbers">
     <li>
       <h2 class="numbers no-margin">+500</h2>
@@ -121,14 +119,14 @@ $theMeta = get_post_meta($headerPost[0]->ID);
     <div class="overlay-left">
       <h3 class="partners-title-first">Proyectos inmobiliarios</h3>
       <h2 class="partners-title-second">EXCLUSIVOS</h2>
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/logo-hr19.png">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/logo-ala19.png">
     </div>
   </div>
   <div class="col-xs-12 col-md-6 partner-right" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-2.jpg');">
     <div class="overlay-right">
       <h3 class="partners-title-first">Encuentra la propiedad</h3>
       <h2 class="partners-title-second">PERFECTA PARA TI</h2>
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/logo-ala19.png">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/logo-hr19.png">
     </div>
   </div>
 </section>
@@ -146,27 +144,27 @@ $theMeta = get_post_meta($headerPost[0]->ID);
           <h5>
             <span>Caracas:</span>
           </h5>
-          <h5>Calle Ortega y Gasset #6</h5>
-          <h5>Primero Izquierda</h5>
-          <h5>Sample: +34 605 816 803</h5>
+          <h5>Centro Empresarial, Piso 19, Oficinas 19-05 / 06</h5>
+          <h5>Venezuela</h5>
+          <h5>Teléfonos: +58 212 975 39 40 / 212 975 41 651</h5>
         </div>
       </div>
       <div class="swiper-slide">
         <div class="office-detail">
           <h5>
-            <span>Orlando:</span>
+            <span>Miami · Sede principal:</span>
           </h5>
-          <h5>2295 S. Hiawassee Road, Suite 407E</h5>
-          <h5>Orlando, Florida</h5>
-          <h5>Teléfonos: +1 407 255.08.71</h5>
+          <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
+          <h5>USA</h5>
+          <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
         </div>
         <div class="office-detail">
           <h5>
-            <span>Miami:</span>
+            <span>Orlando:</span>
           </h5>
-          <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
-          <h5>Miami, Florida</h5>
-          <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
+          <h5>2295 S. Hiawassee Road, Suite 407E</h5>
+          <h5>USA</h5>
+          <h5>Teléfonos: +1 407 255.08.71</h5>
         </div>
       </div>
       <div class="swiper-slide">
@@ -174,9 +172,9 @@ $theMeta = get_post_meta($headerPost[0]->ID);
           <h5>
             <span>Madrid:</span>
           </h5>
-          <h5>C/ Velázquez 78</h5>
-          <h5>2º Dcha</h5>
-          <h5>28001 Madrid, Spain</h5>
+          <h5>C/ Velázquez 78, 2º Dcha. 28001</h5>
+          <h5>España</h5>
+          <h5>Teléfonos: +34 605 816 803</h5>
         </div>
       </div>
     </div>
@@ -191,7 +189,7 @@ $theMeta = get_post_meta($headerPost[0]->ID);
         <div class="al-phone-box text-center center-block">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.png" alt="Llamanos Ala19">
           <p>Llámanos para asesoría <strong>Inmediata</strong></p>
-          <a href="tel:+17863762222" class="al-phone-num">+1786 376.22.22</a>
+          <a href="tel:+17863762222" class="al-phone-num">+1786 477.50.91</a>
         </div>
       </div>
       <div class="col-xs-12 col-md-8 al-contact-form-div no-padding">
