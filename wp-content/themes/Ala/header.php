@@ -24,6 +24,93 @@
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    
+    <style>
+        p{
+            font-family: "Archivo", sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #8f8f8f;
+            margin: 0 0 22px !important;
+            padding: 0 100px;
+        }
+        .memory-items{
+            padding: 0 100px;
+        }
+        .memory-items img{
+            margin: 40px 0;
+        }
+        ul, ol{
+            font-family: "Archivo", sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #8f8f8f;
+            margin: 0 0 22px !important;
+            text-align: left;
+        }
+        .prop-header{
+            height: 600px;
+            position: relative;
+            margin-bottom: 40px;
+            background-repeat: no-repeat !important;
+            background-position: center center !important;
+            -ms-background-size: cover !important;
+            -o-background-size: cover !important;
+            -moz-background-size: cover !important;
+            -webkit-background-size: cover !important;
+            background-size: cover !important;
+        }
+        .prop-header h1{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -35px;
+            bottom: 0;
+            height: 40px;
+            margin: auto;
+            font-size: 36px;
+            letter-spacing: 8px;
+            text-align: center;
+            font-family: "Archivo", sans-serif;
+            text-transform: uppercase;
+            color: #ffffff;
+        } 
+        .prop-header h2{
+            font-family: "Archivo", sans-serif;
+            font-size: 20px;
+            letter-spacing: -0.1px;
+            text-align: center;
+            color: #ffffff;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 35px;
+            bottom: 0;
+            height: 22px;
+            margin: auto;
+        }
+        .detail-tlt{
+            height: 80px;
+            background-color: #000000;
+            font-family: "Archivo", sans-serif;
+            text-transform: uppercase;
+            font-size: 24px;
+            letter-spacing: 8px;
+            text-align: center;
+            color: #ffffff;
+            padding: 24px 15px;
+            margin: 50px 0;
+        }
+        .amenimg{
+            overflow: hidden;
+            height: 350px;
+        }
+        #map {
+            height: 486px;
+            width: 100%;
+            margin-top: -50px;
+       }
+    </style>
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap-theme.min.css">
