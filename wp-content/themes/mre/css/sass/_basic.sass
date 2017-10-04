@@ -436,482 +436,169 @@ body
           font-family: Montserrat-Bold, sans-serif
 // END Offices
 
+// Contact Us
+.screen-reader-response
+  display: none
 
-//footer
-  height: 18.958333333333332vw
-  div
-    margin: 0.6944444444444444vw
-    text-align: center
-  .container
-    .footer-center
-      margin-top: 3.125vw
-      .footer-logo
-        img
-          height: 5.763888888888888vw
-          width: 16.666666666666668vw
-      .footer-copy
-        h5
-          color: $grey
-          opacity: 0.5
-          font-size: 0.9722222222222222vw
-          a
-            display: block
-            color: inherit
-            text-decoration: underline
-      .footer-icons
-        a
-          text-decoration: none
-          .fa
-            font-size: 1.6666666666666665vw
-            width: 2.7777777777777777vw
-            height: 2.7777777777777777vw
-            line-height: 2.7777777777777777vw
-            text-align: center
-            background-color: $white7
-            color: $light-blue
-            -webkit-transition: all 0.3s ease-in-out
-            transition: all 0.3s ease-in-out
-            box-shadow: 0 2px 4px 0 rgba($black, 0.3)
-            border-radius: 50%
-            margin: 0 0.5555555555555556vw
-          .fa:hover, .fa:active
-            -webkit-transform: scale(1.1)
-            transform: scale(1.1)
-  .caretCircle
-    display: none
-    height: 3em
-    width: 3em
-    background-color: $white
-    border-radius: 50%
-    border: solid 0.16em $light-blue
-    position: fixed
-    bottom: 13.61111111111111vw
-    left: 92vw
-    cursor: pointer
-    box-shadow: 0 0.27vw 0.69vw 0 rgba($black, 0.3)
-    .fa-caret-up
-      font-size: 2.4305555555555554vw
-      color: $light-blue
-      line-height: 0.99
-//.overlay
-  height: 100%
-  width: 100%
-  position: fixed
-  left: 100%
-  top: 0
-  background-color: $black
-  background: rgba($overlay, 0.95)
-  overflow-x: hidden
-  transition: 0.5s
-  z-index: 99
-  .overlay-content
-    position: relative
-    top: 25%
-    width: 100%
-    text-align: center
-    margin-top: 2.0833333333333335vw
-    #bs-header-navbar-nodesktop
-      ul
-        li
-          border-top: solid 2px rgba($white,0.15)
-          a:hover, a:focus
-            color: $white
-            font-weight: bold
-            background-color: transparent
-  a
-    text-decoration: none
-    font-size: 5vw
-    color: rgba($white,0.6)
-    display: block
-    transition: 0.3s
-  .closebtn
-    position: absolute
-    top: -2.60vw
-    right: 5vw
-    font-size: 11.11111111111111vw
-    color: $white
-    img
-      width: 30px
-      height: 30px
-//#hero-container
-  position: relative
+.wpcf7-response-output
+  top: get-vw-desktop(-25px)
+  left: get-vw-desktop(30px)
+  position: absolute
+
+.al-contact-div
+  height: auto
+  background-repeat: no-repeat
+  background-position-y: bottom
+  background-size: cover
+.al-contact-text
+  color: $white
+  font-size: get-vw-desktop(36px)
+  margin-top: get-vw-desktop(60px)
+  line-height: get-vw-desktop(46px)
+  margin-bottom: get-vw-desktop(3px)
+  font-family: Montserrat-Regular, sans-serif
+.al-contact-text-bold
+  color: $white
+  font-size: get-vw-desktop(36px)
+  line-height: get-vw-desktop(46px)
+  font-family: Montserrat-Bold, sans-serif
   margin: 0
-  .hero-box
-    position: relative
-    height: 55.55555555555556vw
-    text-align: center
-    h3
-      margin-top: 21.180555555555554vw
-      width: 31.944444444444443vw
-      font-family: Montserrat-Regular, sans-serif
-      font-size: 1.6666666666666665vw
-      color: $white
-      strong
-        font-family: Montserrat-Black, sans-serif
 
-    img
-      margin-top: 2.0833333333333335vw
-  .hero-box-left
-    background-size: cover
-    z-index: 1
-    box-shadow: 12px 0 8px 0 rgba(0, 0, 0, 0.4)
-  .hero-box-right
-    background-size: cover
-  .hero-button
-    z-index: 1
-    position: absolute
-    bottom: 0
-    left: 50%
-    transform: translateX(-50%)
-    height: 2.9166666666666665vw
-    width: 6.527777777777778vw
-  .overlay-left, .overlay-right
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-  .overlay-left
-    background: linear-gradient(to top, $light-blue, rgba(9, 118, 209, 0.59) 82%, rgba(9, 118, 209, 0.8))
-  .overlay-right
-    background: linear-gradient(to top, $dark-blue, rgba(0, 69, 126, 0.59) 82%, rgba(0, 69, 126, 0.8))
-//#about-us
-  height: 71.11111111111111vw
-  background: url('assets/about-us-bg.jpg') center no-repeat $black
-  background-size: cover
-  display: -webkit-flex
-  display: flex
-  -webkit-flex-flow: column wrap
-  flex-flow: column wrap
-  -webkit-justify-content: space-around
-  justify-content: space-around
-  -webkit-align-items: center
-  align-items: center
-  .title
-    h4
-      color: rgba($white, 0.6)
-      text-align: center
-    h1
-      color: $white
-      text-align: center
-      line-height: 1.11
-      font-weight: bold
-      span
-        color: $lighter-blue2
-        display: block
-  #about-sections
-    width: 68.05555555555556vw
-    .swiper-wrapper
-      height: 27vw
-      width: 62vw
-      margin: 0 auto
-      .swiper-slide
-        .item-image
-          width: 34%
-          float: left
-          img
-            float: right
-            height: 18.055vw
-            width: 18.055vw
-        .item-paragraph
-          width: 50%
-          float: left
-          padding-left: 5%
-          color: $white
-          font-size: 1.1111111111111112vw
-          strong
-            font-family: Montserrat-Black, sans-serif
-    .swiper-button-prev
-      background-image: url('assets/swiper-arrow-left.svg')
-    .swiper-button-next
-      background-image: url('assets/swiper-arrow-right.svg')
-    .swiper-pagination
-      .swiper-pagination-bullet
-        background: rgba($white, 0.4)
-        height: 0.83vw
-        width: 0.83vw
-      .swiper-pagination-bullet-active
-        background: $white
-  .extra-info
-    height: 11.11111111111111vw
-    width: 81.25vw
-    display: flex
-    display: -webkit-flex
-    -webkit-flex-flow: row nowrap
-    flex-flow: row nowrap
-    -webkit-justify-content: space-around
-    justify-content: space-around
-    align-items: center
-    background-color: rgba($white7, 0.1)
-    box-shadow: 0 6px 10px 0 rgba($black, 0.3)
-    border-radius: 18px
-    h2
-      text-align: center
-      font-size: 3.4722222222222223vw
+.al-phone-box
+  border-radius: get-vw-desktop(18px)
+  max-width: get-vw-desktop(361px)
+  max-height: get-vw-desktop(272px)
+  margin-top: get-vw-desktop(40px)
+  padding: get-vw-desktop(40px) get-vw-desktop(34px)
+  background-color: $lighter-blue-2
+  box-shadow: 0 1px get-vw-desktop(10px) 0 rgba($black, 0.3)
+  -moz-box-shadow: 0 1px get-vw-desktop(10px) 0 rgba($black, 0.3)
+  -webkit-box-shadow: 0 1px get-vw-desktop(10px) 0 rgba($black, 0.3)
+  img
+    width: get-vw-desktop(72px)
+    height: get-vw-desktop(64px)
+  p
+    color: $dark-blue
+    padding-top: get-vw-desktop(10px)
+    line-height: get-vw-desktop(34px)
+    font-size: get-vw-desktop(24px)
+    padding-bottom: get-vw-desktop(20px)
+    font-family: Montserrat-Regular, sans-serif
+    strong
       font-family: Montserrat-Bold, sans-serif
-      line-height: 1.33
-      text-shadow: 0 4px 8px rgba($black, 0.6)
-      span
-        display: block
-        font-family: Montserrat-Regular, sans-serif
-        font-size: 2.0833333333333335vw
-//#after-about-us
-  height: 25.138vw
-  background: $dark-blue
-  text-align: center
-  h4
-    padding-top: 5.20vw
-    opacity: 0.6
-  h1
-    text-align: center
-    padding-bottom: 2.77vw
-  #partners-images
-    img
-      margin: 0 1.597vw
-    #hr-realty
-      height: 6.25vw
-      width: 6.66vw
-    #ala-19
-      height: 3.333vw
-      width: 10.069vw
-//#before-contact-us
-  height: 27.77vw
-  background: url('assets/before-contact-bg.jpg') center no-repeat $black
-  background-size: cover
-  #offices
-    height: 100%
-    width: 100%
-    .flags-indicators
-      text-align: center
-      padding-top: 5vw
-      img
-        margin: 0 1vw
-        -ms-user-select: none
-        -moz-user-select: none
-        -webkit-user-drag: none
-        -webkit-user-select: none
-        user-select: none
-        user-drag: none
-        cursor: pointer
-    h4
-      font-size: 1.25vw
-      text-align: center
-      padding-top: 4vw
-    .swiper-wrapper
-      width: 100%
-      bottom: -2.0833333333333335vw
-      .swiper-slide
-        width: 100%
-        margin: 0 auto
-        .office-detail
-          text-align: center
-          h5
-            font-size: 1.1111111111111112vw
-            line-height: 1.56
-            letter-spacing: -0.1px
-          span
-            font-weight: bold
-            display: block
-        .office-detail.usa-office
-          width: 49%
-          display: inline-block
-        .office-detail.usa-office:first-child
-          margin-left: 14.027777777777777vw
-        .office-detail.usa-office:last-child
-          margin-left: -25.694444444444443vw
-    .swiper-pagination
-      bottom: 15.97vw
-      .swiper-pagination-bullet
-        background: none
-        height: 0.83vw
-        width: 0.83vw
-        margin: 0 2.8vw
-      .swiper-pagination-bullet-active
-        background: $white
-//#contact-us
-  background: url('assets/contact-bg.png') bottom no-repeat $light-blue
-  background-size: cover
-  height: 48.54vw
-  .spacer
-    height: 4vw
-  h1
-    font-size: 2.5vw
-    text-align: center
-    .first
-      display: inline
-    .last
-      display: block
-      font-weight: bold
-  .inner-section
-    margin: 0 8vw
-    > div
-      margin: 0 1.38vw
-    .call-us
-      float: left
-      .content
-        height: 24.5vw
-        width: 25vw
-        border-radius: 18px
-        background-color: $lighter-blue
-        box-shadow: 0 4px 10px 0 rgba($black, 0.3)
-        text-align: center
-        img
-          height: 4.44vw
-          width: 5vw
-          margin-bottom: 1.38vw
-        h2
-          font-size: 1.6666666666666665vw
-          color: $dark-blue
-          letter-spacing: -1px
-          line-height: 1.42
-          span
-            display: block
-        #advice-call
-          margin-bottom: 2.77vw
-          line-height: 1.42
-        .bold-me
-          font-weight: 600
-        .spacer-before-image
-          height: 4.3vw
-        #contact-phone
-          font-family: Montserrat-Black
-          font-size: 2.5vw
-          margin-top: -15px
-        .spacer-end
-          height: 3.5vw
-    .the-form
-      .wpcf7
-        .screen-reader-response, span.wpcf7-not-valid-tip, .wpcf7-response-output.wpcf7-validation-errors, .wpcf7-response-output.wpcf7-mail-sent-ng, .wpcf7-mail-sent-ok
-          display:  none
-        p
-          float: left
-          padding: 0 0.4vw 0.2vw 0.4vw
-          span.invalid-input::before
-            content: '*'
-            color: $red
-            position: absolute
-            z-index: 1
-            font-size: 1.6vw
-            left: 1.1vw
-            top: 0.9vw
-          span.invalid-texarea::before
-            content: '*'
-            color: $red
-            position: absolute
-            z-index: 1
-            font-size: 1.6vw
-            left: 1.1vw
-            top: 0.7vw
-        p:last-child
-          padding-top: 0.6944444444444444vw
-        input:not([type="submit"]), select, textarea
-          box-sizing: border-box
-          border-radius: 6px
-          background-color: $dark-blue
-          border: solid 1.5px rgba($dark-white, 0.5)
-          opacity: 0.9
-          font-size: 1.11vw
-          font-weight: normal
-          line-height: 0.94
-          color: $dark-white
-          padding: 0.8333333333333333vw 1.3888888888888888vw
-          width: 25.76388888888889vw
-          height: 3.33vw
-          -webkit-appearance: none
-          -moz-appearance: none
-          appearance: none
-        select::-ms-expand
-          display: none
-        input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
-          color: $dark-white
-        input::-moz-placeholder, textarea::-moz-placeholder
-          color: $dark-white
-        input:-ms-input-placeholder, textarea:-ms-input-placeholder
-          color: $dark-white
-        input.wpcf7-not-valid, textarea.wpcf7-not-valid
-          color: $red
-          border-color: $red
-        input.wpcf7-not-valid::-webkit-input-placeholder, textarea.wpcf7-not-valid::-webkit-input-placeholder
-          color: $red
-        input.wpcf7-not-valid::-moz-placeholder, textarea.wpcf7-not-valid::-moz-placeholder
-          color: $red
-        input.wpcf7-not-valid:-ms-input-placeholder, textarea.wpcf7-not-valid:-ms-input-placeholder
-          color: $red
-        input[type="submit"]
-          color: $white
-          box-sizing: border-box
-          border-radius: 6px
-          background-color: transparent
-          border: solid 2px $white
-          opacity: 0.9
-          font-size: 1.25vw
-          font-weight: normal
-          line-height: 0.94
-          width: 15vw
-          height: 3.47vw
-          margin: 0.69vw 0 0 45vw
-        select
-          background: url("assets/form-caret-down.png") no-repeat right center $dark-blue
-        select:hover
-          cursor: pointer
-        textarea
-          height: 11.5vw
-          width: 52.3vw
-          resize: none
-    .form-errors
-      display: none
-      position: relative
-      color: $white
-      z-index: 1
-      text-align: center
-      padding: 5px
-      font-size: 0.97vw
-      bottom: 0
-      left: 27.5vw
-      width: 15.27vw
-      height: 1.94vw
 
-//.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled
-  opacity: 1
+a.al-phone-num
+  color: $dark-blue
   cursor: pointer
-  pointer-events: auto
+  font-size: get-vw-desktop(36px)
+  line-height: get-vw-desktop(30px)
+  font-family: Montserrat-Black, sans-serif
+  &:hover
+    text-decoration: none
 
-//.container-fluid
-  padding: 0
+.al-contact-form-div
+  margin-top: get-vw-desktop(40px)
+  display: inline-block
 
-//
+.flag-image-opacity
+  opacity: .6
 
-//#mre-footer
+.wpcf7-form-control-wrap
+  margin-bottom: get-vw-desktop(20px)
+
+.wpcf7-form
+  p
+    margin-right: get-vw-desktop(20px)
+    display: inline-block
+  input[type="text"], input[type="email"], input[type="tel"], select
+    width: 100%
+    height: get-vw-desktop(48px)
+    color: $white-3
+    padding: 0 get-vw-desktop(23px)
+    font-size: get-vw-desktop(16px)
+    line-height: get-vw-desktop(16px)
+    border-radius: get-vw-desktop(4px)
+    display: inline-block
+    background-color: $dark-blue
+    border: 1px solid rgba(207, 207, 207, 0.5)
+    font-family: Montserrat-Regular, sans-serif
+    margin-bottom: get-vw-desktop(20px)
+    &::-webkit-input-placeholder /* Chrome/Opera/Safari */
+      color: $white-3
+    &::-moz-placeholder /* Firefox 19+ */
+      color: $white-3
+    &:-ms-input-placeholder /* IE 10+ */
+      color: $white-3
+    &:-moz-placeholder /* Firefox 18- */
+      color: $white-3
+  textarea
+    width: 100%
+    color: $white-3
+    font-size: get-vw-desktop(16px)
+    max-height: get-vw-desktop(137px)
+    line-height: get-vw-desktop(16px)
+    padding: get-vw-desktop(14px) get-vw-desktop(23px)
+    border-radius: get-vw-desktop(6px)
+    background-color: $dark-blue
+    border: 1px solid rgba(207, 207, 207, 0.5)
+    font-family: Montserrat-Regular, sans-serif
+    &::-webkit-input-placeholder /* Chrome/Opera/Safari */
+      color: $white-3
+    &::-moz-placeholder /* Firefox 19+ */
+      color: $white-3
+    &:-ms-input-placeholder /* IE 10+ */
+      color: $white-3
+    &:-moz-placeholder /* Firefox 18- */
+      color: $white-3
+  option
+    padding-left: get-vw-desktop(20px)
+  .your-name, .your-phone
+    margin-right: get-vw-desktop(20px)
+  .wpcf7-submit
+    color: $white
+    border-radius: get-vw-desktop(10px)
+    height: get-vw-desktop(50px)
+    width: get-vw-desktop(216px)
+    font-size: get-vw-desktop(18px)
+    margin: get-vw-desktop(40px) 0 get-vw-desktop(50px) 0
+    padding: 0px get-vw-desktop(74px)
+    line-height: get-vw-desktop(20px)
+    border: solid 2px $white
+    background-color: transparent
+    font-family: Montserrat-Bold, sans-serif
+    &:hover
+      background-color: rgba($white, .7)
+// END Contact Us
+
+// Footer
+#mre-footer
+  text-align: center
   box-shadow: 0 -8px 10px 0 rgba(0, 0, 0, 0.2)
-  height: 16.180555555555554vw
+  height: get-vw-desktop(233px)
   position: relative
   .mre-footer-elements
-    width: 30.90277777777778vw
+    width: get-vw-desktop(445px)
     margin: 0 auto
     .mre-footer-logo
-      height: 5.763888888888888vw
-      margin: 3.4722222222222223vw 0 0.6944444444444444vw 0
-      width: 16.666666666666668vw
+      height: get-vw-desktop(83px)
+      margin: get-vw-desktop(50px) 0 get-vw-desktop(10px) 0
+      width: get-vw-desktop(240px)
     .mre-footer-copyright
       color: $search-icon-grey
       font-family: Montserrat-Regular, sans-serif
-      font-size: 0.9722222222222222vw
-      line-height: 1.3888888888888888vw
+      font-size: get-vw-desktop(14px)
+      line-height: get-vw-desktop(20px)
+      margin: 0
     a
       color: $search-icon-grey
-      font-family: Montserrat-Regular, sans-serif
-      font-size: 0.9722222222222222vw
-      line-height: 1.3888888888888888vw
+      font-family: Montserrat-Bold, sans-serif
+      font-size: get-vw-desktop(14px)
+      line-height: get-vw-desktop(20px)
       text-decoration: underline
   .mre-footer-go-top
     cursor: pointer
     position: fixed
-    right: 9.722222222222221vw
-    bottom: 8.77778vw
-
-//#blog-detail-form
-  .blog-detail-comments-form
-    .comments-form-button
-      &:hover
-        color: $blue
-        border: solid 2px $blue
+    right: get-vw-desktop(140px)
+    bottom: get-vw-desktop(143px)
+    z-index: 1
+// END Footer

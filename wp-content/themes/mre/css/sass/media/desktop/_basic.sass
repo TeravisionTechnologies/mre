@@ -308,203 +308,95 @@ body
           margin: 0
 // END Offices
 
-//#hero-container
-  .hero-box
-    height: 800px
-    h3
-      margin-top: 305px
-      width: 460px
-      font-size: 24px
-    img
-      margin-top: 30px
-    .hero-button
-      height: 42px
-      width: 94px
-//#about-us
-  #about-sections
-    .swiper-button-prev, .swiper-button-next
-      background-size: 2.1vw
-      width: 2.1vw
-      height: 2.1vw
-//#before-contact-us
-  height: 400px
-  background: url('assets/before-contact-bg.jpg') center no-repeat $black
-  background-size: cover
-  #offices
-    height: 100%
+// Contact Us
+.wpcf7-response-output
+  top: -25px
+  left: 30px
+
+.al-contact-text
+  font-size: 36px
+  margin-top: 60px
+  line-height: 46px
+  margin-bottom: 3px
+.al-contact-text-bold
+  font-size: 36px
+  line-height: 46px
+  margin: 0
+
+.al-phone-box
+  border-radius: 18px
+  max-width: 361px
+  max-height: 272px
+  margin-top: 40px
+  padding: 40px 34px
+  box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+  -moz-box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+  -webkit-box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+  img
+    width: 72px
+    height: 64px
+  p
+    padding-top: 10px
+    line-height: 34px
+    font-size: 24px
+    padding-bottom: 20px
+
+a.al-phone-num
+  font-size: 36px
+  line-height: 30px
+
+.al-contact-form-div
+  margin-top: 40px
+
+.flag-image-opacity
+  opacity: .6
+
+.wpcf7-form-control-wrap
+  margin-bottom: 20px
+
+.wpcf7-form
+  p
+    margin-right: 20px
+  input[type="text"], input[type="email"], input[type="tel"], select
     width: 100%
-    .flags-indicators
-      text-align: center
-      padding-top: 72px
-      img
-        margin: 0 15px
-    h4
-      font-size: 18px
-      text-align: center
-      padding-top: 58px
-    .swiper-wrapper
-      width: 100%
-      bottom: -30px
-      .swiper-slide
-        width: 100%
-        margin: 0 auto
-        .office-detail
-          text-align: center
-          h5
-            font-size: 16px
-            line-height: 1.56
-            letter-spacing: -0.1px
-          span
-            font-weight: bold
-            display: block
-        .office-detail.usa-office
-          width: 49%
-          display: inline-block
-        .office-detail.usa-office:first-child
-          margin-left: 202px
-        .office-detail.usa-office:last-child
-          margin-left: -370px
-    .swiper-pagination
-      bottom: 230px
-      .swiper-pagination-bullet
-        height: 12px
-        width: 12px
-        margin: 0 41px
-//#contact-us
-  background: url('assets/contact-bg.png') bottom no-repeat $light-blue
-  background-size: cover
-  height: 699px
-  .spacer
-    height: 60px
-  h1
-    font-size: 36px
-    text-align: center
-    .first
-      display: inline
-    .last
-      display: block
-      font-weight: bold
-  .inner-section
-    margin: 0 auto
-    width: 1300px
-    .call-us
-      float: left
-      .content
-        height: 340px
-        width: 360px
-        border-radius: 18px
-        background-color: $lighter-blue
-        box-shadow: 0 4px 10px 0 rgba($black, 0.3)
-        text-align: center
-        img
-          height: 64px
-          width: 72px
-          margin-bottom: 20px
-        h2
-          font-size: 24px
-          color: $dark-blue
-          letter-spacing: -1px
-          line-height: 1.42
-          span
-            display: block
-        #advice-call
-          margin-bottom: 40px
-          line-height: 1.42
-        .bold-me
-          font-weight: 600
-        .spacer-before-image
-          height: 58px
-        #contact-phone
-          font-family: Montserrat-Black
-          font-size: 36px
-          margin-top: -15px
-        .spacer-end
-          height: 50px
-    .the-form
-      .wpcf7
-        .screen-reader-response, span.wpcf7-not-valid-tip, .wpcf7-response-output.wpcf7-validation-errors, .wpcf7-response-output.wpcf7-mail-sent-ng
-          display:  none
-        p
-          float: left
-          padding: 0 10px 10px 10px
-          span.invalid-input::before
-            font-size: 24px
-            z-index: 1
-            left: 18px
-            top: 14px
-          span.invalid-texarea::before
-            font-size: 24px
-            z-index: 1
-            left: 18px
-            top: 12px
-        p:last-child
-          padding-top: 10px
-        input:not([type="submit"]), select, textarea
-          box-sizing: border-box
-          border-radius: 6px
-          background-color: $dark-blue
-          border: solid 1px rgba($dark-white, 0.5)
-          opacity: 0.9
-          font-size: 20px
-          font-weight: normal
-          line-height: 0.94
-          color: $dark-white
-          padding: 12px 20px
-          width: 370px
-          height: 48px
-          -webkit-appearance: none
-          -moz-appearance: none
-          appearance: none
-        select::-ms-expand
-          display: none
-        input.wpcf7-not-valid
-          color: $red
-        input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
-          color: $dark-white
-        input::-moz-placeholder, textarea::-moz-placeholder
-          color: $dark-white
-        input:-ms-input-placeholder, textarea:-ms-input-placeholder
-          color: $dark-white
-        input.wpcf7-not-valid::-webkit-input-placeholder
-          color: $red
-        input.wpcf7-not-valid::-moz-placeholder
-          color: $red
-        input.wpcf7-not-valid:-ms-input-placeholder
-          color: $red
-        input[type="submit"]
-          color: $white
-          box-sizing: border-box
-          border-radius: 6px
-          background-color: transparent
-          border: solid 2px $white
-          opacity: 0.9
-          font-size: 18px
-          font-weight: normal
-          line-height: 0.94
-          width: 216px
-          height: 50px
-          margin: 10px 0 0 648px
-        select
-          background: url("assets/form-caret-down.png") no-repeat right center $dark-blue
-        select:hover
-          cursor: pointer
-        textarea
-          height: 135px
-          width: 760px
-          resize: none
-    .form-errors
-      font-size: 14px
-      bottom: 0
-      left: 400px
-      width: 220px
-      height: 28px
+    height: 48px
+    padding: 0 23px
+    font-size: 16px
+    line-height: 16px
+    border-radius: 4px
+    border: 1px solid rgba(207, 207, 207, 0.5)
+    margin-bottom: 20px
+  textarea
+    width: 100%
+    font-size: 16px
+    max-height: 137px
+    line-height: 16px
+    padding: 14px 23px
+    border-radius: 6px
+    border: 1px solid rgba(207, 207, 207, 0.5)
+  option
+    padding-left: 20px
+  .your-name, .your-phone
+    margin-right: 20px
+  .wpcf7-submit
+    border-radius: 10px
+    height: 50px
+    width: 216px
+    font-size: 18px
+    margin: 40px 0 50px 0
+    padding: 0px 74px
+    line-height: 20px
+    &:hover
+      background-color: rgba($white, .7)
+// END Contact Us
 
-
-
-//#mre-footer
+// Footer
+#mre-footer
+  box-shadow: 0 -8px 10px 0 rgba(0, 0, 0, 0.2)
   height: 233px
   .mre-footer-elements
     width: 445px
+    margin: 0 auto
     .mre-footer-logo
       height: 83px
       margin: 50px 0 10px 0
@@ -517,4 +409,5 @@ body
       line-height: 20px
   .mre-footer-go-top
     right: 140px
-    bottom: 40px
+    bottom: 143px
+// END Footer

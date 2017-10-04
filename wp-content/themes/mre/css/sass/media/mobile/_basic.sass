@@ -297,257 +297,106 @@ body
           margin: 0
 // END Offices
 
-//.visible-desktop
-  display: none !important
-//.visible-mobile
-  display: block !important
-//header
-  .container
-    height: 16.666666666666668vw
-    .center-header
-      margin-top: 5vw
-      .header-logo
-        img
-          height: 6.666666666666666vw
-          width: 19.166666666666668vw
-      #bs-header-navbar-nodesktop-parent
-        span
-          font-size: 5.555555555555555vw
-//footer
-  height: 48.888888888888886vw
-  .container
-    padding: 0 6.944444444444445vw
-    .footer-center
-      margin-top: 11.11111111111111vw
-      .footer-logo
-        img
-          height: 9.166666666666666vw
-          width: 26.944444444444443vw
-      .footer-copy
-        h5
-          font-size: 10px
-      .footer-icons
-        a
-          margin: 0 5px
-          .fa
-            font-size: 14px
-            width: 30px
-            height: 30px
-            line-height: 30px
-  .fa-caret-up
-    display: none
-//.overlay
-  .closebtn
-    top: 0
-    img
-      width: 20px
-      height: 20px
-//#hero-container
-  .hero-box
-    height: 78.05555555555556vw
-    h3
-      margin-top: 22.22222222222222vw
-      width: 86.33333vw
-      font-size: 5.555555555555555vw
-      strong
-        font-weight: 900
-    img
-      margin-top: 5.833333333333333vw
-      width: 15.277777777777777vw
-      height: 15.277777777777777vw
-  .hero-box-left
-    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.4)
-  .hero-button
-    height: 5vw
-    width: 9.444444444444445vw
-//#about-us
-  height: 300vw
-  .title
-    h4
-      font-size: 3.333333333333333vw
-    h1
-      font-size: 6.111111111111111vw
-  #about-sections
-    width: 83.33333333333333vw
-    .swiper-wrapper
-      height: 144.44vw
-      width: 82vw
-      margin: 0 auto
-      .swiper-slide
-        .item-image
-          width: 31.666666666666664vw
-          float: none
-          margin: 0 auto 18.88888888888889vw auto
-          img
-            height: 31.666666666666664vw
-            width: 31.666666666666664vw
-            float: none
-        .item-paragraph
-          width: 62vw
-          float: none
-          padding: 0
-          font-size: 3.333333333333333vw
-          text-align: center
-          margin: 0 auto
-    .swiper-pagination
-      bottom: 104.16vw
-      .swiper-pagination-bullet
-        height: 2.22vw
-        width: 2.22vw
-    .swiper-button-prev
-      left: 0
-    .swiper-button-next
-      right: 0
-  .extra-info
-    height: 100vw
-    width: 86.11111111111111vw
-    display: -webkit-flex
-    display: flex
-    -webkit-flex-flow: column nowrap
-    flex-flow: column nowrap
-    -webkit-justify-content: space-around
-    justify-content: space-around
-    align-items: center
-    h2
-      font-size: 8.333333333333334vw
-      line-height: 1.25
-      span
-        font-size: 6.666666666666666vw
-//#after-about-us
-  height: 70.3vw
-  h4
-    font-size: 3.333333333333333vw
-    padding-top: 12vw
-  h1
-    font-size: 6.111111111111111vw
-    padding-bottom: 5.859375vw
-  #partners-images
-    img
-      margin: 0 1.597222222222222vw
-    #hr-realty
-      height: 19.166666666666668vw
-      width: 18.055555555555554vw
-    #ala-19
-      height: 9.722222222222221vw
-      width: 28.88888888888889vw
-//#before-contact-us
-  height: 110vw
-  #offices
-    height: 100%
+// Contact Us
+.wpcf7-response-output
+  top: get-vw-mobile(-25px)
+  left: get-vw-mobile(30px)
+
+.al-contact-text
+  font-size: get-vw-mobile(20px)
+  margin-top: get-vw-mobile(50px)
+  line-height: get-vw-mobile(26px)
+  margin-bottom: get-vw-mobile(3px)
+.al-contact-text-bold
+  font-size: get-vw-mobile(20px)
+  line-height: get-vw-mobile(26px)
+  margin: 0
+
+.al-phone-box
+  border-radius: get-vw-mobile(18px)
+  max-width: get-vw-mobile(256px)
+  max-height: get-vw-mobile(200px)
+  margin: get-vw-mobile(40px) auto 0 auto
+  padding: get-vw-mobile(32px) get-vw-mobile(13px)
+  box-shadow: 0 1px get-vw-mobile(10px) 0 rgba($black, 0.3)
+  -moz-box-shadow: 0 1px get-vw-mobile(10px)0 rgba($black, 0.3)
+  -webkit-box-shadow: 0 1px get-vw-mobile(10px) 0 rgba($black, 0.3)
+  img
+    width: get-vw-mobile(40px)
+    height: get-vw-mobile(40px)
+  p
+    padding-top: get-vw-mobile(10px)
+    line-height: get-vw-mobile(23px)
+    font-size: get-vw-mobile(18px)
+    padding-bottom: get-vw-mobile(10px)
+
+a.al-phone-num
+  font-size: get-vw-mobile(24px)
+  line-height: get-vw-mobile(30px)
+  font-family: Montserrat-Bold
+
+.al-contact-form-div
+  margin-top: get-vw-mobile(40px)
+
+.flag-image-opacity
+  opacity: .6
+
+.wpcf7-form-control-wrap
+  margin-bottom: get-vw-mobile(20px)
+
+.wpcf7-form
+  p
+    margin-right: get-vw-mobile(20px)
+  input[type="text"], input[type="email"], input[type="tel"], select
+    width: get-vw-mobile(310px)
+    height: get-vw-mobile(40px)
+    padding: 0 get-vw-mobile(14px)
+    font-size: get-vw-mobile(12px)
+    line-height: get-vw-mobile(15px)
+    border-radius: get-vw-mobile(4px)
+    border: 1px solid rgba(207, 207, 207, 0.5)
+    margin-bottom: get-vw-mobile(15px)
+
+  textarea
     width: 100%
-    .flags-indicators
-      img
-        margin: 0 2vw
-    h4
-      font-size: 3.333333333333333vw
-      padding-top: 15vw
-    .swiper-wrapper
-      padding-top: 10vw
-      .swiper-slide
-        height: 47.22222222222222vw
-        .office-detail
-          h5
-            font-size: 3.333333333333333vw
-            line-height: 1.79
-        .office-detail.usa-office
-          width: 100%
-          display: block
-        .office-detail.usa-office:first-child
-          margin-left: 0
-        .office-detail.usa-office:last-child
-          margin-left: 0
-    .swiper-pagination
-      bottom: 81vw
-      .swiper-pagination-bullet
-        height: 3vw
-        width: 3vw
-        margin: 0 8.7vw
-//#contact-us
-  height: 260vw
-  .spacer.initial
-    height: 6vw
-  .spacer
-    height: 5.20vw
-  .title
-    font-size: 18px
-    .first
-      display: block
-  .inner-section
-    margin: 0 4.16vw
-    > div
-      margin: 0 2.77vw
-    .call-us
-      float: none
-      margin-bottom: 20vw
-      .content
-        margin: 0 auto
-        height: 55.55vw
-        width: 86.11vw
-        h2
-          font-size: 5vw
-        img
-          height: 16.94vw
-          width: 15vw
-        #contact-phone
-          font-size: 6.66vw
-    .the-form
-      .wpcf7
-        p
-          padding: 0.2777777777777778vw 0
-          span.invalid-input::before
-            font-size: 4vw
-            left: 1.66vw
-            top: 4.16vw
-          span.invalid-texarea::before
-            font-size: 4vw
-            left: 1.66vw
-            top: 3vw
-        p:last-child
-          padding-top: 1.5625vw
-        input:not([type="submit"]), select, textarea
-          height: 11.11vw
-          width: 86.11vw
-          font-size: 3.33vw
-          padding: 2.77vw 3.88vw
-        input[type="submit"]
-          height: 11.11vw
-          width: 43.88vw
-          font-size: 3.88vw
-          margin: 1vw 0 0 22vw
-        textarea
-          height: 36.94vw
-          width: 86.11vw
-        .your-schedule::before, .your-interest::before, .your-country::before
-          bottom: 2.5vw
-          left: 79.16vw
-          font-size: 5vw
-    .form-errors
-      font-size: 3.33vw
-      top: 76vw
-      left: 2vw
-      width: 55vw
-      height: 7vw
+    font-size: get-vw-mobile(12px)
+    max-height: get-vw-mobile(133px)
+    line-height: get-vw-mobile(16px)
+    padding: get-vw-mobile(13px) get-vw-mobile(14px)
+    border-radius: get-vw-mobile(4px)
+    border: 1px solid rgba(207, 207, 207, 0.5)
+  option
+    padding-left: get-vw-mobile(14px)
+  .your-name, .your-phone
+    margin-right: get-vw-mobile(20px)
+  .wpcf7-submit
+    border-radius: get-vw-mobile(10px)
+    height: get-vw-mobile(40px)
+    width: get-vw-mobile(158px)
+    font-size: get-vw-mobile(14px)
+    margin: get-vw-mobile(30px) 0 get-vw-mobile(45px) 0
+    padding: 0px get-vw-mobile(46px)
+    line-height: get-vw-mobile(20px)
+    &:hover
+      background-color: rgba($white, .7)
+// END Contact Us
 
-//.container-mre
-  width: 86.11111111111111vw
-  height: 100%
-
-//#mre-footer
-  height: 36.94444444444444vw
+// Footer
+#mre-footer
+  height: get-vw-mobile(133px)
   .mre-footer-elements
-    width: 76.11111111111111vw
+    width: get-vw-mobile(274px)
     .mre-footer-logo
-      height: 9.166666666666666vw
-      margin: 8.333333333333334vw 0 2.7777777777777777vw 0
-      width: 26.944444444444443vw
+      height: get-vw-mobile(33px)
+      margin: get-vw-mobile(30px) 0 get-vw-mobile(10px) 0
+      width: get-vw-mobile(97px)
     .mre-footer-copyright
-      font-size: 2.7777777777777777vw
-      line-height: 4.166666666666667vw
-      margin-bottom: 1.3888888888888888vw
+      font-size: get-vw-mobile(10px)
+      line-height: get-vw-mobile(15px)
+      margin-bottom: get-vw-mobile(1px)
     a
-      font-family: Montserrat-Bold, sans-serif
-      font-size: 2.7777777777777777vw
-      line-height: 4.166666666666667vw
-      text-decoration: underline
+      font-size: get-vw-mobile(10px)
+      line-height: get-vw-mobile(15px)
   .mre-footer-go-top
     display: none
+// END Footer

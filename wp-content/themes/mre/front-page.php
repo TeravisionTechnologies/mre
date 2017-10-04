@@ -10,7 +10,91 @@ $headerPost = get_posts(
 );
 $theMeta = get_post_meta($headerPost[0]->ID);
 ?>
-
+<header id="mre-header">
+  <div class="swiper-container swiper-container-menu">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide menu">
+        <ul class="mre-menu">
+          <li class="mre-menu-item"><a href="#">Sobre nosotros</a></li>
+          <li class="mre-menu-item" id="menu-projects"><a href="#">Proyectos</a></li>
+          <li class="mre-menu-item"><a href="#">HR19 realty</a></li>
+          <li class="mre-menu-item"><a href="#">Grupo MRE</a></li>
+          <li class="mre-menu-item" id="menu-contact"><a href="#">Contáctanos</a></li>
+        </ul>
+        <div class="mre-menu-language">
+          <h2 class="mre-menu-language-text">Seleccione su idioma de preferencia:</h2>
+          <img class="mre-menu-language-flag " src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" alt="Spanish">
+          <img class="mre-menu-language-flag language-flag-active" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" alt="English">
+        </div>
+        <div class="mre-menu-social">
+          <ul class="menu-social-icons">
+            <li class="menu-social-icon"><a href="https://www.facebook.com/MerandRealEstate/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li class="menu-social-icon"><a href="https://twitter.com/grupomre"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li class="menu-social-icon"><a href="https://www.instagram.com/grupomre/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li class="menu-social-icon"><a href="https://www.youtube.com/channel/UCj1GOp1JCfAaSmBdQn5uU9w?view_as=subscriber"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+            <li class="menu-social-icon"><a href="https://www.linkedin.com/company/11285534/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="swiper-slide content">
+        <div class="menu-button">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <div class="logo-header">
+          <div class="img-div pull-right">
+            <a href=""><img src="wp-content/themes/mre/assets/logo.png" alt="MRE Logo"></a>
+          </div>
+        </div>
+        <div class="social-header pull-right">
+          <ul class="social-icons">
+            <li class="social-icon"><a href="https://www.facebook.com/MerandRealEstate/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li class="social-icon"><a href="https://twitter.com/grupomre"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li class="social-icon"><a href="https://www.instagram.com/grupomre/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li class="social-icon"><a href="https://www.youtube.com/channel/UCj1GOp1JCfAaSmBdQn5uU9w?view_as=subscriber"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+            <li class="social-icon"><a href="https://www.linkedin.com/company/11285534/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+        <div class="swiper-container swiper-container-hero">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-1.jpg');">
+              <div class="slide-overlay"></div>
+              <div class="slide-text">
+                <h2>Comprometidos con tu</h2>
+                <h3>TU FUTURO</h3>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-2.jpg');">
+              <div class="slide-overlay"></div>
+              <div class="slide-text">
+                <h2>Especialistas en</h2>
+                <h3>LUXURY RENTAL</h3>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-3.jpg');">
+              <div class="slide-overlay"></div>
+              <div class="slide-text">
+                <h2>Innovación y diseño</h2>
+                <h3>VANGUARDISTA</h3>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-4.jpg');">
+              <div class="slide-overlay"></div>
+              <div class="slide-text">
+                <h2>Estamos contigo en</h2>
+                <h3>TODO MOMENTO</h3>
+              </div>
+            </div>
+          </div>
+          <i class="fa fa-chevron-circle-left swiper-button-prev" aria-hidden="true"></i>
+          <i class="fa fa-chevron-circle-right swiper-button-next" aria-hidden="true"></i>
+        </div>
+        <a href=""><img src="<?php echo get_template_directory_uri(); ?>/assets/hero-arrow.svg" class="hero-button"></a>
+      </div>
+    </div>
+  </div>
+</header>
 <section id="mre-about-us" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/about-us-bg.jpg');" alt="About Us Background">
   <h3 class="about-us-title no-margin">Sobre Nosotros</h3>
   <h2 class="about-us-sub-first no-margin">Bienvenido a</h2>
@@ -98,85 +182,24 @@ $theMeta = get_post_meta($headerPost[0]->ID);
     </div>
   </div>
 </section>
-
-
-<!--<section id="before-contact-us">
-    <div id="offices" class="swiper-container">
-        <div class="flags-indicators">
-            <img data-pagination="1" src="<?php /*/*echo get_template_directory_uri(); */?>/assets/ven_flag.svg" />
-            <img data-pagination="2" src="<?php /*/*echo get_template_directory_uri(); */?>/assets/usa_flag.svg" />
-            <img data-pagination="3" src="<?php /*/*echo get_template_directory_uri(); */?>/assets/spain_flag.svg" />
+<section id="contact-us" class="col-xs-12 al-contact-div" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/contact-us-bg.png"')">
+  <div class="container-mre center-block">
+    <div class="row">
+      <p class="col-xs-12 text-center al-contact-text">Nos gustaría asesorarte en tu próxima inversión</p>
+      <p class="col-xs-12 text-center al-contact-text-bold">¡Contáctanos!</p>
+      <div class="col-xs-12 col-md-4 no-padding">
+        <div class="al-phone-box text-center center-block">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.png" alt="Llamanos Ala19">
+          <p>Llámanos para asesoría <strong>Inmediata</strong></p>
+          <a href="tel:+17863762222" class="al-phone-num">+1786 376.22.22</a>
         </div>
-        <h4>Puedes encontrar Nuestras Oficinas en:</h4>
-
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="office-detail">
-                    <h5>
-                        <span>Caracas:</span>
-                    </h5>
-                    <h5>Centro Empresarial Parque Humboldt</h5>
-                    <h5>Piso 19, Oficinas 19-05 / 19-06</h5>
-                    <h5>Teléfonos: +58 212 975 39 40 / 212 975 41 651</h5>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="office-detail usa-office">
-                    <h5>
-                        <span>Orlando:</span>
-                    </h5>
-                    <h5>2295 S. Hiawassee Road, Suite 407E</h5>
-                    <h5>Orlando, Florida</h5>
-                    <h5>Teléfonos: +1 407 255.08.71</h5>
-                </div>
-                <div class="office-detail usa-office">
-                    <h5>
-                        <span>Miami:</span>
-                    </h5>
-                    <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
-                    <h5>Miami, Florida</h5>
-                    <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="office-detail">
-                    <h5>
-                        <span>Madrid:</span>
-                    </h5>
-                    <h5>Calle Ortega y Gasset #6</h5>
-                    <h5>Primero Izquierda</h5>
-                    <h5>Sample: +34 605 816 803</h5>
-                </div>
-            </div>
-        </div>
-
-        <div class="swiper-pagination"></div>
+      </div>
+      <div class="col-xs-12 col-md-8 al-contact-form-div no-padding">
+        <?php echo do_shortcode( '[contact-form-7 id="4" title="Home - Contact form"]' ); ?>
+      </div>
     </div>
-</section>-->
-
-<!--<section id="contact-us">
-    <div class="spacer initial"></div>
-    <h1 class="title">Nos gustaría asesorarte
-        <span class="first">en tu próxima inversión</span>
-        <span class="last">¡Contáctanos!</span>
-    </h1>
-    <div class="spacer"></div>
-    <div class="inner-section">
-        <div class="form-errors"></div>
-        <div class="call-us">
-            <div class="content">
-                <div class="spacer-before-image"></div>
-                <img src="<?php /*/*echo get_template_directory_uri(); */?>/assets/d-iconphone.svg" />
-                <h2 id="advice-call">Llámenos para asesoría <span class="bold-me">Inmediata</span></h2>
-                <h2 id="contact-phone" class="bold-me">+1 786 376.22.22</h2>
-                <div class="spacer-end"></div>
-            </div>
-        </div>
-        <div class="the-form">
-            <?php /*/*echo do_shortcode( '[contact-form-7 id="5" title="Home - Contact form"]' ); */?>
-        </div>
-    </div>
-</section>-->
+  </div>
+</section>
 
   <?php get_footer(); ?>
 	</body>
