@@ -15,8 +15,8 @@ $theMeta = get_post_meta($headerPost[0]->ID);
     <div class="swiper-wrapper">
       <div class="swiper-slide menu">
         <ul class="mre-menu">
-          <li class="mre-menu-item"><a href="#">Sobre nosotros</a></li>
-          <li class="mre-menu-item" id="menu-projects"><a href="#">Proyectos</a></li>
+          <li class="mre-menu-item" id="menu-about"><a href="#">Sobre nosotros</a></li>
+          <li class="mre-menu-item"><a href="#">Proyectos</a></li>
           <li class="mre-menu-item"><a href="#">HR19 realty</a></li>
           <li class="mre-menu-item"><a href="#">Grupo MRE</a></li>
           <li class="mre-menu-item" id="menu-contact"><a href="#">Contáctanos</a></li>
