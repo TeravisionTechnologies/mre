@@ -64,6 +64,12 @@
   width: 81.25vw;
   height: 100%; }
 
+.no-padding {
+  padding: 0; }
+
+.no-margin {
+  margin: 0; }
+
 html, body {
   position: relative;
   height: 100%; }
@@ -339,6 +345,142 @@ body {
   z-index: 1;
   width: 6.52778vw;
   height: 2.91667vw; }
+
+#mre-about-us {
+  height: 55.55556vw;
+  background-size: cover;
+  text-align: center; }
+  #mre-about-us .about-us-title {
+    padding-top: 3.47222vw;
+    opacity: 0.6;
+    font-family: Montserrat-Regular, sans-serif;
+    font-size: 1.25vw;
+    color: #ffffff; }
+  #mre-about-us .about-us-sub-first {
+    padding-top: 0.69444vw;
+    font-size: 2.5vw;
+    line-height: 2.77778vw;
+    font-family: Montserrat-Regular, sans-serif;
+    color: #ffffff; }
+  #mre-about-us .about-us-sub-second {
+    font-size: 2.5vw;
+    line-height: 2.77778vw;
+    font-family: Montserrat-Bold, sans-serif;
+    color: #1f9aff; }
+  #mre-about-us .about-us-image {
+    margin: 2.77778vw 0 2.91667vw 0;
+    width: 9.72222vw;
+    height: 9.72222vw;
+    border-radius: 50%; }
+  #mre-about-us .about-us-text {
+    font-family: Montserrat-Regular, sans-serif;
+    font-size: 1.38889vw;
+    line-height: 1.94444vw;
+    color: white;
+    width: 53.26389vw;
+    margin: 0 auto; }
+  #mre-about-us .about-us-numbers {
+    list-style: none;
+    height: 9.72222vw;
+    padding: 2.77778vw 2.63889vw;
+    width: 67.36111vw;
+    margin: 3.47222vw auto 0;
+    border-radius: 1.25vw;
+    background-color: rgba(247, 247, 247, 0.1);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
+    #mre-about-us .about-us-numbers li {
+      display: inline-block;
+      width: 14.58333vw;
+      margin: 0 2.60417vw; }
+      #mre-about-us .about-us-numbers li .numbers {
+        font-size: 3.125vw;
+        line-height: 2.08333vw;
+        font-family: Montserrat-Bold, sans-serif;
+        color: #ffffff; }
+      #mre-about-us .about-us-numbers li .title {
+        font-size: 1.73611vw;
+        line-height: 2.08333vw;
+        font-family: Montserrat-Regular, sans-serif;
+        color: #ffffff; }
+
+#mre-partners {
+  height: 48.61111vw;
+  background: blue;
+  text-align: center;
+  position: relative; }
+  #mre-partners .overlay-left, #mre-partners .overlay-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  #mre-partners .overlay-left {
+    background: rgba(9, 118, 209, 0.85); }
+  #mre-partners .overlay-right {
+    background: rgba(0, 68, 126, 0.85); }
+  #mre-partners .partner-left, #mre-partners .partner-right {
+    height: 100%;
+    background-size: cover; }
+  #mre-partners .partners-title-first {
+    margin-top: 16.94444vw;
+    font-family: Montserrat-Regular, sans-serif;
+    font-size: 1.73611vw;
+    line-height: 2.08333vw;
+    color: #ffffff; }
+  #mre-partners .partners-title-second {
+    font-family: Montserrat-Bold, sans-serif;
+    font-size: 3.125vw;
+    line-height: 2.77778vw;
+    color: #ffffff;
+    margin: 0; }
+  #mre-partners .partner-left img {
+    width: 7.63889vw;
+    height: 8.125vw;
+    margin-top: 1.38889vw; }
+  #mre-partners .partner-right img {
+    width: 14.72222vw;
+    height: 4.93056vw;
+    margin-top: 2.98611vw; }
+
+#mre-offices {
+  height: 31.25vw;
+  background-size: cover; }
+  #mre-offices .swiper-container-flags {
+    height: 100%;
+    text-align: center; }
+  #mre-offices h4 {
+    margin: 6.25vw 0 2.77778vw 0;
+    font-family: Montserrat-Regular, sans-serif;
+    font-size: 2.5vw;
+    line-height: 2.77778vw;
+    color: #ffffff; }
+    #mre-offices h4 strong {
+      font-family: Montserrat-Bold, sans-serif; }
+  #mre-offices .flags-indicators .flag-image {
+    height: 4.16667vw;
+    margin: 0 1.38889vw 0.69444vw 1.38889vw;
+    width: 4.16667vw;
+    cursor: pointer; }
+  #mre-offices .flags-indicators .flag-image-opacity {
+    opacity: 0.6; }
+  #mre-offices .swiper-wrapper {
+    width: 100%; }
+    #mre-offices .swiper-wrapper .swiper-slide {
+      background: transparent;
+      margin: 0 auto;
+      height: 10.41667vw;
+      width: 100%; }
+      #mre-offices .swiper-wrapper .swiper-slide .office-detail {
+        width: 20.97222vw;
+        margin: 0 1.52778vw; }
+        #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
+          color: #ffffff;
+          font-family: Montserrat-Regular, sans-serif;
+          font-size: 1.11111vw;
+          line-height: 1.73611vw;
+          margin: 0; }
+        #mre-offices .swiper-wrapper .swiper-slide .office-detail span {
+          font-family: Montserrat-Bold, sans-serif; }
 
 #blog-list-categories {
   background: #303030;
@@ -1005,6 +1147,100 @@ body {
     width: 94px;
     height: 42px; }
 
+  #mre-about-us {
+    height: 800px; }
+    #mre-about-us .about-us-title {
+      padding-top: 50px;
+      opacity: 0.6;
+      font-size: 18px; }
+    #mre-about-us .about-us-sub-first {
+      padding-top: 10px;
+      font-size: 36px;
+      line-height: 40px; }
+    #mre-about-us .about-us-sub-second {
+      font-size: 36px;
+      line-height: 40px; }
+    #mre-about-us .about-us-image {
+      margin: 40px 0 30px 0;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%; }
+    #mre-about-us .about-us-text {
+      font-size: 20px;
+      line-height: 28px;
+      width: 767px;
+      margin: 0 auto; }
+    #mre-about-us .about-us-numbers {
+      height: 140px;
+      padding: 40px 38px;
+      width: 970px;
+      margin: 50px auto 0;
+      border-radius: 18px;
+      background-color: rgba(247, 247, 247, 0.1);
+      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
+      #mre-about-us .about-us-numbers li {
+        width: 210px;
+        margin: 0 37.5px; }
+        #mre-about-us .about-us-numbers li .numbers {
+          font-size: 45px;
+          line-height: 30px; }
+        #mre-about-us .about-us-numbers li .title {
+          font-size: 25px;
+          line-height: 30px; }
+
+  #mre-partners {
+    height: 700px; }
+    #mre-partners .overlay-left, #mre-partners .overlay-right {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+    #mre-partners .partner-left, #mre-partners .partner-right {
+      height: 100%; }
+    #mre-partners .partners-title-first {
+      margin-top: 244px;
+      font-size: 25px;
+      line-height: 30px; }
+    #mre-partners .partners-title-second {
+      font-size: 45px;
+      line-height: 40px; }
+    #mre-partners .partner-left img {
+      width: 110px;
+      height: 117px;
+      margin-top: 20px; }
+    #mre-partners .partner-right img {
+      width: 212px;
+      height: 71px;
+      margin-top: 43px; }
+
+  #mre-offices {
+    height: 450px; }
+    #mre-offices .swiper-container-flags {
+      height: 100%; }
+    #mre-offices h4 {
+      margin: 90px 0 40px 0;
+      font-size: 36px;
+      line-height: 40px; }
+    #mre-offices .flags-indicators .flag-image {
+      height: 60px;
+      margin: 0 20px 10px 20px;
+      width: 60px; }
+    #mre-offices .flags-indicators .flag-image-opacity {
+      opacity: 0.6; }
+    #mre-offices .swiper-wrapper {
+      width: 100%; }
+      #mre-offices .swiper-wrapper .swiper-slide {
+        margin: 0 auto;
+        height: 150px;
+        width: 100%; }
+        #mre-offices .swiper-wrapper .swiper-slide .office-detail {
+          width: 302px;
+          margin: 0 22px; }
+          #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
+            font-size: 16px;
+            line-height: 25px;
+            margin: 0; }
+
   #blog-list-categories {
     height: 343px; }
     #blog-list-categories .blog-list-category-title, #blog-list-categories .blog-list-category-text {
@@ -1491,6 +1727,100 @@ body {
     z-index: 1;
     width: 7.42188vw;
     height: 3.25521vw; }
+
+  #mre-about-us {
+    height: 90.625vw; }
+    #mre-about-us .about-us-title {
+      padding-top: 6.51042vw;
+      opacity: 0.6;
+      font-size: 1.82292vw; }
+    #mre-about-us .about-us-sub-first {
+      padding-top: 1.30208vw;
+      font-size: 3.125vw;
+      line-height: 3.77604vw; }
+    #mre-about-us .about-us-sub-second {
+      font-size: 3.125vw;
+      line-height: 3.77604vw; }
+    #mre-about-us .about-us-image {
+      margin: 5.20833vw 0 3.90625vw 0;
+      width: 15.625vw;
+      height: 15.625vw;
+      border-radius: 50%; }
+    #mre-about-us .about-us-text {
+      font-size: 1.82292vw;
+      line-height: 2.60417vw;
+      width: 63.54167vw;
+      margin: 0 auto; }
+    #mre-about-us .about-us-numbers {
+      height: 15.625vw;
+      padding: 3.90625vw 3.64583vw;
+      width: 85.67708vw;
+      margin: 6.51042vw auto 0;
+      border-radius: 2.34375vw;
+      background-color: rgba(247, 247, 247, 0.1);
+      box-shadow: 0 6px 1.30208vw 0 rgba(0, 0, 0, 0.3); }
+      #mre-about-us .about-us-numbers li {
+        width: 22.52604vw;
+        margin: 0 1.6276vw; }
+        #mre-about-us .about-us-numbers li .numbers {
+          font-size: 3.90625vw;
+          line-height: 3.90625vw; }
+        #mre-about-us .about-us-numbers li .title {
+          font-size: 2.86458vw;
+          line-height: 3.90625vw; }
+
+  #mre-partners {
+    height: 91.14583vw; }
+    #mre-partners .overlay-left, #mre-partners .overlay-right {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+    #mre-partners .partner-left, #mre-partners .partner-right {
+      height: 45.57292vw; }
+    #mre-partners .partners-title-first {
+      margin: 10.67708vw 0 0 0;
+      font-size: 2.60417vw;
+      line-height: 3.90625vw; }
+    #mre-partners .partners-title-second {
+      font-size: 4.55729vw;
+      line-height: 5.20833vw; }
+    #mre-partners .partner-left img {
+      width: 11.71875vw;
+      height: 12.5vw;
+      margin-top: 2.60417vw; }
+    #mre-partners .partner-right img {
+      width: 23.4375vw;
+      height: 7.55208vw;
+      margin-top: 5.07813vw; }
+
+  #mre-offices {
+    height: 52.08333vw; }
+    #mre-offices .swiper-container-flags {
+      height: 100%; }
+    #mre-offices h4 {
+      margin: 9.11458vw 0 5.20833vw 0;
+      font-size: 3.125vw;
+      line-height: 5.20833vw; }
+    #mre-offices .flags-indicators .flag-image {
+      height: 6.51042vw;
+      margin: 0 1.6276vw 1.30208vw 1.6276vw;
+      width: 6.51042vw; }
+    #mre-offices .flags-indicators .flag-image-opacity {
+      opacity: 0.6; }
+    #mre-offices .swiper-wrapper {
+      width: 100%; }
+      #mre-offices .swiper-wrapper .swiper-slide {
+        margin: 0 auto;
+        height: 15.625vw;
+        width: 100%; }
+        #mre-offices .swiper-wrapper .swiper-slide .office-detail {
+          width: 34.50521vw;
+          margin: 0 1.82292vw; }
+          #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
+            font-size: 1.82292vw;
+            line-height: 3.25521vw;
+            margin: 0; }
 
   #blog-list-categories {
     height: 29.94792vw; }
@@ -1979,6 +2309,101 @@ body {
     z-index: 1;
     width: 17.5vw;
     height: 7.77778vw; }
+
+  #mre-about-us {
+    height: 264.72222vw; }
+    #mre-about-us .about-us-title {
+      padding-top: 11.11111vw;
+      opacity: 0.6;
+      font-size: 3.33333vw; }
+    #mre-about-us .about-us-sub-first {
+      padding-top: 2.77778vw;
+      font-size: 5.55556vw;
+      line-height: 5.55556vw; }
+    #mre-about-us .about-us-sub-second {
+      font-size: 6.66667vw;
+      line-height: 6.66667vw; }
+    #mre-about-us .about-us-image {
+      margin: 11.11111vw 0 8.33333vw 0;
+      width: 27.77778vw;
+      height: 27.77778vw;
+      border-radius: 50%; }
+    #mre-about-us .about-us-text {
+      font-size: 3.33333vw;
+      line-height: 5.55556vw;
+      width: 71.66667vw;
+      margin: 0 auto; }
+    #mre-about-us .about-us-numbers {
+      height: 94.44444vw;
+      padding: 2.77778vw 6.66667vw 12.5vw 6.66667vw;
+      width: 86.11111vw;
+      margin: 13.88889vw auto 0;
+      border-radius: 5vw;
+      background-color: rgba(247, 247, 247, 0.1);
+      box-shadow: 0 6px 2.77778vw 0 rgba(0, 0, 0, 0.3); }
+      #mre-about-us .about-us-numbers li {
+        display: block;
+        width: 72.77778vw;
+        margin: 35px 0 0 0; }
+        #mre-about-us .about-us-numbers li .numbers {
+          font-size: 8.33333vw;
+          line-height: 8.33333vw; }
+        #mre-about-us .about-us-numbers li .title {
+          font-size: 6.66667vw;
+          line-height: 8.33333vw; }
+
+  #mre-partners {
+    height: 133.33333vw; }
+    #mre-partners .overlay-left, #mre-partners .overlay-right {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+    #mre-partners .partner-left, #mre-partners .partner-right {
+      height: 66.66667vw; }
+    #mre-partners .partners-title-first {
+      margin: 14.44444vw 0 0 0;
+      font-size: 4.16667vw;
+      line-height: 5.55556vw; }
+    #mre-partners .partners-title-second {
+      font-size: 6.94444vw;
+      line-height: 8.33333vw; }
+    #mre-partners .partner-left img {
+      width: 19.44444vw;
+      height: 20.55556vw;
+      margin-top: 2.77778vw; }
+    #mre-partners .partner-right img {
+      width: 33.33333vw;
+      height: 10.55556vw;
+      margin-top: 7.77778vw; }
+
+  #mre-offices {
+    height: 111.11111vw; }
+    #mre-offices .swiper-container-flags {
+      height: 100%; }
+    #mre-offices h4 {
+      margin: 14.16667vw 0 11.11111vw 0;
+      font-size: 6.11111vw;
+      line-height: 5.55556vw; }
+    #mre-offices .flags-indicators .flag-image {
+      height: 11.94444vw;
+      margin: 0 2.91667vw 2.77778vw 2.91667vw;
+      width: 11.94444vw; }
+    #mre-offices .flags-indicators .flag-image-opacity {
+      opacity: 0.6; }
+    #mre-offices .swiper-wrapper {
+      width: 100%; }
+      #mre-offices .swiper-wrapper .swiper-slide {
+        margin: 0 auto;
+        height: 50vw;
+        width: 100%; }
+        #mre-offices .swiper-wrapper .swiper-slide .office-detail {
+          width: 71.11111vw;
+          margin: 0 14.44444vw 1.38889vw 14.44444vw; }
+          #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
+            font-size: 3.33333vw;
+            line-height: 5.55556vw;
+            margin: 0; }
 
   #blog-list-categories {
     height: 70.55556vw; }

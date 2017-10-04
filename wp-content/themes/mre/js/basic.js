@@ -44,6 +44,34 @@ jQuery(document).ready(function() {
     $(this).css('opacity', 1);
   });
 
+  // Add Swiper Flags
+  var swiperFlag = new Swiper('.swiper-container-flags', {
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    initialSlide: 1
+  });
+
+  // Adding Swiper functionality to flags
+  $('.flag-image').on('click', function () {
+    var index = $(this).data('pagination');
+    swiperFlag.slideTo(index - 1);
+    if (index == 1) {
+      $('#flag-image-1').removeClass('flag-image-opacity');
+      $('#flag-image-2').addClass('flag-image-opacity');
+      $('#flag-image-3').addClass('flag-image-opacity');
+    }
+    else if(index == 2) {
+      $('#flag-image-1').addClass('flag-image-opacity');
+      $('#flag-image-2').removeClass('flag-image-opacity');
+      $('#flag-image-3').addClass('flag-image-opacity');
+    }
+    else {
+      $('#flag-image-1').addClass('flag-image-opacity');
+      $('#flag-image-2').addClass('flag-image-opacity');
+      $('#flag-image-3').removeClass('flag-image-opacity');
+    }
+  });
+
 
     // Declaring the global scroll of the html to use in further functions
     //var globalScroll = jQuery('body,html');

@@ -2,6 +2,12 @@
 .container-mre
   width: get-vw-desktop(1170px)
   height: 100%
+
+.no-padding
+  padding: 0
+
+.no-margin
+  margin: 0
 // END General
 
 // Swiper General
@@ -285,73 +291,152 @@ body
     height: get-vw-desktop(42px)
 // END Header
 
-
-
-
-//*
-  margin: 0
-  padding: 0
-  border: none
-  outline: none
-//body
-  font-size: 0.9722222222222222vw
-  color: $light-grey
-  line-height: 1.25
-  letter-spacing: -0.1px
-  font-weight: normal
-  background: $white
+// About Us
+#mre-about-us
+  height: get-vw-desktop(800px)
   background-size: cover
-  background-repeat: no-repeat
-  background-position: center top
-  -webkit-font-smoothing: antialiased
-//a
-  text-decoration: none
-  cursor: pointer
-//h1, h2, h3, h4, h5, h6
+  text-align: center
+  .about-us-title
+    padding-top: get-vw-desktop(50px)
+    opacity: 0.6
+    font-family: Montserrat-Regular, sans-serif
+    font-size: get-vw-desktop(18px)
+    color: $white
+  .about-us-sub-first
+    padding-top: get-vw-desktop(10px)
+    font-size: get-vw-desktop(36px)
+    line-height: get-vw-desktop(40px)
+    font-family: Montserrat-Regular, sans-serif
+    color: $white
+  .about-us-sub-second
+    font-size: get-vw-desktop(36px)
+    line-height: get-vw-desktop(40px)
+    font-family: Montserrat-Bold, sans-serif
+    color: $lighter-blue-2
+  .about-us-image
+    margin: get-vw-desktop(40px) 0 get-vw-desktop(42px) 0
+    width: get-vw-desktop(140px)
+    height: get-vw-desktop(140px)
+    border-radius: 50%
+  .about-us-text
+    font-family: Montserrat-Regular, sans-serif
+    font-size: get-vw-desktop(20px)
+    line-height: get-vw-desktop(28px)
+    color: white
+    width: get-vw-desktop(767px)
+    margin: 0 auto
+  .about-us-numbers
+    list-style: none
+    height: get-vw-desktop(140px)
+    padding: get-vw-desktop(40px) get-vw-desktop(38px)
+    width: get-vw-desktop(970px)
+    margin: get-vw-desktop(50px) auto 0
+    border-radius: get-vw-desktop(18px)
+    background-color: rgba(247, 247, 247, 0.1)
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3)
+    li
+      display: inline-block
+      width: get-vw-desktop(210px)
+      margin: 0 get-vw-desktop(37.5px)
+      .numbers
+        font-size: get-vw-desktop(45px)
+        line-height: get-vw-desktop(30px)
+        font-family: Montserrat-Bold, sans-serif
+        color: $white
+      .title
+        font-size: get-vw-desktop(25px)
+        line-height: get-vw-desktop(30px)
+        font-family: Montserrat-Regular, sans-serif
+        color: $white
+// END About Us
+
+// Partners
+#mre-partners
+  height: get-vw-desktop(700px)
+  background: blue
+  text-align: center
   position: relative
-  font-family: 'Montserrat-Regular', sans-serif
-  font-weight: normal
-  margin: 0
-  color: $white
-  background: none
-  line-height: 1.25
-  letter-spacing: -0.1px
-//p
-  position: relative
-  line-height: 1.25
-  letter-spacing: -0.1px
-//input, button, select, textarea
-  font-family: 'Montserrat-Regular', sans-serif
-//.visible-desktop
-  display: block !important
-//.visible-mobile
-  display: none !important
-//header
-  .container
-    height: 5.55vw
-    background-color: $white
-    position: fixed
-    padding: 0 9.375vw
-    z-index: 99
-    height: 5.55vw
-    .center-header
-      margin-top: 0.83vw
-      .header-logo
-        img
-          height: 3.81vw
-          width: 10.97vw
-      #bs-header-navbar
-        ul
-          li
-            a
-              color: $grey
-      #bs-header-navbar li + li:after
-        content: '.'
-        top: 8px
-        position: absolute
-        font-size: 20px
-      #bs-header-navbar li:last-child:after
-        content: ''
+  .overlay-left, .overlay-right
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+  .overlay-left
+    background: rgba(9, 118, 209, 0.85)
+  .overlay-right
+    background: rgba(0, 68, 126, 0.85)
+  .partner-left, .partner-right
+    height: 100%
+    background-size: cover
+  .partners-title-first
+    margin-top: get-vw-desktop(244px)
+    font-family: Montserrat-Regular, sans-serif
+    font-size: get-vw-desktop(25px)
+    line-height: get-vw-desktop(30px)
+    color: $white
+  .partners-title-second
+    font-family: Montserrat-Bold, sans-serif
+    font-size: get-vw-desktop(45px)
+    line-height: get-vw-desktop(40px)
+    color: $white
+    margin: 0
+  .partner-left
+    img
+      width: get-vw-desktop(110px)
+      height: get-vw-desktop(117px)
+      margin-top: get-vw-desktop(20px)
+  .partner-right
+    img
+      width: get-vw-desktop(212px)
+      height: get-vw-desktop(71px)
+      margin-top: get-vw-desktop(43px)
+// END Partners
+
+// Offices
+#mre-offices
+  height: get-vw-desktop(450px)
+  background-size: cover
+  .swiper-container-flags
+    height: 100%
+    text-align: center
+  h4
+    margin: get-vw-desktop(90px) 0 get-vw-desktop(40px) 0
+    font-family: Montserrat-Regular, sans-serif
+    font-size: get-vw-desktop(36px)
+    line-height: get-vw-desktop(40px)
+    color: $white
+    strong
+      font-family: Montserrat-Bold, sans-serif
+  .flags-indicators
+    .flag-image
+      height: get-vw-desktop(60px)
+      margin: 0 get-vw-desktop(20px) get-vw-desktop(10px) get-vw-desktop(20px)
+      width: get-vw-desktop(60px)
+      cursor: pointer
+    .flag-image-opacity
+      opacity: .6
+  .swiper-wrapper
+    width: 100%
+    .swiper-slide
+      background: transparent
+      margin: 0 auto
+      height: get-vw-desktop(150px)
+      width: 100%
+      .office-detail
+        width: get-vw-desktop(302px)
+        margin: 0 get-vw-desktop(22px)
+        h5
+          color: $white
+          font-family: Montserrat-Regular, sans-serif
+          font-size: get-vw-desktop(16px)
+          line-height: get-vw-desktop(25px)
+          margin: 0
+        span
+          font-family: Montserrat-Bold, sans-serif
+// END Offices
+
+
 //footer
   height: 18.958333333333332vw
   div
