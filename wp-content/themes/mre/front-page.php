@@ -182,85 +182,24 @@ $theMeta = get_post_meta($headerPost[0]->ID);
     </div>
   </div>
 </section>
-
-
-<!--<section id="before-contact-us">
-    <div id="offices" class="swiper-container">
-        <div class="flags-indicators">
-            <img data-pagination="1" src="<?php /*/*echo get_template_directory_uri(); */?>/assets/ven_flag.svg" />
-            <img data-pagination="2" src="<?php /*/*echo get_template_directory_uri(); */?>/assets/usa_flag.svg" />
-            <img data-pagination="3" src="<?php /*/*echo get_template_directory_uri(); */?>/assets/spain_flag.svg" />
+<section id="contact-us" class="col-xs-12 al-contact-div" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/contact-us-bg.png"')">
+  <div class="container-mre center-block">
+    <div class="row">
+      <p class="col-xs-12 text-center al-contact-text">Nos gustaría asesorarte en tu próxima inversión</p>
+      <p class="col-xs-12 text-center al-contact-text-bold">¡Contáctanos!</p>
+      <div class="col-xs-12 col-md-4 no-padding">
+        <div class="al-phone-box text-center center-block">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.png" alt="Llamanos Ala19">
+          <p>Llámanos para asesoría <strong>Inmediata</strong></p>
+          <a href="tel:+17863762222" class="al-phone-num">+1786 376.22.22</a>
         </div>
-        <h4>Puedes encontrar Nuestras Oficinas en:</h4>
-
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="office-detail">
-                    <h5>
-                        <span>Caracas:</span>
-                    </h5>
-                    <h5>Centro Empresarial Parque Humboldt</h5>
-                    <h5>Piso 19, Oficinas 19-05 / 19-06</h5>
-                    <h5>Teléfonos: +58 212 975 39 40 / 212 975 41 651</h5>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="office-detail usa-office">
-                    <h5>
-                        <span>Orlando:</span>
-                    </h5>
-                    <h5>2295 S. Hiawassee Road, Suite 407E</h5>
-                    <h5>Orlando, Florida</h5>
-                    <h5>Teléfonos: +1 407 255.08.71</h5>
-                </div>
-                <div class="office-detail usa-office">
-                    <h5>
-                        <span>Miami:</span>
-                    </h5>
-                    <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
-                    <h5>Miami, Florida</h5>
-                    <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="office-detail">
-                    <h5>
-                        <span>Madrid:</span>
-                    </h5>
-                    <h5>Calle Ortega y Gasset #6</h5>
-                    <h5>Primero Izquierda</h5>
-                    <h5>Sample: +34 605 816 803</h5>
-                </div>
-            </div>
-        </div>
-
-        <div class="swiper-pagination"></div>
+      </div>
+      <div class="col-xs-12 col-md-8 al-contact-form-div no-padding">
+        <?php echo do_shortcode( '[contact-form-7 id="4" title="Home - Contact form"]' ); ?>
+      </div>
     </div>
-</section>-->
-
-<!--<section id="contact-us">
-    <div class="spacer initial"></div>
-    <h1 class="title">Nos gustaría asesorarte
-        <span class="first">en tu próxima inversión</span>
-        <span class="last">¡Contáctanos!</span>
-    </h1>
-    <div class="spacer"></div>
-    <div class="inner-section">
-        <div class="form-errors"></div>
-        <div class="call-us">
-            <div class="content">
-                <div class="spacer-before-image"></div>
-                <img src="<?php /*/*echo get_template_directory_uri(); */?>/assets/d-iconphone.svg" />
-                <h2 id="advice-call">Llámenos para asesoría <span class="bold-me">Inmediata</span></h2>
-                <h2 id="contact-phone" class="bold-me">+1 786 376.22.22</h2>
-                <div class="spacer-end"></div>
-            </div>
-        </div>
-        <div class="the-form">
-            <?php /*/*echo do_shortcode( '[contact-form-7 id="5" title="Home - Contact form"]' ); */?>
-        </div>
-    </div>
-</section>-->
+  </div>
+</section>
 
   <?php get_footer(); ?>
 	</body>

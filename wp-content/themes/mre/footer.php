@@ -6,7 +6,7 @@
   );
   $theMeta = get_post_meta($footerPost[0]->ID);
 ?>
-    <footer id="mre-footer">
+    <footer id="mre-footer" class="col-xs-12">
       <div class="mre-footer-elements">
         <a href="/">
           <img src="<?php echo $theMeta['_hf_logo'][0] ?>" class="mre-footer-logo"/>
