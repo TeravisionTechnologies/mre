@@ -122,9 +122,17 @@ jQuery(document).ready(function() {
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
     if (scroll > 900)  {
-      $('.mre-footer-go-top').css('display', 'block');
+      $('.mre-footer-go-top').css({
+        'opacity' : '1',
+        'transition' : 'visibility 0s, opacity 0.5s ease',
+        'visibility' : 'visible'
+      });
     } else {
-      $('.mre-footer-go-top').css('display', 'none');
+      $('.mre-footer-go-top').css({
+        'opacity' : '0',
+        'transition' : 'visibility 1s, opacity 0.5s ease',
+        'visibility' : 'hidden'
+      });
     }
   });
 

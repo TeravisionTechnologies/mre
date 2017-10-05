@@ -115,14 +115,14 @@ $theMeta = get_post_meta($headerPost[0]->ID);
   </ul>
 </section>
 <section id="mre-partners" class="container-fluid no-padding">
-  <div class="col-xs-12 col-md-6 partner-left" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-1.jpg');">
+  <div class="col-xs-12 col-md-6 partner-left" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/partner-ala19.jpg');">
     <div class="overlay-left">
       <h3 class="partners-title-first">Proyectos inmobiliarios</h3>
       <h2 class="partners-title-second">EXCLUSIVOS</h2>
       <img src="<?php echo get_template_directory_uri(); ?>/assets/logo-ala19.png">
     </div>
   </div>
-  <div class="col-xs-12 col-md-6 partner-right" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-2.jpg');">
+  <div class="col-xs-12 col-md-6 partner-right" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/partner-hr19.jpg');">
     <div class="overlay-right">
       <h3 class="partners-title-first">Encuentra la propiedad</h3>
       <h2 class="partners-title-second">PERFECTA PARA TI</h2>
@@ -189,7 +189,7 @@ $theMeta = get_post_meta($headerPost[0]->ID);
         <div class="al-phone-box text-center center-block">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.png" alt="Llamanos Ala19">
           <p>Llámanos para asesoría <strong>Inmediata</strong></p>
-          <a href="tel:+17863762222" class="al-phone-num">+1786 477.50.91</a>
+          <a href="tel:+17864775091" class="al-phone-num">+1786 477.50.91</a>
         </div>
       </div>
       <div class="col-xs-12 col-md-8 al-contact-form-div no-padding">

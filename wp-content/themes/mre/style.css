@@ -628,9 +628,10 @@ a.al-phone-num {
       line-height: 1.38889vw;
       text-decoration: underline; }
   #mre-footer .mre-footer-go-top {
-    display: none;
+    visibility: hidden;
     cursor: pointer;
     position: fixed;
+    opacity: 0;
     right: 9.72222vw;
     bottom: 9.93056vw;
     z-index: 1; }
@@ -2022,14 +2023,18 @@ a.al-phone-num {
     #mre-partners .partners-title-second {
       font-size: 4.55729vw;
       line-height: 5.20833vw; }
-    #mre-partners .partner-left img {
-      width: 23.4375vw;
-      height: 7.55208vw;
-      margin-top: 5.07813vw; }
-    #mre-partners .partner-right img {
-      width: 11.71875vw;
-      height: 12.5vw;
-      margin-top: 2.60417vw; }
+    #mre-partners .partner-left {
+      background-position: bottom; }
+      #mre-partners .partner-left img {
+        width: 23.4375vw;
+        height: 7.55208vw;
+        margin-top: 5.07813vw; }
+    #mre-partners .partner-right {
+      background-position: center; }
+      #mre-partners .partner-right img {
+        width: 11.71875vw;
+        height: 12.5vw;
+        margin-top: 2.60417vw; }
 
   #mre-offices {
     height: 52.08333vw; }
@@ -2698,14 +2703,18 @@ a.al-phone-num {
     #mre-partners .partners-title-second {
       font-size: 6.94444vw;
       line-height: 8.33333vw; }
-    #mre-partners .partner-left img {
-      width: 33.33333vw;
-      height: 10.55556vw;
-      margin-top: 7.77778vw; }
-    #mre-partners .partner-right img {
-      width: 19.44444vw;
-      height: 20.55556vw;
-      margin-top: 2.77778vw; }
+    #mre-partners .partner-left {
+      background-position: bottom; }
+      #mre-partners .partner-left img {
+        width: 33.33333vw;
+        height: 10.55556vw;
+        margin-top: 7.77778vw; }
+    #mre-partners .partner-right {
+      background-position: center; }
+      #mre-partners .partner-right img {
+        width: 19.44444vw;
+        height: 20.55556vw;
+        margin-top: 2.77778vw; }
 
   #mre-offices {
     height: 111.11111vw; }
