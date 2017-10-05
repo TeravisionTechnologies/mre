@@ -9,8 +9,9 @@ p
 .memory-items
   padding: 0 100px
 
-.memory-items img
-  margin: 40px 0
+.memory-items
+  img
+    margin: 40px 0
 
 ul, ol
   font-family: "Archivo", sans-serif
@@ -43,6 +44,7 @@ ul, ol
   float: left
 
 .prop-header
+  margin-top: 88px
   height: 600px
   position: relative
   margin-bottom: 40px
@@ -156,30 +158,37 @@ ul, ol
 .blueprint-img
   border: solid 1px #7f8182
 
-.gallery-thumbs .swiper-slide
-  width: 25%
-  height: 100%
-  opacity: 0.4
+.gallery-thumbs
+  .swiper-slide
+    width: 25%
+    height: 100%
+    opacity: 0.4
 
 .gallery-thumbs .swiper-slide-active
   opacity: 1
 
-.modal-detail .modal-body
-  padding: 0
+.modal-detail
+  .modal-body
+    padding: 0
 
-.modal-detail .modal-content
-  border-radius: 0
-  background-color: transparent
+.modal-detail
+  .modal-content
+    border-radius: 0
+    background-color: transparent
 
-.modal-detail .close
-  opacity: 1
-  padding: 20px 5px
+.modal-detail
+  .close
+    opacity: 1
+    padding: 20px 5px
 
-.modal-detail .close .fa
-  color: #fff
+.modal-detail
+  .close
+    .fa
+      color: #fff
 
-.modal-backdrop.in
-  opacity: 0.9 !important
+.modal-backdrop
+  .in
+    opacity: 0.9 !important
 
 .btn-planos
   width: 216px
@@ -195,9 +204,10 @@ ul, ol
   margin: 0 auto
   display: block
 
-.btn-planos:hover
-  text-decoration: none
-  color: #000000
+.btn-planos
+  &hover
+    text-decoration: none
+    color: #000000
 
 /*.nearby
   position: relative

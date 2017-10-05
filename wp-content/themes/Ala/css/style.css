@@ -1616,6 +1616,7 @@ ul, ol {
   float: left; }
 
 .prop-header {
+  margin-top: 88px;
   height: 600px;
   position: relative;
   margin-bottom: 40px;
@@ -1750,7 +1751,7 @@ ul, ol {
 .modal-detail .close .fa {
   color: #fff; }
 
-.modal-backdrop.in {
+.modal-backdrop .in {
   opacity: 0.9 !important; }
 
 .btn-planos {
@@ -1767,7 +1768,7 @@ ul, ol {
   margin: 0 auto;
   display: block; }
 
-.btn-planos:hover {
+.btn-planoshover {
   text-decoration: none;
   color: #000000; }
 
