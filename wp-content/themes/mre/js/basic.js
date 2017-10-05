@@ -90,6 +90,11 @@ jQuery(document).ready(function() {
         slidesPerView: 1,
         spaceBetween: 0,
       },
+    },
+    onSlideChangeEnd: function (swiper) {
+      $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
+      $('.swiper-slide').find('div').addClass('swiper-overlay');
+      $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
     }
   });
   $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));

@@ -692,7 +692,7 @@ a.al-phone-num {
 .blog-list-triangle {
   left: 50%;
   position: relative;
-  top: -1px;
+  top: -3px;
   transform: translateX(-50%); }
 
 #blog-list {
@@ -1534,7 +1534,7 @@ a.al-phone-num {
 
   .blog-list-triangle {
     left: 50%;
-    top: -1px;
+    top: -3px;
     transform: translateX(-50%); }
 
   #blog-list .input-group {
@@ -2208,7 +2208,7 @@ a.al-phone-num {
       #blog-list-categories .swiper-container-blog-categories .swiper-button-prev, #blog-list-categories .swiper-container-blog-categories .swiper-button-next {
         font-size: 2.86458vw;
         height: 2.86458vw;
-        top: 63%;
+        top: 66%;
         width: 3.64583vw; }
       #blog-list-categories .swiper-container-blog-categories .swiper-button-prev {
         left: 13.02083vw; }
@@ -2218,14 +2218,14 @@ a.al-phone-num {
   .blog-list-triangle {
     height: 1.82292vw;
     left: 50%;
-    top: -1px;
+    top: -6px;
     transform: translateX(-50%);
-    width: 3.51563vw; }
+    width: 2.60417vw; }
 
   #blog-list .input-group {
     border-bottom: 2px solid rgba(74, 74, 74, 0.4);
     display: table;
-    height: 5.20833vw;
+    height: 4.94792vw;
     margin-top: 8.20313vw;
     width: 59.50521vw; }
     #blog-list .input-group i {
@@ -2233,7 +2233,7 @@ a.al-phone-num {
       padding-left: 1.43229vw;
       padding-top: 1.04167vw;
       width: 2.21354vw;
-      font-size: 2.21354vw; }
+      font-size: 2.34375vw; }
     #blog-list .input-group input[type="text"] {
       font-size: 2.08333vw;
       height: 4.94792vw;
@@ -2270,7 +2270,7 @@ a.al-phone-num {
       padding: 2.60417vw 3.25521vw 0 3.25521vw; }
       #blog-list .blog-post .blog-text .blog-text-title {
         font-size: 1.82292vw;
-        line-height: 3.125vw; }
+        line-height: 2.34375vw; }
       #blog-list .blog-post .blog-text .blog-text-author {
         font-size: 1.43229vw;
         line-height: 2.60417vw;
@@ -2305,7 +2305,7 @@ a.al-phone-num {
       text-align: center; }
     #blog-recommended-posts .swiper-container-blog-most-viewed {
       height: 26.82292vw;
-      margin-bottom: 71px;
+      margin-bottom: 9.24479vw;
       margin-top: 3.90625vw;
       width: 70.70313vw; }
       #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide {
@@ -2328,7 +2328,7 @@ a.al-phone-num {
             line-height: 2.34375vw; }
           #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text .blog-most-viewed-text-author {
             font-size: 1.43229vw;
-            line-height: 1.7vw;
+            line-height: 1.69271vw;
             opacity: 0.5;
             width: 24.73958vw; }
             #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text .blog-most-viewed-text-author .blog-most-viewed-text-date, #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text .blog-most-viewed-text-author .blog-most-viewed-text-comments {
@@ -2336,7 +2336,7 @@ a.al-phone-num {
       #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-prev, #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-next {
         font-size: 3.64583vw;
         height: 3.64583vw;
-        top: 56%;
+        top: 61%;
         width: 2.60417vw; }
       #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-prev {
         left: 7.8125vw; }
