@@ -78,10 +78,10 @@ jQuery(document).ready(function() {
     slidesPerView: 5,
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
-    spaceBetween: 0,
+    spaceBetween: 32,
     centeredSlides: true,
     loop: true,
-    loopSlides: 5,
+    nested: true,
     breakpoints: {
       1023: {
         spaceBetween: 19,
