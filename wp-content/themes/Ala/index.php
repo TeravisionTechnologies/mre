@@ -1,15 +1,6 @@
 <?php
-    /**
-     *  Created by PhpStorm.
-     *  User: mtoledo
-     *  Date: 3/8/17
-     *  Time: 8:19 AM
-     **/
-
     get_header();
-?>
 
-<?php
   $footer_query = get_posts(
     array(
       'post_type' => 'header_footer'
@@ -25,6 +16,43 @@
     )
   );
 ?>
+  <div class="swiper-container swiper-container-hero">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/spain-1.jpg');">
+        <div class="slide-overlay"></div>
+        <div class="slide-text">
+          <h2>Madrid</h2>
+        </div>
+      </div>
+      <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/spain-2.jpg');">
+        <div class="slide-overlay"></div>
+        <div class="slide-text">
+          <h2>Madrid</h2>
+        </div>
+      </div>
+      <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/spain-3.jpg');">
+        <div class="slide-overlay"></div>
+        <div class="slide-text">
+          <h2>Madrid</h2>
+        </div>
+      </div>
+      <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/vegas-1.jpg');">
+        <div class="slide-overlay"></div>
+        <div class="slide-text">
+          <h2>Las Vegas</h2>
+        </div>
+      </div>
+    </div>
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/al-hero-left.png" alt="Hero Left Arrow" class="swiper-button-prev">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/al-hero-right.png" alt="Hero Right Arrow" class="swiper-button-next">
+  </div>
+<section class="col-xs-12 al-projects">
+  <div class="container center-block al-project-list">
+    <span class="al-project-list-item"><h2 class="item-text">Proyectos pasados</h2><img class="triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.svg"></span>
+    <span class="al-project-list-item"><h2 class="item-text item-active">Proyectos actuales</h2><img class="triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.svg"></span>
+    <span class="al-project-list-item"><h2 class="item-text">Muy pronto</h2><img class="triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.svg"></span>
+  </div>
+</section>
 <div class="col-xs-12 al-properties-section text-center">
   <div class="container no-padding container-properties">
     <div class="center-block">
@@ -40,7 +68,7 @@
       </select>
     </div>
     <div class="col-xs-12 properties-list no-padding">
-      <?php foreach($properties_list as $property){ 
+      <?php foreach($properties_list as $property){
       	$property_info = get_post_meta($property->ID);
       	$background_image = array_pop(unserialize($property_info["_br_images"][0]));
       ?>
@@ -118,6 +146,23 @@
     </div>
   </div>
 </div>
+  <div id="contact-us" class="col-xs-12 al-contact-div" style="background-image: url('<?php echo $footer_info['_hf_contact'][0] ?>')">
+    <div class="container">
+      <div class="row">
+        <p class="col-xs-12 text-center al-contact-text">Nos gustaría asesorarte en tu próxima inversión</p>
+        <p class="col-xs-12 text-center al-contact-text-bold">¡Contáctanos!</p>
+        <div class="col-xs-12 col-md-4">
+          <div class="al-phone-box text-center center-block">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.png" alt="Llamanos Ala19">
+            <p>Llámanos para asesoría <b>inmediata</b></p>
+            <a href="tel:+17863762222" class="al-phone-num">+1786 376.22.22</a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-8 al-contact-form-div">
+          <?php echo do_shortcode( '[contact-form-7 id="4" title="Home - Contact form"]' ); ?>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <?php get_footer(); ?>
-
