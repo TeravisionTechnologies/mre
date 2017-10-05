@@ -26,6 +26,9 @@ $footer_info = get_post_meta($footer_query[0]->ID);
       var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
     </script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/basic.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH6eKdzSWQ0bic1EiZCzkbhqMqEzYd3eQ&callback=initMap">
+    </script>
     <?php wp_enqueue_script("jquery"); ?>
   </body>
 </html>
