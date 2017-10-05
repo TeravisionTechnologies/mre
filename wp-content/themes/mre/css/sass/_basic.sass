@@ -23,18 +23,14 @@ body
   margin: 0
   padding: 0
 
-.swiper-container
+.swiper-container-menu
   width: 100%
-  height: get-vw-desktop(960px)
+  height: auto
 
 .swiper-slide
-  text-align: center
   font-size: get-vw-desktop(18px)
   background: $white
-  display: -webkit-box
-  display: -ms-flexbox
-  display: -webkit-flex
-  display: flex
+  display: block
   -webkit-box-pack: center
   -ms-flex-pack: center
   -webkit-justify-content: center
@@ -48,7 +44,7 @@ body
   min-width: get-vw-desktop(100px)
   width: 70%
   max-width: get-vw-desktop(320px)
-  height: auto
+  height: get-vw-desktop(960px)
   background: rgba(255, 255, 255, 0.95)
   position: relative
   .mre-menu
@@ -101,6 +97,7 @@ body
     position: absolute
     bottom: 0
     width: 100%
+    left: 0
     .menu-social-icons
       list-style: none
       font-size: get-vw-desktop(22px)
@@ -241,6 +238,7 @@ body
     position: relative
     padding-top: get-vw-desktop(80px)
     .swiper-slide
+      height: get-vw-desktop(880px)
       background-size: cover
       position: relative
       .slide-overlay
@@ -248,6 +246,7 @@ body
         width: 100%
         height: 100%
         background: rgba(0, 0, 0, 0.4)
+        left: 0
       .slide-text
         position: absolute
         top: get-vw-desktop(315px)
@@ -297,24 +296,12 @@ body
   background-size: cover
   text-align: center
   .about-us-title
-    padding-top: get-vw-desktop(50px)
-    opacity: 0.6
-    font-family: Montserrat-Regular, sans-serif
-    font-size: get-vw-desktop(18px)
-    color: $white
-  .about-us-sub-first
-    padding-top: get-vw-desktop(10px)
-    font-size: get-vw-desktop(36px)
-    line-height: get-vw-desktop(40px)
-    font-family: Montserrat-Regular, sans-serif
-    color: $white
-  .about-us-sub-second
     font-size: get-vw-desktop(36px)
     line-height: get-vw-desktop(40px)
     font-family: Montserrat-Bold, sans-serif
     color: $lighter-blue-2
   .about-us-image
-    margin: get-vw-desktop(40px) 0 get-vw-desktop(42px) 0
+    margin: get-vw-desktop(115px) 0 get-vw-desktop(40px) 0
     width: get-vw-desktop(140px)
     height: get-vw-desktop(140px)
     border-radius: 50%
@@ -324,7 +311,7 @@ body
     line-height: get-vw-desktop(28px)
     color: white
     width: get-vw-desktop(767px)
-    margin: 0 auto
+    margin: get-vw-desktop(20px) auto 0 auto
   .about-us-numbers
     list-style: none
     height: get-vw-desktop(140px)
@@ -383,14 +370,14 @@ body
     margin: 0
   .partner-left
     img
-      width: get-vw-desktop(110px)
-      height: get-vw-desktop(117px)
-      margin-top: get-vw-desktop(20px)
-  .partner-right
-    img
       width: get-vw-desktop(212px)
       height: get-vw-desktop(71px)
       margin-top: get-vw-desktop(43px)
+  .partner-right
+    img
+      width: get-vw-desktop(110px)
+      height: get-vw-desktop(117px)
+      margin-top: get-vw-desktop(20px)
 // END Partners
 
 // Offices
@@ -424,7 +411,8 @@ body
       height: get-vw-desktop(150px)
       width: 100%
       .office-detail
-        width: get-vw-desktop(302px)
+        display: inline-block
+        width: get-vw-desktop(370px)
         margin: 0 get-vw-desktop(22px)
         h5
           color: $white
@@ -437,6 +425,137 @@ body
 // END Offices
 
 // Contact Us
+.screen-reader-response
+  display: none
+
+.wpcf7-response-output
+  top: get-vw-desktop(-25px)
+  left: get-vw-desktop(30px)
+  position: absolute
+
+.al-contact-div
+  height: auto
+  background-repeat: no-repeat
+  background-position-y: bottom
+  background-size: cover
+.al-contact-text
+  color: $white
+  font-size: get-vw-desktop(36px)
+  margin-top: get-vw-desktop(60px)
+  line-height: get-vw-desktop(46px)
+  margin-bottom: get-vw-desktop(3px)
+  font-family: Montserrat-Regular, sans-serif
+.al-contact-text-bold
+  color: $white
+  font-size: get-vw-desktop(36px)
+  line-height: get-vw-desktop(46px)
+  font-family: Montserrat-Bold, sans-serif
+  margin: 0
+
+.al-phone-box
+  border-radius: get-vw-desktop(18px)
+  max-width: get-vw-desktop(361px)
+  max-height: get-vw-desktop(272px)
+  margin-top: get-vw-desktop(40px)
+  padding: get-vw-desktop(40px) get-vw-desktop(34px)
+  background-color: $lighter-blue-2
+  box-shadow: 0 1px get-vw-desktop(10px) 0 rgba($black, 0.3)
+  -moz-box-shadow: 0 1px get-vw-desktop(10px) 0 rgba($black, 0.3)
+  -webkit-box-shadow: 0 1px get-vw-desktop(10px) 0 rgba($black, 0.3)
+  img
+    width: get-vw-desktop(72px)
+    height: get-vw-desktop(64px)
+  p
+    color: $dark-blue
+    padding-top: get-vw-desktop(10px)
+    line-height: get-vw-desktop(34px)
+    font-size: get-vw-desktop(24px)
+    padding-bottom: get-vw-desktop(20px)
+    font-family: Montserrat-Regular, sans-serif
+    strong
+      font-family: Montserrat-Bold, sans-serif
+
+a.al-phone-num
+  color: $dark-blue
+  cursor: pointer
+  font-size: get-vw-desktop(36px)
+  line-height: get-vw-desktop(30px)
+  font-family: Montserrat-Black, sans-serif
+  &:hover
+    text-decoration: none
+
+.al-contact-form-div
+  margin-top: get-vw-desktop(40px)
+  display: inline-block
+
+.flag-image-opacity
+  opacity: .6
+
+.wpcf7-form-control-wrap
+  margin-bottom: get-vw-desktop(20px)
+
+.wpcf7-form
+  p
+    margin-right: get-vw-desktop(20px)
+    display: inline-block
+  input[type="text"], input[type="email"], input[type="tel"], select
+    width: 100%
+    height: get-vw-desktop(48px)
+    color: $white-3
+    padding: 0 get-vw-desktop(23px)
+    font-size: get-vw-desktop(16px)
+    line-height: get-vw-desktop(16px)
+    border-radius: get-vw-desktop(4px)
+    display: inline-block
+    background-color: $dark-blue
+    border: 1px solid rgba(207, 207, 207, 0.5)
+    font-family: Montserrat-Regular, sans-serif
+    margin-bottom: get-vw-desktop(20px)
+    &::-webkit-input-placeholder /* Chrome/Opera/Safari */
+      color: $white-3
+    &::-moz-placeholder /* Firefox 19+ */
+      color: $white-3
+    &:-ms-input-placeholder /* IE 10+ */
+      color: $white-3
+    &:-moz-placeholder /* Firefox 18- */
+      color: $white-3
+  textarea
+    width: 100%
+    color: $white-3
+    font-size: get-vw-desktop(16px)
+    max-height: get-vw-desktop(137px)
+    line-height: get-vw-desktop(16px)
+    padding: get-vw-desktop(14px) get-vw-desktop(23px)
+    border-radius: get-vw-desktop(6px)
+    background-color: $dark-blue
+    border: 1px solid rgba(207, 207, 207, 0.5)
+    font-family: Montserrat-Regular, sans-serif
+    &::-webkit-input-placeholder /* Chrome/Opera/Safari */
+      color: $white-3
+    &::-moz-placeholder /* Firefox 19+ */
+      color: $white-3
+    &:-ms-input-placeholder /* IE 10+ */
+      color: $white-3
+    &:-moz-placeholder /* Firefox 18- */
+      color: $white-3
+  option
+    padding-left: get-vw-desktop(20px)
+  .your-name, .your-phone
+    margin-right: get-vw-desktop(20px)
+  .wpcf7-submit
+    color: $white
+    border-radius: get-vw-desktop(10px)
+    height: get-vw-desktop(50px)
+    width: get-vw-desktop(216px)
+    font-size: get-vw-desktop(18px)
+    margin: get-vw-desktop(40px) 0 get-vw-desktop(50px) 0
+    padding: 0px get-vw-desktop(74px)
+    line-height: get-vw-desktop(20px)
+    border: solid 2px $white
+    background-color: transparent
+    font-family: Montserrat-Bold, sans-serif
+    &:hover
+      background-color: rgba($white, .7)
 // END Contact Us
 
 // Footer
@@ -465,8 +584,11 @@ body
       line-height: get-vw-desktop(20px)
       text-decoration: underline
   .mre-footer-go-top
+    visibility: hidden
     cursor: pointer
     position: fixed
+    opacity: 0
     right: get-vw-desktop(140px)
     bottom: get-vw-desktop(143px)
+    z-index: 1
 // END Footer

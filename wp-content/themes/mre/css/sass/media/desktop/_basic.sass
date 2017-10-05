@@ -10,9 +10,9 @@ body
   margin: 0
   padding: 0
 
-.swiper-container
+.swiper-container-menu
   width: 100%
-  height: 960px
+  height: auto
 
 .swiper-slide
   font-size: 18px
@@ -21,7 +21,7 @@ body
   min-width: 100px
   width: 70%
   max-width: 320px
-  height: auto
+  height: 960px
   .mre-menu
     top: 78px
     left: 0
@@ -170,6 +170,7 @@ body
   .swiper-container-hero
     padding-top: 80px
     .swiper-slide
+      height: 880px
       .slide-overlay
         width: 100%
         height: 100%
@@ -209,18 +210,10 @@ body
 #mre-about-us
   height: 800px
   .about-us-title
-    padding-top: 50px
-    opacity: 0.6
-    font-size: 18px
-  .about-us-sub-first
-    padding-top: 10px
-    font-size: 36px
-    line-height: 40px
-  .about-us-sub-second
     font-size: 36px
     line-height: 40px
   .about-us-image
-    margin: 40px 0 30px 0
+    margin: 115px 0 40px 0
     width: 140px
     height: 140px
     border-radius: 50%
@@ -228,7 +221,7 @@ body
     font-size: 20px
     line-height: 28px
     width: 767px
-    margin: 0 auto
+    margin: 20px auto 0 auto
   .about-us-numbers
     height: 140px
     padding: 40px 38px
@@ -267,14 +260,14 @@ body
     line-height: 40px
   .partner-left
     img
-      width: 110px
-      height: 117px
-      margin-top: 20px
-  .partner-right
-    img
       width: 212px
       height: 71px
       margin-top: 43px
+  .partner-right
+    img
+      width: 110px
+      height: 117px
+      margin-top: 20px
 // END Partners
 
 // Offices
@@ -300,7 +293,7 @@ body
       height: 150px
       width: 100%
       .office-detail
-        width: 302px
+        width: 370px
         margin: 0 22px
         h5
           font-size: 16px
@@ -309,6 +302,85 @@ body
 // END Offices
 
 // Contact Us
+.wpcf7-response-output
+  top: -25px
+  left: 30px
+
+.al-contact-text
+  font-size: 36px
+  margin-top: 60px
+  line-height: 46px
+  margin-bottom: 3px
+.al-contact-text-bold
+  font-size: 36px
+  line-height: 46px
+  margin: 0
+
+.al-phone-box
+  border-radius: 18px
+  max-width: 361px
+  max-height: 272px
+  margin-top: 40px
+  padding: 40px 34px
+  box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+  -moz-box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+  -webkit-box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+  img
+    width: 72px
+    height: 64px
+  p
+    padding-top: 10px
+    line-height: 34px
+    font-size: 24px
+    padding-bottom: 20px
+
+a.al-phone-num
+  font-size: 36px
+  line-height: 30px
+
+.al-contact-form-div
+  margin-top: 40px
+
+.flag-image-opacity
+  opacity: .6
+
+.wpcf7-form-control-wrap
+  margin-bottom: 20px
+
+.wpcf7-form
+  p
+    margin-right: 20px
+  input[type="text"], input[type="email"], input[type="tel"], select
+    width: 100%
+    height: 48px
+    padding: 0 23px
+    font-size: 16px
+    line-height: 16px
+    border-radius: 4px
+    border: 1px solid rgba(207, 207, 207, 0.5)
+    margin-bottom: 20px
+  textarea
+    width: 100%
+    font-size: 16px
+    max-height: 137px
+    line-height: 16px
+    padding: 14px 23px
+    border-radius: 6px
+    border: 1px solid rgba(207, 207, 207, 0.5)
+  option
+    padding-left: 20px
+  .your-name, .your-phone
+    margin-right: 20px
+  .wpcf7-submit
+    border-radius: 10px
+    height: 50px
+    width: 216px
+    font-size: 18px
+    margin: 40px 0 50px 0
+    padding: 0px 74px
+    line-height: 20px
+    &:hover
+      background-color: rgba($white, .7)
 // END Contact Us
 
 // Footer

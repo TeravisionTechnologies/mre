@@ -82,18 +82,14 @@ body {
   margin: 0;
   padding: 0; }
 
-.swiper-container {
+.swiper-container-menu {
   width: 100%;
-  height: 66.66667vw; }
+  height: auto; }
 
 .swiper-slide {
-  text-align: center;
   font-size: 1.25vw;
   background: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+  display: block;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
@@ -107,7 +103,7 @@ body {
   min-width: 6.94444vw;
   width: 70%;
   max-width: 22.22222vw;
-  height: auto;
+  height: 66.66667vw;
   background: rgba(255, 255, 255, 0.95);
   position: relative; }
   .menu .mre-menu {
@@ -159,7 +155,8 @@ body {
     height: 4.375vw;
     position: absolute;
     bottom: 0;
-    width: 100%; }
+    width: 100%;
+    left: 0; }
     .menu .mre-menu-social .menu-social-icons {
       list-style: none;
       font-size: 1.52778vw;
@@ -297,13 +294,15 @@ body {
   position: relative;
   padding-top: 5.55556vw; }
   #mre-header .swiper-container-hero .swiper-slide {
+    height: 61.11111vw;
     background-size: cover;
     position: relative; }
     #mre-header .swiper-container-hero .swiper-slide .slide-overlay {
       position: absolute;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.4); }
+      background: rgba(0, 0, 0, 0.4);
+      left: 0; }
     #mre-header .swiper-container-hero .swiper-slide .slide-text {
       position: absolute;
       top: 21.875vw;
@@ -351,24 +350,12 @@ body {
   background-size: cover;
   text-align: center; }
   #mre-about-us .about-us-title {
-    padding-top: 3.47222vw;
-    opacity: 0.6;
-    font-family: Montserrat-Regular, sans-serif;
-    font-size: 1.25vw;
-    color: #ffffff; }
-  #mre-about-us .about-us-sub-first {
-    padding-top: 0.69444vw;
-    font-size: 2.5vw;
-    line-height: 2.77778vw;
-    font-family: Montserrat-Regular, sans-serif;
-    color: #ffffff; }
-  #mre-about-us .about-us-sub-second {
     font-size: 2.5vw;
     line-height: 2.77778vw;
     font-family: Montserrat-Bold, sans-serif;
     color: #1f9aff; }
   #mre-about-us .about-us-image {
-    margin: 2.77778vw 0 2.91667vw 0;
+    margin: 7.98611vw 0 2.77778vw 0;
     width: 9.72222vw;
     height: 9.72222vw;
     border-radius: 50%; }
@@ -378,7 +365,7 @@ body {
     line-height: 1.94444vw;
     color: white;
     width: 53.26389vw;
-    margin: 0 auto; }
+    margin: 1.38889vw auto 0 auto; }
   #mre-about-us .about-us-numbers {
     list-style: none;
     height: 9.72222vw;
@@ -434,13 +421,13 @@ body {
     color: #ffffff;
     margin: 0; }
   #mre-partners .partner-left img {
-    width: 7.63889vw;
-    height: 8.125vw;
-    margin-top: 1.38889vw; }
-  #mre-partners .partner-right img {
     width: 14.72222vw;
     height: 4.93056vw;
     margin-top: 2.98611vw; }
+  #mre-partners .partner-right img {
+    width: 7.63889vw;
+    height: 8.125vw;
+    margin-top: 1.38889vw; }
 
 #mre-offices {
   height: 31.25vw;
@@ -471,7 +458,8 @@ body {
       height: 10.41667vw;
       width: 100%; }
       #mre-offices .swiper-wrapper .swiper-slide .office-detail {
-        width: 20.97222vw;
+        display: inline-block;
+        width: 25.69444vw;
         margin: 0 1.52778vw; }
         #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
           color: #ffffff;
@@ -481,6 +469,139 @@ body {
           margin: 0; }
         #mre-offices .swiper-wrapper .swiper-slide .office-detail span {
           font-family: Montserrat-Bold, sans-serif; }
+
+.screen-reader-response {
+  display: none; }
+
+.wpcf7-response-output {
+  top: -1.73611vw;
+  left: 2.08333vw;
+  position: absolute; }
+
+.al-contact-div {
+  height: auto;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-size: cover; }
+
+.al-contact-text {
+  color: #ffffff;
+  font-size: 2.5vw;
+  margin-top: 4.16667vw;
+  line-height: 3.19444vw;
+  margin-bottom: 0.20833vw;
+  font-family: Montserrat-Regular, sans-serif; }
+
+.al-contact-text-bold {
+  color: #ffffff;
+  font-size: 2.5vw;
+  line-height: 3.19444vw;
+  font-family: Montserrat-Bold, sans-serif;
+  margin: 0; }
+
+.al-phone-box {
+  border-radius: 1.25vw;
+  max-width: 25.06944vw;
+  max-height: 18.88889vw;
+  margin-top: 2.77778vw;
+  padding: 2.77778vw 2.36111vw;
+  background-color: #1f9aff;
+  box-shadow: 0 1px 0.69444vw 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 0.69444vw 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 0.69444vw 0 rgba(0, 0, 0, 0.3); }
+  .al-phone-box img {
+    width: 5vw;
+    height: 4.44444vw; }
+  .al-phone-box p {
+    color: #00447e;
+    padding-top: 0.69444vw;
+    line-height: 2.36111vw;
+    font-size: 1.66667vw;
+    padding-bottom: 1.38889vw;
+    font-family: Montserrat-Regular, sans-serif; }
+    .al-phone-box p strong {
+      font-family: Montserrat-Bold, sans-serif; }
+
+a.al-phone-num {
+  color: #00447e;
+  cursor: pointer;
+  font-size: 2.5vw;
+  line-height: 2.08333vw;
+  font-family: Montserrat-Black, sans-serif; }
+  a.al-phone-num:hover {
+    text-decoration: none; }
+
+.al-contact-form-div {
+  margin-top: 2.77778vw;
+  display: inline-block; }
+
+.flag-image-opacity {
+  opacity: 0.6; }
+
+.wpcf7-form-control-wrap {
+  margin-bottom: 1.38889vw; }
+
+.wpcf7-form p {
+  margin-right: 1.38889vw;
+  display: inline-block; }
+.wpcf7-form input[type="text"], .wpcf7-form input[type="email"], .wpcf7-form input[type="tel"], .wpcf7-form select {
+  width: 100%;
+  height: 3.33333vw;
+  color: #cfcfcf;
+  padding: 0 1.59722vw;
+  font-size: 1.11111vw;
+  line-height: 1.11111vw;
+  border-radius: 0.27778vw;
+  display: inline-block;
+  background-color: #00447e;
+  border: 1px solid rgba(207, 207, 207, 0.5);
+  font-family: Montserrat-Regular, sans-serif;
+  margin-bottom: 1.38889vw; }
+  .wpcf7-form input[type="text"]::-webkit-input-placeholder, .wpcf7-form input[type="email"]::-webkit-input-placeholder, .wpcf7-form input[type="tel"]::-webkit-input-placeholder, .wpcf7-form select::-webkit-input-placeholder {
+    color: #cfcfcf; }
+  .wpcf7-form input[type="text"]::-moz-placeholder, .wpcf7-form input[type="email"]::-moz-placeholder, .wpcf7-form input[type="tel"]::-moz-placeholder, .wpcf7-form select::-moz-placeholder {
+    color: #cfcfcf; }
+  .wpcf7-form input[type="text"]:-ms-input-placeholder, .wpcf7-form input[type="email"]:-ms-input-placeholder, .wpcf7-form input[type="tel"]:-ms-input-placeholder, .wpcf7-form select:-ms-input-placeholder {
+    color: #cfcfcf; }
+  .wpcf7-form input[type="text"]:-moz-placeholder, .wpcf7-form input[type="email"]:-moz-placeholder, .wpcf7-form input[type="tel"]:-moz-placeholder, .wpcf7-form select:-moz-placeholder {
+    color: #cfcfcf; }
+.wpcf7-form textarea {
+  width: 100%;
+  color: #cfcfcf;
+  font-size: 1.11111vw;
+  max-height: 9.51389vw;
+  line-height: 1.11111vw;
+  padding: 0.97222vw 1.59722vw;
+  border-radius: 0.41667vw;
+  background-color: #00447e;
+  border: 1px solid rgba(207, 207, 207, 0.5);
+  font-family: Montserrat-Regular, sans-serif; }
+  .wpcf7-form textarea::-webkit-input-placeholder {
+    color: #cfcfcf; }
+  .wpcf7-form textarea::-moz-placeholder {
+    color: #cfcfcf; }
+  .wpcf7-form textarea:-ms-input-placeholder {
+    color: #cfcfcf; }
+  .wpcf7-form textarea:-moz-placeholder {
+    color: #cfcfcf; }
+.wpcf7-form option {
+  padding-left: 1.38889vw; }
+.wpcf7-form .your-name, .wpcf7-form .your-phone {
+  margin-right: 1.38889vw; }
+.wpcf7-form .wpcf7-submit {
+  color: #ffffff;
+  border-radius: 0.69444vw;
+  height: 3.47222vw;
+  width: 15vw;
+  font-size: 1.25vw;
+  margin: 2.77778vw 0 3.47222vw 0;
+  padding: 0px 5.13889vw;
+  line-height: 1.38889vw;
+  border: solid 2px #ffffff;
+  background-color: transparent;
+  font-family: Montserrat-Bold, sans-serif; }
+  .wpcf7-form .wpcf7-submit:hover {
+    background-color: rgba(255, 255, 255, 0.7); }
 
 #mre-footer {
   text-align: center;
@@ -507,10 +628,13 @@ body {
       line-height: 1.38889vw;
       text-decoration: underline; }
   #mre-footer .mre-footer-go-top {
+    visibility: hidden;
     cursor: pointer;
     position: fixed;
+    opacity: 0;
     right: 9.72222vw;
-    bottom: 9.93056vw; }
+    bottom: 9.93056vw;
+    z-index: 1; }
 
 #blog-list-categories {
   background: #303030;
@@ -988,9 +1112,9 @@ body {
     margin: 0;
     padding: 0; }
 
-  .swiper-container {
+  .swiper-container-menu {
     width: 100%;
-    height: 960px; }
+    height: auto; }
 
   .swiper-slide {
     font-size: 18px; }
@@ -999,7 +1123,7 @@ body {
     min-width: 100px;
     width: 70%;
     max-width: 320px;
-    height: auto; }
+    height: 960px; }
     .menu .mre-menu {
       top: 78px;
       left: 0;
@@ -1143,23 +1267,25 @@ body {
           transform: translate(-50%, -50%); }
   #mre-header .swiper-container-hero {
     padding-top: 80px; }
-    #mre-header .swiper-container-hero .swiper-slide .slide-overlay {
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4); }
-    #mre-header .swiper-container-hero .swiper-slide .slide-text {
-      top: 315px;
-      left: 50%;
-      transform: translateX(-50%); }
-      #mre-header .swiper-container-hero .swiper-slide .slide-text h2 {
-        font-size: 40px;
-        line-height: 40px;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
-      #mre-header .swiper-container-hero .swiper-slide .slide-text h3 {
-        margin-top: 10px;
-        font-size: 80px;
-        line-height: 80px;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+    #mre-header .swiper-container-hero .swiper-slide {
+      height: 880px; }
+      #mre-header .swiper-container-hero .swiper-slide .slide-overlay {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4); }
+      #mre-header .swiper-container-hero .swiper-slide .slide-text {
+        top: 315px;
+        left: 50%;
+        transform: translateX(-50%); }
+        #mre-header .swiper-container-hero .swiper-slide .slide-text h2 {
+          font-size: 40px;
+          line-height: 40px;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+        #mre-header .swiper-container-hero .swiper-slide .slide-text h3 {
+          margin-top: 10px;
+          font-size: 80px;
+          line-height: 80px;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
     #mre-header .swiper-container-hero .swiper-button-prev, #mre-header .swiper-container-hero .swiper-button-next {
       font-size: 36px;
       height: 36px;
@@ -1180,18 +1306,10 @@ body {
   #mre-about-us {
     height: 800px; }
     #mre-about-us .about-us-title {
-      padding-top: 50px;
-      opacity: 0.6;
-      font-size: 18px; }
-    #mre-about-us .about-us-sub-first {
-      padding-top: 10px;
-      font-size: 36px;
-      line-height: 40px; }
-    #mre-about-us .about-us-sub-second {
       font-size: 36px;
       line-height: 40px; }
     #mre-about-us .about-us-image {
-      margin: 40px 0 30px 0;
+      margin: 115px 0 40px 0;
       width: 140px;
       height: 140px;
       border-radius: 50%; }
@@ -1199,7 +1317,7 @@ body {
       font-size: 20px;
       line-height: 28px;
       width: 767px;
-      margin: 0 auto; }
+      margin: 20px auto 0 auto; }
     #mre-about-us .about-us-numbers {
       height: 140px;
       padding: 40px 38px;
@@ -1235,13 +1353,13 @@ body {
       font-size: 45px;
       line-height: 40px; }
     #mre-partners .partner-left img {
-      width: 110px;
-      height: 117px;
-      margin-top: 20px; }
-    #mre-partners .partner-right img {
       width: 212px;
       height: 71px;
       margin-top: 43px; }
+    #mre-partners .partner-right img {
+      width: 110px;
+      height: 117px;
+      margin-top: 20px; }
 
   #mre-offices {
     height: 450px; }
@@ -1264,12 +1382,92 @@ body {
         height: 150px;
         width: 100%; }
         #mre-offices .swiper-wrapper .swiper-slide .office-detail {
-          width: 302px;
+          width: 370px;
           margin: 0 22px; }
           #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
             font-size: 16px;
             line-height: 25px;
             margin: 0; }
+
+  .wpcf7-response-output {
+    top: -25px;
+    left: 30px; }
+
+  .al-contact-text {
+    font-size: 36px;
+    margin-top: 60px;
+    line-height: 46px;
+    margin-bottom: 3px; }
+
+  .al-contact-text-bold {
+    font-size: 36px;
+    line-height: 46px;
+    margin: 0; }
+
+  .al-phone-box {
+    border-radius: 18px;
+    max-width: 361px;
+    max-height: 272px;
+    margin-top: 40px;
+    padding: 40px 34px;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3); }
+    .al-phone-box img {
+      width: 72px;
+      height: 64px; }
+    .al-phone-box p {
+      padding-top: 10px;
+      line-height: 34px;
+      font-size: 24px;
+      padding-bottom: 20px; }
+
+  a.al-phone-num {
+    font-size: 36px;
+    line-height: 30px; }
+
+  .al-contact-form-div {
+    margin-top: 40px; }
+
+  .flag-image-opacity {
+    opacity: 0.6; }
+
+  .wpcf7-form-control-wrap {
+    margin-bottom: 20px; }
+
+  .wpcf7-form p {
+    margin-right: 20px; }
+  .wpcf7-form input[type="text"], .wpcf7-form input[type="email"], .wpcf7-form input[type="tel"], .wpcf7-form select {
+    width: 100%;
+    height: 48px;
+    padding: 0 23px;
+    font-size: 16px;
+    line-height: 16px;
+    border-radius: 4px;
+    border: 1px solid rgba(207, 207, 207, 0.5);
+    margin-bottom: 20px; }
+  .wpcf7-form textarea {
+    width: 100%;
+    font-size: 16px;
+    max-height: 137px;
+    line-height: 16px;
+    padding: 14px 23px;
+    border-radius: 6px;
+    border: 1px solid rgba(207, 207, 207, 0.5); }
+  .wpcf7-form option {
+    padding-left: 20px; }
+  .wpcf7-form .your-name, .wpcf7-form .your-phone {
+    margin-right: 20px; }
+  .wpcf7-form .wpcf7-submit {
+    border-radius: 10px;
+    height: 50px;
+    width: 216px;
+    font-size: 18px;
+    margin: 40px 0 50px 0;
+    padding: 0px 74px;
+    line-height: 20px; }
+    .wpcf7-form .wpcf7-submit:hover {
+      background-color: rgba(255, 255, 255, 0.7); }
 
   #mre-footer {
     box-shadow: 0 -8px 10px 0 rgba(0, 0, 0, 0.2);
@@ -1599,9 +1797,9 @@ body {
     margin: 0;
     padding: 0; }
 
-  .swiper-container {
+  .swiper-container-menu {
     width: 100%;
-    height: 114.58333vw; }
+    height: auto; }
 
   .swiper-slide {
     font-size: 2.34375vw; }
@@ -1610,7 +1808,7 @@ body {
     min-width: 13.02083vw;
     width: 70%;
     max-width: 44.79167vw;
-    height: auto; }
+    height: 114.58333vw; }
     .menu .mre-menu {
       top: 10.15625vw;
       left: 0;
@@ -1743,6 +1941,7 @@ body {
   #mre-header .swiper-container-hero {
     padding-top: 10.41667vw; }
     #mre-header .swiper-container-hero .swiper-slide {
+      height: 104.16667vw;
       background-position: 50%; }
       #mre-header .swiper-container-hero .swiper-slide .slide-overlay {
         width: 100%;
@@ -1781,14 +1980,6 @@ body {
   #mre-about-us {
     height: 90.625vw; }
     #mre-about-us .about-us-title {
-      padding-top: 6.51042vw;
-      opacity: 0.6;
-      font-size: 1.82292vw; }
-    #mre-about-us .about-us-sub-first {
-      padding-top: 1.30208vw;
-      font-size: 3.125vw;
-      line-height: 3.77604vw; }
-    #mre-about-us .about-us-sub-second {
       font-size: 3.125vw;
       line-height: 3.77604vw; }
     #mre-about-us .about-us-image {
@@ -1803,7 +1994,7 @@ body {
       margin: 0 auto; }
     #mre-about-us .about-us-numbers {
       height: 15.625vw;
-      padding: 3.90625vw 3.64583vw;
+      padding: 3.90625vw 3.51563vw;
       width: 85.67708vw;
       margin: 6.51042vw auto 0;
       border-radius: 2.34375vw;
@@ -1835,14 +2026,18 @@ body {
     #mre-partners .partners-title-second {
       font-size: 4.55729vw;
       line-height: 5.20833vw; }
-    #mre-partners .partner-left img {
-      width: 11.71875vw;
-      height: 12.5vw;
-      margin-top: 2.60417vw; }
-    #mre-partners .partner-right img {
-      width: 23.4375vw;
-      height: 7.55208vw;
-      margin-top: 5.07813vw; }
+    #mre-partners .partner-left {
+      background-position: bottom; }
+      #mre-partners .partner-left img {
+        width: 23.4375vw;
+        height: 7.55208vw;
+        margin-top: 5.07813vw; }
+    #mre-partners .partner-right {
+      background-position: center; }
+      #mre-partners .partner-right img {
+        width: 11.71875vw;
+        height: 12.5vw;
+        margin-top: 2.60417vw; }
 
   #mre-offices {
     height: 52.08333vw; }
@@ -1865,12 +2060,93 @@ body {
         height: 15.625vw;
         width: 100%; }
         #mre-offices .swiper-wrapper .swiper-slide .office-detail {
-          width: 34.50521vw;
+          width: 41.66667vw;
           margin: 0 1.82292vw; }
           #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
             font-size: 1.82292vw;
             line-height: 3.25521vw;
             margin: 0; }
+
+  .wpcf7-response-output {
+    top: -3.25521vw;
+    left: 3.90625vw; }
+
+  .al-contact-text {
+    font-size: 3.25521vw;
+    margin-top: 7.8125vw;
+    line-height: 4.42708vw;
+    margin-bottom: 0.39063vw; }
+
+  .al-contact-text-bold {
+    font-size: 3.125vw;
+    line-height: 4.42708vw;
+    margin: 0; }
+
+  .al-phone-box {
+    border-radius: 2.34375vw;
+    max-width: 48.4375vw;
+    max-height: 33.85417vw;
+    margin: 6.51042vw auto 0 auto;
+    padding: 5.33854vw 5.72917vw;
+    box-shadow: 0 1px 1.30208vw 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 1.30208vw 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 1px 1.30208vw 0 rgba(0, 0, 0, 0.3); }
+    .al-phone-box img {
+      width: 6.51042vw;
+      height: 6.51042vw; }
+    .al-phone-box p {
+      padding-top: 1.30208vw;
+      line-height: 3.90625vw;
+      font-size: 3.125vw;
+      padding-bottom: 3.64583vw; }
+
+  a.al-phone-num {
+    font-size: 3.90625vw;
+    line-height: 3.90625vw;
+    font-family: Montserrat-Bold; }
+
+  .al-contact-form-div {
+    margin-top: 5.20833vw; }
+
+  .flag-image-opacity {
+    opacity: 0.6; }
+
+  .wpcf7-form-control-wrap {
+    margin-bottom: 2.60417vw; }
+
+  .wpcf7-form p {
+    margin-right: 2.60417vw; }
+  .wpcf7-form input[type="text"], .wpcf7-form input[type="email"], .wpcf7-form input[type="tel"], .wpcf7-form select {
+    width: 41.53646vw;
+    height: 6.11979vw;
+    padding: 0 2.60417vw;
+    font-size: 1.82292vw;
+    line-height: 1.95313vw;
+    border-radius: 0.52083vw;
+    border: 1px solid rgba(207, 207, 207, 0.5);
+    margin-bottom: 2.60417vw; }
+  .wpcf7-form textarea {
+    width: 100%;
+    font-size: 1.82292vw;
+    max-height: 17.31771vw;
+    line-height: 2.08333vw;
+    padding: 1.95313vw 2.60417vw;
+    border-radius: 0.52083vw;
+    border: 1px solid rgba(207, 207, 207, 0.5); }
+  .wpcf7-form option {
+    padding-left: 2.60417vw; }
+  .wpcf7-form .your-name, .wpcf7-form .your-phone {
+    margin-right: 2.60417vw; }
+  .wpcf7-form .wpcf7-submit {
+    border-radius: 1.30208vw;
+    height: 6.51042vw;
+    width: 26.04167vw;
+    font-size: 2.08333vw;
+    margin: 3.90625vw 0 7.16146vw 0;
+    padding: 0px 8.72396vw;
+    line-height: 2.60417vw; }
+    .wpcf7-form .wpcf7-submit:hover {
+      background-color: rgba(255, 255, 255, 0.7); }
 
   #mre-footer {
     height: 22.65625vw; }
@@ -2200,9 +2476,9 @@ body {
     margin: 0;
     padding: 0; }
 
-  .swiper-container {
+  .swiper-container-menu {
     width: 100%;
-    height: 178.33333vw; }
+    height: auto; }
 
   .swiper-slide {
     font-size: 5vw; }
@@ -2211,7 +2487,7 @@ body {
     min-width: 27.77778vw;
     width: 70%;
     max-width: 70.83333vw;
-    height: auto; }
+    height: 161.66667vw; }
     .menu .mre-menu {
       top: 16.66667vw;
       left: 0;
@@ -2227,7 +2503,7 @@ body {
         border-top: 2px solid rgba(127, 129, 130, 0.15); }
     .menu .mre-menu-language {
       width: 100%;
-      bottom: 61.11111vw;
+      bottom: 44.44444vw;
       left: 0;
       height: 16.66667vw; }
       .menu .mre-menu-language .mre-menu-language-text {
@@ -2344,6 +2620,7 @@ body {
   #mre-header .swiper-container-hero {
     padding-top: 16.66667vw; }
     #mre-header .swiper-container-hero .swiper-slide {
+      height: 145vw;
       background-position: 50%; }
       #mre-header .swiper-container-hero .swiper-slide .slide-overlay {
         width: 100%;
@@ -2383,14 +2660,6 @@ body {
   #mre-about-us {
     height: 264.72222vw; }
     #mre-about-us .about-us-title {
-      padding-top: 11.11111vw;
-      opacity: 0.6;
-      font-size: 3.33333vw; }
-    #mre-about-us .about-us-sub-first {
-      padding-top: 2.77778vw;
-      font-size: 5.55556vw;
-      line-height: 5.55556vw; }
-    #mre-about-us .about-us-sub-second {
       font-size: 6.66667vw;
       line-height: 6.66667vw; }
     #mre-about-us .about-us-image {
@@ -2438,14 +2707,18 @@ body {
     #mre-partners .partners-title-second {
       font-size: 6.94444vw;
       line-height: 8.33333vw; }
-    #mre-partners .partner-left img {
-      width: 19.44444vw;
-      height: 20.55556vw;
-      margin-top: 2.77778vw; }
-    #mre-partners .partner-right img {
-      width: 33.33333vw;
-      height: 10.55556vw;
-      margin-top: 7.77778vw; }
+    #mre-partners .partner-left {
+      background-position: bottom; }
+      #mre-partners .partner-left img {
+        width: 33.33333vw;
+        height: 10.55556vw;
+        margin-top: 7.77778vw; }
+    #mre-partners .partner-right {
+      background-position: center; }
+      #mre-partners .partner-right img {
+        width: 19.44444vw;
+        height: 20.55556vw;
+        margin-top: 2.77778vw; }
 
   #mre-offices {
     height: 111.11111vw; }
@@ -2466,14 +2739,96 @@ body {
       #mre-offices .swiper-wrapper .swiper-slide {
         margin: 0 auto;
         height: 50vw;
-        width: 100%; }
+        width: 100%;
+        display: block; }
         #mre-offices .swiper-wrapper .swiper-slide .office-detail {
-          width: 71.11111vw;
-          margin: 0 14.44444vw 1.38889vw 14.44444vw; }
+          width: 76.38889vw;
+          margin: 2.77778vw 14.44444vw 1.38889vw 14.44444vw; }
           #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
             font-size: 3.33333vw;
             line-height: 5.55556vw;
             margin: 0; }
+
+  .wpcf7-response-output {
+    top: -6.94444vw;
+    left: 8.33333vw; }
+
+  .al-contact-text {
+    font-size: 5.55556vw;
+    margin-top: 13.88889vw;
+    line-height: 7.22222vw;
+    margin-bottom: 0.83333vw; }
+
+  .al-contact-text-bold {
+    font-size: 5.55556vw;
+    line-height: 7.22222vw;
+    margin: 0; }
+
+  .al-phone-box {
+    border-radius: 5vw;
+    max-width: 71.11111vw;
+    max-height: 55.55556vw;
+    margin: 11.11111vw auto 0 auto;
+    padding: 8.88889vw 3.61111vw;
+    box-shadow: 0 1px 2.77778vw 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 2.77778vw 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 1px 2.77778vw 0 rgba(0, 0, 0, 0.3); }
+    .al-phone-box img {
+      width: 11.11111vw;
+      height: 11.11111vw; }
+    .al-phone-box p {
+      padding-top: 2.77778vw;
+      line-height: 6.38889vw;
+      font-size: 5vw;
+      padding-bottom: 2.77778vw; }
+
+  a.al-phone-num {
+    font-size: 6.66667vw;
+    line-height: 8.33333vw;
+    font-family: Montserrat-Bold; }
+
+  .al-contact-form-div {
+    margin-top: 11.11111vw; }
+
+  .flag-image-opacity {
+    opacity: 0.6; }
+
+  .wpcf7-form-control-wrap {
+    margin-bottom: 5.55556vw; }
+
+  .wpcf7-form p {
+    margin-right: 5.55556vw; }
+  .wpcf7-form input[type="text"], .wpcf7-form input[type="email"], .wpcf7-form input[type="tel"], .wpcf7-form select {
+    width: 86.11111vw;
+    height: 11.11111vw;
+    padding: 0 3.88889vw;
+    font-size: 3.33333vw;
+    line-height: 4.16667vw;
+    border-radius: 1.11111vw;
+    border: 1px solid rgba(207, 207, 207, 0.5);
+    margin-bottom: 4.16667vw; }
+  .wpcf7-form textarea {
+    width: 100%;
+    font-size: 3.33333vw;
+    max-height: 36.94444vw;
+    line-height: 4.44444vw;
+    padding: 3.61111vw 3.88889vw;
+    border-radius: 1.11111vw;
+    border: 1px solid rgba(207, 207, 207, 0.5); }
+  .wpcf7-form option {
+    padding-left: 3.88889vw; }
+  .wpcf7-form .your-name, .wpcf7-form .your-phone {
+    margin-right: 5.55556vw; }
+  .wpcf7-form .wpcf7-submit {
+    border-radius: 2.77778vw;
+    height: 11.11111vw;
+    width: 43.88889vw;
+    font-size: 3.88889vw;
+    margin: 8.33333vw 0 12.5vw 0;
+    padding: 0px 12.77778vw;
+    line-height: 5.55556vw; }
+    .wpcf7-form .wpcf7-submit:hover {
+      background-color: rgba(255, 255, 255, 0.7); }
 
   #mre-footer {
     height: 36.94444vw; }

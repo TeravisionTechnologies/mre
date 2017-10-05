@@ -9,9 +9,9 @@ body
   margin: 0
   padding: 0
 
-.swiper-container
+.swiper-container-menu
   width: 100%
-  height: get-vw-mobile(642px)
+  height: auto
 
 .swiper-slide
   font-size: get-vw-mobile(18px)
@@ -20,7 +20,7 @@ body
   min-width: get-vw-mobile(100px)
   width: 70%
   max-width: get-vw-mobile(255px)
-  height: auto
+  height: get-vw-mobile(582px)
   .mre-menu
     top: get-vw-mobile(60px)
     left: 0
@@ -36,7 +36,7 @@ body
       border-top: 2px solid rgba(127, 129, 130, 0.15)
   .mre-menu-language
     width: 100%
-    bottom: get-vw-mobile(220px)
+    bottom: get-vw-mobile(160px)
     left: 0
     height: get-vw-mobile(60px)
     .mre-menu-language-text
@@ -156,6 +156,7 @@ body
   .swiper-container-hero
     padding-top: get-vw-mobile(60px)
     .swiper-slide
+      height: get-vw-mobile(522px)
       background-position: 50%
       .slide-overlay
         width: 100%
@@ -197,14 +198,6 @@ body
 #mre-about-us
   height: get-vw-mobile(953px)
   .about-us-title
-    padding-top: get-vw-mobile(40px)
-    opacity: 0.6
-    font-size: get-vw-mobile(12px)
-  .about-us-sub-first
-    padding-top: get-vw-mobile(10px)
-    font-size: get-vw-mobile(20px)
-    line-height: get-vw-mobile(20px)
-  .about-us-sub-second
     font-size: get-vw-mobile(24px)
     line-height: get-vw-mobile(24px)
   .about-us-image
@@ -255,15 +248,17 @@ body
     font-size: get-vw-mobile(25px)
     line-height: get-vw-mobile(30px)
   .partner-left
-    img
-      width: get-vw-mobile(70px)
-      height: get-vw-mobile(74px)
-      margin-top: get-vw-mobile(10px)
-  .partner-right
+    background-position: bottom
     img
       width: get-vw-mobile(120px)
       height: get-vw-mobile(38px)
       margin-top: get-vw-mobile(28px)
+  .partner-right
+    background-position: center
+    img
+      width: get-vw-mobile(70px)
+      height: get-vw-mobile(74px)
+      margin-top: get-vw-mobile(10px)
 // END Partners
 
 // Offices
@@ -288,9 +283,10 @@ body
       margin: 0 auto
       height: get-vw-mobile(180px)
       width: 100%
+      display: block
       .office-detail
-        width: get-vw-mobile(256px)
-        margin: 0 get-vw-mobile(52px) get-vw-mobile(5px) get-vw-mobile(52px)
+        width: get-vw-mobile(275px)
+        margin: get-vw-mobile(10px) get-vw-mobile(52px) get-vw-mobile(5px) get-vw-mobile(52px)
         h5
           font-size: get-vw-mobile(12px)
           line-height: get-vw-mobile(20px)
@@ -298,6 +294,87 @@ body
 // END Offices
 
 // Contact Us
+.wpcf7-response-output
+  top: get-vw-mobile(-25px)
+  left: get-vw-mobile(30px)
+
+.al-contact-text
+  font-size: get-vw-mobile(20px)
+  margin-top: get-vw-mobile(50px)
+  line-height: get-vw-mobile(26px)
+  margin-bottom: get-vw-mobile(3px)
+.al-contact-text-bold
+  font-size: get-vw-mobile(20px)
+  line-height: get-vw-mobile(26px)
+  margin: 0
+
+.al-phone-box
+  border-radius: get-vw-mobile(18px)
+  max-width: get-vw-mobile(256px)
+  max-height: get-vw-mobile(200px)
+  margin: get-vw-mobile(40px) auto 0 auto
+  padding: get-vw-mobile(32px) get-vw-mobile(13px)
+  box-shadow: 0 1px get-vw-mobile(10px) 0 rgba($black, 0.3)
+  -moz-box-shadow: 0 1px get-vw-mobile(10px)0 rgba($black, 0.3)
+  -webkit-box-shadow: 0 1px get-vw-mobile(10px) 0 rgba($black, 0.3)
+  img
+    width: get-vw-mobile(40px)
+    height: get-vw-mobile(40px)
+  p
+    padding-top: get-vw-mobile(10px)
+    line-height: get-vw-mobile(23px)
+    font-size: get-vw-mobile(18px)
+    padding-bottom: get-vw-mobile(10px)
+
+a.al-phone-num
+  font-size: get-vw-mobile(24px)
+  line-height: get-vw-mobile(30px)
+  font-family: Montserrat-Bold
+
+.al-contact-form-div
+  margin-top: get-vw-mobile(40px)
+
+.flag-image-opacity
+  opacity: .6
+
+.wpcf7-form-control-wrap
+  margin-bottom: get-vw-mobile(20px)
+
+.wpcf7-form
+  p
+    margin-right: get-vw-mobile(20px)
+  input[type="text"], input[type="email"], input[type="tel"], select
+    width: get-vw-mobile(310px)
+    height: get-vw-mobile(40px)
+    padding: 0 get-vw-mobile(14px)
+    font-size: get-vw-mobile(12px)
+    line-height: get-vw-mobile(15px)
+    border-radius: get-vw-mobile(4px)
+    border: 1px solid rgba(207, 207, 207, 0.5)
+    margin-bottom: get-vw-mobile(15px)
+
+  textarea
+    width: 100%
+    font-size: get-vw-mobile(12px)
+    max-height: get-vw-mobile(133px)
+    line-height: get-vw-mobile(16px)
+    padding: get-vw-mobile(13px) get-vw-mobile(14px)
+    border-radius: get-vw-mobile(4px)
+    border: 1px solid rgba(207, 207, 207, 0.5)
+  option
+    padding-left: get-vw-mobile(14px)
+  .your-name, .your-phone
+    margin-right: get-vw-mobile(20px)
+  .wpcf7-submit
+    border-radius: get-vw-mobile(10px)
+    height: get-vw-mobile(40px)
+    width: get-vw-mobile(158px)
+    font-size: get-vw-mobile(14px)
+    margin: get-vw-mobile(30px) 0 get-vw-mobile(45px) 0
+    padding: 0px get-vw-mobile(46px)
+    line-height: get-vw-mobile(20px)
+    &:hover
+      background-color: rgba($white, .7)
 // END Contact Us
 
 // Footer
