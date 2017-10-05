@@ -48,7 +48,8 @@ jQuery(document).ready(function() {
 
   // Add Swiper Flags
   var swiperFlag = new Swiper('.swiper-container-flags', {
-    initialSlide: 1
+    initialSlide: 1,
+    nested: true
   });
 
   // Adding Swiper functionality to flags

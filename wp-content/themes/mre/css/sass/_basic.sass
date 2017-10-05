@@ -23,18 +23,15 @@ body
   margin: 0
   padding: 0
 
-.swiper-container
+.swiper-container-menu
   width: 100%
-  height: get-vw-desktop(960px)
+  height: auto
 
 .swiper-slide
   text-align: center
   font-size: get-vw-desktop(18px)
   background: $white
-  display: -webkit-box
-  display: -ms-flexbox
-  display: -webkit-flex
-  display: flex
+  display: block
   -webkit-box-pack: center
   -ms-flex-pack: center
   -webkit-justify-content: center
@@ -48,7 +45,7 @@ body
   min-width: get-vw-desktop(100px)
   width: 70%
   max-width: get-vw-desktop(320px)
-  height: auto
+  height: get-vw-desktop(960px)
   background: rgba(255, 255, 255, 0.95)
   position: relative
   .mre-menu
@@ -242,6 +239,7 @@ body
     position: relative
     padding-top: get-vw-desktop(80px)
     .swiper-slide
+      height: get-vw-desktop(880px)
       background-size: cover
       position: relative
       .slide-overlay
@@ -414,6 +412,7 @@ body
       height: get-vw-desktop(150px)
       width: 100%
       .office-detail
+        display: inline-block
         width: get-vw-desktop(370px)
         margin: 0 get-vw-desktop(22px)
         h5
