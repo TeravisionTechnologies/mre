@@ -1,147 +1,160 @@
-/**
- * Created by mtoledo on 3/8/17.
- */
-
-// Open when user clicks on the burger menu
-function openNav() {
-    document.getElementById('overlay-nav').style.left = '0%';
-}
-
-// Close when user clicks on the "x" symbol inside the overlay
-function closeNav() {
-    document.getElementById('overlay-nav').style.left = '100%';
-}
-
-function showOrHideFooterButton (fb) {
-    if ( jQuery(document).scrollTop() <= jQuery('#about-us').offset().top ) {
-        fb.hide();
-    } else {
-        fb.show();
-    }
-}
-
-// Footer button functions
-function footerOnloadAndScroll (fb) {
-    if ( jQuery(window).width() > 1023 ) {
-        showOrHideFooterButton(fb);
-        // Hide or Show depending if user scrolled after about section
-        jQuery(document).on('scroll', function() {
-            showOrHideFooterButton(fb);
-        });
-    } else {
-        // Hide if user is in mobile
-        fb.css({'display':'none'});
-    }
-}
-
 jQuery(document).ready(function() {
 
-    // Declaring the global scroll of the html to use in further functions
-    var globalScroll = jQuery('body,html');
+  // Header Swiper
+  var toggleMenu = function() {
+    if (swiperHeader.previousIndex == 0) {
+      swiperHeader.slidePrev()
+    }
+  }
+    , menuButton = document.getElementsByClassName('menu-button')[0]
+    , swiperHeader = new Swiper('.swiper-container-menu', {
+    slidesPerView: 'auto'
+    , initialSlide: 1
+    , resistanceRatio: .00000000000001
+    , onSlideChangeStart: function(slider) {
+      if (slider.activeIndex == 0) {
+        menuButton.classList.add('cross');
+        menuButton.removeEventListener('click', toggleMenu, false);
+      } else {
+        menuButton.classList.remove('cross');
+      }
+    }
+    , onSlideChangeEnd: function(slider) {
+      if (slider.activeIndex == 0) {
+        menuButton.removeEventListener('click', toggleMenu, false);
+      } else {
+        menuButton.addEventListener('click', toggleMenu, false);
+      }
+    }
+    , slideToClickedSlide: true
+  });
 
-    // Swiper
+  // Hero Swiper
+  var swiperHero = new Swiper('.swiper-container-hero', {
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    slidesPerView: 1,
+    loop: true,
+    nested: true,
+    autoplay: 5000,
+    effect: 'fade'
+  });
 
-        // Add Swiper
-        var swiper = new Swiper('.swiper-container', {
-            pagination: '.swiper-pagination',
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            paginationClickable: true
-        });
+  // Menu flags functionality
+  $('.mre-menu-language-flag').click(function () {
+    $('.mre-menu-language-flag').css('opacity', 0.4);
+    $(this).css('opacity', 1);
+  });
 
-        // Adding Swiper functionality to flags
-        jQuery('.flags-indicators img').on('click touchstart', function () {
-            var iter = jQuery(this).data('pagination');
-            var iterBull=1;
-            jQuery('#offices .swiper-pagination-bullet').each(function () {
-                if ( iter === iterBull ) {
-                    jQuery(this).trigger('click');
-                }
-                iterBull+=1;
-            });
-        });
+  // Add Swiper Flags
+  var swiperFlag = new Swiper('.swiper-container-flags', {
+    initialSlide: 1,
+    nested: true
+  });
 
-        //Swiper Blog Categories
-        var swiper_blog_categories = new Swiper('.swiper-container-blog-categories', {
-                slidesPerView: 5,
-                nextButton: '.swiper-button-next',
-                prevButton: '.swiper-button-prev',
-                spaceBetween: 32,
-                centeredSlides: true,
-                loop: true,
-                breakpoints: {
-                    1024: {
-                      spaceBetween: 19,
-                    },
-                    375: {
-                      slidesPerView: 1,
-                      spaceBetween: 0,
-                    },
-                }
-        });
-        $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
-        $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
-        $('.swiper-button-next, .swiper-button-prev').click(function () {
-          $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
-          $('.swiper-slide').find('div').addClass('swiper-overlay');
-          $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
-        });
+  // Adding Swiper functionality to flags
+  $('.flag-image').on('click', function () {
+    var index = $(this).data('pagination');
+    swiperFlag.slideTo(index - 1);
+    if (index == 1) {
+      $('#flag-image-1').removeClass('flag-image-opacity');
+      $('#flag-image-2').addClass('flag-image-opacity');
+      $('#flag-image-3').addClass('flag-image-opacity');
+    }
+    else if(index == 2) {
+      $('#flag-image-1').addClass('flag-image-opacity');
+      $('#flag-image-2').removeClass('flag-image-opacity');
+      $('#flag-image-3').addClass('flag-image-opacity');
+    }
+    else {
+      $('#flag-image-1').addClass('flag-image-opacity');
+      $('#flag-image-2').addClass('flag-image-opacity');
+      $('#flag-image-3').removeClass('flag-image-opacity');
+    }
+  });
 
-        //Swiper Blog Post Most Viewed
-          var swiper_blog_most_viewed = new Swiper('.swiper-container-blog-most-viewed', {
-            slidesPerView: 3,
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            spaceBetween: 35,
-            loop: true,
-            breakpoints: {
-              1024: {
-                slidesPerView: 2,
-                spaceBetween: 29,
-              },
-              375: {
-                slidesPerView: 1,
-                spaceBetween: 0,
-              }
-            }
-          });
+  // Swiper Blog Categories
+  var swiper_blog_categories = new Swiper('.swiper-container-blog-categories', {
+    slidesPerView: 5,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    spaceBetween: 0,
+    centeredSlides: true,
+    loop: true,
+    loopSlides: 5,
+    breakpoints: {
+      1023: {
+        spaceBetween: 19,
+      },
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+    }
+  });
+  $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
+  $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
+  $('.swiper-button-next, .swiper-button-prev').click(function () {
+    $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
+    $('.swiper-slide').find('div').addClass('swiper-overlay');
+    $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
+  });
 
-    // Menu scroll effects
+  // Swiper Blog Post Most Viewed
+  var swiper_blog_most_viewed = new Swiper('.swiper-container-blog-most-viewed', {
+    slidesPerView: 3,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    spaceBetween: 35,
+    loop: true,
+    breakpoints: {
+      1023: {
+        slidesPerView: 2,
+        spaceBetween: 29,
+      },
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      }
+    }
+  });
 
-        // I am going to use this in other js section down the code
-        var headerMargin = jQuery('.center-header').css('margin-top');
-        headerMargin     = headerMargin.replace(headerMargin.slice(-2),'');
-        var headerHeight = jQuery('header').innerHeight() - headerMargin  - 3;
+  // Go top button visibility
+  $(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    if (scroll > 900)  {
+      $('.mre-footer-go-top').css({
+        'opacity' : '1',
+        'transition' : 'visibility 0s, opacity 0.5s ease',
+        'visibility' : 'visible'
+      });
+    } else {
+      $('.mre-footer-go-top').css({
+        'opacity' : '0',
+        'transition' : 'visibility 1s, opacity 0.5s ease',
+        'visibility' : 'hidden'
+      });
+    }
+  });
 
-        var menuItem = jQuery('.menu-item');
-        menuItem.on('click', function (e) {
-            e.preventDefault();
-            // close overlay in mobile when something is clicked
-            jQuery('#overlay-nav').css({'left':'100%'});
+  // Footer Go to top functionality
+  $(".mre-footer-go-top").click(function () {
+    $("html, body").animate({scrollTop: 0}, 2000);
+  });
 
-            // slow scroll effect
-            var _this = jQuery(this).find('a').attr('href');
-            if ( _this !== '#') {
-                var scrollTo = jQuery(_this).offset().top - headerHeight;
-                globalScroll.stop().animate({scrollTop:scrollTo}, 'slow');
-            }
-        });
-
-
-    // footer functions
-
-        // Scroll slow to the beginning of the page when the button is clicked
-        var footerButton = jQuery('footer .caretCircle');
-        footerButton.on('click', function () {
-            globalScroll.stop().animate({scrollTop:0}, 'slow');
-        });
-
-        // Function used to hide or show the footer button
-        footerOnloadAndScroll(footerButton);
-
-
+  // Menu links scroll down
+  $("#menu-about").click(function() {
+    $('html, body').animate({
+      scrollTop: $("#mre-about-us").offset().top
+    }, 2000);
+  });
+  $("#menu-contact").click(function() {
+    $('html, body').animate({
+      scrollTop: $("#contact-us").offset().top
+    }, 2000);
+  });
+/*
     // form validation
-
         var theForm = jQuery('.the-form');
 
         // remove invalid effects and colors on keypress
@@ -189,11 +202,5 @@ jQuery(document).ready(function() {
                 formErrors.html('Verifique los campos requeridos');
             }
 
-        }
-
-});
-
-// Call footer functionality on resize so only shows up in 1024px and ahead
-jQuery(window).resize(function() {
-    footerOnloadAndScroll(jQuery('footer .caretCircle'));
+        }*/
 });

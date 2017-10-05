@@ -32,8 +32,7 @@
 		__DIR__.'/includes/post-types/broker/',
 		__DIR__.'/includes/post-types/developer/',
 		__DIR__.'/includes/post-types/header-footer/',
-    __DIR__.'/includes/post-types/services/',
-		__DIR__.'/includes/post-types/blog/'
+    __DIR__.'/includes/post-types/services/'
 	);
 
 	// File names inside post-types dirs
@@ -70,9 +69,6 @@
 		create_post_type_header_footer();
 		// Post Type for Services
 		create_post_type_services();
-    // Post Type for Blog
-    create_post_type_blog();
-
 	}
 
 	/* Remove text area field from header and footer */
@@ -102,9 +98,6 @@
 		header_footer_metaboxes();
 		// Metaboxes for Services
 		services_metaboxes();
-		// Metaboxes fot Blog
-    blog_metaboxes();
-
 	}
 
   function custom_form_validation_filter($result, $tag) {
@@ -125,3 +118,37 @@
   add_filter('wpcf7_validate_text','custom_form_validation_filter', 10, 2);
   add_filter('wpcf7_validate_text*', 'custom_form_validation_filter', 10, 2);
   add_filter('wpcf7_validate_email', 'custom_form_validation_filter', 10, 2);
+
+  //Featured images theme support
+  add_theme_support( 'post-thumbnails' );
+
+// Unset URL from comment form
+function crunchify_move_comment_form_below( $fields ) {
+	$comment_field = $fields['comment'];
+	unset( $fields['comment'] );
+	$fields['comment'] = $comment_field;
+	return $fields;
+}
+add_filter( 'comment_form_fields', 'crunchify_move_comment_form_below' );
+
+// Add placeholder for Name and Email
+function modify_comment_form_fields($fields){
+	$commenter = wp_get_current_commenter();
+	$fields['author'] = '<div class="form-group">' .
+		'<input id="author" name="author" type="text" class="form-control" placeholder="Nombre y Apellido" value=""/>'; //' . esc_attr( $commenter['comment_author'] ) . '
+	$fields['email'] =
+		'<input id="email" name="email" type="email" class="form-control" placeholder="Email" value=""/>'; //' . esc_attr(  $commenter['comment_author_email'] ) . '
+	$fields['url'] = '';
+
+	return $fields;
+}
+add_filter('comment_form_default_fields','modify_comment_form_fields');
+
+function wpbeginner_comment_text($arg) {
+
+	$arg['comment_notes_before'] = "";
+
+	return $arg;
+}
+
+add_filter('comment_form_defaults', 'wpbeginner_comment_text');

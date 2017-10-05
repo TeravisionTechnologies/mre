@@ -1,46 +1,31 @@
-
-    <footer>
-        <div class="container">
-            <div class="footer-center">
-                <?php
-                $headerPost = get_posts(
-                    array(
-                        'post_type' => 'header_footer'
-                    )
-                );
-                $theMeta = get_post_meta($headerPost[0]->ID);
-                ?>
-                <div class="footer-logo">
-                    <a href="<?php echo esc_url( home_url( '/' ) ) ?>">
-                        <img src="<?php echo $theMeta['_hf_logo'][0] ?>" />
-                    </a>
-                </div>
-                <div class="footer-copy">
-                    <h5>
-                        <?php echo $theMeta['_hf_copy'][0] ?>
-                        <a href="#">Disclaimers</a>
-                    </h5>
-                </div>
-                <div class="footer-icons">
-                    <a href="#">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fa fa-youtube-play"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                </div>
-            </div>
+<?php
+  $footerPost = get_posts(
+    array(
+      'post_type' => 'header_footer'
+    )
+  );
+  $theMeta = get_post_meta($footerPost[0]->ID);
+?>
+            <footer id="mre-footer" class="col-xs-12">
+              <div class="mre-footer-elements">
+                <a href="/">
+                  <img src="<?php echo $theMeta['_hf_logo'][0] ?>" class="mre-footer-logo"/>
+                </a>
+                <h2 class="mre-footer-copyright"><?php echo $theMeta['_hf_copy'][0] ?></h2>
+                <a href="#">Disclaimers</a>
+              </div>
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/go-top-arrow.png" class="mre-footer-go-top" alt="Go to top button">
+            </footer>
+          </div>
         </div>
-        <div class="caretCircle"><span class="fa fa-caret-up"></span></div>
-    </footer>
+      </div>
+    </div>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.2.1.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/swiper.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+    </script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/basic.js"></script>
   </body>
 </html>
