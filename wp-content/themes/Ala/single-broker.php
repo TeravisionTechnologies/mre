@@ -199,11 +199,14 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="detail-tlt">Lugares Cercanos</div>
-                <div class="row">
-                    <div class="col-md-4">
-                        
-                    </div>
-                </div>
+                    <?php if(!empty($amenimages)){ ?>
+                        <div class="row gallery-images">
+                            <?php foreach ( (array) $amenimages as $attachment_id => $attachment_url ) { ?>
+                                <div class="col-md-4">
+                                </div>
+                            <?php } ?>
+                        </div>
+                    <?php } ?>
             </div>
         </div>
     </div>
