@@ -1,9 +1,13 @@
 <?php 
     get_header();
     the_post();
+    $intdetails = get_post_meta( get_the_ID(), '_br_intdetails', true);
+    $intdet = explode( '<!--more-->', $intdetails ); 
+    $intimages = get_post_meta( get_the_ID(), '_br_intimages', true);
     $background_image = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_images_id', true ));
     $amenities = get_post_meta( get_the_ID(), '_br_amen', true);
     $amenimages = get_post_meta( get_the_ID(), '_br_amengallery', true);
+    $plainsimages = get_post_meta( get_the_ID(), '_br_plainsgallery', true);
     $quality = get_post_meta( get_the_ID(), '_br_quality', true);
     $q = explode( '<!--more-->', $quality ); 
     $lng = get_post_meta( get_the_ID(), '_br_lng', true);
@@ -28,15 +32,51 @@
             </div>
         </div>
     </div>
+    
+    <?php if(!empty($intdetails)){ ?>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 detail-content">
                 <div class="detail-tlt">Detalles del Interior</div>
-                <?php the_content(); ?>
-                
+                <p><?php echo $intdetails ?></p>
+                <?php if(!empty($intimages)){ ?>
+                    <div class="row gallery-images">
+                        <?php foreach ( (array) $intimages as $attachment_id => $attachment_url ) { ?>
+                            <div class="col-md-4">
+                                <a href="#" class="amenimg" data-toggle="modal" data-target="#myModalDetails" style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')"></a>
+                            </div>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+                <div id="myModalDetails" class="modal fade modal-detail" role="dialog">
+                        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="swiper-container gallery-top-details swiper-detail">
+                                        <div class="swiper-wrapper">
+                                            <?php foreach ((array) $intimages as $attachment_id => $attachment_url) { ?>
+                                                <div class="swiper-slide" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'full'); ?>')"></div>
+                                            <?php } ?>
+                                        </div>
+                                        <div class="swiper-button-next swiper-button-white"></div>
+                                        <div class="swiper-button-prev swiper-button-white"></div>
+                                    </div>
+                                    <div class="swiper-container gallery-thumbs-details swiper-detail-thumbs">
+                                        <div class="swiper-wrapper">
+                                            <?php foreach ((array) $intimages as $attachment_id => $attachment_url) { ?>
+                                                <div class="swiper-slide" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'thumb'); ?>')"></div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
+    <?php } ?>
     
     <?php if(!empty($amenities)){ ?>
         <div class="container">
@@ -45,14 +85,39 @@
                     <div class="detail-tlt">Comodidades</div>
                     <?php echo '<p>'.$amenities.'</p>';  ?>
                     <?php if(!empty($amenimages)){ ?>
-                        <?php foreach ( (array) $amenimages as $attachment_id => $attachment_url ) { ?>
-                            <div class="col-md-4">
-                                <div class="amenimg">
-                                    <?php echo wp_get_attachment_image( $attachment_id, 'full' ); ?>
+                        <div class="row gallery-images">
+                            <?php foreach ( (array) $amenimages as $attachment_id => $attachment_url ) { ?>
+                                <div class="col-md-4">
+                                    <a href="#" class="amenimg" data-toggle="modal" data-target="#myModal" style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')"></a>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    <?php } ?>
+                    <div id="myModal" class="modal fade modal-detail" role="dialog">
+                            <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="swiper-container gallery-top swiper-detail">
+                                            <div class="swiper-wrapper">
+                                                <?php foreach ((array) $amenimages as $attachment_id => $attachment_url) { ?>
+                                                    <div class="swiper-slide" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'full'); ?>')"></div>
+                                                <?php } ?>
+                                            </div>
+                                            <div class="swiper-button-next swiper-button-white"></div>
+                                            <div class="swiper-button-prev swiper-button-white"></div>
+                                        </div>
+                                        <div class="swiper-container gallery-thumbs swiper-detail-thumbs">
+                                            <div class="swiper-wrapper">
+                                                <?php foreach ((array) $amenimages as $attachment_id => $attachment_url) { ?>
+                                                    <div class="swiper-slide" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'full'); ?>')"></div>
+                                                <?php } ?>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        <?php } ?>
-                    <?php } ?>
+                        </div>
                 </div>
             </div>
         </div>
@@ -62,8 +127,24 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="detail-tlt">Planos</div>
-                <?php if(!empty($pzip)){ ?> 
-                    <a class="btn" href="<?php echo $pzip; ?>" download><?php _e('Descargar planos', 'ala') ?></a>
+                <div class="swiper-container gallery-top-blueprint swiper-detail">
+                    <div class="swiper-wrapper">
+                        <?php foreach ((array) $plainsimages as $attachment_id => $attachment_url) { ?>
+                            <div class="swiper-slide" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'full'); ?>')"></div>
+                        <?php } ?>
+                    </div>
+                    <div class="swiper-button-next swiper-button-white"></div>
+                    <div class="swiper-button-prev swiper-button-white"></div>
+                </div>
+                <div class="swiper-container gallery-thumbs-blueprint swiper-detail-thumbs border-thumb">
+                    <div class="swiper-wrapper">
+                        <?php foreach ((array) $plainsimages as $attachment_id => $attachment_url) { ?>
+                            <div class="swiper-slide blueprint-img" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'thumb'); ?>')"></div>
+                        <?php } ?>
+                    </div>
+                </div>
+                <?php if (!empty($pzip)) { ?> 
+                    <a class="btn-planos" href="<?php echo $pzip; ?>" download><?php _e('Descargar planos', 'ala') ?></a>
                 <?php } ?>
             </div>
         </div>
@@ -101,15 +182,19 @@
                       zoom: 10,
                       center: uluru
                     });
+                    var alamarker = '<?php echo get_template_directory_uri(); ?>/assets/marker.png';
                     var marker = new google.maps.Marker({
                       position: uluru,
-                      map: map
+                      map: map,
+                      icon: alamarker,
+                      animation: google.maps.Animation.BOUNCE
                     });
                   }
                 </script>
             </div>
         </div>
     </div>
+    
     <div class="container">
         <div class="row">
             <div class="col-md-12">

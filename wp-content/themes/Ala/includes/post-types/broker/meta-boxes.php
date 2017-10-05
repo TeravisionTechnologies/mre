@@ -71,9 +71,35 @@ function broker_metaboxes() {
                 'repeatable' => false
             )
     );
+    
+    // Interior Details Text
+    $cmb->add_field(
+            array(
+                'name' => __('Interior Details'),
+                'id' => $prefix . 'intdetails',
+                'type' => 'wysiwyg',
+                'options' => array(),
+            )
+    );
+    
+    // Interior Details Images
+    $cmb->add_field(
+            array(
+                'name' => __('Interior Details Images'),
+                'id' => $prefix . 'intimages',
+                'type' => 'file_list',
+                'preview_size' => array(100, 100),
+                'text' =>
+                array(
+                    'add_upload_files_text' => __('Add or Upload Images'), // default: "Add or Upload Files"
+                    'file_text' => __('Image:'), // default: "File:"
+                ),
+                'repeatable' => false
+            )
+    );
 
     // Interior Details
-    $group_field = $cmb->add_field(
+    /*$group_field = $cmb->add_field(
             array(
                 'id' => 'interior_group_field',
                 'type' => 'group',
@@ -87,10 +113,10 @@ function broker_metaboxes() {
                 // 'closed'     => true, // true to have the groups closed by default
                 )
             )
-    );
+    );*/
 
     // Image
-    $cmb->add_group_field($group_field, array(
+    /*$cmb->add_group_field($group_field, array(
         'name' => __('Image'),
         'id' => $prefix . 'image',
         'type' => 'file',
@@ -105,7 +131,7 @@ function broker_metaboxes() {
         ),
         'repeatable' => false
             )
-    );
+    );*/
 
     // Name
     $cmb->add_group_field($group_field, array(
@@ -142,6 +168,24 @@ function broker_metaboxes() {
                 'repeatable' => false
             )
     );
+    
+    // Plaina Images
+    $cmb->add_field(
+            array(
+                'name' => __('Plains Images / Videos'),
+                'id' => $prefix . 'plainsgallery',
+                'type' => 'file_list',
+                'preview_size' => array(100, 100),
+                'text' =>
+                array(
+                    'add_upload_files_text' => __('Add or Upload Images/Videos'), // default: "Add or Upload Files"
+                    'file_text' => __('Image/Video:'), // default: "File:"
+                ),
+                'repeatable' => false
+            )
+    );
+    
+    
 
     // Type of transaction
     $cmb->add_field(
@@ -238,4 +282,39 @@ function broker_metaboxes() {
             'add_upload_file_text' => 'Add File' // Change upload button text. Default: "Add or Upload File"
         )
     ));
+    
+
+add_action( 'cmb2_render_multicheck_posttype', 'cmb_render_multicheck_posttype', 10, 5 );
+
+function cmb_render_multicheck_posttype( $field, $escaped_value, $object_id, $object_type, $field_type_object ) {
+	$cpts = get_post_types();
+	unset( $cpts[ 'nav_menu_item' ] );
+	unset( $cpts[ 'revision' ] );
+	$options = '';
+	$i = 1;
+	$values = (array) $escaped_value;
+	
+	if ( $cpts ) {
+		foreach ( $cpts as $cpt ) {
+			$args = array(
+			    'value' => $cpt,
+			    'label' => $cpt,
+			    'type' => 'checkbox',
+			    'name' => $field->args['_name'] . '[]',
+			);
+
+			if ( in_array( $cpt, $values ) ) {
+				$args[ 'checked' ] = 'checked';
+			}
+			$options .= $field_type_object->list_input( $args, $i );
+			$i++;
+		}
+	}
+
+	$classes = false === $field->args( 'select_all_button' ) ? 'cmb2-checkbox-list no-select-all cmb2-list' : 'cmb2-checkbox-list cmb2-list';
+	echo $field_type_object->radio( array( 'class' => $classes, 'options' => $options ), 'multicheck_posttype' );
+}
+
+  
+    
 }
