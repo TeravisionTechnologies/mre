@@ -1,113 +1,192 @@
-// Header
-.swiper-container
-  height: 172.77777777777777vw
+// General
+.container-ala
+  width: get-vw-mobile(310px)
+// END General
 
-.menu-button
-  padding-top: 15px
-  margin-left: -25px
-  height: 16.666666666666668vw
+// Swiper General
+body
+  font-size: get-vw-mobile(14px)
+  margin: 0
+  padding: 0
+
+.swiper-container-menu
+  width: 100%
+  height: auto
+
+.swiper-slide
+  font-size: get-vw-mobile(18px)
 
 .menu
-  min-width: 27.77777777777778vw
+  min-width: get-vw-mobile(100px)
   width: 70%
-  max-width: 70.83333333333333vw
-  z-index: 1
+  max-width: get-vw-mobile(255px)
+  height: get-vw-mobile(582px)
   .al-menu
-    top: 32.5vw
+    top: get-vw-mobile(60px)
+    left: 0
     padding: 0
     width: 100%
     .al-menu-item
-      border-bottom: 2px solid rgba(255, 255, 255, 0.15)
-      padding: 5.555555555555555vw 0 0 8.333333333333334vw
-      height: 16.666666666666668vw
-      font-size: 5vw
-      line-height: 5.555555555555555vw
+      border-bottom: 2px solid rgba(127, 129, 130, 0.15)
+      padding: get-vw-mobile(20px) 0 0 get-vw-mobile(30px)
+      height: get-vw-mobile(60px)
+      font-size: get-vw-mobile(16px)
+      line-height: get-vw-mobile(20px)
     &:first-child
-      border-top: 2px solid rgba(255, 255, 255, 0.15)
+      border-top: 2px solid rgba(127, 129, 130, 0.15)
   .al-menu-language
-    bottom: 0
-    height: 59.44444444444444vw
+    width: 100%
+    bottom: get-vw-mobile(160px)
+    left: 0
+    height: get-vw-mobile(60px)
     .al-menu-language-text
-      padding-top: 8.333333333333334vw
-      font-size: 3.333333333333333vw
-      line-height: 5.555555555555555vw
+      padding-top: get-vw-mobile(20px)
+      font-size: get-vw-mobile(12px)
+      line-height: get-vw-mobile(20px)
     .al-menu-language-flag
-      margin: 4.166666666666667vw 2.2222222222222223vw 0 2.2222222222222223vw
+      margin: get-vw-mobile(15px) get-vw-mobile(8px) 0 get-vw-mobile(8px)
       opacity: 0.4
-      width: 8.88888888888889vw
-      height: 8.88888888888889vw
+      width: get-vw-mobile(32px)
+      height: get-vw-mobile(32px)
     .language-flag-active
       opacity: 1
-
-.logo-header
-  left: 30.555555555555554vw
-  height: 16.666666666666668vw
-  width: calc(100vw - 30.43vw)
-
-.img-div
-  height: 16.666666666666668vw
-  width: calc(100vw - 61.86vw)
-  img
-    max-width: 22.22222222222222vw
-    max-height: 7.5vw
+  .al-menu-social
+    display: block
+    height: get-vw-mobile(52px)
+    bottom: 0
+    width: 100%
+    text-align: center
+    .menu-social-icons
+      font-size: get-vw-mobile(22px)
+      padding: 0
+      .menu-social-icon
+        height: get-vw-mobile(37px)
+        width: get-vw-mobile(37px)
 
 .content
-  padding-top: 16.666666666666668vw
+  width: 100%
 
-#al-carousel-hero
-  height: 156.11111111111111vw
-  .item
-    background-position: 30%
-    height: 156.11111111111111vw
-    .item-overlay
-      top: 0
-    img
-      height: 156.11111111111111vw
-    .carousel-caption
-      font-size: 6.666666666666666vw
-      letter-spacing: 2vw
-      padding: 0
-      top: 74.44444444444444vw
-  .carousel-control
-    top: 74.44444444444444vw
-    img
-      height: 7.777777777777778vw
-      width: 7.777777777777778vw
-    &:hover
-      opacity: 1
-  .right
-    right: 4.166666666666667vw
-    height: 4.166666666666667vw
-  .left
-    left: 4.166666666666667vw
-    height: 4.166666666666667vw
+.menu-button
+  top: 0
+  left: 0
+  padding: get-vw-mobile(20px) 0 get-vw-mobile(27px) get-vw-mobile(20px)
+  height: get-vw-mobile(60px)
+  -webkit-transition: .3s
+  transition: .3s
+  z-index: 2
+  width: 15.28vw
 
+.menu-button .bar:nth-of-type(1)
+  margin-top: 0
 
-.al-projects
-  height: 22.22222222222222vw
-  margin-top: 0.8333333333333333vw
-  padding: 0
-  .al-project-list
-    height: 100%
-    padding: 0
-    .al-project-list-item
-      margin: 0 0.8333333333333333vw
-      height: 100%
-      width: 27.77777777777778vw
-      .item-text
-        opacity: 0.4
-        font-size: 2.7777777777777777vw
-        color: #ffffff
-        margin-top: 9.166666666666666vw
-      .item-active
-        opacity: 1
-      .triangle
-        width: 5.555555555555555vw
-        height: 2.2222222222222223vw
-        opacity: 0
-        bottom: -1.9444444444444444vw
+.menu-button .bar:nth-of-type(3)
+  margin-bottom: 0
+
+.bar
+  width: get-vw-mobile(30px)
+  height: get-vw-mobile(4px)
+  margin: get-vw-mobile(6px) auto
+  border-radius: get-vw-mobile(10px)
+  -webkit-transition: .3s
+  transition: .3s
+
+.menu-button:hover .bar:nth-of-type(1)
+  -webkit-transform: translateY(1.5px) rotate(-4.5deg)
+  -ms-transform: translateY(1.5px) rotate(-4.5deg)
+  transform: translateY(1.5px) rotate(-4.5deg)
+
+.menu-button:hover .bar:nth-of-type(2)
+  opacity: .9
+
+.menu-button:hover .bar:nth-of-type(3)
+  -webkit-transform: translateY(-1.5px) rotate(4.5deg)
+  -ms-transform: translateY(-1.5px) rotate(4.5deg)
+  transform: translateY(-1.5px) rotate(4.5deg)
+
+.cross .bar:nth-of-type(1)
+  -webkit-transform: translateY(get-vw-mobile(15px)) rotate(-45deg)
+  -ms-transform: translateY(get-vw-mobile(15px)) rotate(-45deg)
+  transform: translateY(get-vw-mobile(15px)) rotate(-45deg)
+
+.cross .bar:nth-of-type(2)
+  opacity: 0
+
+.cross .bar:nth-of-type(3)
+  -webkit-transform: translateY(get-vw-mobile(-15px)) rotate(45deg)
+  -ms-transform: translateY(get-vw-mobile(-15px)) rotate(45deg)
+  transform: translateY(get-vw-mobile(-15px)) rotate(45deg)
+
+.cross:hover .bar:nth-of-type(1)
+  -webkit-transform: translateY(get-vw-mobile(13.5px)) rotate(-40.5deg)
+  -ms-transform: translateY(get-vw-mobile(13.5px)) rotate(-40.5deg)
+  transform: translateY(get-vw-mobile(13.5px)) rotate(-40.5deg)
+
+.cross:hover .bar:nth-of-type(2)
+  opacity: .1
+
+.cross:hover .bar:nth-of-type(3)
+  -webkit-transform: translateY(get-vw-mobile(-13.5px)) rotate(40.5deg)
+  -ms-transform: translateY(get-vw-mobile(-13.5px)) rotate(40.5deg)
+  transform: translateY(get-vw-mobile(-13.5px)) rotate(40.5deg)
+// END Swiper General
+
+// Header
+#ala-header
+  .logo-header
+    top: 0
+    height: get-vw-mobile(60px)
+    left: 15.28vw
+    width: 48.33vw
+    .img-div
+      width: 27vw
+      height: get-vw-mobile(60px)
+      img
+        width: get-vw-mobile(97px)
+        height: get-vw-mobile(32px)
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+  .social-header
+    top: 0
+    left: 63.61vw
+    height: get-vw-mobile(60px)
+    width: 36.39vw
+    z-index: 2
+    .social-icons
+      display: none
+  .swiper-container-hero
+    padding-top: get-vw-mobile(60px)
+    .swiper-slide
+      height: get-vw-mobile(522px)
+      background-position: 50%
+      .slide-overlay
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, 0.4)
+      .slide-text
+        top: get-vw-mobile(261px)
         left: 50%
         transform: translateX(-50%)
+        width: get-vw-mobile(245px)
+        h2
+          font-size: get-vw-mobile(24px)
+          text-shadow: 0 2px get-vw-mobile(8px) rgba(0, 0, 0, 0.8)
+    .swiper-button-prev, .swiper-button-next
+      font-size: get-vw-mobile(24px)
+      height: get-vw-mobile(28px)
+      top: get-vw-mobile(342px)
+      width: get-vw-mobile(28px)
+    .swiper-button-prev
+      left: get-vw-mobile(25px)
+    .swiper-button-next
+      right: get-vw-mobile(25px)
+  .hero-button
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 1
+    width: get-vw-mobile(63px)
+    height: get-vw-mobile(28px)
 // END Header
 
 // Generals Classes
