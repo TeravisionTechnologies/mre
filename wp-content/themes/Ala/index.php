@@ -8,44 +8,29 @@
   );
   $footer_info = get_post_meta($footer_query[0]->ID);
 
-  $properties_list = get_posts(
-    array(
-      'post_type' => 'broker',
-      'order' => 'ASC',
-      'numberposts' => -1
-    )
-  );
 ?>
-  <div class="swiper-container swiper-container-hero">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/spain-1.jpg');">
-        <div class="slide-overlay"></div>
-        <div class="slide-text">
-          <h2>Madrid</h2>
+
+    <div class="swiper-container swiper-container-hero">
+        <div class="swiper-wrapper">
+            <?php
+            $banners = array('post_type' => 'banner');
+            query_posts($banners);
+            if (have_posts()): while (have_posts()): the_post();
+                $background_image = wp_get_attachment_url(get_post_meta(get_the_ID(), '_br_bannerimg_id', true)); ?>
+                <div class="swiper-slide"
+                     style="background-image: url('<?php echo $background_image; ?>');">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-text">
+                        <h2>Madrid</h2>
+                    </div>
+                </div>
+            <?php endwhile; endif; wp_reset_postdata(); ?>
         </div>
-      </div>
-      <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/spain-2.jpg');">
-        <div class="slide-overlay"></div>
-        <div class="slide-text">
-          <h2>Madrid</h2>
-        </div>
-      </div>
-      <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/spain-3.jpg');">
-        <div class="slide-overlay"></div>
-        <div class="slide-text">
-          <h2>Madrid</h2>
-        </div>
-      </div>
-      <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/vegas-1.jpg');">
-        <div class="slide-overlay"></div>
-        <div class="slide-text">
-          <h2>Las Vegas</h2>
-        </div>
-      </div>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/al-hero-left.png" alt="Hero Left Arrow" class="swiper-button-prev">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/al-hero-right.png" alt="Hero Right Arrow" class="swiper-button-next">
     </div>
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/al-hero-left.png" alt="Hero Left Arrow" class="swiper-button-prev">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/al-hero-right.png" alt="Hero Right Arrow" class="swiper-button-next">
-  </div>
+
+
 <section class="col-xs-12 al-projects">
   <div class="container center-block al-project-list">
     <span class="al-project-list-item"><h2 class="item-text">Proyectos pasados</h2><img class="triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.svg"></span>
