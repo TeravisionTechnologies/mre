@@ -643,8 +643,7 @@ a.al-phone-num {
 #blog-list-categories {
   background: #303030;
   height: 23.81944vw;
-  position: relative;
-  margin-top: 80px; }
+  position: relative; }
   #blog-list-categories .blog-list-category-title, #blog-list-categories .blog-list-category-text {
     line-height: 2.08333vw;
     text-align: center; }
@@ -1505,8 +1504,7 @@ a.al-phone-num {
       bottom: 143px; }
 
   #blog-list-categories {
-    height: 343px;
-    margin-top: 80px; }
+    height: 343px; }
     #blog-list-categories .blog-list-category-title, #blog-list-categories .blog-list-category-text {
       line-height: 30px; }
     #blog-list-categories .blog-list-category-title {
