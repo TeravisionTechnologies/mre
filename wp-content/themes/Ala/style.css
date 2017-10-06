@@ -508,45 +508,45 @@ a.al-phone-num {
   letter-spacing: -0.2px;
   font-family: "Archivo", sans-serif; }
 
-#mre-offices {
+#al-offices {
   height: 31.25vw;
   background-size: cover; }
-  #mre-offices .swiper-container-flags {
+  #al-offices .swiper-container-flags {
     height: 100%;
     text-align: center; }
-  #mre-offices h4 {
+  #al-offices h4 {
     margin: 6.25vw 0 2.77778vw 0;
     font-family: Montserrat-Regular, sans-serif;
     font-size: 2.5vw;
     line-height: 2.77778vw;
     color: #ffffff; }
-    #mre-offices h4 strong {
+    #al-offices h4 strong {
       font-family: Montserrat-Bold, sans-serif; }
-  #mre-offices .flags-indicators .flag-image {
+  #al-offices .flags-indicators .flag-image {
     height: 4.16667vw;
     margin: 0 1.38889vw 0.69444vw 1.38889vw;
     width: 4.16667vw;
     cursor: pointer; }
-  #mre-offices .flags-indicators .flag-image-opacity {
+  #al-offices .flags-indicators .flag-image-opacity {
     opacity: 0.6; }
-  #mre-offices .swiper-wrapper {
+  #al-offices .swiper-wrapper {
     width: 100%; }
-    #mre-offices .swiper-wrapper .swiper-slide {
+    #al-offices .swiper-wrapper .swiper-slide {
       background: transparent;
       margin: 0 auto;
       height: 10.41667vw;
       width: 100%; }
-      #mre-offices .swiper-wrapper .swiper-slide .office-detail {
+      #al-offices .swiper-wrapper .swiper-slide .office-detail {
         display: inline-block;
         width: 25.69444vw;
         margin: 0 1.52778vw; }
-        #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
+        #al-offices .swiper-wrapper .swiper-slide .office-detail h5 {
           color: #ffffff;
           font-family: Montserrat-Regular, sans-serif;
           font-size: 1.11111vw;
           line-height: 1.73611vw;
           margin: 0; }
-        #mre-offices .swiper-wrapper .swiper-slide .office-detail span {
+        #al-offices .swiper-wrapper .swiper-slide .office-detail span {
           font-family: Montserrat-Bold, sans-serif; }
 
 .al-properties-section .properties-country-filter {
@@ -640,7 +640,7 @@ a.al-phone-num {
         color: black; }
 
 @media only screen and (min-width: 1440px) {
-  .container-mre {
+  .container-ala {
     width: 1170px;
     height: 100%; }
 
