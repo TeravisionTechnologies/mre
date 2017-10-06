@@ -36,7 +36,7 @@
               <li class="mre-menu-item" id="menu-about"><a href="#">Sobre nosotros</a></li>
               <li class="mre-menu-item"><a href="#">Developer</a></li>
               <li class="mre-menu-item"><a href="#">Inmobiliaria</a></li>
-              <li class="mre-menu-item"><a href="#">Blog</a></li>
+              <li class="mre-menu-item"><a href="/blog">Blog</a></li>
               <li class="mre-menu-item" id="menu-contact"><a href="#">Contáctanos</a></li>
             </ul>
             <div class="mre-menu-language">

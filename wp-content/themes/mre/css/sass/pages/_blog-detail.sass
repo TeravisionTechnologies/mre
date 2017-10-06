@@ -1,79 +1,80 @@
 #blog-detail-breadcrumb
-  margin-top: 80px
-  padding: 3.4722222222222223vw 0 1.3888888888888888vw 0
+  margin-top: get-vw-desktop(80px)
+  padding: get-vw-desktop(50px) 0 get-vw-desktop(20px) 0
   .blog-detail-breadcrumb-prev
     color: $white
-    font-size: 1.3888888888888888vw
-    height: 1.3888888888888888vw
+    font-size: get-vw-desktop(20px)
+    height: get-vw-desktop(20px)
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)
     vertical-align: middle
-    width: 1.3888888888888888vw
+    width: get-vw-desktop(20px)
   .blog-detail-breadcrumb-category
     background-color: $light-blue
     color: $white
     display: inline-block
     font-family: Montserrat-Bold, sans-serif
-    font-size: 0.8333333333333333vw
-    height: 2.0833333333333335vw
-    line-height: 2.0833333333333335vw
-    min-width: 6.388888888888888vw
+    font-size: get-vw-desktop(12px)
+    height: get-vw-desktop(30px)
+    line-height: get-vw-desktop(30px)
+    min-width: get-vw-desktop(92px)
+    padding: 0 get-vw-desktop(10px)
     text-align: center
     text-transform: uppercase
   .blog-detail-breadcrumb-title
     color: $grey
     display: inline-block
     font-family: Montserrat-Regular, sans-serif
-    font-size: 0.8333333333333333vw
-    margin-left: 0.6944444444444444vw
+    font-size: get-vw-desktop(12px)
+    margin-left: get-vw-desktop(10px)
 #blog-detail-hero
-  height: 34.72222222222222vw
+  height: get-vw-desktop(500px)
   .blog-detail-hero-image
     height: 100%
     position: relative
     .blog-detail-hero-author
-      bottom: -4.861111111111111vw
-      height: 9.722222222222221vw
+      bottom: get-vw-desktop(-70px)
+      height: get-vw-desktop(140px)
       left: 50%
       position: absolute
       transform: translateX(-50%)
-      width: 9.722222222222221vw
+      width: get-vw-desktop(140px)
       z-index: 1
 #blog-detail-content
-  padding-top: 8.333333333333334vw
+  padding-top: get-vw-desktop(120px)
   .blog-detail-content-title
     color: $grey
     font-family: Montserrat-Bold, sans-serif
-    font-size: 2.0833333333333335vw
-    line-height: 2.7777777777777777vw
-    margin-left: 6.944444444444445vw
+    font-size: get-vw-desktop(30px)
+    line-height: get-vw-desktop(40px)
+    margin-left: get-vw-desktop(100px)
   .blog-detail-content-author
     color: $grey
     font-family: Montserrat-Bold, sans-serif
-    font-size: 1.25vw
-    line-height: 1.7361111111111112vw
-    margin: 0.3472222222222222vw 0 0 6.944444444444445vw
+    font-size: get-vw-desktop(18px)
+    line-height: get-vw-desktop(25px)
+    margin: get-vw-desktop(5px) 0 0 get-vw-desktop(100px)
     opacity: 0.5
     .blog-detail-content-date
       color: $grey
       font-family: Montserrat-Regular, sans-serif
-      font-size: 1.25vw
-      line-height: 1.7361111111111112vw
-      padding-left: 0.6944444444444444vw
+      font-size: get-vw-desktop(18px)
+      line-height: get-vw-desktop(25px)
+      padding-left: get-vw-desktop(10px)
   .blog-detail-content-text
     color: $grey
     font-family: Montserrat-Regular, sans-serif
-    font-size: 1.1111111111111112vw
-    line-height: 1.3888888888888888vw
-    padding: 2.7777777777777777vw 6.944444444444445vw 4.166666666666667vw 6.944444444444445vw
+    font-size: get-vw-desktop(16px)
+    line-height: get-vw-desktop(20px)
+    padding: get-vw-desktop(40px) get-vw-desktop(100px) get-vw-desktop(60px) get-vw-desktop(100px)
     p
-      padding-bottom: 1.0416666666666667vw
+      padding-bottom: get-vw-desktop(15px)
   .blog-detail-content-share
-    height: 12.222222222222221vw
+    height: get-vw-desktop(176px)
     .blog-detail-content-share-title
       color: $grey
       font-family: Montserrat-Regular, sans-serif
-      font-size: 1.25vw
-      margin-bottom: 1.3888888888888888vw
+      font-size: get-vw-desktop(18px)
+      margin-bottom: get-vw-desktop(20px)
       text-align: center
     .blog-detail-content-share-list
       list-style: none
@@ -81,69 +82,69 @@
       li
         display: inline-block
       img
-        height: 3.75vw
-        margin: 0 0.4861111111111111vw
-        width: 3.75vw
+        height: get-vw-desktop(54px)
+        margin: 0 get-vw-desktop(7.5px)
+        width: get-vw-desktop(54px)
 .blog-detail-divider
   border: solid 1px $grey
   margin-bottom: 0
   margin-top: 0
   opacity: 0.3
-  width: 67.36111111111111vw
+  width: get-vw-desktop(970px)
 #blog-detail-comments
-  padding: 3.4722222222222223vw 0
+  padding: get-vw-desktop(50px) 0
   .blog-detail-comments-number
     color: $grey
     font-family: Montserrat-Bold, sans-serif
-    font-size: 1.6666666666666665vw
-    line-height: 2.5vw
-    margin-bottom: 2.0833333333333335vw
+    font-size: get-vw-desktop(24px)
+    line-height: get-vw-desktop(36px)
+    margin-bottom: get-vw-desktop(30px)
     text-align: center
   .blog-detail-comments-post
     border: solid 2px $comments-grey
-    border-radius: 0.41666666666666663vw
-    margin: 0 auto 1.3888888888888888vw auto
-    min-height: 11.041666666666666vw
-    padding: 2.0833333333333335vw 2.7777777777777777vw
-    width: 67.36111111111111vw
+    border-radius: get-vw-desktop(6px)
+    margin: 0 auto get-vw-desktop(20px) auto
+    min-height: get-vw-desktop(159px)
+    padding: get-vw-desktop(30px) get-vw-desktop(40px)
+    width: get-vw-desktop(970px)
     .blog-detail-comments-post-author
       color: $light-blue
       display: inline-block
       font-family: Montserrat-Bold, sans-serif
-      font-size: 1.1111111111111112vw
-      line-height: 1.3888888888888888vw
+      font-size: get-vw-desktop(16px)
+      line-height: get-vw-desktop(20px)
       .blog-detail-comments-post-date
         color: $arrow-grey
         display: inline-block
         font-family: Montserrat-Regular, sans-serif
-        font-size: 0.9722222222222222vw
-        line-height: 1.3888888888888888vw
-        margin-left: 0.6944444444444444vw
+        font-size: get-vw-desktop(14px)
+        line-height: get-vw-desktop(20px)
+        margin-left: get-vw-desktop(10px)
     .blog-detail-comments-post-text
       color: $grey
       font-family: Montserrat-Regular, sans-serif
-      font-size: 1.1111111111111112vw
-      line-height: 1.597222222222222vw
+      font-size: get-vw-desktop(16px)
+      line-height: get-vw-desktop(23px)
       margin: 0
-      padding-top: 0.6944444444444444vw
+      padding-top: get-vw-desktop(10px)
 #blog-detail-form
   background: $form-grey
   .blog-detail-comments-form
-    height: 34.30555555555556vw
-    padding: 0 2.7777777777777777vw
-    width: 67.36111111111111vw
+    height: get-vw-desktop(494px)
+    padding: 0 get-vw-desktop(40px)
+    width: get-vw-desktop(970px)
     .blog-detail-comments-form-title
       color: $grey
       font-family: Montserrat-Bold, sans-serif
-      font-size: 1.6666666666666665vw
-      line-height: 2.5vw
-      padding: 3.4722222222222223vw 0 1px 0
+      font-size: get-vw-desktop(24px)
+      line-height: get-vw-desktop(36px)
+      padding: get-vw-desktop(50px) 0 1px 0
       text-align: center
     .blog-detail-comments-form-subtitle
       color: $arrow-grey
       font-family: Montserrat-Regular, sans-serif
-      font-size: 1.1111111111111112vw
-      line-height: 1.0416666666666667vw
+      font-size: get-vw-desktop(16px)
+      line-height: get-vw-desktop(15px)
       opacity: 0.8
       text-align: center
     .comments-form
@@ -153,45 +154,45 @@
         color: $arrow-grey
         display: inline-block
         font-family: Montserrat-Regular, sans-serif
-        font-size: 1.1111111111111112vw
-        height: 3.333333333333333vw
-        line-height: 1.0416666666666667vw
-        margin-right: 1.9444444444444444vw
-        margin-top: 1.6666666666666665vw
+        font-size: get-vw-desktop(16px)
+        height: get-vw-desktop(48px)
+        line-height: get-vw-desktop(15px)
+        margin-right: get-vw-desktop(27px)
+        margin-top: get-vw-desktop(24px)
         opacity: 0.8
-        padding-left: 1.3888888888888888vw
-        width: 29.72222222222222vw
+        padding-left: get-vw-desktop(20px)
+        width: get-vw-desktop(428px)
       input[type="email"]
         border: solid 2px $comments-grey
         color: $arrow-grey
         display: inline-block
         font-family: Montserrat-Regular, sans-serif
-        font-size: 1.1111111111111112vw
-        height: 3.333333333333333vw
-        line-height: 1.0416666666666667vw
-        margin-top: 1.6666666666666665vw
+        font-size: get-vw-desktop(16px)
+        height: get-vw-desktop(48px)
+        line-height: get-vw-desktop(15px)
+        margin-top: get-vw-desktop(24px)
         opacity: 0.8
-        padding-left: 1.3888888888888888vw
-        width: 29.72222222222222vw
+        padding-left: get-vw-desktop(20px)
+        width: get-vw-desktop(428px)
       textarea
         border: solid 2px $comments-grey
         color: $arrow-grey
         font-family: Montserrat-Regular, sans-serif
-        font-size: 1.1111111111111112vw
-        height: 9.375vw
-        line-height: 1.0416666666666667vw
-        margin-top: 1.7361111111111112vw
+        font-size: get-vw-desktop(16px)
+        height: get-vw-desktop(135px)
+        line-height: get-vw-desktop(15px)
+        margin-top: get-vw-desktop(25px)
         opacity: 0.8
-        padding-left: 1.3888888888888888vw
-        padding-top: 0.9722222222222222vw
+        padding-left: get-vw-desktop(20px)
+        padding-top: get-vw-desktop(14px)
     .comments-form-button
       background: $form-grey
       border: solid 2px $light-blue
-      border-radius: 0.6944444444444444vw
+      border-radius: get-vw-desktop(10px)
       color: $light-blue
       font-family: Montserrat-Bold, sans-serif
-      font-size: 1.25vw
-      height: 3.4722222222222223vw
-      line-height: 1.3888888888888888vw
-      margin-top: 1.0416666666666667vw
-      width: 22.916666666666668vw
+      font-size: get-vw-desktop(18px)
+      height: get-vw-desktop(50px)
+      line-height: get-vw-desktop(20px)
+      margin-top: get-vw-desktop(15px)
+      width: get-vw-desktop(330px)

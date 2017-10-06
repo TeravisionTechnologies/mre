@@ -343,7 +343,8 @@ body {
   transform: translateX(-50%);
   z-index: 1;
   width: 6.52778vw;
-  height: 2.91667vw; }
+  height: 2.91667vw;
+  cursor: pointer; }
 
 #mre-about-us {
   height: 55.55556vw;
@@ -682,7 +683,7 @@ a.al-phone-num {
       font-size: 2.5vw;
       height: 2.5vw;
       text-align: center;
-      top: 63%;
+      top: 67%;
       width: 4.16667vw; }
     #blog-list-categories .swiper-container-blog-categories .swiper-button-prev {
       left: 15.97222vw; }
@@ -692,7 +693,7 @@ a.al-phone-num {
 .blog-list-triangle {
   left: 50%;
   position: relative;
-  top: -3px;
+  top: -1px;
   transform: translateX(-50%); }
 
 #blog-list {
@@ -878,7 +879,7 @@ a.al-phone-num {
       font-size: 2.5vw;
       height: 2.5vw;
       text-align: center;
-      top: 54%;
+      top: 58%;
       width: 4.16667vw; }
     #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-prev {
       left: 8.68056vw; }
@@ -886,7 +887,7 @@ a.al-phone-num {
       right: 8.68056vw; }
 
 #blog-detail-breadcrumb {
-  margin-top: 80px;
+  margin-top: 5.55556vw;
   padding: 3.47222vw 0 1.38889vw 0; }
   #blog-detail-breadcrumb .blog-detail-breadcrumb-prev {
     color: #ffffff;
@@ -904,6 +905,7 @@ a.al-phone-num {
     height: 2.08333vw;
     line-height: 2.08333vw;
     min-width: 6.38889vw;
+    padding: 0 0.69444vw;
     text-align: center;
     text-transform: uppercase; }
   #blog-detail-breadcrumb .blog-detail-breadcrumb-title {
@@ -971,7 +973,7 @@ a.al-phone-num {
         display: inline-block; }
       #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img {
         height: 3.75vw;
-        margin: 0 0.48611vw;
+        margin: 0 0.52083vw;
         width: 3.75vw; }
 
 .blog-detail-divider {
@@ -1048,7 +1050,7 @@ a.al-phone-num {
         font-size: 1.11111vw;
         height: 3.33333vw;
         line-height: 1.04167vw;
-        margin-right: 1.94444vw;
+        margin-right: 1.875vw;
         margin-top: 1.66667vw;
         opacity: 0.8;
         padding-left: 1.38889vw;
@@ -1525,7 +1527,7 @@ a.al-phone-num {
       #blog-list-categories .swiper-container-blog-categories .swiper-button-prev, #blog-list-categories .swiper-container-blog-categories .swiper-button-next {
         font-size: 36px;
         height: 36px;
-        top: 63%;
+        top: 67%;
         width: 60px; }
       #blog-list-categories .swiper-container-blog-categories .swiper-button-prev {
         left: 230px; }
@@ -1652,7 +1654,7 @@ a.al-phone-num {
       #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-prev, #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-next {
         font-size: 36px;
         height: 36px;
-        top: 54%;
+        top: 58%;
         width: 60px; }
       #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-prev {
         left: 125px; }
@@ -1660,6 +1662,7 @@ a.al-phone-num {
         right: 125px; }
 
   #blog-detail-breadcrumb {
+    margin-top: 80px;
     padding: 50px 0 20px 0; }
     #blog-detail-breadcrumb .blog-detail-breadcrumb-prev {
       font-size: 20px;
@@ -1670,7 +1673,8 @@ a.al-phone-num {
       font-size: 12px;
       height: 30px;
       line-height: 30px;
-      min-width: 92px; }
+      min-width: 92px;
+      padding: 0 10px; }
     #blog-detail-breadcrumb .blog-detail-breadcrumb-title {
       font-size: 12px;
       margin-left: 10px; }
@@ -2355,7 +2359,8 @@ a.al-phone-num {
       font-size: 1.30208vw;
       height: 3.90625vw;
       line-height: 3.90625vw;
-      min-width: 11.97917vw; }
+      min-width: 11.97917vw;
+      padding: 0 1.30208vw; }
     #blog-detail-breadcrumb .blog-detail-breadcrumb-title {
       font-size: 1.5625vw;
       margin-left: 1.30208vw; }
@@ -2447,7 +2452,7 @@ a.al-phone-num {
       margin-right: 2.60417vw 2.60417vw;
       margin-top: 3.90625vw;
       padding-left: 1.95313vw;
-      width: 34.42396vw; }
+      width: 34.375vw; }
     #blog-detail-form .blog-detail-comments-form .comments-form input[type="email"] {
       font-size: 1.82292vw;
       height: 6.11979vw;
@@ -2889,7 +2894,7 @@ a.al-phone-num {
       #blog-list-categories .swiper-container-blog-categories .swiper-button-prev, #blog-list-categories .swiper-container-blog-categories .swiper-button-next {
         font-size: 6.66667vw;
         height: 6.66667vw;
-        top: 63%;
+        top: 72%;
         width: 5.55556vw; }
       #blog-list-categories .swiper-container-blog-categories .swiper-button-prev {
         left: 11.11111vw; }
@@ -2899,7 +2904,7 @@ a.al-phone-num {
   .blog-list-triangle {
     height: 3.33333vw;
     left: 50%;
-    top: -1px;
+    top: -7px;
     transform: translateX(-50%);
     width: 5.83333vw; }
 
@@ -2941,7 +2946,7 @@ a.al-phone-num {
         bottom: 0;
         font-size: 2.77778vw;
         height: 8.33333vw;
-        line-height: 9.01111vw;
+        line-height: 8.88889vw;
         min-width: 26.38889vw;
         padding: 0 2.77778vw; }
     #blog-list .blog-post .blog-text {
@@ -3035,7 +3040,8 @@ a.al-phone-num {
       font-size: 2.77778vw;
       height: 7.22222vw;
       line-height: 7.22222vw;
-      min-width: 23.05556vw; }
+      min-width: 23.05556vw;
+      padding: 0 2.77778vw; }
     #blog-detail-breadcrumb .blog-detail-breadcrumb-title {
       font-size: 2.77778vw;
       margin-left: 2.77778vw; }
@@ -3046,7 +3052,7 @@ a.al-phone-num {
       height: 100%;
       background-size: cover; }
       #blog-detail-hero .blog-detail-hero-image .blog-detail-hero-author {
-        bottom: -8.33333vw;
+        bottom: 8.33333vw;
         height: 16.66667vw;
         width: 16.66667vw; }
 
