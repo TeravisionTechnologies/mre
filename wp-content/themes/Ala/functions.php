@@ -30,13 +30,13 @@ function mre_enqueue_scripts() {
 $postTypeDir = array (
   __DIR__.'/includes/post-types/broker/',
   __DIR__.'/includes/post-types/header-footer/',
-  __DIR__.'/includes/post-types/places/'
 );
 
 // File names inside post-types dirs
 $files = array (
   'meta-boxes.php',
-  'post-type.php'
+  'post-type.php',
+    'taxonomy.php'
 );
 
 foreach ($postTypeDir as $directory) {
@@ -60,8 +60,6 @@ function call_create_post_types() {
   create_post_type_broker();
   // Post Type for General Settings
   create_post_type_header_footer();
-  // Post Type for Related Places
-  create_post_type_places();
 }
 
 /* Remove text area field from header and footer */
@@ -86,8 +84,6 @@ function call_metaboxes() {
   broker_metaboxes();
   // Metaboxes for General Settings
   header_footer_metaboxes();
-  // Metaboxes for Places
-  places_metaboxes();
 }
 
 function custom_form_validation_filter($result, $tag) {

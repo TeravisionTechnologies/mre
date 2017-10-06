@@ -14,6 +14,7 @@
     $lat = get_post_meta( get_the_ID(), '_br_lat', true);
     $brochure = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_brochure_id', true ));
     $pzip = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_pzip_id', true ));
+    $terms = get_the_terms(get_the_ID(), 'nearby_places');
 ?>
 
 <section class="prop-header text-center" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.5) 100%), url('<?php if(!empty($background_image)){ echo $background_image; } ?>')">
@@ -175,6 +176,10 @@
             <div class="col-md-12">
                 <div class="detail-tlt"><?php _e('Ubicaci&oacute;n', 'ala') ?></div>
                 <div id="map"></div>
+                <div id="save-widget">
+                    <strong><?php the_title() ?></strong>
+                    <p><a href="https://www.google.com/maps/place/<?php echo $lat ?>,<?php echo $lng ?>" target="_blank">Ver en Google Maps</a></p>
+                </div>
                 <script>
                   function initMap() {
                     var uluru = {lat: <?php echo $lat ?>, lng: <?php echo $lng ?>};
@@ -199,12 +204,14 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="detail-tlt"><?php _e('Lugares Cercanos', 'ala') ?></div>
-                <?php if(!empty($intimages)){ ?>
+                <?php if ($terms != null) { ?>
                     <div class="row gallery-places">
-                        <?php $i = 1; foreach ( (array) $intimages as $attachment_id => $attachment_url ) { ?>
+                        <?php $i = 1; foreach ($terms as $term) {
+                            $meta_image = get_wp_term_image($term->term_id);
+                            ?>
                             <div class="col-sm-4 col-md-4">
-                                <a href="#" class="amenimg places-wrapper" data-toggle="modal" data-target="#myModalDetails" style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')">
-                                    <div class="places-mask">Freemont</div>
+                                <a href="#" class="amenimg places-wrapper" data-toggle="modal" data-target="#myModalDetails" style="background: url('<?php echo $meta_image; ?>')">
+                                    <div class="places-mask"><?php print $term->name; ?></div>
                                 </a>
                             </div>
                             <?php  if ($i++ == 3) break; ?>
@@ -216,4 +223,4 @@
     </div>
 </section>
 
-<?php get_footer(); 
+<?php get_footer();
