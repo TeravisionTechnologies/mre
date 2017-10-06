@@ -154,7 +154,7 @@ jQuery(document).ready(function() {
         prevButton: '.swiper-button-prev',
         spaceBetween: 10,
         loop: true,
-        loopedSlides: 5, //looped slides should be the same     
+        loopedSlides: 5, //looped slides should be the same
     });
     var galleryThumbs = new Swiper('.gallery-thumbs-blueprint', {
         spaceBetween: 98,
@@ -162,7 +162,14 @@ jQuery(document).ready(function() {
         touchRatio: 0.2,
         loop: true,
         loopedSlides: 5, //looped slides should be the same
-        slideToClickedSlide: true
+        slideToClickedSlide: true,
+        breakpoints: {
+            // when window width is <= 767px
+            767: {
+                slidesPerView: 2,
+                spaceBetween: 14
+            }
+        }
     });
     galleryTop.params.control = galleryThumbs;
     galleryThumbs.params.control = galleryTop;

@@ -20,7 +20,7 @@
     <h1><?php the_title(); ?></h1>
     <h2>Las Vegas</h2>
     <?php if(!empty($brochure)){ ?>
-        <a class="download-bro" href="<?php echo $brochure; ?>" download>Descargar folleto</a>
+        <a class="download-bro" href="<?php echo $brochure; ?>" download><?php _e('Descargar PDF', 'ala') ?></a>
     <?php } ?>
 </section>
 
@@ -37,12 +37,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 detail-content">
-                <div class="detail-tlt">Detalles del Interior</div>
+                <div class="detail-tlt"><?php _e('Detalles del Interior', 'ala') ?></div>
                 <p><?php echo $intdetails ?></p>
                 <?php if(!empty($intimages)){ ?>
                     <div class="row gallery-images">
                         <?php foreach ( (array) $intimages as $attachment_id => $attachment_url ) { ?>
-                            <div class="col-md-4">
+                            <div class="col-sm-4 col-md-4">
                                 <a href="#" class="amenimg" data-toggle="modal" data-target="#myModalDetails" style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')"></a>
                             </div>
                         <?php } ?>
@@ -82,12 +82,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="detail-tlt">Comodidades</div>
+                    <div class="detail-tlt"><?php _e('Comodidades', 'ala') ?></div>
                     <?php echo '<p>'.$amenities.'</p>';  ?>
                     <?php if(!empty($amenimages)){ ?>
                         <div class="row gallery-images">
                             <?php foreach ( (array) $amenimages as $attachment_id => $attachment_url ) { ?>
-                                <div class="col-md-4">
+                                <div class="col-sm-4 col-md-4">
                                     <a href="#" class="amenimg" data-toggle="modal" data-target="#myModal" style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')"></a>
                                 </div>
                             <?php } ?>
@@ -126,8 +126,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="detail-tlt">Planos</div>
-                <div class="swiper-container gallery-top-blueprint swiper-detail">
+                <div class="detail-tlt"><?php _e('Planos', 'ala') ?></div>
+                <div id="gallery-top-blueprint" class="swiper-container gallery-top-blueprint swiper-detail">
                     <div class="swiper-wrapper">
                         <?php foreach ((array) $plainsimages as $attachment_id => $attachment_url) { ?>
                             <div class="swiper-slide" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'full'); ?>')"></div>
@@ -136,7 +136,7 @@
                     <div class="swiper-button-next swiper-button-white"></div>
                     <div class="swiper-button-prev swiper-button-white"></div>
                 </div>
-                <div class="swiper-container gallery-thumbs-blueprint swiper-detail-thumbs border-thumb">
+                <div id="gallery-thumbs-blueprint" class="swiper-container gallery-thumbs-blueprint swiper-detail-thumbs border-thumb">
                     <div class="swiper-wrapper">
                         <?php foreach ((array) $plainsimages as $attachment_id => $attachment_url) { ?>
                             <div class="swiper-slide blueprint-img" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'thumb'); ?>')"></div>
@@ -153,16 +153,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="detail-tlt">Memoria de Calidad</div>
+                <div class="detail-tlt"><?php _e('Memoria de Calidad', 'ala') ?></div>
                 <p><?php echo $q[0]; ?></p>
                 <div class="row memory-items">
-                    <div class="col-md-4 text-center">
+                    <div class="col-sm-4 col-md-4 text-center">
                         <?php echo $q[1]; ?> 
                     </div>
-                    <div class="col-md-4 text-center">
+                    <div class="col-sm-4 col-md-4 text-center">
                         <?php echo $q[2]; ?> 
                     </div>
-                    <div class="col-md-4 text-center">
+                    <div class="col-sm-4 col-md-4 text-center">
                         <?php echo $q[3]; ?> 
                     </div>
                 </div>
@@ -173,7 +173,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="detail-tlt">Ubicacion</div>
+                <div class="detail-tlt"><?php _e('Ubicaci&oacute;n', 'ala') ?></div>
                 <div id="map"></div>
                 <script>
                   function initMap() {
@@ -198,15 +198,19 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="detail-tlt">Lugares Cercanos</div>
-                    <?php if(!empty($amenimages)){ ?>
-                        <div class="row gallery-images">
-                            <?php foreach ( (array) $amenimages as $attachment_id => $attachment_url ) { ?>
-                                <div class="col-md-4">
-                                </div>
-                            <?php } ?>
-                        </div>
-                    <?php } ?>
+                <div class="detail-tlt"><?php _e('Lugares Cercanos', 'ala') ?></div>
+                <?php if(!empty($intimages)){ ?>
+                    <div class="row gallery-places">
+                        <?php $i = 1; foreach ( (array) $intimages as $attachment_id => $attachment_url ) { ?>
+                            <div class="col-sm-4 col-md-4">
+                                <a href="#" class="amenimg places-wrapper" data-toggle="modal" data-target="#myModalDetails" style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')">
+                                    <div class="places-mask">Freemont</div>
+                                </a>
+                            </div>
+                            <?php  if ($i++ == 3) break; ?>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </div>
