@@ -38,17 +38,16 @@ $categories = get_categories(
   )
 );
 ?>
-
-<section class="container-fluid">
+<section class="container-fluid no-padding">
   <section class="col-xs-12" id="blog-list-categories">
     <div class="container-mre center-block">
       <h3 class="blog-list-category-title">Categoría</h3>
-      <h2 class="blog-list-category-text">Inversión</h2>
+      <h2 class="blog-list-category-text"></h2>
       <div class="swiper-container swiper-container-blog-categories">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" name="Todas las Categorías">
+          <div class="swiper-slide" name="Todas las categorías">
             <img
-                src="<?php echo get_template_directory_uri(); ?>/assets/todas.png">
+              src="<?php echo get_template_directory_uri(); ?>/assets/todas.png">
             <div class="swiper-overlay"></div>
           </div>
           <?php
@@ -61,36 +60,6 @@ $categories = get_categories(
               <div class="swiper-overlay"></div>
             </div>
           <?php } ?>
-          <!--<div class="swiper-slide" name="Todas las Categorías">
-            <img
-              src="<?php /*echo get_template_directory_uri(); */?>/assets/todas.png">
-            <div class="swiper-overlay"></div>
-          </div>
-          <div class="swiper-slide" name="Arquitectura">
-            <img
-              src="<?php /*echo get_template_directory_uri(); */?>/assets/arquitectura.png">
-            <div class="swiper-overlay"></div>
-          </div>
-          <div class="swiper-slide" name="Ecología">
-            <img
-              src="<?php /*echo get_template_directory_uri(); */?>/assets/ecologia.png">
-            <div class="swiper-overlay"></div>
-          </div>
-          <div class="swiper-slide" name="Inversión">
-            <img
-              src="<?php /*echo get_template_directory_uri(); */?>/assets/inversion.png">
-            <div class="swiper-overlay"></div>
-          </div>
-          <div class="swiper-slide" name="Migración">
-            <img
-              src="<?php /*echo get_template_directory_uri(); */?>/assets/migracion.png">
-            <div class="swiper-overlay"></div>
-          </div>
-          <div class="swiper-slide" name="Ciudades · Países">
-            <img
-              src="<?php /*echo get_template_directory_uri(); */?>/assets/paises.png">
-            <div class="swiper-overlay"></div>
-          </div>-->
         </div>
         <i class="fa fa-chevron-circle-left swiper-button-prev"
            aria-hidden="true"></i>
@@ -136,8 +105,8 @@ $categories = get_categories(
         <ul class="pagination">
           <li>
             <a href="#" aria-label="Previous">
-                <span aria-hidden="true"
-                      class="pagination-previous">&laquo;</span>
+        <span aria-hidden="true"
+              class="pagination-previous">&laquo;</span>
             </a>
           </li>
           <li><a href="#" class="pagination-active">1</a></li>
@@ -155,32 +124,30 @@ $categories = get_categories(
     </div>
   </section>
   <section class="col-xs-12" id="blog-recommended-posts" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/notice.jpg')">
-    <div class="recommended-posts-overlay"></div>
-    <div class="container-mre center-block">
-      <h2 class="recommended-posts-title">Artículos Recomendados</h2>
-      <div class="swiper-container swiper-container-blog-most-viewed">
-        <div class="swiper-wrapper">
-          <?php foreach($postRecommended as $post) { ?>
-            <div class="swiper-slide">
-              <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID); ?>');">
-                <span class="blog-most-viewed-category"><?php $taxonomy = get_post_taxonomies($post); $term = get_the_terms($post->ID, $taxonomy[0]); echo $term[0]->name; ?></span>
+    <div class="recommended-posts-overlay">
+      <div class="container-mre center-block">
+        <h2 class="recommended-posts-title">Artículos Recomendados</h2>
+        <div class="swiper-container swiper-container-blog-most-viewed">
+          <div class="swiper-wrapper">
+            <?php foreach($postRecommended as $post) { ?>
+              <div class="swiper-slide">
+                <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID); ?>');">
+                  <span class="blog-most-viewed-category"><?php $taxonomy = get_post_taxonomies($post); $term = get_the_terms($post->ID, $taxonomy[0]); echo $term[0]->name; ?></span>
+                </div>
+                <div class="blog-most-viewed-text">
+                  <a href="<?php $link = get_permalink($post->ID); echo $link; ?>">
+                    <h1 class="blog-most-viewed-text-title"><?php echo $post->post_title; ?></h1>
+                  </a>
+                  <h2 class="blog-most-viewed-text-author">Por: <?php $author = get_user_by('ID', $post->post_author); echo $author->display_name?><span class="blog-most-viewed-text-date"><?php $date = strtotime($post->post_date); echo date('d F, Y', $date)?></span><span class="blog-most-viewed-text-comments">- <?php echo $post->comment_count ?> Comments</span></h2>
+                </div>
               </div>
-              <div class="blog-most-viewed-text">
-                <a href="<?php $link = get_permalink($post->ID); echo $link; ?>">
-                  <h1 class="blog-most-viewed-text-title"><?php echo $post->post_title; ?></h1>
-                </a>
-                <h2 class="blog-most-viewed-text-author">Por: <?php $author = get_user_by('ID', $post->post_author); echo $author->display_name?><span class="blog-most-viewed-text-date"><?php $date = strtotime($post->post_date); echo date('d F, Y', $date)?></span><span class="blog-most-viewed-text-comments">- <?php echo $post->comment_count ?> Comments</span></h2>
-              </div>
-            </div>
-          <?php } ?>
+            <?php } ?>
+          </div>
+          <i class="fa fa-chevron-circle-left swiper-button-prev" aria-hidden="true"></i>
+          <i class="fa fa-chevron-circle-right swiper-button-next" aria-hidden="true"></i>
         </div>
-        <i class="fa fa-chevron-circle-left swiper-button-prev" aria-hidden="true"></i>
-        <i class="fa fa-chevron-circle-right swiper-button-next" aria-hidden="true"></i>
       </div>
     </div>
   </section>
 </section>
-
 <?php get_footer(); ?>
-</body>
-</html>

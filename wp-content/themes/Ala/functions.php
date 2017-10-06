@@ -29,7 +29,8 @@ function mre_enqueue_scripts() {
 // Directories that contain post-types
 $postTypeDir = array (
   __DIR__.'/includes/post-types/broker/',
-  __DIR__.'/includes/post-types/header-footer/'
+  __DIR__.'/includes/post-types/header-footer/',
+  __DIR__.'/includes/post-types/places/'
 );
 
 // File names inside post-types dirs
@@ -59,12 +60,15 @@ function call_create_post_types() {
   create_post_type_broker();
   // Post Type for General Settings
   create_post_type_header_footer();
+  // Post Type for Related Places
+  create_post_type_places();
 }
 
 /* Remove text area field from header and footer */
 function remove_page_editor() {
   remove_post_type_support( 'header_footer', 'editor' );
-  remove_post_type_support( 'broker', 'editor' );
+  //remove_post_type_support( 'broker', 'editor' );
+  remove_post_type_support( 'places', 'editor' );
 }
 add_action( 'init', 'remove_page_editor' );
 
@@ -82,6 +86,8 @@ function call_metaboxes() {
   broker_metaboxes();
   // Metaboxes for General Settings
   header_footer_metaboxes();
+  // Metaboxes for Places
+  places_metaboxes();
 }
 
 function custom_form_validation_filter($result, $tag) {

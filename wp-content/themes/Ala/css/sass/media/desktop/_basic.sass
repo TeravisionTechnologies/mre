@@ -1,59 +1,205 @@
-// Header
+// General
+.container-mre
+  width: 1170px
+  height: 100%
+// END General
+
+// Swiper General
+body
+  font-size: 14px
+  margin: 0
+  padding: 0
+
+.swiper-container-menu
+  width: 100%
+  height: auto
+
+.swiper-slide
+  font-size: 18px
+
 .menu
   min-width: 100px
   width: 70%
   max-width: 320px
+  height: 960px
   .al-menu
-    top: 158px
+    top: 78px
+    left: 0
     padding: 0
     width: 100%
     .al-menu-item
-      border-bottom: 2px solid rgba(255, 255, 255, 0.15)
+      border-bottom: 2px solid rgba(127, 129, 130, 0.15)
       padding: 26px 0 0 50px
       height: 95px
       font-size: 24px
       line-height: 40px
     &:first-child
-      border-top: 2px solid rgba(255, 255, 255, 0.15)
+      border-top: 2px solid rgba(127, 129, 130, 0.15)
   .al-menu-language
-    bottom: 0
-    height: 315px
+    width: 100%
+    bottom: 170px
+    left: 0
+    height: 235px
     .al-menu-language-text
-      padding-top: 50px
+      padding-top: 40px
       font-size: 16px
       line-height: 20px
     .al-menu-language-flag
-      margin: 20px 12.5px 0 12.5px
+      margin: 25px 12.5px 0 12.5px
       opacity: 0.4
       width: 50px
       height: 50px
     .language-flag-active
       opacity: 1
-
-#al-carousel-hero
-  height: 880px
-  .item
-    height: 880px
-    .item-overlay
-      top: 0
-    img
-      height: 880px
-    .carousel-caption
-      font-size: 80px
-      letter-spacing: 18px
+  .al-menu-social
+    height: 63px
+    bottom: 0
+    width: 100%
+    .menu-social-icons
+      font-size: 22px
       padding: 0
-      top: 385px
-  .carousel-control
-    top: 409px
-    &:hover
-      opacity: 1
-  .right
-    right: 60px
-    height: 60px
-  .left
-    left: 60px
-    height: 60px
+      .menu-social-icon
+        height: 38px
+        width: 38px
 
+.content
+  width: 100%
+
+.menu-button
+  top: 0
+  left: 0
+  padding: 27px 0 15px 0
+  height: 80px
+  -webkit-transition: .3s
+  transition: .3s
+  z-index: 2
+  width: 5.56vw
+
+.menu-button .bar:nth-of-type(1)
+  margin-top: 0
+
+.menu-button .bar:nth-of-type(3)
+  margin-bottom: 0
+
+.bar
+  width: 39px
+  height: 4px
+  margin: 6px auto
+  border-radius: 10px
+  -webkit-transition: .3s
+  transition: .3s
+
+.menu-button:hover .bar:nth-of-type(1)
+  -webkit-transform: translateY(1.5px) rotate(-4.5deg)
+  -ms-transform: translateY(1.5px) rotate(-4.5deg)
+  transform: translateY(1.5px) rotate(-4.5deg)
+
+.menu-button:hover .bar:nth-of-type(2)
+  opacity: .9
+
+.menu-button:hover .bar:nth-of-type(3)
+  -webkit-transform: translateY(-1.5px) rotate(4.5deg)
+  -ms-transform: translateY(-1.5px) rotate(4.5deg)
+  transform: translateY(-1.5px) rotate(4.5deg)
+
+.cross .bar:nth-of-type(1)
+  -webkit-transform: translateY(15px) rotate(-45deg)
+  -ms-transform: translateY(15px) rotate(-45deg)
+  transform: translateY(15px) rotate(-45deg)
+
+.cross .bar:nth-of-type(2)
+  opacity: 0
+
+.cross .bar:nth-of-type(3)
+  -webkit-transform: translateY(-15px) rotate(45deg)
+  -ms-transform: translateY(-15px) rotate(45deg)
+  transform: translateY(-15px) rotate(45deg)
+
+.cross:hover .bar:nth-of-type(1)
+  -webkit-transform: translateY(13.5px) rotate(-40.5deg)
+  -ms-transform: translateY(13.5px) rotate(-40.5deg)
+  transform: translateY(13.5px) rotate(-40.5deg)
+
+.cross:hover .bar:nth-of-type(2)
+  opacity: .1
+
+.cross:hover .bar:nth-of-type(3)
+  -webkit-transform: translateY(-13.5px) rotate(40.5deg)
+  -ms-transform: translateY(-13.5px) rotate(40.5deg)
+  transform: translateY(-13.5px) rotate(40.5deg)
+// END Swiper General
+
+// Header
+#ala-header
+  .logo-header
+    top: 0
+    height: 80px
+    left: 5.56vw
+    width: 56.94vw
+    .img-div
+      width: 25vw
+      height: 80px
+      img
+        width: 145px
+        height: 50px
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+  .social-header
+    top: 0
+    left: 62.5vw
+    height: 80px
+    width: 37.5vw
+    z-index: 2
+    .social-icons
+      height: 33.9px
+      right: 50.3px
+      top: 23.3px
+      .social-icon
+        height: 100%
+        width: 33.9px
+        border-radius: 50%
+        margin-right: 12px
+        a
+          i
+            font-size: 22px
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+  .swiper-container-hero
+    padding-top: 80px
+    .swiper-slide
+      height: 880px
+      .slide-overlay
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, 0.4)
+      .slide-text
+        top: 396px
+        left: 50%
+        transform: translateX(-50%)
+        h2
+          font-size: 80px
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8)
+          letter-spacing: 18px
+    .swiper-button-prev, .swiper-button-next
+      height: 60px
+      top: 510px
+      width: 60px
+    .swiper-button-prev
+      left: 135px
+    .swiper-button-next
+      right: 135px
+  .hero-button
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 1
+    width: 94px
+    height: 42px
+// END Header
+
+// Projects
 .al-projects
   height: 120px
   margin-top: 4px
@@ -75,7 +221,7 @@
         bottom: -15px
         left: 50%
         transform: translateX(-50%)
-// END Header
+// END Projects
 
 // Contact Us
 .al-contact-div

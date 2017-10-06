@@ -35,7 +35,9 @@ jQuery(document).ready(function() {
     prevButton: '.swiper-button-prev',
     slidesPerView: 1,
     loop: true,
-    nested: true
+    nested: true,
+    autoplay: 5000,
+    effect: 'fade'
   });
 
   // Menu flags functionality
@@ -46,7 +48,26 @@ jQuery(document).ready(function() {
 
   // Add Swiper Flags
   var swiperFlag = new Swiper('.swiper-container-flags', {
-    initialSlide: 1
+    initialSlide: 1,
+    nested: true,
+    onSlideChangeEnd: function (swiper) {
+      var currentSlide = swiper.activeIndex +1;
+      if (currentSlide == 1) {
+        $('#flag-image-1').removeClass('flag-image-opacity');
+        $('#flag-image-2').addClass('flag-image-opacity');
+        $('#flag-image-3').addClass('flag-image-opacity');
+      }
+      else if(currentSlide == 2) {
+        $('#flag-image-1').addClass('flag-image-opacity');
+        $('#flag-image-2').removeClass('flag-image-opacity');
+        $('#flag-image-3').addClass('flag-image-opacity');
+      }
+      else {
+        $('#flag-image-1').addClass('flag-image-opacity');
+        $('#flag-image-2').addClass('flag-image-opacity');
+        $('#flag-image-3').removeClass('flag-image-opacity');
+      }
+    }
   });
 
   // Adding Swiper functionality to flags
@@ -75,10 +96,10 @@ jQuery(document).ready(function() {
     slidesPerView: 5,
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
-    spaceBetween: 0,
+    spaceBetween: 32,
     centeredSlides: true,
     loop: true,
-    loopSlides: 5,
+    nested: true,
     breakpoints: {
       1023: {
         spaceBetween: 19,
@@ -87,6 +108,11 @@ jQuery(document).ready(function() {
         slidesPerView: 1,
         spaceBetween: 0,
       },
+    },
+    onSlideChangeEnd: function (swiper) {
+      $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
+      $('.swiper-slide').find('div').addClass('swiper-overlay');
+      $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
     }
   });
   $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
@@ -120,9 +146,17 @@ jQuery(document).ready(function() {
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
     if (scroll > 900)  {
-      $('.mre-footer-go-top').css('display', 'block');
+      $('.mre-footer-go-top').css({
+        'opacity' : '1',
+        'transition' : 'visibility 0s, opacity 0.5s ease',
+        'visibility' : 'visible'
+      });
     } else {
-      $('.mre-footer-go-top').css('display', 'none');
+      $('.mre-footer-go-top').css({
+        'opacity' : '0',
+        'transition' : 'visibility 1s, opacity 0.5s ease',
+        'visibility' : 'hidden'
+      });
     }
   });
 
@@ -142,6 +176,15 @@ jQuery(document).ready(function() {
       scrollTop: $("#contact-us").offset().top
     }, 2000);
   });
+
+  //Hero Button functionality
+  $(".hero-button").click(function() {
+    $('html, body').animate({
+      scrollTop: $("#mre-about-us").offset().top
+    }, 2000);
+  });
+
+
 /*
     // form validation
         var theForm = jQuery('.the-form');
@@ -193,7 +236,3 @@ jQuery(document).ready(function() {
 
         }*/
 });
-
-
-
-

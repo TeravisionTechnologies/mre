@@ -82,18 +82,14 @@ body {
   margin: 0;
   padding: 0; }
 
-.swiper-container {
+.swiper-container-menu {
   width: 100%;
-  height: 66.66667vw; }
+  height: auto; }
 
 .swiper-slide {
-  text-align: center;
   font-size: 1.25vw;
   background: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+  display: block;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
@@ -107,7 +103,7 @@ body {
   min-width: 6.94444vw;
   width: 70%;
   max-width: 22.22222vw;
-  height: auto;
+  height: 66.66667vw;
   background: rgba(255, 255, 255, 0.95);
   position: relative; }
   .menu .mre-menu {
@@ -159,7 +155,8 @@ body {
     height: 4.375vw;
     position: absolute;
     bottom: 0;
-    width: 100%; }
+    width: 100%;
+    left: 0; }
     .menu .mre-menu-social .menu-social-icons {
       list-style: none;
       font-size: 1.52778vw;
@@ -297,13 +294,15 @@ body {
   position: relative;
   padding-top: 5.55556vw; }
   #mre-header .swiper-container-hero .swiper-slide {
+    height: 61.11111vw;
     background-size: cover;
     position: relative; }
     #mre-header .swiper-container-hero .swiper-slide .slide-overlay {
       position: absolute;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.4); }
+      background: rgba(0, 0, 0, 0.4);
+      left: 0; }
     #mre-header .swiper-container-hero .swiper-slide .slide-text {
       position: absolute;
       top: 21.875vw;
@@ -344,31 +343,20 @@ body {
   transform: translateX(-50%);
   z-index: 1;
   width: 6.52778vw;
-  height: 2.91667vw; }
+  height: 2.91667vw;
+  cursor: pointer; }
 
 #mre-about-us {
   height: 55.55556vw;
   background-size: cover;
   text-align: center; }
   #mre-about-us .about-us-title {
-    padding-top: 3.47222vw;
-    opacity: 0.6;
-    font-family: Montserrat-Regular, sans-serif;
-    font-size: 1.25vw;
-    color: #ffffff; }
-  #mre-about-us .about-us-sub-first {
-    padding-top: 0.69444vw;
-    font-size: 2.5vw;
-    line-height: 2.77778vw;
-    font-family: Montserrat-Regular, sans-serif;
-    color: #ffffff; }
-  #mre-about-us .about-us-sub-second {
     font-size: 2.5vw;
     line-height: 2.77778vw;
     font-family: Montserrat-Bold, sans-serif;
     color: #1f9aff; }
   #mre-about-us .about-us-image {
-    margin: 2.77778vw 0 2.91667vw 0;
+    margin: 7.98611vw 0 2.77778vw 0;
     width: 9.72222vw;
     height: 9.72222vw;
     border-radius: 50%; }
@@ -378,7 +366,7 @@ body {
     line-height: 1.94444vw;
     color: white;
     width: 53.26389vw;
-    margin: 0 auto; }
+    margin: 1.38889vw auto 0 auto; }
   #mre-about-us .about-us-numbers {
     list-style: none;
     height: 9.72222vw;
@@ -434,13 +422,13 @@ body {
     color: #ffffff;
     margin: 0; }
   #mre-partners .partner-left img {
-    width: 7.63889vw;
-    height: 8.125vw;
-    margin-top: 1.38889vw; }
-  #mre-partners .partner-right img {
     width: 14.72222vw;
     height: 4.93056vw;
     margin-top: 2.98611vw; }
+  #mre-partners .partner-right img {
+    width: 7.63889vw;
+    height: 8.125vw;
+    margin-top: 1.38889vw; }
 
 #mre-offices {
   height: 31.25vw;
@@ -471,7 +459,8 @@ body {
       height: 10.41667vw;
       width: 100%; }
       #mre-offices .swiper-wrapper .swiper-slide .office-detail {
-        width: 20.97222vw;
+        display: inline-block;
+        width: 25.69444vw;
         margin: 0 1.52778vw; }
         #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
           color: #ffffff;
@@ -640,9 +629,10 @@ a.al-phone-num {
       line-height: 1.38889vw;
       text-decoration: underline; }
   #mre-footer .mre-footer-go-top {
-    display: none;
+    visibility: hidden;
     cursor: pointer;
     position: fixed;
+    opacity: 0;
     right: 9.72222vw;
     bottom: 9.93056vw;
     z-index: 100; }
@@ -653,13 +643,13 @@ a.al-phone-num {
   position: relative;
   margin-top: 80px; }
   #blog-list-categories .blog-list-category-title, #blog-list-categories .blog-list-category-text {
-    line-height: 2.5vw;
+    line-height: 2.08333vw;
     text-align: center; }
   #blog-list-categories .blog-list-category-title {
     color: #ffffff;
     font-family: Montserrat-Regular, sans-serif;
     font-size: 1.25vw;
-    margin-top: 3.47222vw;
+    margin-top: 3.81944vw;
     opacity: 0.6; }
   #blog-list-categories .blog-list-category-text {
     color: #ffffff;
@@ -667,7 +657,7 @@ a.al-phone-num {
     font-size: 2.08333vw; }
   #blog-list-categories .swiper-container-blog-categories {
     height: 8.88889vw;
-    margin-bottom: 4.86111vw;
+    margin-bottom: 4.51389vw;
     margin-top: 2.43056vw;
     position: initial;
     width: 53.33333vw; }
@@ -693,7 +683,7 @@ a.al-phone-num {
       font-size: 2.5vw;
       height: 2.5vw;
       text-align: center;
-      top: 63%;
+      top: 67%;
       width: 4.16667vw; }
     #blog-list-categories .swiper-container-blog-categories .swiper-button-prev {
       left: 15.97222vw; }
@@ -713,7 +703,7 @@ a.al-phone-num {
     border-bottom: 2px solid rgba(74, 74, 74, 0.4);
     display: table;
     height: 3.33333vw;
-    margin-top: 3.89167vw;
+    margin-top: 4.79167vw;
     position: relative;
     width: 59.79167vw; }
     #blog-list .input-group i {
@@ -741,7 +731,7 @@ a.al-phone-num {
     font-family: Montserrat-Regular, sans-serif;
     font-size: 1.11111vw;
     height: 3.33333vw;
-    margin-top: 3.99167vw;
+    margin-top: 4.79167vw;
     width: 18.125vw; }
   #blog-list .blog-post {
     height: 29.86111vw;
@@ -777,13 +767,15 @@ a.al-phone-num {
         color: #4d484a;
         font-family: Montserrat-Bold, sans-serif;
         font-size: 1.25vw;
-        line-height: 1.66667vw; }
+        line-height: 1.66667vw;
+        margin: 0; }
       #blog-list .blog-post .blog-text .blog-text-author {
         color: #4d484a;
         font-family: Montserrat-Bold, sans-serif;
         font-size: 0.97222vw;
-        line-height: 0.97222vw;
-        opacity: 0.5; }
+        line-height: 1.38889vw;
+        opacity: 0.5;
+        margin: 0; }
         #blog-list .blog-post .blog-text .blog-text-author .blog-text-date, #blog-list .blog-post .blog-text .blog-text-author .blog-text-comments {
           font-family: Montserrat-Regular, sans-serif;
           padding-left: 0.48611vw; }
@@ -868,14 +860,16 @@ a.al-phone-num {
               color: #4d484a;
               font-family: Montserrat-Bold, sans-serif;
               font-size: 1.25vw;
-              line-height: 1.45833vw; }
+              line-height: 1.45833vw;
+              margin: 0; }
           #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text .blog-most-viewed-text-author {
             color: #4d484a;
             font-family: Montserrat-Bold, sans-serif;
             font-size: 0.97222vw;
             line-height: 1.38889vw;
             opacity: 0.5;
-            width: 16.31944vw; }
+            width: 16.31944vw;
+            margin: 0; }
             #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text .blog-most-viewed-text-author .blog-most-viewed-text-date, #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text .blog-most-viewed-text-author .blog-most-viewed-text-comments {
               font-family: Montserrat-Regular, sans-serif;
               padding-left: 0.34722vw; }
@@ -885,7 +879,7 @@ a.al-phone-num {
       font-size: 2.5vw;
       height: 2.5vw;
       text-align: center;
-      top: 54%;
+      top: 58%;
       width: 4.16667vw; }
     #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-prev {
       left: 8.68056vw; }
@@ -893,7 +887,7 @@ a.al-phone-num {
       right: 8.68056vw; }
 
 #blog-detail-breadcrumb {
-  margin-top: 80px;
+  margin-top: 5.55556vw;
   padding: 3.47222vw 0 1.38889vw 0; }
   #blog-detail-breadcrumb .blog-detail-breadcrumb-prev {
     color: #ffffff;
@@ -911,6 +905,7 @@ a.al-phone-num {
     height: 2.08333vw;
     line-height: 2.08333vw;
     min-width: 6.38889vw;
+    padding: 0 0.69444vw;
     text-align: center;
     text-transform: uppercase; }
   #blog-detail-breadcrumb .blog-detail-breadcrumb-title {
@@ -978,7 +973,7 @@ a.al-phone-num {
         display: inline-block; }
       #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img {
         height: 3.75vw;
-        margin: 0 0.48611vw;
+        margin: 0 0.52083vw;
         width: 3.75vw; }
 
 .blog-detail-divider {
@@ -1055,7 +1050,7 @@ a.al-phone-num {
         font-size: 1.11111vw;
         height: 3.33333vw;
         line-height: 1.04167vw;
-        margin-right: 1.94444vw;
+        margin-right: 1.875vw;
         margin-top: 1.66667vw;
         opacity: 0.8;
         padding-left: 1.38889vw;
@@ -1123,9 +1118,9 @@ a.al-phone-num {
     margin: 0;
     padding: 0; }
 
-  .swiper-container {
+  .swiper-container-menu {
     width: 100%;
-    height: 960px; }
+    height: auto; }
 
   .swiper-slide {
     font-size: 18px; }
@@ -1134,7 +1129,7 @@ a.al-phone-num {
     min-width: 100px;
     width: 70%;
     max-width: 320px;
-    height: auto; }
+    height: 960px; }
     .menu .mre-menu {
       top: 78px;
       left: 0;
@@ -1278,23 +1273,25 @@ a.al-phone-num {
           transform: translate(-50%, -50%); }
   #mre-header .swiper-container-hero {
     padding-top: 80px; }
-    #mre-header .swiper-container-hero .swiper-slide .slide-overlay {
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4); }
-    #mre-header .swiper-container-hero .swiper-slide .slide-text {
-      top: 315px;
-      left: 50%;
-      transform: translateX(-50%); }
-      #mre-header .swiper-container-hero .swiper-slide .slide-text h2 {
-        font-size: 40px;
-        line-height: 40px;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
-      #mre-header .swiper-container-hero .swiper-slide .slide-text h3 {
-        margin-top: 10px;
-        font-size: 80px;
-        line-height: 80px;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+    #mre-header .swiper-container-hero .swiper-slide {
+      height: 880px; }
+      #mre-header .swiper-container-hero .swiper-slide .slide-overlay {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4); }
+      #mre-header .swiper-container-hero .swiper-slide .slide-text {
+        top: 315px;
+        left: 50%;
+        transform: translateX(-50%); }
+        #mre-header .swiper-container-hero .swiper-slide .slide-text h2 {
+          font-size: 40px;
+          line-height: 40px;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+        #mre-header .swiper-container-hero .swiper-slide .slide-text h3 {
+          margin-top: 10px;
+          font-size: 80px;
+          line-height: 80px;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
     #mre-header .swiper-container-hero .swiper-button-prev, #mre-header .swiper-container-hero .swiper-button-next {
       font-size: 36px;
       height: 36px;
@@ -1315,18 +1312,10 @@ a.al-phone-num {
   #mre-about-us {
     height: 800px; }
     #mre-about-us .about-us-title {
-      padding-top: 50px;
-      opacity: 0.6;
-      font-size: 18px; }
-    #mre-about-us .about-us-sub-first {
-      padding-top: 10px;
-      font-size: 36px;
-      line-height: 40px; }
-    #mre-about-us .about-us-sub-second {
       font-size: 36px;
       line-height: 40px; }
     #mre-about-us .about-us-image {
-      margin: 40px 0 30px 0;
+      margin: 115px 0 40px 0;
       width: 140px;
       height: 140px;
       border-radius: 50%; }
@@ -1334,7 +1323,7 @@ a.al-phone-num {
       font-size: 20px;
       line-height: 28px;
       width: 767px;
-      margin: 0 auto; }
+      margin: 20px auto 0 auto; }
     #mre-about-us .about-us-numbers {
       height: 140px;
       padding: 40px 38px;
@@ -1370,13 +1359,13 @@ a.al-phone-num {
       font-size: 45px;
       line-height: 40px; }
     #mre-partners .partner-left img {
-      width: 110px;
-      height: 117px;
-      margin-top: 20px; }
-    #mre-partners .partner-right img {
       width: 212px;
       height: 71px;
       margin-top: 43px; }
+    #mre-partners .partner-right img {
+      width: 110px;
+      height: 117px;
+      margin-top: 20px; }
 
   #mre-offices {
     height: 450px; }
@@ -1399,7 +1388,7 @@ a.al-phone-num {
         height: 150px;
         width: 100%; }
         #mre-offices .swiper-wrapper .swiper-slide .office-detail {
-          width: 302px;
+          width: 370px;
           margin: 0 22px; }
           #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
             font-size: 16px;
@@ -1507,9 +1496,10 @@ a.al-phone-num {
       bottom: 143px; }
 
   #blog-list-categories {
-    height: 343px; }
+    height: 343px;
+    margin-top: 80px; }
     #blog-list-categories .blog-list-category-title, #blog-list-categories .blog-list-category-text {
-      line-height: 36px; }
+      line-height: 30px; }
     #blog-list-categories .blog-list-category-title {
       font-size: 18px;
       margin-top: 50px;
@@ -1518,7 +1508,7 @@ a.al-phone-num {
       font-size: 30px; }
     #blog-list-categories .swiper-container-blog-categories {
       height: 128px;
-      margin-bottom: 70px;
+      margin-bottom: 65px;
       margin-top: 35px;
       width: 768px; }
       #blog-list-categories .swiper-container-blog-categories .swiper-wrapper {
@@ -1537,7 +1527,7 @@ a.al-phone-num {
       #blog-list-categories .swiper-container-blog-categories .swiper-button-prev, #blog-list-categories .swiper-container-blog-categories .swiper-button-next {
         font-size: 36px;
         height: 36px;
-        top: 63%;
+        top: 67%;
         width: 60px; }
       #blog-list-categories .swiper-container-blog-categories .swiper-button-prev {
         left: 230px; }
@@ -1546,7 +1536,7 @@ a.al-phone-num {
 
   .blog-list-triangle {
     left: 50%;
-    top: -1px;
+    top: -3px;
     transform: translateX(-50%); }
 
   #blog-list .input-group {
@@ -1595,11 +1585,13 @@ a.al-phone-num {
       padding: 20px 44px 0 44px; }
       #blog-list .blog-post .blog-text .blog-text-title {
         font-size: 18px;
-        line-height: 24px; }
+        line-height: 24px;
+        margin: 0; }
       #blog-list .blog-post .blog-text .blog-text-author {
         font-size: 14px;
         line-height: 20px;
-        opacity: 0.5; }
+        opacity: 0.5;
+        margin: 0; }
         #blog-list .blog-post .blog-text .blog-text-author .blog-text-date, #blog-list .blog-post .blog-text .blog-text-author .blog-text-comments {
           padding-left: 7px; }
       #blog-list .blog-post .blog-text .blog-text-summary {
@@ -1649,18 +1641,20 @@ a.al-phone-num {
           padding: 20px 0 0 25px; }
           #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text a .blog-most-viewed-text-title {
             font-size: 18px;
-            line-height: 21px; }
+            line-height: 21px;
+            margin: 0; }
           #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text .blog-most-viewed-text-author {
             font-size: 14px;
             line-height: 20px;
             opacity: 0.5;
-            width: 235px; }
+            width: 235px;
+            margin: 0; }
             #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text .blog-most-viewed-text-author .blog-most-viewed-text-date, #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text .blog-most-viewed-text-author .blog-most-viewed-text-comments {
               padding-left: 5px; }
       #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-prev, #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-next {
         font-size: 36px;
         height: 36px;
-        top: 54%;
+        top: 58%;
         width: 60px; }
       #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-prev {
         left: 125px; }
@@ -1668,6 +1662,7 @@ a.al-phone-num {
         right: 125px; }
 
   #blog-detail-breadcrumb {
+    margin-top: 80px;
     padding: 50px 0 20px 0; }
     #blog-detail-breadcrumb .blog-detail-breadcrumb-prev {
       font-size: 20px;
@@ -1678,7 +1673,8 @@ a.al-phone-num {
       font-size: 12px;
       height: 30px;
       line-height: 30px;
-      min-width: 92px; }
+      min-width: 92px;
+      padding: 0 10px; }
     #blog-detail-breadcrumb .blog-detail-breadcrumb-title {
       font-size: 12px;
       margin-left: 10px; }
@@ -1814,9 +1810,9 @@ a.al-phone-num {
     margin: 0;
     padding: 0; }
 
-  .swiper-container {
+  .swiper-container-menu {
     width: 100%;
-    height: 114.58333vw; }
+    height: auto; }
 
   .swiper-slide {
     font-size: 2.34375vw; }
@@ -1825,7 +1821,7 @@ a.al-phone-num {
     min-width: 13.02083vw;
     width: 70%;
     max-width: 44.79167vw;
-    height: auto; }
+    height: 114.58333vw; }
     .menu .mre-menu {
       top: 10.15625vw;
       left: 0;
@@ -1859,7 +1855,8 @@ a.al-phone-num {
       display: block;
       height: 8.20313vw;
       bottom: 0;
-      width: 100%; }
+      width: 100%;
+      text-align: center; }
       .menu .mre-menu-social .menu-social-icons {
         font-size: 2.86458vw;
         padding: 0; }
@@ -1958,6 +1955,7 @@ a.al-phone-num {
   #mre-header .swiper-container-hero {
     padding-top: 10.41667vw; }
     #mre-header .swiper-container-hero .swiper-slide {
+      height: 104.16667vw;
       background-position: 50%; }
       #mre-header .swiper-container-hero .swiper-slide .slide-overlay {
         width: 100%;
@@ -1996,14 +1994,6 @@ a.al-phone-num {
   #mre-about-us {
     height: 90.625vw; }
     #mre-about-us .about-us-title {
-      padding-top: 6.51042vw;
-      opacity: 0.6;
-      font-size: 1.82292vw; }
-    #mre-about-us .about-us-sub-first {
-      padding-top: 1.30208vw;
-      font-size: 3.125vw;
-      line-height: 3.77604vw; }
-    #mre-about-us .about-us-sub-second {
       font-size: 3.125vw;
       line-height: 3.77604vw; }
     #mre-about-us .about-us-image {
@@ -2018,7 +2008,7 @@ a.al-phone-num {
       margin: 0 auto; }
     #mre-about-us .about-us-numbers {
       height: 15.625vw;
-      padding: 3.90625vw 3.64583vw;
+      padding: 3.90625vw 3.51563vw;
       width: 85.67708vw;
       margin: 6.51042vw auto 0;
       border-radius: 2.34375vw;
@@ -2050,14 +2040,18 @@ a.al-phone-num {
     #mre-partners .partners-title-second {
       font-size: 4.55729vw;
       line-height: 5.20833vw; }
-    #mre-partners .partner-left img {
-      width: 11.71875vw;
-      height: 12.5vw;
-      margin-top: 2.60417vw; }
-    #mre-partners .partner-right img {
-      width: 23.4375vw;
-      height: 7.55208vw;
-      margin-top: 5.07813vw; }
+    #mre-partners .partner-left {
+      background-position: bottom; }
+      #mre-partners .partner-left img {
+        width: 23.4375vw;
+        height: 7.55208vw;
+        margin-top: 5.07813vw; }
+    #mre-partners .partner-right {
+      background-position: center; }
+      #mre-partners .partner-right img {
+        width: 11.71875vw;
+        height: 12.5vw;
+        margin-top: 2.60417vw; }
 
   #mre-offices {
     height: 52.08333vw; }
@@ -2080,7 +2074,7 @@ a.al-phone-num {
         height: 15.625vw;
         width: 100%; }
         #mre-offices .swiper-wrapper .swiper-slide .office-detail {
-          width: 34.50521vw;
+          width: 41.66667vw;
           margin: 0 1.82292vw; }
           #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
             font-size: 1.82292vw;
@@ -2188,15 +2182,15 @@ a.al-phone-num {
   #blog-list-categories {
     height: 29.94792vw; }
     #blog-list-categories .blog-list-category-title {
-      line-height: 2.60417vw; }
-    #blog-list-categories .blog-list-category-text {
-      line-height: 3.64583vw; }
-    #blog-list-categories .blog-list-category-title {
       font-size: 1.82292vw;
       margin-top: 5.20833vw;
+      line-height: 2.60417vw;
+      margin-bottom: 0;
       opacity: 0.6; }
     #blog-list-categories .blog-list-category-text {
-      font-size: 3.125vw; }
+      font-size: 3.125vw;
+      line-height: 3.64583vw;
+      margin: 0; }
     #blog-list-categories .swiper-container-blog-categories {
       height: 9.24479vw;
       margin-bottom: 6.64063vw;
@@ -2218,7 +2212,7 @@ a.al-phone-num {
       #blog-list-categories .swiper-container-blog-categories .swiper-button-prev, #blog-list-categories .swiper-container-blog-categories .swiper-button-next {
         font-size: 2.86458vw;
         height: 2.86458vw;
-        top: 63%;
+        top: 66%;
         width: 3.64583vw; }
       #blog-list-categories .swiper-container-blog-categories .swiper-button-prev {
         left: 13.02083vw; }
@@ -2228,14 +2222,14 @@ a.al-phone-num {
   .blog-list-triangle {
     height: 1.82292vw;
     left: 50%;
-    top: -1px;
+    top: -6px;
     transform: translateX(-50%);
-    width: 3.51563vw; }
+    width: 2.60417vw; }
 
   #blog-list .input-group {
     border-bottom: 2px solid rgba(74, 74, 74, 0.4);
     display: table;
-    height: 5.20833vw;
+    height: 4.94792vw;
     margin-top: 8.20313vw;
     width: 59.50521vw; }
     #blog-list .input-group i {
@@ -2243,7 +2237,7 @@ a.al-phone-num {
       padding-left: 1.43229vw;
       padding-top: 1.04167vw;
       width: 2.21354vw;
-      font-size: 2.21354vw; }
+      font-size: 2.34375vw; }
     #blog-list .input-group input[type="text"] {
       font-size: 2.08333vw;
       height: 4.94792vw;
@@ -2280,7 +2274,7 @@ a.al-phone-num {
       padding: 2.60417vw 3.25521vw 0 3.25521vw; }
       #blog-list .blog-post .blog-text .blog-text-title {
         font-size: 1.82292vw;
-        line-height: 3.125vw; }
+        line-height: 2.34375vw; }
       #blog-list .blog-post .blog-text .blog-text-author {
         font-size: 1.43229vw;
         line-height: 2.60417vw;
@@ -2315,7 +2309,7 @@ a.al-phone-num {
       text-align: center; }
     #blog-recommended-posts .swiper-container-blog-most-viewed {
       height: 26.82292vw;
-      margin-bottom: 71px;
+      margin-bottom: 9.24479vw;
       margin-top: 3.90625vw;
       width: 70.70313vw; }
       #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide {
@@ -2338,7 +2332,7 @@ a.al-phone-num {
             line-height: 2.34375vw; }
           #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text .blog-most-viewed-text-author {
             font-size: 1.43229vw;
-            line-height: 1.7vw;
+            line-height: 1.69271vw;
             opacity: 0.5;
             width: 24.73958vw; }
             #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text .blog-most-viewed-text-author .blog-most-viewed-text-date, #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-text .blog-most-viewed-text-author .blog-most-viewed-text-comments {
@@ -2346,7 +2340,7 @@ a.al-phone-num {
       #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-prev, #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-next {
         font-size: 3.64583vw;
         height: 3.64583vw;
-        top: 56%;
+        top: 61%;
         width: 2.60417vw; }
       #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-prev {
         left: 7.8125vw; }
@@ -2365,7 +2359,8 @@ a.al-phone-num {
       font-size: 1.30208vw;
       height: 3.90625vw;
       line-height: 3.90625vw;
-      min-width: 11.97917vw; }
+      min-width: 11.97917vw;
+      padding: 0 1.30208vw; }
     #blog-detail-breadcrumb .blog-detail-breadcrumb-title {
       font-size: 1.5625vw;
       margin-left: 1.30208vw; }
@@ -2457,7 +2452,7 @@ a.al-phone-num {
       margin-right: 2.60417vw 2.60417vw;
       margin-top: 3.90625vw;
       padding-left: 1.95313vw;
-      width: 34.42396vw; }
+      width: 34.375vw; }
     #blog-detail-form .blog-detail-comments-form .comments-form input[type="email"] {
       font-size: 1.82292vw;
       height: 6.11979vw;
@@ -2496,9 +2491,9 @@ a.al-phone-num {
     margin: 0;
     padding: 0; }
 
-  .swiper-container {
+  .swiper-container-menu {
     width: 100%;
-    height: 178.33333vw; }
+    height: auto; }
 
   .swiper-slide {
     font-size: 5vw; }
@@ -2507,7 +2502,7 @@ a.al-phone-num {
     min-width: 27.77778vw;
     width: 70%;
     max-width: 70.83333vw;
-    height: auto; }
+    height: 161.66667vw; }
     .menu .mre-menu {
       top: 16.66667vw;
       left: 0;
@@ -2523,7 +2518,7 @@ a.al-phone-num {
         border-top: 2px solid rgba(127, 129, 130, 0.15); }
     .menu .mre-menu-language {
       width: 100%;
-      bottom: 61.11111vw;
+      bottom: 44.44444vw;
       left: 0;
       height: 16.66667vw; }
       .menu .mre-menu-language .mre-menu-language-text {
@@ -2640,6 +2635,7 @@ a.al-phone-num {
   #mre-header .swiper-container-hero {
     padding-top: 16.66667vw; }
     #mre-header .swiper-container-hero .swiper-slide {
+      height: 145vw;
       background-position: 50%; }
       #mre-header .swiper-container-hero .swiper-slide .slide-overlay {
         width: 100%;
@@ -2679,14 +2675,6 @@ a.al-phone-num {
   #mre-about-us {
     height: 264.72222vw; }
     #mre-about-us .about-us-title {
-      padding-top: 11.11111vw;
-      opacity: 0.6;
-      font-size: 3.33333vw; }
-    #mre-about-us .about-us-sub-first {
-      padding-top: 2.77778vw;
-      font-size: 5.55556vw;
-      line-height: 5.55556vw; }
-    #mre-about-us .about-us-sub-second {
       font-size: 6.66667vw;
       line-height: 6.66667vw; }
     #mre-about-us .about-us-image {
@@ -2734,14 +2722,18 @@ a.al-phone-num {
     #mre-partners .partners-title-second {
       font-size: 6.94444vw;
       line-height: 8.33333vw; }
-    #mre-partners .partner-left img {
-      width: 19.44444vw;
-      height: 20.55556vw;
-      margin-top: 2.77778vw; }
-    #mre-partners .partner-right img {
-      width: 33.33333vw;
-      height: 10.55556vw;
-      margin-top: 7.77778vw; }
+    #mre-partners .partner-left {
+      background-position: bottom; }
+      #mre-partners .partner-left img {
+        width: 33.33333vw;
+        height: 10.55556vw;
+        margin-top: 7.77778vw; }
+    #mre-partners .partner-right {
+      background-position: center; }
+      #mre-partners .partner-right img {
+        width: 19.44444vw;
+        height: 20.55556vw;
+        margin-top: 2.77778vw; }
 
   #mre-offices {
     height: 111.11111vw; }
@@ -2762,10 +2754,11 @@ a.al-phone-num {
       #mre-offices .swiper-wrapper .swiper-slide {
         margin: 0 auto;
         height: 50vw;
-        width: 100%; }
+        width: 100%;
+        display: block; }
         #mre-offices .swiper-wrapper .swiper-slide .office-detail {
-          width: 71.11111vw;
-          margin: 0 14.44444vw 1.38889vw 14.44444vw; }
+          width: 76.38889vw;
+          margin: 2.77778vw 14.44444vw 1.38889vw 14.44444vw; }
           #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
             font-size: 3.33333vw;
             line-height: 5.55556vw;
@@ -2901,7 +2894,7 @@ a.al-phone-num {
       #blog-list-categories .swiper-container-blog-categories .swiper-button-prev, #blog-list-categories .swiper-container-blog-categories .swiper-button-next {
         font-size: 6.66667vw;
         height: 6.66667vw;
-        top: 63%;
+        top: 72%;
         width: 5.55556vw; }
       #blog-list-categories .swiper-container-blog-categories .swiper-button-prev {
         left: 11.11111vw; }
@@ -2911,7 +2904,7 @@ a.al-phone-num {
   .blog-list-triangle {
     height: 3.33333vw;
     left: 50%;
-    top: -1px;
+    top: -7px;
     transform: translateX(-50%);
     width: 5.83333vw; }
 
@@ -2953,7 +2946,7 @@ a.al-phone-num {
         bottom: 0;
         font-size: 2.77778vw;
         height: 8.33333vw;
-        line-height: 9.01111vw;
+        line-height: 8.88889vw;
         min-width: 26.38889vw;
         padding: 0 2.77778vw; }
     #blog-list .blog-post .blog-text {
@@ -3047,7 +3040,8 @@ a.al-phone-num {
       font-size: 2.77778vw;
       height: 7.22222vw;
       line-height: 7.22222vw;
-      min-width: 23.05556vw; }
+      min-width: 23.05556vw;
+      padding: 0 2.77778vw; }
     #blog-detail-breadcrumb .blog-detail-breadcrumb-title {
       font-size: 2.77778vw;
       margin-left: 2.77778vw; }
@@ -3058,7 +3052,7 @@ a.al-phone-num {
       height: 100%;
       background-size: cover; }
       #blog-detail-hero .blog-detail-hero-image .blog-detail-hero-author {
-        bottom: -8.33333vw;
+        bottom: 8.33333vw;
         height: 16.66667vw;
         width: 16.66667vw; }
 

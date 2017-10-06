@@ -1,26 +1,36 @@
+// General
+.container-ala
+  width: get-vw-desktop(1170px)
+  height: 100%
+
 .no-padding
   padding: 0
 
-// Header
+.no-margin
+  margin: 0
+// END General
+
+// Swiper General
 html, body
-  height: 100%
   position: relative
+  height: 100%
 
 body
+  background: $white-1
+  font-family: Montserrat-Regular, sans-serif
+  font-size: 14px
+  color: $black
   margin: 0
   padding: 0
-  color: $black
-  background: $white
 
-.swiper-container
+.swiper-container-menu
   width: 100%
   height: auto
 
 .swiper-slide
+  font-size: get-vw-desktop(18px)
   background: $white
-  display: -ms-flexbox
-  display: -webkit-flex
-  display: flex
+  display: block
   -webkit-box-pack: center
   -ms-flex-pack: center
   -webkit-justify-content: center
@@ -30,91 +40,107 @@ body
   -webkit-align-items: center
   align-items: center
 
-.menu-button
-  top: 0px
-  left: 0px
-  height: 80px
-  padding: 15px
-  width: 37.43vw
-  cursor: pointer
-  transition: .3s
-  padding-top: 27px
-  position: absolute
-  -webkit-transition: .3s
-  background-color: $white
-
 .menu
-  height: auto
-  min-width: 6.944444444444445vw
+  min-width: get-vw-desktop(100px)
   width: 70%
-  max-width: 22.22222222222222vw
-  background-color: rgba(0, 0, 0, 0.95)
+  max-width: get-vw-desktop(320px)
+  height: get-vw-desktop(960px)
+  background: rgba(255, 255, 255, 0.95)
   position: relative
   .al-menu
     position: absolute
-    top: 10.972222222222221vw
+    top: get-vw-desktop(78px)
     left: 0
     list-style: none
     padding: 0
     width: 100%
+    text-align: left
     .al-menu-item
-      border-bottom: 2px solid rgba(255, 255, 255, 0.15)
-      padding: 1.8055555555555556vw 0 0 3.4722222222222223vw
-      height: 6.597222222222222vw
-      font-family: 'Archivo', sans-serif
-      font-size: 1.6666666666666665vw
-      line-height: 2.7777777777777777vw
+      border-bottom: 2px solid rgba(127, 129, 130, 0.15)
+      padding: get-vw-desktop(26px) 0 0 get-vw-desktop(50px)
+      height: get-vw-desktop(95px)
+      font-family: 'Montserrat-Regular', sans-serif
+      font-size: get-vw-desktop(24px)
+      line-height: get-vw-desktop(40px)
       cursor: pointer
       a
-        color: $white
+        color: $grey-1
         &:hover
           text-decoration: none
     &:first-child
-      border-top: 2px solid rgba(255, 255, 255, 0.15)
+      border-top: 2px solid rgba(127, 129, 130, 0.15)
   .al-menu-language
     width: 100%
     position: absolute
-    bottom: 0
+    bottom: get-vw-desktop(170px)
     left: 0
-    height: 21.875vw
+    height: get-vw-desktop(235px)
     text-align: center
     .al-menu-language-text
-      padding-top: 3.4722222222222223vw
+      padding-top: get-vw-desktop(40px)
       font-family: 'Archivo', sans-serif
-      font-size: 1.1111111111111112vw
-      line-height: 1.3888888888888888vw
-      color: $white
+      font-size: get-vw-desktop(16px)
+      line-height: get-vw-desktop(20px)
+      margin: 0
+      color: $grey-1
     .al-menu-language-flag
-      margin: 1.3888888888888888vw 0.8333333333333333vw 0 0.8333333333333333vw
+      margin: get-vw-desktop(25px) get-vw-desktop(12.5px) 0 get-vw-desktop(12.5px)
       opacity: 0.4
-      width: 3.4722222222222223vw
-      height: 3.4722222222222223vw
+      width: get-vw-desktop(50px)
+      height: get-vw-desktop(50px)
       cursor: pointer
     .language-flag-active
       opacity: 1
+  .al-menu-social
+    display: none
+    height: get-vw-desktop(63px)
+    position: absolute
+    bottom: 0
+    width: 100%
+    left: 0
+    .menu-social-icons
+      list-style: none
+      font-size: get-vw-desktop(22px)
+      padding: 0
+      .menu-social-icon
+        height: get-vw-desktop(38px)
+        width: get-vw-desktop(38px)
+        display: inline-block
+        a
+          color: $grey-1
 
 .content
   width: 100%
-  padding-top: 80px
+
+.menu-button
+  position: absolute
+  top: 0
+  left: 0
+  padding: get-vw-desktop(27px) 0 get-vw-desktop(15px) 0
+  height: get-vw-desktop(80px)
+  cursor: pointer
+  -webkit-transition: .3s
+  transition: .3s
+  background-color: $white
+  z-index: 2
+  width: get-vw-desktop(80px)
 
 .menu-button .bar:nth-of-type(1)
-  margin-top: 0px
+  margin-top: 0
 
 .menu-button .bar:nth-of-type(3)
-  margin-bottom: 0px
+  margin-bottom: 0
 
 .bar
-  width: 50px
-  height: 5px
-  display: block
-  transition: .3s
-  margin-top: 6px
-  margin-left: 50px
   position: relative
-  margin-bottom: 6px
-  border-radius: 10px
-  background-color: #7f8182
+  display: block
+  width: get-vw-desktop(39px)
+  height: get-vw-desktop(4px)
+  margin: get-vw-desktop(6px) auto
+  background-color: $grey-1
+  border-radius: get-vw-desktop(10px)
   -webkit-transition: .3s
+  transition: .3s
 
 .menu-button:hover .bar:nth-of-type(1)
   -webkit-transform: translateY(1.5px) rotate(-4.5deg)
@@ -130,105 +156,130 @@ body
   transform: translateY(-1.5px) rotate(4.5deg)
 
 .cross .bar:nth-of-type(1)
-  -webkit-transform: translateY(15px) rotate(-45deg)
-  -ms-transform: translateY(15px) rotate(-45deg)
-  transform: translateY(15px) rotate(-45deg)
+  -webkit-transform: translateY(get-vw-desktop(15px)) rotate(-45deg)
+  -ms-transform: translateY(get-vw-desktop(15px)) rotate(-45deg)
+  transform: translateY(get-vw-desktop(15px)) rotate(-45deg)
 
 .cross .bar:nth-of-type(2)
   opacity: 0
 
 .cross .bar:nth-of-type(3)
-  -webkit-transform: translateY(-15px) rotate(45deg)
-  -ms-transform: translateY(-15px) rotate(45deg)
-  transform: translateY(-15px) rotate(45deg)
+  -webkit-transform: translateY(get-vw-desktop(-15px)) rotate(45deg)
+  -ms-transform: translateY(get-vw-desktop(-15px)) rotate(45deg)
+  transform: translateY(get-vw-desktop(-15px)) rotate(45deg)
 
 .cross:hover .bar:nth-of-type(1)
-  -webkit-transform: translateY(13.5px) rotate(-40.5deg)
-  -ms-transform: translateY(13.5px) rotate(-40.5deg)
-  transform: translateY(13.5px) rotate(-40.5deg)
+  -webkit-transform: translateY(get-vw-desktop(-13.5px)) rotate(-40.5deg)
+  -ms-transform: translateY(get-vw-desktop(-13.5px)) rotate(-40.5deg)
+  transform: translateY(get-vw-desktop(-13.5px)) rotate(-40.5deg)
 
 .cross:hover .bar:nth-of-type(2)
   opacity: .1
 
 .cross:hover .bar:nth-of-type(3)
-  -webkit-transform: translateY(-13.5px) rotate(40.5deg)
-  -ms-transform: translateY(-13.5px) rotate(40.5deg)
-  transform: translateY(-13.5px) rotate(40.5deg)
+  -webkit-transform: translateY(get-vw-desktop(-13.5px)) rotate(40.5deg)
+  -ms-transform: translateY(get-vw-desktop(-13.5px)) rotate(40.5deg)
+  transform: translateY(get-vw-desktop(-13.5px)) rotate(40.5deg)
+// END Swiper General
 
-.div-header
-  top: 0
-  position: absolute
-
-.logo-header
-  top: 0
-  height: 80px
-  left: 37.43vw
-  position: absolute
-  width: calc(100vw - 37.43vw)
-  background-color: $white
-
-.img-div
-  height: 80px
-  position: relative
-  display: inline-block
-  background-color: $white
-  width: calc(100vw - 74.86vw)
-  img
-    max-width: 120px
-    max-height: 41px
+// Header
+#ala-header
+  .logo-header
+    top: 0
+    height: get-vw-desktop(80px)
+    left: get-vw-desktop(80px)
     position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-
-.sm-div
-  height: 72px
-  width: 37.1vw
-  display: inline-block
-  background-color: $black
-
-#al-carousel-hero
-  height: 61.11111111111111vw
-  width: 100%
-  .item
-    height: 61.11111111111111vw
-    background-size: cover
-    position: relative
-    .item-overlay
-      background: rgba(0,0,0,0.5)
-      height: 100%
+    width: get-vw-desktop(820px)
+    background-color: $white
+    z-index: 2
+    .img-div
+      width: get-vw-desktop(360px)
+      position: relative
+      height: get-vw-desktop(80px)
+      img
+        width: get-vw-desktop(145px)
+        height: get-vw-desktop(50px)
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+  .social-header
+    top: 0
+    left: get-vw-desktop(900px)
+    height: get-vw-desktop(80px)
+    position: absolute
+    width: get-vw-desktop(540px)
+    background-color: $white
+    z-index: 2
+    .social-icons
+      height: get-vw-desktop(33.9px)
       position: absolute
-      top: 0
-      width: 100%
-    img
+      list-style: none
+      right: get-vw-desktop(50.3px)
+      top: get-vw-desktop(23.3px)
+      .social-icon
+        position: relative
+        height: 100%
+        width: get-vw-desktop(33.9px)
+        border-radius: 50%
+        background: $white-2
+        display: inline-block
+        margin-right: get-vw-desktop(12px)
+        a
+          color: $grey-1
+          i
+            font-size: get-vw-desktop(22px)
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+  .swiper-container-hero
+    position: relative
+    padding-top: get-vw-desktop(80px)
+    .swiper-slide
+      height: get-vw-desktop(880px)
       background-size: cover
-      height: 61.11111111111111vw
-      width: 100%
-    .carousel-caption
+      position: relative
+      .slide-overlay
+        position: absolute
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, 0.4)
+        left: 0
+      .slide-text
+        position: absolute
+        top: get-vw-desktop(396px)
+        left: 50%
+        transform: translateX(-50%)
+        h2
+          font-family: Archivo, sans-serif
+          font-size: get-vw-desktop(80px)
+          font-weight: bold
+          text-transform: uppercase
+          text-align: center
+          color: $white
+          text-shadow: 0 2px get-vw-desktop(4px) rgba(0, 0, 0, 0.8)
+          margin: 0
+          letter-spacing: get-vw-desktop(18px)
+    .swiper-button-prev, .swiper-button-next
+      background-image: none
       color: $white
-      font-family: Archivo, sans-serif
-      font-size: 5.555555555555555vw
-      font-weight: bold
-      letter-spacing: 1.25vw
-      padding: 0
-      top: 26.73611111111111vw
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8)
-      text-transform: uppercase
-  .carousel-control
-    background: transparent
-    color: $white
-    opacity: 1
-    top: 28.40277777777778vw
-    &:hover
-      background: transparent
-      opacity: 1
-  .right
-    right: 4.166666666666667vw
-    height: 4.166666666666667vw
-  .left
-    left: 4.166666666666667vw
-    height: 4.166666666666667vw
+      height: get-vw-desktop(60px)
+      text-align: center
+      top: get-vw-desktop(510px)
+      width: get-vw-desktop(60px)
+    .swiper-button-prev
+      left: get-vw-desktop(135px)
+    .swiper-button-next
+      right: get-vw-desktop(135px)
 
+// END Header
+
+
+
+
+
+// Projects
 .al-projects
   background: $black
   color: $white
@@ -263,7 +314,11 @@ body
         bottom: -1.0416666666666667vw
         left: 50%
         transform: translateX(-50%)
-// END Header
+// END Projects
+
+
+
+
 
 // Footer
 .al-footer-container

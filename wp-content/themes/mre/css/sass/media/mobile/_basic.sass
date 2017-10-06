@@ -9,9 +9,9 @@ body
   margin: 0
   padding: 0
 
-.swiper-container
+.swiper-container-menu
   width: 100%
-  height: get-vw-mobile(642px)
+  height: auto
 
 .swiper-slide
   font-size: get-vw-mobile(18px)
@@ -20,7 +20,7 @@ body
   min-width: get-vw-mobile(100px)
   width: 70%
   max-width: get-vw-mobile(255px)
-  height: auto
+  height: get-vw-mobile(582px)
   .mre-menu
     top: get-vw-mobile(60px)
     left: 0
@@ -36,7 +36,7 @@ body
       border-top: 2px solid rgba(127, 129, 130, 0.15)
   .mre-menu-language
     width: 100%
-    bottom: get-vw-mobile(220px)
+    bottom: get-vw-mobile(160px)
     left: 0
     height: get-vw-mobile(60px)
     .mre-menu-language-text
@@ -156,6 +156,7 @@ body
   .swiper-container-hero
     padding-top: get-vw-mobile(60px)
     .swiper-slide
+      height: get-vw-mobile(522px)
       background-position: 50%
       .slide-overlay
         width: 100%
@@ -197,14 +198,6 @@ body
 #mre-about-us
   height: get-vw-mobile(953px)
   .about-us-title
-    padding-top: get-vw-mobile(40px)
-    opacity: 0.6
-    font-size: get-vw-mobile(12px)
-  .about-us-sub-first
-    padding-top: get-vw-mobile(10px)
-    font-size: get-vw-mobile(20px)
-    line-height: get-vw-mobile(20px)
-  .about-us-sub-second
     font-size: get-vw-mobile(24px)
     line-height: get-vw-mobile(24px)
   .about-us-image
@@ -255,15 +248,17 @@ body
     font-size: get-vw-mobile(25px)
     line-height: get-vw-mobile(30px)
   .partner-left
-    img
-      width: get-vw-mobile(70px)
-      height: get-vw-mobile(74px)
-      margin-top: get-vw-mobile(10px)
-  .partner-right
+    background-position: bottom
     img
       width: get-vw-mobile(120px)
       height: get-vw-mobile(38px)
       margin-top: get-vw-mobile(28px)
+  .partner-right
+    background-position: center
+    img
+      width: get-vw-mobile(70px)
+      height: get-vw-mobile(74px)
+      margin-top: get-vw-mobile(10px)
 // END Partners
 
 // Offices
@@ -288,9 +283,10 @@ body
       margin: 0 auto
       height: get-vw-mobile(180px)
       width: 100%
+      display: block
       .office-detail
-        width: get-vw-mobile(256px)
-        margin: 0 get-vw-mobile(52px) get-vw-mobile(5px) get-vw-mobile(52px)
+        width: get-vw-mobile(275px)
+        margin: get-vw-mobile(10px) get-vw-mobile(52px) get-vw-mobile(5px) get-vw-mobile(52px)
         h5
           font-size: get-vw-mobile(12px)
           line-height: get-vw-mobile(20px)
