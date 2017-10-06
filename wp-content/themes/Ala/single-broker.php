@@ -14,6 +14,7 @@
     $lat = get_post_meta( get_the_ID(), '_br_lat', true);
     $brochure = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_brochure_id', true ));
     $pzip = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_pzip_id', true ));
+    $terms = get_the_terms(get_the_ID(), 'nearby_places');
 ?>
 
 <section class="prop-header text-center" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.5) 100%), url('<?php if(!empty($background_image)){ echo $background_image; } ?>')">
@@ -122,98 +123,113 @@
             </div>
         </div>
     <?php } ?>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="detail-tlt"><?php _e('Planos', 'ala') ?></div>
-                <div id="gallery-top-blueprint" class="swiper-container gallery-top-blueprint swiper-detail">
-                    <div class="swiper-wrapper">
-                        <?php foreach ((array) $plainsimages as $attachment_id => $attachment_url) { ?>
-                            <div class="swiper-slide" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'full'); ?>')"></div>
-                        <?php } ?>
+
+    <?php if(!empty($plainsimages)){ ?>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="detail-tlt"><?php _e('Planos', 'ala') ?></div>
+                    <div id="gallery-top-blueprint" class="swiper-container gallery-top-blueprint swiper-detail">
+                        <div class="swiper-wrapper">
+                            <?php foreach ((array) $plainsimages as $attachment_id => $attachment_url) { ?>
+                                <div class="swiper-slide" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'full'); ?>')"></div>
+                            <?php } ?>
+                        </div>
+                        <div class="swiper-button-next swiper-button-white"></div>
+                        <div class="swiper-button-prev swiper-button-white"></div>
                     </div>
-                    <div class="swiper-button-next swiper-button-white"></div>
-                    <div class="swiper-button-prev swiper-button-white"></div>
-                </div>
-                <div id="gallery-thumbs-blueprint" class="swiper-container gallery-thumbs-blueprint swiper-detail-thumbs border-thumb">
-                    <div class="swiper-wrapper">
-                        <?php foreach ((array) $plainsimages as $attachment_id => $attachment_url) { ?>
-                            <div class="swiper-slide blueprint-img" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'thumb'); ?>')"></div>
-                        <?php } ?>
+                    <div id="gallery-thumbs-blueprint" class="swiper-container gallery-thumbs-blueprint swiper-detail-thumbs border-thumb">
+                        <div class="swiper-wrapper">
+                            <?php foreach ((array) $plainsimages as $attachment_id => $attachment_url) { ?>
+                                <div class="swiper-slide blueprint-img" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'thumb'); ?>')"></div>
+                            <?php } ?>
+                        </div>
                     </div>
-                </div>
-                <?php if (!empty($pzip)) { ?> 
-                    <a class="btn-planos" href="<?php echo $pzip; ?>" download><?php _e('Descargar planos', 'ala') ?></a>
-                <?php } ?>
-            </div>
-        </div>
-    </div>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="detail-tlt"><?php _e('Memoria de Calidad', 'ala') ?></div>
-                <p><?php echo $q[0]; ?></p>
-                <div class="row memory-items">
-                    <div class="col-sm-4 col-md-4 text-center">
-                        <?php echo $q[1]; ?> 
-                    </div>
-                    <div class="col-sm-4 col-md-4 text-center">
-                        <?php echo $q[2]; ?> 
-                    </div>
-                    <div class="col-sm-4 col-md-4 text-center">
-                        <?php echo $q[3]; ?> 
-                    </div>
+                    <?php if (!empty($pzip)) { ?>
+                        <a class="btn-planos" href="<?php echo $pzip; ?>" download><?php _e('Descargar planos', 'ala') ?></a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="detail-tlt"><?php _e('Ubicaci&oacute;n', 'ala') ?></div>
-                <div id="map"></div>
-                <script>
-                  function initMap() {
-                    var uluru = {lat: <?php echo $lat ?>, lng: <?php echo $lng ?>};
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                      zoom: 10,
-                      center: uluru
-                    });
-                    var alamarker = '<?php echo get_template_directory_uri(); ?>/assets/marker.png';
-                    var marker = new google.maps.Marker({
-                      position: uluru,
-                      map: map,
-                      icon: alamarker,
-                      animation: google.maps.Animation.BOUNCE
-                    });
-                  }
-                </script>
-            </div>
-        </div>
-    </div>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="detail-tlt"><?php _e('Lugares Cercanos', 'ala') ?></div>
-                <?php if(!empty($intimages)){ ?>
-                    <div class="row gallery-places">
-                        <?php $i = 1; foreach ( (array) $intimages as $attachment_id => $attachment_url ) { ?>
-                            <div class="col-sm-4 col-md-4">
-                                <a href="#" class="amenimg places-wrapper" data-toggle="modal" data-target="#myModalDetails" style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')">
-                                    <div class="places-mask">Freemont</div>
-                                </a>
-                            </div>
-                            <?php  if ($i++ == 3) break; ?>
-                        <?php } ?>
+    <?php } ?>
+
+    <?php if(!empty($quality)){ ?>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="detail-tlt"><?php _e('Memoria de Calidad', 'ala') ?></div>
+                    <p><?php echo $q[0]; ?></p>
+                    <div class="row memory-items">
+                        <div class="col-sm-4 col-md-4 text-center">
+                            <?php echo $q[1]; ?>
+                        </div>
+                        <div class="col-sm-4 col-md-4 text-center">
+                            <?php echo $q[2]; ?>
+                        </div>
+                        <div class="col-sm-4 col-md-4 text-center">
+                            <?php echo $q[3]; ?>
+                        </div>
                     </div>
-                <?php } ?>
+                </div>
             </div>
         </div>
-    </div>
+    <?php } ?>
+
+    <?php if(!empty($lat) && !empty($lng)){ ?>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="detail-tlt"><?php _e('Ubicaci&oacute;n', 'ala') ?></div>
+                    <div id="map"></div>
+                    <div id="save-widget">
+                        <strong><?php the_title() ?></strong>
+                        <p><a href="https://www.google.com/maps/place/<?php echo $lat ?>,<?php echo $lng ?>" target="_blank">Ver en Google Maps</a></p>
+                    </div>
+                    <script>
+                      function initMap() {
+                        var uluru = {lat: <?php echo $lat ?>, lng: <?php echo $lng ?>};
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                          zoom: 10,
+                          center: uluru
+                        });
+                        var alamarker = '<?php echo get_template_directory_uri(); ?>/assets/marker.png';
+                        var marker = new google.maps.Marker({
+                          position: uluru,
+                          map: map,
+                          icon: alamarker,
+                          animation: google.maps.Animation.BOUNCE
+                        });
+                      }
+                    </script>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+
+    <?php if ($terms != null) { ?>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="detail-tlt"><?php _e('Lugares Cercanos', 'ala') ?></div>
+                    <?php if ($terms != null) { ?>
+                        <div class="row gallery-places">
+                            <?php $i = 1; foreach ($terms as $term) {
+                                $meta_image = get_wp_term_image($term->term_id);
+                                ?>
+                                <div class="col-sm-4 col-md-4">
+                                    <a href="#" class="amenimg places-wrapper" data-toggle="modal" data-target="#myModalDetails" style="background: url('<?php echo $meta_image; ?>')">
+                                        <div class="places-mask"><?php print $term->name; ?></div>
+                                    </a>
+                                </div>
+                                <?php  if ($i++ == 3) break; ?>
+                            <?php } ?>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+
 </section>
 
-<?php get_footer(); 
+<?php get_footer();

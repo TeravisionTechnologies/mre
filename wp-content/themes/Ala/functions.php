@@ -30,13 +30,14 @@ function mre_enqueue_scripts() {
 $postTypeDir = array (
   __DIR__.'/includes/post-types/broker/',
   __DIR__.'/includes/post-types/header-footer/',
-  __DIR__.'/includes/post-types/places/'
+    __DIR__.'/includes/post-types/banner/',
 );
 
 // File names inside post-types dirs
 $files = array (
   'meta-boxes.php',
-  'post-type.php'
+  'post-type.php',
+    'taxonomy.php'
 );
 
 foreach ($postTypeDir as $directory) {
@@ -56,19 +57,19 @@ foreach ($postTypeDir as $directory) {
 add_action( 'init', 'call_create_post_types' );
 
 function call_create_post_types() {
+    // Post Type for Banners/Sliders
+    create_post_type_banner();
   // Post Type for Broker
   create_post_type_broker();
   // Post Type for General Settings
   create_post_type_header_footer();
-  // Post Type for Related Places
-  create_post_type_places();
+
 }
 
 /* Remove text area field from header and footer */
 function remove_page_editor() {
   remove_post_type_support( 'header_footer', 'editor' );
-  //remove_post_type_support( 'broker', 'editor' );
-  remove_post_type_support( 'places', 'editor' );
+  remove_post_type_support( 'banner', 'editor' );
 }
 add_action( 'init', 'remove_page_editor' );
 
@@ -86,8 +87,7 @@ function call_metaboxes() {
   broker_metaboxes();
   // Metaboxes for General Settings
   header_footer_metaboxes();
-  // Metaboxes for Places
-  places_metaboxes();
+    banner_metaboxes();
 }
 
 function custom_form_validation_filter($result, $tag) {
