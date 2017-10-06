@@ -968,7 +968,8 @@ a.al-phone-num {
       text-align: center; }
     #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list {
       list-style: none;
-      text-align: center; }
+      text-align: center;
+      padding: 0; }
       #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list li {
         display: inline-block; }
       #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img {
@@ -1714,10 +1715,12 @@ a.al-phone-num {
       #blog-detail-content .blog-detail-content-share .blog-detail-content-share-title {
         font-size: 18px;
         margin-bottom: 20px; }
-      #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img {
-        height: 54px;
-        margin: 0 7.5px;
-        width: 54px; }
+      #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list {
+        padding: 0; }
+        #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img {
+          height: 54px;
+          margin: 0 7.5px;
+          width: 54px; }
 
   .blog-detail-divider {
     border: solid 1px #4a4a4a;
@@ -2306,7 +2309,8 @@ a.al-phone-num {
       font-size: 2.60417vw;
       line-height: 3.90625vw;
       padding-top: 6.64063vw;
-      text-align: center; }
+      text-align: center;
+      margin: 0; }
     #blog-recommended-posts .swiper-container-blog-most-viewed {
       height: 26.82292vw;
       margin-bottom: 9.24479vw;
@@ -2348,7 +2352,7 @@ a.al-phone-num {
         right: 7.8125vw; }
 
   #blog-detail-breadcrumb {
-    padding: 5.20833vw 0 2.60417vw 0; }
+    padding: 10.41667vw 0 2.60417vw 0; }
     #blog-detail-breadcrumb .blog-detail-breadcrumb-prev {
       font-size: 2.60417vw;
       height: 2.60417vw;
@@ -2360,10 +2364,11 @@ a.al-phone-num {
       height: 3.90625vw;
       line-height: 3.90625vw;
       min-width: 11.97917vw;
-      padding: 0 1.30208vw; }
+      padding: 0 1.30208vw;
+      margin: 0; }
     #blog-detail-breadcrumb .blog-detail-breadcrumb-title {
       font-size: 1.5625vw;
-      margin-left: 1.30208vw; }
+      margin: 0 0 0 1.30208vw; }
 
   #blog-detail-hero {
     height: 36.45833vw; }
@@ -2380,7 +2385,7 @@ a.al-phone-num {
     #blog-detail-content .blog-detail-content-title {
       font-size: 2.60417vw;
       line-height: 3.90625vw;
-      margin-left: 7.55208vw;
+      margin: 0 0 0 7.55208vw;
       vertical-align: middle; }
     #blog-detail-content .blog-detail-content-author {
       font-size: 1.82292vw;
@@ -2400,7 +2405,7 @@ a.al-phone-num {
       height: 20.05208vw; }
       #blog-detail-content .blog-detail-content-share .blog-detail-content-share-title {
         font-size: 2.34375vw;
-        margin-bottom: 2.60417vw; }
+        margin: 0 0 2.60417vw 0; }
       #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img {
         height: 5.46875vw;
         margin: 0 0.78125vw;
@@ -2441,25 +2446,27 @@ a.al-phone-num {
     #blog-detail-form .blog-detail-comments-form .blog-detail-comments-form-title {
       font-size: 2.60417vw;
       line-height: 3.90625vw;
-      padding: 6.90104vw 0 0.65104vw 0; }
+      padding: 5.20833vw 0 0.65104vw 0;
+      margin: 0; }
     #blog-detail-form .blog-detail-comments-form .blog-detail-comments-form-subtitle {
       font-size: 1.82292vw;
-      line-height: 2.60417vw; }
+      line-height: 2.60417vw;
+      margin: 0; }
     #blog-detail-form .blog-detail-comments-form .comments-form input[type="text"] {
       font-size: 1.82292vw;
       height: 6.11979vw;
       line-height: 1.95313vw;
-      margin-right: 2.60417vw 2.60417vw;
+      margin-right: 2.60417vw;
       margin-top: 3.90625vw;
       padding-left: 1.95313vw;
-      width: 34.375vw; }
+      width: 33.59375vw; }
     #blog-detail-form .blog-detail-comments-form .comments-form input[type="email"] {
       font-size: 1.82292vw;
       height: 6.11979vw;
       line-height: 1.95313vw;
       margin-top: 3.90625vw;
       padding-left: 1.95313vw;
-      width: 33.72396vw; }
+      width: 33.59375vw; }
     #blog-detail-form .blog-detail-comments-form .comments-form textarea {
       font-size: 1.82292vw;
       height: 17.31771vw;
