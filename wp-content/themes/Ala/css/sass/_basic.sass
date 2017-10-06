@@ -288,6 +288,7 @@ body
   text-align: center
   .al-project-list
     height: 100%
+    width: 100%
     .al-project-list-item
       position: relative
       margin: 0 1.8055555555555556vw
@@ -523,49 +524,50 @@ a.al-phone-num
   font-family: 'Archivo', sans-serif
 // END Partners
 
-// Our offices
-.al-swiper-contact
+// Offices
+#mre-offices
+  height: get-vw-desktop(450px)
   background-size: cover
   .swiper-container-flags
     height: 100%
-  .flags-indicators
-    padding-top: 4.236111111111111vw
-    .flag-image
-      height: 4.097222222222222vw
-      margin: 0 1.3888888888888888vw
-      width: 4.166666666666667vw
-      cursor: pointer
+    text-align: center
   h4
+    margin: get-vw-desktop(90px) 0 get-vw-desktop(40px) 0
+    font-family: Montserrat-Regular, sans-serif
+    font-size: get-vw-desktop(36px)
+    line-height: get-vw-desktop(40px)
     color: $white
-    font-family: 'Archivo', sans-serif
-    font-size: 1.25vw
-    line-height: 1.3888888888888888vw
-    margin: 2.7777777777777777vw 0 1.3888888888888888vw 0
+    strong
+      font-family: Montserrat-Bold, sans-serif
+  .flags-indicators
+    .flag-image
+      height: get-vw-desktop(60px)
+      margin: 0 get-vw-desktop(20px) get-vw-desktop(10px) get-vw-desktop(20px)
+      width: get-vw-desktop(60px)
+      cursor: pointer
+    .flag-image-opacity
+      opacity: .6
   .swiper-wrapper
     width: 100%
     .swiper-slide
       background: transparent
       margin: 0 auto
+      height: get-vw-desktop(150px)
       width: 100%
       .office-detail
-        width: 20.97222222222222vw
+        display: inline-block
+        width: get-vw-desktop(370px)
+        margin: 0 get-vw-desktop(22px)
         h5
           color: $white
-          font-family: 'Archivo', sans-serif
-          font-size: 1.1111111111111112vw
-          line-height: 1.7361111111111112vw
+          font-family: Montserrat-Regular, sans-serif
+          font-size: get-vw-desktop(16px)
+          line-height: get-vw-desktop(25px)
           margin: 0
         span
-          font-weight: bold
-        h5
-          color: $white
-          font-family: 'Archivo', sans-serif
-          font-size: 1.1111111111111112vw
-          line-height: 1.7361111111111112vw
-          margin: 0
-        span
-          font-weight: bold
-// END Our offices
+          font-family: Montserrat-Bold, sans-serif
+// END Offices
+
 
 // Properties
 .al-properties-section
@@ -575,12 +577,16 @@ a.al-phone-num
     font-family: 'Archivo', sans-serif
     font-size: 1.3888888888888888vw
     line-height: 1.3888888888888888vw
-    margin: 4.583333333333333vw 1.0416666666666667vw 4.166666666666667vw 1.0416666666666667vw
+    margin: 4.583333333333333vw 1.0416666666666667vw 4.166666666666667vw 0
+    padding-left: 0
+    width: 13.88888888888889vw
   .filter-left
     border-right: 2px solid #7f8182
-    margin-right: 0
+    margin: 4.583333333333333vw 0 4.166666666666667vw 1.0416666666666667vw
     opacity: 0.5
-    padding-right: 1.0416666666666667vw
+    padding-right: 0
+    width: 13.88888888888889vw
+    padding-left: 0
   .properties-filter
     border: solid 2px rgba(74, 74, 74, 0.4)
     font-family: Montserrat-Regular, sans-serif

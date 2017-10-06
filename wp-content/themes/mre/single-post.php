@@ -94,14 +94,6 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
               <h2 class="blog-detail-comments-form-title">Escribe un comentario</h2>
               <h3 class="blog-detail-comments-form-subtitle">Su dirección de correo electrónico no será publicada</h3>
               <?php comment_form($args_form_comments, $post_id); ?>
-              <!-- <form action="" class="comments-form">
-                 <div class="form-group">
-                   <input type="text" class="form-control" id="input-fullname" placeholder="Nombre y Apellido">
-                   <input type="email" class="form-control" id="input-email" placeholder="Email">
-                   <textarea class="form-control" placeholder="Tu comentario..."></textarea>
-                 </div>
-                 <button type="submit" class="comments-form-button">Publicar comentario</button>
-               </form>-->
             </div>
           </section>
 
@@ -122,47 +114,48 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
             );
             $articles_most_view = get_posts( $args );
             ?>
-            <div class="recommended-posts-overlay"></div>
-            <div class="container-mre center-block">
-              <h2 class="recommended-posts-title">Artículos Recomendados</h2>
-              <div class="swiper-container swiper-container-blog-most-viewed">
-                <div class="swiper-wrapper">
-                  <?php
-                  foreach ($articles_most_view as $post_item) {
-                    ?>
-                    <div class="swiper-slide">
-                      <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_the_post_thumbnail_url($post_item->ID); ?>');">
-                        <?php
-                        $categories = get_the_category($post_item->ID);
-                        foreach( $categories as $category ) {
-                          echo '<span class="blog-most-viewed-category">'.$category->name.'</span>';
-                        }
-                        $comments = get_comments(array(
-                          'post_id' => $post_item->ID ));
-                        $count_comments_list = 0;
-                        foreach($comments as $comment) :
-                          $count_comments_list++;
-                        endforeach;
-                        ?>
-                      </div>
-                      <div class="blog-most-viewed-text">
-                        <a href="#">
-                          <p class="blog-most-viewed-text-title"><?php echo $post_item->post_title ?></p>
-                        </a>
-                        <p class="blog-most-viewed-text-author">Por: <?php echo the_author_meta( 'nickname', $post_item->post_author )?><span class="blog-most-viewed-text-date"><?php echo get_the_time('j F, Y', $post_item->ID); ?></span><span class="blog-most-viewed-text-comments">- <?php echo $count_comments_list; ?> Comments</span></p>
-                      </div>
-                    </div>
-
+            <div class="recommended-posts-overlay">
+              <div class="container-mre center-block">
+                <h2 class="recommended-posts-title">Artículos Recomendados</h2>
+                <div class="swiper-container swiper-container-blog-most-viewed">
+                  <div class="swiper-wrapper">
                     <?php
-                  }
-                  ?>
+                    foreach ($articles_most_view as $post_item) {
+                      ?>
+                      <div class="swiper-slide">
+                        <div class="blog-most-viewed-image" style="background-image: url('<?php echo get_the_post_thumbnail_url($post_item->ID); ?>');">
+                          <?php
+                          $categories = get_the_category($post_item->ID);
+                          foreach( $categories as $category ) {
+                            echo '<span class="blog-most-viewed-category">'.$category->name.'</span>';
+                          }
+                          $comments = get_comments(array(
+                            'post_id' => $post_item->ID ));
+                          $count_comments_list = 0;
+                          foreach($comments as $comment) :
+                            $count_comments_list++;
+                          endforeach;
+                          ?>
+                        </div>
+                        <div class="blog-most-viewed-text">
+                          <a href="#">
+                            <p class="blog-most-viewed-text-title"><?php echo $post_item->post_title ?></p>
+                          </a>
+                          <p class="blog-most-viewed-text-author">Por: <?php echo the_author_meta( 'nickname', $post_item->post_author )?><span class="blog-most-viewed-text-date"><?php echo get_the_time('j F, Y', $post_item->ID); ?></span><span class="blog-most-viewed-text-comments">- <?php echo $count_comments_list; ?> Comments</span></p>
+                        </div>
+                      </div>
+
+                      <?php
+                    }
+                    ?>
+                  </div>
+                  <i class="fa fa-chevron-circle-left swiper-button-prev" aria-hidden="true"></i>
+                  <i class="fa fa-chevron-circle-right swiper-button-next" aria-hidden="true"></i>
                 </div>
-                <i class="fa fa-chevron-circle-left swiper-button-prev" aria-hidden="true"></i>
-                <i class="fa fa-chevron-circle-right swiper-button-next" aria-hidden="true"></i>
               </div>
             </div>
           </section>
         </section>
 
-        <?php get_footer(); ?>
+<?php get_footer(); ?>
 
