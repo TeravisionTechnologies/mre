@@ -63,7 +63,7 @@
             </div>
             <div class="logo-header">
               <div class="img-div pull-right">
-                <a href="/"><img src="wp-content/themes/Ala/assets/logo.jpg" alt="Ala19 Logo"></a>
+                <a href="/"><img src="<?php echo get_template_directory_uri(); ?>/assets/logo.jpg" alt="Ala19 Logo"></a>
               </div>
             </div>
             <div class="social-header pull-right">
