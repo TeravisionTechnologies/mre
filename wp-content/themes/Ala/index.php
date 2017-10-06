@@ -113,39 +113,45 @@
     <img src="<?php echo $footer_info['_hf_partners-two'][0]; ?>" alt="Logo Partner Two" class="partners-images-two"/>
   </div>
 </div>
-<div class="col-xs-12 al-swiper-contact text-center " style="background-image: url('<?php echo $footer_info['_hf_contact-swiper'][0] ?>')">
-  <div class="container">
-    <div id="offices" class="swiper-container swiper-container-flags">
+  <section class="col-xs-12" id="al-offices" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/offices.jpg');">
+    <div class="swiper-container swiper-container-flags">
+      <h4>Puedes <strong>encontrarnos</strong> en</h4>
       <div class="flags-indicators">
-        <img id="flag-image-2" class="flag-image" data-pagination="1" src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
-        <img id="flag-image-1" class="flag-image flag-image-opacity" data-pagination="2" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
+        <img id="flag-image-1" class="flag-image" data-pagination="1" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
+        <img id="flag-image-2" class="flag-image flag-image-opacity" data-pagination="2" src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
       </div>
-      <h4>Puedes encontrar Nuestras Oficinas en:</h4>
       <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="office-detail">
+            <h5>
+              <span>Miami · Sede principal:</span>
+            </h5>
+            <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
+            <h5>USA</h5>
+            <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
+          </div>
+          <div class="office-detail">
+            <h5>
+              <span>Orlando:</span>
+            </h5>
+            <h5>2295 S. Hiawassee Road, Suite 407E</h5>
+            <h5>USA</h5>
+            <h5>Teléfonos: +1 407 255.08.71</h5>
+          </div>
+        </div>
         <div class="swiper-slide">
           <div class="office-detail">
             <h5>
               <span>Madrid:</span>
             </h5>
-            <h5>Calle Ortega y Gasset #6</h5>
-            <h5>Primero Izquierda</h5>
-            <h5>Sample: +34 605 816 803</h5>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="office-detail usa-office">
-            <h5>
-              <span>Las Vegas:</span>
-            </h5>
-            <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
-            <h5>Miami, Florida</h5>
-            <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
+            <h5>C/ Velázquez 78, 2º Dcha. 28001</h5>
+            <h5>España</h5>
+            <h5>Teléfonos: +34 605 816 803</h5>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
   <div id="contact-us" class="col-xs-12 al-contact-div" style="background-image: url('<?php echo $footer_info['_hf_contact'][0] ?>')">
     <div class="container">
       <div class="row">
