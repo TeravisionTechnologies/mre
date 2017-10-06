@@ -55,22 +55,24 @@
             </div>
           </div>
           <div class="swiper-slide content">
-            <div class="menu-button">
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-            </div>
-            <div class="logo-header">
-              <div class="img-div pull-right">
-                <a href="/"><img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="MRE Logo"></a>
+            <div class="menu-bar">
+              <div class="menu-button">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
               </div>
-            </div>
-            <div class="social-header pull-right">
-              <ul class="social-icons">
-                <li class="social-icon"><a href="https://www.linkedin.com/company/11285534/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                <li class="social-icon"><a href="https://www.facebook.com/MerandRealEstate/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li class="social-icon"><a href="https://www.instagram.com/grupomre/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li class="social-icon"><a href="https://twitter.com/grupomre"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li class="social-icon"><a href="https://www.youtube.com/channel/UCj1GOp1JCfAaSmBdQn5uU9w?view_as=subscriber"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-              </ul>
+              <div class="logo-header">
+                <div class="img-div pull-right">
+                  <a href="/"><img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="MRE Logo"></a>
+                </div>
+              </div>
+              <div class="social-header pull-right">
+                <ul class="social-icons">
+                  <li class="social-icon"><a href="https://www.linkedin.com/company/11285534/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                  <li class="social-icon"><a href="https://www.facebook.com/MerandRealEstate/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li class="social-icon"><a href="https://www.instagram.com/grupomre/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  <li class="social-icon"><a href="https://twitter.com/grupomre"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                  <li class="social-icon"><a href="https://www.youtube.com/channel/UCj1GOp1JCfAaSmBdQn5uU9w?view_as=subscriber"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                </ul>
+              </div>
             </div>
