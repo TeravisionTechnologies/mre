@@ -42,7 +42,7 @@ $theMeta = get_post_meta($headerPost[0]->ID);
               </div>
               <i class="fa fa-chevron-circle-left swiper-button-prev" aria-hidden="true"></i>
               <i class="fa fa-chevron-circle-right swiper-button-next" aria-hidden="true"></i>
-              <a href=""><img src="<?php echo get_template_directory_uri(); ?>/assets/hero-arrow.svg" class="hero-button"></a>
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-arrow.svg" class="hero-button">
             </div>
             <section id="mre-about-us" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/about-us-bg.jpg');" alt="About Us Background">
               <img class="about-us-image" src="<?php echo get_template_directory_uri(); ?>/assets/about-us.png" alt="About Us">

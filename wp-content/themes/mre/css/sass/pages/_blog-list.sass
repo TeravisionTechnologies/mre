@@ -1,55 +1,55 @@
 #blog-list-categories
   background: $overlay
-  height: 23.819444444444443vw
+  height: get-vw-desktop(343px)
   position: relative
   margin-top: 80px
   .blog-list-category-title, .blog-list-category-text
-    line-height: 2.5vw
+    line-height: get-vw-desktop(30px)
     text-align: center
   .blog-list-category-title
     color: $white
     font-family: Montserrat-Regular, sans-serif
-    font-size: 1.25vw
-    margin-top: 3.4722222222222223vw
+    font-size: get-vw-desktop(18px)
+    margin-top: get-vw-desktop(55px)
     opacity: 0.6
   .blog-list-category-text
     color: $white
     font-family: Montserrat-Bold, sans-serif
-    font-size: 2.0833333333333335vw
+    font-size: get-vw-desktop(30px)
   .swiper-container-blog-categories
-    height: 8.88888888888889vw
-    margin-bottom: 4.861111111111111vw
-    margin-top: 2.4305555555555554vw
+    height: get-vw-desktop(128px)
+    margin-bottom: get-vw-desktop(65px)
+    margin-top: get-vw-desktop(35px)
     position: initial
-    width: 53.33333333333333vw
+    width: get-vw-desktop(768px)
     .swiper-wrapper
-      width: 55.55555555555556vw
+      width: get-vw-desktop(800px)
       .swiper-slide
         border-radius: 100%
         position: relative
-        width: 8.88888888888889vw
+        width: get-vw-desktop(128px)
         img
-          height: 8.88888888888889vw
-          width: 8.88888888888889vw
+          height: get-vw-desktop(128px)
+          width: get-vw-desktop(128px)
         .swiper-overlay
           background: $overlay-blue
           border-radius: 50%
-          height: 8.88888888888889vw
+          height: get-vw-desktop(128px)
           position: absolute
           top: 0
-          width: 8.88888888888889vw
+          width: get-vw-desktop(128px)
     .swiper-button-prev, .swiper-button-next
       background-image: none
       color: $white
-      font-size: 2.5vw
-      height: 2.5vw
+      font-size: get-vw-desktop(36px)
+      height: get-vw-desktop(36px)
       text-align: center
-      top: 63%
-      width: 4.166666666666667vw
+      top: 67%
+      width: get-vw-desktop(60px)
     .swiper-button-prev
-      left: 15.972222222222221vw
+      left: get-vw-desktop(230px)
     .swiper-button-next
-      right: 15.972222222222221vw
+      right: get-vw-desktop(230px)
 .blog-list-triangle
   left: 50%
   position: relative
@@ -61,101 +61,103 @@
     border-collapse: separate
     border-bottom: 2px solid $select-grey
     display: table
-    height: 3.333333333333333vw
-    margin-top: 3.89167vw
+    height: get-vw-desktop(48px)
+    margin-top: get-vw-desktop(69px)
     position: relative
-    width: 59.791666666666664vw
+    width: get-vw-desktop(861px)
     i
       border: none
       color: $search-icon-grey
       display: table-cell
-      height: 1.1805555555555556vw
-      padding-left: 0.7638888888888888vw
-      padding-top: 0.5555555555555556vw
+      height: get-vw-desktop(17px)
+      padding-left: get-vw-desktop(11px)
+      padding-top: get-vw-desktop(8px)
       vertical-align: middle
-      width: 1.1805555555555556vw
+      width: get-vw-desktop(17px)
     input[type="text"]
       border: none
       box-shadow: none
       font-family: Montserrat-Regular, sans-serif
-      font-size: 1.1111111111111112vw
-      height: 3.194444444444444vw
-      line-height: 1.0416666666666667vw
-      padding-top: 1.0416666666666667vw
+      font-size: get-vw-desktop(16px)
+      height: get-vw-desktop(46px)
+      line-height: get-vw-desktop(15px)
+      padding-top: get-vw-desktop(15px)
   .blog-search, .blog-select
     padding: 0
   .blog-filter
     border: solid 2px $select-grey
     color: $select-grey-text
     font-family: Montserrat-Regular, sans-serif
-    font-size: 1.1111111111111112vw
-    height: 3.333333333333333vw
-    margin-top: 3.99167vw
-    width: 18.125vw
+    font-size: get-vw-desktop(16px)
+    height: get-vw-desktop(48px)
+    margin-top: get-vw-desktop(69px)
+    width: get-vw-desktop(261px)
   .blog-post
-    height: 29.86111111111111vw
-    margin-top: 2.7777777777777777vw
+    height: get-vw-desktop(430px)
+    margin-top: get-vw-desktop(40px)
     padding: 0
-    width: 39.23611111111111vw
+    width: get-vw-desktop(565px)
     &:nth-child(odd)
-      margin-right: 2.7777777777777777vw
+      margin-right: get-vw-desktop(40px)
     .blog-image
       background-size: cover
-      height: 16.73611111111111vw
+      height: get-vw-desktop(241px)
       position: relative
       .blog-category
         background-color: $light-blue
         bottom: 0
         color: #ffffff
         font-family: Montserrat-Bold, sans-serif
-        font-size: 0.8333333333333333vw
-        height: 2.0833333333333335vw
-        line-height: 2.0833333333333335vw
-        min-width: 6.388888888888888vw
-        padding: 0 0.6944444444444444vw
+        font-size: get-vw-desktop(12px)
+        height: get-vw-desktop(30px)
+        line-height: get-vw-desktop(30px)
+        min-width: get-vw-desktop(92px)
+        padding: 0 get-vw-desktop(10px)
         position: absolute
         text-align: center
         text-transform: uppercase
     .blog-text
       border: solid 1px #cfcfcf
-      height: 13.125vw
-      padding: 1.3888888888888888vw 3.0555555555555554vw 0 3.0555555555555554vw
+      height: get-vw-desktop(189px)
+      padding: get-vw-desktop(20px) get-vw-desktop(44px) 0 get-vw-desktop(44px)
       a
         text-decoration: none
       .blog-text-title
         color: #4d484a
         font-family: Montserrat-Bold, sans-serif
-        font-size: 1.25vw
-        line-height: 1.6666666666666665vw
+        font-size: get-vw-desktop(18px)
+        line-height: get-vw-desktop(24px)
+        margin: 0
       .blog-text-author
         color: #4d484a
         font-family: Montserrat-Bold, sans-serif
-        font-size: 0.9722222222222222vw
-        line-height: 0.9722222222222222vw
+        font-size: get-vw-desktop(14px)
+        line-height: get-vw-desktop(20px)
         opacity: 0.5
+        margin: 0
         .blog-text-date, .blog-text-comments
           font-family: Montserrat-Regular, sans-serif
-          padding-left: 0.4861111111111111vw
+          padding-left: get-vw-desktop(7px)
       .blog-text-summary
         color: #4d484a
         font-family: Montserrat-Regular, sans-serif
-        font-size: 0.9722222222222222vw
-        line-height: 1.3888888888888888vw
-        margin-top: 0.6944444444444444vw
+        font-size: get-vw-desktop(14px)
+        line-height: get-vw-desktop(20px)
+        margin-top: get-vw-desktop(10px)
   #blog-pagination
     clear: both
     text-align: center
     .pagination
-      margin: 4.166666666666667vw 0 5.555555555555555vw 0
+      margin: get-vw-desktop(60px) 0 get-vw-desktop(80px) 0
       li
-        font-size: 1.1111111111111112vw
-        line-height: 1.4583333333333333vw
+        font-size: get-vw-desktop(16px)
+        line-height: get-vw-desktop(21px)
         a
           background: $white
           color: #000
-          height: 2.9166666666666665vw
-          padding-top: 0.6944444444444444vw
-          width: 2.8472222222222223vw
+          height: get-vw-desktop(42px)
+          padding-top: get-vw-desktop(10px)
+          width: get-vw-desktop(41px)
         .pagination-active
           background: $light-blue
           color: $white
@@ -163,7 +165,7 @@
           color: $pagination-grey
 #blog-recommended-posts
   background-size: cover
-  height: 31.25vw
+  height: get-vw-desktop(450px)
   padding: 0
   position: relative
   .recommended-posts-overlay
@@ -174,68 +176,70 @@
   .recommended-posts-title
     color: $white
     font-family: Montserrat-Bold, sans-serif
-    font-size: 1.6666666666666665vw
-    line-height: 2.5vw
-    padding-top: 3.4722222222222223vw
+    font-size: get-vw-desktop(24px)
+    line-height: get-vw-desktop(36px)
+    padding-top: get-vw-desktop(50px)
     text-align: center
   .swiper-container-blog-most-viewed
-    height: 17.569444444444443vw
-    margin-bottom: 4.930555555555555vw
-    margin-top: 2.7777777777777777vw
+    height: get-vw-desktop(253px)
+    margin-bottom: get-vw-desktop(71px)
+    margin-top: get-vw-desktop(40px)
     position: initial
-    width: 67.36111111111111vw
+    width: get-vw-desktop(970px)
     .swiper-wrapper
       margin: 0 auto
       .swiper-slide
-        width: 20.833333333333332vw
+        width: get-vw-desktop(300px)
         .blog-most-viewed-image
           background-size: cover
-          height: 8.958333333333334vw
+          height: get-vw-desktop(129px)
           position: relative
           .blog-most-viewed-category
             background-color: $light-blue
             bottom: 0
             color: #ffffff
             font-family: Montserrat-Bold, sans-serif
-            font-size: 0.8333333333333333vw
-            height: 1.7361111111111112vw
-            line-height: 1.7361111111111112vw
-            min-width: 7.013888888888888vw
-            padding: 0 0.6944444444444444vw
+            font-size: get-vw-desktop(12px)
+            height: get-vw-desktop(25px)
+            line-height: get-vw-desktop(25px)
+            min-width: get-vw-desktop(101px)
+            padding: 0 get-vw-desktop(10px)
             position: absolute
             text-align: center
             text-transform: uppercase
         .blog-most-viewed-text
           background: $white
           border: solid 1px #cfcfcf
-          height: 8.61111111111111vw
-          padding: 1.3888888888888888vw 0 0 1.7361111111111112vw
+          height: get-vw-desktop(124px)
+          padding: get-vw-desktop(20px) 0 0 get-vw-desktop(25px)
           a
             text-decoration: none
             .blog-most-viewed-text-title
               color: #4d484a
               font-family: Montserrat-Bold, sans-serif
-              font-size: 1.25vw
-              line-height: 1.4583333333333333vw
+              font-size: get-vw-desktop(18px)
+              line-height: get-vw-desktop(21px)
+              margin: 0
           .blog-most-viewed-text-author
             color: #4d484a
             font-family: Montserrat-Bold, sans-serif
-            font-size: 0.9722222222222222vw
-            line-height: 1.3888888888888888vw
+            font-size: get-vw-desktop(14px)
+            line-height: get-vw-desktop(20px)
             opacity: 0.5
-            width: 16.319444444444443vw
+            width: get-vw-desktop(235px)
+            margin: 0
             .blog-most-viewed-text-date, .blog-most-viewed-text-comments
               font-family: Montserrat-Regular, sans-serif
-              padding-left: 0.3472222222222222vw
+              padding-left: get-vw-desktop(5px)
     .swiper-button-prev, .swiper-button-next
       background-image: none
       color: $white
-      font-size: 2.5vw
-      height: 2.5vw
+      font-size: get-vw-desktop(36px)
+      height: get-vw-desktop(36px)
       text-align: center
-      top: 54%
-      width: 4.166666666666667vw
+      top: 58%
+      width: get-vw-desktop(60px)
     .swiper-button-prev
-      left: 8.680555555555555vw
+      left: get-vw-desktop(125px)
     .swiper-button-next
-      right: 8.680555555555555vw
+      right: get-vw-desktop(125px)
