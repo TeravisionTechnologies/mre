@@ -106,7 +106,7 @@
 <div class="col-xs-12 al-partners-section text-center">
   <div class="container">
     <p class="al-partners-title">Nuestros aliados</p>
-    <p class="al-partners-subtitle">Hacemos real tu Inversión soñada</p>
+    <p class="al-partners-subtitle">La nueva forma de invertir en propiedades</p>
   </div>
   <div class="partners-images">
     <img src="<?php echo $footer_info['_hf_partners-one'][0]; ?>" alt="Logo Partner One" class="partners-images-one"/>
