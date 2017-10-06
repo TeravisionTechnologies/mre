@@ -3014,7 +3014,7 @@ a.al-phone-num {
       margin-top: 8.33333vw;
       width: 71.11111vw; }
       #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide {
-        width: 71.11111vw;
+        width: 71.11111vw !important;
         padding: 0 5px; }
         #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-image {
           height: 30.27778vw; }
