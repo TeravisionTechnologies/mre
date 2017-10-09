@@ -95,6 +95,33 @@
       'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
     ) );
 
+    // Hero Images
+    $hero_images = $cmb->add_field( array(
+      'id'          => $prefix . 'hero_images',
+      'type'        => 'group',
+      'repeatable'  => true,
+      'options'     => array(
+        'group_title'   => __( 'Hero Image {#}', 'cmb2' ),
+        'add_button'    => __( 'Add Another Entry', 'cmb2' ),
+        'remove_button' => __( 'Remove Entry', 'cmb2' ),
+        'sortable'      => true,
+      ),
+    ) );
+
+    // Hero Image
+    $cmb->add_group_field( $hero_images, array(
+      'name' => __( 'Hero Image' ),
+      'id'   => $prefix . 'hero_image',
+      'type' => 'file',
+    ) );
+
+    // Hero Text
+    $cmb->add_group_field( $hero_images, array(
+      'name'    => __( 'Hero Text' ),
+      'id'      => $prefix . 'hero_text',
+      'type'    => 'wysiwyg',
+    ) );
+
 		// About Us Section
     $about_us = $cmb->add_field( array(
       'id'          => $prefix . 'about_us',
@@ -154,33 +181,6 @@
       'name'    => __( 'Text' ),
       'id'      => $prefix . 'about_numbers_text',
       'type'    => 'text',
-    ) );
-
-		// Hero Images
-    $hero_images = $cmb->add_field( array(
-      'id'          => $prefix . 'hero_images',
-      'type'        => 'group',
-      'repeatable'  => true,
-      'options'     => array(
-        'group_title'   => __( 'Hero Image {#}', 'cmb2' ),
-        'add_button'    => __( 'Add Another Entry', 'cmb2' ),
-        'remove_button' => __( 'Remove Entry', 'cmb2' ),
-        'sortable'      => true,
-      ),
-    ) );
-
-    // Hero Image
-    $cmb->add_group_field( $hero_images, array(
-      'name' => __( 'Hero Image' ),
-      'id'   => $prefix . 'hero_image',
-      'type' => 'file',
-    ) );
-
-    // Hero Text
-    $cmb->add_group_field( $hero_images, array(
-      'name'    => __( 'Hero Text' ),
-      'id'      => $prefix . 'hero_text',
-      'type'    => 'wysiwyg',
     ) );
 
     // Partner Left Section
@@ -503,6 +503,26 @@
       'id'      => $prefix . 'contact_phone',
       'type'    => 'text',
     ) );
+
+    //Footer Logo
+    $cmb->add_field(
+      array(
+        'name'         => __( 'Footer Logo' ),
+        'id'           => $prefix . 'footer_logo',
+        'type'         => 'file',
+        'preview_size' => array(100,100),
+        'text'         =>
+          array(
+            'add_upload_files_text' => __( 'Add or Upload Images' ), // default: "Add or Upload Files"
+            'file_text'             => __( 'Image:' ), // default: "File:"
+          ),
+        'options' =>
+          array(
+            'url' => false, // Hide the text input for the url
+          ),
+        'repeatable'   => false
+      )
+    );
 
     // Footer Copyright
     $cmb->add_field(
