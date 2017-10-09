@@ -7,7 +7,7 @@
     <meta name="description" content="<?php bloginfo( 'description' ); ?>">
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/favicon.ico">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
+    <?php wp_head(); ?>
     <!-- FIX HTML STYLES IE9 -->
     <!--[if gte IE 9]>
     <!--<style type="text/css">
@@ -28,6 +28,16 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
   </head>
   <body>
+    <?php
+    $headerPost = get_posts(
+      array(
+        'post_type' => 'header_footer',
+        'numberposts' => 1
+      )
+    );
+    $theMeta = get_post_meta($headerPost[0]->ID);
+    $social_networks = get_post_meta( $headerPost[0]->ID, '_hf_social_networks', true );
+    ?>
     <div id="mre-header">
       <div class="swiper-container swiper-container-menu">
         <div class="swiper-wrapper">
@@ -46,11 +56,11 @@
             </div>
             <div class="mre-menu-social">
               <ul class="menu-social-icons">
-                <li class="menu-social-icon"><a href="https://www.linkedin.com/company/11285534/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                <li class="menu-social-icon"><a href="https://www.facebook.com/MerandRealEstate/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li class="menu-social-icon"><a href="https://www.instagram.com/grupomre/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li class="menu-social-icon"><a href="https://twitter.com/grupomre"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li class="menu-social-icon"><a href="https://www.youtube.com/channel/UCj1GOp1JCfAaSmBdQn5uU9w?view_as=subscriber"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_linkedin'] ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_facebook'] ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_instagram'] ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_twitter'] ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_youtube'] ?>"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
               </ul>
             </div>
           </div>
@@ -68,11 +78,11 @@
               </div>
               <div class="social-header pull-right">
                 <ul class="social-icons">
-                  <li class="social-icon"><a href="https://www.linkedin.com/company/11285534/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                  <li class="social-icon"><a href="https://www.facebook.com/MerandRealEstate/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                  <li class="social-icon"><a href="https://www.instagram.com/grupomre/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                  <li class="social-icon"><a href="https://twitter.com/grupomre"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                  <li class="social-icon"><a href="https://www.youtube.com/channel/UCj1GOp1JCfAaSmBdQn5uU9w?view_as=subscriber"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                  <li class="social-icon"><a href="<?php echo $social_networks[0]['_hf_linkedin'] ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                  <li class="social-icon"><a href="<?php echo $social_networks[0]['_hf_facebook'] ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li class="social-icon"><a href="<?php echo $social_networks[0]['_hf_instagram'] ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  <li class="social-icon"><a href="<?php echo $social_networks[0]['_hf_twitter'] ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                  <li class="social-icon"><a href="<?php echo $social_networks[0]['_hf_youtube'] ?>"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
                 </ul>
               </div>
             </div>

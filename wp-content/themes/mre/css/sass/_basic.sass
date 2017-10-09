@@ -296,49 +296,55 @@ body
 
 // About Us
 #mre-about-us
+  position: relative
   height: get-vw-desktop(800px)
   background-size: cover
   text-align: center
-  .about-us-title
-    font-size: get-vw-desktop(36px)
-    line-height: get-vw-desktop(40px)
-    font-family: Montserrat-Bold, sans-serif
-    color: $lighter-blue-2
-  .about-us-image
-    margin: get-vw-desktop(115px) 0 get-vw-desktop(40px) 0
-    width: get-vw-desktop(140px)
-    height: get-vw-desktop(140px)
-    border-radius: 50%
-  .about-us-text
-    font-family: Montserrat-Regular, sans-serif
-    font-size: get-vw-desktop(20px)
-    line-height: get-vw-desktop(28px)
-    color: white
-    width: get-vw-desktop(767px)
-    margin: get-vw-desktop(20px) auto 0 auto
-  .about-us-numbers
-    list-style: none
-    height: get-vw-desktop(140px)
-    padding: get-vw-desktop(40px) get-vw-desktop(38px)
-    width: get-vw-desktop(970px)
-    margin: get-vw-desktop(50px) auto 0
-    border-radius: get-vw-desktop(18px)
-    background-color: rgba(247, 247, 247, 0.1)
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3)
-    li
-      display: inline-block
-      width: get-vw-desktop(210px)
-      margin: 0 get-vw-desktop(37.5px)
-      .numbers
-        font-size: get-vw-desktop(45px)
-        line-height: get-vw-desktop(30px)
-        font-family: Montserrat-Bold, sans-serif
-        color: $white
-      .title
-        font-size: get-vw-desktop(25px)
-        line-height: get-vw-desktop(30px)
-        font-family: Montserrat-Regular, sans-serif
-        color: $white
+  .overlay
+    background: rgba(0, 0, 0, 0.83)
+    position: absolute
+    height: 100%
+    width: 100%
+    .about-us-title
+      font-size: get-vw-desktop(36px)
+      line-height: get-vw-desktop(40px)
+      font-family: Montserrat-Bold, sans-serif
+      color: $lighter-blue-2
+    .about-us-image
+      margin: get-vw-desktop(115px) 0 get-vw-desktop(40px) 0
+      width: get-vw-desktop(140px)
+      height: get-vw-desktop(140px)
+      border-radius: 50%
+    .about-us-text
+      font-family: Montserrat-Regular, sans-serif
+      font-size: get-vw-desktop(20px)
+      line-height: get-vw-desktop(28px)
+      color: white
+      width: get-vw-desktop(767px)
+      margin: get-vw-desktop(20px) auto 0 auto
+    .about-us-numbers
+      list-style: none
+      height: get-vw-desktop(140px)
+      padding: get-vw-desktop(40px) get-vw-desktop(38px)
+      width: get-vw-desktop(970px)
+      margin: get-vw-desktop(50px) auto 0
+      border-radius: get-vw-desktop(18px)
+      background-color: rgba(247, 247, 247, 0.1)
+      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3)
+      li
+        display: inline-block
+        width: get-vw-desktop(210px)
+        margin: 0 get-vw-desktop(37.5px)
+        .numbers
+          font-size: get-vw-desktop(45px)
+          line-height: get-vw-desktop(30px)
+          font-family: Montserrat-Bold, sans-serif
+          color: $white
+        .title
+          font-size: get-vw-desktop(25px)
+          line-height: get-vw-desktop(30px)
+          font-family: Montserrat-Regular, sans-serif
+          color: $white
 // END About Us
 
 // Partners
@@ -360,13 +366,13 @@ body
   .partner-left, .partner-right
     height: 100%
     background-size: cover
-  .partners-title-first
+  h3
     margin-top: get-vw-desktop(244px)
     font-family: Montserrat-Regular, sans-serif
     font-size: get-vw-desktop(25px)
     line-height: get-vw-desktop(30px)
     color: $white
-  .partners-title-second
+  h2
     font-family: Montserrat-Bold, sans-serif
     font-size: get-vw-desktop(45px)
     line-height: get-vw-desktop(40px)
@@ -416,7 +422,7 @@ body
       width: 100%
       .office-detail
         display: inline-block
-        width: get-vw-desktop(370px)
+        width: get-vw-desktop(375px)
         margin: 0 get-vw-desktop(22px)
         h5
           color: $white
@@ -441,7 +447,12 @@ body
   height: auto
   background-repeat: no-repeat
   background-position-y: bottom
-  background-size: cover
+  background-size: contain
+.overlay
+  background: rgba(19, 19, 19, 0.8)
+  position: absolute
+  width: 100%
+  height: 100%
 .al-contact-text
   color: $white
   font-size: get-vw-desktop(36px)

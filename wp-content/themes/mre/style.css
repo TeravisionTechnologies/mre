@@ -350,49 +350,55 @@ body {
   cursor: pointer; }
 
 #mre-about-us {
+  position: relative;
   height: 55.55556vw;
   background-size: cover;
   text-align: center; }
-  #mre-about-us .about-us-title {
-    font-size: 2.5vw;
-    line-height: 2.77778vw;
-    font-family: Montserrat-Bold, sans-serif;
-    color: #1f9aff; }
-  #mre-about-us .about-us-image {
-    margin: 7.98611vw 0 2.77778vw 0;
-    width: 9.72222vw;
-    height: 9.72222vw;
-    border-radius: 50%; }
-  #mre-about-us .about-us-text {
-    font-family: Montserrat-Regular, sans-serif;
-    font-size: 1.38889vw;
-    line-height: 1.94444vw;
-    color: white;
-    width: 53.26389vw;
-    margin: 1.38889vw auto 0 auto; }
-  #mre-about-us .about-us-numbers {
-    list-style: none;
-    height: 9.72222vw;
-    padding: 2.77778vw 2.63889vw;
-    width: 67.36111vw;
-    margin: 3.47222vw auto 0;
-    border-radius: 1.25vw;
-    background-color: rgba(247, 247, 247, 0.1);
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
-    #mre-about-us .about-us-numbers li {
-      display: inline-block;
-      width: 14.58333vw;
-      margin: 0 2.60417vw; }
-      #mre-about-us .about-us-numbers li .numbers {
-        font-size: 3.125vw;
-        line-height: 2.08333vw;
-        font-family: Montserrat-Bold, sans-serif;
-        color: #ffffff; }
-      #mre-about-us .about-us-numbers li .title {
-        font-size: 1.73611vw;
-        line-height: 2.08333vw;
-        font-family: Montserrat-Regular, sans-serif;
-        color: #ffffff; }
+  #mre-about-us .overlay {
+    background: rgba(0, 0, 0, 0.83);
+    position: absolute;
+    height: 100%;
+    width: 100%; }
+    #mre-about-us .overlay .about-us-title {
+      font-size: 2.5vw;
+      line-height: 2.77778vw;
+      font-family: Montserrat-Bold, sans-serif;
+      color: #1f9aff; }
+    #mre-about-us .overlay .about-us-image {
+      margin: 7.98611vw 0 2.77778vw 0;
+      width: 9.72222vw;
+      height: 9.72222vw;
+      border-radius: 50%; }
+    #mre-about-us .overlay .about-us-text {
+      font-family: Montserrat-Regular, sans-serif;
+      font-size: 1.38889vw;
+      line-height: 1.94444vw;
+      color: white;
+      width: 53.26389vw;
+      margin: 1.38889vw auto 0 auto; }
+    #mre-about-us .overlay .about-us-numbers {
+      list-style: none;
+      height: 9.72222vw;
+      padding: 2.77778vw 2.63889vw;
+      width: 67.36111vw;
+      margin: 3.47222vw auto 0;
+      border-radius: 1.25vw;
+      background-color: rgba(247, 247, 247, 0.1);
+      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
+      #mre-about-us .overlay .about-us-numbers li {
+        display: inline-block;
+        width: 14.58333vw;
+        margin: 0 2.60417vw; }
+        #mre-about-us .overlay .about-us-numbers li .numbers {
+          font-size: 3.125vw;
+          line-height: 2.08333vw;
+          font-family: Montserrat-Bold, sans-serif;
+          color: #ffffff; }
+        #mre-about-us .overlay .about-us-numbers li .title {
+          font-size: 1.73611vw;
+          line-height: 2.08333vw;
+          font-family: Montserrat-Regular, sans-serif;
+          color: #ffffff; }
 
 #mre-partners {
   height: 48.61111vw;
@@ -412,13 +418,13 @@ body {
   #mre-partners .partner-left, #mre-partners .partner-right {
     height: 100%;
     background-size: cover; }
-  #mre-partners .partners-title-first {
+  #mre-partners h3 {
     margin-top: 16.94444vw;
     font-family: Montserrat-Regular, sans-serif;
     font-size: 1.73611vw;
     line-height: 2.08333vw;
     color: #ffffff; }
-  #mre-partners .partners-title-second {
+  #mre-partners h2 {
     font-family: Montserrat-Bold, sans-serif;
     font-size: 3.125vw;
     line-height: 2.77778vw;
@@ -463,7 +469,7 @@ body {
       width: 100%; }
       #mre-offices .swiper-wrapper .swiper-slide .office-detail {
         display: inline-block;
-        width: 25.69444vw;
+        width: 26.04167vw;
         margin: 0 1.52778vw; }
         #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
           color: #ffffff;
@@ -486,7 +492,13 @@ body {
   height: auto;
   background-repeat: no-repeat;
   background-position-y: bottom;
-  background-size: cover; }
+  background-size: contain; }
+
+.overlay {
+  background: rgba(19, 19, 19, 0.8);
+  position: absolute;
+  width: 100%;
+  height: 100%; }
 
 .al-contact-text {
   color: #ffffff;
@@ -1359,11 +1371,11 @@ a.al-phone-num {
       height: 100%; }
     #mre-partners .partner-left, #mre-partners .partner-right {
       height: 100%; }
-    #mre-partners .partners-title-first {
+    #mre-partners h3 {
       margin-top: 244px;
       font-size: 25px;
       line-height: 30px; }
-    #mre-partners .partners-title-second {
+    #mre-partners h2 {
       font-size: 45px;
       line-height: 40px; }
     #mre-partners .partner-left img {
@@ -1396,7 +1408,7 @@ a.al-phone-num {
         height: 150px;
         width: 100%; }
         #mre-offices .swiper-wrapper .swiper-slide .office-detail {
-          width: 370px;
+          width: 375px;
           margin: 0 22px; }
           #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
             font-size: 16px;
@@ -2048,11 +2060,11 @@ a.al-phone-num {
       height: 100%; }
     #mre-partners .partner-left, #mre-partners .partner-right {
       height: 45.57292vw; }
-    #mre-partners .partners-title-first {
+    #mre-partners h3 {
       margin: 10.67708vw 0 0 0;
       font-size: 2.60417vw;
       line-height: 3.90625vw; }
-    #mre-partners .partners-title-second {
+    #mre-partners h2 {
       font-size: 4.55729vw;
       line-height: 5.20833vw; }
     #mre-partners .partner-left {
@@ -2736,11 +2748,11 @@ a.al-phone-num {
       height: 100%; }
     #mre-partners .partner-left, #mre-partners .partner-right {
       height: 66.66667vw; }
-    #mre-partners .partners-title-first {
+    #mre-partners h3 {
       margin: 14.44444vw 0 0 0;
       font-size: 4.16667vw;
       line-height: 5.55556vw; }
-    #mre-partners .partners-title-second {
+    #mre-partners h2 {
       font-size: 6.94444vw;
       line-height: 8.33333vw; }
     #mre-partners .partner-left {
