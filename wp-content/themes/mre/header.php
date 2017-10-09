@@ -37,6 +37,7 @@
     );
     $theMeta = get_post_meta($headerPost[0]->ID);
     $social_networks = get_post_meta( $headerPost[0]->ID, '_hf_social_networks', true );
+    //var_dump($theMeta);
     ?>
     <div id="mre-header">
       <div class="swiper-container swiper-container-menu">
@@ -55,13 +56,25 @@
               <img class="mre-menu-language-flag language-flag-active" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" alt="English">
             </div>
             <div class="mre-menu-social">
+              <?php if(isset($social_networks[0])) { ?>
               <ul class="menu-social-icons">
-                <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_linkedin'] ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_facebook'] ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_instagram'] ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_twitter'] ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_youtube'] ?>"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                <?php if(isset($social_networks[0]['_hf_linkedin'])) { ?>
+                  <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_linkedin'] ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <?php } ?>
+                <?php if(isset($social_networks[0]['_hf_facebook'])) { ?>
+                  <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_facebook'] ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <?php } ?>
+                <?php if(isset($social_networks[0]['_hf_instagram'])) { ?>
+                  <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_instagram'] ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <?php } ?>
+                <?php if(isset($social_networks[0]['_hf_twitter'])) { ?>
+                  <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_twitter'] ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <?php } ?>
+                <?php if(isset($social_networks[0]['_hf_youtube'])) { ?>
+                  <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_youtube'] ?>"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                <?php } ?>
               </ul>
+              <?php } ?>
             </div>
           </div>
           <div class="swiper-slide content">
@@ -73,16 +86,28 @@
               </div>
               <div class="logo-header">
                 <div class="img-div pull-right">
-                  <a href="/"><img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="MRE Logo"></a>
+                  <a href="/"><img src="<?php echo $theMeta['_hf_logo'][0];  ?>" alt="MRE Logo"></a>
                 </div>
               </div>
               <div class="social-header pull-right">
+                <?php if(isset($social_networks[0])) { ?>
                 <ul class="social-icons">
-                  <li class="social-icon"><a href="<?php echo $social_networks[0]['_hf_linkedin'] ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                  <?php if(isset($social_networks[0]['_hf_linkedin'])) { ?>
+                    <li class="social-icon"><a href="<?php echo $social_networks[0]['_hf_linkedin'] ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                  <?php } ?>
+                  <?php if(isset($social_networks[0]['_hf_facebook'])) { ?>
                   <li class="social-icon"><a href="<?php echo $social_networks[0]['_hf_facebook'] ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <?php } ?>
+                  <?php if(isset($social_networks[0]['_hf_instagram'])) { ?>
                   <li class="social-icon"><a href="<?php echo $social_networks[0]['_hf_instagram'] ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  <?php } ?>
+                  <?php if(isset($social_networks[0]['_hf_twitter'])) { ?>
                   <li class="social-icon"><a href="<?php echo $social_networks[0]['_hf_twitter'] ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                  <?php } ?>
+                  <?php if(isset($social_networks[0]['_hf_youtube'])) { ?>
                   <li class="social-icon"><a href="<?php echo $social_networks[0]['_hf_youtube'] ?>"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                  <?php } ?>
                 </ul>
+                <?php } ?>
               </div>
             </div>
