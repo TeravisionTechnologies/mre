@@ -153,23 +153,4 @@ function wpbeginner_comment_text($arg) {
 
 add_filter('comment_form_defaults', 'wpbeginner_comment_text');
 
-function custom_validate_comment() {
-	//validate for brief and rating
-	if( empty( $_POST['brief']) || empty( $_POST['rating'])  ) {
-		wp_die( __('Error: you must fill in both the rating and the brief') );
-	}
-//make comment not required
-	if(empy($_POST['comment'])){
-		$_POST['comment'] == "empty_comment";
-	}
-}
-
-add_action('pre_comment_on_post', 'custom_validate_comment');
-
-function custom_change_comment( $commentdata ) {
-	if( $commentdata['comment'] == 'empty_comment' )
-		$commentdata['comment'] = '';
-	return $commentdata;
-}
-
-add_filter('preprocess_comment', 'custom_change_comment');
+add_filter('show_admin_bar', '__return_false');
