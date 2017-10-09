@@ -508,45 +508,45 @@ a.al-phone-num {
   letter-spacing: -0.2px;
   font-family: "Archivo", sans-serif; }
 
-#mre-offices {
+#al-offices {
   height: 31.25vw;
   background-size: cover; }
-  #mre-offices .swiper-container-flags {
+  #al-offices .swiper-container-flags {
     height: 100%;
     text-align: center; }
-  #mre-offices h4 {
+  #al-offices h4 {
     margin: 6.25vw 0 2.7777777778vw 0;
     font-family: Montserrat-Regular, sans-serif;
     font-size: 2.5vw;
     line-height: 2.7777777778vw;
     color: #ffffff; }
-    #mre-offices h4 strong {
+    #al-offices h4 strong {
       font-family: Montserrat-Bold, sans-serif; }
-  #mre-offices .flags-indicators .flag-image {
+  #al-offices .flags-indicators .flag-image {
     height: 4.1666666667vw;
     margin: 0 1.3888888889vw 0.6944444444vw 1.3888888889vw;
     width: 4.1666666667vw;
     cursor: pointer; }
-  #mre-offices .flags-indicators .flag-image-opacity {
+  #al-offices .flags-indicators .flag-image-opacity {
     opacity: 0.6; }
-  #mre-offices .swiper-wrapper {
+  #al-offices .swiper-wrapper {
     width: 100%; }
-    #mre-offices .swiper-wrapper .swiper-slide {
+    #al-offices .swiper-wrapper .swiper-slide {
       background: transparent;
       margin: 0 auto;
       height: 10.4166666667vw;
       width: 100%; }
-      #mre-offices .swiper-wrapper .swiper-slide .office-detail {
+      #al-offices .swiper-wrapper .swiper-slide .office-detail {
         display: inline-block;
         width: 25.6944444444vw;
         margin: 0 1.5277777778vw; }
-        #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
+        #al-offices .swiper-wrapper .swiper-slide .office-detail h5 {
           color: #ffffff;
           font-family: Montserrat-Regular, sans-serif;
           font-size: 1.1111111111vw;
           line-height: 1.7361111111vw;
           margin: 0; }
-        #mre-offices .swiper-wrapper .swiper-slide .office-detail span {
+        #al-offices .swiper-wrapper .swiper-slide .office-detail span {
           font-family: Montserrat-Bold, sans-serif; }
 
 .al-properties-section .properties-country-filter {
@@ -640,7 +640,7 @@ a.al-phone-num {
         color: black; }
 
 @media only screen and (min-width: 1440px) {
-  .container-mre {
+  .container-ala {
     width: 1170px;
     height: 100%; }
 
@@ -1586,7 +1586,8 @@ a.al-phone-num {
     font-size: 3.3333333333vw;
     height: 10.5555555556vw;
     line-height: 4.1666666667vw;
-    width: 86.1111111111vw; }
+    width: 86.1111111111vw;
+    -webkit-appearance: none; }
   .al-properties-section .properties-list {
     margin-top: 8.3333333333vw; }
     .al-properties-section .properties-list .property-image {
@@ -1711,7 +1712,10 @@ a.al-phone-num {
     padding-top: 80px; }
 
   .swiper-container-hero .swiper-button-prev, .swiper-container-hero .swiper-button-next {
-    top: 592px !important; } }
+    top: 592px !important; }
+
+  #ala-header .swiper-container-hero {
+    padding-top: 0; } }
 p {
   font-family: "Archivo", sans-serif;
   font-size: 16px;
@@ -1982,5 +1986,28 @@ ul, ol {
   #save-widget p {
     padding: 0 !important;
     font-size: 14px !important; }
+
+.item-active2 {
+  opacity: 0.5; }
+
+.sort-by-button-group {
+  right: -1px !important;
+  left: initial !important;
+  top: 45px !important;
+  width: 260px; }
+
+.btn-filter {
+  height: 46px;
+  border: solid 1px #7f8182;
+  background: none;
+  border-radius: 0;
+  width: 260px;
+  text-align: left;
+  font-size: 16px;
+  color: #7f8182; }
+  .btn-filter .caret {
+    right: 16px;
+    top: 21px;
+    position: absolute; }
 
 /*# sourceMappingURL=style.css.map */

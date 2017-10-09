@@ -23,6 +23,7 @@ $footer_info = get_post_meta($footer_query[0]->ID);
     <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.2.1.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/swiper.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/isotope.pkgd.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/basic.js"></script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH6eKdzSWQ0bic1EiZCzkbhqMqEzYd3eQ&callback=initMap">

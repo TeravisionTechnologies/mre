@@ -183,6 +183,79 @@ jQuery(document).ready(function() {
     galleryTop.params.control = galleryThumbs;
     galleryThumbs.params.control = galleryTop;
 
+    // init Isotope
+    var $grid = $('.properties-list').isotope({
+        itemSelector: '.country-status',
+        getSortData: {
+            name:   '.property-title',
+            /*date: function ($elem) {
+                return Date.parse($elem.find('.date').text());
+            }*/
+        }
+    });
+
+    var filters = {};
+
+    $('.filters').on( 'click', '.button', function() {
+        var $this = $(this);
+        var $buttonGroup = $this.parents('.button-group');
+        var filterGroup = $buttonGroup.attr('data-filter-group');
+        filters[ filterGroup ] = $this.attr('data-filter');
+        var filterValue = concatValues( filters );
+        $grid.isotope({ filter: filterValue });
+    });
+
+    // change is-checked class on buttons
+    $('.button-group').each( function( i, buttonGroup ) {
+        var $buttonGroup = $( buttonGroup );
+        $buttonGroup.on( 'click', '.the-status', function() {
+            $buttonGroup.find('.is-checked').removeClass('item-active');
+            $( this ).addClass('item-active');
+        });
+        $buttonGroup.on( 'click', '.the-country', function() {
+            $buttonGroup.find('.is-checked').removeClass('item-active2');
+            $( this ).addClass('item-active2');
+        });
+    });
+
+    // flatten object by concatting values
+    function concatValues( obj ) {
+        var value = '';
+        for ( var prop in obj ) {
+            value += obj[ prop ];
+        }
+        return value;
+    }
+
+
+    // Sort function
+    $('.sort-by-button-group').on( 'click', '.orderby', function() {
+
+        /* Get the element name to sort */
+        var sortValue = $(this).attr('data-sort-value');
+
+        /* Get the sorting direction: asc||desc */
+        var direction = $(this).attr('data-sort-direction');
+
+        /* convert it to a boolean */
+        var isAscending = (direction == 'asc');
+        var newDirection = (isAscending) ? 'desc' : 'asc';
+
+        console.log(sortValue);
+        console.log(direction);
+
+        /* pass it to isotope */
+        $grid.isotope({ sortBy: sortValue, sortAscending: isAscending });
+
+        $(this).attr('data-sort-direction', newDirection);
+
+        var span = $(this).find('.fa');
+        span.toggleClass('fa-chevron-up fa-chevron-down');
+
+    });
+
 
 });
+
+
 

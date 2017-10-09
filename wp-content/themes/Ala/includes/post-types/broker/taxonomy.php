@@ -1,28 +1,72 @@
 <?php
+
+function custom_taxonomy_property_status()
+{
+    $labels = array(
+        'name' => _x('Property Status', 'Taxonomy General Name', 'ala'),
+        'singular_name' => _x('Property Status', 'Taxonomy Singular Name', 'ala'),
+        'menu_name' => __('Property Status', 'ala'),
+    );
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => true,
+        'public' => true,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'show_in_nav_menus' => true,
+        'show_tagcloud' => true,
+    );
+    register_taxonomy('property_status', array('broker'), $args);
+}
+
+add_action('init', 'custom_taxonomy_property_status', 0);
+
+
+function custom_taxonomy_property_location()
+{
+    $labels = array(
+        'name' => _x('Property Location', 'Taxonomy General Name', 'ala'),
+        'singular_name' => _x('Property Location', 'Taxonomy Singular Name', 'ala'),
+        'menu_name' => __('Property Location', 'ala'),
+    );
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => true,
+        'public' => true,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'show_in_nav_menus' => true,
+        'show_tagcloud' => true,
+    );
+    register_taxonomy('property_location', array('broker'), $args);
+}
+
+add_action('init', 'custom_taxonomy_property_location', 0);
+
+
 function custom_taxonomy_nearby_places()
 {
-
     $labels = array(
-        'name' => _x('Nearby Places', 'Taxonomy General Name', 'text_domain'),
-        'singular_name' => _x('Nearby Place', 'Taxonomy Singular Name', 'text_domain'),
-        'menu_name' => __('Nearby Places', 'text_domain'),
-        'all_items' => __('All Items', 'text_domain'),
-        'parent_item' => __('Parent Item', 'text_domain'),
-        'parent_item_colon' => __('Parent Item:', 'text_domain'),
-        'new_item_name' => __('New Item Name', 'text_domain'),
-        'add_new_item' => __('Add New Item', 'text_domain'),
-        'edit_item' => __('Edit Item', 'text_domain'),
-        'update_item' => __('Update Item', 'text_domain'),
-        'view_item' => __('View Item', 'text_domain'),
-        'separate_items_with_commas' => __('Separate items with commas', 'text_domain'),
-        'add_or_remove_items' => __('Add or remove items', 'text_domain'),
-        'choose_from_most_used' => __('Choose from the most used', 'text_domain'),
-        'popular_items' => __('Popular Items', 'text_domain'),
-        'search_items' => __('Search Items', 'text_domain'),
-        'not_found' => __('Not Found', 'text_domain'),
-        'no_terms' => __('No items', 'text_domain'),
-        'items_list' => __('Items list', 'text_domain'),
-        'items_list_navigation' => __('Items list navigation', 'text_domain'),
+        'name' => _x('Nearby Places', 'Taxonomy General Name', 'ala'),
+        'singular_name' => _x('Nearby Place', 'Taxonomy Singular Name', 'ala'),
+        'menu_name' => __('Nearby Places', 'ala'),
+        'all_items' => __('All Items', 'ala'),
+        'parent_item' => __('Parent Item', 'ala'),
+        'parent_item_colon' => __('Parent Item:', 'ala'),
+        'new_item_name' => __('New Item Name', 'ala'),
+        'add_new_item' => __('Add New Item', 'ala'),
+        'edit_item' => __('Edit Item', 'ala'),
+        'update_item' => __('Update Item', 'ala'),
+        'view_item' => __('View Item', 'ala'),
+        'separate_items_with_commas' => __('Separate items with commas', 'ala'),
+        'add_or_remove_items' => __('Add or remove items', 'ala'),
+        'choose_from_most_used' => __('Choose from the most used', 'ala'),
+        'popular_items' => __('Popular Items', 'ala'),
+        'search_items' => __('Search Items', 'ala'),
+        'not_found' => __('Not Found', 'ala'),
+        'no_terms' => __('No items', 'ala'),
+        'items_list' => __('Items list', 'ala'),
+        'items_list_navigation' => __('Items list navigation', 'ala'),
     );
     $args = array(
         'labels' => $labels,
@@ -34,7 +78,8 @@ function custom_taxonomy_nearby_places()
         'show_tagcloud' => true,
     );
     register_taxonomy('nearby_places', array('broker'), $args);
-
 }
 
 add_action('init', 'custom_taxonomy_nearby_places', 0);
+
+
