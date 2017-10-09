@@ -282,7 +282,8 @@ body {
   margin-top: 0.27778vw;
   text-align: center; }
   .al-projects .al-project-list {
-    height: 100%; }
+    height: 100%;
+    width: 100%; }
     .al-projects .al-project-list .al-project-list-item {
       position: relative;
       margin: 0 1.80556vw;
@@ -554,12 +555,16 @@ a.al-phone-num {
   font-family: "Archivo", sans-serif;
   font-size: 1.38889vw;
   line-height: 1.38889vw;
-  margin: 4.58333vw 1.04167vw 4.16667vw 1.04167vw; }
+  margin: 4.58333vw 1.04167vw 4.16667vw 0;
+  padding-left: 0;
+  width: 13.88889vw; }
 .al-properties-section .filter-left {
   border-right: 2px solid #7f8182;
-  margin-right: 0;
+  margin: 4.58333vw 0 4.16667vw 1.04167vw;
   opacity: 0.5;
-  padding-right: 1.04167vw; }
+  padding-right: 0;
+  width: 13.88889vw;
+  padding-left: 0; }
 .al-properties-section .properties-filter {
   border: solid 2px rgba(74, 74, 74, 0.4);
   font-family: Montserrat-Regular, sans-serif;
@@ -635,7 +640,7 @@ a.al-phone-num {
         color: black; }
 
 @media only screen and (min-width: 1440px) {
-  .container-mre {
+  .container-ala {
     width: 1170px;
     height: 100%; }
 
@@ -832,7 +837,8 @@ a.al-phone-num {
     height: 120px;
     margin-top: 4px; }
     .al-projects .al-project-list {
-      height: 100%; }
+      height: 100%;
+      width: 100%; }
       .al-projects .al-project-list .al-project-list-item {
         margin: 0 26px;
         height: 100%;
@@ -897,12 +903,16 @@ a.al-phone-num {
   .al-properties-section .properties-country-filter {
     font-size: 20px;
     line-height: 20px;
-    margin: 66px 15px 60px 15px; }
+    margin: 66px 15px 60px 0;
+    padding-left: 0;
+    width: 200px; }
   .al-properties-section .filter-left {
     border-right: 2px solid #7f8182;
-    margin-right: 0;
+    margin: 66px 0 60px 15px;
     opacity: 0.5;
-    padding-right: 15px; }
+    padding-right: 0;
+    width: 200px;
+    padding-left: 0; }
   .al-properties-section .properties-filter {
     border: solid 2px rgba(74, 74, 74, 0.4);
     font-size: 16px;
@@ -1011,7 +1021,8 @@ a.al-phone-num {
       text-align: center; }
       .menu .al-menu-social .menu-social-icons {
         font-size: 2.86458vw;
-        padding: 0; }
+        padding: 0;
+        text-align: center; }
         .menu .al-menu-social .menu-social-icons .menu-social-icon {
           height: 4.94792vw;
           width: 4.94792vw; }
@@ -1165,12 +1176,16 @@ a.al-phone-num {
   .al-properties-section .properties-country-filter {
     font-size: 2.08333vw;
     line-height: 3.125vw;
-    margin: 7.42188vw 1.95313vw 6.77083vw 1.95313vw; }
+    margin: 7.42188vw 1.95313vw 6.77083vw 0;
+    padding-left: 0;
+    width: 19.53125vw; }
   .al-properties-section .filter-left {
     border-right: 2px solid #7f8182;
-    margin-right: 0;
+    margin: 7.42188vw 0 6.77083vw 1.95313vw;
     opacity: 0.5;
-    padding-right: 1.95313vw; }
+    padding-right: 0;
+    width: 19.53125vw;
+    padding-left: 0; }
   .al-properties-section .properties-filter {
     border: solid 2px rgba(74, 74, 74, 0.4);
     font-size: 1.82292vw;
@@ -1219,7 +1234,58 @@ a.al-phone-num {
       #al-pagination .pagination li a {
         height: 4.94792vw;
         padding-top: 1.04167vw;
-        width: 4.81771vw; } }
+        width: 4.81771vw; }
+
+  .prop-header {
+    height: 500px !important; }
+    .prop-header h1 {
+      font-size: 24px !important; }
+    .prop-header h2 {
+      font-size: 18px !important; }
+
+  p {
+    font-size: 14px !important;
+    line-height: 24px !important;
+    padding: 0 50px !important; }
+
+  .detail-tlt {
+    font-size: 20px !important;
+    height: 60px !important;
+    padding: 0 !important;
+    line-height: 60px !important; }
+
+  .detail-content ol {
+    padding: 0 50px !important;
+    font-size: 14px !important; }
+
+  .memory-items ol {
+    padding: 0 10px !important;
+    font-size: 14px !important; }
+
+  .amenimg {
+    height: 196px !important; }
+
+  #map {
+    height: 429px !important; }
+
+  #gallery-top-blueprint {
+    height: 274px !important; }
+
+  #gallery-thumbs-blueprint {
+    height: 160px !important; }
+
+  .btn-planos {
+    font-size: 16px;
+    width: 200px;
+    height: 50px; }
+
+  .places-mask {
+    display: block !important;
+    top: initial !important;
+    line-height: 40px !important;
+    font-size: 11px !important;
+    height: 40px !important;
+    bottom: 0 !important; } }
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .swiper-container-hero .swiper-button-prev, .swiper-container-hero .swiper-button-next {
     top: 368px !important; }
@@ -1284,7 +1350,8 @@ a.al-phone-num {
       text-align: center; }
       .menu .al-menu-social .menu-social-icons {
         font-size: 6.11111vw;
-        padding: 0; }
+        padding: 0;
+        text-align: center; }
         .menu .al-menu-social .menu-social-icons .menu-social-icon {
           height: 10.27778vw;
           width: 10.27778vw; }
@@ -1504,19 +1571,23 @@ a.al-phone-num {
   .al-properties-section .properties-country-filter {
     font-size: 4.44444vw;
     line-height: 6.94444vw;
-    margin: 8.88889vw 4.16667vw 9.44444vw 4.16667vw;
-    width: 21.44444vw; }
+    margin: 8.88889vw 4.16667vw 9.44444vw 0;
+    padding-left: 0;
+    width: 33.33333vw; }
   .al-properties-section .filter-left {
     border-right: 2px solid #7f8182;
-    margin-right: 0;
+    margin: 8.88889vw 0 9.44444vw 4.16667vw;
     opacity: 0.5;
-    padding-right: 4.16667vw; }
+    padding-right: 0;
+    width: 33.33333vw;
+    padding-left: 0; }
   .al-properties-section .properties-filter {
     border: solid 2px rgba(74, 74, 74, 0.4);
     font-size: 3.33333vw;
     height: 10.55556vw;
     line-height: 4.16667vw;
-    width: 86.11111vw; }
+    width: 86.11111vw;
+    -webkit-appearance: none; }
   .al-properties-section .properties-list {
     margin-top: 8.33333vw; }
     .al-properties-section .properties-list .property-image {
@@ -1560,7 +1631,66 @@ a.al-phone-num {
       #al-pagination .pagination li a {
         height: 9.72222vw;
         padding-top: 1.94444vw;
-        width: 9.72222vw; } }
+        width: 9.72222vw; }
+
+  p {
+    font-size: 12px !important;
+    padding: 10px !important;
+    line-height: 25px !important;
+    margin: 0 !important; }
+
+  .memory-items ol {
+    padding: 0 30px !important;
+    font-size: 12px !important; }
+
+  .detail-content ol {
+    padding: 0 15px !important;
+    font-size: 12px !important;
+    column-count: 1 !important;
+    line-height: 25px !important; }
+
+  .prop-header {
+    height: 400px !important;
+    margin-bottom: 15px !important; }
+    .prop-header h1 {
+      font-size: 18px !important; }
+    .prop-header h2 {
+      font-size: 13px !important; }
+    .prop-header a.download-bro {
+      font-size: 13px !important;
+      height: 40px !important;
+      width: 140px !important;
+      padding: 11px 5px !important; }
+
+  .detail-tlt {
+    font-size: 14px !important;
+    height: 50px !important;
+    padding: 0 !important;
+    line-height: 50px !important;
+    letter-spacing: 3px !important; }
+
+  .amenimg {
+    height: 300px !important; }
+
+  .memory-items {
+    padding: 0 !important; }
+
+  #map {
+    height: 343px !important; }
+
+  #gallery-top-blueprint {
+    height: 123px !important; }
+
+  #gallery-thumbs-blueprint {
+    height: 160px !important; }
+
+  .places-mask {
+    display: block !important;
+    top: initial !important;
+    line-height: 60px !important;
+    font-size: 16px !important;
+    height: 60px !important;
+    bottom: 0 !important; } }
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   .menu-button {
     width: 33.88889vw; }
@@ -1582,7 +1712,10 @@ a.al-phone-num {
     padding-top: 80px; }
 
   .swiper-container-hero .swiper-button-prev, .swiper-container-hero .swiper-button-next {
-    top: 592px !important; } }
+    top: 592px !important; }
+
+  #ala-header .swiper-container-hero {
+    padding-top: 0; } }
 p {
   font-family: "Archivo", sans-serif;
   font-size: 16px;
@@ -1840,5 +1973,18 @@ ul, ol {
  * text-align: center
  * font-size: 20px
  * display: none */
+#save-widget {
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.29804) 0px 1px 4px -1px;
+  background-color: white;
+  padding: 10px;
+  font-family: Roboto, Arial;
+  font-size: 13px;
+  margin: 15px; }
+  #save-widget:nth-child(3) {
+    display: none !important; }
+  #save-widget p {
+    padding: 0 !important;
+    font-size: 14px !important; }
 
 /*# sourceMappingURL=style.css.map */

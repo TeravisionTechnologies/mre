@@ -54,7 +54,6 @@ jQuery(document).ready(function() {
     }
   });
 
-
   // Add Swiper Flags
   var swiperFlag = new Swiper('.swiper-container-flags', {
     initialSlide: 0,
