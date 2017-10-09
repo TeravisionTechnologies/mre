@@ -22,14 +22,21 @@ $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
 ?>
             <div class="swiper-container swiper-container-hero">
               <div class="swiper-wrapper">
-                <?php foreach ( $heroImages as $heroImage ) { ?>
+                <?php
+                  if(isset($heroImages)) {
+                    foreach ( $heroImages as $heroImage ) {
+                ?>
                 <div class="swiper-slide" style="background-image: url('<?php echo $heroImage["_hf_hero_image"]  ?>');">
                   <div class="slide-overlay"></div>
                   <div class="slide-text">
-                    <?php echo $heroImage["_hf_hero_text"]  ?>
+                    <?php
+                      if(isset($heroImage["_hf_hero_text"])) {
+                        echo $heroImage["_hf_hero_text"];
+                      }
+                    ?>
                   </div>
                 </div>
-                <?php } ?>
+                <?php }} ?>
               </div>
               <i class="fa fa-chevron-circle-left swiper-button-prev" aria-hidden="true"></i>
               <i class="fa fa-chevron-circle-right swiper-button-next" aria-hidden="true"></i>
@@ -89,9 +96,13 @@ $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
                 </a>
               </div>
             </section>
-            <section id="mre-offices" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/offices.jpg');">
+            <section id="mre-offices" style="background-image: url('<?php if(isset($ourOffices[0]['_hf_our_offices_background'])) { echo $ourOffices[0]['_hf_our_offices_background']; } ?>');">
               <div class="swiper-container swiper-container-flags">
-                <?php echo $ourOffices[0]['_hf_our_offices_text']; ?>
+                <?php
+                  if(isset($ourOffices[0]['_hf_our_offices_text'])) {
+                    echo $ourOffices[0]['_hf_our_offices_text'];
+                  }
+                ?>
                 <div class="flags-indicators">
                   <img id="flag-image-1" class="flag-image flag-image-opacity" data-pagination="1" src="<?php echo get_template_directory_uri(); ?>/assets/ven_flag.svg" />
                   <img id="flag-image-2" class="flag-image" data-pagination="2" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
@@ -99,7 +110,10 @@ $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
                 </div>
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <?php foreach ($officesVe as $office) { ?>
+                    <?php
+                    if(isset($officesVe)) {
+                      foreach ($officesVe as $office) {
+                    ?>
                     <div class="office-detail">
                       <?php if(isset($office['_hf_offices_ve_city'])) { ?>
                       <h5>
@@ -114,10 +128,13 @@ $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
                       <h5>Teléfonos: <?php echo $office['_hf_offices_ve_phone'];?></h5>
                       <?php } ?>
                     </div>
-                    <?php } ?>
+                    <?php }} ?>
                   </div>
                   <div class="swiper-slide">
-                    <?php foreach ($officesUs as $office) { ?>
+                    <?php
+                      if(isset($officesUs)) {
+                        foreach ($officesUs as $office) {
+                     ?>
                       <div class="office-detail">
                         <?php if(isset($office['_hf_offices_us_city'])) { ?>
                           <h5>
@@ -132,10 +149,13 @@ $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
                           <h5>Teléfonos: <?php echo $office['_hf_offices_us_phone'];?></h5>
                         <?php } ?>
                       </div>
-                    <?php } ?>
+                    <?php }} ?>
                   </div>
                   <div class="swiper-slide">
-                    <?php foreach ($officesEs as $office) { ?>
+                    <?php
+                      if(isset($officesEs)) {
+                        foreach ($officesEs as $office) {
+                    ?>
                       <div class="office-detail">
                         <?php if(isset($office['_hf_offices_es_city'])) { ?>
                           <h5>
@@ -150,7 +170,7 @@ $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
                           <h5>Teléfonos: <?php echo $office['_hf_offices_es_phone'];?></h5>
                         <?php } ?>
                       </div>
-                    <?php } ?>
+                    <?php }} ?>
                   </div>
                 </div>
               </div>
