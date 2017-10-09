@@ -5,6 +5,7 @@
     )
   );
   $theMeta = get_post_meta($footerPost[0]->ID);
+  wp_footer();
 ?>
             <footer id="mre-footer" class="col-xs-12">
               <div class="mre-footer-elements">
