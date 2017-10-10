@@ -445,6 +445,10 @@ a.al-phone-num {
   border: 1px solid #000000;
   font-family: "Archivo", sans-serif;
   margin-bottom: 20px; }
+.wpcf7-form select {
+  -webkit-appearance: none;
+  position: relative;
+  background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat; }
 .wpcf7-form textarea {
   width: 100%;
   color: #4a4a4a;
