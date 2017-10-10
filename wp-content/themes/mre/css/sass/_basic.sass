@@ -297,7 +297,7 @@ body
 // About Us
 #mre-about-us
   position: relative
-  height: get-vw-desktop(800px)
+  height: get-vw-desktop(721px) 
   background-size: cover
   text-align: center
   .overlay
@@ -305,29 +305,23 @@ body
     position: absolute
     height: 100%
     width: 100%
-    .about-us-title
-      font-size: get-vw-desktop(36px)
-      line-height: get-vw-desktop(40px)
-      font-family: Montserrat-Bold, sans-serif
-      color: $lighter-blue-2
     .about-us-image
-      margin: get-vw-desktop(115px) 0 get-vw-desktop(40px) 0
-      width: get-vw-desktop(140px)
-      height: get-vw-desktop(140px)
-      border-radius: 50%
+      margin: get-vw-desktop(70px) 0 get-vw-desktop(36px) 0
+      width: get-vw-desktop(268px)
+      height: get-vw-desktop(105px)
     .about-us-text
       font-family: Montserrat-Regular, sans-serif
       font-size: get-vw-desktop(20px)
-      line-height: get-vw-desktop(28px)
-      color: white
+      line-height: get-vw-desktop(30px)
+      color: $dark-white
       width: get-vw-desktop(767px)
-      margin: get-vw-desktop(20px) auto 0 auto
+      margin: 0 auto
     .about-us-numbers
       list-style: none
       height: get-vw-desktop(140px)
       padding: get-vw-desktop(40px) get-vw-desktop(38px)
       width: get-vw-desktop(970px)
-      margin: get-vw-desktop(50px) auto 0
+      margin: get-vw-desktop(40px) auto get-vw-desktop(58px)
       border-radius: get-vw-desktop(18px)
       background-color: rgba(247, 247, 247, 0.1)
       box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3)
@@ -345,12 +339,22 @@ body
           line-height: get-vw-desktop(30px)
           font-family: Montserrat-Regular, sans-serif
           color: $white
+    .about-us-button
+      width: get-vw-desktop(216px)
+      height: get-vw-desktop(50px)
+      border-radius: get-vw-desktop(10px)
+      border: solid 2px $white
+      padding: get-vw-desktop(15px) get-vw-desktop(61px)
+      color: $white
+      font-size: get-vw-desktop(18px)
+      line-height: get-vw-desktop(20px)
+      &:hover
+        text-decoration: none
 // END About Us
 
 // Partners
 #mre-partners
   height: get-vw-desktop(700px)
-  background: blue
   text-align: center
   position: relative
   .overlay-left, .overlay-right
@@ -360,9 +364,9 @@ body
     width: 100%
     height: 100%
   .overlay-left
-    background: rgba(9, 118, 209, 0.85)
+    background: rgba(255, 255, 255, 0.7) 
   .overlay-right
-    background: rgba(0, 68, 126, 0.85)
+    background: rgba(255, 255, 255, 0.7) 
   .partner-left, .partner-right
     height: 100%
     background-size: cover
@@ -371,12 +375,12 @@ body
     font-family: Montserrat-Regular, sans-serif
     font-size: get-vw-desktop(25px)
     line-height: get-vw-desktop(30px)
-    color: $white
+    color: $grey
   h2
     font-family: Montserrat-Bold, sans-serif
     font-size: get-vw-desktop(45px)
     line-height: get-vw-desktop(40px)
-    color: $white
+    color: $grey
     margin: 0
   .partner-left
     img
@@ -473,7 +477,7 @@ body
   max-height: get-vw-desktop(272px)
   margin-top: get-vw-desktop(40px)
   padding: get-vw-desktop(40px) get-vw-desktop(34px)
-  background-color: $lighter-blue-2
+  background-color: $grey
   box-shadow: 0 1px get-vw-desktop(10px) 0 rgba($black, 0.3)
   -moz-box-shadow: 0 1px get-vw-desktop(10px) 0 rgba($black, 0.3)
   -webkit-box-shadow: 0 1px get-vw-desktop(10px) 0 rgba($black, 0.3)
@@ -481,7 +485,7 @@ body
     width: get-vw-desktop(72px)
     height: get-vw-desktop(64px)
   p
-    color: $dark-blue
+    color: $dark-white
     padding-top: get-vw-desktop(10px)
     line-height: get-vw-desktop(34px)
     font-size: get-vw-desktop(24px)
@@ -491,7 +495,7 @@ body
       font-family: Montserrat-Bold, sans-serif
 
 a.al-phone-num
-  color: $dark-blue
+  color: $dark-white
   cursor: pointer
   font-size: get-vw-desktop(36px)
   line-height: get-vw-desktop(30px)
@@ -522,7 +526,7 @@ a.al-phone-num
     line-height: get-vw-desktop(16px)
     border-radius: get-vw-desktop(4px)
     display: inline-block
-    background-color: $dark-blue
+    background-color: $grey
     border: 1px solid rgba(207, 207, 207, 0.5)
     font-family: Montserrat-Regular, sans-serif
     margin-bottom: get-vw-desktop(20px)
@@ -537,7 +541,7 @@ a.al-phone-num
   select
     -webkit-appearance: none
     position: relative
-    background: $dark-blue url(assets/form-caret-down.png) 100% 50% no-repeat
+    background: $grey url(assets/form-caret-down.png) 100% 50% no-repeat
   textarea
     width: 100%
     color: $white-3
@@ -546,7 +550,7 @@ a.al-phone-num
     line-height: get-vw-desktop(16px)
     padding: get-vw-desktop(14px) get-vw-desktop(23px)
     border-radius: get-vw-desktop(6px)
-    background-color: $dark-blue
+    background-color: $grey
     border: 1px solid rgba(207, 207, 207, 0.5)
     font-family: Montserrat-Regular, sans-serif
     &::-webkit-input-placeholder /* Chrome/Opera/Safari */
