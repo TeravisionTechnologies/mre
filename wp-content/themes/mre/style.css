@@ -684,7 +684,8 @@ a.al-phone-num {
       #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide {
         border-radius: 100%;
         position: relative;
-        width: 8.88889vw; }
+        width: 8.88889vw;
+        margin-right: 2.22222vw !important; }
         #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide img {
           height: 8.88889vw;
           width: 8.88889vw; }
@@ -991,10 +992,10 @@ a.al-phone-num {
       padding: 0; }
       #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list li {
         display: inline-block; }
-      #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img {
+      #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img.ssba {
         height: 3.75vw;
         margin: 0 0.52083vw;
-        width: 3.75vw; }
+        width: 3.75vw !important; }
 
 .blog-detail-divider {
   border: solid 1px #4a4a4a;
@@ -1744,10 +1745,10 @@ a.al-phone-num {
         margin: 0 0 20px 0; }
       #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list {
         padding: 0; }
-        #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img {
+        #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img.ssba {
           height: 54px;
           margin: 0 7.5px;
-          width: 54px; }
+          width: 54px !important; }
 
   .blog-detail-divider {
     border: solid 1px #4a4a4a;
@@ -2438,10 +2439,10 @@ a.al-phone-num {
       #blog-detail-content .blog-detail-content-share .blog-detail-content-share-title {
         font-size: 2.34375vw;
         margin: 0 0 2.60417vw 0; }
-      #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img {
+      #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img.ssba {
         height: 5.46875vw;
         margin: 0 0.78125vw;
-        width: 5.46875vw; }
+        width: 5.46875vw !important; }
 
   .blog-detail-divider {
     width: 70.57292vw; }
@@ -3122,10 +3123,10 @@ a.al-phone-num {
       #blog-detail-content .blog-detail-content-share .blog-detail-content-share-title {
         font-size: 3.88889vw;
         margin-bottom: 5.55556vw; }
-      #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img {
+      #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img.ssba {
         height: 11.66667vw;
         margin: 0 1.66667vw;
-        width: 11.66667vw; }
+        width: 11.66667vw !important; }
 
   .blog-detail-divider {
     width: 86.11111vw; }
