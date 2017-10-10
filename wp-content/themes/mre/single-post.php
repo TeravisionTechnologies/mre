@@ -56,7 +56,7 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
               </div>
             </div>
           </section>
-          <hr class="center-block blog-detail-divider">
+          <span class="center-block blog-detail-divider"></span> 
           <?php
           $comments = get_comments(array(
             'post_id' => $post->ID ));
