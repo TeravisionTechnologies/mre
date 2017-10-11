@@ -22,7 +22,7 @@ html, body {
 
 body {
   background: #eeeeee;
-  font-family: Montserrat-Regular, sans-serif;
+  font-family: "Archivo", sans-serif;
   font-size: 14px;
   color: #000000;
   margin: 0;
@@ -64,7 +64,7 @@ body {
       border-bottom: 2px solid rgba(127, 129, 130, 0.15);
       padding: 1.8055555556vw 0 0 3.4722222222vw;
       height: 6.5972222222vw;
-      font-family: "Montserrat-Regular", sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-size: 1.6666666667vw;
       line-height: 2.7777777778vw;
       cursor: pointer; }
@@ -356,7 +356,7 @@ body {
   padding-left: 0; }
 .al-properties-section .properties-filter {
   border: solid 2px rgba(74, 74, 74, 0.4);
-  font-family: Montserrat-Regular, sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.1111111111vw;
   height: 3.1944444444vw;
   width: 18.125vw; }
@@ -1478,6 +1478,11 @@ body {
     .prop-header h2 {
       font-size: 18px !important; }
 
+  #property-content p {
+    font-size: 14px !important;
+    line-height: 24px !important;
+    padding: 0 50px !important; }
+
   .detail-tlt {
     font-size: 20px !important;
     height: 60px !important;
@@ -1925,6 +1930,12 @@ body {
     .al-footer-container .footer-top {
       display: none; }
 
+  #property-content p {
+    font-size: 12px !important;
+    padding: 10px !important;
+    line-height: 25px !important;
+    margin: 0 !important; }
+
   .memory-items ol {
     padding: 0 30px !important;
     font-size: 12px !important; }
@@ -2123,7 +2134,7 @@ body {
   margin: 15px 0 9px;
   display: block; }
 
-.single-broker p {
+#property-content p {
   font-size: 16px;
   line-height: 1.5;
   color: #8f8f8f;
@@ -2308,6 +2319,17 @@ ul, ol {
   background-position: center center !important;
   background-repeat: no-repeat !important; }
 
+#interior-gallery .swiper-slide {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important; }
+
+#amenities-gallery .swiper-button-white {
+  filter: brightness(200%) !important; }
+
+#interior-gallery .swiper-button-white {
+  filter: brightness(200%) !important; }
+
 .gallery-top {
   height: 80%;
   width: 100%; }
@@ -2424,7 +2446,8 @@ ul, ol {
   width: 260px;
   text-align: left;
   font-size: 16px;
-  color: #7f8182; }
+  color: #7f8182;
+  font-family: "Montserrat", sans-serif; }
   .btn-filter .caret {
     right: 16px;
     top: 21px;
@@ -2452,5 +2475,9 @@ ul, ol {
       font-size: 20px;
       font-weight: bold;
       color: #7f8182; }
+
+.modal-backdrop.in {
+  filter: alpha(opacity=90) !important;
+  opacity: 0.9 !important; }
 
 /*# sourceMappingURL=style.css.map */

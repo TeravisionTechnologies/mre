@@ -107,7 +107,7 @@ body
     margin: 15px 0 9px
     display: block
 
-.single-broker
+#property-content
   p
     font-size: 16px
     line-height: 1.5
@@ -301,6 +301,19 @@ ul, ol
     background-position: center center !important
     background-repeat: no-repeat !important
 
+#interior-gallery
+  .swiper-slide
+    background-size: cover !important
+    background-position: center center !important
+    background-repeat: no-repeat !important
+
+#amenities-gallery
+  .swiper-button-white
+    filter: brightness(200%) !important
+
+#interior-gallery
+  .swiper-button-white
+    filter: brightness(200%) !important
 
 .gallery-top
   height: 80%
@@ -428,6 +441,7 @@ ul, ol
   text-align: left
   font-size: 16px
   color: #7f8182
+  font-family: 'Montserrat', sans-serif
   .caret
     right: 16px
     top: 21px
@@ -456,3 +470,7 @@ ul, ol
         font-size: 20px
         font-weight: bold
         color: #7f8182
+
+.modal-backdrop.in
+  filter: alpha(opacity=90) !important
+  opacity: 0.9 !important

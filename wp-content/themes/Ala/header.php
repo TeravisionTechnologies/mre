@@ -7,6 +7,8 @@
     <meta name="description" content="<?php bloginfo('description'); ?>">
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/favicon.ico">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+    <link href="https://fonts.googleapis.com/css?family=Archivo:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <style>
     /* -----------------------------------------------------------------------------
 

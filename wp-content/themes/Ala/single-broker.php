@@ -25,7 +25,7 @@
     <?php } ?>
 </section>
 
-<section>
+<section id="property-content">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -52,7 +52,7 @@
                 <div id="myModalDetails" class="modal fade modal-detail" role="dialog">
                         <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>
                         <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
+                            <div id="interior-gallery" class="modal-content">
                                 <div class="modal-body">
                                     <div class="swiper-container gallery-top-details swiper-detail">
                                         <div class="swiper-wrapper">
@@ -98,7 +98,7 @@
                             <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
-                                    <div class="modal-body">
+                                    <div id="amenities-gallery" class="modal-body">
                                         <div class="swiper-container gallery-top swiper-detail">
                                             <div class="swiper-wrapper">
                                                 <?php foreach ((array) $amenimages as $attachment_id => $attachment_url) { ?>
