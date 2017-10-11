@@ -311,23 +311,6 @@ body {
         left: 50%;
         transform: translateX(-50%); }
 
-.al-footer-container {
-  height: 210px;
-  padding: 50px 0;
-  position: relative;
-  background-color: #000000; }
-  .al-footer-container img {
-    max-width: 150px;
-    padding-bottom: 11px; }
-  .al-footer-container a {
-    font-weight: bold; }
-    .al-footer-container a:hover {
-      color: #ffffff;
-      cursor: pointer;
-      text-decoration: underline; }
-  .al-footer-container p.al-text-white {
-    margin-bottom: 0px; }
-
 .al-text-white {
   color: #ffffff;
   font-size: 14px;
@@ -354,206 +337,6 @@ body {
   display: none; }
   .al-go-top-div:hover {
     cursor: pointer; }
-
-.screen-reader-response {
-  display: none; }
-
-.wpcf7-response-output {
-  top: -25px;
-  left: 30px;
-  position: absolute; }
-
-.al-contact-div {
-  height: auto;
-  padding-top: 3.95vw;
-  background-repeat: no-repeat;
-  background-position-y: bottom; }
-
-.al-contact-text {
-  color: #000000;
-  font-size: 2.5vw;
-  margin-top: 60px;
-  line-height: 1.28;
-  margin-bottom: 2px;
-  letter-spacing: -0.2px;
-  font-family: "Archivo", sans-serif; }
-
-.al-contact-text-bold {
-  color: #000000;
-  font-size: 2.5vw;
-  line-height: 1.28;
-  font-weight: bold;
-  letter-spacing: -0.2px;
-  font-family: "Archivo", sans-serif; }
-
-.al-phone-div {
-  margin-right: 36px;
-  vertical-align: top;
-  padding-top: 3.125vw;
-  display: inline-block; }
-
-.al-phone-box {
-  max-width: 361px;
-  margin-top: 40px;
-  padding: 3.425vw 2.083vw;
-  background-color: #ffffff;
-  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3); }
-  .al-phone-box p {
-    padding-top: 16px;
-    line-height: 1.21;
-    font-size: 1.66vw;
-    padding-bottom: 13px;
-    letter-spacing: -0.2px;
-    font-family: "Archivo", sans-serif; }
-
-a.al-phone-num {
-  color: #000000;
-  cursor: pointer;
-  font-size: 2.79vw;
-  font-weight: bold;
-  line-height: 0.83;
-  letter-spacing: -0.2px;
-  font-family: "Archivo", sans-serif; }
-  a.al-phone-num:hover {
-    text-decoration: none; }
-
-.al-contact-form-div {
-  margin-top: 40px;
-  display: inline-block; }
-
-.flag-image-opacity {
-  opacity: 0.6; }
-
-.wpcf7-form-control-wrap {
-  margin-bottom: 20px; }
-
-.wpcf7-form p {
-  margin-right: 20px;
-  display: inline-block; }
-.wpcf7-form input[type="text"], .wpcf7-form input[type="email"], .wpcf7-form input[type="tel"], .wpcf7-form select {
-  width: 100%;
-  height: 48px;
-  color: #4a4a4a;
-  padding: 0 20px;
-  font-size: 16px;
-  line-height: 0.94;
-  border-radius: 4px;
-  display: inline-block;
-  background-color: #ffffff;
-  border: 1px solid #000000;
-  font-family: "Archivo", sans-serif;
-  margin-bottom: 20px; }
-.wpcf7-form select {
-  -webkit-appearance: none;
-  position: relative;
-  background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat; }
-.wpcf7-form textarea {
-  width: 100%;
-  color: #4a4a4a;
-  font-size: 16px;
-  max-height: 137px;
-  line-height: 0.94;
-  padding: 15px 20px;
-  border-radius: 6px;
-  background-color: #ffffff;
-  border: 1px solid #000000;
-  font-family: "Archivo", sans-serif; }
-  .wpcf7-form textarea option {
-    padding-left: 20px; }
-.wpcf7-form .your-name, .wpcf7-form .your-phone {
-  margin-right: 20px; }
-.wpcf7-form .wpcf7-submit {
-  height: 50px;
-  font-size: 18px;
-  margin-top: 40px;
-  font-weight: bold;
-  padding: 0px 74px;
-  line-height: 1.11;
-  margin-bottom: 50px;
-  border: solid 2px #000000;
-  background-color: transparent;
-  font-family: "Archivo", sans-serif; }
-  .wpcf7-form .wpcf7-submit:hover {
-    background-color: rgba(255, 255, 255, 0.7); }
-
-.al-swiper-contact {
-  height: 360px;
-  background-size: auto;
-  background-position: center;
-  background-repeat: no-repeat; }
-
-.al-partners-section {
-  z-index: 1;
-  height: auto;
-  padding: 58px 0;
-  background-color: #ffffff;
-  box-shadow: -4px -10px 23px -7px rgba(0, 0, 0, 0.37);
-  -moz-box-shadow: -4px -10px 23px -7px rgba(0, 0, 0, 0.37);
-  -webkit-box-shadow: -4px -10px 23px -7px rgba(0, 0, 0, 0.37); }
-
-.al-partners-title {
-  color: #4a4a4a;
-  font-size: 18px;
-  margin-bottom: 0;
-  letter-spacing: -0.1px;
-  font-family: "Archivo", sans-serif; }
-
-.partners-images-one {
-  margin-right: 95px; }
-
-.partners-images {
-  padding-top: 28px; }
-
-.al-partners-subtitle {
-  color: #000000;
-  font-size: 36px;
-  letter-spacing: -0.2px;
-  font-family: "Archivo", sans-serif; }
-
-#al-offices {
-  height: 25vw;
-  background-size: cover; }
-  #al-offices .swiper-container-flags {
-    height: 100%;
-    text-align: center; }
-  #al-offices h4 {
-    margin: 3.88889vw 0 2.08333vw 0;
-    font-family: Archivo, sans-serif;
-    font-size: 2.36111vw;
-    line-height: 2.77778vw;
-    color: #ffffff; }
-    #al-offices h4 strong {
-      font-family: Archivo, sans-serif;
-      font-weight: bold; }
-  #al-offices .flags-indicators .flag-image {
-    height: 4.16667vw;
-    margin: 0 1.38889vw 1.38889vw 1.38889vw;
-    width: 4.16667vw;
-    cursor: pointer; }
-  #al-offices .flags-indicators .flag-image-opacity {
-    opacity: 0.6; }
-  #al-offices .swiper-wrapper {
-    width: 100%; }
-    #al-offices .swiper-wrapper .swiper-slide {
-      background: transparent;
-      margin: 0 auto;
-      height: 6.94444vw;
-      width: 100%; }
-      #al-offices .swiper-wrapper .swiper-slide .office-detail {
-        display: inline-block;
-        width: 22.22222vw;
-        margin: 0 1.52778vw; }
-        #al-offices .swiper-wrapper .swiper-slide .office-detail h5 {
-          color: #ffffff;
-          font-family: Archivo, sans-serif;
-          font-size: 1.11111vw;
-          line-height: 1.73611vw;
-          margin: 0; }
-        #al-offices .swiper-wrapper .swiper-slide .office-detail span {
-          font-family: Archivo, sans-serif;
-          font-weight: bold; }
 
 .al-properties-section .properties-country-filter {
   color: #7f8182;
@@ -644,6 +427,211 @@ a.al-phone-num {
         color: #ffffff; }
       #al-pagination .pagination li .pagination-previous {
         color: black; }
+
+.al-partners-section {
+  z-index: 1;
+  height: 20.83333vw;
+  padding: 4.65278vw 0 4.58333vw 0;
+  background-color: #ffffff;
+  box-shadow: -4px -10px 23px -7px rgba(0, 0, 0, 0.37);
+  -moz-box-shadow: -4px -10px 23px -7px rgba(0, 0, 0, 0.37);
+  -webkit-box-shadow: -4px -10px 23px -7px rgba(0, 0, 0, 0.37); }
+  .al-partners-section .al-partners-title {
+    color: #000000;
+    font-size: 2.36111vw;
+    line-height: 2.56944vw;
+    margin: 0;
+    font-family: Archivo, sans-serif; }
+  .al-partners-section .partners-images {
+    padding-top: 2.08333vw; }
+    .al-partners-section .partners-images .partners-images-one {
+      margin-right: 6.52778vw;
+      width: 6.52778vw;
+      height: 6.94444vw; }
+    .al-partners-section .partners-images .partners-images-two {
+      width: 13.88889vw;
+      height: 4.79167vw; }
+
+#al-offices {
+  height: 25vw;
+  background-size: cover; }
+  #al-offices .swiper-container-flags {
+    height: 100%;
+    text-align: center; }
+  #al-offices h4 {
+    margin: 3.88889vw 0 2.08333vw 0;
+    font-family: Archivo, sans-serif;
+    font-size: 2.36111vw;
+    line-height: 2.77778vw;
+    color: #ffffff; }
+    #al-offices h4 strong {
+      font-family: Archivo, sans-serif;
+      font-weight: bold; }
+  #al-offices .flags-indicators .flag-image {
+    height: 4.16667vw;
+    margin: 0 1.38889vw 1.38889vw 1.38889vw;
+    width: 4.16667vw;
+    cursor: pointer; }
+  #al-offices .flags-indicators .flag-image-opacity {
+    opacity: 0.6; }
+  #al-offices .swiper-wrapper {
+    width: 100%; }
+    #al-offices .swiper-wrapper .swiper-slide {
+      background: transparent;
+      margin: 0 auto;
+      height: 6.94444vw;
+      width: 100%; }
+      #al-offices .swiper-wrapper .swiper-slide .office-detail {
+        display: inline-block;
+        width: 22.22222vw;
+        margin: 0 1.52778vw; }
+        #al-offices .swiper-wrapper .swiper-slide .office-detail h5 {
+          color: #ffffff;
+          font-family: Archivo, sans-serif;
+          font-size: 1.11111vw;
+          line-height: 1.73611vw;
+          margin: 0; }
+        #al-offices .swiper-wrapper .swiper-slide .office-detail span {
+          font-family: Archivo, sans-serif;
+          font-weight: bold; }
+
+.screen-reader-response {
+  display: none; }
+
+.wpcf7-response-output {
+  top: -1.73611vw;
+  left: 2.08333vw;
+  position: absolute; }
+
+.al-contact-div {
+  height: 42.56944vw;
+  padding: 4.16667vw 9.375vw;
+  background-repeat: no-repeat;
+  background-position-y: bottom; }
+  .al-contact-div .al-contact-text {
+    color: #000000;
+    font-size: 2.5vw;
+    line-height: 3.19444vw;
+    margin-bottom: 0.13889vw;
+    font-family: Archivo, sans-serif; }
+  .al-contact-div .al-contact-text-bold {
+    color: #000000;
+    font-size: 2.5vw;
+    line-height: 3.19444vw;
+    font-weight: bold;
+    font-family: "Archivo", sans-serif;
+    margin: 0; }
+  .al-contact-div .al-phone-box {
+    width: 25.06944vw;
+    height: 18.88889vw;
+    margin-top: 3.40278vw;
+    margin-left: 0;
+    padding: 3.125vw 2.36111vw;
+    background-color: #ffffff;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3); }
+    .al-contact-div .al-phone-box p {
+      margin-top: 0.69444vw;
+      line-height: 2.01389vw;
+      font-size: 1.66667vw;
+      margin-bottom: 1.38889vw;
+      font-family: Archivo, sans-serif; }
+    .al-contact-div .al-phone-box a.al-phone-num {
+      color: #000000;
+      cursor: pointer;
+      font-size: 2.5vw;
+      font-weight: bold;
+      line-height: 2.08333vw;
+      font-family: Archivo, sans-serif; }
+      .al-contact-div .al-phone-box a.al-phone-num:hover {
+        text-decoration: none; }
+  .al-contact-div .al-contact-form-div {
+    width: 53.26389vw;
+    margin-top: 3.40278vw;
+    display: inline-block;
+    padding: 0; }
+    .al-contact-div .al-contact-form-div .wpcf7-form-control-wrap {
+      margin-bottom: 1.38889vw; }
+    .al-contact-div .al-contact-form-div .wpcf7-form p {
+      margin-right: 1.38889vw;
+      display: inline-block; }
+    .al-contact-div .al-contact-form-div .wpcf7-form input[type="text"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="email"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="tel"], .al-contact-div .al-contact-form-div .wpcf7-form select {
+      width: 25.76389vw;
+      height: 3.33333vw;
+      color: #4a4a4a;
+      padding: 0 1.38889vw;
+      font-size: 1.11111vw;
+      line-height: 1.04167vw;
+      border-radius: 0.27778vw;
+      display: inline-block;
+      background-color: #ffffff;
+      border: 1px solid #000000;
+      font-family: Archivo, sans-serif;
+      margin-bottom: 1.38889vw; }
+    .al-contact-div .al-contact-form-div .wpcf7-form input[name="your-email"], .al-contact-div .al-contact-form-div .wpcf7-form select[name="your-country"] {
+      margin-left: 0.69444vw; }
+    .al-contact-div .al-contact-form-div .wpcf7-form select {
+      -webkit-appearance: none;
+      position: relative;
+      background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat; }
+    .al-contact-div .al-contact-form-div .wpcf7-form textarea {
+      width: 100%;
+      color: #4a4a4a;
+      font-size: 1.11111vw;
+      height: 9.375vw;
+      line-height: 1.11111vw;
+      padding: 1.04167vw 1.38889vw;
+      border-radius: 0.41667vw;
+      background-color: #ffffff;
+      border: 1px solid #000000;
+      font-family: Archivo, sans-serif; }
+      .al-contact-div .al-contact-form-div .wpcf7-form textarea option {
+        padding-left: 1.38889vw; }
+    .al-contact-div .al-contact-form-div .wpcf7-form .wpcf7-submit {
+      width: 15vw;
+      height: 3.47222vw;
+      font-size: 1.25vw;
+      margin-top: 1.59722vw;
+      font-weight: bold;
+      padding: 1.04167vw 5.13889vw;
+      line-height: 1.38889vw;
+      margin-bottom: 4.16667vw;
+      border: solid 2px #000000;
+      background-color: transparent;
+      font-family: Archivo, sans-serif; }
+      .al-contact-div .al-contact-form-div .wpcf7-form .wpcf7-submit:hover {
+        background-color: rgba(255, 255, 255, 0.7); }
+
+.al-footer-container {
+  height: 13.95833vw;
+  padding: 3.47222vw 0;
+  position: relative;
+  background-color: #ffffff;
+  box-shadow: 0 -8px 10px 0 rgba(0, 0, 0, 0.2); }
+  .al-footer-container img {
+    width: 9.72222vw;
+    height: 3.26389vw;
+    margin-bottom: 0.97222vw; }
+  .al-footer-container p.al-text-white {
+    font-size: 0.97222vw;
+    line-height: 1.38889vw;
+    margin-bottom: 0;
+    color: #7f8182; }
+  .al-footer-container a {
+    font-size: 0.97222vw;
+    line-height: 1.38889vw;
+    font-family: Archivo, sans-serif;
+    font-weight: bold;
+    color: #7f8182;
+    cursor: pointer;
+    text-decoration: underline; }
+  .al-footer-container .footer-top {
+    position: absolute;
+    width: 3.47222vw;
+    height: 3.47222vw;
+    right: 9.72222vw;
+    top: 2.77778vw; }
 
 @media only screen and (min-width: 1440px) {
   .container-ala {
@@ -878,34 +866,6 @@ a.al-phone-num {
   a.al-phone-num {
     font-size: 36px; }
 
-  #al-offices {
-    height: 360px; }
-    #al-offices .swiper-container-flags {
-      height: 100%; }
-    #al-offices h4 {
-      margin: 56px 0 30px 0;
-      font-size: 34px;
-      line-height: 40px; }
-    #al-offices .flags-indicators .flag-image {
-      height: 60px;
-      margin: 0 20px 20px 20px;
-      width: 60px; }
-    #al-offices .flags-indicators .flag-image-opacity {
-      opacity: 0.6; }
-    #al-offices .swiper-wrapper {
-      width: 100%; }
-      #al-offices .swiper-wrapper .swiper-slide {
-        margin: 0 auto;
-        height: 100px;
-        width: 100%; }
-        #al-offices .swiper-wrapper .swiper-slide .office-detail {
-          width: 320px;
-          margin: 0 20px; }
-          #al-offices .swiper-wrapper .swiper-slide .office-detail h5 {
-            font-size: 16px;
-            line-height: 25px;
-            margin: 0; }
-
   .al-properties-section .properties-country-filter {
     font-size: 20px;
     line-height: 20px;
@@ -967,11 +927,160 @@ a.al-phone-num {
       #al-pagination .pagination li a {
         height: 42px;
         padding-top: 10px;
-        width: 41px; } }
+        width: 41px; }
+
+  .al-partners-section {
+    z-index: 1;
+    height: 300px;
+    padding: 67px 0 66px 0;
+    box-shadow: -4px -10px 23px -7px rgba(0, 0, 0, 0.37);
+    -moz-box-shadow: -4px -10px 23px -7px rgba(0, 0, 0, 0.37);
+    -webkit-box-shadow: -4px -10px 23px -7px rgba(0, 0, 0, 0.37); }
+    .al-partners-section .al-partners-title {
+      font-size: 34px;
+      line-height: 37px;
+      margin: 0;
+      font-family: Archivo, sans-serif; }
+    .al-partners-section .partners-images {
+      padding-top: 30px; }
+      .al-partners-section .partners-images .partners-images-one {
+        margin-right: 94px;
+        width: 94px;
+        height: 100px; }
+      .al-partners-section .partners-images .partners-images-two {
+        width: 200px;
+        height: 69px; }
+
+  #al-offices {
+    height: 360px; }
+    #al-offices .swiper-container-flags {
+      height: 100%; }
+    #al-offices h4 {
+      margin: 56px 0 30px 0;
+      font-size: 34px;
+      line-height: 40px; }
+    #al-offices .flags-indicators .flag-image {
+      height: 60px;
+      margin: 0 20px 20px 20px;
+      width: 60px; }
+    #al-offices .flags-indicators .flag-image-opacity {
+      opacity: 0.6; }
+    #al-offices .swiper-wrapper {
+      width: 100%; }
+      #al-offices .swiper-wrapper .swiper-slide {
+        margin: 0 auto;
+        height: 100px;
+        width: 100%; }
+        #al-offices .swiper-wrapper .swiper-slide .office-detail {
+          width: 320px;
+          margin: 0 20px; }
+          #al-offices .swiper-wrapper .swiper-slide .office-detail h5 {
+            font-size: 16px;
+            line-height: 25px;
+            margin: 0; }
+
+  .wpcf7-response-output {
+    top: -25px;
+    left: 30px; }
+
+  .al-contact-div {
+    height: 613px;
+    padding: 60px 135px; }
+    .al-contact-div .al-contact-text {
+      font-size: 36px;
+      line-height: 46px;
+      margin-bottom: 2px; }
+    .al-contact-div .al-contact-text-bold {
+      font-size: 36px;
+      line-height: 46px;
+      margin: 0; }
+    .al-contact-div .al-phone-box {
+      width: 361px;
+      height: 272px;
+      margin-top: 49px;
+      margin-left: 0;
+      padding: 45px 34px;
+      box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3); }
+      .al-contact-div .al-phone-box p {
+        margin-top: 10px;
+        line-height: 29px;
+        font-size: 24px;
+        margin-bottom: 20px; }
+      .al-contact-div .al-phone-box a.al-phone-num {
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 30px; }
+    .al-contact-div .al-contact-form-div {
+      margin-top: 49px;
+      width: 767px; }
+      .al-contact-div .al-contact-form-div .wpcf7-form-control-wrap {
+        margin-bottom: 20px; }
+      .al-contact-div .al-contact-form-div .wpcf7-form p {
+        margin-right: 20px; }
+      .al-contact-div .al-contact-form-div .wpcf7-form input[type="text"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="email"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="tel"], .al-contact-div .al-contact-form-div .wpcf7-form select {
+        width: 371px;
+        height: 48px;
+        padding: 0 20px;
+        font-size: 16px;
+        line-height: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px; }
+      .al-contact-div .al-contact-form-div .wpcf7-form input[name="your-email"], .al-contact-div .al-contact-form-div .wpcf7-form select[name="your-country"] {
+        margin-left: 10px; }
+      .al-contact-div .al-contact-form-div .wpcf7-form select {
+        -webkit-appearance: none;
+        position: relative;
+        background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat; }
+      .al-contact-div .al-contact-form-div .wpcf7-form textarea {
+        width: 100%;
+        font-size: 16px;
+        height: 135px;
+        line-height: 16px;
+        padding: 15px 20px;
+        border-radius: 6px;
+        border: 1px solid #000000; }
+        .al-contact-div .al-contact-form-div .wpcf7-form textarea option {
+          padding-left: 20px; }
+      .al-contact-div .al-contact-form-div .wpcf7-form .wpcf7-submit {
+        width: 216px;
+        height: 50px;
+        font-size: 18px;
+        margin-top: 23px;
+        padding: 15px 74px;
+        line-height: 20px;
+        margin-bottom: 60px;
+        border: solid 2px #000000; }
+        .al-contact-div .al-contact-form-div .wpcf7-form .wpcf7-submit:hover {
+          background-color: rgba(255, 255, 255, 0.7); }
+
+  .al-footer-container {
+    height: 201px;
+    padding: 50px 0; }
+    .al-footer-container img {
+      width: 140px;
+      height: 47px;
+      margin-bottom: 14px; }
+    .al-footer-container p.al-text-white {
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 0; }
+    .al-footer-container a {
+      font-size: 14px;
+      line-height: 20px; }
+    .al-footer-container .footer-top {
+      width: 50px;
+      height: 50px;
+      right: 140px;
+      top: 40px; } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .container-ala {
-    width: 85.80729vw;
+    width: 85.67708vw;
     height: 100%; }
+
+  .container {
+    width: 100%; }
 
   body {
     font-size: 1.82292vw;
@@ -1153,34 +1262,6 @@ a.al-phone-num {
     width: 7.42188vw;
     height: 3.25521vw; }
 
-  #al-offices {
-    height: 42.70833vw; }
-    #al-offices .swiper-container-flags {
-      height: 100%; }
-    #al-offices h4 {
-      margin: 8.33333vw 0 2.73438vw 0;
-      font-size: 3.38542vw;
-      line-height: 3.90625vw; }
-    #al-offices .flags-indicators .flag-image {
-      height: 6.38021vw;
-      margin: 0 1.82292vw 2.60417vw 1.82292vw;
-      width: 6.51042vw; }
-    #al-offices .flags-indicators .flag-image-opacity {
-      opacity: 0.6; }
-    #al-offices .swiper-wrapper {
-      width: 100%; }
-      #al-offices .swiper-wrapper .swiper-slide {
-        margin: 0 auto;
-        height: 10.41667vw;
-        width: 100%; }
-        #al-offices .swiper-wrapper .swiper-slide .office-detail {
-          width: 33.85417vw;
-          margin: 0 1.82292vw; }
-          #al-offices .swiper-wrapper .swiper-slide .office-detail h5 {
-            font-size: 1.82292vw;
-            line-height: 2.60417vw;
-            margin: 0; }
-
   .al-properties-section .container-properties {
     width: 100%;
     padding: 0 5.20833vw; }
@@ -1247,17 +1328,155 @@ a.al-phone-num {
         padding-top: 1.04167vw;
         width: 4.81771vw; }
 
+  .al-partners-section {
+    height: 31.25vw;
+    padding: 6.25vw 0 6.11979vw 0;
+    box-shadow: -4px -10px 2.99479vw -7px rgba(0, 0, 0, 0.37);
+    -moz-box-shadow: -4px -10px 2.99479vw -7px rgba(0, 0, 0, 0.37);
+    -webkit-box-shadow: -4px -10px 2.99479vw -7px rgba(0, 0, 0, 0.37); }
+    .al-partners-section .al-partners-title {
+      font-size: 3.38542vw;
+      line-height: 3.64583vw;
+      margin: 0; }
+    .al-partners-section .partners-images {
+      padding-top: 3.90625vw; }
+      .al-partners-section .partners-images .partners-images-one {
+        margin-right: 7.68229vw;
+        width: 10.67708vw;
+        height: 11.32813vw; }
+      .al-partners-section .partners-images .partners-images-two {
+        width: 18.35938vw;
+        height: 6.11979vw; }
+
+  #al-offices {
+    height: 42.70833vw; }
+    #al-offices .swiper-container-flags {
+      height: 100%; }
+    #al-offices h4 {
+      margin: 8.33333vw 0 2.73438vw 0;
+      font-size: 3.38542vw;
+      line-height: 3.90625vw; }
+    #al-offices .flags-indicators .flag-image {
+      height: 6.38021vw;
+      margin: 0 1.82292vw 2.60417vw 1.82292vw;
+      width: 6.51042vw; }
+    #al-offices .flags-indicators .flag-image-opacity {
+      opacity: 0.6; }
+    #al-offices .swiper-wrapper {
+      width: 100%; }
+      #al-offices .swiper-wrapper .swiper-slide {
+        margin: 0 auto;
+        height: 10.41667vw;
+        width: 100%; }
+        #al-offices .swiper-wrapper .swiper-slide .office-detail {
+          width: 33.85417vw;
+          margin: 0 1.82292vw; }
+          #al-offices .swiper-wrapper .swiper-slide .office-detail h5 {
+            font-size: 1.82292vw;
+            line-height: 2.60417vw;
+            margin: 0; }
+
+  .wpcf7-response-output {
+    top: -3.25521vw;
+    left: 3.90625vw; }
+
+  .al-contact-div {
+    height: 124.21875vw;
+    padding: 6.51042vw 0 18.22917vw 0; }
+    .al-contact-div .al-contact-text {
+      font-size: 2.86458vw;
+      line-height: 4.42708vw;
+      margin-bottom: 2px; }
+    .al-contact-div .al-contact-text-bold {
+      font-size: 2.86458vw;
+      line-height: 4.42708vw;
+      margin: 0; }
+    .al-contact-div .al-phone-box {
+      width: 55.46875vw;
+      height: 33.85417vw;
+      margin: 4.94792vw auto 0 auto;
+      padding: 5.20833vw 9.24479vw;
+      box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3); }
+      .al-contact-div .al-phone-box img {
+        width: 6.51042vw;
+        height: 6.51042vw; }
+      .al-contact-div .al-phone-box p {
+        margin-top: 1.43229vw;
+        line-height: 3.90625vw;
+        font-size: 3.125vw;
+        margin-bottom: 3.64583vw; }
+      .al-contact-div .al-phone-box a.al-phone-num {
+        font-size: 3.90625vw;
+        font-weight: bold;
+        line-height: 3.90625vw; }
+    .al-contact-div .al-contact-form-div {
+      margin: 6.51042vw 7.16146vw 0 7.16146vw;
+      width: 85.67708vw; }
+      .al-contact-div .al-contact-form-div .wpcf7-form-control-wrap {
+        margin-bottom: 2.60417vw; }
+      .al-contact-div .al-contact-form-div .wpcf7-form p {
+        margin-right: 2.60417vw; }
+      .al-contact-div .al-contact-form-div .wpcf7-form input[type="text"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="email"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="tel"], .al-contact-div .al-contact-form-div .wpcf7-form select {
+        width: 41.53646vw;
+        height: 6.11979vw;
+        padding: 0 2.60417vw;
+        font-size: 1.82292vw;
+        line-height: 1.95313vw;
+        border-radius: 0.52083vw;
+        margin-bottom: 2.60417vw; }
+      .al-contact-div .al-contact-form-div .wpcf7-form select {
+        -webkit-appearance: none;
+        position: relative;
+        background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat; }
+      .al-contact-div .al-contact-form-div .wpcf7-form input[name="your-email"], .al-contact-div .al-contact-form-div .wpcf7-form select[name="your-country"] {
+        margin-left: 1.30208vw; }
+      .al-contact-div .al-contact-form-div .wpcf7-form textarea {
+        width: 100%;
+        font-size: 1.82292vw;
+        height: 17.31771vw;
+        line-height: 2.08333vw;
+        padding: 1.95313vw 2.60417vw;
+        border-radius: 0.78125vw;
+        border: 1px solid #000000; }
+        .al-contact-div .al-contact-form-div .wpcf7-form textarea option {
+          padding-left: 20px; }
+      .al-contact-div .al-contact-form-div .wpcf7-form .wpcf7-submit {
+        width: 26.04167vw;
+        height: 6.51042vw;
+        font-size: 2.08333vw;
+        margin-top: 3.25521vw;
+        padding: 1.95313vw 8.72396vw;
+        line-height: 2.60417vw;
+        margin-bottom: 0;
+        border: solid 2px #000000; }
+        .al-contact-div .al-contact-form-div .wpcf7-form .wpcf7-submit:hover {
+          background-color: rgba(255, 255, 255, 0.7); }
+
+  .al-footer-container {
+    height: 20.57292vw;
+    padding: 4.81771vw 0; }
+    .al-footer-container img {
+      width: 15.625vw;
+      height: 5.33854vw;
+      margin-bottom: 0.91146vw; }
+    .al-footer-container p.al-text-white {
+      font-size: 1.5625vw;
+      line-height: 2.08333vw;
+      margin-bottom: 0; }
+    .al-footer-container a {
+      font-size: 1.5625vw;
+      line-height: 2.34375vw; }
+    .al-footer-container .footer-top {
+      display: none; }
+
   .prop-header {
     height: 500px !important; }
     .prop-header h1 {
       font-size: 24px !important; }
     .prop-header h2 {
       font-size: 18px !important; }
-
-  p {
-    font-size: 14px !important;
-    line-height: 24px !important;
-    padding: 0 50px !important; }
 
   .detail-tlt {
     font-size: 20px !important;
@@ -1492,96 +1711,6 @@ a.al-phone-num {
   .al-text-white {
     font-size: 10px; }
 
-  .al-footer-container {
-    height: 126px;
-    padding: 27px 0; }
-    .al-footer-container img {
-      max-width: 80px; }
-
-  .al-contact-form-div {
-    padding: 0; }
-
-  .al-contact-div {
-    height: auto; }
-
-  .al-contact-text, .al-contact-text-bold {
-    font-size: 18px; }
-
-  .al-phone-box {
-    padding: 32px 40px;
-    max-width: calc(100vw - 50px); }
-    .al-phone-box img {
-      max-width: 40px; }
-    .al-phone-box p {
-      font-size: 18px; }
-
-  a.al-phone-num {
-    font-size: 24px; }
-
-  .wpcf7-form input[type="text"], .wpcf7-form input[type="email"], .wpcf7-form input[type="tel"], .wpcf7-form select {
-    height: 40px;
-    font-size: 12px;
-    padding: 0 14px;
-    margin-bottom: 4.16667vw; }
-  .wpcf7-form textarea {
-    padding: 14px;
-    font-size: 12px; }
-  .wpcf7-form .wpcf7-submit {
-    font-size: 14px;
-    padding: 0px 47px;
-    margin-bottom: 50px; }
-
-  .al-go-top-div {
-    top: 20px;
-    width: 40px;
-    right: 20px;
-    height: 40px; }
-
-  .al-partners-section {
-    padding: 38px 0; }
-
-  .al-partners-title {
-    font-size: 12px; }
-
-  .al-partners-subtitle {
-    font-size: 18px; }
-
-  .partners-images-one {
-    width: 13%;
-    margin-right: 34px; }
-
-  .partners-images-two {
-    width: 26%; }
-
-  #al-offices {
-    height: 111.11111vw; }
-    #al-offices .swiper-container-flags {
-      height: 100%; }
-    #al-offices h4 {
-      margin: 15.55556vw 0 5.55556vw 0;
-      font-size: 5.55556vw;
-      line-height: 8.33333vw; }
-    #al-offices .flags-indicators .flag-image {
-      height: 11.94444vw;
-      margin: 0 1.94444vw 5.55556vw 1.94444vw;
-      width: 11.94444vw; }
-    #al-offices .flags-indicators .flag-image-opacity {
-      opacity: 0.6; }
-    #al-offices .swiper-wrapper {
-      width: 100%; }
-      #al-offices .swiper-wrapper .swiper-slide {
-        margin: 0 auto;
-        height: 22.22222vw;
-        width: 100%;
-        display: block; }
-        #al-offices .swiper-wrapper .swiper-slide .office-detail {
-          width: 72.22222vw;
-          margin: 0 0 5.55556vw 0; }
-          #al-offices .swiper-wrapper .swiper-slide .office-detail h5 {
-            font-size: 3.33333vw;
-            line-height: 5.55556vw;
-            margin: 0; }
-
   .al-properties-section .container-properties {
     width: 100%;
     padding: 0 2.77778vw; }
@@ -1650,11 +1779,148 @@ a.al-phone-num {
         padding-top: 1.94444vw;
         width: 9.72222vw; }
 
-  p {
-    font-size: 12px !important;
-    padding: 10px !important;
-    line-height: 25px !important;
-    margin: 0 !important; }
+  .al-partners-section {
+    height: 46.94444vw;
+    padding: 11.11111vw 0;
+    box-shadow: -4px -10px 6.38889vw -7px rgba(0, 0, 0, 0.37);
+    -moz-box-shadow: -4px -10px 6.38889vw -7px rgba(0, 0, 0, 0.37);
+    -webkit-box-shadow: -4px -10px 6.38889vw -7px rgba(0, 0, 0, 0.37); }
+    .al-partners-section .al-partners-title {
+      font-size: 4.72222vw;
+      line-height: 5.27778vw;
+      margin: 0; }
+    .al-partners-section .partners-images {
+      padding-top: 5.55556vw; }
+      .al-partners-section .partners-images .partners-images-one {
+        margin-right: 9.44444vw;
+        width: 13.33333vw;
+        height: 13.88889vw; }
+      .al-partners-section .partners-images .partners-images-two {
+        width: 26.66667vw;
+        height: 8.88889vw; }
+
+  #al-offices {
+    height: auto; }
+    #al-offices .swiper-container-flags {
+      height: 100%; }
+    #al-offices h4 {
+      margin: 15.55556vw 0 5.55556vw 0;
+      font-size: 5.55556vw;
+      line-height: 8.33333vw; }
+    #al-offices .flags-indicators .flag-image {
+      height: 11.94444vw;
+      margin: 0 1.94444vw 5.55556vw 1.94444vw;
+      width: 11.94444vw; }
+    #al-offices .flags-indicators .flag-image-opacity {
+      opacity: 0.6; }
+    #al-offices .swiper-wrapper {
+      width: 100%; }
+      #al-offices .swiper-wrapper .swiper-slide {
+        margin: 0 auto 11.11111vw;
+        height: 44.44444vw;
+        width: 100%; }
+        #al-offices .swiper-wrapper .swiper-slide .office-detail {
+          width: 72.22222vw;
+          margin: 0 0 2.77778vw 0; }
+          #al-offices .swiper-wrapper .swiper-slide .office-detail h5 {
+            font-size: 3.33333vw;
+            line-height: 5.55556vw;
+            margin: 0; }
+
+  .wpcf7-response-output {
+    top: -6.94444vw;
+    left: 8.33333vw; }
+
+  .al-contact-div {
+    height: 232.22222vw;
+    padding: 11.11111vw 0 13.88889vw 0; }
+    .al-contact-div .al-contact-text {
+      font-size: 3.88889vw;
+      line-height: 7.22222vw;
+      margin-bottom: 2px; }
+    .al-contact-div .al-contact-text-bold {
+      font-size: 5vw;
+      line-height: 7.22222vw;
+      margin: 0; }
+    .al-contact-div .al-phone-box {
+      width: 86.11111vw;
+      height: 55.55556vw;
+      margin: 8.33333vw auto 0 auto;
+      padding: 8.61111vw 16.11111vw;
+      box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3); }
+      .al-contact-div .al-phone-box img {
+        width: 11.11111vw;
+        height: 11.11111vw; }
+      .al-contact-div .al-phone-box p {
+        margin-top: 2.77778vw;
+        line-height: 6.38889vw;
+        font-size: 5vw;
+        margin-bottom: 3.05556vw; }
+      .al-contact-div .al-phone-box a.al-phone-num {
+        font-size: 6.66667vw;
+        font-weight: bold;
+        line-height: 8.33333vw; }
+    .al-contact-div .al-contact-form-div {
+      margin: 11.11111vw 6.94444vw 0 6.94444vw;
+      width: 86.11111vw; }
+      .al-contact-div .al-contact-form-div .wpcf7-form-control-wrap {
+        margin-bottom: 5.55556vw; }
+      .al-contact-div .al-contact-form-div .wpcf7-form p {
+        margin-right: 5.55556vw; }
+      .al-contact-div .al-contact-form-div .wpcf7-form input[type="text"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="email"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="tel"], .al-contact-div .al-contact-form-div .wpcf7-form select {
+        width: 86.11111vw;
+        height: 11.11111vw;
+        padding: 0 3.88889vw;
+        font-size: 3.33333vw;
+        line-height: 4.16667vw;
+        border-radius: 1.11111vw;
+        margin-bottom: 4.16667vw; }
+      .al-contact-div .al-contact-form-div .wpcf7-form select {
+        -webkit-appearance: none;
+        position: relative;
+        background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat; }
+      .al-contact-div .al-contact-form-div .wpcf7-form input[name="your-email"], .al-contact-div .al-contact-form-div .wpcf7-form select[name="your-country"] {
+        margin-left: 0; }
+      .al-contact-div .al-contact-form-div .wpcf7-form textarea {
+        width: 100%;
+        font-size: 3.33333vw;
+        height: 36.94444vw;
+        line-height: 4.44444vw;
+        padding: 3.61111vw 3.88889vw;
+        border-radius: 1.66667vw;
+        border: 1px solid #000000; }
+        .al-contact-div .al-contact-form-div .wpcf7-form textarea option {
+          padding-left: 14px; }
+      .al-contact-div .al-contact-form-div .wpcf7-form .wpcf7-submit {
+        width: 43.88889vw;
+        height: 11.11111vw;
+        font-size: 3.88889vw;
+        margin-top: 8.33333vw;
+        padding: 2.77778vw 12.77778vw;
+        line-height: 5.55556vw;
+        margin-bottom: 0;
+        border: solid 2px #000000; }
+        .al-contact-div .al-contact-form-div .wpcf7-form .wpcf7-submit:hover {
+          background-color: rgba(255, 255, 255, 0.7); }
+
+  .al-footer-container {
+    height: 35.27778vw;
+    padding: 8.33333vw 0; }
+    .al-footer-container img {
+      width: 27.77778vw;
+      height: 9.16667vw;
+      margin-bottom: 1.11111vw; }
+    .al-footer-container p.al-text-white {
+      font-size: 2.77778vw;
+      line-height: 3.61111vw;
+      margin-bottom: 0; }
+    .al-footer-container a {
+      font-size: 2.77778vw;
+      line-height: 3.61111vw; }
+    .al-footer-container .footer-top {
+      display: none; }
 
   .memory-items ol {
     padding: 0 30px !important;
@@ -1733,14 +1999,6 @@ a.al-phone-num {
 
   #ala-header .swiper-container-hero {
     padding-top: 0; } }
-p {
-  font-family: "Archivo", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #8f8f8f;
-  margin: 0 0 22px !important;
-  padding: 0 100px; }
-
 .memory-items {
   padding: 0 100px; }
 
