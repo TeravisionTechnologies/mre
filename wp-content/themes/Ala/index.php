@@ -131,60 +131,57 @@ $footer_info = get_post_meta($footer_query[0]->ID);
         </nav>-->
     </div>
 
-    <div class="col-xs-12 al-partners-section text-center">
-        <div class="container">
-            <p class="al-partners-title">Nuestros aliados</p>
-            <p class="al-partners-subtitle">La nueva forma de invertir en propiedades</p>
-        </div>
-        <div class="partners-images">
-            <img src="<?php echo $footer_info['_hf_partners-one'][0]; ?>" alt="Logo Partner One"
-                 class="partners-images-one"/>
-            <img src="<?php echo $footer_info['_hf_partners-two'][0]; ?>" alt="Logo Partner Two"
-                 class="partners-images-two"/>
-        </div>
-    </div>
 
-    <section class="col-xs-12" id="al-offices"
-             style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/offices.jpg');">
-        <div class="swiper-container swiper-container-flags">
-            <h4>Puedes <strong>encontrarnos</strong> en</h4>
-            <div class="flags-indicators">
-                <img id="flag-image-1" class="flag-image" data-pagination="1"
-                     src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg"/>
-                <img id="flag-image-2" class="flag-image flag-image-opacity" data-pagination="2"
-                     src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg"/>
-            </div>
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="office-detail">
-                        <h5>
-                            <span>Miami · Sede principal:</span>
-                        </h5>
-                        <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
-                        <h5>USA</h5>
-                        <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
-                    </div>
-                    <div class="office-detail">
-                        <h5>
-                            <span>Orlando:</span>
-                        </h5>
-                        <h5>2295 S. Hiawassee Road, Suite 407E</h5>
-                        <h5>USA</h5>
-                        <h5>Teléfonos: +1 407 255.08.71</h5>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="office-detail">
-                        <h5>
-                            <span>Madrid:</span>
-                        </h5>
-                        <h5>C/ Velázquez 78, 2º Dcha. 28001</h5>
-                        <h5>España</h5>
-                        <h5>Teléfonos: +34 605 816 803</h5>
-                    </div>
-                </div>
-            </div>
+    
+    <div class="col-xs-12 al-partners-section text-center">
+      <div class="container">
+        <p class="al-partners-title">La nueva forma de invertir en propiedades</p>
+      </div>
+      <div class="partners-images">
+        <!--<img src="<?php echo $footer_info['_hf_partners-one'][0]; ?>" alt="Logo HR19 Realty" class="partners-images-one"/>-->
+        <!--<img src="<?php echo $footer_info['_hf_partners-two'][0]; ?>" alt="Logo MRE RealEstate" class="partners-images-two"/>-->
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/hr19.svg" alt="Logo HR19 Realty" class="partners-images-one"/>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/mre1.svg" alt="Logo MRE RealEstate" class="partners-images-two"/>
+      </div>
+    </div>
+    <section class="col-xs-12" id="al-offices" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/offices.jpg');">
+      <div class="swiper-container swiper-container-flags">
+        <h4>Puedes <strong>encontrarnos</strong> en</h4>
+        <div class="flags-indicators">
+          <img id="flag-image-1" class="flag-image" data-pagination="1" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg"/>
+          <img id="flag-image-2" class="flag-image flag-image-opacity" data-pagination="2" src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg"/>
         </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="office-detail">
+              <h5>
+                <span>Miami · Sede principal:</span>
+              </h5>
+              <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
+              <h5>USA</h5>
+              <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
+            </div>
+            <div class="office-detail">
+              <h5>
+                <span>Orlando:</span>
+              </h5>
+              <h5>2295 S. Hiawassee Road, Suite 407E</h5>
+              <h5>USA</h5>
+              <h5>Teléfonos: +1 407 255.08.71</h5>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="office-detail">
+              <h5>
+                <span>Madrid:</span>
+              </h5>
+              <h5>C/ Velázquez 78, 2º Dcha. 28001</h5>
+              <h5>España</h5>
+              <h5>Teléfonos: +34 605 816 803</h5>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
 

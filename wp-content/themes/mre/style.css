@@ -351,7 +351,7 @@ body {
 
 #mre-about-us {
   position: relative;
-  height: 55.55556vw;
+  height: 50.06944vw;
   background-size: cover;
   text-align: center; }
   #mre-about-us .overlay {
@@ -359,29 +359,23 @@ body {
     position: absolute;
     height: 100%;
     width: 100%; }
-    #mre-about-us .overlay .about-us-title {
-      font-size: 2.5vw;
-      line-height: 2.77778vw;
-      font-family: Montserrat-Bold, sans-serif;
-      color: #1f9aff; }
     #mre-about-us .overlay .about-us-image {
-      margin: 7.98611vw 0 2.77778vw 0;
-      width: 9.72222vw;
-      height: 9.72222vw;
-      border-radius: 50%; }
+      margin: 4.86111vw 0 2.5vw 0;
+      width: 18.61111vw;
+      height: 7.29167vw; }
     #mre-about-us .overlay .about-us-text {
       font-family: Montserrat-Regular, sans-serif;
       font-size: 1.38889vw;
-      line-height: 1.94444vw;
-      color: white;
+      line-height: 2.08333vw;
+      color: #cfcfcf;
       width: 53.26389vw;
-      margin: 1.38889vw auto 0 auto; }
+      margin: 0 auto; }
     #mre-about-us .overlay .about-us-numbers {
       list-style: none;
       height: 9.72222vw;
       padding: 2.77778vw 2.63889vw;
       width: 67.36111vw;
-      margin: 3.47222vw auto 0;
+      margin: 2.77778vw auto 4.02778vw;
       border-radius: 1.25vw;
       background-color: rgba(247, 247, 247, 0.1);
       box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
@@ -399,10 +393,20 @@ body {
           line-height: 2.08333vw;
           font-family: Montserrat-Regular, sans-serif;
           color: #ffffff; }
+    #mre-about-us .overlay .about-us-button {
+      width: 15vw;
+      height: 3.47222vw;
+      border-radius: 0.69444vw;
+      border: solid 2px #ffffff;
+      padding: 1.04167vw 4.23611vw;
+      color: #ffffff;
+      font-size: 1.25vw;
+      line-height: 1.38889vw; }
+      #mre-about-us .overlay .about-us-button:hover {
+        text-decoration: none; }
 
 #mre-partners {
   height: 48.61111vw;
-  background: blue;
   text-align: center;
   position: relative; }
   #mre-partners .overlay-left, #mre-partners .overlay-right {
@@ -412,9 +416,9 @@ body {
     width: 100%;
     height: 100%; }
   #mre-partners .overlay-left {
-    background: rgba(9, 118, 209, 0.85); }
+    background: rgba(255, 255, 255, 0.7); }
   #mre-partners .overlay-right {
-    background: rgba(0, 68, 126, 0.85); }
+    background: rgba(255, 255, 255, 0.7); }
   #mre-partners .partner-left, #mre-partners .partner-right {
     height: 100%;
     background-size: cover; }
@@ -423,21 +427,21 @@ body {
     font-family: Montserrat-Regular, sans-serif;
     font-size: 1.73611vw;
     line-height: 2.08333vw;
-    color: #ffffff; }
+    color: #4a4a4a; }
   #mre-partners h2 {
     font-family: Montserrat-Bold, sans-serif;
     font-size: 3.125vw;
     line-height: 2.77778vw;
-    color: #ffffff;
+    color: #4a4a4a;
     margin: 0; }
   #mre-partners .partner-left img {
     width: 14.72222vw;
     height: 4.93056vw;
-    margin-top: 2.98611vw; }
+    margin-top: 3.19444vw; }
   #mre-partners .partner-right img {
     width: 7.63889vw;
     height: 8.125vw;
-    margin-top: 1.38889vw; }
+    margin-top: 2.08333vw; }
 
 #mre-offices {
   height: 31.25vw;
@@ -521,7 +525,7 @@ body {
   max-height: 18.88889vw;
   margin-top: 2.77778vw;
   padding: 2.77778vw 2.36111vw;
-  background-color: #1f9aff;
+  background-color: #4a4a4a;
   box-shadow: 0 1px 0.69444vw 0 rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 1px 0.69444vw 0 rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 1px 0.69444vw 0 rgba(0, 0, 0, 0.3); }
@@ -529,7 +533,7 @@ body {
     width: 5vw;
     height: 4.44444vw; }
   .al-phone-box p {
-    color: #00447e;
+    color: #cfcfcf;
     padding-top: 0.69444vw;
     line-height: 2.36111vw;
     font-size: 1.66667vw;
@@ -539,7 +543,7 @@ body {
       font-family: Montserrat-Bold, sans-serif; }
 
 a.al-phone-num {
-  color: #00447e;
+  color: #cfcfcf;
   cursor: pointer;
   font-size: 2.5vw;
   line-height: 2.08333vw;
@@ -569,7 +573,7 @@ a.al-phone-num {
   line-height: 1.11111vw;
   border-radius: 0.27778vw;
   display: inline-block;
-  background-color: #00447e;
+  background-color: #4a4a4a;
   border: 1px solid rgba(207, 207, 207, 0.5);
   font-family: Montserrat-Regular, sans-serif;
   margin-bottom: 1.38889vw; }
@@ -584,7 +588,7 @@ a.al-phone-num {
 .wpcf7-form select {
   -webkit-appearance: none;
   position: relative;
-  background: #00447e url(assets/form-caret-down.png) 100% 50% no-repeat; }
+  background: #4a4a4a url(assets/form-caret-down.png) 100% 50% no-repeat; }
 .wpcf7-form textarea {
   width: 100%;
   color: #cfcfcf;
@@ -593,7 +597,7 @@ a.al-phone-num {
   line-height: 1.11111vw;
   padding: 0.97222vw 1.59722vw;
   border-radius: 0.41667vw;
-  background-color: #00447e;
+  background-color: #4a4a4a;
   border: 1px solid rgba(207, 207, 207, 0.5);
   font-family: Montserrat-Regular, sans-serif; }
   .wpcf7-form textarea::-webkit-input-placeholder {
@@ -998,6 +1002,8 @@ a.al-phone-num {
         width: 3.75vw !important; }
 
 .blog-detail-divider {
+  display: table;
+  height: 2px;
   border: solid 1px #4a4a4a;
   margin-bottom: 0;
   margin-top: 0;
@@ -1335,37 +1341,60 @@ a.al-phone-num {
     height: 42px; }
 
   #mre-about-us {
-    height: 800px; }
-    #mre-about-us .about-us-title {
-      font-size: 36px;
-      line-height: 40px; }
-    #mre-about-us .about-us-image {
-      margin: 115px 0 40px 0;
-      width: 140px;
-      height: 140px;
-      border-radius: 50%; }
-    #mre-about-us .about-us-text {
-      font-size: 20px;
-      line-height: 28px;
-      width: 767px;
-      margin: 20px auto 0 auto; }
-    #mre-about-us .about-us-numbers {
-      height: 140px;
-      padding: 40px 38px;
-      width: 970px;
-      margin: 50px auto 0;
-      border-radius: 18px;
-      background-color: rgba(247, 247, 247, 0.1);
-      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
-      #mre-about-us .about-us-numbers li {
-        width: 210px;
-        margin: 0 37.5px; }
-        #mre-about-us .about-us-numbers li .numbers {
-          font-size: 45px;
-          line-height: 30px; }
-        #mre-about-us .about-us-numbers li .title {
-          font-size: 25px;
-          line-height: 30px; }
+    position: relative;
+    height: 721px;
+    background-size: cover;
+    text-align: center; }
+    #mre-about-us .overlay {
+      background: rgba(0, 0, 0, 0.83);
+      position: absolute;
+      height: 100%;
+      width: 100%; }
+      #mre-about-us .overlay .about-us-image {
+        margin: 70px 0 36px 0;
+        width: 268px;
+        height: 105px; }
+      #mre-about-us .overlay .about-us-text {
+        font-family: Montserrat-Regular, sans-serif;
+        font-size: 20px;
+        line-height: 30px;
+        color: #cfcfcf;
+        width: 767px;
+        margin: 0 auto; }
+      #mre-about-us .overlay .about-us-numbers {
+        list-style: none;
+        height: 140px;
+        padding: 40px 38px;
+        width: 970px;
+        margin: 40px auto 58px;
+        border-radius: 18px;
+        background-color: rgba(247, 247, 247, 0.1);
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
+        #mre-about-us .overlay .about-us-numbers li {
+          display: inline-block;
+          width: 210px;
+          margin: 0 37.5px; }
+          #mre-about-us .overlay .about-us-numbers li .numbers {
+            font-size: 45px;
+            line-height: 30px;
+            font-family: Montserrat-Bold, sans-serif;
+            color: #ffffff; }
+          #mre-about-us .overlay .about-us-numbers li .title {
+            font-size: 25px;
+            line-height: 30px;
+            font-family: Montserrat-Regular, sans-serif;
+            color: #ffffff; }
+      #mre-about-us .overlay .about-us-button {
+        width: 216px;
+        height: 50px;
+        border-radius: 10px;
+        border: solid 2px #ffffff;
+        padding: 15px 61px;
+        color: #ffffff;
+        font-size: 18px;
+        line-height: 20px; }
+        #mre-about-us .overlay .about-us-button:hover {
+          text-decoration: none; }
 
   #mre-partners {
     height: 700px; }
@@ -1386,11 +1415,11 @@ a.al-phone-num {
     #mre-partners .partner-left img {
       width: 212px;
       height: 71px;
-      margin-top: 43px; }
+      margin-top: 46px; }
     #mre-partners .partner-right img {
       width: 110px;
       height: 117px;
-      margin-top: 20px; }
+      margin-top: 30px; }
 
   #mre-offices {
     height: 450px; }
@@ -1480,7 +1509,7 @@ a.al-phone-num {
   .wpcf7-form select {
     -webkit-appearance: none;
     position: relative;
-    background: #00447e url(assets/form-caret-down.png) 100% 50% no-repeat; }
+    background: #4a4a4a url(assets/form-caret-down.png) 100% 50% no-repeat; }
   .wpcf7-form textarea {
     width: 100%;
     font-size: 16px;
@@ -2028,37 +2057,41 @@ a.al-phone-num {
     height: 3.25521vw; }
 
   #mre-about-us {
-    height: 90.625vw; }
-    #mre-about-us .about-us-title {
-      font-size: 3.125vw;
-      line-height: 3.77604vw; }
-    #mre-about-us .about-us-image {
-      margin: 5.20833vw 0 3.90625vw 0;
-      width: 15.625vw;
-      height: 15.625vw;
-      border-radius: 50%; }
-    #mre-about-us .about-us-text {
+    height: 79.81771vw; }
+    #mre-about-us .overlay .about-us-image {
+      margin: 6.51042vw 0 3.90625vw 0;
+      width: 26.04167vw;
+      height: 10.15625vw; }
+    #mre-about-us .overlay .about-us-text {
       font-size: 1.82292vw;
       line-height: 2.60417vw;
       width: 63.54167vw;
       margin: 0 auto; }
-    #mre-about-us .about-us-numbers {
+    #mre-about-us .overlay .about-us-numbers {
       height: 15.625vw;
       padding: 3.90625vw 3.51563vw;
       width: 85.67708vw;
-      margin: 6.51042vw auto 0;
+      margin: 4.81771vw auto 6.51042vw;
       border-radius: 2.34375vw;
       background-color: rgba(247, 247, 247, 0.1);
       box-shadow: 0 6px 1.30208vw 0 rgba(0, 0, 0, 0.3); }
-      #mre-about-us .about-us-numbers li {
+      #mre-about-us .overlay .about-us-numbers li {
         width: 22.52604vw;
         margin: 0 1.6276vw; }
-        #mre-about-us .about-us-numbers li .numbers {
+        #mre-about-us .overlay .about-us-numbers li .numbers {
           font-size: 3.90625vw;
           line-height: 3.90625vw; }
-        #mre-about-us .about-us-numbers li .title {
+        #mre-about-us .overlay .about-us-numbers li .title {
           font-size: 2.86458vw;
           line-height: 3.90625vw; }
+    #mre-about-us .overlay .about-us-button {
+      width: 26.04167vw;
+      height: 6.51042vw;
+      border-radius: 1.30208vw;
+      border: solid 2px #ffffff;
+      padding: 1.95313vw 8.72396vw;
+      font-size: 2.08333vw;
+      line-height: 2.60417vw; }
 
   #mre-partners {
     height: 91.14583vw; }
@@ -2715,38 +2748,43 @@ a.al-phone-num {
     height: 7.77778vw; }
 
   #mre-about-us {
-    height: 264.72222vw; }
-    #mre-about-us .about-us-title {
-      font-size: 6.66667vw;
-      line-height: 6.66667vw; }
-    #mre-about-us .about-us-image {
-      margin: 11.11111vw 0 8.33333vw 0;
-      width: 27.77778vw;
-      height: 27.77778vw;
-      border-radius: 50%; }
-    #mre-about-us .about-us-text {
+    height: 204.44444vw; }
+    #mre-about-us .overlay .about-us-image {
+      margin: 13.88889vw 0 8.33333vw 0;
+      width: 44.44444vw;
+      height: 17.22222vw; }
+    #mre-about-us .overlay .about-us-text {
       font-size: 3.33333vw;
       line-height: 5.55556vw;
       width: 71.66667vw;
       margin: 0 auto; }
-    #mre-about-us .about-us-numbers {
-      height: 94.44444vw;
-      padding: 2.77778vw 6.66667vw 12.5vw 6.66667vw;
+    #mre-about-us .overlay .about-us-numbers {
+      height: 91.66667vw;
+      padding: 2.77778vw 6.66667vw 9.72222vw 6.66667vw;
       width: 86.11111vw;
-      margin: 13.88889vw auto 0;
+      margin: 5.55556vw auto 0;
       border-radius: 5vw;
       background-color: rgba(247, 247, 247, 0.1);
       box-shadow: 0 6px 2.77778vw 0 rgba(0, 0, 0, 0.3); }
-      #mre-about-us .about-us-numbers li {
+      #mre-about-us .overlay .about-us-numbers li {
         display: block;
         width: 72.77778vw;
         margin: 35px 0 0 0; }
-        #mre-about-us .about-us-numbers li .numbers {
+        #mre-about-us .overlay .about-us-numbers li .numbers {
           font-size: 8.33333vw;
           line-height: 8.33333vw; }
-        #mre-about-us .about-us-numbers li .title {
+        #mre-about-us .overlay .about-us-numbers li .title {
           font-size: 6.66667vw;
           line-height: 8.33333vw; }
+    #mre-about-us .overlay .about-us-button {
+      display: none;
+      width: 55.55556vw;
+      height: 13.88889vw;
+      border-radius: 2.77778vw;
+      border: solid 2px #ffffff;
+      padding: 4.16667vw 18.61111vw;
+      font-size: 4.44444vw;
+      line-height: 5.55556vw; }
 
   #mre-partners {
     height: 133.33333vw; }
