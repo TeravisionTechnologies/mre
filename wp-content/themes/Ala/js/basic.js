@@ -41,18 +41,8 @@ jQuery(document).ready(function() {
     effect: 'fade'
   });
 
-  $("#go-to-top").click(function () {
-    $('html,body').animate({scrollTop: 0}, 'slow');
-    return false;
-  });
-
-  $(window).scroll(function (event) {
-    var scroll = $(window).scrollTop();
-    if (scroll > 900)  {
-      $('.al-go-top-div').css('display', 'block');
-    } else {
-      $('.al-go-top-div').css('display', 'none');
-    }
+  $(".footer-top").click(function () {
+    $("html, body").animate({scrollTop: 0}, 2000);
   });
 
   // Add Swiper Flags

@@ -17,7 +17,7 @@ $footer_info = get_post_meta($footer_query[0]->ID);
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.png"
                          alt="Llamanos Ala19">
                     <p>Llámanos para asesoría <b>inmediata</b></p>
-                    <a href="tel:+17863762222" class="al-phone-num">+1786 376.22.22</a>
+                    <a href="tel:+17864775091" class="al-phone-num">+1 786 477.5091</a>
                 </div>
             </div>
             <div class="col-xs-12 col-md-8 al-contact-form-div">
