@@ -155,4 +155,4 @@ $categories = get_categories(
             </div>
         </section>
     </section>
-<?php get_footer(); ?>
+<?php get_footer(); ?> 
