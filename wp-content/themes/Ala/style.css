@@ -512,7 +512,8 @@ body {
   height: 42.56944vw;
   padding: 4.16667vw 9.375vw;
   background-repeat: no-repeat;
-  background-position-y: bottom; }
+  background-position-y: bottom;
+  box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.5); }
   .al-contact-div .al-contact-text {
     color: #000000;
     font-size: 2.5vw;
@@ -2107,8 +2108,7 @@ body {
   width: 100% !important; }
 
 .menu-button {
-  padding: 25px 16px !important;
-  margin: 2px; }
+  padding: 25px 16px !important; }
 
 #menu-primary {
   margin-top: 6px !important; }
