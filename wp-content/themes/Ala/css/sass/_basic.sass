@@ -2,6 +2,7 @@
 .container-ala
   width: get-vw-desktop(1170px)
   height: 100%
+  margin: 0 auto
 
 .no-padding
   padding: 0
@@ -322,98 +323,7 @@ body
 
 
 // 
-// // Properties
-.al-properties-section
-  .properties-country-filter
-    color: #7f8182
-    display: inline-block
-    font-family: 'Archivo', sans-serif
-    font-size: 1.3888888888888888vw
-    line-height: 1.3888888888888888vw
-    margin: 4.583333333333333vw 1.0416666666666667vw 4.166666666666667vw 0
-    padding-left: 0
-    width: 13.88888888888889vw
-  .filter-left
-    border-right: 2px solid #7f8182
-    margin: 4.583333333333333vw 0 4.166666666666667vw 1.0416666666666667vw
-    opacity: 0.5
-    padding-right: 0
-    width: 13.88888888888889vw
-    padding-left: 0
-  .properties-filter
-    border: solid 2px rgba(74, 74, 74, 0.4)
-    font-family: 'Montserrat', sans-serif
-    font-size: 1.1111111111111112vw
-    height: 3.194444444444444vw
-    width: 18.125vw
-  .properties-list
-    margin-top: 2.7777777777777777vw
-    .property-image
-      background-size: cover
-      position: relative
-      width: 25vw
-      height: 24.305555555555554vw
-      margin-bottom: 3.4722222222222223vw
-      margin-right: 3.125vw
-      &:nth-child(3n+3)
-        margin: 0
-      &:hover
-        .property-overlay
-          opacity: 1
-      .property-overlay
-        cursor: pointer
-        opacity: 0
-        position: absolute
-        width: 100%
-        height: 100%
-        background: rgba(0, 0, 0, 0.8)
-        transition: all ease .3s
-        -moz-transition: all ease .3s
-        -ms-transition: all ease .3s
-        -o-transition: all ease .3s
-        -webkit-transition: all ease .3s
-        .property-title
-          font-family: 'Archivo', sans-serif
-          font-size: 1.3888888888888888vw
-          font-weight: bold
-          color: $white
-          margin: 8.958333333333334vw 0 0.41666666666666663vw 0
-        .property-address, .property-city
-          font-family: 'Archivo', sans-serif
-          font-size: 0.9722222222222222vw
-          line-height: 1.25vw
-          color: $white
-          opacity: 0.5
-          margin: 0
-        .property-category
-          font-family: 'Archivo', sans-serif
-          margin-top: 0.6944444444444444vw
-          font-size: 0.8333333333333333vw
-          line-height: 1.25vw
-          font-weight: bold
-          font-style: italic
-          color: $white
-          opacity: 0.7
-#al-pagination
-  clear: both
-  text-align: center
-  .pagination
-    margin: 2.0833333333333335vw 0 6.944444444444445vw 0
-    li
-      font-size: 1.1111111111111112vw
-      line-height: 1.4583333333333333vw
-      a
-        background: $white
-        color: #000
-        height: 2.9166666666666665vw
-        padding-top: 0.6944444444444444vw
-        width: 2.8472222222222223vw
-      .pagination-active
-        background: black
-        color: $white
-      .pagination-previous
-        color: black
-// END Properties
+
 
 
 
@@ -457,6 +367,100 @@ body
         left: 50%
         transform: translateX(-50%)
 // END Projects
+
+// Properties
+.al-properties-section
+  .properties-country-filter
+    color: $grey-1
+    display: inline-block
+    font-family: Archivo, sans-serif
+    font-size: get-vw-desktop(20px)
+    line-height: get-vw-desktop(20px)
+    margin: get-vw-desktop(66px) get-vw-desktop(15px) get-vw-desktop(60px) 0
+    padding-left: 0
+    width: get-vw-desktop(130px)
+  .filter-left
+    border-right: 2px solid $grey-1
+    margin: get-vw-desktop(66px) 0 get-vw-desktop(60px) get-vw-desktop(15px)
+    opacity: 0.5
+    padding-right: 0
+    width: get-vw-desktop(130px)
+    padding-left: 0
+  .btn-filter
+    border: solid 2px rgba(74, 74, 74, 0.4)
+    font-family: Archivo, sans-serif
+    font-size: get-vw-desktop(16px)
+    line-height: get-vw-desktop(15px)
+    height: get-vw-desktop(46px)
+    width: get-vw-desktop(261px)
+  .properties-list
+    margin-top: get-vw-desktop(40px)
+    .property-image
+      background-size: cover
+      position: relative
+      width: get-vw-desktop(360px)
+      height: get-vw-desktop(350px)
+      margin-bottom: get-vw-desktop(50px)
+      margin-right: get-vw-desktop(45px)
+      &:nth-child(3n+3)
+        margin: 0
+      &:hover
+        .property-overlay
+          opacity: 1
+      .property-overlay
+        cursor: pointer
+        opacity: 0
+        position: absolute
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, 0.8)
+        transition: all ease .3s
+        -moz-transition: all ease .3s
+        -ms-transition: all ease .3s
+        -o-transition: all ease .3s
+        -webkit-transition: all ease .3s
+        .property-title
+          font-family: Archivo, sans-serif
+          font-size: get-vw-desktop(20px)
+          font-weight: bold
+          color: $white
+          margin: get-vw-desktop(129px) 0 get-vw-desktop(6px) 0
+        .property-address, .property-city
+          font-family: Archivo, sans-serif
+          font-size: get-vw-desktop(14px)
+          line-height: get-vw-desktop(18px)
+          color: $white
+          opacity: 0.5
+          margin: 0
+        .property-category
+          font-family: 'Archivo', sans-serif
+          margin-top: get-vw-desktop(10px)
+          font-size: get-vw-desktop(12px)
+          line-height: get-vw-desktop(18px)
+          font-weight: bold
+          font-style: italic
+          color: $white
+          opacity: 0.7
+#al-pagination
+  clear: both
+  text-align: center
+  .pagination
+    margin: get-vw-desktop(30px) 0 get-vw-desktop(100px) 0
+    li
+      font-size: get-vw-desktop(16px)
+      line-height: get-vw-desktop(21px)
+      a
+        background: $white
+        color: $black
+        height: get-vw-desktop(42px)
+        padding-top: get-vw-desktop(10px)
+        width: get-vw-desktop(41px)
+      .pagination-active
+        background: $black
+        color: $white
+      .pagination-previous
+        color: $black
+// END Properties
 
 // Partners
 .al-partners-section

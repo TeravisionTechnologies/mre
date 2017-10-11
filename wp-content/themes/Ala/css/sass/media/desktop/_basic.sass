@@ -203,72 +203,7 @@ body
 
 
 
-// Properties
-.al-properties-section
-  .properties-country-filter
-    font-size: 20px
-    line-height: 20px
-    margin: 66px 15px 60px 0
-    padding-left: 0
-    width: 200px
-  .filter-left
-    border-right: 2px solid #7f8182
-    margin: 66px 0 60px 15px
-    opacity: 0.5
-    padding-right: 0
-    width: 200px
-    padding-left: 0
-  .properties-filter
-    border: solid 2px rgba(74, 74, 74, 0.4)
-    font-size: 16px
-    height: 46px
-    width: 261px
-  .properties-list
-    margin-top: 40px
-    .property-image
-      width: 360px
-      height: 350px
-      margin-bottom: 50px
-      margin-right: 45px
-      &:nth-child(3n+3)
-        margin: 0
-      &:hover
-        .property-overlay
-          opacity: 1
-      .property-overlay
-        opacity: 0
-        width: 100%
-        height: 100%
-        background: rgba(0, 0, 0, 0.8)
-        transition: all ease .3s
-        -moz-transition: all ease .3s
-        -ms-transition: all ease .3s
-        -o-transition: all ease .3s
-        -webkit-transition: all ease .3s
-        .property-title
-          font-size: 20px
-          margin: 129px 0 6px 0
-        .property-address, .property-city
-          font-size: 14px
-          line-height: 18px
-          opacity: 0.5
-          margin: 0
-        .property-category
-          margin-top: 10px
-          font-size: 12px
-          line-height: 18px
-          opacity: 0.7
-#al-pagination
-  .pagination
-    margin: 30px 0 100px 0
-    li
-      font-size: 16px
-      line-height: 21px
-      a
-        height: 42px
-        padding-top: 10px
-        width: 41px
-// END Properties
+
 
 
 
@@ -298,6 +233,69 @@ body
         left: 50%
         transform: translateX(-50%)
 // END Projects
+
+// Properties
+.al-properties-section
+  .properties-country-filter
+    font-size: 20px
+    line-height: 20px
+    margin: 66px 15px 60px 0
+    padding-left: 0
+    width: 130px
+  .filter-left
+    border-right: 2px solid $grey-1
+    margin: 66px 0 60px 15px
+    opacity: 0.5
+    padding-right: 0
+    width: 130px
+    padding-left: 0
+  .btn-filter
+    border: solid 2px rgba(74, 74, 74, 0.4)
+    font-size: 16px
+    line-height: 15px
+    height: 46px
+    width: 261px
+  .properties-list
+    margin-top: 40px
+    .property-image
+      width: 360px
+      height: 350px
+      margin-bottom: 50px
+      margin-right: 45px
+      &:nth-child(3n+3)
+        margin: 0
+      &:hover
+        .property-overlay
+          opacity: 1
+      .property-overlay
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, 0.8)
+        .property-title
+          font-size: 20px
+
+          margin: 129px 0 6px 0
+        .property-address, .property-city
+          font-size: 14px
+          line-height: 18px
+          opacity: 0.5
+          margin: 0
+        .property-category
+          margin-top: 10px
+          font-size: 12px
+          line-height: 18px
+          opacity: 0.7
+#al-pagination
+  .pagination
+    margin: 30px 0 100px 0
+    li
+      font-size: 16px
+      line-height: 21px
+      a
+        height: 42px
+        padding-top: 10px
+        width: 41px
+// END Properties
 
 // Partners
 .al-partners-section

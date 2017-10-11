@@ -198,44 +198,46 @@ body
 
 // Properties
 .al-properties-section
-  .container-properties
-    width: 100%
-    padding: 0 2.7777777777777777vw
   .properties-country-filter
-    font-size: 4.444444444444445vw
-    line-height: 6.944444444444445vw
-    margin: 8.88888888888889vw 4.166666666666667vw 9.444444444444445vw 0
+    font-size: get-vw-mobile(16px)
+    line-height: get-vw-mobile(17px)
+    margin: get-vw-mobile(32px) get-vw-mobile(15px) get-vw-mobile(34px) 0
     padding-left: 0
-    width: 33.333333333333336vw
+    width: get-vw-mobile(100px)
   .filter-left
-    border-right: 2px solid #7f8182
-    margin: 8.88888888888889vw 0 9.444444444444445vw 4.166666666666667vw
+    border-right: 2px solid $grey-1
+    margin: get-vw-mobile(32px) 0 get-vw-mobile(34px) get-vw-mobile(15px)
     opacity: 0.5
     padding-right: 0
-    width: 33.333333333333336vw
+    width: get-vw-mobile(100px)
     padding-left: 0
-  .properties-filter
+  .btn-filter
     border: solid 2px rgba(74, 74, 74, 0.4)
-    font-size: 3.333333333333333vw
-    height: 10.555555555555555vw
-    line-height: 4.166666666666667vw
-    width: 86.11111111111111vw
-    -webkit-appearance: none
+    font-size: get-vw-mobile(12px)
+    line-height: get-vw-mobile(15px)
+    height: get-vw-mobile(38px)
+    width: get-vw-mobile(310px)
+    .caret
+      right: get-vw-mobile(16px)
+      top: get-vw-mobile(17px)
+      position: absolute
   .properties-list
-    margin-top: 8.333333333333334vw
+    margin-top: get-vw-mobile(30px)
     .property-image
-      width: 86.11111111111111vw
-      height: 83.61111111111111vw
-      margin-bottom: 5.277777777777778vw
+      width: get-vw-mobile(310px)
+      height: get-vw-mobile(301px)
+      margin-bottom: get-vw-mobile(19px)
       margin-right: 0
       &:nth-child(3n+3)
-        margin-right: 0
-        margin-bottom: 5.555555555555555vw
+        margin: 0
+      &:hover
+        .property-overlay
+          opacity: 1
       .property-overlay
         opacity: 1
         bottom: 0
         width: 100%
-        height: 29.444444444444443vw
+        height: get-vw-mobile(106px)
         background: rgba(0, 0, 0, 0.8)
         transition: all ease .3s
         -moz-transition: all ease .3s
@@ -243,33 +245,29 @@ body
         -o-transition: all ease .3s
         -webkit-transition: all ease .3s
         .property-title
-          font-size: 5vw
-          margin: 4.444444444444445vw 0 1.1111111111111112vw 0
+          font-size: get-vw-mobile(18px)
+          margin: get-vw-mobile(16px) 0 get-vw-mobile(4px) 0
         .property-address, .property-city
-          font-size: 3.888888888888889vw
-          line-height: 4.166666666666667vw
+          font-size: get-vw-mobile(14px)
+          line-height: get-vw-mobile(16px)
           opacity: 0.5
           margin: 0
         .property-category
-          margin-top: 2.7777777777777777vw
-          font-size: 3.333333333333333vw
-          line-height: 3.333333333333333vw
+          margin-top: get-vw-mobile(10px)
+          font-size: get-vw-mobile(12px)
+          line-height: get-vw-mobile(10px)
           opacity: 0.6
 #al-pagination
   .pagination
-    margin: 16.666666666666668vw 0 22.22222222222222vw 0
+    margin: get-vw-mobile(40px) 0 get-vw-mobile(80px) 0
     li
-      font-size: 4.444444444444445vw
-      line-height: 5.833333333333333vw
+      font-size: get-vw-mobile(16px)
+      line-height: get-vw-mobile(21px)
       a
-        height: 9.722222222222221vw
-        padding-top: 1.9444444444444444vw
-        width: 9.722222222222221vw
+        height: get-vw-mobile(35px)
+        padding-top: get-vw-mobile(10px)
+        width: get-vw-mobile(35px)
 // END Properties
-
-
-
-
 
 // Projects
 .al-projects
