@@ -7,6 +7,15 @@
  */
 get_header();
 
+$postList = get_posts(
+    array(
+        'post_type' => 'post',
+        'numberposts' => -1,
+        'post_status' => 'publish',
+        'order' => 'ASC',
+    )
+);
+
 $postRecommended = get_posts(
     array(
         'post_type' => 'post',
@@ -28,7 +37,6 @@ $categories = get_categories(
         'order' => 'ASC',
     )
 );
-
 ?>
     <section class="container-fluid no-padding">
         <section class="col-xs-12" id="blog-list-categories">
@@ -46,13 +54,10 @@ $categories = get_categories(
                         foreach ($categories as $category) {
                             $name = $category->name;
                             $slug = $category->slug;
-                            $category_link = get_category_link($category->cat_ID );
                             ?>
                             <div class="swiper-slide" name="<?php echo $name; ?>">
-                                <a href="<?php echo $category_link ?>">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/<?php echo $slug; ?>.png">
-                                    <div class="swiper-overlay"></div>
-                                </a>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/<?php echo $slug; ?>.png">
+                                <div class="swiper-overlay"></div>
                             </div>
                         <?php } ?>
                     </div>
@@ -70,9 +75,7 @@ $categories = get_categories(
                     <form action="<?php echo home_url() ?>">
                         <div class="input-group">
                             <i class="fa fa-search" aria-hidden="true"></i>
-                            <input type="text" class="form-control" id="search" name="s"
-                                   value="<?php echo get_query_var('s'); ?>"
-                                   placeholder="<?php _e('Buscar...', 'mre') ?>">
+                            <input type="text" class="form-control" id="search" name="s" value="<?php echo get_query_var('s'); ?>" placeholder="<?php _e('Buscar...', 'mre') ?>">
                         </div>
                         <input type="hidden" name="post_type[]" value="post">
                     </form>
@@ -86,7 +89,8 @@ $categories = get_categories(
                         <option>Fecha</option>
                     </select>
                 </div>
-                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                <?php
+                foreach ($postList as $post) { ?>
                     <div class="col-xs-12 col-sm-6 blog-post">
                         <div class="blog-image"
                              style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID); ?>')">
@@ -106,14 +110,26 @@ $categories = get_categories(
                             <p class="blog-text-summary"><?php echo $post->post_excerpt ?></p>
                         </div>
                     </div>
-                <?php endwhile; ?>
-                <?php endif; ?>
-                <nav id="blog-pagination" class="text-center">
-                    <?php
-                    if (function_exists('wp_paginate')) {
-                        wp_paginate();
-                    }
-                    ?>
+                <?php } ?>
+                <nav id="blog-pagination">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+        <span aria-hidden="true"
+              class="pagination-previous">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#" class="pagination-active">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
                 </nav>
             </div>
         </section>

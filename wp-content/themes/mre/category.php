@@ -39,7 +39,7 @@ $categories = get_categories(
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" name="Todas las categorías">
                             <img
-                                    src="<?php echo get_template_directory_uri(); ?>/assets/todas.png">
+                                src="<?php echo get_template_directory_uri(); ?>/assets/todas.png">
                             <div class="swiper-overlay"></div>
                         </div>
                         <?php
@@ -99,9 +99,9 @@ $categories = get_categories(
                             echo $link; ?>"><h1 class="blog-text-title"><?php echo $post->post_title; ?></h1></a>
                             <h2 class="blog-text-author">Por: <?php $author = get_user_by('ID', $post->post_author);
                                 echo $author->display_name ?><span
-                                        class="blog-text-date"><?php $date = strtotime($post->post_date);
+                                    class="blog-text-date"><?php $date = strtotime($post->post_date);
                                     echo date('d F, Y', $date) ?></span><span
-                                        class="blog-text-comments hidden-xs hidden-sm">- <?php echo $post->comment_count ?>
+                                    class="blog-text-comments hidden-xs hidden-sm">- <?php echo $post->comment_count ?>
                                     Comments</span></h2>
                             <p class="blog-text-summary"><?php echo $post->post_excerpt ?></p>
                         </div>
@@ -140,9 +140,9 @@ $categories = get_categories(
                                         <h2 class="blog-most-viewed-text-author">
                                             Por: <?php $author = get_user_by('ID', $post->post_author);
                                             echo $author->display_name ?><span
-                                                    class="blog-most-viewed-text-date"><?php $date = strtotime($post->post_date);
+                                                class="blog-most-viewed-text-date"><?php $date = strtotime($post->post_date);
                                                 echo date('d F, Y', $date) ?></span><span
-                                                    class="blog-most-viewed-text-comments">- <?php echo $post->comment_count ?>
+                                                class="blog-most-viewed-text-comments">- <?php echo $post->comment_count ?>
                                                 Comments</span></h2>
                                     </div>
                                 </div>
