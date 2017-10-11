@@ -53,11 +53,11 @@ $footer_info = get_post_meta($footer_query[0]->ID);
         </div>
         <div class="al-menu-social">
             <ul class="menu-social-icons">
-                <li class="menu-social-icon"><a href="https://www.linkedin.com/company/11285534/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                <li class="menu-social-icon"><a href="https://www.facebook.com/MerandRealEstate/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li class="menu-social-icon"><a href="https://www.instagram.com/grupomre/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li class="menu-social-icon"><a href="https://twitter.com/grupomre"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li class="menu-social-icon"><a href="https://www.youtube.com/channel/UCj1GOp1JCfAaSmBdQn5uU9w?view_as=subscriber"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                <li class="menu-social-icon"><a href="https://www.linkedin.com/company/11285534/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li class="menu-social-icon"><a href="https://www.facebook.com/MerandRealEstate/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li class="menu-social-icon"><a href="https://www.instagram.com/grupomre/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li class="menu-social-icon"><a href="https://twitter.com/grupomre" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li class="menu-social-icon"><a href="https://www.youtube.com/channel/UCj1GOp1JCfAaSmBdQn5uU9w?view_as=subscriber" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
             </ul>
         </div>
     </div>
