@@ -444,7 +444,7 @@
     <div id="ala-header">
         <nav id="navbar" class="navbar navbar-default navbar-fixed-top">
             <div class="container">
-                <div id="c-button--slide-left" class="menu-button c-button pull-right c-menu__close">
+                <div id="c-button--slide-left" class="menu-button c-button pull-right">
                     <div id="nav-icon4">
                         <span></span>
                         <span></span>

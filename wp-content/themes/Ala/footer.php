@@ -41,7 +41,14 @@ $footer_info = get_post_meta($footer_query[0]->ID);
 </div>
 
 <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
-    <button class="c-menu__close" style="display: none;">&larr; Close Menu</button>
+    <!--<button class="c-menu__close" style="display: none;">&larr; Close Menu</button>-->
+    <div id="c-button--slide-left" class="menu-button c-button pull-right c-menu__close c-button-close">
+        <div id="nav-icon4" class="open">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
     <div class="menu">
         <?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_class' => "al-menu c-menu__items")); ?>
         <div class="al-menu-language">
