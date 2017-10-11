@@ -28,6 +28,7 @@ $categories = get_categories(
         'order' => 'ASC',
     )
 );
+
 ?>
     <section class="container-fluid no-padding">
         <section class="col-xs-12" id="blog-list-categories">
@@ -37,17 +38,21 @@ $categories = get_categories(
                 <div class="swiper-container swiper-container-blog-categories">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" name="Todas las categorías">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/todas.png">
+                            <img
+                                    src="<?php echo get_template_directory_uri(); ?>/assets/todas.png">
                             <div class="swiper-overlay"></div>
                         </div>
                         <?php
                         foreach ($categories as $category) {
                             $name = $category->name;
                             $slug = $category->slug;
+                            $category_link = get_category_link($category->cat_ID );
                             ?>
                             <div class="swiper-slide" name="<?php echo $name; ?>">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/<?php echo $slug; ?>.png">
-                                <div class="swiper-overlay"></div>
+                                <a href="<?php echo $category_link ?>">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/<?php echo $slug; ?>.png">
+                                    <div class="swiper-overlay"></div>
+                                </a>
                             </div>
                         <?php } ?>
                     </div>
@@ -81,7 +86,6 @@ $categories = get_categories(
                         <option>Fecha</option>
                     </select>
                 </div>
-
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                     <div class="col-xs-12 col-sm-6 blog-post">
                         <div class="blog-image"
@@ -104,14 +108,13 @@ $categories = get_categories(
                     </div>
                 <?php endwhile; ?>
                 <?php endif; ?>
-
                 <nav id="blog-pagination" class="text-center">
                     <?php
                     if (function_exists('wp_paginate')) {
                         wp_paginate();
-                    } ?>
+                    }
+                    ?>
                 </nav>
-
             </div>
         </section>
         <section class="col-xs-12" id="blog-recommended-posts"
@@ -152,4 +155,4 @@ $categories = get_categories(
             </div>
         </section>
     </section>
-<?php get_footer(); ?>
+<?php get_footer(); ?> 
