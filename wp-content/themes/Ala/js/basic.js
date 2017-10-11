@@ -274,9 +274,9 @@ jQuery(document).ready(function() {
 
 
     $('#c-button--slide-left').on('click', function(){
-        $('#navbar').toggleClass( 'push', 'push2');
+        //$('#navbar').toggleClass( 'push', 'push2');
     });
-    
+
 
 });
 
