@@ -279,43 +279,7 @@ body
 
 
 
-// Projects
-.al-projects
-  background: $black
-  color: $white
-  height: 8.333333333333334vw
-  margin-top: 0.2777777777777778vw
-  text-align: center
-  .al-project-list
-    height: 100%
-    width: 100%
-    .al-project-list-item
-      position: relative
-      margin: 0 1.8055555555555556vw
-      height: 100%
-      display: inline-block
-      text-align: center
-      width: 18.055555555555554vw
-      cursor: pointer
-      &:hover
-        text-decoration: none
-      .item-text
-        opacity: 0.4
-        font-family: 'Archivo', sans-serif
-        font-size: 1.5277777777777777vw
-        font-weight: bold
-        text-align: center
-        color: #ffffff
-        margin-top: 3.333333333333333vw
-      .item-active
-        opacity: 1
-      .triangle
-        opacity: 0
-        position: absolute
-        bottom: -1.0416666666666667vw
-        left: 50%
-        transform: translateX(-50%)
-// END Projects
+
 
 
 
@@ -351,7 +315,12 @@ body
 // 
 // 
 // 
-// 
+
+
+
+
+
+
 // 
 // // Properties
 .al-properties-section
@@ -448,7 +417,46 @@ body
 
 
 
-
+// Projects
+.al-projects
+  background: $black
+  color: $white
+  height: get-vw-desktop(120px)
+  margin-top: get-vw-desktop(3px)
+  text-align: center
+  .al-project-list
+    height: 100%
+    width: 100%
+    .al-project-list-item
+      position: relative
+      margin: 0 get-vw-desktop(26px)
+      height: 100%
+      display: inline-block
+      text-align: center
+      width: get-vw-desktop(260px)
+      cursor: pointer
+      &:hover
+        text-decoration: none
+      .item-text
+        opacity: 0.4
+        font-family: Archivo, sans-serif
+        font-size: get-vw-desktop(22px)
+        line-height: get-vw-desktop(24px)
+        font-weight: bold
+        text-align: center
+        color: $white
+        margin-top: get-vw-desktop(48px)
+      .item-active
+        opacity: 1
+      .triangle
+        width: get-vw-desktop(55px)
+        height: get-vw-desktop(16px)
+        opacity: 0
+        position: absolute
+        bottom: get-vw-desktop(-15px)
+        left: 50%
+        transform: translateX(-50%)
+// END Projects
 
 // Partners
 .al-partners-section

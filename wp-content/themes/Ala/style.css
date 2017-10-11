@@ -275,42 +275,6 @@ body {
   #ala-header .swiper-container-hero .swiper-button-next {
     right: 9.375vw; }
 
-.al-projects {
-  background: #000000;
-  color: #ffffff;
-  height: 8.33333vw;
-  margin-top: 0.27778vw;
-  text-align: center; }
-  .al-projects .al-project-list {
-    height: 100%;
-    width: 100%; }
-    .al-projects .al-project-list .al-project-list-item {
-      position: relative;
-      margin: 0 1.80556vw;
-      height: 100%;
-      display: inline-block;
-      text-align: center;
-      width: 18.05556vw;
-      cursor: pointer; }
-      .al-projects .al-project-list .al-project-list-item:hover {
-        text-decoration: none; }
-      .al-projects .al-project-list .al-project-list-item .item-text {
-        opacity: 0.4;
-        font-family: "Archivo", sans-serif;
-        font-size: 1.52778vw;
-        font-weight: bold;
-        text-align: center;
-        color: #ffffff;
-        margin-top: 3.33333vw; }
-      .al-projects .al-project-list .al-project-list-item .item-active {
-        opacity: 1; }
-      .al-projects .al-project-list .al-project-list-item .triangle {
-        opacity: 0;
-        position: absolute;
-        bottom: -1.04167vw;
-        left: 50%;
-        transform: translateX(-50%); }
-
 .al-text-white {
   color: #ffffff;
   font-size: 14px;
@@ -427,6 +391,45 @@ body {
         color: #ffffff; }
       #al-pagination .pagination li .pagination-previous {
         color: black; }
+
+.al-projects {
+  background: #000000;
+  color: #ffffff;
+  height: 8.33333vw;
+  margin-top: 0.20833vw;
+  text-align: center; }
+  .al-projects .al-project-list {
+    height: 100%;
+    width: 100%; }
+    .al-projects .al-project-list .al-project-list-item {
+      position: relative;
+      margin: 0 1.80556vw;
+      height: 100%;
+      display: inline-block;
+      text-align: center;
+      width: 18.05556vw;
+      cursor: pointer; }
+      .al-projects .al-project-list .al-project-list-item:hover {
+        text-decoration: none; }
+      .al-projects .al-project-list .al-project-list-item .item-text {
+        opacity: 0.4;
+        font-family: Archivo, sans-serif;
+        font-size: 1.52778vw;
+        line-height: 1.66667vw;
+        font-weight: bold;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 3.33333vw; }
+      .al-projects .al-project-list .al-project-list-item .item-active {
+        opacity: 1; }
+      .al-projects .al-project-list .al-project-list-item .triangle {
+        width: 3.81944vw;
+        height: 1.11111vw;
+        opacity: 0;
+        position: absolute;
+        bottom: -1.04167vw;
+        left: 50%;
+        transform: translateX(-50%); }
 
 .al-partners-section {
   z-index: 1;
@@ -827,45 +830,6 @@ body {
     width: 94px;
     height: 42px; }
 
-  .al-projects {
-    height: 120px;
-    margin-top: 4px; }
-    .al-projects .al-project-list {
-      height: 100%;
-      width: 100%; }
-      .al-projects .al-project-list .al-project-list-item {
-        margin: 0 26px;
-        height: 100%;
-        width: 260px; }
-        .al-projects .al-project-list .al-project-list-item .item-text {
-          opacity: 0.4;
-          font-size: 22px;
-          color: #ffffff;
-          margin-top: 48px; }
-        .al-projects .al-project-list .al-project-list-item .item-active {
-          opacity: 1; }
-        .al-projects .al-project-list .al-project-list-item .triangle {
-          opacity: 0;
-          bottom: -15px;
-          left: 50%;
-          transform: translateX(-50%); }
-
-  .al-contact-div {
-    padding-top: 57px; }
-
-  .al-contact-text, .al-contact-text-bold {
-    font-size: 36px; }
-
-  .al-phone-div {
-    padding-top: 40px; }
-    .al-phone-div .al-phone-box {
-      padding: 45px 30px; }
-      .al-phone-div .al-phone-box p {
-        font-size: 24px; }
-
-  a.al-phone-num {
-    font-size: 36px; }
-
   .al-properties-section .properties-country-filter {
     font-size: 20px;
     line-height: 20px;
@@ -928,6 +892,31 @@ body {
         height: 42px;
         padding-top: 10px;
         width: 41px; }
+
+  .al-projects {
+    height: 120px;
+    margin-top: 3px; }
+    .al-projects .al-project-list {
+      height: 100%;
+      width: 100%; }
+      .al-projects .al-project-list .al-project-list-item {
+        margin: 0 26px;
+        height: 100%;
+        width: 260px; }
+        .al-projects .al-project-list .al-project-list-item .item-text {
+          opacity: 0.4;
+          font-size: 22px;
+          line-height: 24px;
+          margin-top: 48px; }
+        .al-projects .al-project-list .al-project-list-item .item-active {
+          opacity: 1; }
+        .al-projects .al-project-list .al-project-list-item .triangle {
+          width: 55px;
+          height: 16px;
+          opacity: 0;
+          bottom: -15px;
+          left: 50%;
+          transform: translateX(-50%); }
 
   .al-partners-section {
     z-index: 1;
@@ -1070,6 +1059,7 @@ body {
       font-size: 14px;
       line-height: 20px; }
     .al-footer-container .footer-top {
+      cursor: pointer;
       width: 50px;
       height: 50px;
       right: 140px;
@@ -1327,6 +1317,31 @@ body {
         height: 4.94792vw;
         padding-top: 1.04167vw;
         width: 4.81771vw; }
+
+  .al-projects {
+    height: 14.32292vw;
+    margin-top: 0.39063vw; }
+    .al-projects .al-project-list {
+      height: 100%;
+      width: 100%; }
+      .al-projects .al-project-list .al-project-list-item {
+        margin: 0 1.69271vw;
+        height: 100%;
+        width: 26.30208vw; }
+        .al-projects .al-project-list .al-project-list-item .item-text {
+          opacity: 0.4;
+          font-size: 2.34375vw;
+          line-height: 2.60417vw;
+          margin-top: 5.85938vw; }
+        .al-projects .al-project-list .al-project-list-item .item-active {
+          opacity: 1; }
+        .al-projects .al-project-list .al-project-list-item .triangle {
+          width: 5.20833vw;
+          height: 1.5625vw;
+          opacity: 0;
+          bottom: -1.30208vw;
+          left: 50%;
+          transform: translateX(-50%); }
 
   .al-partners-section {
     height: 31.25vw;
@@ -1786,6 +1801,31 @@ body {
         height: 9.72222vw;
         padding-top: 1.94444vw;
         width: 9.72222vw; }
+
+  .al-projects {
+    height: 22.22222vw;
+    margin-top: 0.83333vw; }
+    .al-projects .al-project-list {
+      height: 100%;
+      width: 100%; }
+      .al-projects .al-project-list .al-project-list-item {
+        margin: 0 4.16667vw;
+        height: 100%;
+        width: 20.83333vw; }
+        .al-projects .al-project-list .al-project-list-item .item-text {
+          opacity: 0.4;
+          font-size: 3.88889vw;
+          line-height: 5vw;
+          margin-top: 6.66667vw; }
+        .al-projects .al-project-list .al-project-list-item .item-active {
+          opacity: 1; }
+        .al-projects .al-project-list .al-project-list-item .triangle {
+          width: 5.55556vw;
+          height: 2.22222vw;
+          opacity: 0;
+          bottom: -1.94444vw;
+          left: 50%;
+          transform: translateX(-50%); }
 
   .al-partners-section {
     height: 46.94444vw;
