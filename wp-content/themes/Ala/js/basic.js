@@ -264,7 +264,7 @@ jQuery(document).ready(function() {
     });
 
     $('#nav-icon4').click(function(){
-        $(this).toggleClass('open');
+        //$(this).toggleClass('open'); 
     });
 
     /*if($('body:not(.has-active-menu)' )){
