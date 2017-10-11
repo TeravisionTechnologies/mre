@@ -1,9 +1,10 @@
 jQuery(document).ready(function() {
 
+
   // Header Swiper
-  var toggleMenu = function() {
+  /*var toggleMenu = function() {
     if (swiperHeader.previousIndex == 0) {
-      swiperHeader.slidePrev()
+      swiperHeader.slidePrev();
     }
   }
     , menuButton = document.getElementsByClassName('menu-button')[0]
@@ -26,8 +27,8 @@ jQuery(document).ready(function() {
         menuButton.addEventListener('click', toggleMenu, false);
       }
     }
-    , slideToClickedSlide: true
-  });
+     , simulateTouch: false
+  });*/
 
   // Hero Swiper
   var swiperHero = new Swiper('.swiper-container-hero', {
@@ -100,20 +101,21 @@ jQuery(document).ready(function() {
     $(this).css('opacity', 1);
   });
 
+    $("#menu-contact").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#contact-us").offset().top
+        }, 2000);
+    });
 
-  $("#menu-contact").click(function() {
-    $('html, body').animate({
-      scrollTop: $("#contact-us").offset().top
-    }, 2000);
-  });
-  $("#menu-projects").click(function() {
-    $('html, body').animate({
-      scrollTop: $(".al-properties-section").offset().top
-    }, 2000);
-  });
+  /*$(".menu-button").click(function() {
+      if (swiperHeader.previousIndex == 0) {
+          swiperHeader.slideNext();
+          swiperHeader.update();
+      }
+  });*/
 
     //Slider Amenities
-    
+
     $("#myModal").on('show.bs.modal', function () {
         setTimeout(function () {
             var galleryTop = new Swiper('.gallery-top', {
@@ -121,7 +123,7 @@ jQuery(document).ready(function() {
                 prevButton: '.swiper-button-prev',
                 spaceBetween: 10,
                 loop: true,
-                loopedSlides: 5, //looped slides should be the same     
+                loopedSlides: 5, //looped slides should be the same
             });
             var galleryThumbs = new Swiper('.gallery-thumbs', {
                 spaceBetween: 10,
@@ -135,7 +137,7 @@ jQuery(document).ready(function() {
             galleryThumbs.params.control = galleryTop;
         }, 500);
     });
-    
+
     $("#myModalDetails").on('show.bs.modal', function () {
         setTimeout(function () {
             var galleryTop = new Swiper('.gallery-top-details', {
@@ -143,7 +145,7 @@ jQuery(document).ready(function() {
                 prevButton: '.swiper-button-prev',
                 spaceBetween: 10,
                 loop: true,
-                loopedSlides: 5, //looped slides should be the same     
+                loopedSlides: 5, //looped slides should be the same
             });
             var galleryThumbs = new Swiper('.gallery-thumbs-details', {
                 spaceBetween: 10,
@@ -157,13 +159,14 @@ jQuery(document).ready(function() {
             galleryThumbs.params.control = galleryTop;
         }, 500);
     });
-    
+
     var galleryTop = new Swiper('.gallery-top-blueprint', {
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         spaceBetween: 10,
         loop: true,
         loopedSlides: 5, //looped slides should be the same
+        initialSlide: 1
     });
     var galleryThumbs = new Swiper('.gallery-thumbs-blueprint', {
         spaceBetween: 98,
@@ -172,6 +175,8 @@ jQuery(document).ready(function() {
         loop: true,
         loopedSlides: 5, //looped slides should be the same
         slideToClickedSlide: true,
+        initialSlide: 1,
+        centeredSlides: true,
         breakpoints: {
             // when window width is <= 767px
             767: {
@@ -254,7 +259,40 @@ jQuery(document).ready(function() {
 
     });
 
+    $('#c-button--slide-right').click(function(){
+        $(this).toggleClass('open');
+    });
 
+    $('#nav-icon4').click(function(){
+        $(this).toggleClass('open');
+    });
+
+    /*if($('body:not(.has-active-menu)' )){
+        $( "#navbar" ).removeClass( "push" );
+        $( "#navbar" ).addClass( "push2" );
+    }*/
+
+
+    $('#c-button--slide-left').on('click', function(){
+        $('#navbar').toggleClass( 'push', 'push2');
+    });
+    
+
+});
+
+
+var slideLeft = new Menu({
+    wrapper: '#o-wrapper',
+    type: 'slide-left',
+    menuOpenerClass: '.c-button',
+    maskId: '#c-mask'
+});
+
+var slideLeftBtn = document.querySelector('#c-button--slide-left');
+
+slideLeftBtn.addEventListener('click', function(e) {
+    e.preventDefault;
+    slideLeft.open();
 });
 
 

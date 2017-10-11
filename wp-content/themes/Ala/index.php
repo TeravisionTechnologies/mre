@@ -32,7 +32,7 @@ $footer_info = get_post_meta($footer_query[0]->ID);
     </div>
 
     <div class="filters">
-    <section class="col-xs-12 al-projects">
+    <section id="al-projects" class="col-xs-12 al-projects">
         <div class="container center-block al-project-list button-group" data-filter-group="status">
             <?php
             $terms = get_terms('property_status', array(
@@ -186,25 +186,6 @@ $footer_info = get_post_meta($footer_query[0]->ID);
             </div>
         </div>
     </section>
-    <div id="contact-us" class="col-xs-12 al-contact-div"
-         style="background-image: url('<?php echo $footer_info['_hf_contact'][0] ?>')">
-        <div class="container">
-            <div class="row">
-                <p class="col-xs-12 text-center al-contact-text">Nos gustaría asesorarte en tu próxima inversión</p>
-                <p class="col-xs-12 text-center al-contact-text-bold">¡Contáctanos!</p>
-                <div class="col-xs-12 col-md-4">
-                    <div class="al-phone-box text-center center-block">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.png"
-                             alt="Llamanos Ala19">
-                        <p>Llámanos para asesoría <b>inmediata</b></p>
-                        <a href="tel:+17863762222" class="al-phone-num">+1786 376.22.22</a>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-8 al-contact-form-div">
-                    <?php echo do_shortcode('[contact-form-7 id="4" title="Home - Contact form"]'); ?>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 <?php get_footer(); ?>

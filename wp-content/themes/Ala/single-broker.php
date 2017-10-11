@@ -1,15 +1,15 @@
-<?php 
+<?php
     get_header();
     the_post();
     $intdetails = get_post_meta( get_the_ID(), '_br_intdetails', true);
-    $intdet = explode( '<!--more-->', $intdetails ); 
+    $intdet = explode( '<!--more-->', $intdetails );
     $intimages = get_post_meta( get_the_ID(), '_br_intimages', true);
     $background_image = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_images_id', true ));
     $amenities = get_post_meta( get_the_ID(), '_br_amen', true);
     $amenimages = get_post_meta( get_the_ID(), '_br_amengallery', true);
     $plainsimages = get_post_meta( get_the_ID(), '_br_plainsgallery', true);
     $quality = get_post_meta( get_the_ID(), '_br_quality', true);
-    $q = explode( '<!--more-->', $quality ); 
+    $q = explode( '<!--more-->', $quality );
     $lng = get_post_meta( get_the_ID(), '_br_lng', true);
     $lat = get_post_meta( get_the_ID(), '_br_lat', true);
     $brochure = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_brochure_id', true ));
@@ -29,11 +29,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <?php the_content(); ?> 
+                <?php the_content(); ?>
             </div>
         </div>
     </div>
-    
+
     <?php if(!empty($intdetails)){ ?>
     <div class="container">
         <div class="row">
@@ -78,7 +78,7 @@
         </div>
     </div>
     <?php } ?>
-    
+
     <?php if(!empty($amenities)){ ?>
         <div class="container">
             <div class="row">
@@ -132,11 +132,11 @@
                     <div id="gallery-top-blueprint" class="swiper-container gallery-top-blueprint swiper-detail">
                         <div class="swiper-wrapper">
                             <?php foreach ((array) $plainsimages as $attachment_id => $attachment_url) { ?>
-                                <div class="swiper-slide" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'full'); ?>')"></div>
+                                <div class="swiper-slide swiper-slide-bp" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'full'); ?>')">
+                                    <div class="bp-title"><span><?php echo $attachment_title = get_the_title($attachment_id); ?></span></div>
+                                </div>
                             <?php } ?>
                         </div>
-                        <div class="swiper-button-next swiper-button-white"></div>
-                        <div class="swiper-button-prev swiper-button-white"></div>
                     </div>
                     <div id="gallery-thumbs-blueprint" class="swiper-container gallery-thumbs-blueprint swiper-detail-thumbs border-thumb">
                         <div class="swiper-wrapper">
@@ -145,6 +145,8 @@
                             <?php } ?>
                         </div>
                     </div>
+                    <div class="swiper-button-next swiper-button-white"></div>
+                    <div class="swiper-button-prev swiper-button-white"></div>
                     <?php if (!empty($pzip)) { ?>
                         <a class="btn-planos" href="<?php echo $pzip; ?>" download><?php _e('Descargar planos', 'ala') ?></a>
                     <?php } ?>
