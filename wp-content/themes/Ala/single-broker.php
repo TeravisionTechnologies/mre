@@ -138,6 +138,7 @@
                             <?php } ?>
                         </div>
                     </div>
+                    <div class="al-div-border"></div>
                     <div id="gallery-thumbs-blueprint" class="swiper-container gallery-thumbs-blueprint swiper-detail-thumbs border-thumb">
                         <div class="swiper-wrapper">
                             <?php foreach ((array) $plainsimages as $attachment_id => $attachment_url) { ?>

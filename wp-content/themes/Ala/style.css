@@ -646,6 +646,10 @@ body {
     width: 1170px;
     height: 100%; }
 
+  .al-div-border {
+    height: 2px;
+    border: 1px solid #8f8f8f; }
+
   body {
     font-size: 14px;
     margin: 0;
@@ -2412,7 +2416,8 @@ a.download-bro {
 
 .gallery-top-blueprint {
   width: 80% !important;
-  height: 545px !important; }
+  height: 545px !important;
+  margin-bottom: 50px; }
 
 .gallery-thumbs-blueprint {
   width: 80% !important;
@@ -2423,8 +2428,7 @@ a.download-bro {
 
 .border-thumb {
   padding: 30px 0 50px;
-  border-top: solid 1px #8f8f8f;
-  margin-top: 50px; }
+  margin-top: 0px; }
 
 .swiper-detail-thumbs {
   height: 120px; }
