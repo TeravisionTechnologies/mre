@@ -215,18 +215,43 @@
                     <div class="detail-tlt"><?php _e('Lugares Cercanos', 'ala') ?></div>
                     <?php if ($terms != null) { ?>
                         <div class="row gallery-places">
-                            <?php $i = 1; foreach ($terms as $term) {
+                            <?php $i = 1; $counter = 0; foreach ($terms as $term) {
                                 $meta_image = get_wp_term_image($term->term_id);
                                 ?>
                                 <div class="col-sm-4 col-md-4">
-                                    <a href="#" class="amenimg places-wrapper" data-toggle="modal" data-target="#myModalNearby" style="background: url('<?php echo $meta_image; ?>')">
+                                    <a href="#" class="amenimg places-wrapper gallery-nearby" data-number="<?php echo $counter; ?>" data-toggle="modal" data-target="#myModalNearby" style="background: url('<?php echo $meta_image; ?>')">
                                         <div class="places-mask"><?php print $term->name; ?></div>
                                     </a>
                                 </div>
                                 <?php  if ($i++ == 3) break; ?>
-                            <?php } ?>
+                            <?php $counter++; } ?>
                         </div>
                     <?php } ?>
+                    <div id="myModalNearby" class="modal fade modal-detail" role="dialog">
+                      <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div id="amenities-gallery" class="modal-body">
+                            <div class="swiper-container gallery-top-nearby swiper-detail">
+                              <div class="swiper-wrapper">
+                                <?php foreach ($terms as $term) {  $meta_image = get_wp_term_image($term->term_id); ?>
+                                  <div class="swiper-slide" style="background: url('<?php echo $meta_image; ?>')"></div>
+                                <?php } ?>
+                              </div>
+                              <div class="swiper-button-next swiper-button-white"></div>
+                              <div class="swiper-button-prev swiper-button-white"></div>
+                            </div>
+                            <div class="swiper-container gallery-thumbs-nearby swiper-detail-thumbs">
+                              <div class="swiper-wrapper">
+                                <?php foreach ($terms as $term) {  $meta_image = get_wp_term_image($term->term_id); ?>
+                                  <div class="swiper-slide" style="background: url('<?php echo $meta_image; ?>')"></div>
+                                <?php } ?>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
         </div>

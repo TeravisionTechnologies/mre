@@ -160,7 +160,32 @@ jQuery(document).ready(function () {
     });
   });
 
-
+  var slideNearby;
+  $('.places-wrapper').click(function () {
+    slideNearby = $(this).attr('data-number');
+    $("#myModalNearby").on('show.bs.modal', function () {
+      setTimeout(function () {
+        var galleryTop = new Swiper('.gallery-top-nearby', {
+          nextButton: '.swiper-button-next',
+          prevButton: '.swiper-button-prev',
+          spaceBetween: 10,
+          loop: true,
+          loopedSlides: 5, //looped slides should be the same
+        });
+        var galleryThumbs = new Swiper('.gallery-thumbs-nearby', {
+          spaceBetween: 10,
+          slidesPerView: 4,
+          touchRatio: 0.2,
+          loop: true,
+          loopedSlides: 5, //looped slides should be the same
+          slideToClickedSlide: true
+        });
+        galleryTop.params.control = galleryThumbs;
+        galleryThumbs.params.control = galleryTop;
+        galleryThumbs.slideTo(slideNearby, 0);
+      }, 500);
+    });
+  });
 
     var galleryTop = new Swiper('.gallery-top-blueprint', {
         nextButton: '.swiper-button-next',
