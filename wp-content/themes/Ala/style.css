@@ -206,6 +206,8 @@ body {
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%); }
+    #ala-header .logo-header .img-div svg {
+      max-width: 140px; }
 #ala-header .social-header {
   top: 0;
   left: 62.5vw;
@@ -504,7 +506,7 @@ body {
   display: none; }
 
 .wpcf7-response-output {
-  top: -1.73611vw;
+  top: -2.77778vw;
   left: 2.08333vw;
   position: absolute; }
 
@@ -1005,6 +1007,8 @@ body {
       width: 767px; }
       .al-contact-div .al-contact-form-div .wpcf7-form-control-wrap {
         margin-bottom: 20px; }
+      .al-contact-div .al-contact-form-div .wpcf7-form div {
+        margin-bottom: 20px; }
       .al-contact-div .al-contact-form-div .wpcf7-form p {
         margin-right: 20px; }
       .al-contact-div .al-contact-form-div .wpcf7-form input[type="text"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="email"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="tel"], .al-contact-div .al-contact-form-div .wpcf7-form select {
@@ -1013,8 +1017,7 @@ body {
         padding: 0 20px;
         font-size: 16px;
         line-height: 15px;
-        border-radius: 4px;
-        margin-bottom: 20px; }
+        border-radius: 4px; }
       .al-contact-div .al-contact-form-div .wpcf7-form input[name="your-email"], .al-contact-div .al-contact-form-div .wpcf7-form select[name="your-country"] {
         margin-left: 10px; }
       .al-contact-div .al-contact-form-div .wpcf7-form select {
@@ -1429,7 +1432,7 @@ body {
         font-weight: bold;
         line-height: 3.90625vw; }
     .al-contact-div .al-contact-form-div {
-      margin: 6.51042vw 7.16146vw 0 7.16146vw;
+      margin: 9.11458vw 7.16146vw 0 7.16146vw;
       width: 85.67708vw; }
       .al-contact-div .al-contact-form-div .wpcf7-form-control-wrap {
         margin-bottom: 2.60417vw; }
@@ -1694,7 +1697,8 @@ body {
     width: 48.33vw; }
     #ala-header .logo-header .img-div {
       width: 27vw;
-      height: 16.66667vw; }
+      height: 16.66667vw;
+      margin-top: 10px; }
       #ala-header .logo-header .img-div img {
         width: 26.94444vw;
         height: 8.88889vw;
@@ -1965,6 +1969,9 @@ body {
         border: solid 2px #000000; }
         .al-contact-div .al-contact-form-div .wpcf7-form .wpcf7-submit:hover {
           background-color: rgba(255, 255, 255, 0.7); }
+
+  .al-contact-div .al-contact-form-div .wpcf7-form input[type="text"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="email"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="tel"], .al-contact-div .al-contact-form-div .wpcf7-form select {
+    width: 100%; }
 
   .al-footer-container {
     height: 35.27778vw;
