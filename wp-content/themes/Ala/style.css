@@ -576,8 +576,7 @@ body {
       display: inline-block;
       background-color: #ffffff;
       border: 1px solid #000000;
-      font-family: Archivo, sans-serif;
-      margin-bottom: 1.38889vw; }
+      font-family: Archivo, sans-serif; }
     .al-contact-div .al-contact-form-div .wpcf7-form input[name="your-email"], .al-contact-div .al-contact-form-div .wpcf7-form select[name="your-country"] {
       margin-left: 0.69444vw; }
     .al-contact-div .al-contact-form-div .wpcf7-form select {
