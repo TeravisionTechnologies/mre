@@ -42,11 +42,11 @@
                 <p><?php echo $intdetails ?></p>
                 <?php if(!empty($intimages)){ ?>
                     <div class="row gallery-images">
-                        <?php foreach ( (array) $intimages as $attachment_id => $attachment_url ) { ?>
+                        <?php $counter = 0; foreach ( (array) $intimages as $attachment_id => $attachment_url ) { ?>
                             <div class="col-sm-4 col-md-4">
-                                <a href="#" class="amenimg" data-toggle="modal" data-target="#myModalDetails" style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')"></a>
+                                <a href="#" class="amenimg gallery-detalles" data-number="<?php echo $counter; ?>" data-toggle="modal" data-target="#myModalDetails" style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')"></a>
                             </div>
-                        <?php } ?>
+                        <?php $counter++; } ?>
                     </div>
                 <?php } ?>
                 <div id="myModalDetails" class="modal fade modal-detail" role="dialog">
@@ -87,11 +87,11 @@
                     <?php echo '<p>'.$amenities.'</p>';  ?>
                     <?php if(!empty($amenimages)){ ?>
                         <div class="row gallery-images">
-                            <?php foreach ( (array) $amenimages as $attachment_id => $attachment_url ) { ?>
+                            <?php $counter = 0; foreach ( (array) $amenimages as $attachment_id => $attachment_url ) { ?>
                                 <div class="col-sm-4 col-md-4">
-                                    <a href="#" class="amenimg" data-toggle="modal" data-target="#myModal" style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')"></a>
+                                    <a href="#" class="amenimg gallery-comodidades" data-number="<?php echo $counter; ?>" data-toggle="modal" data-target="#myModal" style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')"></a>
                                 </div>
-                            <?php } ?>
+                            <?php $counter++; } ?>
                         </div>
                     <?php } ?>
                     <div id="myModal" class="modal fade modal-detail" role="dialog">
@@ -219,7 +219,7 @@
                                 $meta_image = get_wp_term_image($term->term_id);
                                 ?>
                                 <div class="col-sm-4 col-md-4">
-                                    <a href="#" class="amenimg places-wrapper" data-toggle="modal" data-target="#myModalDetails" style="background: url('<?php echo $meta_image; ?>')">
+                                    <a href="#" class="amenimg places-wrapper" data-toggle="modal" data-target="#myModalNearby" style="background: url('<?php echo $meta_image; ?>')">
                                         <div class="places-mask"><?php print $term->name; ?></div>
                                     </a>
                                 </div>

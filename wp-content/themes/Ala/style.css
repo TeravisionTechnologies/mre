@@ -512,7 +512,8 @@ body {
   height: 42.56944vw;
   padding: 4.16667vw 9.375vw;
   background-repeat: no-repeat;
-  background-position-y: bottom;
+  background-size: contain;
+  background-position: bottom;
   box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.5); }
   .al-contact-div .al-contact-text {
     color: #000000;
