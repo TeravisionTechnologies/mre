@@ -107,3 +107,10 @@ function custom_form_validation_filter($result, $tag) {
 add_filter('wpcf7_validate_text','custom_form_validation_filter', 10, 2);
 add_filter('wpcf7_validate_text*', 'custom_form_validation_filter', 10, 2);
 add_filter('wpcf7_validate_email', 'custom_form_validation_filter', 10, 2);
+
+//SVG Hook
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types'); 

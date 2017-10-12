@@ -37,7 +37,6 @@
     );
     $theMeta = get_post_meta($headerPost[0]->ID);
     $social_networks = get_post_meta( $headerPost[0]->ID, '_hf_social_networks', true );
-    //var_dump($theMeta);
     ?>
     <div id="mre-header">
       <div class="swiper-container swiper-container-menu">
@@ -59,19 +58,19 @@
               <?php if(isset($social_networks[0])) { ?>
               <ul class="menu-social-icons">
                 <?php if(isset($social_networks[0]['_hf_linkedin'])) { ?>
-                  <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_linkedin'] ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                  <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_linkedin'] ?>" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                 <?php } ?>
                 <?php if(isset($social_networks[0]['_hf_facebook'])) { ?>
-                  <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_facebook'] ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_facebook'] ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                 <?php } ?>
                 <?php if(isset($social_networks[0]['_hf_instagram'])) { ?>
-                  <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_instagram'] ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_instagram'] ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                 <?php } ?>
                 <?php if(isset($social_networks[0]['_hf_twitter'])) { ?>
-                  <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_twitter'] ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                  <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_twitter'] ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                 <?php } ?>
                 <?php if(isset($social_networks[0]['_hf_youtube'])) { ?>
-                  <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_youtube'] ?>"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                  <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_youtube'] ?>" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
                 <?php } ?>
               </ul>
               <?php } ?>
