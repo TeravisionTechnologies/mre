@@ -10,7 +10,7 @@
             <footer id="mre-footer" class="col-xs-12">
               <div class="mre-footer-elements">
                 <a href="/">
-                  <img src="<?php echo $theMeta['_hf_logo'][0] ?>" class="mre-footer-logo"/>
+                  <img src="<?php echo $theMeta['_hf_footer_logo'][0] ?>" class="mre-footer-logo"/>
                 </a>
                 <h2 class="mre-footer-copyright"><?php echo $theMeta['_hf_copy'][0] ?></h2>
                 <a href="#">Disclaimers</a>
