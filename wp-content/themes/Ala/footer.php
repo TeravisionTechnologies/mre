@@ -6,26 +6,24 @@ $footer_query = get_posts(
 );
 $footer_info = get_post_meta($footer_query[0]->ID);
 ?>
-<div id="contact-us" class="col-xs-12 al-contact-div"
-     style="background-image: url('<?php echo $footer_info['_hf_contact'][0] ?>')">
-    <div class="container">
-        <div class="row">
-            <p class="col-xs-12 text-center al-contact-text">Nos gustaría asesorarte en tu próxima inversión</p>
-            <p class="col-xs-12 text-center al-contact-text-bold">¡Contáctanos!</p>
-            <div class="col-xs-12 col-md-4">
-                <div class="al-phone-box text-center center-block">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.png"
-                         alt="Llamanos Ala19">
+          <div id="contact-us" class="col-xs-12 al-contact-div" style="background-image: url('<?php echo $footer_info['_hf_contact'][0] ?>')">
+            <div class="container">
+              <div class="row">
+                <p class="col-xs-12 text-center al-contact-text">Nos gustaría asesorarte en tu próxima inversión</p>
+                <p class="col-xs-12 text-center al-contact-text-bold">¡Contáctanos!</p>
+                <div class="col-xs-12 col-md-4">
+                  <div class="al-phone-box text-center center-block">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.png" alt="Llamanos Ala19">
                     <p>Llámanos para asesoría <b>inmediata</b></p>
-                    <a href="tel:+17863762222" class="al-phone-num">+1786 376.22.22</a>
+                    <a href="tel:+17864775091" class="al-phone-num">+1 786 477.5091</a>
+                  </div>
                 </div>
+                <div class="col-xs-12 col-md-8 al-contact-form-div">
+                  <?php echo do_shortcode('[contact-form-7 id="4" title="Home - Contact form"]'); ?>
+                </div>
+              </div>
             </div>
-            <div class="col-xs-12 col-md-8 al-contact-form-div">
-                <?php echo do_shortcode('[contact-form-7 id="4" title="Home - Contact form"]'); ?>
-            </div>
-        </div>
-    </div>
-</div>
+          </div>
           <footer class="al-footer-container col-xs-12">
             <div class="container">
               <div class="col-xs-12 text-center">
@@ -41,7 +39,14 @@ $footer_info = get_post_meta($footer_query[0]->ID);
 </div>
 
 <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
-    <button class="c-menu__close" style="display: none;">&larr; Close Menu</button>
+    <!--<button class="c-menu__close" style="display: none;">&larr; Close Menu</button>-->
+    <div id="c-button--slide-left" class="menu-button c-button pull-right c-menu__close c-button-close">
+        <div id="nav-icon4" class="open">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
     <div class="menu">
         <?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_class' => "al-menu c-menu__items")); ?>
         <div class="al-menu-language">

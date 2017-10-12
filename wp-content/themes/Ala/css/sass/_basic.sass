@@ -2,6 +2,7 @@
 .container-ala
   width: get-vw-desktop(1170px)
   height: 100%
+  margin: 0 auto
 
 .no-padding
   padding: 0
@@ -279,43 +280,7 @@ body
 
 
 
-// Projects
-.al-projects
-  background: $black
-  color: $white
-  height: 8.333333333333334vw
-  margin-top: 0.2777777777777778vw
-  text-align: center
-  .al-project-list
-    height: 100%
-    width: 100%
-    .al-project-list-item
-      position: relative
-      margin: 0 1.8055555555555556vw
-      height: 100%
-      display: inline-block
-      text-align: center
-      width: 18.055555555555554vw
-      cursor: pointer
-      &:hover
-        text-decoration: none
-      .item-text
-        opacity: 0.4
-        font-family: 'Archivo', sans-serif
-        font-size: 1.5277777777777777vw
-        font-weight: bold
-        text-align: center
-        color: #ffffff
-        margin-top: 3.333333333333333vw
-      .item-active
-        opacity: 1
-      .triangle
-        opacity: 0
-        position: absolute
-        bottom: -1.0416666666666667vw
-        left: 50%
-        transform: translateX(-50%)
-// END Projects
+
 
 
 
@@ -351,41 +316,92 @@ body
 // 
 // 
 // 
+
+
+
+
+
+
 // 
-// 
-// // Properties
+
+
+
+
+// Projects
+.al-projects
+  background: $black
+  color: $white
+  height: get-vw-desktop(120px)
+  margin-top: get-vw-desktop(3px)
+  text-align: center
+  .al-project-list
+    height: 100%
+    width: 100%
+    .al-project-list-item
+      position: relative
+      margin: 0 get-vw-desktop(26px)
+      height: 100%
+      display: inline-block
+      text-align: center
+      width: get-vw-desktop(260px)
+      cursor: pointer
+      &:hover
+        text-decoration: none
+      .item-text
+        opacity: 0.4
+        font-family: Archivo, sans-serif
+        font-size: get-vw-desktop(22px)
+        line-height: get-vw-desktop(24px)
+        font-weight: bold
+        text-align: center
+        color: $white
+        margin-top: get-vw-desktop(48px)
+      .item-active
+        opacity: 1
+      .triangle
+        width: get-vw-desktop(55px)
+        height: get-vw-desktop(16px)
+        opacity: 0
+        position: absolute
+        bottom: get-vw-desktop(-15px)
+        left: 50%
+        transform: translateX(-50%)
+// END Projects
+
+// Properties
 .al-properties-section
   .properties-country-filter
-    color: #7f8182
+    color: $grey-1
     display: inline-block
-    font-family: 'Archivo', sans-serif
-    font-size: 1.3888888888888888vw
-    line-height: 1.3888888888888888vw
-    margin: 4.583333333333333vw 1.0416666666666667vw 4.166666666666667vw 0
+    font-family: Archivo, sans-serif
+    font-size: get-vw-desktop(20px)
+    line-height: get-vw-desktop(20px)
+    margin: get-vw-desktop(66px) get-vw-desktop(15px) get-vw-desktop(60px) 0
     padding-left: 0
-    width: 13.88888888888889vw
+    width: get-vw-desktop(130px)
   .filter-left
-    border-right: 2px solid #7f8182
-    margin: 4.583333333333333vw 0 4.166666666666667vw 1.0416666666666667vw
+    border-right: 2px solid $grey-1
+    margin: get-vw-desktop(66px) 0 get-vw-desktop(60px) get-vw-desktop(15px)
     opacity: 0.5
     padding-right: 0
-    width: 13.88888888888889vw
+    width: get-vw-desktop(130px)
     padding-left: 0
-  .properties-filter
+  .btn-filter
     border: solid 2px rgba(74, 74, 74, 0.4)
-    font-family: 'Montserrat', sans-serif
-    font-size: 1.1111111111111112vw
-    height: 3.194444444444444vw
-    width: 18.125vw
+    font-family: Archivo, sans-serif
+    font-size: get-vw-desktop(16px)
+    line-height: get-vw-desktop(15px)
+    height: get-vw-desktop(46px)
+    width: get-vw-desktop(261px)
   .properties-list
-    margin-top: 2.7777777777777777vw
+    margin-top: get-vw-desktop(40px)
     .property-image
       background-size: cover
       position: relative
-      width: 25vw
-      height: 24.305555555555554vw
-      margin-bottom: 3.4722222222222223vw
-      margin-right: 3.125vw
+      width: get-vw-desktop(360px)
+      height: get-vw-desktop(350px)
+      margin-bottom: get-vw-desktop(50px)
+      margin-right: get-vw-desktop(45px)
       &:nth-child(3n+3)
         margin: 0
       &:hover
@@ -404,23 +420,23 @@ body
         -o-transition: all ease .3s
         -webkit-transition: all ease .3s
         .property-title
-          font-family: 'Archivo', sans-serif
-          font-size: 1.3888888888888888vw
+          font-family: Archivo, sans-serif
+          font-size: get-vw-desktop(20px)
           font-weight: bold
           color: $white
-          margin: 8.958333333333334vw 0 0.41666666666666663vw 0
+          margin: get-vw-desktop(129px) 0 get-vw-desktop(6px) 0
         .property-address, .property-city
-          font-family: 'Archivo', sans-serif
-          font-size: 0.9722222222222222vw
-          line-height: 1.25vw
+          font-family: Archivo, sans-serif
+          font-size: get-vw-desktop(14px)
+          line-height: get-vw-desktop(18px)
           color: $white
           opacity: 0.5
           margin: 0
         .property-category
           font-family: 'Archivo', sans-serif
-          margin-top: 0.6944444444444444vw
-          font-size: 0.8333333333333333vw
-          line-height: 1.25vw
+          margin-top: get-vw-desktop(10px)
+          font-size: get-vw-desktop(12px)
+          line-height: get-vw-desktop(18px)
           font-weight: bold
           font-style: italic
           color: $white
@@ -429,26 +445,22 @@ body
   clear: both
   text-align: center
   .pagination
-    margin: 2.0833333333333335vw 0 6.944444444444445vw 0
+    margin: get-vw-desktop(30px) 0 get-vw-desktop(100px) 0
     li
-      font-size: 1.1111111111111112vw
-      line-height: 1.4583333333333333vw
+      font-size: get-vw-desktop(16px)
+      line-height: get-vw-desktop(21px)
       a
         background: $white
-        color: #000
-        height: 2.9166666666666665vw
-        padding-top: 0.6944444444444444vw
-        width: 2.8472222222222223vw
+        color: $black
+        height: get-vw-desktop(42px)
+        padding-top: get-vw-desktop(10px)
+        width: get-vw-desktop(41px)
       .pagination-active
-        background: black
+        background: $black
         color: $white
       .pagination-previous
-        color: black
+        color: $black
 // END Properties
-
-
-
-
 
 // Partners
 .al-partners-section
@@ -535,7 +547,9 @@ body
   height: get-vw-desktop(613px)
   padding: get-vw-desktop(60px) get-vw-desktop(135px)
   background-repeat: no-repeat
-  background-position-y: bottom
+  background-size: contain
+  background-position: bottom
+  box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.5)
   .al-contact-text
     color: $black
     font-size: get-vw-desktop(36px)
@@ -605,7 +619,7 @@ body
         position: relative
         background: $white url(assets/form-caret-down.png) 100% 50% no-repeat
       textarea
-        width: 100%
+        width: get-vw-desktop(767px)
         color: $grey
         font-size: get-vw-desktop(16px)
         height: get-vw-desktop(135px)

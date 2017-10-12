@@ -199,10 +199,18 @@ body
     height: 42px
 // END Header
 
+
+
+
+
+
+
+
+
 // Projects
 .al-projects
   height: 120px
-  margin-top: 4px
+  margin-top: 3px
   .al-project-list
     height: 100%
     width: 100%
@@ -213,36 +221,18 @@ body
       .item-text
         opacity: 0.4
         font-size: 22px
-        color: #ffffff
+        line-height: 24px
         margin-top: 48px
       .item-active
         opacity: 1
       .triangle
+        width: 55px
+        height: 16px
         opacity: 0
         bottom: -15px
         left: 50%
         transform: translateX(-50%)
 // END Projects
-
-// Contact Us
-.al-contact-div
-  padding-top: 57px
-
-.al-contact-text, .al-contact-text-bold
-  font-size: 36px
-
-.al-phone-div
-  padding-top: 40px
-  .al-phone-box
-    padding: 45px 30px
-    p
-      font-size: 24px
-
-a.al-phone-num
-  font-size: 36px
-// Contact Us
-
-
 
 // Properties
 .al-properties-section
@@ -251,17 +241,18 @@ a.al-phone-num
     line-height: 20px
     margin: 66px 15px 60px 0
     padding-left: 0
-    width: 200px
+    width: 130px
   .filter-left
-    border-right: 2px solid #7f8182
+    border-right: 2px solid $grey-1
     margin: 66px 0 60px 15px
     opacity: 0.5
     padding-right: 0
-    width: 200px
+    width: 130px
     padding-left: 0
-  .properties-filter
+  .btn-filter
     border: solid 2px rgba(74, 74, 74, 0.4)
     font-size: 16px
+    line-height: 15px
     height: 46px
     width: 261px
   .properties-list
@@ -277,17 +268,12 @@ a.al-phone-num
         .property-overlay
           opacity: 1
       .property-overlay
-        opacity: 0
         width: 100%
         height: 100%
         background: rgba(0, 0, 0, 0.8)
-        transition: all ease .3s
-        -moz-transition: all ease .3s
-        -ms-transition: all ease .3s
-        -o-transition: all ease .3s
-        -webkit-transition: all ease .3s
         .property-title
           font-size: 20px
+
           margin: 129px 0 6px 0
         .property-address, .property-city
           font-size: 14px
@@ -310,10 +296,6 @@ a.al-phone-num
         padding-top: 10px
         width: 41px
 // END Properties
-
-
-
-
 
 // Partners
 .al-partners-section
@@ -427,7 +409,7 @@ a.al-phone-num
         position: relative
         background: $white url(assets/form-caret-down.png) 100% 50% no-repeat
       textarea
-        width: 100%
+        width: 767px
         font-size: 16px
         height: 135px
         line-height: 16px
@@ -465,6 +447,7 @@ a.al-phone-num
     font-size: 14px
     line-height: 20px
   .footer-top
+    cursor: pointer
     width: 50px
     height: 50px
     right: 140px

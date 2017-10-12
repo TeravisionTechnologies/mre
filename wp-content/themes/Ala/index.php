@@ -32,85 +32,82 @@ $footer_info = get_post_meta($footer_query[0]->ID);
     </div>
 
     <div class="filters">
-    <section id="al-projects" class="col-xs-12 al-projects">
-        <div class="container center-block al-project-list button-group" data-filter-group="status">
-            <?php
-            $terms = get_terms('property_status', array(
-                'orderby' => 'count',
-                'hide_empty' => 0
-            ));
-            if (!empty($terms) && !is_wp_error($terms)) {
-                $i = 0;
-                foreach ($terms as $term) {
-                    $clase = ($i == 1 ? "item-active" : "");
-                    echo '<span id="term-' . $term->term_id . '"  data-filter=".' . $term->slug . '" class="al-project-list-item button the-status"><h2 data="'.$i.'" class="item-text '. $clase .'">' . $term->name . '</h2><img class="triangle" src="' . get_template_directory_uri() . '/assets/triangle.svg"></span>';
-                    $i++;
-                }
-            } ?>
-        </div>
+
+
+
+    <section id="al-projects" class="col-xs-12 al-projects no-padding">
+      <div class="container center-block al-project-list button-group no-padding" data-filter-group="status">
+        <?php
+          $terms = get_terms('property_status', array(
+            'orderby' => 'count',
+            'hide_empty' => 0
+          ));
+        if (!empty($terms) && !is_wp_error($terms)) {
+          $i = 0;
+          foreach ($terms as $term) {
+            $clase = ($i == 1 ? "item-active" : "");
+            echo '<span id="term-' . $term->term_id . '"  data-filter=".' . $term->slug . '" class="al-project-list-item button the-status"><h2 data="'.$i.'" class="item-text '. $clase .'">' . $term->name . '</h2><img class="triangle" src="' . get_template_directory_uri() . '/assets/triangle.svg"></span>';
+            $i++;
+          }
+        } ?>
+      </div>
     </section>
-
-    <div class="col-xs-12 al-properties-section text-center">
-        <div class="container no-padding container-properties">
-            <div class="center-block button-group locations" data-filter-group="country">
-                <?php
-                $locations = get_terms('property_location', array(
-                    'orderby' => 'count',
-                    'hide_empty' => 0
-                ));
-                if (!empty($locations) && !is_wp_error($locations)) {
-                    $j = 0;
-                    foreach ($locations as $location) {
-                        $clase = ($j == 0 ? "filter-left" : "");
-                        echo '<h2 class="properties-country-filter button the-country '. $clase .'" data-filter=".' . $location->slug . '">' . $location->name . '</h2>';
-                        $j++;
-                    }
-                } ?>
-            </div>
-
-            <div class="col-xs-12 properties-filter-container no-padding">
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle pull-right btn-filter" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <?php _e('Ordenar por...', 'ala') ?>
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu sort-by-button-group" aria-labelledby="dropdownMenu1">
-                        <li><a class="orderby" data-sort-value="name" data-sort-direction="asc"><?php _e('Por nombre', 'ala') ?> <i class="fa fa-chevron-up"></i></a></li>
-                        <li><a class="orderby" data-sort-value="date" data-sort-direction="asc"><?php _e('Ultimo agregado', 'ala') ?></a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-xs-12 properties-list no-padding">
-                <?php
-                $propertieslist = array('post_type' => 'broker');
-                query_posts($propertieslist);
-                if (have_posts()): while (have_posts()): the_post();
-                    $background_image = wp_get_attachment_url(get_post_meta(get_the_ID(), '_br_images_id', true));
-                    $address = get_post_meta(get_the_ID(), '_br_address', true);
-                    $price = get_post_meta(get_the_ID(), '_br_price', true);
-                    $status = get_the_terms( get_the_ID(), 'property_status' );
-                    $loc = get_the_terms( get_the_ID(), 'property_location' );
-                    ?>
-                    <div class="col-xs-12 col-sm-4 property-image no-padding country-status <?php echo esc_html($status[0]->slug);?> <?php echo esc_html($loc[0]->slug); ?>"
-                         style="background-image: url('<?php echo $background_image; ?>')">
-                        <a href="<?php the_permalink(); ?>">
-                            <div class="property-overlay">
-                                <h2 class="property-title"><?php the_title(); ?></h2>
-                                <?php if (!empty($address)) { ?><h3
-                                        class="property-address"><?php echo $address ?></h3><?php } ?>
-                                <?php if (!empty($price)) { ?><h3
-                                        class="property-city"><?php echo $price ?></h3><?php } ?>
-                                <?php if (!empty($status)) { ?><h4
-                                        class="property-category "><?php echo esc_html($status[0]->name); ?></h4><?php } ?>
-                            </div>
-                        </a>
-                    </div>
-                <?php endwhile; endif;
-                wp_reset_postdata(); ?>
-            </div>
+    <div class="col-xs-12 al-properties-section text-center no-padding">
+      <div class="container-ala no-padding container-properties">
+        <div class="center-block button-group locations" data-filter-group="country">
+          <?php
+            $locations = get_terms('property_location', array(
+              'orderby' => 'count',
+              'hide_empty' => 0
+            ));
+          if (!empty($locations) && !is_wp_error($locations)) {
+            $j = 0;
+            foreach ($locations as $location) {
+              $clase = ($j == 0 ? "filter-left" : "");
+              echo '<h2 class="properties-country-filter button the-country '. $clase .'" data-filter=".' . $location->slug . '">' . $location->name . '</h2>';
+              $j++;
+            }
+          } ?>
         </div>
+        <div class="col-xs-12 properties-filter-container no-padding">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle pull-right btn-filter" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <?php _e('Ordenar por...', 'ala') ?>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu sort-by-button-group" aria-labelledby="dropdownMenu1">
+              <li><a class="orderby" data-sort-value="name" data-sort-direction="asc"><?php _e('Por nombre', 'ala') ?> <i class="fa fa-chevron-up"></i></a></li>
+              <li><a class="orderby" data-sort-value="date" data-sort-direction="asc"><?php _e('Ultimo agregado', 'ala') ?></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-12 properties-list no-padding">
+          <?php
+          $propertieslist = array('post_type' => 'broker');
+          query_posts($propertieslist);
+          if (have_posts()): while (have_posts()): the_post();
+            $background_image = wp_get_attachment_url(get_post_meta(get_the_ID(), '_br_images_id', true));
+            $address = get_post_meta(get_the_ID(), '_br_address', true);
+            $price = get_post_meta(get_the_ID(), '_br_price', true);
+            $status = get_the_terms( get_the_ID(), 'property_status' );
+            $loc = get_the_terms( get_the_ID(), 'property_location' );
+          ?>
+          <div class="col-xs-12 col-sm-4 property-image no-padding country-status <?php echo esc_html($status[0]->slug);?> <?php echo esc_html($loc[0]->slug); ?>" style="background-image: url('<?php echo $background_image; ?>')">
+            <a href="<?php the_permalink(); ?>">
+              <div class="property-overlay">
+                <h2 class="property-title"><?php the_title(); ?></h2>
+                <?php if (!empty($address)) { ?><h3 class="property-address"><?php echo $address ?></h3><?php } ?>
+                <?php if (!empty($price)) { ?><h3 class="property-city"><?php echo $price ?></h3><?php } ?>
+                <?php if (!empty($status)) { ?><h4 class="property-category "><?php echo esc_html($status[0]->name); ?></h4><?php } ?>
+              </div>
+            </a>
+          </div>
+          <?php endwhile; endif;
+          wp_reset_postdata(); ?>
+        </div>
+      </div>
     </div>
+
     <div class="col-xs-12 text-center">
 
     </div>
@@ -167,6 +164,5 @@ $footer_info = get_post_meta($footer_query[0]->ID);
         </div>
       </div>
     </section>
-
 
 <?php get_footer(); ?>

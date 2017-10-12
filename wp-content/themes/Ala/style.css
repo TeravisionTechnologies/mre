@@ -8,7 +8,8 @@
 /*                                            */
 .container-ala {
   width: 81.25vw;
-  height: 100%; }
+  height: 100%;
+  margin: 0 auto; }
 
 .no-padding {
   padding: 0; }
@@ -275,42 +276,6 @@ body {
   #ala-header .swiper-container-hero .swiper-button-next {
     right: 9.375vw; }
 
-.al-projects {
-  background: #000000;
-  color: #ffffff;
-  height: 8.33333vw;
-  margin-top: 0.27778vw;
-  text-align: center; }
-  .al-projects .al-project-list {
-    height: 100%;
-    width: 100%; }
-    .al-projects .al-project-list .al-project-list-item {
-      position: relative;
-      margin: 0 1.80556vw;
-      height: 100%;
-      display: inline-block;
-      text-align: center;
-      width: 18.05556vw;
-      cursor: pointer; }
-      .al-projects .al-project-list .al-project-list-item:hover {
-        text-decoration: none; }
-      .al-projects .al-project-list .al-project-list-item .item-text {
-        opacity: 0.4;
-        font-family: "Archivo", sans-serif;
-        font-size: 1.52778vw;
-        font-weight: bold;
-        text-align: center;
-        color: #ffffff;
-        margin-top: 3.33333vw; }
-      .al-projects .al-project-list .al-project-list-item .item-active {
-        opacity: 1; }
-      .al-projects .al-project-list .al-project-list-item .triangle {
-        opacity: 0;
-        position: absolute;
-        bottom: -1.04167vw;
-        left: 50%;
-        transform: translateX(-50%); }
-
 .al-text-white {
   color: #ffffff;
   font-size: 14px;
@@ -338,26 +303,66 @@ body {
   .al-go-top-div:hover {
     cursor: pointer; }
 
+.al-projects {
+  background: #000000;
+  color: #ffffff;
+  height: 8.33333vw;
+  margin-top: 0.20833vw;
+  text-align: center; }
+  .al-projects .al-project-list {
+    height: 100%;
+    width: 100%; }
+    .al-projects .al-project-list .al-project-list-item {
+      position: relative;
+      margin: 0 1.80556vw;
+      height: 100%;
+      display: inline-block;
+      text-align: center;
+      width: 18.05556vw;
+      cursor: pointer; }
+      .al-projects .al-project-list .al-project-list-item:hover {
+        text-decoration: none; }
+      .al-projects .al-project-list .al-project-list-item .item-text {
+        opacity: 0.4;
+        font-family: Archivo, sans-serif;
+        font-size: 1.52778vw;
+        line-height: 1.66667vw;
+        font-weight: bold;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 3.33333vw; }
+      .al-projects .al-project-list .al-project-list-item .item-active {
+        opacity: 1; }
+      .al-projects .al-project-list .al-project-list-item .triangle {
+        width: 3.81944vw;
+        height: 1.11111vw;
+        opacity: 0;
+        position: absolute;
+        bottom: -1.04167vw;
+        left: 50%;
+        transform: translateX(-50%); }
+
 .al-properties-section .properties-country-filter {
   color: #7f8182;
   display: inline-block;
-  font-family: "Archivo", sans-serif;
+  font-family: Archivo, sans-serif;
   font-size: 1.38889vw;
   line-height: 1.38889vw;
   margin: 4.58333vw 1.04167vw 4.16667vw 0;
   padding-left: 0;
-  width: 13.88889vw; }
+  width: 9.02778vw; }
 .al-properties-section .filter-left {
   border-right: 2px solid #7f8182;
   margin: 4.58333vw 0 4.16667vw 1.04167vw;
   opacity: 0.5;
   padding-right: 0;
-  width: 13.88889vw;
+  width: 9.02778vw;
   padding-left: 0; }
-.al-properties-section .properties-filter {
+.al-properties-section .btn-filter {
   border: solid 2px rgba(74, 74, 74, 0.4);
-  font-family: "Montserrat", sans-serif;
+  font-family: Archivo, sans-serif;
   font-size: 1.11111vw;
+  line-height: 1.04167vw;
   height: 3.19444vw;
   width: 18.125vw; }
 .al-properties-section .properties-list {
@@ -386,13 +391,13 @@ body {
       -o-transition: all ease 0.3s;
       -webkit-transition: all ease 0.3s; }
       .al-properties-section .properties-list .property-image .property-overlay .property-title {
-        font-family: "Archivo", sans-serif;
+        font-family: Archivo, sans-serif;
         font-size: 1.38889vw;
         font-weight: bold;
         color: #ffffff;
         margin: 8.95833vw 0 0.41667vw 0; }
       .al-properties-section .properties-list .property-image .property-overlay .property-address, .al-properties-section .properties-list .property-image .property-overlay .property-city {
-        font-family: "Archivo", sans-serif;
+        font-family: Archivo, sans-serif;
         font-size: 0.97222vw;
         line-height: 1.25vw;
         color: #ffffff;
@@ -418,15 +423,15 @@ body {
       line-height: 1.45833vw; }
       #al-pagination .pagination li a {
         background: #ffffff;
-        color: #000;
+        color: #000000;
         height: 2.91667vw;
         padding-top: 0.69444vw;
         width: 2.84722vw; }
       #al-pagination .pagination li .pagination-active {
-        background: black;
+        background: #000000;
         color: #ffffff; }
       #al-pagination .pagination li .pagination-previous {
-        color: black; }
+        color: #000000; }
 
 .al-partners-section {
   z-index: 1;
@@ -507,7 +512,9 @@ body {
   height: 42.56944vw;
   padding: 4.16667vw 9.375vw;
   background-repeat: no-repeat;
-  background-position-y: bottom; }
+  background-size: contain;
+  background-position: bottom;
+  box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.5); }
   .al-contact-div .al-contact-text {
     color: #000000;
     font-size: 2.5vw;
@@ -576,7 +583,7 @@ body {
       position: relative;
       background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat; }
     .al-contact-div .al-contact-form-div .wpcf7-form textarea {
-      width: 100%;
+      width: 53.26389vw;
       color: #4a4a4a;
       font-size: 1.11111vw;
       height: 9.375vw;
@@ -829,7 +836,7 @@ body {
 
   .al-projects {
     height: 120px;
-    margin-top: 4px; }
+    margin-top: 3px; }
     .al-projects .al-project-list {
       height: 100%;
       width: 100%; }
@@ -840,48 +847,35 @@ body {
         .al-projects .al-project-list .al-project-list-item .item-text {
           opacity: 0.4;
           font-size: 22px;
-          color: #ffffff;
+          line-height: 24px;
           margin-top: 48px; }
         .al-projects .al-project-list .al-project-list-item .item-active {
           opacity: 1; }
         .al-projects .al-project-list .al-project-list-item .triangle {
+          width: 55px;
+          height: 16px;
           opacity: 0;
           bottom: -15px;
           left: 50%;
           transform: translateX(-50%); }
-
-  .al-contact-div {
-    padding-top: 57px; }
-
-  .al-contact-text, .al-contact-text-bold {
-    font-size: 36px; }
-
-  .al-phone-div {
-    padding-top: 40px; }
-    .al-phone-div .al-phone-box {
-      padding: 45px 30px; }
-      .al-phone-div .al-phone-box p {
-        font-size: 24px; }
-
-  a.al-phone-num {
-    font-size: 36px; }
 
   .al-properties-section .properties-country-filter {
     font-size: 20px;
     line-height: 20px;
     margin: 66px 15px 60px 0;
     padding-left: 0;
-    width: 200px; }
+    width: 130px; }
   .al-properties-section .filter-left {
     border-right: 2px solid #7f8182;
     margin: 66px 0 60px 15px;
     opacity: 0.5;
     padding-right: 0;
-    width: 200px;
+    width: 130px;
     padding-left: 0; }
-  .al-properties-section .properties-filter {
+  .al-properties-section .btn-filter {
     border: solid 2px rgba(74, 74, 74, 0.4);
     font-size: 16px;
+    line-height: 15px;
     height: 46px;
     width: 261px; }
   .al-properties-section .properties-list {
@@ -896,15 +890,9 @@ body {
       .al-properties-section .properties-list .property-image:hover .property-overlay {
         opacity: 1; }
       .al-properties-section .properties-list .property-image .property-overlay {
-        opacity: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        transition: all ease 0.3s;
-        -moz-transition: all ease 0.3s;
-        -ms-transition: all ease 0.3s;
-        -o-transition: all ease 0.3s;
-        -webkit-transition: all ease 0.3s; }
+        background: rgba(0, 0, 0, 0.8); }
         .al-properties-section .properties-list .property-image .property-overlay .property-title {
           font-size: 20px;
           margin: 129px 0 6px 0; }
@@ -1034,7 +1022,7 @@ body {
         position: relative;
         background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat; }
       .al-contact-div .al-contact-form-div .wpcf7-form textarea {
-        width: 100%;
+        width: 767px;
         font-size: 16px;
         height: 135px;
         line-height: 16px;
@@ -1070,6 +1058,7 @@ body {
       font-size: 14px;
       line-height: 20px; }
     .al-footer-container .footer-top {
+      cursor: pointer;
       width: 50px;
       height: 50px;
       right: 140px;
@@ -1262,28 +1251,54 @@ body {
     width: 7.42188vw;
     height: 3.25521vw; }
 
-  .al-properties-section .container-properties {
-    width: 100%;
-    padding: 0 5.20833vw; }
+  .al-projects {
+    height: 14.32292vw;
+    margin-top: 0.39063vw; }
+    .al-projects .al-project-list {
+      height: 100%;
+      width: 100%; }
+      .al-projects .al-project-list .al-project-list-item {
+        margin: 0 1.69271vw;
+        height: 100%;
+        width: 26.30208vw; }
+        .al-projects .al-project-list .al-project-list-item .item-text {
+          opacity: 0.4;
+          font-size: 2.34375vw;
+          line-height: 2.60417vw;
+          margin-top: 5.85938vw; }
+        .al-projects .al-project-list .al-project-list-item .item-active {
+          opacity: 1; }
+        .al-projects .al-project-list .al-project-list-item .triangle {
+          width: 5.20833vw;
+          height: 1.5625vw;
+          opacity: 0;
+          bottom: -1.30208vw;
+          left: 50%;
+          transform: translateX(-50%); }
+
   .al-properties-section .properties-country-filter {
     font-size: 2.08333vw;
-    line-height: 3.125vw;
+    line-height: 2.21354vw;
     margin: 7.42188vw 1.95313vw 6.77083vw 0;
     padding-left: 0;
-    width: 19.53125vw; }
+    width: 14.32292vw; }
   .al-properties-section .filter-left {
     border-right: 2px solid #7f8182;
     margin: 7.42188vw 0 6.77083vw 1.95313vw;
     opacity: 0.5;
     padding-right: 0;
-    width: 19.53125vw;
+    width: 14.32292vw;
     padding-left: 0; }
-  .al-properties-section .properties-filter {
+  .al-properties-section .btn-filter {
     border: solid 2px rgba(74, 74, 74, 0.4);
-    font-size: 1.82292vw;
+    font-size: 1.95313vw;
+    line-height: 1.95313vw;
     height: 4.6875vw;
-    line-height: 1.82292vw;
     width: 22.26563vw; }
+    .al-properties-section .btn-filter .caret {
+      right: 2.08333vw;
+      top: 2.21354vw;
+      position: absolute; }
   .al-properties-section .properties-list {
     margin-top: 3.90625vw; }
     .al-properties-section .properties-list .property-image {
@@ -1293,11 +1308,13 @@ body {
       margin-right: 3.38542vw; }
       .al-properties-section .properties-list .property-image:nth-child(3n+3) {
         margin: 0; }
+      .al-properties-section .properties-list .property-image:hover .property-overlay {
+        opacity: 1; }
       .al-properties-section .properties-list .property-image .property-overlay {
         opacity: 1;
         bottom: 0;
         width: 100%;
-        height: 80px;
+        height: 10.41667vw;
         background: rgba(0, 0, 0, 0.8);
         transition: all ease 0.3s;
         -moz-transition: all ease 0.3s;
@@ -1306,7 +1323,7 @@ body {
         -webkit-transition: all ease 0.3s; }
         .al-properties-section .properties-list .property-image .property-overlay .property-title {
           font-size: 1.5625vw;
-          margin: 1.69271vw 0 2px 0; }
+          margin: 1.69271vw 0 0.26042vw 0; }
         .al-properties-section .properties-list .property-image .property-overlay .property-address, .al-properties-section .properties-list .property-image .property-overlay .property-city {
           font-size: 1.30208vw;
           line-height: 1.5625vw;
@@ -1314,18 +1331,18 @@ body {
           margin: 0; }
         .al-properties-section .properties-list .property-image .property-overlay .property-category {
           margin-top: 0.78125vw;
-          font-size: 1.30208vw;
+          font-size: 1.17188vw;
           line-height: 1.30208vw;
           opacity: 0.6; }
 
   #al-pagination .pagination {
-    margin: 5.07813vw 0 11.71875vw 0; }
+    margin: 5.59896vw 0 11.71875vw 0; }
     #al-pagination .pagination li {
       font-size: 2.08333vw;
       line-height: 2.73438vw; }
       #al-pagination .pagination li a {
         height: 4.94792vw;
-        padding-top: 1.04167vw;
+        padding-top: 1.30208vw;
         width: 4.81771vw; }
 
   .al-partners-section {
@@ -1523,8 +1540,18 @@ body {
     bottom: 0 !important; }
 
   #gallery-top-blueprint .swiper-slide .bp-title span {
-    font-size: 14px !important; } }
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    font-size: 14px !important; }
+
+  .menu-button {
+    height: 100% !important;
+    margin: 1px !important; }
+
+  .logo-header, .social-header {
+    height: 80px !important; }
+
+  #ala-header .swiper-container-hero {
+    padding-top: 80px !important; } }
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
   .swiper-container-hero .swiper-button-prev, .swiper-container-hero .swiper-button-next {
     top: 368px !important; }
 
@@ -1719,29 +1746,29 @@ body {
   .al-text-white {
     font-size: 10px; }
 
-  .al-properties-section .container-properties {
-    width: 100%;
-    padding: 0 2.77778vw; }
   .al-properties-section .properties-country-filter {
     font-size: 4.44444vw;
-    line-height: 6.94444vw;
+    line-height: 4.72222vw;
     margin: 8.88889vw 4.16667vw 9.44444vw 0;
     padding-left: 0;
-    width: 33.33333vw; }
+    width: 27.77778vw; }
   .al-properties-section .filter-left {
     border-right: 2px solid #7f8182;
     margin: 8.88889vw 0 9.44444vw 4.16667vw;
     opacity: 0.5;
     padding-right: 0;
-    width: 33.33333vw;
+    width: 27.77778vw;
     padding-left: 0; }
-  .al-properties-section .properties-filter {
+  .al-properties-section .btn-filter {
     border: solid 2px rgba(74, 74, 74, 0.4);
     font-size: 3.33333vw;
-    height: 10.55556vw;
     line-height: 4.16667vw;
-    width: 86.11111vw;
-    -webkit-appearance: none; }
+    height: 10.55556vw;
+    width: 86.11111vw; }
+    .al-properties-section .btn-filter .caret {
+      right: 4.44444vw;
+      top: 4.72222vw;
+      position: absolute; }
   .al-properties-section .properties-list {
     margin-top: 8.33333vw; }
     .al-properties-section .properties-list .property-image {
@@ -1750,8 +1777,9 @@ body {
       margin-bottom: 5.27778vw;
       margin-right: 0; }
       .al-properties-section .properties-list .property-image:nth-child(3n+3) {
-        margin-right: 0;
-        margin-bottom: 5.55556vw; }
+        margin: 0; }
+      .al-properties-section .properties-list .property-image:hover .property-overlay {
+        opacity: 1; }
       .al-properties-section .properties-list .property-image .property-overlay {
         opacity: 1;
         bottom: 0;
@@ -1768,24 +1796,49 @@ body {
           margin: 4.44444vw 0 1.11111vw 0; }
         .al-properties-section .properties-list .property-image .property-overlay .property-address, .al-properties-section .properties-list .property-image .property-overlay .property-city {
           font-size: 3.88889vw;
-          line-height: 4.16667vw;
+          line-height: 4.44444vw;
           opacity: 0.5;
           margin: 0; }
         .al-properties-section .properties-list .property-image .property-overlay .property-category {
           margin-top: 2.77778vw;
           font-size: 3.33333vw;
-          line-height: 3.33333vw;
+          line-height: 2.77778vw;
           opacity: 0.6; }
 
   #al-pagination .pagination {
-    margin: 16.66667vw 0 22.22222vw 0; }
+    margin: 11.11111vw 0 22.22222vw 0; }
     #al-pagination .pagination li {
       font-size: 4.44444vw;
       line-height: 5.83333vw; }
       #al-pagination .pagination li a {
         height: 9.72222vw;
-        padding-top: 1.94444vw;
+        padding-top: 2.77778vw;
         width: 9.72222vw; }
+
+  .al-projects {
+    height: 22.22222vw;
+    margin-top: 0.83333vw; }
+    .al-projects .al-project-list {
+      height: 100%;
+      width: 100%; }
+      .al-projects .al-project-list .al-project-list-item {
+        margin: 0 4.16667vw;
+        height: 100%;
+        width: 20.83333vw; }
+        .al-projects .al-project-list .al-project-list-item .item-text {
+          opacity: 0.4;
+          font-size: 3.88889vw;
+          line-height: 5vw;
+          margin-top: 6.66667vw; }
+        .al-projects .al-project-list .al-project-list-item .item-active {
+          opacity: 1; }
+        .al-projects .al-project-list .al-project-list-item .triangle {
+          width: 5.55556vw;
+          height: 2.22222vw;
+          opacity: 0;
+          bottom: -1.94444vw;
+          left: 50%;
+          transform: translateX(-50%); }
 
   .al-partners-section {
     height: 46.94444vw;
@@ -2006,7 +2059,24 @@ body {
     line-height: 37px !important; }
 
   #gallery-top-blueprint .swiper-slide .bp-title span {
-    font-size: 12px !important; } }
+    font-size: 12px !important; }
+
+  #navbar {
+    height: 60px !important; }
+
+  .logo-header, .social-header {
+    height: 60px !important; }
+
+  .logo-header a {
+    margin: 0 !important; }
+
+  #ala-header .swiper-container-hero {
+    padding-top: 60px !important; }
+
+  #c-button--slide-left {
+    height: 100% !important;
+    margin: 1px !important;
+    padding: 12px 16px !important; } }
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   .menu-button {
     width: 33.88889vw; }
@@ -2042,7 +2112,7 @@ body {
   padding: 25px 16px !important; }
 
 #menu-primary {
-  margin-top: 2px !important; }
+  margin-top: 6px !important; }
 
 #nav-icon4 {
   width: 60px;
@@ -2131,7 +2201,7 @@ body {
   transition: all 700ms; }
 
 .logo-header a {
-  margin: 15px 0 9px;
+  margin: 18px 0 9px;
   display: block; }
 
 #property-content p {
@@ -2167,7 +2237,7 @@ a.download-bro {
     text-decoration: none !important;
     color: white !important; }
 
-ul, ol {
+#property-content ul, #property-content ol {
   font-size: 16px;
   line-height: 1.5;
   color: #8f8f8f;
@@ -2483,5 +2553,18 @@ ul, ol {
 .orderby {
   font-size: 16px;
   padding: 10px 20px !important; }
+
+#navbar {
+  height: 80px !important;
+  margin: 0 !important; }
+
+#ala-header .social-header .social-icons {
+  margin-top: 5px; }
+
+.c-button-close {
+  right: 0 !important;
+  width: 77.88px !important;
+  height: 73.88px !important;
+  left: unset !important; }
 
 /*# sourceMappingURL=style.css.map */
