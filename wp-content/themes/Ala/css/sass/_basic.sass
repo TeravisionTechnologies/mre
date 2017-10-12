@@ -46,7 +46,7 @@ body
   width: 70%
   max-width: get-vw-desktop(320px)
   height: get-vw-desktop(960px)
-  background: rgba(255, 255, 255, 0.95)
+  background: rgba($white, 0.95)
   position: relative
   .al-menu
     position: absolute
@@ -204,6 +204,8 @@ body
         left: 50%
         top: 50%
         transform: translate(-50%, -50%)
+      svg
+        max-width: 140px
   .social-header
     top: 0
     left: get-vw-desktop(900px)
@@ -259,7 +261,7 @@ body
           text-transform: uppercase
           text-align: center
           color: $white
-          text-shadow: 0 2px get-vw-desktop(4px) rgba(0, 0, 0, 0.8)
+          text-shadow: 0 2px get-vw-desktop(4px) rgba($black, 0.8)
           margin: 0
           letter-spacing: get-vw-desktop(18px)
     .swiper-button-prev, .swiper-button-next
@@ -273,15 +275,7 @@ body
       left: get-vw-desktop(135px)
     .swiper-button-next
       right: get-vw-desktop(135px)
-
 // END Header
-
-
-
-
-
-
-
 
 
 // Generals Classes
@@ -312,20 +306,6 @@ body
   &:hover
     cursor: pointer
 // END Generals Classes
-// 
-// 
-// 
-// 
-
-
-
-
-
-
-// 
-
-
-
 
 // Projects
 .al-projects
@@ -413,7 +393,7 @@ body
         position: absolute
         width: 100%
         height: 100%
-        background: rgba(0, 0, 0, 0.8)
+        background: rgba($black, 0.8)
         transition: all ease .3s
         -moz-transition: all ease .3s
         -ms-transition: all ease .3s
@@ -539,7 +519,7 @@ body
   display: none
 
 .wpcf7-response-output
-  top: get-vw-desktop(-25px)
+  top: get-vw-desktop(-40px)
   left: get-vw-desktop(30px)
   position: absolute
 
@@ -549,7 +529,7 @@ body
   background-repeat: no-repeat
   background-size: contain
   background-position: bottom
-  box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.5)
+  box-shadow: 0 -4px 20px 0 rgba($black, 0.5)
   .al-contact-text
     color: $black
     font-size: get-vw-desktop(36px)
@@ -611,8 +591,7 @@ body
         background-color: $white
         border: 1px solid $black
         font-family: Archivo, sans-serif
-        margin-bottom: get-vw-desktop(20px)
-      input[name="your-email"], select[name="your-country"] 
+      input[name="your-email"], select[name="your-country"]
         margin-left: get-vw-desktop(10px)
       select
         -webkit-appearance: none
@@ -653,7 +632,7 @@ body
   padding: get-vw-desktop(50px) 0
   position: relative
   background-color: $white
-  box-shadow: 0 -8px 10px 0 rgba(0, 0, 0, 0.2)
+  box-shadow: 0 -8px 10px 0 rgba($black, 0.2)
   img
     width: get-vw-desktop(140px)
     height: get-vw-desktop(47px)

@@ -112,23 +112,7 @@ $officesEs = get_post_meta( $home_query[0]->ID, '_hf_offices_es', true );
     </div>
 
     <div class="col-xs-12 text-center">
-        <!--<nav id="al-pagination">
-            <ul class="pagination">
-                <li>
-                    <a aria-label="Previous"><span aria-hidden="true" class="pagination-previous">&laquo;</span></a>
-                </li>
-                <li><a class="pagination-active">1</a></li>
-                <li><a>2</a></li>
-                <li><a>3</a></li>
-                <li><a>4</a></li>
-                <li><a>5</a></li>
-                <li>
-                    <a aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>-->
+
     </div>
 
 
