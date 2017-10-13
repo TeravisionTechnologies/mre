@@ -383,11 +383,11 @@
         text-align: center;
     }
 
-    .c-button {
+    .c-button { 
         display: inline-block;
         padding: 12px 24px;
         color: #fff;
-        background: none;
+        background: #fff;
         font-size: 14px;
         border: solid 2px #fff;
         box-shadow: none;
