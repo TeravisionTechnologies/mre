@@ -8,7 +8,8 @@
 /*                                            */
 .container-ala {
   width: 81.25vw;
-  height: 100%; }
+  height: 100%;
+  margin: 0 auto; }
 
 .no-padding {
   padding: 0; }
@@ -205,6 +206,8 @@ body {
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%); }
+    #ala-header .logo-header .img-div svg {
+      max-width: 140px; }
 #ala-header .social-header {
   top: 0;
   left: 62.5vw;
@@ -275,42 +278,6 @@ body {
   #ala-header .swiper-container-hero .swiper-button-next {
     right: 9.375vw; }
 
-.al-projects {
-  background: #000000;
-  color: #ffffff;
-  height: 8.3333333333vw;
-  margin-top: 0.2777777778vw;
-  text-align: center; }
-  .al-projects .al-project-list {
-    height: 100%;
-    width: 100%; }
-    .al-projects .al-project-list .al-project-list-item {
-      position: relative;
-      margin: 0 1.8055555556vw;
-      height: 100%;
-      display: inline-block;
-      text-align: center;
-      width: 18.0555555556vw;
-      cursor: pointer; }
-      .al-projects .al-project-list .al-project-list-item:hover {
-        text-decoration: none; }
-      .al-projects .al-project-list .al-project-list-item .item-text {
-        opacity: 0.4;
-        font-family: "Archivo", sans-serif;
-        font-size: 1.5277777778vw;
-        font-weight: bold;
-        text-align: center;
-        color: #ffffff;
-        margin-top: 3.3333333333vw; }
-      .al-projects .al-project-list .al-project-list-item .item-active {
-        opacity: 1; }
-      .al-projects .al-project-list .al-project-list-item .triangle {
-        opacity: 0;
-        position: absolute;
-        bottom: -1.0416666667vw;
-        left: 50%;
-        transform: translateX(-50%); }
-
 .al-text-white {
   color: #ffffff;
   font-size: 14px;
@@ -338,26 +305,66 @@ body {
   .al-go-top-div:hover {
     cursor: pointer; }
 
+.al-projects {
+  background: #000000;
+  color: #ffffff;
+  height: 8.3333333333vw;
+  margin-top: 0.2083333333vw;
+  text-align: center; }
+  .al-projects .al-project-list {
+    height: 100%;
+    width: 100%; }
+    .al-projects .al-project-list .al-project-list-item {
+      position: relative;
+      margin: 0 1.8055555556vw;
+      height: 100%;
+      display: inline-block;
+      text-align: center;
+      width: 18.0555555556vw;
+      cursor: pointer; }
+      .al-projects .al-project-list .al-project-list-item:hover {
+        text-decoration: none; }
+      .al-projects .al-project-list .al-project-list-item .item-text {
+        opacity: 0.4;
+        font-family: Archivo, sans-serif;
+        font-size: 1.5277777778vw;
+        line-height: 1.6666666667vw;
+        font-weight: bold;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 3.3333333333vw; }
+      .al-projects .al-project-list .al-project-list-item .item-active {
+        opacity: 1; }
+      .al-projects .al-project-list .al-project-list-item .triangle {
+        width: 3.8194444444vw;
+        height: 1.1111111111vw;
+        opacity: 0;
+        position: absolute;
+        bottom: -1.0416666667vw;
+        left: 50%;
+        transform: translateX(-50%); }
+
 .al-properties-section .properties-country-filter {
   color: #7f8182;
   display: inline-block;
-  font-family: "Archivo", sans-serif;
+  font-family: Archivo, sans-serif;
   font-size: 1.3888888889vw;
   line-height: 1.3888888889vw;
   margin: 4.5833333333vw 1.0416666667vw 4.1666666667vw 0;
   padding-left: 0;
-  width: 13.8888888889vw; }
+  width: 9.0277777778vw; }
 .al-properties-section .filter-left {
   border-right: 2px solid #7f8182;
   margin: 4.5833333333vw 0 4.1666666667vw 1.0416666667vw;
   opacity: 0.5;
   padding-right: 0;
-  width: 13.8888888889vw;
+  width: 9.0277777778vw;
   padding-left: 0; }
-.al-properties-section .properties-filter {
+.al-properties-section .btn-filter {
   border: solid 2px rgba(74, 74, 74, 0.4);
-  font-family: "Montserrat", sans-serif;
+  font-family: Archivo, sans-serif;
   font-size: 1.1111111111vw;
+  line-height: 1.0416666667vw;
   height: 3.1944444444vw;
   width: 18.125vw; }
 .al-properties-section .properties-list {
@@ -386,13 +393,13 @@ body {
       -o-transition: all ease 0.3s;
       -webkit-transition: all ease 0.3s; }
       .al-properties-section .properties-list .property-image .property-overlay .property-title {
-        font-family: "Archivo", sans-serif;
+        font-family: Archivo, sans-serif;
         font-size: 1.3888888889vw;
         font-weight: bold;
         color: #ffffff;
         margin: 8.9583333333vw 0 0.4166666667vw 0; }
       .al-properties-section .properties-list .property-image .property-overlay .property-address, .al-properties-section .properties-list .property-image .property-overlay .property-city {
-        font-family: "Archivo", sans-serif;
+        font-family: Archivo, sans-serif;
         font-size: 0.9722222222vw;
         line-height: 1.25vw;
         color: #ffffff;
@@ -418,15 +425,15 @@ body {
       line-height: 1.4583333333vw; }
       #al-pagination .pagination li a {
         background: #ffffff;
-        color: #000;
+        color: #000000;
         height: 2.9166666667vw;
         padding-top: 0.6944444444vw;
         width: 2.8472222222vw; }
       #al-pagination .pagination li .pagination-active {
-        background: black;
+        background: #000000;
         color: #ffffff; }
       #al-pagination .pagination li .pagination-previous {
-        color: black; }
+        color: #000000; }
 
 .al-partners-section {
   z-index: 1;
@@ -499,7 +506,7 @@ body {
   display: none; }
 
 .wpcf7-response-output {
-  top: -1.7361111111vw;
+  top: -2.7777777778vw;
   left: 2.0833333333vw;
   position: absolute; }
 
@@ -507,7 +514,9 @@ body {
   height: 42.5694444444vw;
   padding: 4.1666666667vw 9.375vw;
   background-repeat: no-repeat;
-  background-position-y: bottom; }
+  background-size: contain;
+  background-position: bottom;
+  box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.5); }
   .al-contact-div .al-contact-text {
     color: #000000;
     font-size: 2.5vw;
@@ -567,8 +576,7 @@ body {
       display: inline-block;
       background-color: #ffffff;
       border: 1px solid #000000;
-      font-family: Archivo, sans-serif;
-      margin-bottom: 1.3888888889vw; }
+      font-family: Archivo, sans-serif; }
     .al-contact-div .al-contact-form-div .wpcf7-form input[name="your-email"], .al-contact-div .al-contact-form-div .wpcf7-form select[name="your-country"] {
       margin-left: 0.6944444444vw; }
     .al-contact-div .al-contact-form-div .wpcf7-form select {
@@ -576,7 +584,7 @@ body {
       position: relative;
       background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat; }
     .al-contact-div .al-contact-form-div .wpcf7-form textarea {
-      width: 100%;
+      width: 53.2638888889vw;
       color: #4a4a4a;
       font-size: 1.1111111111vw;
       height: 9.375vw;
@@ -637,6 +645,10 @@ body {
   .container-ala {
     width: 1170px;
     height: 100%; }
+
+  .al-div-border {
+    height: 2px;
+    border: 1px solid #8f8f8f; }
 
   body {
     font-size: 14px;
@@ -829,7 +841,7 @@ body {
 
   .al-projects {
     height: 120px;
-    margin-top: 4px; }
+    margin-top: 3px; }
     .al-projects .al-project-list {
       height: 100%;
       width: 100%; }
@@ -840,48 +852,35 @@ body {
         .al-projects .al-project-list .al-project-list-item .item-text {
           opacity: 0.4;
           font-size: 22px;
-          color: #ffffff;
+          line-height: 24px;
           margin-top: 48px; }
         .al-projects .al-project-list .al-project-list-item .item-active {
           opacity: 1; }
         .al-projects .al-project-list .al-project-list-item .triangle {
+          width: 55px;
+          height: 16px;
           opacity: 0;
           bottom: -15px;
           left: 50%;
           transform: translateX(-50%); }
-
-  .al-contact-div {
-    padding-top: 57px; }
-
-  .al-contact-text, .al-contact-text-bold {
-    font-size: 36px; }
-
-  .al-phone-div {
-    padding-top: 40px; }
-    .al-phone-div .al-phone-box {
-      padding: 45px 30px; }
-      .al-phone-div .al-phone-box p {
-        font-size: 24px; }
-
-  a.al-phone-num {
-    font-size: 36px; }
 
   .al-properties-section .properties-country-filter {
     font-size: 20px;
     line-height: 20px;
     margin: 66px 15px 60px 0;
     padding-left: 0;
-    width: 200px; }
+    width: 130px; }
   .al-properties-section .filter-left {
     border-right: 2px solid #7f8182;
     margin: 66px 0 60px 15px;
     opacity: 0.5;
     padding-right: 0;
-    width: 200px;
+    width: 130px;
     padding-left: 0; }
-  .al-properties-section .properties-filter {
+  .al-properties-section .btn-filter {
     border: solid 2px rgba(74, 74, 74, 0.4);
     font-size: 16px;
+    line-height: 15px;
     height: 46px;
     width: 261px; }
   .al-properties-section .properties-list {
@@ -896,15 +895,9 @@ body {
       .al-properties-section .properties-list .property-image:hover .property-overlay {
         opacity: 1; }
       .al-properties-section .properties-list .property-image .property-overlay {
-        opacity: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        transition: all ease 0.3s;
-        -moz-transition: all ease 0.3s;
-        -ms-transition: all ease 0.3s;
-        -o-transition: all ease 0.3s;
-        -webkit-transition: all ease 0.3s; }
+        background: rgba(0, 0, 0, 0.8); }
         .al-properties-section .properties-list .property-image .property-overlay .property-title {
           font-size: 20px;
           margin: 129px 0 6px 0; }
@@ -1017,6 +1010,8 @@ body {
       width: 767px; }
       .al-contact-div .al-contact-form-div .wpcf7-form-control-wrap {
         margin-bottom: 20px; }
+      .al-contact-div .al-contact-form-div .wpcf7-form div {
+        margin-bottom: 20px; }
       .al-contact-div .al-contact-form-div .wpcf7-form p {
         margin-right: 20px; }
       .al-contact-div .al-contact-form-div .wpcf7-form input[type="text"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="email"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="tel"], .al-contact-div .al-contact-form-div .wpcf7-form select {
@@ -1025,8 +1020,7 @@ body {
         padding: 0 20px;
         font-size: 16px;
         line-height: 15px;
-        border-radius: 4px;
-        margin-bottom: 20px; }
+        border-radius: 4px; }
       .al-contact-div .al-contact-form-div .wpcf7-form input[name="your-email"], .al-contact-div .al-contact-form-div .wpcf7-form select[name="your-country"] {
         margin-left: 10px; }
       .al-contact-div .al-contact-form-div .wpcf7-form select {
@@ -1034,7 +1028,7 @@ body {
         position: relative;
         background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat; }
       .al-contact-div .al-contact-form-div .wpcf7-form textarea {
-        width: 100%;
+        width: 767px;
         font-size: 16px;
         height: 135px;
         line-height: 16px;
@@ -1070,6 +1064,7 @@ body {
       font-size: 14px;
       line-height: 20px; }
     .al-footer-container .footer-top {
+      cursor: pointer;
       width: 50px;
       height: 50px;
       right: 140px;
@@ -1262,28 +1257,54 @@ body {
     width: 7.421875vw;
     height: 3.2552083333vw; }
 
-  .al-properties-section .container-properties {
-    width: 100%;
-    padding: 0 5.2083333333vw; }
+  .al-projects {
+    height: 14.3229166667vw;
+    margin-top: 0.390625vw; }
+    .al-projects .al-project-list {
+      height: 100%;
+      width: 100%; }
+      .al-projects .al-project-list .al-project-list-item {
+        margin: 0 1.6927083333vw;
+        height: 100%;
+        width: 26.3020833333vw; }
+        .al-projects .al-project-list .al-project-list-item .item-text {
+          opacity: 0.4;
+          font-size: 2.34375vw;
+          line-height: 2.6041666667vw;
+          margin-top: 5.859375vw; }
+        .al-projects .al-project-list .al-project-list-item .item-active {
+          opacity: 1; }
+        .al-projects .al-project-list .al-project-list-item .triangle {
+          width: 5.2083333333vw;
+          height: 1.5625vw;
+          opacity: 0;
+          bottom: -1.3020833333vw;
+          left: 50%;
+          transform: translateX(-50%); }
+
   .al-properties-section .properties-country-filter {
     font-size: 2.0833333333vw;
-    line-height: 3.125vw;
+    line-height: 2.2135416667vw;
     margin: 7.421875vw 1.953125vw 6.7708333333vw 0;
     padding-left: 0;
-    width: 19.53125vw; }
+    width: 14.3229166667vw; }
   .al-properties-section .filter-left {
     border-right: 2px solid #7f8182;
     margin: 7.421875vw 0 6.7708333333vw 1.953125vw;
     opacity: 0.5;
     padding-right: 0;
-    width: 19.53125vw;
+    width: 14.3229166667vw;
     padding-left: 0; }
-  .al-properties-section .properties-filter {
+  .al-properties-section .btn-filter {
     border: solid 2px rgba(74, 74, 74, 0.4);
-    font-size: 1.8229166667vw;
+    font-size: 1.953125vw;
+    line-height: 1.953125vw;
     height: 4.6875vw;
-    line-height: 1.8229166667vw;
     width: 22.265625vw; }
+    .al-properties-section .btn-filter .caret {
+      right: 2.0833333333vw;
+      top: 2.2135416667vw;
+      position: absolute; }
   .al-properties-section .properties-list {
     margin-top: 3.90625vw; }
     .al-properties-section .properties-list .property-image {
@@ -1293,11 +1314,13 @@ body {
       margin-right: 3.3854166667vw; }
       .al-properties-section .properties-list .property-image:nth-child(3n+3) {
         margin: 0; }
+      .al-properties-section .properties-list .property-image:hover .property-overlay {
+        opacity: 1; }
       .al-properties-section .properties-list .property-image .property-overlay {
         opacity: 1;
         bottom: 0;
         width: 100%;
-        height: 80px;
+        height: 10.4166666667vw;
         background: rgba(0, 0, 0, 0.8);
         transition: all ease 0.3s;
         -moz-transition: all ease 0.3s;
@@ -1306,7 +1329,7 @@ body {
         -webkit-transition: all ease 0.3s; }
         .al-properties-section .properties-list .property-image .property-overlay .property-title {
           font-size: 1.5625vw;
-          margin: 1.6927083333vw 0 2px 0; }
+          margin: 1.6927083333vw 0 0.2604166667vw 0; }
         .al-properties-section .properties-list .property-image .property-overlay .property-address, .al-properties-section .properties-list .property-image .property-overlay .property-city {
           font-size: 1.3020833333vw;
           line-height: 1.5625vw;
@@ -1314,18 +1337,18 @@ body {
           margin: 0; }
         .al-properties-section .properties-list .property-image .property-overlay .property-category {
           margin-top: 0.78125vw;
-          font-size: 1.3020833333vw;
+          font-size: 1.171875vw;
           line-height: 1.3020833333vw;
           opacity: 0.6; }
 
   #al-pagination .pagination {
-    margin: 5.078125vw 0 11.71875vw 0; }
+    margin: 5.5989583333vw 0 11.71875vw 0; }
     #al-pagination .pagination li {
       font-size: 2.0833333333vw;
       line-height: 2.734375vw; }
       #al-pagination .pagination li a {
         height: 4.9479166667vw;
-        padding-top: 1.0416666667vw;
+        padding-top: 1.3020833333vw;
         width: 4.8177083333vw; }
 
   .al-partners-section {
@@ -1412,7 +1435,7 @@ body {
         font-weight: bold;
         line-height: 3.90625vw; }
     .al-contact-div .al-contact-form-div {
-      margin: 6.5104166667vw 7.1614583333vw 0 7.1614583333vw;
+      margin: 9.1145833333vw 7.1614583333vw 0 7.1614583333vw;
       width: 85.6770833333vw; }
       .al-contact-div .al-contact-form-div .wpcf7-form-control-wrap {
         margin-bottom: 2.6041666667vw; }
@@ -1534,7 +1557,7 @@ body {
 
   #ala-header .swiper-container-hero {
     padding-top: 80px !important; } }
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
   .swiper-container-hero .swiper-button-prev, .swiper-container-hero .swiper-button-next {
     top: 368px !important; }
 
@@ -1677,7 +1700,8 @@ body {
     width: 48.33vw; }
     #ala-header .logo-header .img-div {
       width: 27vw;
-      height: 16.6666666667vw; }
+      height: 16.6666666667vw;
+      margin-top: 10px; }
       #ala-header .logo-header .img-div img {
         width: 26.9444444444vw;
         height: 8.8888888889vw;
@@ -1729,29 +1753,29 @@ body {
   .al-text-white {
     font-size: 10px; }
 
-  .al-properties-section .container-properties {
-    width: 100%;
-    padding: 0 2.7777777778vw; }
   .al-properties-section .properties-country-filter {
     font-size: 4.4444444444vw;
-    line-height: 6.9444444444vw;
+    line-height: 4.7222222222vw;
     margin: 8.8888888889vw 4.1666666667vw 9.4444444444vw 0;
     padding-left: 0;
-    width: 33.3333333333vw; }
+    width: 27.7777777778vw; }
   .al-properties-section .filter-left {
     border-right: 2px solid #7f8182;
     margin: 8.8888888889vw 0 9.4444444444vw 4.1666666667vw;
     opacity: 0.5;
     padding-right: 0;
-    width: 33.3333333333vw;
+    width: 27.7777777778vw;
     padding-left: 0; }
-  .al-properties-section .properties-filter {
+  .al-properties-section .btn-filter {
     border: solid 2px rgba(74, 74, 74, 0.4);
     font-size: 3.3333333333vw;
-    height: 10.5555555556vw;
     line-height: 4.1666666667vw;
-    width: 86.1111111111vw;
-    -webkit-appearance: none; }
+    height: 10.5555555556vw;
+    width: 86.1111111111vw; }
+    .al-properties-section .btn-filter .caret {
+      right: 4.4444444444vw;
+      top: 4.7222222222vw;
+      position: absolute; }
   .al-properties-section .properties-list {
     margin-top: 8.3333333333vw; }
     .al-properties-section .properties-list .property-image {
@@ -1760,8 +1784,9 @@ body {
       margin-bottom: 5.2777777778vw;
       margin-right: 0; }
       .al-properties-section .properties-list .property-image:nth-child(3n+3) {
-        margin-right: 0;
-        margin-bottom: 5.5555555556vw; }
+        margin: 0; }
+      .al-properties-section .properties-list .property-image:hover .property-overlay {
+        opacity: 1; }
       .al-properties-section .properties-list .property-image .property-overlay {
         opacity: 1;
         bottom: 0;
@@ -1778,24 +1803,49 @@ body {
           margin: 4.4444444444vw 0 1.1111111111vw 0; }
         .al-properties-section .properties-list .property-image .property-overlay .property-address, .al-properties-section .properties-list .property-image .property-overlay .property-city {
           font-size: 3.8888888889vw;
-          line-height: 4.1666666667vw;
+          line-height: 4.4444444444vw;
           opacity: 0.5;
           margin: 0; }
         .al-properties-section .properties-list .property-image .property-overlay .property-category {
           margin-top: 2.7777777778vw;
           font-size: 3.3333333333vw;
-          line-height: 3.3333333333vw;
+          line-height: 2.7777777778vw;
           opacity: 0.6; }
 
   #al-pagination .pagination {
-    margin: 16.6666666667vw 0 22.2222222222vw 0; }
+    margin: 11.1111111111vw 0 22.2222222222vw 0; }
     #al-pagination .pagination li {
       font-size: 4.4444444444vw;
       line-height: 5.8333333333vw; }
       #al-pagination .pagination li a {
         height: 9.7222222222vw;
-        padding-top: 1.9444444444vw;
+        padding-top: 2.7777777778vw;
         width: 9.7222222222vw; }
+
+  .al-projects {
+    height: 22.2222222222vw;
+    margin-top: 0.8333333333vw; }
+    .al-projects .al-project-list {
+      height: 100%;
+      width: 100%; }
+      .al-projects .al-project-list .al-project-list-item {
+        margin: 0 4.1666666667vw;
+        height: 100%;
+        width: 20.8333333333vw; }
+        .al-projects .al-project-list .al-project-list-item .item-text {
+          opacity: 0.4;
+          font-size: 3.8888888889vw;
+          line-height: 5vw;
+          margin-top: 6.6666666667vw; }
+        .al-projects .al-project-list .al-project-list-item .item-active {
+          opacity: 1; }
+        .al-projects .al-project-list .al-project-list-item .triangle {
+          width: 5.5555555556vw;
+          height: 2.2222222222vw;
+          opacity: 0;
+          bottom: -1.9444444444vw;
+          left: 50%;
+          transform: translateX(-50%); }
 
   .al-partners-section {
     height: 46.9444444444vw;
@@ -1922,6 +1972,9 @@ body {
         border: solid 2px #000000; }
         .al-contact-div .al-contact-form-div .wpcf7-form .wpcf7-submit:hover {
           background-color: rgba(255, 255, 255, 0.7); }
+
+  .al-contact-div .al-contact-form-div .wpcf7-form input[type="text"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="email"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="tel"], .al-contact-div .al-contact-form-div .wpcf7-form select {
+    width: 100%; }
 
   .al-footer-container {
     height: 35.2777777778vw;
@@ -2060,14 +2113,13 @@ body {
   #ala-header .swiper-container-hero {
     padding-top: 0; } }
 body {
-  background: #fff !important; }
+  background: #ffffff !important; }
 
 .menu {
   width: 100% !important; }
 
 .menu-button {
-  padding: 25px 16px !important;
-  margin: 2px; }
+  padding: 25px 16px !important; }
 
 #menu-primary {
   margin-top: 6px !important; }
@@ -2310,7 +2362,7 @@ a.download-bro {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    color: #ffffff;
     text-align: center;
     line-height: 350px;
     display: none; }
@@ -2364,7 +2416,8 @@ a.download-bro {
 
 .gallery-top-blueprint {
   width: 80% !important;
-  height: 545px !important; }
+  height: 545px !important;
+  margin-bottom: 50px; }
 
 .gallery-thumbs-blueprint {
   width: 80% !important;
@@ -2375,8 +2428,7 @@ a.download-bro {
 
 .border-thumb {
   padding: 30px 0 50px;
-  border-top: solid 1px #8f8f8f;
-  margin-top: 50px; }
+  margin-top: 0px; }
 
 .swiper-detail-thumbs {
   height: 120px; }
@@ -2404,7 +2456,7 @@ a.download-bro {
   padding: 20px 5px; }
 
 .modal-detail .close .fa {
-  color: #fff; }
+  color: #ffffff; }
 
 .modal-backdrop .in {
   opacity: 0.9 !important; }
@@ -2427,26 +2479,9 @@ a.download-bro {
   text-decoration: none;
   color: #000000; }
 
-/*.nearby
- * position: relative
- * &hover
- * .mask-nearby
- * display: block
- * .mask-nearby
- * position: absolute
- * left: 0
- * top: 0
- * height: 100%
- * width: 100%
- * background: rgba(0, 0, 0, 0.51)
- * color: #fff
- * text-align: center
- * font-size: 20px
- * display: none */
 #save-widget {
   width: 300px;
   box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
-  background-color: white;
   padding: 10px;
   font-family: Roboto, Arial;
   font-size: 13px;
