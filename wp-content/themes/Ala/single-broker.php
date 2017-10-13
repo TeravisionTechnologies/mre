@@ -256,7 +256,9 @@
                 </div>
             </div>
         </div>
-    <?php } ?>
+    <?php } else {
+        echo '<div class="marginb80"></div>';
+    } ?>
 
 </section>
 

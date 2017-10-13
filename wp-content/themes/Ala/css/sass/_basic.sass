@@ -524,12 +524,13 @@ body
   position: absolute
 
 .al-contact-div
-  height: get-vw-desktop(613px)
+  //height: get-vw-desktop(613px)
   padding: get-vw-desktop(60px) get-vw-desktop(135px)
   background-repeat: no-repeat
   background-size: contain
   background-position: bottom
   box-shadow: 0 -4px 20px 0 rgba($black, 0.5)
+  overflow: hidden
   .al-contact-text
     color: $black
     font-size: get-vw-desktop(36px)
@@ -576,6 +577,9 @@ body
     .wpcf7-form-control-wrap
       margin-bottom: get-vw-desktop(20px)
     .wpcf7-form
+      span
+        input
+          margin-bottom: get-vw-desktop(20px)
       p
         margin-right: get-vw-desktop(20px)
         display: inline-block
@@ -598,7 +602,7 @@ body
         position: relative
         background: $white url(assets/form-caret-down.png) 100% 50% no-repeat
       textarea
-        width: get-vw-desktop(767px)
+        width: get-vw-desktop(765px)
         color: $grey
         font-size: get-vw-desktop(16px)
         height: get-vw-desktop(135px)
@@ -657,3 +661,10 @@ body
     right: get-vw-desktop(140px)
     top: get-vw-desktop(40px)
 // END Footer
+
+.marginb80
+  margin-bottom: 80px
+
+.wpcf7-not-valid-tip
+  margin-top: -18px
+  display: block

@@ -511,12 +511,12 @@ body {
   position: absolute; }
 
 .al-contact-div {
-  height: 42.5694444444vw;
   padding: 4.1666666667vw 9.375vw;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom;
-  box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.5); }
+  box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.5);
+  overflow: hidden; }
   .al-contact-div .al-contact-text {
     color: #000000;
     font-size: 2.5vw;
@@ -562,6 +562,8 @@ body {
     padding: 0; }
     .al-contact-div .al-contact-form-div .wpcf7-form-control-wrap {
       margin-bottom: 1.3888888889vw; }
+    .al-contact-div .al-contact-form-div .wpcf7-form span input {
+      margin-bottom: 1.3888888889vw; }
     .al-contact-div .al-contact-form-div .wpcf7-form p {
       margin-right: 1.3888888889vw;
       display: inline-block; }
@@ -584,7 +586,7 @@ body {
       position: relative;
       background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat; }
     .al-contact-div .al-contact-form-div .wpcf7-form textarea {
-      width: 53.2638888889vw;
+      width: 53.125vw;
       color: #4a4a4a;
       font-size: 1.1111111111vw;
       height: 9.375vw;
@@ -640,6 +642,13 @@ body {
     height: 3.4722222222vw;
     right: 9.7222222222vw;
     top: 2.7777777778vw; }
+
+.marginb80 {
+  margin-bottom: 80px; }
+
+.wpcf7-not-valid-tip {
+  margin-top: -18px;
+  display: block; }
 
 @media only screen and (min-width: 1440px) {
   .container-ala {
@@ -1404,7 +1413,6 @@ body {
     left: 3.90625vw; }
 
   .al-contact-div {
-    height: 124.21875vw;
     padding: 6.5104166667vw 0 18.2291666667vw 0; }
     .al-contact-div .al-contact-text {
       font-size: 2.8645833333vw;
@@ -1456,7 +1464,7 @@ body {
       .al-contact-div .al-contact-form-div .wpcf7-form input[name="your-email"], .al-contact-div .al-contact-form-div .wpcf7-form select[name="your-country"] {
         margin-left: 1.3020833333vw; }
       .al-contact-div .al-contact-form-div .wpcf7-form textarea {
-        width: 100%;
+        width: 85.7vw;
         font-size: 1.8229166667vw;
         height: 17.3177083333vw;
         line-height: 2.0833333333vw;
@@ -1900,7 +1908,6 @@ body {
     left: 8.3333333333vw; }
 
   .al-contact-div {
-    height: 232.2222222222vw;
     padding: 11.1111111111vw 0 13.8888888889vw 0; }
     .al-contact-div .al-contact-text {
       font-size: 3.8888888889vw;
