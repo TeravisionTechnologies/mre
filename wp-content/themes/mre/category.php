@@ -6,6 +6,7 @@
  * @since MRE 1.0
  */
 get_header();
+$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 
 $postRecommended = get_posts(
     array(
@@ -26,6 +27,7 @@ $categories = get_categories(
     array(
         'orderby' => 'name',
         'order' => 'ASC',
+        'hide_empty' => 1
     )
 );
 
@@ -38,9 +40,10 @@ $categories = get_categories(
                 <div class="swiper-container swiper-container-blog-categories">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" name="Todas las categorías">
-                            <img
-                                src="<?php echo get_template_directory_uri(); ?>/assets/todas.png">
-                            <div class="swiper-overlay"></div>
+                            <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/todas.png">
+                                <div class="swiper-overlay"></div>
+                            </a>
                         </div>
                         <?php
                         foreach ($categories as $category) {
@@ -48,7 +51,7 @@ $categories = get_categories(
                             $slug = $category->slug;
                             $category_link = get_category_link($category->cat_ID );
                             ?>
-                            <div class="swiper-slide" name="<?php echo $name; ?>">
+                            <div class="swiper-slide" name="<?php echo $name; ?>" data-slug="<?php echo $slug; ?>">
                                 <a href="<?php echo $category_link ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/<?php echo $slug; ?>.png">
                                     <div class="swiper-overlay"></div>
@@ -78,13 +81,21 @@ $categories = get_categories(
                     </form>
                 </div>
                 <div class="col-xs-12 col-sm-3 blog-select">
-                    <select class="form-control blog-filter pull-right">
-                        <option>Ordenar por...</option>
-                        <option>Autor</option>
-                        <option>Categoría</option>
-                        <option>Título</option>
-                        <option>Fecha</option>
-                    </select>
+                    <form name="filters" class="post-filters" method="post">
+                        <select name="orderby" id="orderby" class="form-control blog-filter pull-right">
+                            <option selected="selected">Order by...</option>
+                            <?php
+                            $orderby_options = array(
+                                'post_date' => 'Order By Date',
+                                'post_title' => 'Order By Title',
+                            );
+                            foreach( $orderby_options as $value => $label ) {
+                                echo "<option value='$value'>$label</option>";
+                            }
+                            ?>
+                        </select>
+                        <input type="hidden" name="order" value="<?php ((strpos($url,'DESC') !== false) ? ASC : DESC) ?>">
+                    </form>
                 </div>
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                     <div class="col-xs-12 col-sm-6 blog-post">
@@ -99,9 +110,9 @@ $categories = get_categories(
                             echo $link; ?>"><h1 class="blog-text-title"><?php echo $post->post_title; ?></h1></a>
                             <h2 class="blog-text-author">Por: <?php $author = get_user_by('ID', $post->post_author);
                                 echo $author->display_name ?><span
-                                    class="blog-text-date"><?php $date = strtotime($post->post_date);
+                                        class="blog-text-date"><?php $date = strtotime($post->post_date);
                                     echo date('d F, Y', $date) ?></span><span
-                                    class="blog-text-comments hidden-xs hidden-sm">- <?php echo $post->comment_count ?>
+                                        class="blog-text-comments hidden-xs hidden-sm">- <?php echo $post->comment_count ?>
                                     Comments</span></h2>
                             <p class="blog-text-summary"><?php echo $post->post_excerpt ?></p>
                         </div>
@@ -140,9 +151,9 @@ $categories = get_categories(
                                         <h2 class="blog-most-viewed-text-author">
                                             Por: <?php $author = get_user_by('ID', $post->post_author);
                                             echo $author->display_name ?><span
-                                                class="blog-most-viewed-text-date"><?php $date = strtotime($post->post_date);
+                                                    class="blog-most-viewed-text-date"><?php $date = strtotime($post->post_date);
                                                 echo date('d F, Y', $date) ?></span><span
-                                                class="blog-most-viewed-text-comments">- <?php echo $post->comment_count ?>
+                                                    class="blog-most-viewed-text-comments">- <?php echo $post->comment_count ?>
                                                 Comments</span></h2>
                                     </div>
                                 </div>
@@ -155,4 +166,5 @@ $categories = get_categories(
             </div>
         </section>
     </section>
+
 <?php get_footer(); ?>
