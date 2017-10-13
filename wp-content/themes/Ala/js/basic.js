@@ -322,5 +322,17 @@ slideLeftBtn.addEventListener('click', function (e) {
     slideLeft.open();
 });
 
+var close = document.querySelector('#menu-item-15');
 
+close.addEventListener('click', function (e) {
+    e.preventDefault;
+    slideLeft.close();
+});
+
+var closecnt = document.querySelector('#menu-item-19');
+
+closecnt.addEventListener('click', function (e) {
+    e.preventDefault;
+    slideLeft.close();
+});
 
