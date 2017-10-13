@@ -134,7 +134,7 @@
 #blog-detail-form
   background: $form-grey
   .blog-detail-comments-form
-    height: get-vw-desktop(494px)
+    height: auto
     padding: 0 get-vw-desktop(40px)
     width: get-vw-desktop(970px)
     .blog-detail-comments-form-title
@@ -201,4 +201,20 @@
       height: get-vw-desktop(50px)
       line-height: get-vw-desktop(20px)
       margin-top: get-vw-desktop(15px)
+      margin-bottom: get-vw-desktop(60px)
       width: get-vw-desktop(330px)
+    input.error, textarea.error
+      background-color: transparent
+      border: solid 1px $red-error !important
+    div.error
+      background: $red-error
+      color: $red-error-text
+      font-weight: 600
+      font-size: 11px
+      font-family: Montserrat-Regular, sans-serif
+      text-transform: uppercase
+      text-align: left
+      padding-top: 15px
+      padding-left: 15px
+    label.error
+      color: $red-error-text

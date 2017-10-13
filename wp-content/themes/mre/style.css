@@ -654,10 +654,10 @@ a.al-phone-num {
   #mre-footer .mre-footer-go-top {
     visibility: hidden;
     cursor: pointer;
-    position: fixed;
+    position: absolute;
     opacity: 0;
     right: 9.7222222222vw;
-    bottom: 9.9305555556vw;
+    top: 2.7777777778vw;
     z-index: 100; }
 
 #blog-list-categories {
@@ -1089,7 +1089,7 @@ a.al-phone-num {
 #blog-detail-form {
   background: #f2f2f2; }
   #blog-detail-form .blog-detail-comments-form {
-    height: 34.3055555556vw;
+    height: auto;
     padding: 0 2.7777777778vw;
     width: 67.3611111111vw; }
     #blog-detail-form .blog-detail-comments-form .blog-detail-comments-form-title {
@@ -1156,7 +1156,23 @@ a.al-phone-num {
       height: 3.4722222222vw;
       line-height: 1.3888888889vw;
       margin-top: 1.0416666667vw;
+      margin-bottom: 4.1666666667vw;
       width: 22.9166666667vw; }
+    #blog-detail-form .blog-detail-comments-form input.error, #blog-detail-form .blog-detail-comments-form textarea.error {
+      background-color: transparent;
+      border: solid 1px #cc6a67 !important; }
+    #blog-detail-form .blog-detail-comments-form div.error {
+      background: #cc6a67;
+      color: #7b0a0a;
+      font-weight: 600;
+      font-size: 11px;
+      font-family: Montserrat-Regular, sans-serif;
+      text-transform: uppercase;
+      text-align: left;
+      padding-top: 15px;
+      padding-left: 15px; }
+    #blog-detail-form .blog-detail-comments-form label.error {
+      color: #7b0a0a; }
 
 @media screen\0 {
   #blog-recommended-posts .swiper-container-blog-most-viewed {
@@ -1590,7 +1606,7 @@ a.al-phone-num {
         line-height: 20px; }
     #mre-footer .mre-footer-go-top {
       right: 140px;
-      bottom: 143px; }
+      top: 40px; }
 
   #blog-list-categories {
     height: 343px; }
@@ -1852,7 +1868,7 @@ a.al-phone-num {
         padding-top: 10px; }
 
   #blog-detail-form .blog-detail-comments-form {
-    height: 494px;
+    height: auto;
     padding: 0 40px;
     width: 970px; }
     #blog-detail-form .blog-detail-comments-form .blog-detail-comments-form-title {
@@ -2545,7 +2561,7 @@ a.al-phone-num {
         padding-top: 1.3020833333vw; }
 
   #blog-detail-form .blog-detail-comments-form {
-    height: 60.546875vw;
+    height: auto;
     padding: 0;
     width: 70.5729166667vw; }
     #blog-detail-form .blog-detail-comments-form .blog-detail-comments-form-title {
@@ -3234,7 +3250,7 @@ a.al-phone-num {
         padding-top: 2.7777777778vw; }
 
   #blog-detail-form .blog-detail-comments-form {
-    height: 131.6666666667vw;
+    height: auto;
     padding: 0;
     width: 86.1111111111vw; }
     #blog-detail-form .blog-detail-comments-form .blog-detail-comments-form-title {
