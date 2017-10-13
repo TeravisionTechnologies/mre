@@ -227,3 +227,31 @@ jQuery(document).ready(function () {
     });
 
 });
+
+var slideLeft = new Menu({
+    wrapper: '#o-wrapper',
+    type: 'slide-left',
+    menuOpenerClass: '.c-button',
+    maskId: '#c-mask'
+});
+
+var slideLeftBtn = document.querySelector('#c-button--slide-left');
+
+slideLeftBtn.addEventListener('click', function (e) {
+    e.preventDefault;
+    slideLeft.open();
+});
+
+var close = document.querySelector('#menu-item-27');
+
+close.addEventListener('click', function (e) {
+    e.preventDefault;
+    slideLeft.close();
+});
+
+var close = document.querySelector('#menu-item-24');
+
+close.addEventListener('click', function (e) {
+    e.preventDefault;
+    slideLeft.close();
+});
