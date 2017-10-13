@@ -650,6 +650,9 @@ body {
   margin-top: -18px;
   display: block; }
 
+textarea {
+  resize: none !important; }
+
 @media only screen and (min-width: 1440px) {
   .container-ala {
     width: 1170px;
