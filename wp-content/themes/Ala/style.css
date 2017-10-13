@@ -902,8 +902,6 @@ textarea {
       height: 350px;
       margin-bottom: 50px;
       margin-right: 45px; }
-      .al-properties-section .properties-list .property-image:nth-child(3n+3) {
-        margin: 0; }
       .al-properties-section .properties-list .property-image:hover .property-overlay {
         opacity: 1; }
       .al-properties-section .properties-list .property-image .property-overlay {
@@ -1792,10 +1790,8 @@ textarea {
     .al-properties-section .properties-list .property-image {
       width: 86.1111111111vw;
       height: 83.6111111111vw;
-      margin-bottom: 5.2777777778vw;
+      margin-bottom: 5.2777777778vw !important;
       margin-right: 0; }
-      .al-properties-section .properties-list .property-image:nth-child(3n+3) {
-        margin: 0; }
       .al-properties-section .properties-list .property-image:hover .property-overlay {
         opacity: 1; }
       .al-properties-section .properties-list .property-image .property-overlay {
