@@ -145,23 +145,6 @@ jQuery(document).ready(function () {
         }
     });
 
-    // Go top button visibility
-    $(window).scroll(function (event) {
-        var scroll = $(window).scrollTop();
-        if (scroll > 900) {
-            $('.mre-footer-go-top').css({
-                'opacity': '1',
-                'transition': 'visibility 0s, opacity 0.5s ease',
-                'visibility': 'visible'
-            });
-        } else {
-            $('.mre-footer-go-top').css({
-                'opacity': '0',
-                'transition': 'visibility 1s, opacity 0.5s ease',
-                'visibility': 'hidden'
-            });
-        }
-    });
 
     // Footer Go to top functionality
     $(".mre-footer-go-top").click(function () {

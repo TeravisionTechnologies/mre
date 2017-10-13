@@ -16,11 +16,10 @@
       )
     );
 
-    // Site Logo
+    // Header Logo
     $cmb_header->add_field(
       array(
-        'name'         => __( 'Logo' ),
-        'desc'         => __( 'Logo to display in header section.' ),
+        'name'         => __( 'Header Logo' ),
         'id'           => $prefix . 'header_logo',
         'type'         => 'file',
         'preview_size' => array(100,100),
@@ -37,100 +36,58 @@
       )
     );
 
-		// Initiate the metabox for footer
-		$cmb = new_cmb2_box(
-			array(
-				'id'            => 'Footer Information',
-				'title'         => __( 'Footer Information Setup' ),
-				'object_types'  => 'header_footer', // Post type
-				'context'       => 'normal',
-				'priority'      => 'high'
-			)
-		);
+    // Social Networks
+    $social_networks = $cmb_header->add_field( array(
+      'id'          => $prefix . 'social_networks',
+      'type'        => 'group',
+      'repeatable'  => false,
+      'options'     => array(
+        'group_title'   => __( 'Social Networks', 'cmb2' ),
+        'add_button'    => __( 'Add Another Entry', 'cmb2' ),
+        'remove_button' => __( 'Remove Entry', 'cmb2' ),
+        'sortable'      => true,
+      ),
+    ) );
 
-		// Site Logo
-		$cmb->add_field(
-			array(
-				'name'         => __( 'Logo' ),
-				'desc'         => __( 'Logo to display in footer section.' ),
-				'id'           => $prefix . 'logo',
-				'type'         => 'file',
-				'preview_size' => array(100,100),
-				'text'         =>
-					array(
-						'add_upload_files_text' => __( 'Add or Upload Images' ), // default: "Add or Upload Files"
-						'file_text'             => __( 'Image:' ), // default: "File:"
-					),
-				'options' =>
-					array(
-						'url' => false, // Hide the text input for the url
-					),
-				'repeatable'   => false
-			)
-		);
+    // Linkedin Link
+    $cmb_header->add_group_field( $social_networks, array(
+      'name'    => __( 'Linkedin' , 'cmb2' ),
+      'id'      => $prefix . 'linkedin',
+      'type' => 'text_url',
+      'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
+    ) );
 
-		// Footer Copyright
-		$cmb->add_field(
-			array(
-				'name'       => __( 'Copyright Information' ),
-				'id'         => $prefix . 'copy',
-				'type'       => 'text',
-				'repeatable' => false
-			)
-		);
+    // Facebook Link
+    $cmb_header->add_group_field( $social_networks, array(
+      'name'    => __( 'Facebook' , 'cmb2' ),
+      'id'      => $prefix . 'facebook',
+      'type' => 'text_url',
+      'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
+    ) );
 
-    // Initiate the metabox for Contact US section
-    $cmb_contact = new_cmb2_box(
-      array(
-        'id'            => 'Contact Us Information',
-        'title'         => __( 'Contact Us Information Setup' ),
-        'object_types'  => 'header_footer', // Post type
-        'context'       => 'normal',
-        'priority'      => 'high'
-      )
-    );
+    // Instagram Link
+    $cmb_header->add_group_field( $social_networks, array(
+      'name'    => __( 'Instagram' , 'cmb2' ),
+      'id'      => $prefix . 'instagram',
+      'type' => 'text_url',
+      'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
+    ) );
 
-    // Contact us Background Image
-    $cmb_contact->add_field(
-      array(
-        'name'         => __( 'Background image' ),
-        'desc'         => __( 'Image to display in Contact us form section.' ),
-        'id'           => $prefix . 'contact',
-        'type'         => 'file',
-        'preview_size' => array(100,100),
-        'text'         =>
-          array(
-            'add_upload_files_text' => __( 'Add or Upload Images' ), // default: "Add or Upload Files"
-            'file_text'             => __( 'Image:' ), // default: "File:"
-          ),
-        'options' =>
-          array(
-            'url' => false, // Hide the text input for the url
-          ),
-        'repeatable'   => false
-      )
-    );
+    // Twitter Link
+    $cmb_header->add_group_field( $social_networks, array(
+      'name'    => __( 'Twitter' , 'cmb2' ),
+      'id'      => $prefix . 'twitter',
+      'type' => 'text_url',
+      'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
+    ) );
 
-    // Contact us Info Background Image
-    $cmb_contact->add_field(
-      array(
-        'name'         => __( 'Background image' ),
-        'desc'         => __( 'Image to display in Contact us section.' ),
-        'id'           => $prefix . 'contact-swiper',
-        'type'         => 'file',
-        'preview_size' => array(100,100),
-        'text'         =>
-          array(
-            'add_upload_files_text' => __( 'Add or Upload Images' ), // default: "Add or Upload Files"
-            'file_text'             => __( 'Image:' ), // default: "File:"
-          ),
-        'options' =>
-          array(
-            'url' => false, // Hide the text input for the url
-          ),
-        'repeatable'   => false
-      )
-    );
+    // Youtube Link
+    $cmb_header->add_group_field( $social_networks, array(
+      'name'    => __( 'Youtube' , 'cmb2' ),
+      'id'      => $prefix . 'youtube',
+      'type' => 'text_url',
+      'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
+    ) );
 
     // Initiate the metabox for Partners section
     $cmb_partners = new_cmb2_box(
@@ -142,6 +99,14 @@
         'priority'      => 'high'
       )
     );
+
+    // Partners Text
+    $cmb_partners->add_field(
+      array(
+      'name'    => __( 'Partners Section Text' ),
+      'id'      => $prefix . 'partners_text',
+      'type'    => 'wysiwyg',
+    ) );
 
     // Partners Images
     $cmb_partners->add_field(
@@ -183,66 +148,215 @@
       )
     );
 
-    // Initiate the metabox for social media
-    $cmb_sm = new_cmb2_box(
-      array(
-        'id'            => 'Social Media Information',
-        'title'         => __( 'Social Media Information Setup' ),
-        'object_types'  => 'header_footer',
-        'context'       => 'normal',
-        'priority'      => 'high'
+    // Our offices Section
+    $our_offices = $cmb_header->add_field( array(
+      'id'          => $prefix . 'our_offices',
+      'type'        => 'group',
+      'repeatable'  => false,
+      'options'     => array(
+        'group_title'   => __( 'Our Offices Section', 'cmb2' ),
+        'add_button'    => __( 'Add Another Entry', 'cmb2' ),
+        'remove_button' => __( 'Remove Entry', 'cmb2' ),
+        'sortable'      => true,
+      ),
+    ) );
+
+    // Our offices Background
+    $cmb_header->add_group_field( $our_offices, array(
+        'name'         => __( 'Background' ),
+        'id'           => $prefix . 'our_offices_background',
+        'type'         => 'file',
+        'preview_size' => array(100,100),
+        'text'         =>
+          array(
+            'add_upload_files_text' => __( 'Add or Upload Images' ), // default: "Add or Upload Files"
+            'file_text'             => __( 'Image:' ), // default: "File:"
+          ),
+        'options' =>
+          array(
+            'url' => false, // Hide the text input for the url
+          ),
+        'repeatable'   => false
       )
     );
 
-    // Facebook uri
-    $cmb_sm->add_field(
-      array(
-        'name'       => __( 'Facebook URL' ),
-        'id'         => $prefix . 'fb_uri',
-        'type'       => 'text',
-        'repeatable' => false
+    // Our offices Text
+    $cmb_header->add_group_field( $our_offices, array(
+      'name'    => __( 'Text' ),
+      'id'      => $prefix . 'our_offices_text',
+      'type'    => 'wysiwyg',
+      'options' => array(),
+    ) );
+
+
+    // Offices United States
+    $offices_us = $cmb_header->add_field( array(
+      'id'          => $prefix . 'offices_us',
+      'type'        => 'group',
+      'repeatable'  => true,
+      'options'     => array(
+        'group_title'   => __( 'Offices United States', 'cmb2' ),
+        'add_button'    => __( 'Add Another Entry', 'cmb2' ),
+        'remove_button' => __( 'Remove Entry', 'cmb2' ),
+        'sortable'      => true,
+      ),
+    ) );
+
+    // Offices United States City
+    $cmb_header->add_group_field( $offices_us, array(
+      'name'    => __( 'City' ),
+      'id'      => $prefix . 'offices_us_city',
+      'type'    => 'text',
+    ) );
+
+    // Offices United States Address
+    $cmb_header->add_group_field( $offices_us, array(
+      'name'    => __( 'Address' ),
+      'id'      => $prefix . 'offices_us_address',
+      'type'    => 'text',
+    ) );
+
+    // Offices United States Phone Number
+    $cmb_header->add_group_field( $offices_us, array(
+      'name'    => __( 'Phone Number' ),
+      'id'      => $prefix . 'offices_us_phone',
+      'type'    => 'text',
+    ) );
+
+    // Offices Spain
+    $offices_es = $cmb_header->add_field( array(
+      'id'          => $prefix . 'offices_es',
+      'type'        => 'group',
+      'repeatable'  => true,
+      'options'     => array(
+        'group_title'   => __( 'Offices Spain', 'cmb2' ),
+        'add_button'    => __( 'Add Another Entry', 'cmb2' ),
+        'remove_button' => __( 'Remove Entry', 'cmb2' ),
+        'sortable'      => true,
+      ),
+    ) );
+
+    // Offices Spain City
+    $cmb_header->add_group_field( $offices_es, array(
+      'name'    => __( 'City' ),
+      'id'      => $prefix . 'offices_es_city',
+      'type'    => 'text',
+    ) );
+
+    // Offices Spain Address
+    $cmb_header->add_group_field( $offices_es, array(
+      'name'    => __( 'Address' ),
+      'id'      => $prefix . 'offices_es_address',
+      'type'    => 'text',
+    ) );
+
+    // Offices Spain Phone Number
+    $cmb_header->add_group_field( $offices_es, array(
+      'name'    => __( 'Phone Number' ),
+      'id'      => $prefix . 'offices_es_phone',
+      'type'    => 'text',
+    ) );
+
+    // Contact Form Section
+    $contact_form = $cmb_header->add_field( array(
+      'id'          => $prefix . 'contact_form',
+      'type'        => 'group',
+      'repeatable'  => false,
+      'options'     => array(
+        'group_title'   => __( 'Contact Form Section', 'cmb2' ),
+        'add_button'    => __( 'Add Another Entry', 'cmb2' ),
+        'remove_button' => __( 'Remove Entry', 'cmb2' ),
+        'sortable'      => true,
+      ),
+    ) );
+
+    // Contact Form First Text
+    $cmb_header->add_group_field( $contact_form, array(
+      'name'    => __( 'First Message' ),
+      'id'      => $prefix . 'contact_first',
+      'type'    => 'text',
+    ) );
+
+    // Contact Form Second Text
+    $cmb_header->add_group_field( $contact_form, array(
+      'name'    => __( 'Second Message' ),
+      'id'      => $prefix . 'contact_second',
+      'type'    => 'text',
+    ) );
+
+    // Contact Form Background
+    $cmb_header->add_group_field( $contact_form, array(
+        'name'         => __( 'Contact Form Background' ),
+        'id'           => $prefix . 'contact_background',
+        'type'         => 'file',
+        'preview_size' => array(100,100),
+        'text'         =>
+          array(
+            'add_upload_files_text' => __( 'Add or Upload Images' ), // default: "Add or Upload Files"
+            'file_text'             => __( 'Image:' ), // default: "File:"
+          ),
+        'options' =>
+          array(
+            'url' => false, // Hide the text input for the url
+          ),
+        'repeatable'   => false
       )
     );
 
-    // Twitter uri
-    $cmb_sm->add_field(
-      array(
-        'name'       => __( 'Twitter URL' ),
-        'id'         => $prefix . 'tw_uri',
-        'type'       => 'text',
-        'repeatable' => false
-      )
-    );
+    // Contact Form Phone Section
+    $cmb_header->add_group_field( $contact_form, array(
+      'name'    => __( 'Text' ),
+      'id'      => $prefix . 'contact_text',
+      'type'    => 'wysiwyg',
+      'options' => array(),
+    ) );
 
-    // Linkedin uri
-    $cmb_sm->add_field(
-      array(
-        'name'       => __( 'LinkedIn URL' ),
-        'id'         => $prefix . 'in_uri',
-        'type'       => 'text',
-        'repeatable' => false
-      )
-    );
+    // Contact Form Phone Number
+    $cmb_header->add_group_field( $contact_form, array(
+      'name'    => __( 'Phone Number' ),
+      'id'      => $prefix . 'contact_phone',
+      'type'    => 'text',
+    ) );
 
-    // Youtube uri
-    $cmb_sm->add_field(
-      array(
-        'name'       => __( 'Youtube URL' ),
-        'id'         => $prefix . 'yb_uri',
-        'type'       => 'text',
-        'repeatable' => false
-      )
-    );
+		// Initiate the metabox for footer
+		$cmb = new_cmb2_box(
+			array(
+				'id'            => 'Footer Information',
+				'title'         => __( 'Footer Information Setup' ),
+				'object_types'  => 'header_footer', // Post type
+				'context'       => 'normal',
+				'priority'      => 'high'
+			)
+		);
 
-    // Instagram uri
-    $cmb_sm->add_field(
-      array(
-        'name'       => __( 'Instagram URL' ),
-        'id'         => $prefix . 'ig_uri',
-        'type'       => 'text',
-        'repeatable' => false
-      )
-    );
+		// Site Logo
+		$cmb->add_field(
+			array(
+				'name'         => __( 'Logo' ),
+				'desc'         => __( 'Logo to display in footer section.' ),
+				'id'           => $prefix . 'logo',
+				'type'         => 'file',
+				'preview_size' => array(100,100),
+				'text'         =>
+					array(
+						'add_upload_files_text' => __( 'Add or Upload Images' ), // default: "Add or Upload Files"
+						'file_text'             => __( 'Image:' ), // default: "File:"
+					),
+				'options' =>
+					array(
+						'url' => false, // Hide the text input for the url
+					),
+				'repeatable'   => false
+			)
+		);
 
-
+		// Footer Copyright
+		$cmb->add_field(
+			array(
+				'name'       => __( 'Copyright Information' ),
+				'id'         => $prefix . 'copy',
+				'type'       => 'text',
+				'repeatable' => false
+			)
+		); 
 	}

@@ -18,7 +18,6 @@ $officesVe = get_post_meta( $headerPost[0]->ID, '_hf_offices_ve', true );
 $officesUs = get_post_meta( $headerPost[0]->ID, '_hf_offices_us', true );
 $officesEs = get_post_meta( $headerPost[0]->ID, '_hf_offices_es', true );
 $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
-//var_dump($theMeta);
 ?>
             <div class="swiper-container swiper-container-hero">
               <div class="swiper-wrapper">
