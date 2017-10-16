@@ -339,9 +339,9 @@ if (!class_exists('WPPaginate')) {
             if ($pages > 1) {
 							
 							if($preset === 'default')
-                $output .= sprintf('<ol class="wp-paginate ' . $font . '%s">', ($this->type === 'posts') ? '' : ' wp-paginate-comments');
+                $output .= sprintf('<ol class="pagination ' . $font . '%s">', ($this->type === 'posts') ? '' : ' wp-paginate-comments');
 							else
-                $output .= sprintf('<ol class="wp-paginate ' . $preset . ' ' . $font . '%s">', ($this->type === 'posts') ? '' : ' wp-paginate-comments');
+                $output .= sprintf('<ol class="pagination ' . $preset . ' ' . $font . '%s">', ($this->type === 'posts') ? '' : ' wp-paginate-comments');
 							
                 if (strlen(stripslashes($title)) > 0) {
                     $output .= sprintf('<li><span class="title">%s</span></li>', stripslashes($title));

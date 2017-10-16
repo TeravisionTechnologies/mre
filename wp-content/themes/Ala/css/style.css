@@ -423,13 +423,13 @@ body {
     #al-pagination .pagination li {
       font-size: 1.1111111111vw;
       line-height: 1.4583333333vw; }
-      #al-pagination .pagination li a {
+      #al-pagination .pagination li a, #al-pagination .pagination li span {
         background: #ffffff;
         color: #000000;
         height: 2.9166666667vw;
         padding-top: 0.6944444444vw;
         width: 2.8472222222vw; }
-      #al-pagination .pagination li .pagination-active {
+      #al-pagination .pagination li .pagination-active, #al-pagination .pagination li .current {
         background: #000000;
         color: #ffffff; }
       #al-pagination .pagination li .pagination-previous {
@@ -1113,8 +1113,6 @@ textarea {
       width: 767px; }
       .al-contact-div .al-contact-form-div .wpcf7-form-control-wrap {
         margin-bottom: 20px; }
-      .al-contact-div .al-contact-form-div .wpcf7-form div {
-        margin-bottom: 20px; }
       .al-contact-div .al-contact-form-div .wpcf7-form p {
         margin-right: 20px; }
       .al-contact-div .al-contact-form-div .wpcf7-form input[type="text"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="email"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="tel"], .al-contact-div .al-contact-form-div .wpcf7-form select {
@@ -1653,9 +1651,6 @@ textarea {
   #ala-header .swiper-container-hero {
     padding-top: 80px !important; } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
-  .swiper-container-hero .swiper-button-prev, .swiper-container-hero .swiper-button-next {
-    top: 368px !important; }
-
   .al-properties-section .properties-list .property-image:nth-child(3n+3) {
     margin-bottom: 3.47222vw; } }
 @media only screen and (max-width: 767px) {
@@ -2147,12 +2142,12 @@ textarea {
   .swiper-button-next {
     width: 28px !important;
     height: 28px !important;
-    top: 34% !important; }
+    top: 34%; }
 
   .swiper-button-prev {
     width: 28px !important;
     height: 28px !important;
-    top: 34% !important; }
+    top: 34%; }
 
   .btn-planos {
     width: 158px !important;
@@ -2183,7 +2178,7 @@ textarea {
     padding-top: 80px; }
 
   .swiper-container-hero .swiper-button-prev, .swiper-container-hero .swiper-button-next {
-    top: 592px !important; }
+    top: 87vw !important; }
 
   #ala-header .swiper-container-hero {
     padding-top: 0; } }

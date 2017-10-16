@@ -122,7 +122,7 @@ $categories = get_categories(
                     </div>
                 <?php endwhile; ?>
                 <?php endif; ?>
-                <?php if( $wp_query->post_count == 1 ){ echo '<div class="col-xs-12 marginb80"></div>'; } ?>
+                <?php if( $wp_query->post_count <= 2 ){ echo '<div class="col-xs-12 marginb80"></div>'; } ?>
                 <nav id="blog-pagination" class="text-center">
                     <?php
                     if (function_exists('wp_paginate')) {
