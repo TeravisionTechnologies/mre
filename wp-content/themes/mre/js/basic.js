@@ -102,6 +102,7 @@ jQuery(document).ready(function () {
         breakpoints: {
             640: {
                 slidesPerView: 1,
+                spaceBetween: 5
             },
         },
         onSlideChangeEnd: function (swiper) {

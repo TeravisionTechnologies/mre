@@ -394,6 +394,7 @@ body {
           font-family: Montserrat-Regular, sans-serif;
           color: #ffffff; }
     #mre-about-us .overlay .about-us-button {
+      font-family: Montserrat-Bold, sans-serif;
       width: 15vw;
       height: 3.4722222222vw;
       border-radius: 0.6944444444vw;
@@ -2904,43 +2905,42 @@ a.al-phone-num {
     height: 7.7777777778vw; }
 
   #mre-about-us {
-    height: 204.4444444444vw; }
+    height: 231.11111vw; }
     #mre-about-us .overlay .about-us-image {
-      margin: 13.8888888889vw 0 8.3333333333vw 0;
-      width: 44.4444444444vw;
-      height: 17.2222222222vw; }
+      margin: 13.88889vw 0 8.33333vw 0;
+      width: 44.44444vw;
+      height: 17.22222vw; }
     #mre-about-us .overlay .about-us-text {
-      font-size: 3.3333333333vw;
-      line-height: 5.5555555556vw;
-      width: 71.6666666667vw;
+      font-size: 3.33333vw;
+      line-height: 5.55556vw;
+      width: 71.66667vw;
       margin: 0 auto; }
     #mre-about-us .overlay .about-us-numbers {
-      height: 91.6666666667vw;
-      padding: 2.7777777778vw 6.6666666667vw 9.7222222222vw 6.6666666667vw;
-      width: 86.1111111111vw;
-      margin: 5.5555555556vw auto 0;
+      height: 91.66667vw;
+      padding: 2.77778vw 6.66667vw 9.72222vw 6.66667vw;
+      width: 86.11111vw;
+      margin: 5.55556vw auto 13.88889vw;
       border-radius: 5vw;
       background-color: rgba(247, 247, 247, 0.1);
-      box-shadow: 0 6px 2.7777777778vw 0 rgba(0, 0, 0, 0.3); }
+      box-shadow: 0 6px 2.77778vw 0 rgba(0, 0, 0, 0.3); }
       #mre-about-us .overlay .about-us-numbers li {
         display: block;
-        width: 72.7777777778vw;
+        width: 72.77778vw;
         margin: 35px 0 0 0; }
         #mre-about-us .overlay .about-us-numbers li .numbers {
-          font-size: 8.3333333333vw;
-          line-height: 8.3333333333vw; }
+          font-size: 8.33333vw;
+          line-height: 8.33333vw; }
         #mre-about-us .overlay .about-us-numbers li .title {
           font-size: 6.6666666667vw;
           line-height: 8.3333333333vw; }
     #mre-about-us .overlay .about-us-button {
-      display: none;
-      width: 55.5555555556vw;
-      height: 13.8888888889vw;
-      border-radius: 2.7777777778vw;
+      width: 43.88889vw;
+      height: 11.11111vw;
+      border-radius: 2.77778vw;
       border: solid 2px #ffffff;
-      padding: 4.1666666667vw 18.6111111111vw;
-      font-size: 4.4444444444vw;
-      line-height: 5.5555555556vw; }
+      padding: 2.77778vw 12.77778vw;
+      font-size: 3.88889vw;
+      line-height: 5.55556vw; }
 
   #mre-partners {
     height: 133.3333333333vw; }
