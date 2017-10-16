@@ -6,7 +6,8 @@
  * @since MRE 1.0
  */
 get_header();
-$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+$url = $_SERVER['REQUEST_URI'];
+global $wp_query;
 
 $postRecommended = get_posts(
     array(
@@ -81,7 +82,7 @@ $categories = get_categories(
                     </form>
                 </div>
                 <div class="col-xs-12 col-sm-3 blog-select">
-                    <form name="filters" class="post-filters" method="post">
+                    <form name="filters" class="post-filters" method="get">
                         <select name="orderby" id="orderby" class="form-control blog-filter pull-right">
                             <option selected="selected">Order by...</option>
                             <?php
@@ -90,35 +91,38 @@ $categories = get_categories(
                                 'post_title' => 'Order By Title',
                             );
                             foreach( $orderby_options as $value => $label ) {
-                                echo "<option value='$value'>$label</option>";
+                                echo "<option ".selected( $_GET['orderby'], $value )." value='$value'>$label</option>";
                             }
                             ?>
                         </select>
-                        <input type="hidden" name="order" value="<?php ((strpos($url,'DESC') !== false) ? ASC : DESC) ?>">
+                        <input type="hidden" name="order" value="<?php echo ((strpos($url,'DESC') !== false) ? ASC : DESC) ?>">
                     </form>
                 </div>
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                     <div class="col-xs-12 col-sm-6 blog-post">
-                        <div class="blog-image"
-                             style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID); ?>')">
-                            <span class="blog-category"><?php $taxonomy = get_post_taxonomies($post);
-                                $term = get_the_terms($post->ID, $taxonomy[0]);
-                                echo $term[0]->name; ?></span>
-                        </div>
-                        <div class="blog-text">
-                            <a href="<?php $link = get_permalink($post->ID);
-                            echo $link; ?>"><h1 class="blog-text-title"><?php echo $post->post_title; ?></h1></a>
-                            <h2 class="blog-text-author">Por: <?php $author = get_user_by('ID', $post->post_author);
-                                echo $author->display_name ?><span
-                                        class="blog-text-date"><?php $date = strtotime($post->post_date);
-                                    echo date('d F, Y', $date) ?></span><span
-                                        class="blog-text-comments hidden-xs hidden-sm">- <?php echo $post->comment_count ?>
-                                    Comments</span></h2>
-                            <p class="blog-text-summary"><?php echo $post->post_excerpt ?></p>
-                        </div>
+                        <a href="<?php $link = get_permalink($post->ID); echo $link; ?>">
+                            <div class="blog-image"
+                                 style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID); ?>')">
+                                <span class="blog-category"><?php $taxonomy = get_post_taxonomies($post);
+                                    $term = get_the_terms($post->ID, $taxonomy[0]);
+                                    echo $term[0]->name; ?></span>
+                            </div>
+                            <div class="blog-text">
+                                <a href="<?php $link = get_permalink($post->ID);
+                                echo $link; ?>"><h1 class="blog-text-title"><?php echo $post->post_title; ?></h1></a>
+                                <h2 class="blog-text-author">Por: <?php $author = get_user_by('ID', $post->post_author);
+                                    echo $author->display_name ?><span
+                                            class="blog-text-date"><?php $date = strtotime($post->post_date);
+                                        echo date('d F, Y', $date) ?></span><span
+                                            class="blog-text-comments hidden-xs hidden-sm">- <?php echo $post->comment_count ?>
+                                        Comments</span></h2>
+                                <p class="blog-text-summary"><?php echo $post->post_excerpt ?></p>
+                            </div>
+                        </a>
                     </div>
                 <?php endwhile; ?>
                 <?php endif; ?>
+                <?php if( $wp_query->post_count == 1 ){ echo '<div class="col-xs-12 marginb80"></div>'; } ?>
                 <nav id="blog-pagination" class="text-center">
                     <?php
                     if (function_exists('wp_paginate')) {
@@ -166,5 +170,4 @@ $categories = get_categories(
             </div>
         </section>
     </section>
-
 <?php get_footer(); ?>

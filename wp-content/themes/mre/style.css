@@ -753,6 +753,9 @@ a.al-phone-num {
   width: 100% !important;
   max-width: 100% !important; }
 
+.marginb80 {
+  margin-bottom: 80px; }
+
 #blog-list-categories {
   background: #303030;
   height: 23.8194444444vw;
