@@ -126,23 +126,25 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
                         foreach ($articles_most_view as $post_item) {
                             ?>
                             <div class="swiper-slide">
-                                <div class="blog-most-viewed-image"
-                                     style="background-image: url('<?php echo get_the_post_thumbnail_url($post_item->ID); ?>');">
-                                    <?php
-                                    $categories = get_the_category($post_item->ID);
-                                    foreach ($categories as $category) {
-                                        echo '<span class="blog-most-viewed-category">' . $category->name . '</span>';
-                                    }
-                                    $comments = get_comments(array(
-                                        'post_id' => $post_item->ID));
-                                    $count_comments_list = 0;
-                                    foreach ($comments as $comment) :
-                                        $count_comments_list++;
-                                    endforeach;
-                                    ?>
-                                </div>
+                                <a href="<?php $link = get_permalink($post_item->ID); echo $link; ?>">
+                                    <div class="blog-most-viewed-image"
+                                         style="background-image: url('<?php echo get_the_post_thumbnail_url($post_item->ID); ?>');">
+                                        <?php
+                                        $categories = get_the_category($post_item->ID);
+                                        foreach ($categories as $category) {
+                                            echo '<span class="blog-most-viewed-category">' . $category->name . '</span>';
+                                        }
+                                        $comments = get_comments(array(
+                                            'post_id' => $post_item->ID));
+                                        $count_comments_list = 0;
+                                        foreach ($comments as $comment) :
+                                            $count_comments_list++;
+                                        endforeach;
+                                        ?>
+                                    </div>
+                                </a>
                                 <div class="blog-most-viewed-text">
-                                    <a href="#">
+                                    <a href="<?php $link = get_permalink($post_item->ID); echo $link; ?>">
                                         <p class="blog-most-viewed-text-title"><?php echo $post_item->post_title ?></p>
                                     </a>
                                     <p class="blog-most-viewed-text-author">
