@@ -296,55 +296,65 @@ body
 
 // About Us
 #mre-about-us
-  height: get-vw-desktop(800px)
+  position: relative
+  height: get-vw-desktop(721px) 
   background-size: cover
   text-align: center
-  .about-us-title
-    font-size: get-vw-desktop(36px)
-    line-height: get-vw-desktop(40px)
-    font-family: Montserrat-Bold, sans-serif
-    color: $lighter-blue-2
-  .about-us-image
-    margin: get-vw-desktop(115px) 0 get-vw-desktop(40px) 0
-    width: get-vw-desktop(140px)
-    height: get-vw-desktop(140px)
-    border-radius: 50%
-  .about-us-text
-    font-family: Montserrat-Regular, sans-serif
-    font-size: get-vw-desktop(20px)
-    line-height: get-vw-desktop(28px)
-    color: white
-    width: get-vw-desktop(767px)
-    margin: get-vw-desktop(20px) auto 0 auto
-  .about-us-numbers
-    list-style: none
-    height: get-vw-desktop(140px)
-    padding: get-vw-desktop(40px) get-vw-desktop(38px)
-    width: get-vw-desktop(970px)
-    margin: get-vw-desktop(50px) auto 0
-    border-radius: get-vw-desktop(18px)
-    background-color: rgba(247, 247, 247, 0.1)
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3)
-    li
-      display: inline-block
-      width: get-vw-desktop(210px)
-      margin: 0 get-vw-desktop(37.5px)
-      .numbers
-        font-size: get-vw-desktop(45px)
-        line-height: get-vw-desktop(30px)
-        font-family: Montserrat-Bold, sans-serif
-        color: $white
-      .title
-        font-size: get-vw-desktop(25px)
-        line-height: get-vw-desktop(30px)
-        font-family: Montserrat-Regular, sans-serif
-        color: $white
+  .overlay
+    background: rgba(0, 0, 0, 0.83)
+    position: absolute
+    height: 100%
+    width: 100%
+    .about-us-image
+      margin: get-vw-desktop(70px) 0 get-vw-desktop(36px) 0
+      width: get-vw-desktop(268px)
+      height: get-vw-desktop(105px)
+    .about-us-text
+      font-family: Montserrat-Regular, sans-serif
+      font-size: get-vw-desktop(20px)
+      line-height: get-vw-desktop(30px)
+      color: $dark-white
+      width: get-vw-desktop(767px)
+      margin: 0 auto
+    .about-us-numbers
+      list-style: none
+      height: get-vw-desktop(140px)
+      padding: get-vw-desktop(40px) get-vw-desktop(38px)
+      width: get-vw-desktop(970px)
+      margin: get-vw-desktop(40px) auto get-vw-desktop(58px)
+      border-radius: get-vw-desktop(18px)
+      background-color: rgba(247, 247, 247, 0.1)
+      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3)
+      li
+        display: inline-block
+        width: get-vw-desktop(210px)
+        margin: 0 get-vw-desktop(37.5px)
+        .numbers
+          font-size: get-vw-desktop(45px)
+          line-height: get-vw-desktop(30px)
+          font-family: Montserrat-Bold, sans-serif
+          color: $white
+        .title
+          font-size: get-vw-desktop(25px)
+          line-height: get-vw-desktop(30px)
+          font-family: Montserrat-Regular, sans-serif
+          color: $white
+    .about-us-button
+      width: get-vw-desktop(216px)
+      height: get-vw-desktop(50px)
+      border-radius: get-vw-desktop(10px)
+      border: solid 2px $white
+      padding: get-vw-desktop(15px) get-vw-desktop(61px)
+      color: $white
+      font-size: get-vw-desktop(18px)
+      line-height: get-vw-desktop(20px)
+      &:hover
+        text-decoration: none
 // END About Us
 
 // Partners
 #mre-partners
   height: get-vw-desktop(700px)
-  background: blue
   text-align: center
   position: relative
   .overlay-left, .overlay-right
@@ -354,34 +364,34 @@ body
     width: 100%
     height: 100%
   .overlay-left
-    background: rgba(9, 118, 209, 0.85)
+    background: rgba(255, 255, 255, 0.7) 
   .overlay-right
-    background: rgba(0, 68, 126, 0.85)
+    background: rgba(255, 255, 255, 0.7) 
   .partner-left, .partner-right
     height: 100%
     background-size: cover
-  .partners-title-first
+  h3
     margin-top: get-vw-desktop(244px)
     font-family: Montserrat-Regular, sans-serif
     font-size: get-vw-desktop(25px)
     line-height: get-vw-desktop(30px)
-    color: $white
-  .partners-title-second
+    color: $grey
+  h2
     font-family: Montserrat-Bold, sans-serif
     font-size: get-vw-desktop(45px)
     line-height: get-vw-desktop(40px)
-    color: $white
+    color: $grey
     margin: 0
   .partner-left
     img
       width: get-vw-desktop(212px)
       height: get-vw-desktop(71px)
-      margin-top: get-vw-desktop(43px)
+      margin-top: get-vw-desktop(46px)
   .partner-right
     img
       width: get-vw-desktop(110px)
       height: get-vw-desktop(117px)
-      margin-top: get-vw-desktop(20px)
+      margin-top: get-vw-desktop(30px)
 // END Partners
 
 // Offices
@@ -416,7 +426,7 @@ body
       width: 100%
       .office-detail
         display: inline-block
-        width: get-vw-desktop(370px)
+        width: get-vw-desktop(375px)
         margin: 0 get-vw-desktop(22px)
         h5
           color: $white
@@ -441,7 +451,12 @@ body
   height: auto
   background-repeat: no-repeat
   background-position-y: bottom
-  background-size: cover
+  background-size: contain
+.overlay
+  background: rgba(19, 19, 19, 0.8)
+  position: absolute
+  width: 100%
+  height: 100%
 .al-contact-text
   color: $white
   font-size: get-vw-desktop(36px)
@@ -462,7 +477,7 @@ body
   max-height: get-vw-desktop(272px)
   margin-top: get-vw-desktop(40px)
   padding: get-vw-desktop(40px) get-vw-desktop(34px)
-  background-color: $lighter-blue-2
+  background-color: $grey
   box-shadow: 0 1px get-vw-desktop(10px) 0 rgba($black, 0.3)
   -moz-box-shadow: 0 1px get-vw-desktop(10px) 0 rgba($black, 0.3)
   -webkit-box-shadow: 0 1px get-vw-desktop(10px) 0 rgba($black, 0.3)
@@ -470,7 +485,7 @@ body
     width: get-vw-desktop(72px)
     height: get-vw-desktop(64px)
   p
-    color: $dark-blue
+    color: $dark-white
     padding-top: get-vw-desktop(10px)
     line-height: get-vw-desktop(34px)
     font-size: get-vw-desktop(24px)
@@ -480,7 +495,7 @@ body
       font-family: Montserrat-Bold, sans-serif
 
 a.al-phone-num
-  color: $dark-blue
+  color: $dark-white
   cursor: pointer
   font-size: get-vw-desktop(36px)
   line-height: get-vw-desktop(30px)
@@ -511,7 +526,7 @@ a.al-phone-num
     line-height: get-vw-desktop(16px)
     border-radius: get-vw-desktop(4px)
     display: inline-block
-    background-color: $dark-blue
+    background-color: $grey
     border: 1px solid rgba(207, 207, 207, 0.5)
     font-family: Montserrat-Regular, sans-serif
     margin-bottom: get-vw-desktop(20px)
@@ -523,6 +538,10 @@ a.al-phone-num
       color: $white-3
     &:-moz-placeholder /* Firefox 18- */
       color: $white-3
+  select
+    -webkit-appearance: none
+    position: relative
+    background: $grey url(assets/form-caret-down.png) 100% 50% no-repeat
   textarea
     width: 100%
     color: $white-3
@@ -531,7 +550,7 @@ a.al-phone-num
     line-height: get-vw-desktop(16px)
     padding: get-vw-desktop(14px) get-vw-desktop(23px)
     border-radius: get-vw-desktop(6px)
-    background-color: $dark-blue
+    background-color: $grey
     border: 1px solid rgba(207, 207, 207, 0.5)
     font-family: Montserrat-Regular, sans-serif
     &::-webkit-input-placeholder /* Chrome/Opera/Safari */
@@ -590,9 +609,103 @@ a.al-phone-num
   .mre-footer-go-top
     visibility: hidden
     cursor: pointer
-    position: fixed
+    position: absolute
     opacity: 0
     right: get-vw-desktop(140px)
-    bottom: get-vw-desktop(143px)
-    z-index: 100
+    top: get-vw-desktop(40px)
+    z-index: 100 
 // END Footer
+
+#menu-primary
+  margin-top: 2px !important
+
+#nav-icon4
+  width: 39px
+  height: 45px
+  left: 0
+  right: 0
+  top: 32%
+  bottom: 0
+  margin: auto
+  text-align: center
+  position: absolute
+  -webkit-transform: rotate(0deg)
+  -moz-transform: rotate(0deg)
+  -o-transform: rotate(0deg)
+  transform: rotate(0deg)
+  -webkit-transition: .5s ease-in-out
+  -moz-transition: .5s ease-in-out
+  -o-transition: .5s ease-in-out
+  transition: .5s ease-in-out
+  cursor: pointer
+
+#nav-icon4
+  span
+    display: block
+    position: absolute
+    height: 4px
+    width: 39px
+    background: $light-blue
+    border-radius: 9px
+    opacity: 1
+    left: 0
+    -webkit-transform: rotate(0deg)
+    -moz-transform: rotate(0deg)
+    -o-transform: rotate(0deg)
+    transform: rotate(0deg)
+    -webkit-transition: .25s ease-in-out
+    -moz-transition: .25s ease-in-out
+    -o-transition: .25s ease-in-out
+    transition: .25s ease-in-out
+
+#nav-icon4 span:nth-child(1)
+  top: 0px
+  -webkit-transform-origin: left center
+  -moz-transform-origin: left center
+  -o-transform-origin: left center
+  transform-origin: left center
+
+#nav-icon4 span:nth-child(2)
+  top: 9px
+  -webkit-transform-origin: left center
+  -moz-transform-origin: left center
+  -o-transform-origin: left center
+  transform-origin: left center
+
+#nav-icon4 span:nth-child(3)
+  top: 18px
+  -webkit-transform-origin: left center
+  -moz-transform-origin: left center
+  -o-transform-origin: left center
+  transform-origin: left center
+
+#nav-icon4.open span:nth-child(1)
+  -webkit-transform: rotate(45deg)
+  -moz-transform: rotate(45deg)
+  -o-transform: rotate(45deg)
+  transform: rotate(45deg)
+  top: -3px
+  left: 8px
+
+#nav-icon4.open span:nth-child(2)
+  width: 0%
+  opacity: 0
+
+#nav-icon4.open span:nth-child(3)
+  -webkit-transform: rotate(-45deg)
+  -moz-transform: rotate(-45deg)
+  -o-transform: rotate(-45deg)
+  transform: rotate(-45deg)
+  top: 26px
+  left: 8px
+
+.c-button-close
+  right: 0 !important
+  left: unset !important
+
+.menu
+  width: 100% !important
+  max-width: 100% !important
+
+.marginb80
+  margin-bottom: 80px

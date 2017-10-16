@@ -350,53 +350,63 @@ body {
   cursor: pointer; }
 
 #mre-about-us {
-  height: 55.55556vw;
+  position: relative;
+  height: 50.06944vw;
   background-size: cover;
   text-align: center; }
-  #mre-about-us .about-us-title {
-    font-size: 2.5vw;
-    line-height: 2.77778vw;
-    font-family: Montserrat-Bold, sans-serif;
-    color: #1f9aff; }
-  #mre-about-us .about-us-image {
-    margin: 7.98611vw 0 2.77778vw 0;
-    width: 9.72222vw;
-    height: 9.72222vw;
-    border-radius: 50%; }
-  #mre-about-us .about-us-text {
-    font-family: Montserrat-Regular, sans-serif;
-    font-size: 1.38889vw;
-    line-height: 1.94444vw;
-    color: white;
-    width: 53.26389vw;
-    margin: 1.38889vw auto 0 auto; }
-  #mre-about-us .about-us-numbers {
-    list-style: none;
-    height: 9.72222vw;
-    padding: 2.77778vw 2.63889vw;
-    width: 67.36111vw;
-    margin: 3.47222vw auto 0;
-    border-radius: 1.25vw;
-    background-color: rgba(247, 247, 247, 0.1);
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
-    #mre-about-us .about-us-numbers li {
-      display: inline-block;
-      width: 14.58333vw;
-      margin: 0 2.60417vw; }
-      #mre-about-us .about-us-numbers li .numbers {
-        font-size: 3.125vw;
-        line-height: 2.08333vw;
-        font-family: Montserrat-Bold, sans-serif;
-        color: #ffffff; }
-      #mre-about-us .about-us-numbers li .title {
-        font-size: 1.73611vw;
-        line-height: 2.08333vw;
-        font-family: Montserrat-Regular, sans-serif;
-        color: #ffffff; }
+  #mre-about-us .overlay {
+    background: rgba(0, 0, 0, 0.83);
+    position: absolute;
+    height: 100%;
+    width: 100%; }
+    #mre-about-us .overlay .about-us-image {
+      margin: 4.86111vw 0 2.5vw 0;
+      width: 18.61111vw;
+      height: 7.29167vw; }
+    #mre-about-us .overlay .about-us-text {
+      font-family: Montserrat-Regular, sans-serif;
+      font-size: 1.38889vw;
+      line-height: 2.08333vw;
+      color: #cfcfcf;
+      width: 53.26389vw;
+      margin: 0 auto; }
+    #mre-about-us .overlay .about-us-numbers {
+      list-style: none;
+      height: 9.72222vw;
+      padding: 2.77778vw 2.63889vw;
+      width: 67.36111vw;
+      margin: 2.77778vw auto 4.02778vw;
+      border-radius: 1.25vw;
+      background-color: rgba(247, 247, 247, 0.1);
+      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
+      #mre-about-us .overlay .about-us-numbers li {
+        display: inline-block;
+        width: 14.58333vw;
+        margin: 0 2.60417vw; }
+        #mre-about-us .overlay .about-us-numbers li .numbers {
+          font-size: 3.125vw;
+          line-height: 2.08333vw;
+          font-family: Montserrat-Bold, sans-serif;
+          color: #ffffff; }
+        #mre-about-us .overlay .about-us-numbers li .title {
+          font-size: 1.73611vw;
+          line-height: 2.08333vw;
+          font-family: Montserrat-Regular, sans-serif;
+          color: #ffffff; }
+    #mre-about-us .overlay .about-us-button {
+      width: 15vw;
+      height: 3.47222vw;
+      border-radius: 0.69444vw;
+      border: solid 2px #ffffff;
+      padding: 1.04167vw 4.23611vw;
+      color: #ffffff;
+      font-size: 1.25vw;
+      line-height: 1.38889vw; }
+      #mre-about-us .overlay .about-us-button:hover {
+        text-decoration: none; }
 
 #mre-partners {
   height: 48.61111vw;
-  background: blue;
   text-align: center;
   position: relative; }
   #mre-partners .overlay-left, #mre-partners .overlay-right {
@@ -406,32 +416,32 @@ body {
     width: 100%;
     height: 100%; }
   #mre-partners .overlay-left {
-    background: rgba(9, 118, 209, 0.85); }
+    background: rgba(255, 255, 255, 0.7); }
   #mre-partners .overlay-right {
-    background: rgba(0, 68, 126, 0.85); }
+    background: rgba(255, 255, 255, 0.7); }
   #mre-partners .partner-left, #mre-partners .partner-right {
     height: 100%;
     background-size: cover; }
-  #mre-partners .partners-title-first {
+  #mre-partners h3 {
     margin-top: 16.94444vw;
     font-family: Montserrat-Regular, sans-serif;
     font-size: 1.73611vw;
     line-height: 2.08333vw;
-    color: #ffffff; }
-  #mre-partners .partners-title-second {
+    color: #4a4a4a; }
+  #mre-partners h2 {
     font-family: Montserrat-Bold, sans-serif;
     font-size: 3.125vw;
     line-height: 2.77778vw;
-    color: #ffffff;
+    color: #4a4a4a;
     margin: 0; }
   #mre-partners .partner-left img {
     width: 14.72222vw;
     height: 4.93056vw;
-    margin-top: 2.98611vw; }
+    margin-top: 3.19444vw; }
   #mre-partners .partner-right img {
     width: 7.63889vw;
     height: 8.125vw;
-    margin-top: 1.38889vw; }
+    margin-top: 2.08333vw; }
 
 #mre-offices {
   height: 31.25vw;
@@ -463,7 +473,7 @@ body {
       width: 100%; }
       #mre-offices .swiper-wrapper .swiper-slide .office-detail {
         display: inline-block;
-        width: 25.69444vw;
+        width: 26.04167vw;
         margin: 0 1.52778vw; }
         #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
           color: #ffffff;
@@ -486,7 +496,13 @@ body {
   height: auto;
   background-repeat: no-repeat;
   background-position-y: bottom;
-  background-size: cover; }
+  background-size: contain; }
+
+.overlay {
+  background: rgba(19, 19, 19, 0.8);
+  position: absolute;
+  width: 100%;
+  height: 100%; }
 
 .al-contact-text {
   color: #ffffff;
@@ -509,7 +525,7 @@ body {
   max-height: 18.88889vw;
   margin-top: 2.77778vw;
   padding: 2.77778vw 2.36111vw;
-  background-color: #1f9aff;
+  background-color: #4a4a4a;
   box-shadow: 0 1px 0.69444vw 0 rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 1px 0.69444vw 0 rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 1px 0.69444vw 0 rgba(0, 0, 0, 0.3); }
@@ -517,7 +533,7 @@ body {
     width: 5vw;
     height: 4.44444vw; }
   .al-phone-box p {
-    color: #00447e;
+    color: #cfcfcf;
     padding-top: 0.69444vw;
     line-height: 2.36111vw;
     font-size: 1.66667vw;
@@ -527,7 +543,7 @@ body {
       font-family: Montserrat-Bold, sans-serif; }
 
 a.al-phone-num {
-  color: #00447e;
+  color: #cfcfcf;
   cursor: pointer;
   font-size: 2.5vw;
   line-height: 2.08333vw;
@@ -557,7 +573,7 @@ a.al-phone-num {
   line-height: 1.11111vw;
   border-radius: 0.27778vw;
   display: inline-block;
-  background-color: #00447e;
+  background-color: #4a4a4a;
   border: 1px solid rgba(207, 207, 207, 0.5);
   font-family: Montserrat-Regular, sans-serif;
   margin-bottom: 1.38889vw; }
@@ -569,6 +585,10 @@ a.al-phone-num {
     color: #cfcfcf; }
   .wpcf7-form input[type="text"]:-moz-placeholder, .wpcf7-form input[type="email"]:-moz-placeholder, .wpcf7-form input[type="tel"]:-moz-placeholder, .wpcf7-form select:-moz-placeholder {
     color: #cfcfcf; }
+.wpcf7-form select {
+  -webkit-appearance: none;
+  position: relative;
+  background: #4a4a4a url(assets/form-caret-down.png) 100% 50% no-repeat; }
 .wpcf7-form textarea {
   width: 100%;
   color: #cfcfcf;
@@ -577,7 +597,7 @@ a.al-phone-num {
   line-height: 1.11111vw;
   padding: 0.97222vw 1.59722vw;
   border-radius: 0.41667vw;
-  background-color: #00447e;
+  background-color: #4a4a4a;
   border: 1px solid rgba(207, 207, 207, 0.5);
   font-family: Montserrat-Regular, sans-serif; }
   .wpcf7-form textarea::-webkit-input-placeholder {
@@ -634,16 +654,110 @@ a.al-phone-num {
   #mre-footer .mre-footer-go-top {
     visibility: hidden;
     cursor: pointer;
-    position: fixed;
+    position: absolute;
     opacity: 0;
     right: 9.72222vw;
-    bottom: 9.93056vw;
+    top: 2.77778vw;
     z-index: 100; }
+
+#menu-primary {
+  margin-top: 2px !important; }
+
+#nav-icon4 {
+  width: 39px;
+  height: 45px;
+  left: 0;
+  right: 0;
+  top: 32%;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  position: absolute;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer; }
+
+#nav-icon4 span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 39px;
+  background: #0976d1;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out; }
+
+#nav-icon4 span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center; }
+
+#nav-icon4 span:nth-child(2) {
+  top: 9px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center; }
+
+#nav-icon4 span:nth-child(3) {
+  top: 18px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center; }
+
+#nav-icon4.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -3px;
+  left: 8px; }
+
+#nav-icon4.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0; }
+
+#nav-icon4.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 26px;
+  left: 8px; }
+
+.c-button-close {
+  right: 0 !important;
+  left: unset !important; }
+
+.menu {
+  width: 100% !important;
+  max-width: 100% !important; }
+
+.marginb80 {
+  margin-bottom: 80px; }
 
 #blog-list-categories {
   background: #303030;
   height: 23.81944vw;
-  position: relative; }
+  position: relative;
+  margin-top: 5.55556vw; }
   #blog-list-categories .blog-list-category-title, #blog-list-categories .blog-list-category-text {
     line-height: 2.08333vw;
     text-align: center; }
@@ -662,13 +776,16 @@ a.al-phone-num {
     margin-bottom: 4.51389vw;
     margin-top: 2.43056vw;
     position: initial;
-    width: 53.33333vw; }
+    width: 55.55556vw; }
     #blog-list-categories .swiper-container-blog-categories .swiper-wrapper {
       width: 55.55556vw; }
       #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide {
         border-radius: 100%;
         position: relative;
-        width: 8.88889vw; }
+        width: 8.88889vw !important;
+        height: 8.88889vw;
+        margin-right: 1.11111vw;
+        margin-left: 1.11111vw; }
         #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide img {
           height: 8.88889vw;
           width: 8.88889vw; }
@@ -692,14 +809,14 @@ a.al-phone-num {
     #blog-list-categories .swiper-container-blog-categories .swiper-button-next {
       right: 15.97222vw; }
 
-.blog-list-triangle {
-  left: 50%;
-  position: relative;
-  top: -1px;
-  transform: translateX(-50%); }
-
 #blog-list {
-  background: #ffffff; }
+  background: #ffffff;
+  position: relative; }
+  #blog-list .blog-list-triangle {
+    left: 50%;
+    position: relative;
+    top: -1px;
+    transform: translateX(-50%); }
   #blog-list .input-group {
     border-collapse: separate;
     border-bottom: 2px solid rgba(74, 74, 74, 0.4);
@@ -888,6 +1005,45 @@ a.al-phone-num {
     #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-button-next {
       right: 8.68056vw; }
 
+.wp-paginate {
+  font-family: Montserrat-Regular, sans-serif;
+  margin: 4.16667vw 0 5.55556vw 0 !important;
+  display: inline-block !important; }
+  .wp-paginate a {
+    margin: 0 !important;
+    margin-left: -1px !important;
+    font-size: 1.11111vw;
+    padding: 6px 12px !important;
+    background: #ffffff;
+    color: #000;
+    height: 2.91667vw;
+    padding-top: 0.69444vw;
+    width: 2.84722vw;
+    border: solid 1px #ddd !important; }
+  .wp-paginate span {
+    margin: 0 !important;
+    margin-left: -1px !important;
+    font-size: 1.11111vw;
+    padding: 6px 12px !important;
+    height: 2.91667vw;
+    padding-top: 0.69444vw;
+    width: 2.84722vw;
+    border: solid 1px #ddd !important; }
+  .wp-paginate .current {
+    font-size: 1.11111vw;
+    background: #0976d1;
+    color: #ffffff;
+    height: 2.91667vw;
+    padding-top: 0.69444vw;
+    width: 2.84722vw;
+    border: solid 1px #ddd !important; }
+  .wp-paginate .next {
+    border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important; }
+  .wp-paginate .prev {
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important; }
+
 #blog-detail-breadcrumb {
   padding: 3.47222vw 0 1.38889vw 0; }
   #blog-detail-breadcrumb .blog-detail-breadcrumb-prev {
@@ -975,12 +1131,14 @@ a.al-phone-num {
       padding: 0; }
       #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list li {
         display: inline-block; }
-      #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img {
+      #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img.ssba {
         height: 3.75vw;
         margin: 0 0.52083vw;
-        width: 3.75vw; }
+        width: 3.75vw !important; }
 
 .blog-detail-divider {
+  display: table;
+  height: 2px;
   border: solid 1px #4a4a4a;
   margin-bottom: 0;
   margin-top: 0;
@@ -1027,7 +1185,7 @@ a.al-phone-num {
 #blog-detail-form {
   background: #f2f2f2; }
   #blog-detail-form .blog-detail-comments-form {
-    height: 34.30556vw;
+    height: auto;
     padding: 0 2.77778vw;
     width: 67.36111vw; }
     #blog-detail-form .blog-detail-comments-form .blog-detail-comments-form-title {
@@ -1094,7 +1252,23 @@ a.al-phone-num {
       height: 3.47222vw;
       line-height: 1.38889vw;
       margin-top: 1.04167vw;
+      margin-bottom: 4.16667vw;
       width: 22.91667vw; }
+    #blog-detail-form .blog-detail-comments-form input.error, #blog-detail-form .blog-detail-comments-form textarea.error {
+      background-color: transparent;
+      border: solid 1px #cc6a67 !important; }
+    #blog-detail-form .blog-detail-comments-form div.error {
+      background: #cc6a67;
+      color: #7b0a0a;
+      font-weight: 600;
+      font-size: 11px;
+      font-family: Montserrat-Regular, sans-serif;
+      text-transform: uppercase;
+      text-align: left;
+      padding-top: 15px;
+      padding-left: 15px; }
+    #blog-detail-form .blog-detail-comments-form label.error {
+      color: #7b0a0a; }
 
 @media screen\0 {
   #blog-recommended-posts .swiper-container-blog-most-viewed {
@@ -1318,37 +1492,60 @@ a.al-phone-num {
     height: 42px; }
 
   #mre-about-us {
-    height: 800px; }
-    #mre-about-us .about-us-title {
-      font-size: 36px;
-      line-height: 40px; }
-    #mre-about-us .about-us-image {
-      margin: 115px 0 40px 0;
-      width: 140px;
-      height: 140px;
-      border-radius: 50%; }
-    #mre-about-us .about-us-text {
-      font-size: 20px;
-      line-height: 28px;
-      width: 767px;
-      margin: 20px auto 0 auto; }
-    #mre-about-us .about-us-numbers {
-      height: 140px;
-      padding: 40px 38px;
-      width: 970px;
-      margin: 50px auto 0;
-      border-radius: 18px;
-      background-color: rgba(247, 247, 247, 0.1);
-      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
-      #mre-about-us .about-us-numbers li {
-        width: 210px;
-        margin: 0 37.5px; }
-        #mre-about-us .about-us-numbers li .numbers {
-          font-size: 45px;
-          line-height: 30px; }
-        #mre-about-us .about-us-numbers li .title {
-          font-size: 25px;
-          line-height: 30px; }
+    position: relative;
+    height: 721px;
+    background-size: cover;
+    text-align: center; }
+    #mre-about-us .overlay {
+      background: rgba(0, 0, 0, 0.83);
+      position: absolute;
+      height: 100%;
+      width: 100%; }
+      #mre-about-us .overlay .about-us-image {
+        margin: 70px 0 36px 0;
+        width: 268px;
+        height: 105px; }
+      #mre-about-us .overlay .about-us-text {
+        font-family: Montserrat-Regular, sans-serif;
+        font-size: 20px;
+        line-height: 30px;
+        color: #cfcfcf;
+        width: 767px;
+        margin: 0 auto; }
+      #mre-about-us .overlay .about-us-numbers {
+        list-style: none;
+        height: 140px;
+        padding: 40px 38px;
+        width: 970px;
+        margin: 40px auto 58px;
+        border-radius: 18px;
+        background-color: rgba(247, 247, 247, 0.1);
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
+        #mre-about-us .overlay .about-us-numbers li {
+          display: inline-block;
+          width: 210px;
+          margin: 0 37.5px; }
+          #mre-about-us .overlay .about-us-numbers li .numbers {
+            font-size: 45px;
+            line-height: 30px;
+            font-family: Montserrat-Bold, sans-serif;
+            color: #ffffff; }
+          #mre-about-us .overlay .about-us-numbers li .title {
+            font-size: 25px;
+            line-height: 30px;
+            font-family: Montserrat-Regular, sans-serif;
+            color: #ffffff; }
+      #mre-about-us .overlay .about-us-button {
+        width: 216px;
+        height: 50px;
+        border-radius: 10px;
+        border: solid 2px #ffffff;
+        padding: 15px 61px;
+        color: #ffffff;
+        font-size: 18px;
+        line-height: 20px; }
+        #mre-about-us .overlay .about-us-button:hover {
+          text-decoration: none; }
 
   #mre-partners {
     height: 700px; }
@@ -1359,21 +1556,21 @@ a.al-phone-num {
       height: 100%; }
     #mre-partners .partner-left, #mre-partners .partner-right {
       height: 100%; }
-    #mre-partners .partners-title-first {
+    #mre-partners h3 {
       margin-top: 244px;
       font-size: 25px;
       line-height: 30px; }
-    #mre-partners .partners-title-second {
+    #mre-partners h2 {
       font-size: 45px;
       line-height: 40px; }
     #mre-partners .partner-left img {
       width: 212px;
       height: 71px;
-      margin-top: 43px; }
+      margin-top: 46px; }
     #mre-partners .partner-right img {
       width: 110px;
       height: 117px;
-      margin-top: 20px; }
+      margin-top: 30px; }
 
   #mre-offices {
     height: 450px; }
@@ -1396,7 +1593,7 @@ a.al-phone-num {
         height: 150px;
         width: 100%; }
         #mre-offices .swiper-wrapper .swiper-slide .office-detail {
-          width: 370px;
+          width: 375px;
           margin: 0 22px; }
           #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
             font-size: 16px;
@@ -1460,6 +1657,10 @@ a.al-phone-num {
     border-radius: 4px;
     border: 1px solid rgba(207, 207, 207, 0.5);
     margin-bottom: 20px; }
+  .wpcf7-form select {
+    -webkit-appearance: none;
+    position: relative;
+    background: #4a4a4a url(assets/form-caret-down.png) 100% 50% no-repeat; }
   .wpcf7-form textarea {
     width: 100%;
     font-size: 16px;
@@ -1501,10 +1702,11 @@ a.al-phone-num {
         line-height: 20px; }
     #mre-footer .mre-footer-go-top {
       right: 140px;
-      bottom: 143px; }
+      top: 40px; }
 
   #blog-list-categories {
-    height: 343px; }
+    height: 343px;
+    margin-top: 80px; }
     #blog-list-categories .blog-list-category-title, #blog-list-categories .blog-list-category-text {
       line-height: 30px; }
     #blog-list-categories .blog-list-category-title {
@@ -1517,12 +1719,15 @@ a.al-phone-num {
       height: 128px;
       margin-bottom: 65px;
       margin-top: 35px;
-      width: 768px; }
+      width: 800px; }
       #blog-list-categories .swiper-container-blog-categories .swiper-wrapper {
         width: 800px; }
         #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide {
           border-radius: 100%;
-          width: 128px; }
+          height: 128px;
+          width: 128px !important;
+          margin-right: 16px;
+          margin-left: 16px; }
           #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide img {
             height: 128px;
             width: 128px; }
@@ -1541,11 +1746,10 @@ a.al-phone-num {
       #blog-list-categories .swiper-container-blog-categories .swiper-button-next {
         right: 230px; }
 
-  .blog-list-triangle {
+  #blog-list .blog-list-triangle {
     left: 50%;
-    top: -3px;
+    top: -1px;
     transform: translateX(-50%); }
-
   #blog-list .input-group {
     border-bottom: 2px solid rgba(74, 74, 74, 0.4);
     display: table;
@@ -1724,10 +1928,10 @@ a.al-phone-num {
         margin: 0 0 20px 0; }
       #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list {
         padding: 0; }
-        #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img {
+        #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img.ssba {
           height: 54px;
           margin: 0 7.5px;
-          width: 54px; }
+          width: 54px !important; }
 
   .blog-detail-divider {
     border: solid 1px #4a4a4a;
@@ -1763,7 +1967,7 @@ a.al-phone-num {
         padding-top: 10px; }
 
   #blog-detail-form .blog-detail-comments-form {
-    height: 494px;
+    height: auto;
     padding: 0 40px;
     width: 970px; }
     #blog-detail-form .blog-detail-comments-form .blog-detail-comments-form-title {
@@ -2007,37 +2211,41 @@ a.al-phone-num {
     height: 3.25521vw; }
 
   #mre-about-us {
-    height: 90.625vw; }
-    #mre-about-us .about-us-title {
-      font-size: 3.125vw;
-      line-height: 3.77604vw; }
-    #mre-about-us .about-us-image {
-      margin: 5.20833vw 0 3.90625vw 0;
-      width: 15.625vw;
-      height: 15.625vw;
-      border-radius: 50%; }
-    #mre-about-us .about-us-text {
+    height: 79.81771vw; }
+    #mre-about-us .overlay .about-us-image {
+      margin: 6.51042vw 0 3.90625vw 0;
+      width: 26.04167vw;
+      height: 10.15625vw; }
+    #mre-about-us .overlay .about-us-text {
       font-size: 1.82292vw;
       line-height: 2.60417vw;
       width: 63.54167vw;
       margin: 0 auto; }
-    #mre-about-us .about-us-numbers {
+    #mre-about-us .overlay .about-us-numbers {
       height: 15.625vw;
       padding: 3.90625vw 3.51563vw;
       width: 85.67708vw;
-      margin: 6.51042vw auto 0;
+      margin: 4.81771vw auto 6.51042vw;
       border-radius: 2.34375vw;
       background-color: rgba(247, 247, 247, 0.1);
       box-shadow: 0 6px 1.30208vw 0 rgba(0, 0, 0, 0.3); }
-      #mre-about-us .about-us-numbers li {
+      #mre-about-us .overlay .about-us-numbers li {
         width: 22.52604vw;
         margin: 0 1.6276vw; }
-        #mre-about-us .about-us-numbers li .numbers {
+        #mre-about-us .overlay .about-us-numbers li .numbers {
           font-size: 3.90625vw;
           line-height: 3.90625vw; }
-        #mre-about-us .about-us-numbers li .title {
+        #mre-about-us .overlay .about-us-numbers li .title {
           font-size: 2.86458vw;
           line-height: 3.90625vw; }
+    #mre-about-us .overlay .about-us-button {
+      width: 26.04167vw;
+      height: 6.51042vw;
+      border-radius: 1.30208vw;
+      border: solid 2px #ffffff;
+      padding: 1.95313vw 8.72396vw;
+      font-size: 2.08333vw;
+      line-height: 2.60417vw; }
 
   #mre-partners {
     height: 91.14583vw; }
@@ -2048,11 +2256,11 @@ a.al-phone-num {
       height: 100%; }
     #mre-partners .partner-left, #mre-partners .partner-right {
       height: 45.57292vw; }
-    #mre-partners .partners-title-first {
+    #mre-partners h3 {
       margin: 10.67708vw 0 0 0;
       font-size: 2.60417vw;
       line-height: 3.90625vw; }
-    #mre-partners .partners-title-second {
+    #mre-partners h2 {
       font-size: 4.55729vw;
       line-height: 5.20833vw; }
     #mre-partners .partner-left {
@@ -2195,7 +2403,8 @@ a.al-phone-num {
       display: none; }
 
   #blog-list-categories {
-    height: 29.94792vw; }
+    height: 29.94792vw;
+    margin-top: 10.41667vw; }
     #blog-list-categories .blog-list-category-title {
       font-size: 1.82292vw;
       margin-top: 5.20833vw;
@@ -2210,12 +2419,14 @@ a.al-phone-num {
       height: 9.24479vw;
       margin-bottom: 6.64063vw;
       margin-top: 2.60417vw;
-      width: 56.11979vw; }
+      width: 58.59375vw; }
       #blog-list-categories .swiper-container-blog-categories .swiper-wrapper {
         width: 56.11979vw; }
         #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide {
           border-radius: 100%;
-          width: 9.24479vw; }
+          width: 9.24479vw !important;
+          margin-right: 1.23698vw;
+          margin-left: 1.23698vw; }
           #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide img {
             height: 9.24479vw;
             width: 9.24479vw; }
@@ -2234,13 +2445,12 @@ a.al-phone-num {
       #blog-list-categories .swiper-container-blog-categories .swiper-button-next {
         right: 13.02083vw; }
 
-  .blog-list-triangle {
+  #blog-list .blog-list-triangle {
     height: 1.82292vw;
     left: 50%;
-    top: -7px;
+    top: -5px;
     transform: translateX(-50%);
     width: 2.60417vw; }
-
   #blog-list .input-group {
     border-bottom: 2px solid rgba(74, 74, 74, 0.4);
     display: table;
@@ -2418,10 +2628,10 @@ a.al-phone-num {
       #blog-detail-content .blog-detail-content-share .blog-detail-content-share-title {
         font-size: 2.34375vw;
         margin: 0 0 2.60417vw 0; }
-      #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img {
+      #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img.ssba {
         height: 5.46875vw;
         margin: 0 0.78125vw;
-        width: 5.46875vw; }
+        width: 5.46875vw !important; }
 
   .blog-detail-divider {
     width: 70.57292vw; }
@@ -2452,7 +2662,7 @@ a.al-phone-num {
         padding-top: 1.30208vw; }
 
   #blog-detail-form .blog-detail-comments-form {
-    height: 60.54688vw;
+    height: auto;
     padding: 0;
     width: 70.57292vw; }
     #blog-detail-form .blog-detail-comments-form .blog-detail-comments-form-title {
@@ -2694,38 +2904,43 @@ a.al-phone-num {
     height: 7.77778vw; }
 
   #mre-about-us {
-    height: 264.72222vw; }
-    #mre-about-us .about-us-title {
-      font-size: 6.66667vw;
-      line-height: 6.66667vw; }
-    #mre-about-us .about-us-image {
-      margin: 11.11111vw 0 8.33333vw 0;
-      width: 27.77778vw;
-      height: 27.77778vw;
-      border-radius: 50%; }
-    #mre-about-us .about-us-text {
+    height: 204.44444vw; }
+    #mre-about-us .overlay .about-us-image {
+      margin: 13.88889vw 0 8.33333vw 0;
+      width: 44.44444vw;
+      height: 17.22222vw; }
+    #mre-about-us .overlay .about-us-text {
       font-size: 3.33333vw;
       line-height: 5.55556vw;
       width: 71.66667vw;
       margin: 0 auto; }
-    #mre-about-us .about-us-numbers {
-      height: 94.44444vw;
-      padding: 2.77778vw 6.66667vw 12.5vw 6.66667vw;
+    #mre-about-us .overlay .about-us-numbers {
+      height: 91.66667vw;
+      padding: 2.77778vw 6.66667vw 9.72222vw 6.66667vw;
       width: 86.11111vw;
-      margin: 13.88889vw auto 0;
+      margin: 5.55556vw auto 0;
       border-radius: 5vw;
       background-color: rgba(247, 247, 247, 0.1);
       box-shadow: 0 6px 2.77778vw 0 rgba(0, 0, 0, 0.3); }
-      #mre-about-us .about-us-numbers li {
+      #mre-about-us .overlay .about-us-numbers li {
         display: block;
         width: 72.77778vw;
         margin: 35px 0 0 0; }
-        #mre-about-us .about-us-numbers li .numbers {
+        #mre-about-us .overlay .about-us-numbers li .numbers {
           font-size: 8.33333vw;
           line-height: 8.33333vw; }
-        #mre-about-us .about-us-numbers li .title {
+        #mre-about-us .overlay .about-us-numbers li .title {
           font-size: 6.66667vw;
           line-height: 8.33333vw; }
+    #mre-about-us .overlay .about-us-button {
+      display: none;
+      width: 55.55556vw;
+      height: 13.88889vw;
+      border-radius: 2.77778vw;
+      border: solid 2px #ffffff;
+      padding: 4.16667vw 18.61111vw;
+      font-size: 4.44444vw;
+      line-height: 5.55556vw; }
 
   #mre-partners {
     height: 133.33333vw; }
@@ -2736,11 +2951,11 @@ a.al-phone-num {
       height: 100%; }
     #mre-partners .partner-left, #mre-partners .partner-right {
       height: 66.66667vw; }
-    #mre-partners .partners-title-first {
+    #mre-partners h3 {
       margin: 14.44444vw 0 0 0;
       font-size: 4.16667vw;
       line-height: 5.55556vw; }
-    #mre-partners .partners-title-second {
+    #mre-partners h2 {
       font-size: 6.94444vw;
       line-height: 8.33333vw; }
     #mre-partners .partner-left {
@@ -2885,7 +3100,8 @@ a.al-phone-num {
       display: none; }
 
   #blog-list-categories {
-    height: 70.55556vw; }
+    height: 70.55556vw;
+    margin-top: 16.66667vw; }
     #blog-list-categories .blog-list-category-title {
       font-size: 3.33333vw;
       line-height: 5.55556vw;
@@ -2903,7 +3119,9 @@ a.al-phone-num {
         width: 35.55556vw; }
         #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide {
           border-radius: 100%;
-          width: 35.55556vw; }
+          width: 35.55556vw !important;
+          height: 35.55556vw;
+          margin: 0; }
           #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide img {
             height: 35.55556vw;
             width: 35.55556vw; }
@@ -2922,13 +3140,12 @@ a.al-phone-num {
       #blog-list-categories .swiper-container-blog-categories .swiper-button-next {
         right: 11.11111vw; }
 
-  .blog-list-triangle {
+  #blog-list .blog-list-triangle {
     height: 3.33333vw;
     left: 50%;
-    top: -7px;
+    top: -6px;
     transform: translateX(-50%);
     width: 5.83333vw; }
-
   #blog-list .input-group {
     border-bottom: 2px solid rgba(74, 74, 74, 0.4);
     display: table;
@@ -3102,10 +3319,10 @@ a.al-phone-num {
       #blog-detail-content .blog-detail-content-share .blog-detail-content-share-title {
         font-size: 3.88889vw;
         margin-bottom: 5.55556vw; }
-      #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img {
+      #blog-detail-content .blog-detail-content-share .blog-detail-content-share-list img.ssba {
         height: 11.66667vw;
         margin: 0 1.66667vw;
-        width: 11.66667vw; }
+        width: 11.66667vw !important; }
 
   .blog-detail-divider {
     width: 86.11111vw; }
@@ -3136,7 +3353,7 @@ a.al-phone-num {
         padding-top: 2.77778vw; }
 
   #blog-detail-form .blog-detail-comments-form {
-    height: 131.66667vw;
+    height: auto;
     padding: 0;
     width: 86.11111vw; }
     #blog-detail-form .blog-detail-comments-form .blog-detail-comments-form-title {
@@ -3185,7 +3402,10 @@ a.al-phone-num {
     #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
       margin: 0 5.59vw;
       height: 2vw;
-      width: 2vw; } }
+      width: 2vw; }
+
+  #blog-list .blog-list-triangle {
+    top: -10px; } }
 @media only screen and (min-width: 700px) and (max-width: 740px) and (orientation: landscape) {
   #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
     margin: 0 5.15vw;

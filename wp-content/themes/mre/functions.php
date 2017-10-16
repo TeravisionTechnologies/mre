@@ -135,9 +135,9 @@ add_filter( 'comment_form_fields', 'crunchify_move_comment_form_below' );
 function modify_comment_form_fields($fields){
 	$commenter = wp_get_current_commenter();
 	$fields['author'] = '<div class="form-group">' .
-		'<input id="author" name="author" type="text" class="form-control" placeholder="Nombre y Apellido" value=""/>'; //' . esc_attr( $commenter['comment_author'] ) . '
+		'<input id="author" name="author" type="text" class="form-control" placeholder="* Nombre y Apellido" value=""/>'; //' . esc_attr( $commenter['comment_author'] ) . '
 	$fields['email'] =
-		'<input id="email" name="email" type="email" class="form-control" placeholder="Email" value=""/>'; //' . esc_attr(  $commenter['comment_author_email'] ) . '
+		'<input id="email" name="email" type="email" class="form-control" placeholder="* Email" value=""/>'; //' . esc_attr(  $commenter['comment_author_email'] ) . '
 	$fields['url'] = '';
 
 	return $fields;
@@ -154,3 +154,11 @@ function wpbeginner_comment_text($arg) {
 add_filter('comment_form_defaults', 'wpbeginner_comment_text');
 
 add_filter('show_admin_bar', '__return_false');
+
+
+//SVG Hook
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types'); 

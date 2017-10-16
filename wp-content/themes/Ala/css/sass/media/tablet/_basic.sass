@@ -1,7 +1,10 @@
 // General
 .container-ala
-  width: get-vw-tablet(659px)
+  width: get-vw-tablet(658px)
   height: 100%
+
+.container
+  width: 100%
 // END General
 
 // Swiper General
@@ -191,69 +194,77 @@ body
 
 
 
-// Our offices
-.al-swiper-contact
-  height: 42.708333333333336vw
-  .flags-indicators
-    padding-top: 7.8125vw
-    .flag-image
-      height: 6.380208333333334vw
-      margin: 0 1.8229166666666667vw
-      width: 6.510416666666667vw
-  h4
-    font-size: 2.0833333333333335vw
-    line-height: 2.604166666666667vw
-    margin: 4.947916666666667vw 0 2.604166666666667vw 0
-  .swiper-wrapper
-    width: 33.46354166666667vw
-    .swiper-slide
-      width: 33.46354166666667vw
-      .office-detail
-        width: 33.46354166666667vw
-        h5
-          font-size: 1.8229166666666667vw
-          line-height: 2.604166666666667vw
-          margin: 0
-// END Our offices
+
+
+// Projects
+.al-projects
+  height: get-vw-tablet(110px)
+  margin-top: get-vw-tablet(3px)
+  .al-project-list
+    height: 100%
+    width: 100%
+    .al-project-list-item
+      margin: 0 get-vw-tablet(13px)
+      height: 100%
+      width: get-vw-tablet(202px)
+      .item-text
+        opacity: 0.4
+        font-size: get-vw-tablet(18px)
+        line-height: get-vw-tablet(20px)
+        margin-top: get-vw-tablet(45px)
+      .item-active
+        opacity: 1
+      .triangle
+        width: get-vw-tablet(40px)
+        height: get-vw-tablet(12px)
+        opacity: 0
+        bottom: get-vw-tablet(-10px)
+        left: 50%
+        transform: translateX(-50%)
+// END Projects
 
 // Properties
 .al-properties-section
-  .container-properties
-    width: 100%
-    padding: 0 5.208333333333334vw
   .properties-country-filter
-    font-size: 2.0833333333333335vw
-    line-height: 3.125vw
-    margin: 7.421875vw 1.953125vw 6.770833333333334vw 0
+    font-size: get-vw-tablet(16px)
+    line-height: get-vw-tablet(17px)
+    margin: get-vw-tablet(57px) get-vw-tablet(15px) get-vw-tablet(52px) 0
     padding-left: 0
-    width: 19.53125vw
+    width: get-vw-tablet(110px)
   .filter-left
-    border-right: 2px solid #7f8182
-    margin: 7.421875vw 0 6.770833333333334vw 1.953125vw
+    border-right: 2px solid $grey-1
+    margin: get-vw-tablet(57px) 0 get-vw-tablet(52px) get-vw-tablet(15px)
     opacity: 0.5
     padding-right: 0
-    width: 19.53125vw
+    width: get-vw-tablet(110px)
     padding-left: 0
-  .properties-filter
+  .btn-filter
     border: solid 2px rgba(74, 74, 74, 0.4)
-    font-size: 1.8229166666666667vw
-    height: 4.6875vw
-    line-height: 1.8229166666666667vw
-    width: 22.265625vw
+    font-size: get-vw-tablet(15px)
+    line-height: get-vw-tablet(15px)
+    height: get-vw-tablet(36px)
+    width: get-vw-tablet(171px)
+    .caret
+      right: get-vw-tablet(16px)
+      top: get-vw-tablet(17px)
+      position: absolute
   .properties-list
-    margin-top: 3.90625vw
+    margin-top: get-vw-tablet(30px)
     .property-image
-      width: 26.302083333333336vw
-      height: 25.651041666666668vw
-      margin-bottom: 4.036458333333334vw
-      margin-right: 3.385416666666667vw
+      width: get-vw-tablet(202px)
+      height: get-vw-tablet(197px)
+      margin-bottom: get-vw-tablet(31px)
+      margin-right: get-vw-tablet(26px)
       &:nth-child(3n+3)
         margin: 0
+      &:hover
+        .property-overlay
+          opacity: 1
       .property-overlay
         opacity: 1
         bottom: 0
         width: 100%
-        height: 80px
+        height: get-vw-tablet(80px)
         background: rgba(0, 0, 0, 0.8)
         transition: all ease .3s
         -moz-transition: all ease .3s
@@ -261,26 +272,179 @@ body
         -o-transition: all ease .3s
         -webkit-transition: all ease .3s
         .property-title
-          font-size: 1.5625vw
-          margin: 1.6927083333333335vw 0 2px 0
+          font-size: get-vw-tablet(12px)
+          margin: get-vw-tablet(13px) 0 get-vw-tablet(2px) 0
         .property-address, .property-city
-          font-size: 1.3020833333333335vw
-          line-height: 1.5625vw
+          font-size: get-vw-tablet(10px)
+          line-height: get-vw-tablet(12px)
           opacity: 0.5
           margin: 0
         .property-category
-          margin-top: 0.78125vw
-          font-size: 1.3020833333333335vw
-          line-height: 1.3020833333333335vw
+          margin-top: get-vw-tablet(6px)
+          font-size: get-vw-tablet(9px)
+          line-height: get-vw-tablet(10px)
           opacity: 0.6
 #al-pagination
   .pagination
-    margin: 5.078125vw 0 11.71875vw 0
+    margin: get-vw-tablet(43px) 0 get-vw-tablet(90px) 0
     li
-      font-size: 2.0833333333333335vw
-      line-height: 2.734375vw
+      font-size: get-vw-tablet(16px)
+      line-height: get-vw-tablet(21px)
       a
-        height: 4.947916666666667vw
-        padding-top: 1.0416666666666667vw
-        width: 4.817708333333334vw
+        height: get-vw-tablet(38px)
+        padding-top: get-vw-tablet(10px)
+        width: get-vw-tablet(37px)
 // END Properties
+
+// Partners
+.al-partners-section
+  height: get-vw-tablet(240px)
+  padding: get-vw-tablet(48px) 0 get-vw-tablet(47px) 0
+  box-shadow: -4px -10px get-vw-tablet(23px) -7px rgba($black,0.37)
+  -moz-box-shadow: -4px -10px get-vw-tablet(23px) -7px rgba($black,0.37)
+  -webkit-box-shadow: -4px -10px get-vw-tablet(23px) -7px rgba($black,0.37)
+  .al-partners-title
+    font-size: get-vw-tablet(26px) 
+    line-height: get-vw-tablet(28px)
+    margin: 0
+  .partners-images
+    padding-top: get-vw-tablet(30px)
+    .partners-images-one
+      margin-right: get-vw-tablet(59px)
+      width: get-vw-tablet(82px)
+      height: get-vw-tablet(87px)
+    .partners-images-two
+      width: get-vw-tablet(141px)
+      height: get-vw-tablet(47px)
+// END Partners
+
+// Offices
+#al-offices
+  height: get-vw-tablet(328px)
+  .swiper-container-flags
+    height: 100%
+  h4
+    margin: get-vw-tablet(64px) 0 get-vw-tablet(21px) 0
+    font-size: get-vw-tablet(26px)
+    line-height: get-vw-tablet(30px)
+  .flags-indicators
+    .flag-image
+      height: get-vw-tablet(49px)
+      margin: 0 get-vw-tablet(14px) get-vw-tablet(20px) get-vw-tablet(14px)
+      width: get-vw-tablet(50px)
+    .flag-image-opacity
+      opacity: .6
+  .swiper-wrapper
+    width: 100%
+    .swiper-slide
+      margin: 0 auto
+      height: get-vw-tablet(80px)
+      width: 100%
+      .office-detail
+        width: get-vw-tablet(260px)
+        margin: 0 get-vw-tablet(14px)
+        h5
+          font-size: get-vw-tablet(14px)
+          line-height: get-vw-tablet(20px)
+          margin: 0
+// END Offices
+
+// Contact Us
+.wpcf7-response-output
+  top: get-vw-tablet(-25px)
+  left: get-vw-tablet(30px)
+
+.al-contact-div
+  //height: get-vw-tablet(954px)
+  padding: get-vw-tablet(50px) 0 get-vw-tablet(140px) 0
+  .al-contact-text
+    font-size: get-vw-tablet(22px)
+    line-height: get-vw-tablet(34px)
+    margin-bottom: 2px
+  .al-contact-text-bold
+    font-size: get-vw-tablet(22px)
+    line-height: get-vw-tablet(34px)
+    margin: 0
+  .al-phone-box
+    width: get-vw-tablet(426px)
+    height: get-vw-tablet(260px)
+    margin: get-vw-tablet(38px) auto 0 auto
+    padding: get-vw-tablet(40px) get-vw-tablet(71px)
+    box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+    -moz-box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+    -webkit-box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+    img
+      width: get-vw-tablet(50px)
+      height: get-vw-tablet(50px)
+    p
+      margin-top: get-vw-tablet(11px)
+      line-height: get-vw-tablet(30px)
+      font-size: get-vw-tablet(24px)
+      margin-bottom: get-vw-tablet(28px)
+    a.al-phone-num
+      font-size: get-vw-tablet(30px)
+      font-weight: bold
+      line-height: get-vw-tablet(30px)
+  .al-contact-form-div
+    margin: get-vw-tablet(70px) get-vw-tablet(55px) 0 get-vw-tablet(55px)
+    width: get-vw-tablet(658px)
+    .wpcf7-form-control-wrap
+      margin-bottom: get-vw-tablet(20px)
+    .wpcf7-form
+      p
+        margin-right: get-vw-tablet(20px)
+      input[type="text"], input[type="email"], input[type="tel"], select
+        width: get-vw-tablet(319px)
+        height: get-vw-tablet(47px)
+        padding: 0 get-vw-tablet(20px)
+        font-size: get-vw-tablet(14px)
+        line-height: get-vw-tablet(15px)
+        border-radius: get-vw-tablet(4px)
+        margin-bottom: get-vw-tablet(20px)
+      select
+        -webkit-appearance: none
+        position: relative
+        background: $white url(assets/form-caret-down.png) 100% 50% no-repeat
+      input[name="your-email"], select[name="your-country"] 
+        margin-left: get-vw-tablet(10px)
+      textarea
+        width: 85.7vw
+        font-size: get-vw-tablet(14px)
+        height: get-vw-tablet(133px)
+        line-height: get-vw-tablet(16px)
+        padding: get-vw-tablet(15px) get-vw-tablet(20px)
+        border-radius: get-vw-tablet(6px)
+        border: 1px solid $black
+        option
+          padding-left: 20px
+      .wpcf7-submit
+        width: get-vw-tablet(200px)
+        height: get-vw-tablet(50px)
+        font-size: get-vw-tablet(16px)
+        margin-top: get-vw-tablet(25px)
+        padding: get-vw-tablet(15px) get-vw-tablet(67px)
+        line-height: get-vw-tablet(20px)
+        margin-bottom: 0
+        border: solid 2px $black
+        &:hover
+          background-color: rgba($white, .7)
+// END Contact Us
+
+// Footer
+.al-footer-container
+  height: get-vw-tablet(158px)
+  padding: get-vw-tablet(37px) 0
+  img
+    width: get-vw-tablet(120px)
+    height: get-vw-tablet(41px)
+    margin-bottom: get-vw-tablet(7px)
+  p.al-text-white
+    font-size: get-vw-tablet(12px)
+    line-height: get-vw-tablet(16px)
+    margin-bottom: 0
+  a
+    font-size: get-vw-tablet(12px)
+    line-height: get-vw-tablet(18px)
+  .footer-top
+    display: none
+// END Footer

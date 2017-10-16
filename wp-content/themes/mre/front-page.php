@@ -8,84 +8,101 @@ $headerPost = get_posts(
   )
 );
 $theMeta = get_post_meta($headerPost[0]->ID);
+$heroImages = get_post_meta( $headerPost[0]->ID, '_hf_hero_images', true );
+$aboutUs = get_post_meta( $headerPost[0]->ID, '_hf_about_us', true );
+$aboutNumbers = get_post_meta( $headerPost[0]->ID, '_hf_about_numbers', true );
+$partnerLeft = get_post_meta( $headerPost[0]->ID, '_hf_partner_left', true );
+$partnerRight = get_post_meta( $headerPost[0]->ID, '_hf_partner_right', true );
+$ourOffices = get_post_meta( $headerPost[0]->ID, '_hf_our_offices', true );
+$officesVe = get_post_meta( $headerPost[0]->ID, '_hf_offices_ve', true );
+$officesUs = get_post_meta( $headerPost[0]->ID, '_hf_offices_us', true );
+$officesEs = get_post_meta( $headerPost[0]->ID, '_hf_offices_es', true );
+$contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
 ?>
             <div class="swiper-container swiper-container-hero">
               <div class="swiper-wrapper">
-                <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-1.jpg');">
+                <?php
+                  if(isset($heroImages)) {
+                    foreach ( $heroImages as $heroImage ) {
+                ?>
+                <div class="swiper-slide" style="background-image: url('<?php echo $heroImage["_hf_hero_image"]  ?>');">
                   <div class="slide-overlay"></div>
                   <div class="slide-text">
-                    <h2>Comprometidos con tu</h2>
-                    <h3>TU FUTURO</h3>
+                    <?php
+                      if(isset($heroImage["_hf_hero_text"])) {
+                        echo $heroImage["_hf_hero_text"];
+                      }
+                    ?>
                   </div>
                 </div>
-                <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-2.jpg');">
-                  <div class="slide-overlay"></div>
-                  <div class="slide-text">
-                    <h2>Especialistas en</h2>
-                    <h3>LUXURY RENTAL</h3>
-                  </div>
-                </div>
-                <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-3.jpg');">
-                  <div class="slide-overlay"></div>
-                  <div class="slide-text">
-                    <h2>Innovación y diseño</h2>
-                    <h3>VANGUARDISTA</h3>
-                  </div>
-                </div>
-                <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-4.jpg');">
-                  <div class="slide-overlay"></div>
-                  <div class="slide-text">
-                    <h2>Estamos contigo en</h2>
-                    <h3>TODO MOMENTO</h3>
-                  </div>
-                </div>
+                <?php }} ?>
               </div>
               <i class="fa fa-chevron-circle-left swiper-button-prev" aria-hidden="true"></i>
               <i class="fa fa-chevron-circle-right swiper-button-next" aria-hidden="true"></i>
               <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-arrow.svg" class="hero-button">
             </div>
-            <section id="mre-about-us" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/about-us-bg.jpg');" alt="About Us Background">
-              <img class="about-us-image" src="<?php echo get_template_directory_uri(); ?>/assets/about-us.png" alt="About Us">
-              <h2 class="about-us-title no-margin">Grupo Merand Real Estate</h2>
-              <p class="about-us-text"><strong>Somos un holding inmobiliario Premium</strong>, con más de 15 años de experiencia en el manejo de portafolios inmobiliarios exclusivos en Miami, Orlando, Las Vegas y Madrid. Ponemos en práctica las últimas tendencias del Real Estate y el Luxury Lifestyle para ofrecerles a nuestros clientes una experiencia personalizada, superando sus expectativas.</p>
-              <ul class="about-us-numbers">
-                <li>
-                  <h2 class="numbers no-margin">+500</h2>
-                  <h3 class="title no-margin">Inversionistas</h3>
-                </li>
-                <li>
-                  <h2 class="numbers no-margin">+160.000</h2>
-                  <h3 class="title no-margin">Ventas al Año</h3>
-                </li>
-                <li>
-                  <h2 class="numbers no-margin">+800</h2>
-                  <h3 class="title no-margin">Rentas por Mes</h3>
-                </li>
-              </ul>
+            <section id="mre-about-us" style="background-image: url('<?php echo $aboutUs[0]['_hf_about_us_background']; ?>');" alt="About Us Background">
+              <div class="overlay">
+                <?php if(isset($aboutUs[0]["_hf_about_us_image"])) {?>
+                  <img class="about-us-image" src="<?php echo $aboutUs[0]["_hf_about_us_image"]; ?>" alt="About Us">
+                <?php } ?>
+                <?php if(isset($aboutUs[0]["_hf_about_us_text"])) {?>
+                <p class="about-us-text"><?php echo $aboutUs[0]["_hf_about_us_text"]; ?></p>
+                <?php } ?>
+                <ul class="about-us-numbers">
+                  <?php foreach ($aboutNumbers as $numbers) { ?>
+                    <li>
+                      <?php if(isset($numbers['_hf_about_numbers_digits'])){ ?>
+                        <h2 class="numbers no-margin"><?php echo $numbers['_hf_about_numbers_digits']; ?></h2>
+                      <?php } ?>
+                      <?php if(isset($numbers['_hf_about_numbers_text'])){ ?>
+                        <h3 class="title no-margin"><?php echo $numbers['_hf_about_numbers_text']; ?></h3>
+                      <?php } ?>
+                    </li>
+                  <?php } ?>
+                </ul>
+                <a href="#" class="about-us-button">Ver más</a>
+              </div>
             </section>
             <section id="mre-partners" class="container-fluid no-padding">
-              <div class="col-xs-12 col-md-6 partner-left" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/partner-ala19.jpg');">
+              <div class="col-xs-12 col-md-6 partner-left" style="background-image: url('<?php if(isset($partnerLeft[0]["_hf_partner_left_background"])){ echo $partnerLeft[0]["_hf_partner_left_background"]; } ?>');">
                 <a href="">
                   <div class="overlay-left">
-                    <h3 class="partners-title-first">Proyectos inmobiliarios</h3>
-                    <h2 class="partners-title-second">EXCLUSIVOS</h2>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/logo-ala19.png">
+                    <?php
+                    if (isset($partnerLeft[0]["_hf_partner_left_title"])) {
+                      echo $partnerLeft[0]["_hf_partner_left_title"];
+                    }
+                    ?>
+                    <?php
+                    if(isset($partnerLeft[0]["_hf_partner_left_logo"])) { ?>
+                      <img src="<?php  echo $partnerLeft[0]["_hf_partner_left_logo"]; ?>">
+                    <?php } ?>
                   </div>
                 </a>
               </div>
-              <div class="col-xs-12 col-md-6 partner-right" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/partner-hr19.jpg');">
+              <div class="col-xs-12 col-md-6 partner-right" style="background-image: url('<?php if(isset($partnerRight[0]["_hf_partner_right_background"])){ echo $partnerRight[0]["_hf_partner_right_background"]; } ?>');">
                 <a href="">
                   <div class="overlay-right">
-                    <h3 class="partners-title-first">Encuentra la propiedad</h3>
-                    <h2 class="partners-title-second">PERFECTA PARA TI</h2>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/logo-hr19.png">
+                    <?php
+                    if (isset($partnerRight[0]["_hf_partner_right_title"])) {
+                      echo $partnerRight[0]["_hf_partner_right_title"];
+                    }
+                    ?>
+                    <?php
+                    if(isset($partnerRight[0]["_hf_partner_right_logo"])) { ?>
+                      <img src="<?php  echo $partnerRight[0]["_hf_partner_right_logo"]; ?>">
+                    <?php } ?>
                   </div>
                 </a>
               </div>
             </section>
-            <section id="mre-offices" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/offices.jpg');">
+            <section id="mre-offices" style="background-image: url('<?php if(isset($ourOffices[0]['_hf_our_offices_background'])) { echo $ourOffices[0]['_hf_our_offices_background']; } ?>');">
               <div class="swiper-container swiper-container-flags">
-                <h4>Puedes <strong>encontrarnos</strong> en</h4>
+                <?php
+                  if(isset($ourOffices[0]['_hf_our_offices_text'])) {
+                    echo $ourOffices[0]['_hf_our_offices_text'];
+                  }
+                ?>
                 <div class="flags-indicators">
                   <img id="flag-image-1" class="flag-image flag-image-opacity" data-pagination="1" src="<?php echo get_template_directory_uri(); ?>/assets/ven_flag.svg" />
                   <img id="flag-image-2" class="flag-image" data-pagination="2" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
@@ -93,56 +110,84 @@ $theMeta = get_post_meta($headerPost[0]->ID);
                 </div>
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
+                    <?php
+                    if(isset($officesVe)) {
+                      foreach ($officesVe as $office) {
+                    ?>
                     <div class="office-detail">
+                      <?php if(isset($office['_hf_offices_ve_city'])) { ?>
                       <h5>
-                        <span>Caracas:</span>
+                        <span><?php echo $office['_hf_offices_ve_city']; ?>:</span>
                       </h5>
-                      <h5>Centro Empresarial, Piso 19, Oficinas 19-05 / 06</h5>
+                      <?php } ?>
+                      <?php if(isset($office['_hf_offices_ve_address'])) { ?>
+                      <h5><?php echo $office['_hf_offices_ve_address']; ?></h5>
+                      <?php } ?>
                       <h5>Venezuela</h5>
-                      <h5>Teléfonos: +58 212 975 39 40 / 212 975 41 651</h5>
+                      <?php if(isset($office['_hf_offices_ve_phone'])) { ?>
+                      <h5>Teléfonos: <?php echo $office['_hf_offices_ve_phone'];?></h5>
+                      <?php } ?>
                     </div>
+                    <?php }} ?>
                   </div>
                   <div class="swiper-slide">
-                    <div class="office-detail">
-                      <h5>
-                        <span>Miami · Sede principal:</span>
-                      </h5>
-                      <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
-                      <h5>USA</h5>
-                      <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
-                    </div>
-                    <div class="office-detail">
-                      <h5>
-                        <span>Orlando:</span>
-                      </h5>
-                      <h5>2295 S. Hiawassee Road, Suite 407E</h5>
-                      <h5>USA</h5>
-                      <h5>Teléfonos: +1 407 255.08.71</h5>
-                    </div>
+                    <?php
+                      if(isset($officesUs)) {
+                        foreach ($officesUs as $office) {
+                     ?>
+                      <div class="office-detail">
+                        <?php if(isset($office['_hf_offices_us_city'])) { ?>
+                          <h5>
+                            <span><?php echo $office['_hf_offices_us_city']; ?>:</span>
+                          </h5>
+                        <?php } ?>
+                        <?php if(isset($office['_hf_offices_us_address'])) { ?>
+                          <h5><?php echo $office['_hf_offices_us_address']; ?></h5>
+                        <?php } ?>
+                        <h5>USA</h5>
+                        <?php if(isset($office['_hf_offices_us_phone'])) { ?>
+                          <h5>Teléfonos: <?php echo $office['_hf_offices_us_phone'];?></h5>
+                        <?php } ?>
+                      </div>
+                    <?php }} ?>
                   </div>
                   <div class="swiper-slide">
-                    <div class="office-detail">
-                      <h5>
-                        <span>Madrid:</span>
-                      </h5>
-                      <h5>C/ Velázquez 78, 2º Dcha. 28001</h5>
-                      <h5>España</h5>
-                      <h5>Teléfonos: +34 605 816 803</h5>
-                    </div>
+                    <?php
+                      if(isset($officesEs)) {
+                        foreach ($officesEs as $office) {
+                    ?>
+                      <div class="office-detail">
+                        <?php if(isset($office['_hf_offices_es_city'])) { ?>
+                          <h5>
+                            <span><?php echo $office['_hf_offices_es_city']; ?>:</span>
+                          </h5>
+                        <?php } ?>
+                        <?php if(isset($office['_hf_offices_es_address'])) { ?>
+                          <h5><?php echo $office['_hf_offices_es_address']; ?></h5>
+                        <?php } ?>
+                        <h5>España</h5>
+                        <?php if(isset($office['_hf_offices_es_phone'])) { ?>
+                          <h5>Teléfonos: <?php echo $office['_hf_offices_es_phone'];?></h5>
+                        <?php } ?>
+                      </div>
+                    <?php }} ?>
                   </div>
                 </div>
               </div>
             </section>
-            <section id="contact-us" class="col-xs-12 al-contact-div" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/contact-us-bg.png')">
+            <section id="contact-us" class="col-xs-12 al-contact-div no-padding" style="background-image: url('<?php if(isset($contact[0]["_hf_contact_background"])) { echo $contact[0]["_hf_contact_background"]; }?>')">
+              <div class="overlay"></div>
               <div class="container-mre center-block">
                 <div class="row">
-                  <p class="col-xs-12 text-center al-contact-text">Nos gustaría asesorarte en tu próxima inversión</p>
-                  <p class="col-xs-12 text-center al-contact-text-bold">¡Contáctanos!</p>
+                  <p class="col-xs-12 text-center al-contact-text"><?php if(isset($contact[0]['_hf_contact_first'])) { echo $contact[0]['_hf_contact_first']; }?></p>
+                  <p class="col-xs-12 text-center al-contact-text-bold"><?php if(isset($contact[0]['_hf_contact_second'])) { echo $contact[0]['_hf_contact_second']; }?></p>
                   <div class="col-xs-12 col-md-4 no-padding">
                     <div class="al-phone-box text-center center-block">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.png" alt="Llamanos Ala19">
-                      <p>Llámanos para asesoría <strong>Inmediata</strong></p>
-                      <a href="tel:+17864775091" class="al-phone-num">+1786 477.50.91</a>
+                      <p><?php if(isset($contact[0]['_hf_contact_text'])) { echo $contact[0]['_hf_contact_text']; }?></p>
+                      <?php if(isset($contact[0]['_hf_contact_phone'])) { ?>
+                        <a href="tel:<?php echo str_replace(array(".", " ", "-", "/"), "", $contact[0]['_hf_contact_phone']); ?>" class="al-phone-num"><?php echo $contact[0]['_hf_contact_phone']; ?></a>
+                      <?php } ?>
                     </div>
                   </div>
                   <div class="col-xs-12 col-md-8 al-contact-form-div no-padding">

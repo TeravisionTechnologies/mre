@@ -14,7 +14,6 @@
 					'all_items'     => __( 'Properties' ),
 				),
 				'public' => true,
-        'taxonomies' => array('category'),
 			)
 		);
 	}

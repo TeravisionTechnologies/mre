@@ -5,6 +5,10 @@
 // END General
 
 // Swiper General
+.al-div-border
+  height: 2px
+  border: 1px solid $arrow-grey
+
 body
   font-size: 14px
   margin: 0
@@ -199,10 +203,18 @@ body
     height: 42px
 // END Header
 
+
+
+
+
+
+
+
+
 // Projects
 .al-projects
   height: 120px
-  margin-top: 4px
+  margin-top: 3px
   .al-project-list
     height: 100%
     width: 100%
@@ -213,65 +225,18 @@ body
       .item-text
         opacity: 0.4
         font-size: 22px
-        color: #ffffff
+        line-height: 24px
         margin-top: 48px
       .item-active
         opacity: 1
       .triangle
+        width: 55px
+        height: 16px
         opacity: 0
         bottom: -15px
         left: 50%
         transform: translateX(-50%)
 // END Projects
-
-// Contact Us
-.al-contact-div
-  padding-top: 57px
-
-.al-contact-text, .al-contact-text-bold
-  font-size: 36px
-
-.al-phone-div
-  padding-top: 40px
-  .al-phone-box
-    padding: 45px 30px
-    p
-      font-size: 24px
-
-a.al-phone-num
-  font-size: 36px
-// Contact Us
-
-// Offices
-#al-offices
-  height: 450px
-  .swiper-container-flags
-    height: 100%
-  h4
-    margin: 90px 0 40px 0
-    font-size: 36px
-    line-height: 40px
-  .flags-indicators
-    .flag-image
-      height: 60px
-      margin: 0 20px 10px 20px
-      width: 60px
-    .flag-image-opacity
-      opacity: .6
-  .swiper-wrapper
-    width: 100%
-    .swiper-slide
-      margin: 0 auto
-      height: 150px
-      width: 100%
-      .office-detail
-        width: 370px
-        margin: 0 22px
-        h5
-          font-size: 16px
-          line-height: 25px
-          margin: 0
-// END Offices
 
 // Properties
 .al-properties-section
@@ -280,17 +245,18 @@ a.al-phone-num
     line-height: 20px
     margin: 66px 15px 60px 0
     padding-left: 0
-    width: 200px
+    width: 130px
   .filter-left
-    border-right: 2px solid #7f8182
+    border-right: 2px solid $grey-1
     margin: 66px 0 60px 15px
     opacity: 0.5
     padding-right: 0
-    width: 200px
+    width: 130px
     padding-left: 0
-  .properties-filter
+  .btn-filter
     border: solid 2px rgba(74, 74, 74, 0.4)
     font-size: 16px
+    line-height: 15px
     height: 46px
     width: 261px
   .properties-list
@@ -300,23 +266,17 @@ a.al-phone-num
       height: 350px
       margin-bottom: 50px
       margin-right: 45px
-      &:nth-child(3n+3)
-        margin: 0
+
       &:hover
         .property-overlay
           opacity: 1
       .property-overlay
-        opacity: 0
         width: 100%
         height: 100%
         background: rgba(0, 0, 0, 0.8)
-        transition: all ease .3s
-        -moz-transition: all ease .3s
-        -ms-transition: all ease .3s
-        -o-transition: all ease .3s
-        -webkit-transition: all ease .3s
         .property-title
           font-size: 20px
+
           margin: 129px 0 6px 0
         .property-address, .property-city
           font-size: 14px
@@ -339,3 +299,159 @@ a.al-phone-num
         padding-top: 10px
         width: 41px
 // END Properties
+
+// Partners
+.al-partners-section
+  z-index: 1
+  height: 300px
+  padding: 67px 0 66px 0
+  box-shadow: -4px -10px 23px -7px rgba($black,0.37)
+  -moz-box-shadow: -4px -10px 23px -7px rgba($black,0.37)
+  -webkit-box-shadow: -4px -10px 23px -7px rgba($black,0.37)
+  .al-partners-title
+    font-size: 34px
+    line-height: 37px
+    margin: 0
+    font-family: Archivo, sans-serif
+  .partners-images
+    padding-top: 30px 
+    .partners-images-one
+      margin-right: 94px
+      width: 94px
+      height: 100px
+    .partners-images-two
+      width: 200px
+      height: 69px
+// END Partners
+ 
+// Offices
+#al-offices
+  height: 360px
+  .swiper-container-flags
+    height: 100%
+  h4
+    margin: 56px 0 30px 0
+    font-size: 34px
+    line-height: 40px
+  .flags-indicators
+    .flag-image
+      height: 60px
+      margin: 0 20px 20px 20px
+      width: 60px
+    .flag-image-opacity
+      opacity: .6
+  .swiper-wrapper
+    width: 100%
+    .swiper-slide
+      margin: 0 auto
+      height: 100px
+      width: 100%
+      .office-detail
+        width: 320px
+        margin: 0 20px
+        h5
+          font-size: 16px
+          line-height: 25px
+          margin: 0
+// END Offices
+
+// Contact Us
+.wpcf7-response-output
+  top: -25px
+  left: 30px
+
+.al-contact-div
+  height: auto
+  padding: 60px 135px
+  .al-contact-text
+    font-size: 36px
+    line-height: 46px
+    margin-bottom: 2px
+  .al-contact-text-bold
+    font-size: 36px
+    line-height: 46px
+    margin: 0
+  .al-phone-box
+    width: 361px
+    height: 272px
+    margin-top: 49px
+    margin-left: 0
+    padding: 45px 34px
+    box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+    -moz-box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+    -webkit-box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+    p
+      margin-top: 10px
+      line-height: 29px
+      font-size: 24px
+      margin-bottom: 20px
+    a.al-phone-num
+      font-size: 36px
+      font-weight: bold
+      line-height: 30px
+  .al-contact-form-div
+    margin-top: 49px
+    width: 767px
+    .wpcf7-form-control-wrap
+      margin-bottom: 20px
+    .wpcf7-form
+      p
+        margin-right: 20px
+      input[type="text"], input[type="email"], input[type="tel"], select
+        width: 371px
+        height: 48px
+        padding: 0 20px
+        font-size: 16px
+        line-height: 15px
+        border-radius: 4px
+      input[name="your-email"], select[name="your-country"] 
+        margin-left: 10px
+      select
+        -webkit-appearance: none
+        position: relative
+        background: $white url(assets/form-caret-down.png) 100% 50% no-repeat
+      textarea
+        width: 767px
+        font-size: 16px
+        height: 135px
+        line-height: 16px
+        padding: 15px 20px
+        border-radius: 6px
+        border: 1px solid $black
+        option
+          padding-left: 20px
+      .wpcf7-submit
+        width: 216px
+        height: 50px
+        font-size: 18px
+        margin-top: 23px
+        padding: 15px 74px
+        line-height: 20px
+        margin-bottom: 60px
+        border: solid 2px $black
+        &:hover
+          background-color: rgba($white, .7)
+// END Contact Us
+
+// Footer
+.al-footer-container
+  height: 201px
+  padding: 50px 0
+  img
+    width: 140px
+    height: 47px
+    margin-bottom: 14px
+  p.al-text-white
+    font-size: 14px
+    line-height: 20px
+    margin-bottom: 0
+  a
+    font-size: 14px
+    line-height: 20px
+  .footer-top
+    cursor: pointer
+    width: 50px
+    height: 50px
+    right: 140px
+    top: 40px
+// END Footer

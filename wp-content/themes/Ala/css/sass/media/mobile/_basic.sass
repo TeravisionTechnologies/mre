@@ -141,6 +141,7 @@ body
     .img-div
       width: 27vw
       height: get-vw-mobile(60px)
+      margin-top: 10px
       img
         width: get-vw-mobile(97px)
         height: get-vw-mobile(32px)
@@ -195,139 +196,48 @@ body
   font-size: 10px
 // END Generals Classes
 
-// Footer
-.al-footer-container
-  height: 126px
-  padding: 27px 0
-  img
-    max-width: 80px
-// END Footer
-
-// Contact Us
-.al-contact-form-div
-  padding: 0
-
-.al-contact-div
-  height: auto
-
-.al-contact-text, .al-contact-text-bold
-  font-size: 18px
-
-.al-phone-box
-  padding: 32px 40px
-  max-width: calc(100vw - 50px)
-  img
-    max-width: 40px
-  p
-    font-size: 18px
-
-a.al-phone-num
-  font-size: 24px
-
-.wpcf7-form
-  input[type="text"], input[type="email"], input[type="tel"], select
-    height: 40px
-    font-size: 12px
-    padding: 0 14px
-    margin-bottom: 4.166666666666667vw
-  textarea
-    padding: 14px
-    font-size: 12px
-  .wpcf7-submit
-    font-size: 14px
-    padding: 0px 47px
-    margin-bottom: 50px
-
-.al-go-top-div
-  top: 20px
-  width: 40px
-  right: 20px
-  height: 40px
-// END Contact Us
-
-// Partners
-.al-partners-section
-  padding: 38px 0
-
-.al-partners-title
-  font-size: 12px
-
-.al-partners-subtitle
-  font-size: 18px
-
-.partners-images-one
-  width: 13%
-  margin-right: 34px
-
-.partners-images-two
-  width: 26%
-// END Partners
-
-// Our offices
-.al-swiper-contact
-  height: 84.72222222222221vw
-  .flags-indicators
-    padding-top: 16.666666666666668vw
-    .flag-image
-      height: 11.944444444444445vw
-      margin: 0 1.9444444444444444vw
-      width: 11.944444444444445vw
-  h4
-    font-size: 3.333333333333333vw
-    line-height: 5vw
-    margin: 6.666666666666666vw 0 5.555555555555555vw 0
-  .swiper-wrapper
-    width: 71.38888888888889vw
-    .swiper-slide
-      width: 71.38888888888889vw
-      .office-detail
-        width: 71.38888888888889vw
-        h5
-          font-size: 3.333333333333333vw
-          line-height: 5.555555555555555vw
-          margin: 0
-// END Our offices
 
 // Properties
 .al-properties-section
-  .container-properties
-    width: 100%
-    padding: 0 2.7777777777777777vw
   .properties-country-filter
-    font-size: 4.444444444444445vw
-    line-height: 6.944444444444445vw
-    margin: 8.88888888888889vw 4.166666666666667vw 9.444444444444445vw 0
+    font-size: get-vw-mobile(16px)
+    line-height: get-vw-mobile(17px)
+    margin: get-vw-mobile(32px) get-vw-mobile(15px) get-vw-mobile(34px) 0
     padding-left: 0
-    width: 33.333333333333336vw
+    width: get-vw-mobile(100px)
   .filter-left
-    border-right: 2px solid #7f8182
-    margin: 8.88888888888889vw 0 9.444444444444445vw 4.166666666666667vw
+    border-right: 2px solid $grey-1
+    margin: get-vw-mobile(32px) 0 get-vw-mobile(34px) get-vw-mobile(15px)
     opacity: 0.5
     padding-right: 0
-    width: 33.333333333333336vw
+    width: get-vw-mobile(100px)
     padding-left: 0
-  .properties-filter
+  .btn-filter
     border: solid 2px rgba(74, 74, 74, 0.4)
-    font-size: 3.333333333333333vw
-    height: 10.555555555555555vw
-    line-height: 4.166666666666667vw
-    width: 86.11111111111111vw
-    -webkit-appearance: none
+    font-size: get-vw-mobile(12px)
+    line-height: get-vw-mobile(15px)
+    height: get-vw-mobile(38px)
+    width: get-vw-mobile(310px)
+    .caret
+      right: get-vw-mobile(16px)
+      top: get-vw-mobile(17px)
+      position: absolute
   .properties-list
-    margin-top: 8.333333333333334vw
+    margin-top: get-vw-mobile(30px)
     .property-image
-      width: 86.11111111111111vw
-      height: 83.61111111111111vw
-      margin-bottom: 5.277777777777778vw
+      width: get-vw-mobile(310px)
+      height: get-vw-mobile(301px)
+      margin-bottom: get-vw-mobile(19px) !important
       margin-right: 0
-      &:nth-child(3n+3)
-        margin-right: 0
-        margin-bottom: 5.555555555555555vw
+
+      &:hover
+        .property-overlay
+          opacity: 1
       .property-overlay
         opacity: 1
         bottom: 0
         width: 100%
-        height: 29.444444444444443vw
+        height: get-vw-mobile(106px)
         background: rgba(0, 0, 0, 0.8)
         transition: all ease .3s
         -moz-transition: all ease .3s
@@ -335,26 +245,209 @@ a.al-phone-num
         -o-transition: all ease .3s
         -webkit-transition: all ease .3s
         .property-title
-          font-size: 5vw
-          margin: 4.444444444444445vw 0 1.1111111111111112vw 0
+          font-size: get-vw-mobile(18px)
+          margin: get-vw-mobile(16px) 0 get-vw-mobile(4px) 0
         .property-address, .property-city
-          font-size: 3.888888888888889vw
-          line-height: 4.166666666666667vw
+          font-size: get-vw-mobile(14px)
+          line-height: get-vw-mobile(16px)
           opacity: 0.5
           margin: 0
         .property-category
-          margin-top: 2.7777777777777777vw
-          font-size: 3.333333333333333vw
-          line-height: 3.333333333333333vw
+          margin-top: get-vw-mobile(10px)
+          font-size: get-vw-mobile(12px)
+          line-height: get-vw-mobile(10px)
           opacity: 0.6
 #al-pagination
   .pagination
-    margin: 16.666666666666668vw 0 22.22222222222222vw 0
+    margin: get-vw-mobile(40px) 0 get-vw-mobile(80px) 0
     li
-      font-size: 4.444444444444445vw
-      line-height: 5.833333333333333vw
+      font-size: get-vw-mobile(16px)
+      line-height: get-vw-mobile(21px)
       a
-        height: 9.722222222222221vw
-        padding-top: 1.9444444444444444vw
-        width: 9.722222222222221vw
+        height: get-vw-mobile(35px)
+        padding-top: get-vw-mobile(10px)
+        width: get-vw-mobile(35px)
 // END Properties
+
+// Projects
+.al-projects
+  height: get-vw-mobile(80px)
+  margin-top: get-vw-mobile(3px)
+  .al-project-list
+    height: 100%
+    width: 100%
+    .al-project-list-item
+      margin: 0 get-vw-mobile(15px)
+      height: 100%
+      width: get-vw-mobile(75px)
+      .item-text
+        opacity: 0.4
+        font-size: get-vw-mobile(14px)
+        line-height: get-vw-mobile(18px)
+        margin-top: get-vw-mobile(24px)
+      .item-active
+        opacity: 1
+      .triangle
+        width: get-vw-mobile(20px)
+        height: get-vw-mobile(8px)
+        opacity: 0
+        bottom: get-vw-mobile(-7px)
+        left: 50%
+        transform: translateX(-50%)
+// END Projects
+
+// Partners
+.al-partners-section
+  height: get-vw-mobile(169px)
+  padding: get-vw-mobile(40px) 0
+  box-shadow: -4px -10px get-vw-mobile(23px) -7px rgba($black,0.37)
+  -moz-box-shadow: -4px -10px get-vw-mobile(23px) -7px rgba($black,0.37)
+  -webkit-box-shadow: -4px -10px get-vw-mobile(23px) -7px rgba($black,0.37)
+  .al-partners-title
+    font-size: get-vw-mobile(17px) 
+    line-height: get-vw-mobile(19px)
+    margin: 0
+  .partners-images
+    padding-top: get-vw-mobile(20px)
+    .partners-images-one
+      margin-right: get-vw-mobile(34px)
+      width: get-vw-mobile(48px)
+      height: get-vw-mobile(50px)
+    .partners-images-two
+      width: get-vw-mobile(96px)
+      height: get-vw-mobile(32px)
+// END Partners
+
+// Offices
+#al-offices
+  height: auto
+  .swiper-container-flags
+    height: 100%
+  h4
+    margin: get-vw-mobile(56px) 0 get-vw-mobile(20px) 0
+    font-size: get-vw-mobile(20px)
+    line-height: get-vw-mobile(30px)
+  .flags-indicators
+    .flag-image
+      height: get-vw-mobile(43px)
+      margin: 0 get-vw-mobile(7px) get-vw-mobile(20px) get-vw-mobile(7px)
+      width: get-vw-mobile(43px)
+    .flag-image-opacity
+      opacity: .6
+  .swiper-wrapper
+    width: 100%
+    .swiper-slide
+      margin: 0 auto get-vw-mobile(40px)
+      height: get-vw-mobile(160px)
+      width: 100%
+      .office-detail
+        width: get-vw-mobile(260px)
+        margin: 0 0 get-vw-mobile(10px) 0
+        h5
+          font-size: get-vw-mobile(12px)
+          line-height: get-vw-mobile(20px)
+          margin: 0
+// END Offices
+
+// Contact Us
+.wpcf7-response-output
+  top: get-vw-mobile(-25px)
+  left: get-vw-mobile(30px)
+
+.al-contact-div
+  //height: get-vw-mobile(836px)
+  padding: get-vw-mobile(40px) 0 get-vw-mobile(50px) 0
+  .al-contact-text
+    font-size: get-vw-mobile(14px)
+    line-height: get-vw-mobile(26px)
+    margin-bottom: 2px
+  .al-contact-text-bold
+    font-size: get-vw-mobile(18px)
+    line-height: get-vw-mobile(26px)
+    margin: 0
+  .al-phone-box
+    width: get-vw-mobile(310px)
+    height: get-vw-mobile(200px)
+    margin: get-vw-mobile(30px) auto 0 auto
+    padding: get-vw-mobile(31px) get-vw-mobile(58px)
+    box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+    -moz-box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+    -webkit-box-shadow: 0 1px 10px 0 rgba($black, 0.3)
+    img
+      width: get-vw-mobile(40px)
+      height: get-vw-mobile(40px)
+    p
+      margin-top: get-vw-mobile(10px)
+      line-height: get-vw-mobile(23px)
+      font-size: get-vw-mobile(18px)
+      margin-bottom: get-vw-mobile(11px)
+    a.al-phone-num
+      font-size: get-vw-mobile(24px)
+      font-weight: bold
+      line-height: get-vw-mobile(30px)
+  .al-contact-form-div
+    margin: get-vw-mobile(40px) get-vw-mobile(25px) 0 get-vw-mobile(25px)
+    width: get-vw-mobile(310px)
+    .wpcf7-form-control-wrap
+      margin-bottom: get-vw-mobile(20px)
+    .wpcf7-form
+      p
+        margin-right: get-vw-mobile(20px)
+      input[type="text"], input[type="email"], input[type="tel"], select
+        width: get-vw-mobile(310px)
+        height: get-vw-mobile(40px)
+        padding: 0 get-vw-mobile(14px)
+        font-size: get-vw-mobile(12px)
+        line-height: get-vw-mobile(15px)
+        border-radius: get-vw-mobile(4px)
+        margin-bottom: get-vw-mobile(15px)
+      select
+        -webkit-appearance: none
+        position: relative
+        background: $white url(assets/form-caret-down.png) 100% 50% no-repeat
+      input[name="your-email"], select[name="your-country"] 
+        margin-left: 0
+      textarea
+        width: 100%
+        font-size: get-vw-mobile(12px)
+        height: get-vw-mobile(133px)
+        line-height: get-vw-mobile(16px)
+        padding: get-vw-mobile(13px) get-vw-mobile(14px)
+        border-radius: get-vw-mobile(6px)
+        border: 1px solid $black
+        option
+          padding-left: 14px
+      .wpcf7-submit
+        width: get-vw-mobile(158px)
+        height: get-vw-mobile(40px)
+        font-size: get-vw-mobile(14px)
+        margin-top: get-vw-mobile(30px)
+        padding: get-vw-mobile(10px) get-vw-mobile(46px)
+        line-height: get-vw-mobile(20px)
+        margin-bottom: 0
+        border: solid 2px $black
+        &:hover
+          background-color: rgba($white, .7)
+
+.al-contact-div .al-contact-form-div .wpcf7-form input[type="text"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="email"], .al-contact-div .al-contact-form-div .wpcf7-form input[type="tel"], .al-contact-div .al-contact-form-div .wpcf7-form select
+  width: 100%
+// END Contact Us
+
+// Footer
+.al-footer-container
+  height: get-vw-mobile(127px)
+  padding: get-vw-mobile(30px) 0
+  img
+    width: get-vw-mobile(100px)
+    height: get-vw-mobile(33px)
+    margin-bottom: get-vw-mobile(4px)
+  p.al-text-white
+    font-size: get-vw-mobile(10px)
+    line-height: get-vw-mobile(13px)
+    margin-bottom: 0
+  a
+    font-size: get-vw-mobile(10px)
+    line-height: get-vw-mobile(13px)
+  .footer-top
+    display: none 
+// END Footer

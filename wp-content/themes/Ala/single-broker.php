@@ -1,15 +1,15 @@
-<?php 
+<?php
     get_header();
     the_post();
     $intdetails = get_post_meta( get_the_ID(), '_br_intdetails', true);
-    $intdet = explode( '<!--more-->', $intdetails ); 
+    $intdet = explode( '<!--more-->', $intdetails );
     $intimages = get_post_meta( get_the_ID(), '_br_intimages', true);
     $background_image = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_images_id', true ));
     $amenities = get_post_meta( get_the_ID(), '_br_amen', true);
     $amenimages = get_post_meta( get_the_ID(), '_br_amengallery', true);
     $plainsimages = get_post_meta( get_the_ID(), '_br_plainsgallery', true);
     $quality = get_post_meta( get_the_ID(), '_br_quality', true);
-    $q = explode( '<!--more-->', $quality ); 
+    $q = explode( '<!--more-->', $quality );
     $lng = get_post_meta( get_the_ID(), '_br_lng', true);
     $lat = get_post_meta( get_the_ID(), '_br_lat', true);
     $brochure = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_brochure_id', true ));
@@ -25,15 +25,15 @@
     <?php } ?>
 </section>
 
-<section>
+<section id="property-content">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <?php the_content(); ?> 
+                <?php the_content(); ?>
             </div>
         </div>
     </div>
-    
+
     <?php if(!empty($intdetails)){ ?>
     <div class="container">
         <div class="row">
@@ -42,17 +42,17 @@
                 <p><?php echo $intdetails ?></p>
                 <?php if(!empty($intimages)){ ?>
                     <div class="row gallery-images">
-                        <?php foreach ( (array) $intimages as $attachment_id => $attachment_url ) { ?>
+                        <?php $counter = 0; foreach ( (array) $intimages as $attachment_id => $attachment_url ) { ?>
                             <div class="col-sm-4 col-md-4">
-                                <a href="#" class="amenimg" data-toggle="modal" data-target="#myModalDetails" style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')"></a>
+                                <a href="#" class="amenimg gallery-detalles" data-number="<?php echo $counter; ?>" data-toggle="modal" data-target="#myModalDetails" style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')"></a>
                             </div>
-                        <?php } ?>
+                        <?php $counter++; } ?>
                     </div>
                 <?php } ?>
                 <div id="myModalDetails" class="modal fade modal-detail" role="dialog">
                         <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>
                         <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
+                            <div id="interior-gallery" class="modal-content">
                                 <div class="modal-body">
                                     <div class="swiper-container gallery-top-details swiper-detail">
                                         <div class="swiper-wrapper">
@@ -78,7 +78,7 @@
         </div>
     </div>
     <?php } ?>
-    
+
     <?php if(!empty($amenities)){ ?>
         <div class="container">
             <div class="row">
@@ -87,18 +87,18 @@
                     <?php echo '<p>'.$amenities.'</p>';  ?>
                     <?php if(!empty($amenimages)){ ?>
                         <div class="row gallery-images">
-                            <?php foreach ( (array) $amenimages as $attachment_id => $attachment_url ) { ?>
+                            <?php $counter = 0; foreach ( (array) $amenimages as $attachment_id => $attachment_url ) { ?>
                                 <div class="col-sm-4 col-md-4">
-                                    <a href="#" class="amenimg" data-toggle="modal" data-target="#myModal" style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')"></a>
+                                    <a href="#" class="amenimg gallery-comodidades" data-number="<?php echo $counter; ?>" data-toggle="modal" data-target="#myModal" style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')"></a>
                                 </div>
-                            <?php } ?>
+                            <?php $counter++; } ?>
                         </div>
                     <?php } ?>
                     <div id="myModal" class="modal fade modal-detail" role="dialog">
                             <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
-                                    <div class="modal-body">
+                                    <div id="amenities-gallery" class="modal-body">
                                         <div class="swiper-container gallery-top swiper-detail">
                                             <div class="swiper-wrapper">
                                                 <?php foreach ((array) $amenimages as $attachment_id => $attachment_url) { ?>
@@ -132,12 +132,13 @@
                     <div id="gallery-top-blueprint" class="swiper-container gallery-top-blueprint swiper-detail">
                         <div class="swiper-wrapper">
                             <?php foreach ((array) $plainsimages as $attachment_id => $attachment_url) { ?>
-                                <div class="swiper-slide" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'full'); ?>')"></div>
+                                <div class="swiper-slide swiper-slide-bp" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'full'); ?>')">
+                                    <div class="bp-title"><span><?php echo $attachment_title = get_the_title($attachment_id); ?></span></div>
+                                </div>
                             <?php } ?>
                         </div>
-                        <div class="swiper-button-next swiper-button-white"></div>
-                        <div class="swiper-button-prev swiper-button-white"></div>
                     </div>
+                    <div class="al-div-border"></div>
                     <div id="gallery-thumbs-blueprint" class="swiper-container gallery-thumbs-blueprint swiper-detail-thumbs border-thumb">
                         <div class="swiper-wrapper">
                             <?php foreach ((array) $plainsimages as $attachment_id => $attachment_url) { ?>
@@ -145,6 +146,8 @@
                             <?php } ?>
                         </div>
                     </div>
+                    <div class="swiper-button-next swiper-button-white"></div>
+                    <div class="swiper-button-prev swiper-button-white"></div>
                     <?php if (!empty($pzip)) { ?>
                         <a class="btn-planos" href="<?php echo $pzip; ?>" download><?php _e('Descargar planos', 'ala') ?></a>
                     <?php } ?>
@@ -213,22 +216,49 @@
                     <div class="detail-tlt"><?php _e('Lugares Cercanos', 'ala') ?></div>
                     <?php if ($terms != null) { ?>
                         <div class="row gallery-places">
-                            <?php $i = 1; foreach ($terms as $term) {
+                            <?php $i = 1; $counter = 0; foreach ($terms as $term) {
                                 $meta_image = get_wp_term_image($term->term_id);
                                 ?>
                                 <div class="col-sm-4 col-md-4">
-                                    <a href="#" class="amenimg places-wrapper" data-toggle="modal" data-target="#myModalDetails" style="background: url('<?php echo $meta_image; ?>')">
+                                    <a href="#" class="amenimg places-wrapper gallery-nearby" data-number="<?php echo $counter; ?>" data-toggle="modal" data-target="#myModalNearby" style="background: url('<?php echo $meta_image; ?>')">
                                         <div class="places-mask"><?php print $term->name; ?></div>
                                     </a>
                                 </div>
                                 <?php  if ($i++ == 3) break; ?>
-                            <?php } ?>
+                            <?php $counter++; } ?>
                         </div>
                     <?php } ?>
+                    <div id="myModalNearby" class="modal fade modal-detail" role="dialog">
+                      <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div id="amenities-gallery" class="modal-body">
+                            <div class="swiper-container gallery-top-nearby swiper-detail">
+                              <div class="swiper-wrapper">
+                                <?php foreach ($terms as $term) {  $meta_image = get_wp_term_image($term->term_id); ?>
+                                  <div class="swiper-slide" style="background: url('<?php echo $meta_image; ?>')"></div>
+                                <?php } ?>
+                              </div>
+                              <div class="swiper-button-next swiper-button-white"></div>
+                              <div class="swiper-button-prev swiper-button-white"></div>
+                            </div>
+                            <div class="swiper-container gallery-thumbs-nearby swiper-detail-thumbs">
+                              <div class="swiper-wrapper">
+                                <?php foreach ($terms as $term) {  $meta_image = get_wp_term_image($term->term_id); ?>
+                                  <div class="swiper-slide" style="background: url('<?php echo $meta_image; ?>')"></div>
+                                <?php } ?>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
         </div>
-    <?php } ?>
+    <?php } else {
+        echo '<div class="marginb80"></div>';
+    } ?>
 
 </section>
 
