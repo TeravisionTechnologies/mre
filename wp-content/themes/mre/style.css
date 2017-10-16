@@ -809,14 +809,14 @@ a.al-phone-num {
     #blog-list-categories .swiper-container-blog-categories .swiper-button-next {
       right: 15.97222vw; }
 
-.blog-list-triangle {
-  left: 50%;
-  position: relative;
-  top: -1px;
-  transform: translateX(-50%); }
-
 #blog-list {
-  background: #ffffff; }
+  background: #ffffff;
+  position: relative; }
+  #blog-list .blog-list-triangle {
+    left: 50%;
+    position: relative;
+    top: -1px;
+    transform: translateX(-50%); }
   #blog-list .input-group {
     border-collapse: separate;
     border-bottom: 2px solid rgba(74, 74, 74, 0.4);
@@ -1746,11 +1746,10 @@ a.al-phone-num {
       #blog-list-categories .swiper-container-blog-categories .swiper-button-next {
         right: 230px; }
 
-  .blog-list-triangle {
+  #blog-list .blog-list-triangle {
     left: 50%;
-    top: -3px;
+    top: -1px;
     transform: translateX(-50%); }
-
   #blog-list .input-group {
     border-bottom: 2px solid rgba(74, 74, 74, 0.4);
     display: table;
@@ -2446,13 +2445,12 @@ a.al-phone-num {
       #blog-list-categories .swiper-container-blog-categories .swiper-button-next {
         right: 13.02083vw; }
 
-  .blog-list-triangle {
+  #blog-list .blog-list-triangle {
     height: 1.82292vw;
     left: 50%;
-    top: -7px;
+    top: -5px;
     transform: translateX(-50%);
     width: 2.60417vw; }
-
   #blog-list .input-group {
     border-bottom: 2px solid rgba(74, 74, 74, 0.4);
     display: table;
@@ -3142,13 +3140,12 @@ a.al-phone-num {
       #blog-list-categories .swiper-container-blog-categories .swiper-button-next {
         right: 11.11111vw; }
 
-  .blog-list-triangle {
+  #blog-list .blog-list-triangle {
     height: 3.33333vw;
     left: 50%;
-    top: -7px;
+    top: -6px;
     transform: translateX(-50%);
     width: 5.83333vw; }
-
   #blog-list .input-group {
     border-bottom: 2px solid rgba(74, 74, 74, 0.4);
     display: table;
@@ -3407,8 +3404,8 @@ a.al-phone-num {
       height: 2vw;
       width: 2vw; }
 
-  .blog-list-triangle {
-    top: -8px; } }
+  #blog-list .blog-list-triangle {
+    top: -10px; } }
 @media only screen and (min-width: 700px) and (max-width: 740px) and (orientation: landscape) {
   #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
     margin: 0 5.15vw;
