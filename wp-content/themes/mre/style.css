@@ -846,6 +846,9 @@ a.al-phone-num {
   #blog-list .blog-search, #blog-list .blog-select {
     padding: 0; }
   #blog-list .blog-filter {
+    -webkit-appearance: none;
+    position: relative;
+    background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat;
     border: solid 2px rgba(74, 74, 74, 0.4);
     color: rgba(74, 74, 74, 0.8);
     font-family: Montserrat-Regular, sans-serif;
