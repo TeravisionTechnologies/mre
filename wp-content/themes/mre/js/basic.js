@@ -183,7 +183,11 @@ jQuery(document).ready(function() {
       scrollTop: $("#mre-about-us").offset().top
     }, 2000);
   });
-
+  $("#order_select").on("change", function () {
+    $("#filter").val($(this).val());
+    $("#form-filter").submit();
+    //alert("changed!!! "+$("#print").val());
+  });
 
 /*
     // form validation

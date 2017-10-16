@@ -6,16 +6,38 @@
    * @since MRE 1.0
    */
 get_header();
-
-$postList = get_posts(
-  array(
+$args_postL = array(
     'post_type' => 'post',
     'numberposts' => -1,
     'post_status' => 'publish',
-    'order' => 'ASC',
-  )
+    'order' => 'ASC'
 );
+if(isset($_GET["filter"])){
+  $order = $_GET["filter"];
+  if($order == "category"){
+    $args_cat = [
+        'orderby' => 'name',
+        'order' => 'ASC',
+        'hide_empty' => 0,
+    ];
+    $categories = get_categories($args_cat);
+    $cat_names = array();
+    foreach ($categories as $cat):
+      array_push($cat_names, $cat->slug);
+    endforeach;
+    //var_dump($cat_names);
+    $args_postL["tax_query"] = array( array('taxonomy' => 'category', 'field' => 'slug', 'terms' => $cat_names));
+    $args_postL["orderby"] = 'taxonomy.slug';
+  }else{
+    $args_postL['orderby'] = $order;
+  }
+}
 
+if(isset($_GET["category"])){
+
+}
+//var_dump($args_postL);
+$postList = get_posts( $args_postL );
 $postRecommended = get_posts(
   array(
     'post_type' => 'post',
@@ -39,6 +61,9 @@ $categories = get_categories(
 );
 ?>
 <section class="container-fluid no-padding">
+  <form action="<?php echo get_site_url(); ?>/blog" id="form-filter">
+    <input type="hidden" name="filter" id="filter" value="">
+  </form>
   <section class="col-xs-12" id="blog-list-categories">
     <div class="container-mre center-block">
       <h3 class="blog-list-category-title">Categoría</h3>
@@ -78,12 +103,12 @@ $categories = get_categories(
         </div>
       </div>
       <div class="col-xs-12 col-sm-3 blog-select">
-        <select class="form-control blog-filter pull-right">
+        <select class="form-control blog-filter pull-right" name="order_select" id="order_select">
           <option>Ordenar por...</option>
-          <option>Autor</option>
-          <option>Categoría</option>
-          <option>Título</option>
-          <option>Fecha</option>
+          <option value="author">Autor</option>
+          <option value="category">Categoría</option>
+          <option value="title">Título</option>
+          <option value="date">Fecha</option>
         </select>
       </div>
       <?php
