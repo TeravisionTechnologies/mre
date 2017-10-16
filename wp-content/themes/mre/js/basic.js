@@ -220,6 +220,12 @@ jQuery(document).ready(function () {
         this.form.submit();
     });
 
+    var height = $("#navbar").height();
+
+    window.addEventListener("hashchange", function () {
+        window.scrollTo(window.scrollX, window.scrollY - height);
+    });
+
 });
 
 var slideLeft = new Menu({
