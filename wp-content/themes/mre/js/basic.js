@@ -96,18 +96,12 @@ jQuery(document).ready(function () {
         slidesPerView: 5,
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
-        spaceBetween: 32,
         centeredSlides: true,
         loop: true,
-        //nested: true,
         runCallbacksOnInit: false,
         breakpoints: {
-            1023: {
-                spaceBetween: 19,
-            },
             640: {
                 slidesPerView: 1,
-                spaceBetween: 0,
             },
         },
         onSlideChangeEnd: function (swiper) {

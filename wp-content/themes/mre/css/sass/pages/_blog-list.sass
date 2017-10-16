@@ -2,6 +2,7 @@
   background: $overlay
   height: get-vw-desktop(343px)
   position: relative
+  margin-top: get-vw-desktop(80px)
   .blog-list-category-title, .blog-list-category-text
     line-height: get-vw-desktop(30px)
     text-align: center
@@ -20,14 +21,16 @@
     margin-bottom: get-vw-desktop(65px)
     margin-top: get-vw-desktop(35px)
     position: initial
-    width: get-vw-desktop(768px)
+    width: get-vw-desktop(800px)
     .swiper-wrapper
       width: get-vw-desktop(800px)
       .swiper-slide
         border-radius: 100%
         position: relative
-        width: get-vw-desktop(128px)
-        margin-right: get-vw-desktop(32px) !important
+        width: get-vw-desktop(128px) !important
+        height: get-vw-desktop(128px)
+        margin-right: get-vw-desktop(16px)
+        margin-left: get-vw-desktop(16px)
         img
           height: get-vw-desktop(128px)
           width: get-vw-desktop(128px)
@@ -50,13 +53,14 @@
       left: get-vw-desktop(230px)
     .swiper-button-next
       right: get-vw-desktop(230px)
-.blog-list-triangle
-  left: 50%
-  position: relative
-  top: -1px
-  transform: translateX(-50%)
 #blog-list
   background: $white
+  position: relative
+  .blog-list-triangle
+    left: 50%
+    position: relative
+    top: -1px
+    transform: translateX(-50%)
   .input-group
     border-collapse: separate
     border-bottom: 2px solid $select-grey

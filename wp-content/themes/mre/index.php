@@ -67,8 +67,8 @@ $categories = get_categories(
                 </div>
             </div>
         </section>
-        <img class="blog-list-triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.png">
         <section class="col-xs-12" id="blog-list">
+        <img class="blog-list-triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.png">
             <div class="container-mre center-block">
                 <div class="col-xs-12 col-sm-9 blog-search">
                     <form action="<?php echo home_url() ?>">
