@@ -746,6 +746,24 @@ textarea {
   width: 100% !important;
   max-width: 100% !important; }
 
+.wpcf7-not-valid {
+  border: solid 1px #cc6a67 !important; }
+
+.wpcf7-not-valid-tip {
+  display: none !important; }
+
+.wpcf7-validation-errors, .wpcf7-mail-sent-ng {
+  background: #cc6a67 !important;
+  color: #7b0a0a !important;
+  border: none !important;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif !important;
+  top: -57px !important;
+  left: 8px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 7px !important; }
+
 @media only screen and (min-width: 1440px) {
   .container-ala {
     width: 1170px;
@@ -2079,6 +2097,9 @@ textarea {
       line-height: 3.6111111111vw; }
     .al-footer-container .footer-top {
       display: none; }
+
+  form.invalid {
+    margin-top: 15px; }
 
   #property-content p {
     font-size: 12px !important;
