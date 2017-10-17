@@ -521,7 +521,8 @@ body {
 .wpcf7-response-output {
   top: -2.77778vw;
   left: 2.08333vw;
-  position: absolute; }
+  position: absolute;
+  margin-left: -10px !important; }
 
 .al-contact-div {
   padding: 4.16667vw 9.375vw;
@@ -1131,7 +1132,8 @@ h2.active {
 
   .wpcf7-response-output {
     top: -25px;
-    left: 30px; }
+    left: 30px;
+    margin-left: -10px !important; }
 
   .al-contact-div {
     height: auto;
