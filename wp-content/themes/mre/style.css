@@ -790,6 +790,12 @@ a.al-phone-num {
   padding: 8px !important;
   width: calc(100% - 30px); }
 
+.errorlabels {
+  padding: 0 !important; }
+
+.logged-in-as {
+  display: none; }
+
 #blog-list-categories {
   background: #303030;
   height: 23.8194444444vw;
@@ -1250,7 +1256,7 @@ a.al-phone-num {
       line-height: 1.0416666667vw;
       opacity: 0.8;
       text-align: center;
-      margin: 0; }
+      margin: 0 0 20px 0 !important; }
     #blog-detail-form .blog-detail-comments-form .comments-form {
       text-align: center; }
       #blog-detail-form .blog-detail-comments-form .comments-form input[type="text"] {
@@ -1312,10 +1318,17 @@ a.al-phone-num {
       font-family: Montserrat-Regular, sans-serif;
       text-transform: uppercase;
       text-align: left;
-      padding-top: 15px;
-      padding-left: 15px; }
+      padding: 10px; }
     #blog-detail-form .blog-detail-comments-form label.error {
-      color: #7b0a0a; }
+      color: #7b0a0a;
+      margin-bottom: 0;
+      margin-left: 10px; }
+
+#author-error, #email-error {
+  padding-top: 10px; }
+
+.errorlabels {
+  display: none !important; }
 
 @media screen\0 {
   #blog-recommended-posts .swiper-container-blog-most-viewed {

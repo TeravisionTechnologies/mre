@@ -153,7 +153,7 @@
       line-height: get-vw-desktop(15px)
       opacity: 0.8
       text-align: center
-      margin: 0
+      margin: 0 0 20px 0 !important
     .comments-form
       text-align: center
       input[type="text"]
@@ -215,7 +215,14 @@
       font-family: Montserrat-Regular, sans-serif
       text-transform: uppercase
       text-align: left
-      padding-top: 15px
-      padding-left: 15px
+      padding: 10px
     label.error
       color: $red-error-text
+      margin-bottom: 0
+      margin-left: 10px
+
+#author-error, #email-error
+  padding-top: 10px
+
+.errorlabels
+  display: none !important
