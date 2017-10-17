@@ -751,8 +751,7 @@ a.al-phone-num {
 
 .c-button-close {
   right: 0 !important;
-  left: unset !important;
-  border-bottom: 2px solid rgba(127, 129, 130, 0.15) !important; }
+  left: unset !important; }
 
 .menu {
   width: 100% !important;
@@ -2884,6 +2883,46 @@ a.al-phone-num {
     -webkit-transform: translateY(-3.75vw) rotate(40.5deg);
     -ms-transform: translateY(-3.75vw) rotate(40.5deg);
     transform: translateY(-3.75vw) rotate(40.5deg); }
+
+  #nav-icon4 {
+    width: 7.22222vw; }
+
+  #nav-icon4 span {
+    height: 0.83333vw;
+    width: 7.22222vw; }
+
+  #nav-icon4 span:nth-child(1) {
+    top: 1.38889vw; }
+
+  #nav-icon4 span:nth-child(2) {
+    top: 3.33333vw; }
+
+  #nav-icon4 span:nth-child(3) {
+    top: 5.55556vw; }
+
+  #nav-icon4.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 0.83333vw;
+    left: 0.83333vw;
+    height: 5px;
+    width: 7.22222vw; }
+
+  #nav-icon4.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0; }
+
+  #nav-icon4.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 6.11111vw;
+    left: 0.83333vw;
+    height: 5px;
+    width: 7.22222vw; }
 
   #mre-header .logo-header {
     top: 0;
