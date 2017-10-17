@@ -304,8 +304,6 @@ jQuery(document).ready(function () {
         $('#navbar').addClass( 'push' );
     });*/
 
-
-
 });
 
 
