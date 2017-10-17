@@ -934,18 +934,17 @@ a.al-phone-num {
     #blog-list #blog-pagination .pagination {
       margin: 4.1666666667vw 0 5.5555555556vw 0; }
       #blog-list #blog-pagination .pagination li {
-        font-size: 1.1111111111vw;
-        line-height: 1.4583333333vw; }
+        font-size: 16px; }
         #blog-list #blog-pagination .pagination li a {
           background: #ffffff;
           color: #000;
-          height: 2.9166666667vw;
-          padding-top: 0.6944444444vw;
-          width: 2.8472222222vw; }
+          height: 42px;
+          padding-top: 10px;
+          width: 41px; }
         #blog-list #blog-pagination .pagination li .current {
-          height: 2.9166666667vw;
-          padding-top: 0.6944444444vw;
-          width: 2.8472222222vw;
+          height: 42px;
+          padding-top: 10px;
+          width: 41px;
           background: #0976d1;
           color: #ffffff; }
         #blog-list #blog-pagination .pagination li .pagination-active {
@@ -1042,30 +1041,30 @@ a.al-phone-num {
   .wp-paginate a {
     margin: 0 !important;
     margin-left: -1px !important;
-    font-size: 1.1111111111vw;
+    font-size: 16px;
     padding: 6px 12px !important;
     background: #ffffff;
     color: #000;
-    height: 2.9166666667vw;
-    padding-top: 0.6944444444vw;
-    width: 2.8472222222vw;
+    height: 42px;
+    padding-top: 10px;
+    width: 41px;
     border: solid 1px #ddd !important; }
   .wp-paginate span {
     margin: 0 !important;
     margin-left: -1px !important;
-    font-size: 1.1111111111vw;
+    font-size: 16px;
     padding: 6px 12px !important;
-    height: 2.9166666667vw;
-    padding-top: 0.6944444444vw;
-    width: 2.8472222222vw;
+    height: 42px;
+    padding-top: 10px;
+    width: 41px;
     border: solid 1px #ddd !important; }
   .wp-paginate .current {
-    font-size: 1.1111111111vw;
+    font-size: 16px;
     background: #0976d1;
     color: #ffffff;
-    height: 2.9166666667vw;
-    padding-top: 0.6944444444vw;
-    width: 2.8472222222vw;
+    height: 42px;
+    padding-top: 10px;
+    width: 41px;
     border: solid 1px #ddd !important; }
   .wp-paginate .next {
     border-top-right-radius: 4px !important;
@@ -2546,12 +2545,11 @@ a.al-phone-num {
   #blog-list #blog-pagination .pagination {
     margin: 6.5104166667vw 0 10.15625vw 0; }
     #blog-list #blog-pagination .pagination li {
-      font-size: 2.0833333333vw;
-      line-height: 2.734375vw; }
-      #blog-list #blog-pagination .pagination li a, #blog-list #blog-pagination .pagination li .current {
-        height: 4.9479166667vw;
-        padding-top: 1.0416666667vw;
-        width: 4.8177083333vw; }
+      font-size: 16px;
+      /*a, .current
+       * height: get-vw-tablet(38px)
+       * padding-top: get-vw-tablet(8px)
+       * width: get-vw-tablet(37px) */ }
 
   #blog-recommended-posts {
     background-position-x: center;
@@ -3242,13 +3240,10 @@ a.al-phone-num {
         margin-top: 1.3888888889vw; }
   #blog-list #blog-pagination .pagination {
     margin: 11.1111111111vw 0 16.6666666667vw 0; }
-    #blog-list #blog-pagination .pagination li {
-      font-size: 4.4444444444vw;
-      line-height: 5.8333333333vw; }
-      #blog-list #blog-pagination .pagination li a, #blog-list #blog-pagination .pagination li .current {
-        height: 9.7222222222vw;
-        padding-top: 1.9444444444vw;
-        width: 9.7222222222vw; }
+    #blog-list #blog-pagination .pagination li a, #blog-list #blog-pagination .pagination li .current {
+      height: 35px;
+      padding: 7px;
+      width: 35px; }
 
   #blog-recommended-posts {
     height: 97.2222222222vw;
