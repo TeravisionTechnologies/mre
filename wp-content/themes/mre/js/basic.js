@@ -100,7 +100,7 @@ jQuery(document).ready(function () {
         loop: true,
         runCallbacksOnInit: false,
         breakpoints: {
-            767: {
+            640: {
                 slidesPerView: 1,
                 spaceBetween: 5
             },
@@ -165,8 +165,10 @@ jQuery(document).ready(function () {
 
       //Hero Button functionality
   $(".hero-button").click(function() {
+    var position = $("#mre-about-us").offset().top;
+    var finalPosition = position - 80;
     $('html, body').animate({
-      scrollTop: $("#mre-about-us").offset().top
+      scrollTop: finalPosition
     }, 2000);
   });
   $("#order_select").on("change", function () {
