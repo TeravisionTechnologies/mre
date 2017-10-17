@@ -102,6 +102,7 @@ jQuery(document).ready(function () {
         breakpoints: {
             640: {
                 slidesPerView: 1,
+                spaceBetween: 5
             },
         },
         onSlideChangeEnd: function (swiper) {
@@ -227,6 +228,12 @@ jQuery(document).ready(function () {
 
     $("#orderby").on("change", function () {
         this.form.submit();
+    });
+
+    var height = $("#navbar").height();
+
+    window.addEventListener("hashchange", function () {
+        window.scrollTo(window.scrollX, window.scrollY - height);
     });
 
 });

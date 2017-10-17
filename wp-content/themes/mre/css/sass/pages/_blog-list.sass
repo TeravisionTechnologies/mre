@@ -89,6 +89,10 @@
   .blog-search, .blog-select
     padding: 0
   .blog-filter
+    -webkit-appearance: none
+    -moz-appearance: none
+    position: relative
+    background: $white url(assets/form-caret-down.png) 100% 50% no-repeat
     border: solid 2px $select-grey
     color: $select-grey-text
     font-family: Montserrat-Regular, sans-serif
@@ -162,6 +166,12 @@
           height: get-vw-desktop(42px)
           padding-top: get-vw-desktop(10px)
           width: get-vw-desktop(41px)
+        .current
+          height: get-vw-desktop(42px)
+          padding-top: get-vw-desktop(10px)
+          width: get-vw-desktop(41px)
+          background: $light-blue
+          color: $white
         .pagination-active
           background: $light-blue
           color: $white

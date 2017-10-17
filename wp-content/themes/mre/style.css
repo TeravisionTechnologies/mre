@@ -394,6 +394,7 @@ body {
           font-family: Montserrat-Regular, sans-serif;
           color: #ffffff; }
     #mre-about-us .overlay .about-us-button {
+      font-family: Montserrat-Bold, sans-serif;
       width: 15vw;
       height: 3.47222vw;
       border-radius: 0.69444vw;
@@ -587,6 +588,7 @@ a.al-phone-num {
     color: #cfcfcf; }
 .wpcf7-form select {
   -webkit-appearance: none;
+  -moz-appearance: none;
   position: relative;
   background: #4a4a4a url(assets/form-caret-down.png) 100% 50% no-repeat; }
 .wpcf7-form textarea {
@@ -753,6 +755,24 @@ a.al-phone-num {
 .marginb80 {
   margin-bottom: 80px; }
 
+.wpcf7-not-valid {
+  border: solid 1px #cc6a67 !important; }
+
+.wpcf7-not-valid-tip {
+  display: none !important; }
+
+.wpcf7-validation-errors, .wpcf7-mail-sent-ng {
+  background: #cc6a67 !important;
+  color: #7b0a0a !important;
+  border: none !important;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif !important;
+  top: -57px !important;
+  left: -4px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 7px !important; }
+
 #blog-list-categories {
   background: #303030;
   height: 23.81944vw;
@@ -845,6 +865,10 @@ a.al-phone-num {
   #blog-list .blog-search, #blog-list .blog-select {
     padding: 0; }
   #blog-list .blog-filter {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat;
     border: solid 2px rgba(74, 74, 74, 0.4);
     color: rgba(74, 74, 74, 0.8);
     font-family: Montserrat-Regular, sans-serif;
@@ -915,9 +939,15 @@ a.al-phone-num {
         #blog-list #blog-pagination .pagination li a {
           background: #ffffff;
           color: #000;
-          height: 2.91667vw;
-          padding-top: 0.69444vw;
-          width: 2.84722vw; }
+          height: 2.9166666667vw;
+          padding-top: 0.6944444444vw;
+          width: 2.8472222222vw; }
+        #blog-list #blog-pagination .pagination li .current {
+          height: 2.9166666667vw;
+          padding-top: 0.6944444444vw;
+          width: 2.8472222222vw;
+          background: #0976d1;
+          color: #ffffff; }
         #blog-list #blog-pagination .pagination li .pagination-active {
           background: #0976d1;
           color: #ffffff; }
@@ -1045,7 +1075,8 @@ a.al-phone-num {
     border-bottom-left-radius: 4px !important; }
 
 #blog-detail-breadcrumb {
-  padding: 3.47222vw 0 1.38889vw 0; }
+  padding: 3.47222vw 0 1.38889vw 0;
+  margin-top: 5.55556vw; }
   #blog-detail-breadcrumb .blog-detail-breadcrumb-prev {
     color: #ffffff;
     font-size: 1.38889vw;
@@ -1659,6 +1690,7 @@ a.al-phone-num {
     margin-bottom: 20px; }
   .wpcf7-form select {
     -webkit-appearance: none;
+    -moz-appearance: none;
     position: relative;
     background: #4a4a4a url(assets/form-caret-down.png) 100% 50% no-repeat; }
   .wpcf7-form textarea {
@@ -1873,7 +1905,8 @@ a.al-phone-num {
         right: 125px; }
 
   #blog-detail-breadcrumb {
-    padding: 50px 0 20px 0; }
+    padding: 50px 0 20px 0;
+    margin-top: 80px; }
     #blog-detail-breadcrumb .blog-detail-breadcrumb-prev {
       font-size: 20px;
       height: 20px;
@@ -2513,12 +2546,12 @@ a.al-phone-num {
   #blog-list #blog-pagination .pagination {
     margin: 6.51042vw 0 10.15625vw 0; }
     #blog-list #blog-pagination .pagination li {
-      font-size: 2.08333vw;
-      line-height: 2.73438vw; }
-      #blog-list #blog-pagination .pagination li a {
-        height: 4.94792vw;
-        padding-top: 1.04167vw;
-        width: 4.81771vw; }
+      font-size: 2.0833333333vw;
+      line-height: 2.734375vw; }
+      #blog-list #blog-pagination .pagination li a, #blog-list #blog-pagination .pagination li .current {
+        height: 4.9479166667vw;
+        padding-top: 1.0416666667vw;
+        width: 4.8177083333vw; }
 
   #blog-recommended-posts {
     background-position-x: center;
@@ -2574,7 +2607,8 @@ a.al-phone-num {
         right: 7.8125vw; }
 
   #blog-detail-breadcrumb {
-    padding: 5.20833vw 0 2.60417vw 0; }
+    padding: 5.20833vw 0 2.60417vw 0;
+    margin-top: 10.41667vw; }
     #blog-detail-breadcrumb .blog-detail-breadcrumb-prev {
       font-size: 2.60417vw;
       height: 2.60417vw;
@@ -2645,7 +2679,7 @@ a.al-phone-num {
     #blog-detail-comments .blog-detail-comments-post {
       border-radius: 0.78125vw;
       margin: 0 auto 2.60417vw auto;
-      min-height: 29.6875vw;
+      min-height: inherit;
       padding: 3.90625vw 4.55729vw 3.90625vw 5.20833vw;
       width: 70.57292vw; }
       #blog-detail-comments .blog-detail-comments-post .blog-detail-comments-post-author {
@@ -2904,7 +2938,7 @@ a.al-phone-num {
     height: 7.77778vw; }
 
   #mre-about-us {
-    height: 204.44444vw; }
+    height: 231.11111vw; }
     #mre-about-us .overlay .about-us-image {
       margin: 13.88889vw 0 8.33333vw 0;
       width: 44.44444vw;
@@ -2918,7 +2952,7 @@ a.al-phone-num {
       height: 91.66667vw;
       padding: 2.77778vw 6.66667vw 9.72222vw 6.66667vw;
       width: 86.11111vw;
-      margin: 5.55556vw auto 0;
+      margin: 5.55556vw auto 13.88889vw;
       border-radius: 5vw;
       background-color: rgba(247, 247, 247, 0.1);
       box-shadow: 0 6px 2.77778vw 0 rgba(0, 0, 0, 0.3); }
@@ -2933,13 +2967,12 @@ a.al-phone-num {
           font-size: 6.66667vw;
           line-height: 8.33333vw; }
     #mre-about-us .overlay .about-us-button {
-      display: none;
-      width: 55.55556vw;
-      height: 13.88889vw;
+      width: 43.88889vw;
+      height: 11.11111vw;
       border-radius: 2.77778vw;
       border: solid 2px #ffffff;
-      padding: 4.16667vw 18.61111vw;
-      font-size: 4.44444vw;
+      padding: 2.77778vw 12.77778vw;
+      font-size: 3.88889vw;
       line-height: 5.55556vw; }
 
   #mre-partners {
@@ -3099,6 +3132,9 @@ a.al-phone-num {
     #mre-footer .mre-footer-go-top {
       display: none; }
 
+  form.invalid {
+    margin-top: 15px; }
+
   #blog-list-categories {
     height: 70.55556vw;
     margin-top: 16.66667vw; }
@@ -3207,12 +3243,12 @@ a.al-phone-num {
   #blog-list #blog-pagination .pagination {
     margin: 11.11111vw 0 16.66667vw 0; }
     #blog-list #blog-pagination .pagination li {
-      font-size: 4.44444vw;
-      line-height: 5.83333vw; }
-      #blog-list #blog-pagination .pagination li a {
-        height: 9.72222vw;
-        padding-top: 1.94444vw;
-        width: 9.72222vw; }
+      font-size: 4.4444444444vw;
+      line-height: 5.8333333333vw; }
+      #blog-list #blog-pagination .pagination li a, #blog-list #blog-pagination .pagination li .current {
+        height: 9.7222222222vw;
+        padding-top: 1.9444444444vw;
+        width: 9.7222222222vw; }
 
   #blog-recommended-posts {
     height: 97.22222vw;
@@ -3267,7 +3303,8 @@ a.al-phone-num {
         right: 5.55556vw; }
 
   #blog-detail-breadcrumb {
-    padding: 8.33333vw 0 5.55556vw 0; }
+    padding: 8.33333vw 0 5.55556vw 0;
+    margin-top: 16.66667vw; }
     #blog-detail-breadcrumb .blog-detail-breadcrumb-prev {
       font-size: 5.55556vw;
       height: 5.55556vw;
@@ -3336,7 +3373,7 @@ a.al-phone-num {
     #blog-detail-comments .blog-detail-comments-post {
       border-radius: 1.66667vw;
       margin: 0 auto 5.55556vw auto;
-      min-height: 66.11111vw;
+      min-height: inherit;
       padding: 5.55556vw;
       width: 86.11111vw; }
       #blog-detail-comments .blog-detail-comments-post .blog-detail-comments-post-author {

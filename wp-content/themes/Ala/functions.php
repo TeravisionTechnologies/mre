@@ -22,8 +22,8 @@ register_nav_menus(
 add_theme_support( 'menus' );
 
 function mre_enqueue_scripts() {
-  wp_enqueue_style( 'style', get_template_directory_uri() . 'style.css', array(), '1' );
-  wp_enqueue_script( 'script', get_template_directory_uri() . '/js/basic.css', array(), '1' );
+ // wp_enqueue_style( 'style', get_template_directory_uri() . 'style.css', array(), '1' );
+  //wp_enqueue_script( 'script', get_template_directory_uri() . '/js/basic.css', array(), '1' );
 }
 
 // Directories that contain post-types
@@ -89,7 +89,7 @@ function call_metaboxes() {
   banner_metaboxes();
 }
 
-function custom_form_validation_filter($result, $tag) {
+/*function custom_form_validation_filter($result, $tag) {
   $name = $tag['name'];
   $value = $_POST[$name];
   if($name == 'your-name') {
@@ -106,7 +106,7 @@ function custom_form_validation_filter($result, $tag) {
 }
 add_filter('wpcf7_validate_text','custom_form_validation_filter', 10, 2);
 add_filter('wpcf7_validate_text*', 'custom_form_validation_filter', 10, 2);
-add_filter('wpcf7_validate_email', 'custom_form_validation_filter', 10, 2);
+add_filter('wpcf7_validate_email', 'custom_form_validation_filter', 10, 2);*/
 
 //SVG Hook
 function cc_mime_types($mimes) {

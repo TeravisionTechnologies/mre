@@ -340,6 +340,7 @@ body
           font-family: Montserrat-Regular, sans-serif
           color: $white
     .about-us-button
+      font-family: Montserrat-Bold, sans-serif
       width: get-vw-desktop(216px)
       height: get-vw-desktop(50px)
       border-radius: get-vw-desktop(10px)
@@ -540,6 +541,7 @@ a.al-phone-num
       color: $white-3
   select
     -webkit-appearance: none
+    -moz-appearance: none
     position: relative
     background: $grey url(assets/form-caret-down.png) 100% 50% no-repeat
   textarea
@@ -709,3 +711,21 @@ a.al-phone-num
 
 .marginb80
   margin-bottom: 80px
+
+.wpcf7-not-valid
+  border: solid 1px $red-error !important
+
+.wpcf7-not-valid-tip
+  display: none !important
+
+.wpcf7-validation-errors, .wpcf7-mail-sent-ng
+  background: $red-error !important
+  color: $red-error-text !important
+  border: none !important
+  text-transform: uppercase
+  font-family: 'Montserrat', sans-serif !important
+  top: -57px !important
+  left: -4px !important
+  font-size: 11px !important
+  font-weight: 700 !important
+  padding: 7px !important

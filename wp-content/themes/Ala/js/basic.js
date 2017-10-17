@@ -216,13 +216,14 @@ jQuery(document).ready(function () {
     galleryThumbs.params.control = galleryTop;
 
     // init Isotope
-   /* var $grid = $('.properties-list').isotope({
+    /*var $grid = $('.properties-list').isotope({
         itemSelector: '.country-status',
+        layoutMode: 'fitRows',
         getSortData: {
             name: '.property-title',
-            /!*date: function ($elem) {
+            date: function ($elem) {
                 return Date.parse($elem.find('.date').text());
-            }*!/
+            }
         }
     });*/
 
@@ -302,8 +303,6 @@ jQuery(document).ready(function () {
     /*$('#c-button--slide-left').on('click', function () {
         $('#navbar').addClass( 'push' );
     });*/
-
-
 
 });
 

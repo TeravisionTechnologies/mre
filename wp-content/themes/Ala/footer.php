@@ -81,7 +81,7 @@ $contact = get_post_meta( $footer_query[0]->ID, '_hf_contact_form', true );
     </div>
 </nav>
 <div id="c-mask" class="c-mask"></div>
-
+<?php wp_footer(); ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.2.1.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/swiper.min.js"></script>

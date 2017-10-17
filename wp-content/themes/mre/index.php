@@ -143,12 +143,14 @@ $categories = get_categories(
                         <div class="swiper-wrapper">
                             <?php foreach ($postRecommended as $post) { ?>
                                 <div class="swiper-slide">
+                                    <a href="<?php $link = get_permalink($post->ID); echo $link; ?>">
                                     <div class="blog-most-viewed-image"
                                          style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID); ?>');">
                                         <span class="blog-most-viewed-category"><?php $taxonomy = get_post_taxonomies($post);
                                             $term = get_the_terms($post->ID, $taxonomy[0]);
                                             echo $term[0]->name; ?></span>
                                     </div>
+                                    </a>
                                     <div class="blog-most-viewed-text">
                                         <a href="<?php $link = get_permalink($post->ID);
                                         echo $link; ?>">
