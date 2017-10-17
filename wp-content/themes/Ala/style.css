@@ -769,6 +769,18 @@ h2.active {
 .property-overlay .date {
   display: none; }
 
+.wpcf7-mail-sent-ok {
+  background: #b0d880 !important;
+  color: #598922 !important;
+  border: none !important;
+  text-transform: uppercase;
+  top: -57px !important;
+  left: 8px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 8px !important;
+  width: calc(100% - 30px); }
+
 @media only screen and (min-width: 1440px) {
   .container-ala {
     width: 1170px;
