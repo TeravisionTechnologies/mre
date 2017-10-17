@@ -562,8 +562,6 @@ body {
     padding: 0; }
     .al-contact-div .al-contact-form-div .wpcf7-form-control-wrap {
       margin-bottom: 1.3888888889vw; }
-    .al-contact-div .al-contact-form-div .wpcf7-form span input {
-      margin-bottom: 1.3888888889vw; }
     .al-contact-div .al-contact-form-div .wpcf7-form p {
       margin-right: 1.3888888889vw;
       display: inline-block; }
@@ -578,7 +576,8 @@ body {
       display: inline-block;
       background-color: #ffffff;
       border: 1px solid #000000;
-      font-family: Archivo, sans-serif; }
+      font-family: Archivo, sans-serif;
+      margin-bottom: 1.3888888889vw; }
     .al-contact-div .al-contact-form-div .wpcf7-form input[name="your-email"], .al-contact-div .al-contact-form-div .wpcf7-form select[name="your-country"] {
       margin-left: 0.6944444444vw; }
     .al-contact-div .al-contact-form-div .wpcf7-form select {
@@ -1825,16 +1824,17 @@ textarea {
     #ala-header .social-header .social-icons {
       display: none; }
   #ala-header .swiper-container-hero {
-    padding-top: 16.6666666667vw; }
+    margin-top: 16.6666666667vw;
+    padding-top: 0; }
     #ala-header .swiper-container-hero .swiper-slide {
-      height: 145vw;
+      height: 156.1111111111vw;
       background-position: 50%; }
       #ala-header .swiper-container-hero .swiper-slide .slide-overlay {
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.4); }
       #ala-header .swiper-container-hero .swiper-slide .slide-text {
-        top: 72.5vw;
+        top: 68.3333333333vw;
         left: 50%;
         transform: translateX(-50%);
         width: 68.0555555556vw; }
@@ -1844,8 +1844,9 @@ textarea {
     #ala-header .swiper-container-hero .swiper-button-prev, #ala-header .swiper-container-hero .swiper-button-next {
       font-size: 6.6666666667vw;
       height: 7.7777777778vw;
-      top: 95vw;
-      width: 7.7777777778vw; }
+      width: 7.7777777778vw;
+      top: 50%;
+      transform: translateY(-50%); }
     #ala-header .swiper-container-hero .swiper-button-prev {
       left: 6.9444444444vw; }
     #ala-header .swiper-container-hero .swiper-button-next {
@@ -2177,10 +2178,7 @@ textarea {
     line-height: 37px !important; }
 
   #gallery-top-blueprint .swiper-slide .bp-title span {
-    font-size: 12px !important; }
-
-  #ala-header .swiper-container-hero {
-    padding-top: 60px !important; } }
+    font-size: 12px !important; } }
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   .logo-header {
     width: 66.1111111111vw; }
@@ -2199,7 +2197,7 @@ textarea {
     padding-top: 80px; }
 
   .swiper-container-hero .swiper-button-prev, .swiper-container-hero .swiper-button-next {
-    top: 87vw !important; }
+    top: 48.2% !important; }
 
   #ala-header .swiper-container-hero {
     padding-top: 0; } }

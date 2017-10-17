@@ -940,6 +940,12 @@ a.al-phone-num {
           height: 2.9166666667vw;
           padding-top: 0.6944444444vw;
           width: 2.8472222222vw; }
+        #blog-list #blog-pagination .pagination li .current {
+          height: 2.9166666667vw;
+          padding-top: 0.6944444444vw;
+          width: 2.8472222222vw;
+          background: #0976d1;
+          color: #ffffff; }
         #blog-list #blog-pagination .pagination li .pagination-active {
           background: #0976d1;
           color: #ffffff; }
@@ -2539,7 +2545,7 @@ a.al-phone-num {
     #blog-list #blog-pagination .pagination li {
       font-size: 2.0833333333vw;
       line-height: 2.734375vw; }
-      #blog-list #blog-pagination .pagination li a {
+      #blog-list #blog-pagination .pagination li a, #blog-list #blog-pagination .pagination li .current {
         height: 4.9479166667vw;
         padding-top: 1.0416666667vw;
         width: 4.8177083333vw; }
@@ -2912,10 +2918,10 @@ a.al-phone-num {
         line-height: 11.1111111111vw;
         text-shadow: 0 2px 2.7777777778vw rgba(0, 0, 0, 0.5); }
   #mre-header .swiper-container-hero .swiper-button-prev, #mre-header .swiper-container-hero .swiper-button-next {
-    font-size: 6.66667vw;
-    height: 6.66667vw;
-    top: 56%;
-    width: 5.55556vw; }
+    font-size: 6.6666666667vw;
+    height: 6.6666666667vw;
+    top: 83.3333333333vw;
+    width: 5.5555555556vw; }
   #mre-header .swiper-container-hero .swiper-button-prev {
     left: 6.9444444444vw; }
   #mre-header .swiper-container-hero .swiper-button-next {
@@ -3236,7 +3242,7 @@ a.al-phone-num {
     #blog-list #blog-pagination .pagination li {
       font-size: 4.4444444444vw;
       line-height: 5.8333333333vw; }
-      #blog-list #blog-pagination .pagination li a {
+      #blog-list #blog-pagination .pagination li a, #blog-list #blog-pagination .pagination li .current {
         height: 9.7222222222vw;
         padding-top: 1.9444444444vw;
         width: 9.7222222222vw; }
