@@ -939,9 +939,15 @@ a.al-phone-num {
         #blog-list #blog-pagination .pagination li a {
           background: #ffffff;
           color: #000;
-          height: 2.91667vw;
-          padding-top: 0.69444vw;
-          width: 2.84722vw; }
+          height: 2.9166666667vw;
+          padding-top: 0.6944444444vw;
+          width: 2.8472222222vw; }
+        #blog-list #blog-pagination .pagination li .current {
+          height: 2.9166666667vw;
+          padding-top: 0.6944444444vw;
+          width: 2.8472222222vw;
+          background: #0976d1;
+          color: #ffffff; }
         #blog-list #blog-pagination .pagination li .pagination-active {
           background: #0976d1;
           color: #ffffff; }
@@ -2540,12 +2546,12 @@ a.al-phone-num {
   #blog-list #blog-pagination .pagination {
     margin: 6.51042vw 0 10.15625vw 0; }
     #blog-list #blog-pagination .pagination li {
-      font-size: 2.08333vw;
-      line-height: 2.73438vw; }
-      #blog-list #blog-pagination .pagination li a {
-        height: 4.94792vw;
-        padding-top: 1.04167vw;
-        width: 4.81771vw; }
+      font-size: 2.0833333333vw;
+      line-height: 2.734375vw; }
+      #blog-list #blog-pagination .pagination li a, #blog-list #blog-pagination .pagination li .current {
+        height: 4.9479166667vw;
+        padding-top: 1.0416666667vw;
+        width: 4.8177083333vw; }
 
   #blog-recommended-posts {
     background-position-x: center;
@@ -3237,12 +3243,12 @@ a.al-phone-num {
   #blog-list #blog-pagination .pagination {
     margin: 11.11111vw 0 16.66667vw 0; }
     #blog-list #blog-pagination .pagination li {
-      font-size: 4.44444vw;
-      line-height: 5.83333vw; }
-      #blog-list #blog-pagination .pagination li a {
-        height: 9.72222vw;
-        padding-top: 1.94444vw;
-        width: 9.72222vw; }
+      font-size: 4.4444444444vw;
+      line-height: 5.8333333333vw; }
+      #blog-list #blog-pagination .pagination li a, #blog-list #blog-pagination .pagination li .current {
+        height: 9.7222222222vw;
+        padding-top: 1.9444444444vw;
+        width: 9.7222222222vw; }
 
   #blog-recommended-posts {
     height: 97.22222vw;
