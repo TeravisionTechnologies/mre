@@ -65,14 +65,21 @@ body {
       border-bottom: 2px solid rgba(127, 129, 130, 0.15);
       padding: 1.8055555556vw 0 0 3.4722222222vw;
       height: 6.5972222222vw;
-      font-family: "Montserrat", sans-serif;
+      font-family: "Archivo", sans-serif;
       font-size: 1.6666666667vw;
       line-height: 2.7777777778vw;
       cursor: pointer; }
       .menu .al-menu .al-menu-item a {
-        color: #7f8182; }
+        color: #7f8182;
+        opacity: 0.7;
+        -webkit-transition: 0.2s;
+        -moz-transition: 0.2s;
+        -ms-transition: 0.2s;
+        -o-transition: 0.2s;
+        transition: 0.2s; }
         .menu .al-menu .al-menu-item a:hover {
-          text-decoration: none; }
+          text-decoration: none;
+          opacity: 1; }
     .menu .al-menu:first-child {
       border-top: 2px solid rgba(127, 129, 130, 0.15); }
   .menu .al-menu-language {
