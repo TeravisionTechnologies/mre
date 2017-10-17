@@ -359,10 +359,11 @@ body
     margin: get-vw-desktop(66px) get-vw-desktop(15px) get-vw-desktop(60px) 0
     padding-left: 0
     width: get-vw-desktop(130px)
+    cursor: pointer
   .filter-left
     border-right: 2px solid $grey-1
     margin: get-vw-desktop(66px) 0 get-vw-desktop(60px) get-vw-desktop(15px)
-    opacity: 0.5
+    //opacity: 0.5
     padding-right: 0
     width: get-vw-desktop(130px)
     padding-left: 0
@@ -378,12 +379,12 @@ body
     .property-image
       background-size: cover
       position: relative
-      width: get-vw-desktop(360px)
+      //width: get-vw-desktop(360px)
       height: get-vw-desktop(350px)
       margin-bottom: get-vw-desktop(50px)
-      margin-right: get-vw-desktop(45px)
-      &:nth-child(3n+3)
-        margin: 0
+      //margin-right: get-vw-desktop(45px)
+      /*&:nth-child(3n+3)
+        margin: 0*/
       &:hover
         .property-overlay
           opacity: 1
@@ -542,7 +543,7 @@ body
     line-height: get-vw-desktop(46px)
     font-weight: bold
     font-family: 'Archivo', sans-serif
-    margin-bottom: get-vw-desktop(20px)
+    margin: 0
   .al-phone-box
     width: get-vw-desktop(361px)
     height: get-vw-desktop(272px)
@@ -781,4 +782,7 @@ textarea
   font-size: 11px !important
   font-weight: 700 !important
   padding: 8px !important
-  width: 100%
+  width: calc(100% - 30px)
+
+h2.active
+  opacity: 1 !important

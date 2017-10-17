@@ -80,34 +80,40 @@ $officesEs = get_post_meta( $home_query[0]->ID, '_hf_offices_es', true );
                     </button>
                     <ul class="dropdown-menu sort-by-button-group" aria-labelledby="dropdownMenu1">
                         <li><a class="orderby" data-sort-value="name" data-sort-direction="asc"><?php _e('Por nombre', 'ala') ?> <i class="fa fa-chevron-up"></i></a></li>
-                        <li><a class="orderby" data-sort-value="date" data-sort-direction="asc"><?php _e('Ultimo agregado', 'ala') ?></a></li>
+                        <li><a class="orderby" data-option-value=".date" data-sort-value=".date" data-sort-direction="asc"><?php _e('Ultimo agregado', 'ala') ?></a></li>
                     </ul>
                 </div>
             </div>
-
-            <div class="col-xs-12 properties-list no-padding">
-                <?php
-                $propertieslist = array('post_type' => 'broker', 'posts_per_page' => 9, 'paged' => $paged);
-                query_posts($propertieslist);
-                if (have_posts()): while (have_posts()): the_post();
-                    $background_image = wp_get_attachment_url(get_post_meta(get_the_ID(), '_br_images_id', true));
-                    $address = get_post_meta(get_the_ID(), '_br_address', true);
-                    $price = get_post_meta(get_the_ID(), '_br_price', true);
-                    $status = get_the_terms( get_the_ID(), 'property_status' );
-                    $loc = get_the_terms( get_the_ID(), 'property_location' );
-                    ?>
-                    <div class="col-xs-12 col-sm-4 property-image no-padding country-status <?php echo esc_html($status[0]->slug);?> <?php echo esc_html($loc[0]->slug); ?>" style="background-image: url('<?php echo $background_image; ?>')">
-                        <a href="<?php the_permalink(); ?>">
-                            <div class="property-overlay">
-                                <h2 class="property-title"><?php the_title(); ?></h2>
-                                <?php if (!empty($address)) { ?><h3 class="property-address"><?php echo $address ?></h3><?php } ?>
-                                <?php if (!empty($price)) { ?><h3 class="property-city"><?php echo $price ?></h3><?php } ?>
-                                <?php if (!empty($status)) { ?><h4 class="property-category "><?php echo esc_html($status[0]->name); ?></h4><?php } ?>
+            <div class="clearfix"></div>
+            <div class="row properties-list">
+                <div class=" grid">
+                    <?php
+                    $propertieslist = array('post_type' => 'broker', 'posts_per_page' => 9, 'paged' => $paged);
+                    query_posts($propertieslist);
+                    if (have_posts()): while (have_posts()): the_post();
+                        $background_image = wp_get_attachment_url(get_post_meta(get_the_ID(), '_br_images_id', true));
+                        $address = get_post_meta(get_the_ID(), '_br_address', true);
+                        $price = get_post_meta(get_the_ID(), '_br_price', true);
+                        $status = get_the_terms( get_the_ID(), 'property_status' );
+                        $loc = get_the_terms( get_the_ID(), 'property_location' );
+                        ?>
+                        <div class="grid-sizer col-xs-12 col-sm-4 col-md-4"></div>
+                        <div class="col-xs-12 col-sm-4 grid-item country-status <?php echo esc_html($status[0]->slug);?> <?php echo esc_html($loc[0]->slug); ?>">
+                            <div class="grid-item-content property-image" style="background-image: url('<?php echo $background_image; ?>')">
+                                <a href="<?php the_permalink(); ?>">
+                                    <div class="property-overlay">
+                                        <h2 class="property-title"><?php the_title(); ?></h2>
+                                        <?php if (!empty($address)) { ?><h3 class="property-address"><?php echo $address ?></h3><?php } ?>
+                                        <?php if (!empty($price)) { ?><h3 class="property-city"><?php echo $price ?></h3><?php } ?>
+                                        <?php if (!empty($status)) { ?><h4 class="property-category "><?php echo esc_html($status[0]->name); ?></h4><?php } ?>
+                                        <p class="date"><?php the_date(); ?></p>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                <?php endwhile; endif;
-                wp_reset_postdata(); ?>
+                        </div>
+                    <?php endwhile; endif;
+                    wp_reset_postdata(); ?>
+                </div>
             </div>
         </div>
     </div>
@@ -115,10 +121,10 @@ $officesEs = get_post_meta( $home_query[0]->ID, '_hf_offices_es', true );
     <!--<div class="col-xs-12 text-center">
         <nav id="al-pagination">
             <?php
-            /*if (function_exists('wp_paginate')) {
-                wp_paginate();
-            }*/
-            ?>
+    /*if (function_exists('wp_paginate')) {
+        wp_paginate();
+    }*/
+    ?>
         </nav>
     </div>-->
 

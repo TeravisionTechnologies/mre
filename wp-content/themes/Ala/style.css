@@ -352,11 +352,11 @@ body {
   line-height: 1.3888888889vw;
   margin: 4.5833333333vw 1.0416666667vw 4.1666666667vw 0;
   padding-left: 0;
-  width: 9.0277777778vw; }
+  width: 9.0277777778vw;
+  cursor: pointer; }
 .al-properties-section .filter-left {
   border-right: 2px solid #7f8182;
   margin: 4.5833333333vw 0 4.1666666667vw 1.0416666667vw;
-  opacity: 0.5;
   padding-right: 0;
   width: 9.0277777778vw;
   padding-left: 0; }
@@ -372,12 +372,10 @@ body {
   .al-properties-section .properties-list .property-image {
     background-size: cover;
     position: relative;
-    width: 25vw;
     height: 24.3055555556vw;
     margin-bottom: 3.4722222222vw;
-    margin-right: 3.125vw; }
-    .al-properties-section .properties-list .property-image:nth-child(3n+3) {
-      margin: 0; }
+    /*&:nth-child(3n+3)
+     * margin: 0 */ }
     .al-properties-section .properties-list .property-image:hover .property-overlay {
       opacity: 1; }
     .al-properties-section .properties-list .property-image .property-overlay {
@@ -529,7 +527,7 @@ body {
     line-height: 3.1944444444vw;
     font-weight: bold;
     font-family: "Archivo", sans-serif;
-    margin-bottom: 1.3888888889vw; }
+    margin: 0; }
   .al-contact-div .al-phone-box {
     width: 25.0694444444vw;
     height: 18.8888888889vw;
@@ -763,7 +761,10 @@ textarea {
   font-size: 11px !important;
   font-weight: 700 !important;
   padding: 8px !important;
-  width: 100%; }
+  width: calc(100% - 30px); }
+
+h2.active {
+  opacity: 1 !important; }
 
 @media only screen and (min-width: 1440px) {
   .container-ala {
