@@ -5,6 +5,7 @@ $footerPost = get_posts(
     )
 );
 $theMeta = get_post_meta($footerPost[0]->ID);
+$social_networks = get_post_meta($footerPost[0]->ID, '_hf_social_networks', true);
 wp_footer();
 ?>
 <footer id="mre-footer" class="col-xs-12">
