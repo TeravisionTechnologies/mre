@@ -529,7 +529,7 @@ body {
     line-height: 3.1944444444vw;
     font-weight: bold;
     font-family: "Archivo", sans-serif;
-    margin: 0; }
+    margin-bottom: 1.3888888889vw; }
   .al-contact-div .al-phone-box {
     width: 25.0694444444vw;
     height: 18.8888888889vw;
@@ -762,7 +762,8 @@ textarea {
   left: 8px !important;
   font-size: 11px !important;
   font-weight: 700 !important;
-  padding: 7px !important; }
+  padding: 8px !important;
+  width: 100%; }
 
 @media only screen and (min-width: 1440px) {
   .container-ala {
@@ -2105,6 +2106,9 @@ textarea {
 
   form.invalid {
     margin-top: 30px; }
+
+  .wpcf7-validation-errors, .wpcf7-mail-sent-ng {
+    width: calc(100% - 30px); }
 
   #property-content p {
     font-size: 12px !important;
