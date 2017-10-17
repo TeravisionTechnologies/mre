@@ -100,7 +100,7 @@ jQuery(document).ready(function () {
         loop: true,
         runCallbacksOnInit: false,
         breakpoints: {
-            640: {
+            767: {
                 slidesPerView: 1,
                 spaceBetween: 5
             },
