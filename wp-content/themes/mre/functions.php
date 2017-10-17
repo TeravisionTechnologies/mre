@@ -23,7 +23,13 @@
 
 	function mre_enqueue_scripts() {
 		wp_enqueue_style( 'style', get_template_directory_uri() . 'style.css', array(), '1' );
-		wp_enqueue_script( 'script', get_template_directory_uri() . '/js/basic.css', array(), '1' );
+		//wp_enqueue_script( 'script', get_template_directory_uri() . '/js/basic.css', array(), '1' );
+		wp_enqueue_script( 'ajax-blog_cats', get_template_directory_uri() . '/js/ajax-blog-categories.js', array(), '1' );
+		global $wp_query;
+		wp_localize_script( 'ajax-blog_cats', 'ajaxblog', array(
+			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+			'query_vars' => json_encode( $wp_query->query )
+		));
 	}
 
 	// Directories that contain post-types
@@ -161,4 +167,59 @@ function cc_mime_types($mimes) {
   $mimes['svg'] = 'image/svg+xml';
   return $mimes;
 }
-add_filter('upload_mimes', 'cc_mime_types'); 
+add_filter('upload_mimes', 'cc_mime_types');
+
+//Ajax blog categories
+
+add_action( 'wp_ajax_nopriv_ajax_blog_cat', 'trv_ajax_blog_cats' );
+add_action( 'wp_ajax_ajax_blog_cat', 'trv_ajax_blog_cats' );
+
+function trv_ajax_blog_cats() {
+	$query_vars = json_decode( stripslashes( $_POST['query_vars'] ), true );
+	$cat = $_POST['category'];
+	$query_vars['post_type'] = 'post';
+	$query_vars['post_status'] = 'publish';
+	if( $cat != "all"):
+		$query_vars['tax_query'] = array(
+			array(
+				'taxonomy' => 'category',
+				'field' => 'slug',
+				'terms' => $cat,
+			)
+		);
+	endif;
+
+	$posts = new WP_Query( $query_vars );
+
+	if ($posts->have_posts()) : while ($posts->have_posts()) : $posts->the_post();
+
+		$link = get_permalink($posts->post->ID);
+		$taxonomy = get_post_taxonomies($posts->post);
+		$term = get_the_terms($posts->post->ID, $taxonomy[0]);
+		$author = get_user_by('ID', $posts->post->post_author);
+		$date = strtotime($posts->post->post_date);
+		$url = "background-image: url('".get_the_post_thumbnail_url($posts->post->ID)."')";
+	echo '<div class="col-xs-12 col-sm-6 blog-post">
+			<a href="'.$link.'">
+			<div class="blog-image" style="'.$url.'">
+									<span class="blog-category">'.$term[0]->name.'</span>
+			</div>
+			<div class="blog-text">
+				<a href="'.$link.'"><h1 class="blog-text-title">'.$posts->post->post_title.'</h1></a>
+				<h2 class="blog-text-author">Por: '.$author->display_name.'<span
+						class="blog-text-date">'.date('d F, Y', $date).'</span><span
+						class="blog-text-comments hidden-xs hidden-sm">- '.$posts->post->comment_count.'
+						Comments</span></h2>
+				<p class="blog-text-summary">'.$posts->post->post_excerpt.'</p>
+			</div>
+		</a>
+	</div>';
+
+	endwhile;
+	endif;
+	//wp_send_json( $posts );
+	//echo get_bloginfo( 'title' );
+
+	die();
+}
+?>

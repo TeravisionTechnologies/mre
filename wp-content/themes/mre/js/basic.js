@@ -105,19 +105,24 @@ jQuery(document).ready(function () {
             },
         },
         onSlideChangeEnd: function (swiper) {
+
             $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
             $('.swiper-slide').find('div').addClass('swiper-overlay');
             $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
-            var href = $('.swiper-slide .swiper-slide-active a').attr('href');
-            $(location).attr('href', href);
-        },
+            //var href = $('.swiper-slide .swiper-slide-active a').attr('href');
+            //$(location).attr('href', href);
+            var active_slide_cat = $('.swiper-container-blog-categories').find('.swiper-slide-active').attr('data-slug');
+            var container = $(".blog-post-container");
+            ajax_blog_cats( active_slide_cat, container );
+        }
     });
     $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
     $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
     $('.swiper-button-next, .swiper-button-prev').click(function () {
-        $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
-        $('.swiper-slide').find('div').addClass('swiper-overlay');
-        $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
+        //$('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
+        //$('.swiper-slide').find('div').addClass('swiper-overlay');
+        //$('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
+        //ajax_blog_cats();
     });
 
     // Swiper Blog Post Most Viewed
@@ -241,15 +246,17 @@ slideLeftBtn.addEventListener('click', function (e) {
 });
 
 var close = document.querySelector('#menu-item-27');
-
-close.addEventListener('click', function (e) {
-    e.preventDefault;
-    slideLeft.close();
-});
+if(close != null){
+    close.addEventListener('click', function (e) {
+        e.preventDefault;
+        slideLeft.close();
+    });
+}
 
 var close = document.querySelector('#menu-item-24');
-
-close.addEventListener('click', function (e) {
-    e.preventDefault;
-    slideLeft.close();
-});
+if(close != null){
+    close.addEventListener('click', function (e) {
+        e.preventDefault;
+        slideLeft.close();
+    });
+}

@@ -40,7 +40,7 @@ $categories = get_categories(
                 <h2 class="blog-list-category-text"></h2>
                 <div class="swiper-container swiper-container-blog-categories">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" name="Todas las categorías">
+                        <div class="swiper-slide" name="Todas las categorías" data-slug="all">
                             <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/todas.png">
                                 <div class="swiper-overlay"></div>
@@ -68,7 +68,7 @@ $categories = get_categories(
             </div>
         </section>
         <section class="col-xs-12" id="blog-list">
-        <img class="blog-list-triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.png">
+            <img class="blog-list-triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.png">
             <div class="container-mre center-block">
                 <div class="col-xs-12 col-sm-9 blog-search">
                     <form action="<?php echo home_url() ?>">
@@ -98,30 +98,32 @@ $categories = get_categories(
                         <input type="hidden" name="order" value="<?php echo ((strpos($url,'DESC') !== false) ? ASC : DESC) ?>">
                     </form>
                 </div>
-                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                    <div class="col-xs-12 col-sm-6 blog-post">
-                        <a href="<?php $link = get_permalink($post->ID); echo $link; ?>">
-                            <div class="blog-image"
-                                 style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID); ?>')">
+                <div class="blog-post-container">
+                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <div class="col-xs-12 col-sm-6 blog-post">
+                            <a href="<?php $link = get_permalink($post->ID); echo $link; ?>">
+                                <div class="blog-image"
+                                     style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID); ?>')">
                                 <span class="blog-category"><?php $taxonomy = get_post_taxonomies($post);
                                     $term = get_the_terms($post->ID, $taxonomy[0]);
                                     echo $term[0]->name; ?></span>
-                            </div>
-                            <div class="blog-text">
-                                <a href="<?php $link = get_permalink($post->ID);
-                                echo $link; ?>"><h1 class="blog-text-title"><?php echo $post->post_title; ?></h1></a>
-                                <h2 class="blog-text-author">Por: <?php $author = get_user_by('ID', $post->post_author);
-                                    echo $author->display_name ?><span
+                                </div>
+                                <div class="blog-text">
+                                    <a href="<?php $link = get_permalink($post->ID);
+                                    echo $link; ?>"><h1 class="blog-text-title"><?php echo $post->post_title; ?></h1></a>
+                                    <h2 class="blog-text-author">Por: <?php $author = get_user_by('ID', $post->post_author);
+                                        echo $author->display_name ?><span
                                             class="blog-text-date"><?php $date = strtotime($post->post_date);
-                                        echo date('d F, Y', $date) ?></span><span
+                                            echo date('d F, Y', $date) ?></span><span
                                             class="blog-text-comments hidden-xs hidden-sm">- <?php echo $post->comment_count ?>
-                                        Comments</span></h2>
-                                <p class="blog-text-summary"><?php echo $post->post_excerpt ?></p>
-                            </div>
-                        </a>
-                    </div>
-                <?php endwhile; ?>
-                <?php endif; ?>
+                                            Comments</span></h2>
+                                    <p class="blog-text-summary"><?php echo $post->post_excerpt ?></p>
+                                </div>
+                            </a>
+                        </div>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
+                </div>
                 <?php if( $wp_query->post_count == 1 ){ echo '<div class="col-xs-12 marginb80"></div>'; } ?>
                 <nav id="blog-pagination" class="text-center">
                     <?php
