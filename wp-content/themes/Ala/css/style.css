@@ -761,7 +761,7 @@ textarea {
   font-size: 11px !important;
   font-weight: 700 !important;
   padding: 8px !important;
-  width: calc(100% - 30px); }
+  width: 100%; }
 
 h2.active {
   opacity: 1 !important; }
@@ -779,7 +779,7 @@ h2.active {
   font-size: 11px !important;
   font-weight: 700 !important;
   padding: 8px !important;
-  width: calc(100% - 30px); }
+  width: 100%; }
 
 @media only screen and (min-width: 1440px) {
   .container-ala {
@@ -2039,7 +2039,7 @@ h2.active {
     .al-contact-div .al-phone-box {
       width: 86.1111111111vw;
       height: 55.5555555556vw;
-      margin: 8.3333333333vw auto 0 auto;
+      margin: 8.3333333333vw auto 4.1666666667vw auto;
       padding: 8.6111111111vw 16.1111111111vw;
       box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
       -moz-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
