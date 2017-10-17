@@ -582,6 +582,7 @@ body {
       margin-left: 0.69444vw; }
     .al-contact-div .al-contact-form-div .wpcf7-form select {
       -webkit-appearance: none;
+      -moz-appearance: none;
       position: relative;
       background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat; }
     .al-contact-div .al-contact-form-div .wpcf7-form textarea {
@@ -1143,6 +1144,7 @@ textarea {
         margin-left: 10px; }
       .al-contact-div .al-contact-form-div .wpcf7-form select {
         -webkit-appearance: none;
+        -moz-appearance: none;
         position: relative;
         background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat; }
       .al-contact-div .al-contact-form-div .wpcf7-form textarea {
@@ -1568,6 +1570,7 @@ textarea {
         margin-bottom: 2.60417vw; }
       .al-contact-div .al-contact-form-div .wpcf7-form select {
         -webkit-appearance: none;
+        -moz-appearance: none;
         position: relative;
         background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat; }
       .al-contact-div .al-contact-form-div .wpcf7-form input[name="your-email"], .al-contact-div .al-contact-form-div .wpcf7-form select[name="your-country"] {
@@ -2053,6 +2056,7 @@ textarea {
         margin-bottom: 4.16667vw; }
       .al-contact-div .al-contact-form-div .wpcf7-form select {
         -webkit-appearance: none;
+        -moz-appearance: none;
         position: relative;
         background: #ffffff url(assets/form-caret-down.png) 100% 50% no-repeat; }
       .al-contact-div .al-contact-form-div .wpcf7-form input[name="your-email"], .al-contact-div .al-contact-form-div .wpcf7-form select[name="your-country"] {
