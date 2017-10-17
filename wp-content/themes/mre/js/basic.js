@@ -231,11 +231,16 @@ jQuery(document).ready(function () {
     });
 
     var height = $("#navbar").height();
+    var height = height + 26;
 
     window.addEventListener("hashchange", function () {
         window.scrollTo(window.scrollX, window.scrollY - height);
     });
 
+    if(window.location.hash) {
+        window.scrollTo(window.scrollX, window.scrollY - height);
+    }
+    
 });
 
 var slideLeft = new Menu({

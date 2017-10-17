@@ -22,7 +22,7 @@
     add_theme_support( 'menus' );
 
 	function mre_enqueue_scripts() {
-		wp_enqueue_style( 'style', get_template_directory_uri() . 'style.css', array(), '1' );
+		//wp_enqueue_style( 'style', get_template_directory_uri() . 'style.css', array(), '1' );
 		//wp_enqueue_script( 'script', get_template_directory_uri() . '/js/basic.css', array(), '1' );
 		wp_enqueue_script( 'ajax-blog_cats', get_template_directory_uri() . '/js/ajax-blog-categories.js', array(), '1' );
 		global $wp_query;
