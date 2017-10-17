@@ -1149,7 +1149,8 @@ h2.active {
         line-height: 30px; }
     .al-contact-div .al-contact-form-div {
       margin-top: 49px;
-      width: 767px; }
+      width: 767px;
+      margin-left: 10px; }
       .al-contact-div .al-contact-form-div .wpcf7-form-control-wrap {
         margin-bottom: 20px; }
       .al-contact-div .al-contact-form-div .wpcf7-form p {
@@ -2101,7 +2102,7 @@ h2.active {
         font-weight: bold;
         line-height: 8.33333vw; }
     .al-contact-div .al-contact-form-div {
-      margin: 11.11111vw 6.94444vw 0 6.94444vw;
+      margin: 6.94444vw 6.94444vw 0 6.94444vw;
       width: 86.11111vw; }
       .al-contact-div .al-contact-form-div .wpcf7-form-control-wrap {
         margin-bottom: 5.55556vw; }
