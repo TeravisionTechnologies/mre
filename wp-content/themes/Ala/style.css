@@ -766,6 +766,9 @@ textarea {
 h2.active {
   opacity: 1 !important; }
 
+.property-overlay .date {
+  display: none; }
+
 @media only screen and (min-width: 1440px) {
   .container-ala {
     width: 1170px;
