@@ -240,6 +240,7 @@ body
             transform: translate(-50%, -50%)
   .swiper-container-hero
     position: relative
+    margin-top: get-vw-desktop(80px)
     .swiper-slide
       height: get-vw-desktop(880px)
       background-size: cover
@@ -413,7 +414,7 @@ body
   .flags-indicators
     .flag-image
       height: get-vw-desktop(60px)
-      margin: 0 get-vw-desktop(20px) get-vw-desktop(10px) get-vw-desktop(20px)
+      margin: 0 get-vw-desktop(20px) get-vw-desktop(30px) get-vw-desktop(20px)
       width: get-vw-desktop(60px)
       cursor: pointer
     .flag-image-opacity
@@ -661,21 +662,21 @@ a.al-phone-num
     transition: .25s ease-in-out
 
 #nav-icon4 span:nth-child(1)
-  top: 0px
+  top: 0
   -webkit-transform-origin: left center
   -moz-transform-origin: left center
   -o-transform-origin: left center
   transform-origin: left center
 
 #nav-icon4 span:nth-child(2)
-  top: 9px
+  top: 10px
   -webkit-transform-origin: left center
   -moz-transform-origin: left center
   -o-transform-origin: left center
   transform-origin: left center
 
 #nav-icon4 span:nth-child(3)
-  top: 18px
+  top: 20px
   -webkit-transform-origin: left center
   -moz-transform-origin: left center
   -o-transform-origin: left center
@@ -688,6 +689,8 @@ a.al-phone-num
   transform: rotate(45deg)
   top: -3px
   left: 8px
+  height: 7px
+  width: 30px
 
 #nav-icon4.open span:nth-child(2)
   width: 0%
@@ -698,8 +701,10 @@ a.al-phone-num
   -moz-transform: rotate(-45deg)
   -o-transform: rotate(-45deg)
   transform: rotate(-45deg)
-  top: 26px
+  top: 18px
   left: 8px
+  height: 7px
+  width: 30px
 
 .c-button-close
   right: 0 !important
