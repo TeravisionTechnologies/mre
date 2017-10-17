@@ -339,7 +339,14 @@ body {
         font-weight: bold;
         text-align: center;
         color: #ffffff;
-        margin-top: 3.3333333333vw; }
+        margin-top: 3.3333333333vw;
+        transition: all ease 0.7s;
+        -moz-transition: all ease 0.7s;
+        -ms-transition: all ease 0.7s;
+        -o-transition: all ease 0.7s;
+        -webkit-transition: all ease 0.7s; }
+        .al-projects .al-project-list .al-project-list-item .item-text:hover {
+          opacity: 1; }
       .al-projects .al-project-list .al-project-list-item .item-active {
         opacity: 1; }
       .al-projects .al-project-list .al-project-list-item .triangle {
@@ -360,7 +367,8 @@ body {
   margin: 4.5833333333vw 1.0416666667vw 4.1666666667vw 0;
   padding-left: 0;
   width: 9.0277777778vw;
-  cursor: pointer; }
+  cursor: pointer;
+  opacity: 0.5; }
 .al-properties-section .filter-left {
   border-right: 2px solid #7f8182;
   margin: 4.5833333333vw 0 4.1666666667vw 1.0416666667vw;
@@ -1156,7 +1164,8 @@ h2.active {
         line-height: 30px; }
     .al-contact-div .al-contact-form-div {
       margin-top: 49px;
-      width: 767px; }
+      width: 767px;
+      margin-left: 10px; }
       .al-contact-div .al-contact-form-div .wpcf7-form-control-wrap {
         margin-bottom: 20px; }
       .al-contact-div .al-contact-form-div .wpcf7-form p {
@@ -2108,7 +2117,7 @@ h2.active {
         font-weight: bold;
         line-height: 8.3333333333vw; }
     .al-contact-div .al-contact-form-div {
-      margin: 11.1111111111vw 6.9444444444vw 0 6.9444444444vw;
+      margin: 6.9444444444vw 6.9444444444vw 0 6.9444444444vw;
       width: 86.1111111111vw; }
       .al-contact-div .al-contact-form-div .wpcf7-form-control-wrap {
         margin-bottom: 5.5555555556vw; }

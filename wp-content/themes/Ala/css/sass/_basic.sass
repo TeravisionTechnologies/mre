@@ -343,6 +343,13 @@ body
         text-align: center
         color: $white
         margin-top: get-vw-desktop(48px)
+        transition: all ease .7s
+        -moz-transition: all ease .7s
+        -ms-transition: all ease .7s
+        -o-transition: all ease .7s
+        -webkit-transition: all ease .7s
+        &:hover
+          opacity: 1
       .item-active
         opacity: 1
       .triangle
@@ -367,6 +374,7 @@ body
     padding-left: 0
     width: get-vw-desktop(130px)
     cursor: pointer
+    opacity: 0.5
   .filter-left
     border-right: 2px solid $grey-1
     margin: get-vw-desktop(66px) 0 get-vw-desktop(60px) get-vw-desktop(15px)
