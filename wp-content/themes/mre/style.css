@@ -121,9 +121,9 @@ body {
       font-family: "Montserrat-Regular", sans-serif;
       font-size: 1.66667vw;
       line-height: 2.77778vw;
-      cursor: pointer;
-      opacity: 0.7; }
+      cursor: pointer; }
       .menu .mre-menu .mre-menu-item a {
+        opacity: 0.7;
         color: #7f8182; }
         .menu .mre-menu .mre-menu-item a:hover {
           text-decoration: none;
