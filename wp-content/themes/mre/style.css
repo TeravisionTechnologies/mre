@@ -663,10 +663,8 @@ a.al-phone-num {
       line-height: 1.38889vw;
       text-decoration: underline; }
   #mre-footer .mre-footer-go-top {
-    visibility: hidden;
     cursor: pointer;
     position: absolute;
-    opacity: 0;
     right: 9.72222vw;
     top: 2.77778vw;
     z-index: 100; }
@@ -2527,7 +2525,10 @@ a.al-phone-num {
         font-size: 1.5625vw;
         line-height: 2.34375vw; }
     #mre-footer .mre-footer-go-top {
-      display: none; }
+      right: 7.16146vw;
+      top: 3.90625vw;
+      width: 7.16146vw;
+      height: 7.16146vw; }
 
   #blog-list-categories {
     height: 29.94792vw;
@@ -2834,10 +2835,7 @@ a.al-phone-num {
   #before-contact-us #offices .swiper-pagination {
     bottom: 14.6vw; }
     #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
-      margin: 0 3.65vw; }
-
-  .mre-footer-go-top {
-    display: none; } }
+      margin: 0 3.65vw; } }
 @media only screen and (max-width: 767px) {
   .container-mre {
     width: 86.11111vw; }
@@ -3266,7 +3264,10 @@ a.al-phone-num {
         font-size: 2.77778vw;
         line-height: 4.16667vw; }
     #mre-footer .mre-footer-go-top {
-      display: none; }
+      right: 6.94444vw;
+      top: 4.16667vw;
+      width: 11.11111vw;
+      height: 11.11111vw; }
 
   form.invalid {
     margin-top: 20px; }
