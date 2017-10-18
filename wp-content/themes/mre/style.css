@@ -121,11 +121,13 @@ body {
       font-family: "Montserrat-Regular", sans-serif;
       font-size: 1.66667vw;
       line-height: 2.77778vw;
-      cursor: pointer; }
+      cursor: pointer;
+      opacity: 0.7; }
       .menu .mre-menu .mre-menu-item a {
         color: #7f8182; }
         .menu .mre-menu .mre-menu-item a:hover {
-          text-decoration: none; }
+          text-decoration: none;
+          opacity: 1; }
     .menu .mre-menu:first-child {
       border-top: 2px solid rgba(127, 129, 130, 0.15); }
   .menu .mre-menu-language {
@@ -284,8 +286,9 @@ body {
       border-radius: 50%;
       background: #f7f7f7;
       display: inline-block;
-      margin-right: 0.83333vw;
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3); }
+      margin-right: 0.83333vw; }
+      #mre-header .social-header .social-icons .social-icon:hover {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3); }
       #mre-header .social-header .social-icons .social-icon a {
         color: #0976d1; }
         #mre-header .social-header .social-icons .social-icon a i {
@@ -400,12 +403,13 @@ body {
       height: 3.47222vw;
       border-radius: 0.69444vw;
       border: solid 2px #ffffff;
-      padding: 1.04167vw 4.23611vw;
+      padding: 0.83333vw 4.79167vw;
       color: #ffffff;
       font-size: 1.25vw;
       line-height: 1.38889vw; }
       #mre-about-us .overlay .about-us-button:hover {
-        text-decoration: none; }
+        text-decoration: none;
+        background-color: rgba(255, 255, 255, 0.15); }
 
 #mre-partners {
   height: 48.61111vw;
@@ -419,8 +423,12 @@ body {
     height: 100%; }
   #mre-partners .overlay-left {
     background: rgba(255, 255, 255, 0.7); }
+    #mre-partners .overlay-left:hover {
+      background: rgba(255, 255, 255, 0.9); }
   #mre-partners .overlay-right {
     background: rgba(255, 255, 255, 0.7); }
+    #mre-partners .overlay-right:hover {
+      background: rgba(255, 255, 255, 0.9); }
   #mre-partners .partner-left, #mre-partners .partner-right {
     height: 100%;
     background-size: cover; }
@@ -628,7 +636,7 @@ a.al-phone-num {
   background-color: transparent;
   font-family: Montserrat-Bold, sans-serif; }
   .wpcf7-form .wpcf7-submit:hover {
-    background-color: rgba(255, 255, 255, 0.7); }
+    background-color: rgba(255, 255, 255, 0.15); }
 
 #mre-footer {
   text-align: center;
@@ -1562,8 +1570,7 @@ a.al-phone-num {
         height: 100%;
         width: 33.9px;
         border-radius: 50%;
-        margin-right: 12px;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3); }
+        margin-right: 12px; }
         #mre-header .social-header .social-icons .social-icon a i {
           font-size: 22px;
           top: 50%;
@@ -1656,7 +1663,7 @@ a.al-phone-num {
         height: 50px;
         border-radius: 10px;
         border: solid 2px #ffffff;
-        padding: 15px 61px;
+        padding: 12px 69px;
         color: #ffffff;
         font-size: 18px;
         line-height: 20px; }
@@ -1799,7 +1806,7 @@ a.al-phone-num {
     padding: 0px 74px;
     line-height: 20px; }
     .wpcf7-form .wpcf7-submit:hover {
-      background-color: rgba(255, 255, 255, 0.7); }
+      background-color: rgba(255, 255, 255, 0.15); }
 
   #mre-footer {
     box-shadow: 0 -8px 10px 0 rgba(0, 0, 0, 0.2);
