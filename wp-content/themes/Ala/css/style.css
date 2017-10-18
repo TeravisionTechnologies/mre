@@ -236,7 +236,16 @@ body {
       border-radius: 50%;
       background: #f7f7f7;
       display: inline-block;
-      margin-right: 0.8333333333vw; }
+      margin-right: 0.8333333333vw;
+      transition: all ease 0.7s;
+      -moz-transition: all ease 0.7s;
+      -ms-transition: all ease 0.7s;
+      -o-transition: all ease 0.7s;
+      -webkit-transition: all ease 0.7s; }
+      #ala-header .social-header .social-icons .social-icon:hover {
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.4);
+        -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.4); }
       #ala-header .social-header .social-icons .social-icon a {
         color: #7f8182; }
         #ala-header .social-header .social-icons .social-icon a i {
@@ -2268,7 +2277,7 @@ h2.active {
   #save-widget {
     text-align: right;
     width: 123px !important;
-      width-height: 38px !important; }
+    height: 38px !important; }
     #save-widget strong {
       display: none !important; } }
 @media only screen and (max-width: 767px) and (orientation: landscape) {
