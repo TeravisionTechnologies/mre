@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/swiper.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/simplePagination.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-header.css">
 </head>
 <body <?php body_class() ?>>

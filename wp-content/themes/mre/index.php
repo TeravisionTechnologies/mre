@@ -9,6 +9,13 @@ get_header();
 $url = $_SERVER['REQUEST_URI'];
 global $wp_query;
 
+wp_reset_query();
+query_posts(array(
+    'post_type' => 'post',
+    'post_status' => 'publish',
+    'posts_per_page' => -1
+));
+
 $postRecommended = get_posts(
     array(
         'post_type' => 'post',
@@ -53,7 +60,7 @@ $categories = get_categories(
                             $category_link = get_category_link($category->cat_ID );
                             ?>
                             <div class="swiper-slide" name="<?php echo $name; ?>" data-slug="<?php echo $slug; ?>">
-                                <a href="<?php echo $category_link ?>">
+                                <a>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/<?php echo $slug; ?>.png">
                                     <div class="swiper-overlay"></div>
                                 </a>
@@ -98,6 +105,9 @@ $categories = get_categories(
                         <input type="hidden" name="order" value="<?php echo ((strpos($url,'DESC') !== false) ? ASC : DESC) ?>">
                     </form>
                 </div>
+                <div class="loading-posts">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/Spinner.gif" alt="Loading posts...">
+                </div>
                 <div class="blog-post-container">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <div class="col-xs-12 col-sm-6 blog-post">
@@ -127,9 +137,9 @@ $categories = get_categories(
                 <?php if( $wp_query->post_count == 1 ){ echo '<div class="col-xs-12 marginb80"></div>'; } ?>
                 <nav id="blog-pagination" class="text-center">
                     <?php
-                    if (function_exists('wp_paginate')) {
+                    /*if (function_exists('wp_paginate')) {
                         wp_paginate();
-                    }
+                    }*/
                     ?>
                 </nav>
             </div>

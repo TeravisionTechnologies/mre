@@ -179,6 +179,10 @@ function trv_ajax_blog_cats() {
 	$cat = $_POST['category'];
 	$query_vars['post_type'] = 'post';
 	$query_vars['post_status'] = 'publish';
+	$query_vars['posts_per_page'] = -1;
+	$query_vars['orderby'] = $_POST['filter'];
+	$query_vars['order'] = $_POST['order'];
+
 	if( $cat != "all"):
 		$query_vars['tax_query'] = array(
 			array(

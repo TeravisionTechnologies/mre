@@ -1,5 +1,51 @@
 jQuery(document).ready(function () {
-
+    $(".loading-posts").hide();
+    // Header Swiper
+    var pages = Math.ceil($(".blog-post-container").children().length/4);
+    $('#blog-pagination').pagination({
+        items: pages,
+        currentPage: 1,
+        cssStyle: 'compact-theme',
+        prevText: '<span aria-hidden="true">&laquo;</span>',
+        nextText: '<span aria-hidden="true">&raquo;</span>',
+        onInit: function () {
+            var container = $(".blog-post-container");
+            var all_childrens = container.children();
+            //alert(all_childrens.length);
+            container.html("");
+            for(var i = 0; i < all_childrens.length; i++){
+                container.append(all_childrens[i]);
+            }
+            var new_container = container.children();
+            for(var j = 0; j < new_container.length; j++){
+                if(j >= 4 ){
+                    $(new_container[j]).addClass("hidden");
+                    console.log($(new_container[j]));
+                }
+            }
+        },
+        onPageClick: function (page, evt) {
+            var container = $(".blog-post-container");
+            var new_container = container.children();
+            var starts = (page-1)*4;
+            var allow = false;
+            for(var j = 0; j < new_container.length; j++){
+                if((starts+4) == j){
+                    allow = false;
+                }
+                if(starts == j){
+                    allow = true;
+                }
+                if(allow == true) {
+                    $(new_container[j]).removeClass("hidden");
+                }else {
+                    if(!$(new_container[j]).hasClass("hidden")){
+                        $(new_container[j]).addClass("hidden");
+                    }
+                }
+            }
+        }
+    });
     // Header Swiper
     var toggleMenu = function () {
         if (swiperHeader.previousIndex == 0) {
@@ -114,7 +160,15 @@ jQuery(document).ready(function () {
             //$(location).attr('href', href);
             var active_slide_cat = $('.swiper-container-blog-categories').find('.swiper-slide-active').attr('data-slug');
             var container = $(".blog-post-container");
-            ajax_blog_cats( active_slide_cat, container );
+            var loader = $(".loading-posts");
+            var paged = $("#paged").val();
+            var filter = $("#orderby").find(":selected").val();
+            var order = $("#order").val();
+            ajax_blog_cats( active_slide_cat, container, loader, paged, filter, order );
+        },
+        onClick: function (sw, e) {
+            //alert("you clicked me");
+            console.log(e);
         }
     });
     $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
