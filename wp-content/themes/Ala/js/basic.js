@@ -294,6 +294,11 @@ jQuery(document).ready(function () {
         });
     });
 
+    $('.play-video').click(function() {
+        var ff = $(this).attr("data-id");
+        document.getElementById(ff).paused ? document.getElementById(ff).play() : document.getElementById(ff).pause();
+    });
+
     /*$('#c-button--slide-right').click(function () {
         $(this).toggleClass('open');
     });*/

@@ -2275,11 +2275,11 @@ h2.active {
     font-size: 12px !important; }
 
   #save-widget {
-    text-align: right;
-    width: 123px !important;
-    height: 38px !important; }
+    text-align: right; }
     #save-widget strong {
-      display: none !important; } }
+      display: none !important;
+      width: 123px !important;
+      height: 38px; } }
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   .logo-header {
     width: 66.1111111111vw; }
@@ -2691,5 +2691,16 @@ a.download-bro {
 .orderby {
   font-size: 16px;
   padding: 10px 20px !important; }
+
+.fa-play-circle {
+  font-size: 4.8611111111vw;
+  width: 4.8611111111vw;
+  height: 4.8611111111vw;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  margin: auto; }
 
 /*# sourceMappingURL=style.css.map */

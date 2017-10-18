@@ -133,9 +133,20 @@
                     <div id="gallery-top-blueprint" class="swiper-container gallery-top-blueprint swiper-detail">
                         <div class="swiper-wrapper">
                             <?php foreach ((array) $plainsimages as $attachment_id => $attachment_url) { ?>
-                                <div class="swiper-slide swiper-slide-bp" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'full'); ?>')">
-                                    <div class="bp-title"><span><?php echo $attachment_title = get_the_title($attachment_id); ?></span></div>
-                                </div>
+                                <?php $filetype = wp_check_filetype( $attachment_url ); $name = basename( get_attached_file( $attachment_id ) ); ?>
+                                <?php if ($filetype['ext'] == 'mp4') { ?>
+                                    <div class="swiper-slide ">
+                                        <div class="bp-title"><span>Video: <?php echo $attachment_title = get_the_title($attachment_id); ?></span></div>
+                                        <video id="<?php echo substr( $name, 0, strrpos( $name, '.' ) ); ?>" width="100%" controls>
+                                            <source src="<?php echo wp_get_attachment_url($attachment_id, 'full'); ?>" type="video/mp4">
+                                            Your browser does not support HTML5 video.
+                                        </video>
+                                    </div>
+                                <?php } else { ?>
+                                    <div class="swiper-slide swiper-slide-bp" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'full'); ?>')">
+                                        <div class="bp-title"><span><?php echo $attachment_title = get_the_title($attachment_id); ?></span></div>
+                                    </div>
+                                <?php } ?>
                             <?php } ?>
                         </div>
                     </div>
@@ -143,7 +154,12 @@
                     <div id="gallery-thumbs-blueprint" class="swiper-container gallery-thumbs-blueprint swiper-detail-thumbs border-thumb">
                         <div class="swiper-wrapper">
                             <?php foreach ((array) $plainsimages as $attachment_id => $attachment_url) { ?>
-                                <div class="swiper-slide blueprint-img" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'thumb'); ?>')"></div>
+                                <?php $filetype = wp_check_filetype( $attachment_url ); $name = basename( get_attached_file( $attachment_id ) ); ?>
+                                <?php if ($filetype['ext'] == 'mp4') { ?>
+                                    <div class="swiper-slide blueprint-img play-video" data-id="<?php echo substr( $name, 0, strrpos( $name, '.' ) ); ?>"><i class="fa fa-play-circle"></i></div>
+                                <?php } else { ?>
+                                    <div class="swiper-slide blueprint-img" style="background: url('<?php echo wp_get_attachment_url($attachment_id, 'thumb'); ?>')"></div>
+                                <?php } ?>
                             <?php } ?>
                         </div>
                     </div>
