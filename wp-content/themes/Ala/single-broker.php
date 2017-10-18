@@ -15,6 +15,7 @@
     $brochure = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_brochure_id', true ));
     $pzip = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_pzip_id', true ));
     $terms = get_the_terms(get_the_ID(), 'nearby_places');
+    $memofiles = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_memofiles_id', true ));
 ?>
 
 <section class="prop-header text-center" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.5) 100%), url('<?php if(!empty($background_image)){ echo $background_image; } ?>')">
@@ -173,6 +174,11 @@
                             <?php echo $q[3]; ?>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-12">
+                    <?php if (!empty($memofiles)) { ?>
+                        <a class="btn-planos" href="<?php echo $memofiles; ?>" download><?php _e('Descargar Memoria', 'ala') ?></a>
+                    <?php } ?>
                 </div>
             </div>
         </div>

@@ -167,6 +167,20 @@ function broker_metaboxes() {
             )
     );
 
+    $cmb->add_field(array(
+        'name' => __('Downloadable Memory'),
+        'desc' => __('Upload file'),
+        'id' => $prefix . 'memofiles',
+        'type' => 'file',
+        // Optional:
+        'options' => array(
+            'url' => false, // Hide the text input for the url
+        ),
+        'text' => array(
+            'add_upload_file_text' => 'Add File' // Change upload button text. Default: "Add or Upload File"
+        )
+    ));
+
     // Longitude
     $cmb->add_field(
             array(
