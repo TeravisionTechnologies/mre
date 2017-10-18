@@ -201,6 +201,16 @@
                           zoom: 10,
                           center: uluru
                         });
+                        var widgetDiv = document.getElementById('save-widget');
+                        map.controls[google.maps.ControlPosition.TOP_LEFT].push(widgetDiv);
+
+                          // Append a Save Control to the existing save-widget div.
+                          var saveWidget = new google.maps.SaveWidget(widgetDiv, {
+                              attribution: {
+                                  source: 'Google Maps JavaScript API',
+                                  webUrl: 'https://developers.google.com/maps/'
+                              }
+                          });
                         var alamarker = '<?php echo get_template_directory_uri(); ?>/assets/marker.png';
                         var marker = new google.maps.Marker({
                           position: uluru,

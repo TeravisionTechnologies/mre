@@ -2263,7 +2263,14 @@ h2.active {
     line-height: 37px !important; }
 
   #gallery-top-blueprint .swiper-slide .bp-title span {
-    font-size: 12px !important; } }
+    font-size: 12px !important; }
+
+  #save-widget {
+    text-align: right;
+    width: 123px !important;
+    height: 38px !important; }
+    #save-widget strong {
+      display: none !important; } }
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   .logo-header {
     width: 66.1111111111vw; }
@@ -2600,17 +2607,26 @@ a.download-bro {
     background-color: rgba(240, 240, 240, 0.5); }
 
 #save-widget {
-  width: 300px;
   box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+  background-color: #ffffff;
   padding: 10px;
-  font-family: Roboto, Arial;
+  height: 45px;
   font-size: 13px;
-  margin: 15px; }
+  right: 5px !important;
+  top: 5px !important;
+  width: 217px;
+  left: initial !important; }
   #save-widget:nth-child(3) {
     display: none !important; }
   #save-widget p {
     padding: 0 !important;
     font-size: 14px !important; }
+    #save-widget p a {
+      color: #fff !important;
+      background: #000 !important;
+      font-size: 11px !important;
+      font-weight: 600 !important;
+      padding: 2px 6px !important; }
 
 .item-active2 {
   opacity: 0.5; }
