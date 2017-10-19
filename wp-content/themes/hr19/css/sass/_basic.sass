@@ -1,4 +1,5 @@
-
+body
+  font-family: Montserrat-Regular, sans-serif
 
 // Partners
 .hr-partners-section
@@ -28,3 +29,133 @@
       width: get-vw-desktop(242px)
       height: get-vw-desktop(83px)
 // END Partners
+
+
+// Filters
+
+.property-status
+  list-style-type: none
+  padding: 0
+
+.property-search
+  position: relative
+  display: table
+  width: 100%
+
+.property-search
+  button
+    position: absolute
+    width: 70px
+    height: 70px
+    left: 0
+    right: 0
+    bottom: -30px
+    margin: 0 auto
+    background: #0284ab
+    border: none
+    border-radius: 50%
+    i
+      color: #fff
+      font-size: 28px
+
+.property-status input[type="radio"]
+  opacity: 0.011
+  z-index: 100
+
+.property-status input[type="radio"]:checked + label
+  color: #fff
+
+.property-status
+  label
+    padding: 30px
+    cursor: pointer
+    width: 100%
+    background: #033c5a
+    color: rgba(255, 255, 255, 0.6)
+    text-align: center
+    margin: 0
+    font-size: 20px
+    line-height: 20px
+    -webkit-transition: .5s
+    -moz-transition: .5s
+    -ms-transition: .5s
+    -o-transition: .5s
+    transition: .5s
+
+.property-status
+  label
+    &:hover
+      color: #fff
+
+.property
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5)
+  margin-bottom: 40px
+  display: block
+  cursor: pointer
+  &:hover
+    text-decoration: none
+  .property-image
+    height: 350px
+    background-repeat: no-repeat !important
+    background-size: cover !important
+    background-position: center center !important
+  .property-info
+    padding: 15px 20px 10px
+    background-color: #f7f7f7
+    span
+      display: block
+      width: 100%
+      color: #4a4a4a
+      font-size: 16px
+    .property-price
+      font-size: 26px
+      font-weight: bold
+      letter-spacing: -0.2px
+      font-family: 'Montserrat-Bold'
+    .property-highlights
+      margin-bottom: 2px
+    .property-address
+      margin-bottom: 10px
+    .property-address, .property-code
+      opacity: 0.6
+
+.no-padding
+  padding: 0 !important
+
+.property-search
+  .input-group
+    width: 100%
+    input
+      border: none
+      width: 100%
+      height: 70px
+      font-size: 18px
+
+.property-filters
+  text-align: center
+  background: #F0F0F0
+  padding-top: 30px
+  padding-bottom: 30px
+  display: inline-block
+  border-top: solid 1px rgba(74, 74, 74, 0.1)
+  .filter
+    font-size: 16px
+    margin-bottom: 15px
+    display: block
+    font-weight: 500
+    letter-spacing: -0.1px
+
+input
+  outline: none !important
+
+.styled-select
+  select
+    border: none
+    border-bottom: solid 1px #4a4a4a
+    background: transparent
+    font-size: 18px
+    outline: none
+    padding: 10px
+    margin-bottom: 30px
+
+// End Filters

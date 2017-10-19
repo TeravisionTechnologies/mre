@@ -67,7 +67,7 @@
                         </div>
                     </div>
 
-                    <button type="submit"></button>
+                    <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
         </div>
@@ -90,7 +90,7 @@
         <div class="row">
             <?php for ($x = 0; $x <= 8; $x++) { ?>
                 <div class="col-md-4">
-                    <div class="property">
+                    <a class="property">
                         <div class="property-image"
                              style="background: url('http://via.placeholder.com/350x150');"></div>
                         <div class="property-info">
@@ -99,7 +99,7 @@
                             <span class="property-address">3215 Stafford Ln</span>
                             <span class="property-code">MLS: 1258364</span>
                         </div>
-                    </div>
+                    </a>
                 </div>
             <?php } ?>
         </div>
