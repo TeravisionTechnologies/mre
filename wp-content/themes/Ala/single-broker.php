@@ -6,6 +6,7 @@
     $intimages = get_post_meta( get_the_ID(), '_br_intimages', true);
     $background_image = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_images_id', true ));
     $amenities = get_post_meta( get_the_ID(), '_br_amen', true);
+    $location = get_post_meta( get_the_ID(), '_br_price', true);
     $amenimages = get_post_meta( get_the_ID(), '_br_amengallery', true);
     $plainsimages = get_post_meta( get_the_ID(), '_br_plainsgallery', true);
     $quality = get_post_meta( get_the_ID(), '_br_quality', true);
@@ -20,7 +21,7 @@
 
 <section class="prop-header text-center" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.5) 100%), url('<?php if(!empty($background_image)){ echo $background_image; } ?>')">
     <h1><?php the_title(); ?></h1>
-    <h2>Las Vegas</h2>
+    <?php if(!empty($location)){ ?><h2><?php echo $location; ?></h2><?php } ?>
     <?php if(!empty($brochure)){ ?>
         <a class="download-bro" href="<?php echo $brochure; ?>" download><?php _e('Descargar PDF', 'ala') ?></a>
     <?php } ?>
