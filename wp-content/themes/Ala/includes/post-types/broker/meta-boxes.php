@@ -32,12 +32,11 @@ function broker_metaboxes() {
     ));
 
 
-
-    // Property Price
+    // Property Location
     $cmb->add_field(
             array(
-                'name' => __('Property Price'),
-                'desc' => __('The price of the current property'),
+                'name' => __('Property Location'),
+                'desc' => __('The location of the current property'),
                 'id' => $prefix . 'price',
                 'type' => 'text',
                 'repeatable' => false
@@ -65,7 +64,7 @@ function broker_metaboxes() {
             )
     );
     
-    // Interior Details Images
+    // Interior Details Gallery
     $cmb->add_field(
             array(
                 'name' => __('Interior Details Images'),
@@ -81,15 +80,15 @@ function broker_metaboxes() {
             )
     );
     
-    // Name
-    $cmb->add_group_field($group_field, array(
+
+    /*$cmb->add_group_field($group_field, array(
         'name' => __('Detail Name'),
         'desc' => __('Interior detail Name for the image uploaded above'),
         'id' => $prefix . 'name',
         'type' => 'text',
         'repeatable' => false
             )
-    );
+    );*/
 
     // Amenities
     $cmb->add_field(
@@ -101,7 +100,7 @@ function broker_metaboxes() {
             )
     );
 
-    // Amenities Images
+    // Amenities Gallery
     $cmb->add_field(
             array(
                 'name' => __('Amenities Images'),
@@ -116,8 +115,8 @@ function broker_metaboxes() {
                 'repeatable' => false
             )
     );
-    
-    // Plaina Images
+
+    // Plains Carousel
     $cmb->add_field(
             array(
                 'name' => __('Plains Images / Videos'),
@@ -132,32 +131,23 @@ function broker_metaboxes() {
                 'repeatable' => false
             )
     );
-    
-    
 
-    // Type of transaction
-    $cmb->add_field(
-            array(
-                'name' => __('Transaction type'),
-                'desc' => __('Specify if the type of transaction (buy/sell)'),
-                'id' => $prefix . 'type',
-                'type' => 'text',
-                'repeatable' => false
-            )
-    );
-
-    // Neighborhood Description
-    $cmb->add_field(
-            array(
-                'name' => __('Neighborhood Description'),
-                'desc' => __('Description of the neighborhood'),
-                'id' => $prefix . 'neighborhood',
-                'type' => 'text',
-                'repeatable' => false
-            )
-    );
+    // Downloadable Plains
+    $cmb->add_field(array(
+        'name' => 'Plans (compressed file)',
+        'desc' => 'Upload a .zip file',
+        'id' => $prefix . 'pzip',
+        'type' => 'file',
+        // Optional:
+        'options' => array(
+            'url' => false, // Hide the text input for the url
+        ),
+        'text' => array(
+            'add_upload_file_text' => 'Add File' // Change upload button text. Default: "Add or Upload File"
+        )
+    ));
     
-    // Quality
+    // Quality Memory
     $cmb->add_field(
             array(
                 'name' => 'Quality Memory',
@@ -167,6 +157,7 @@ function broker_metaboxes() {
             )
     );
 
+    // Downloadable Memory
     $cmb->add_field(array(
         'name' => __('Downloadable Memory'),
         'desc' => __('Upload file'),
@@ -201,17 +192,20 @@ function broker_metaboxes() {
             )
     );
 
-    // Important
-    $cmb->add_field(
-            array(
-                'name' => __('Important'),
-                'id' => $prefix . 'important',
-                'desc' => __('Property with this checked will appear first'),
-                'type' => 'checkbox',
-                'repeatable' => false
-            )
-    );
+    // Nearby Places
+    $cmb->add_field( array(
+        'name'           => 'List of Nearby Places',
+        'desc'           => 'Select one or more places',
+        'id'             => 'wiki_test_taxonomy_multicheck',
+        'taxonomy'       => 'nearby_places',
+        'type'           => 'taxonomy_multicheck_inline',
+        'text'           => array(
+            'no_terms_text' => 'Sorry, no terms could be found.'
+        ),
+        'remove_default' => 'true' // Removes the default metabox provided by WP core. Pending release as of Aug-10-16
+    ) );
 
+    // Brochure
     $cmb->add_field(array(
         'name' => 'Brochure',
         'desc' => 'Upload a PDF file',
@@ -230,31 +224,5 @@ function broker_metaboxes() {
         ),
         'preview_size' => 'large', // Image size to use when previewing in the admin.
     ));
-
-    $cmb->add_field(array(
-        'name' => 'Plans (compressed file)',
-        'desc' => 'Upload a .zip file',
-        'id' => $prefix . 'pzip',
-        'type' => 'file',
-        // Optional:
-        'options' => array(
-            'url' => false, // Hide the text input for the url
-        ),
-        'text' => array(
-            'add_upload_file_text' => 'Add File' // Change upload button text. Default: "Add or Upload File"
-        )
-    ));
-
-    $cmb->add_field( array(
-        'name'           => 'List of Nearby Places',
-        'desc'           => 'Select one or more places',
-        'id'             => 'wiki_test_taxonomy_multicheck',
-        'taxonomy'       => 'nearby_places',
-        'type'           => 'taxonomy_multicheck_inline',
-        'text'           => array(
-            'no_terms_text' => 'Sorry, no terms could be found.'
-        ),
-        'remove_default' => 'true' // Removes the default metabox provided by WP core. Pending release as of Aug-10-16
-    ) );
     
 }
