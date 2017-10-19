@@ -87,6 +87,26 @@
       width: 16.80556vw;
       height: 5.76389vw; }
 
+.hr-rentalone-section {
+  height: 31.25vw;
+  padding: 7.70833vw 0 7.77778vw 0; }
+  .hr-rentalone-section .rentalone-logo {
+    height: 8.81944vw;
+    width: 20.83333vw; }
+  .hr-rentalone-section .rentalone-button {
+    display: block;
+    width: 15vw;
+    padding: 0.86806vw 4.30556vw;
+    border-radius: 6.94444vw;
+    border: solid 2px #fff;
+    margin: 3.47222vw auto 0; }
+    .hr-rentalone-section .rentalone-button a {
+      height: 100%;
+      font-family: Montserrat-Bold, sans-serif;
+      font-size: 1.25vw;
+      line-height: 1.38889vw;
+      color: #fff; }
+
 @media only screen and (min-width: 1024px) {
   .hr-partners-section {
     height: 320px;
@@ -107,7 +127,24 @@
         height: 67px; }
       .hr-partners-section .hr-partners-images .partners-images-two {
         width: 242px;
-        height: 83px; } }
+        height: 83px; }
+
+  .hr-rentalone-section {
+    height: 450px;
+    padding: 111px 0 112px 0; }
+    .hr-rentalone-section .rentalone-logo {
+      height: 127px;
+      width: 300px; }
+    .hr-rentalone-section .rentalone-button {
+      width: 216px;
+      padding: 12.5px 62px;
+      border-radius: 100px;
+      border: solid 2px #fff;
+      margin: 50px auto 0; }
+      .hr-rentalone-section .rentalone-button a {
+        height: 100%;
+        font-size: 18px;
+        line-height: 20px; } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .hr-partners-section {
     height: 31.25vw;
@@ -128,7 +165,24 @@
         height: 5.85938vw; }
       .hr-partners-section .hr-partners-images .partners-images-two {
         width: 21.35417vw;
-        height: 7.29167vw; } }
+        height: 7.29167vw; }
+
+  .hr-rentalone-section {
+    height: 52.08333vw;
+    padding: 13.28125vw 0 13.41146vw 0; }
+    .hr-rentalone-section .rentalone-logo {
+      height: 13.67188vw;
+      width: 32.55208vw; }
+    .hr-rentalone-section .rentalone-button {
+      width: 26.04167vw;
+      padding: 1.69271vw 8.46354vw;
+      border-radius: 13.02083vw;
+      border: solid 2px #fff;
+      margin: 5.20833vw auto 0; }
+      .hr-rentalone-section .rentalone-button a {
+        height: 100%;
+        font-size: 2.08333vw;
+        line-height: 2.60417vw; } }
 @media only screen and (max-width: 767px) {
   .hr-partners-section {
     height: 41.66667vw;
@@ -149,6 +203,23 @@
         height: 8.33333vw; }
       .hr-partners-section .hr-partners-images .partners-images-two {
         width: 26.66667vw;
-        height: 8.88889vw; } }
+        height: 8.88889vw; }
+
+  .hr-rentalone-section {
+    height: 97.22222vw;
+    padding: 27.77778vw 0; }
+    .hr-rentalone-section .rentalone-logo {
+      height: 22.22222vw;
+      width: 52.77778vw; }
+    .hr-rentalone-section .rentalone-button {
+      width: 43.33333vw;
+      padding: 2.22222vw 8.88889vw;
+      border-radius: 27.77778vw;
+      border: solid 2px #fff;
+      margin: 8.33333vw auto 0; }
+      .hr-rentalone-section .rentalone-button a {
+        height: 100%;
+        font-size: 3.88889vw;
+        line-height: 5.55556vw; } }
 
 /*# sourceMappingURL=style.css.map */
