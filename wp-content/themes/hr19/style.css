@@ -63,10 +63,16 @@
 body {
   font-family: Montserrat-Regular, sans-serif; }
 
+.no-padding {
+  padding: 0; }
+
+.no-margin {
+  margin: 0; }
+
 .hr-partners-section {
   z-index: 1;
-  height: 22.2222222222vw;
-  padding: 5.625vw 0 5.6944444444vw 0;
+  height: 22.22222vw;
+  padding: 5.625vw 0 5.69444vw 0;
   background-color: #fff;
   -webkit-box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.3);
@@ -74,21 +80,21 @@ body {
   .hr-partners-section .hr-partners-title {
     color: #4a4a4a;
     font-size: 2.5vw;
-    line-height: 3.0555555556vw;
+    line-height: 3.05556vw;
     margin: 0;
     font-family: Montserrat-Regular, sans-serif; }
     .hr-partners-section .hr-partners-title span {
       font-family: Montserrat-Bold, sans-serif; }
   .hr-partners-section .hr-partners-images {
-    padding-top: 2.0833333333vw; }
+    padding-top: 2.08333vw; }
     .hr-partners-section .hr-partners-images .partners-images-one {
-      padding-top: 0.5555555556vw;
-      margin-right: 12.8472222222vw;
-      width: 13.6111111111vw;
-      height: 4.6527777778vw; }
+      padding-top: 0.55556vw;
+      margin-right: 12.84722vw;
+      width: 13.61111vw;
+      height: 4.65278vw; }
     .hr-partners-section .hr-partners-images .partners-images-two {
-      width: 16.8055555556vw;
-      height: 5.7638888889vw; }
+      width: 16.80556vw;
+      height: 5.76389vw; }
 
 .property-status {
   list-style-type: none;
@@ -211,23 +217,63 @@ input {
 
 .hr-rentalone-section {
   height: 31.25vw;
-  padding: 7.70833vw 0 7.77778vw 0; }
-  .hr-rentalone-section .rentalone-logo {
-    height: 8.81944vw;
-    width: 20.83333vw; }
-  .hr-rentalone-section .rentalone-button {
-    display: block;
-    width: 15vw;
-    padding: 0.86806vw 4.30556vw;
-    border-radius: 6.94444vw;
-    border: solid 2px #fff;
-    margin: 3.47222vw auto 0; }
-    .hr-rentalone-section .rentalone-button a {
-      height: 100%;
-      font-family: Montserrat-Bold, sans-serif;
-      font-size: 1.25vw;
-      line-height: 1.38889vw;
-      color: #fff; }
+  background-size: cover;
+  position: relative; }
+  .hr-rentalone-section .hr-rentalone-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); }
+    .hr-rentalone-section .hr-rentalone-overlay .rentalone-logo {
+      padding-top: 7.70833vw;
+      width: 20.83333vw; }
+    .hr-rentalone-section .hr-rentalone-overlay .rentalone-button {
+      display: block;
+      width: 15vw;
+      padding: 0.86806vw 4.30556vw;
+      border-radius: 6.94444vw;
+      border: solid 2px #fff;
+      margin: 3.47222vw auto 0; }
+      .hr-rentalone-section .hr-rentalone-overlay .rentalone-button a {
+        height: 100%;
+        font-family: Montserrat-Bold, sans-serif;
+        font-size: 1.25vw;
+        line-height: 1.38889vw;
+        color: #fff; }
+        .hr-rentalone-section .hr-rentalone-overlay .rentalone-button a:hover {
+          text-decoration: none; }
+
+.hr-footer-section {
+  height: 15.97222vw;
+  padding: 3.47222vw 0;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 -8px 10px 0 rgba(0, 0, 0, 0.3); }
+  .hr-footer-section img {
+    width: 5.34722vw;
+    height: 5.55556vw;
+    margin-bottom: 0.69444vw; }
+  .hr-footer-section .hr-footer-text {
+    font-family: Montserrat-Regular, sans-serif;
+    font-size: 0.97222vw;
+    line-height: 1.38889vw;
+    margin-bottom: 0;
+    color: #8f8f8f; }
+  .hr-footer-section .hr-footer-link {
+    font-size: 0.97222vw;
+    line-height: 1.38889vw;
+    font-family: Montserrat-Bold, sans-serif;
+    color: #8f8f8f;
+    cursor: pointer;
+    text-decoration: underline; }
+  .hr-footer-section .footer-top {
+    width: 3.47222vw;
+    height: 3.47222vw;
+    cursor: pointer;
+    position: absolute;
+    right: 9.72222vw;
+    top: 2.77778vw;
+    z-index: 100; }
 
 @media only screen and (min-width: 1024px) {
   .hr-partners-section {
@@ -252,21 +298,45 @@ input {
         height: 83px; }
 
   .hr-rentalone-section {
-    height: 450px;
-    padding: 111px 0 112px 0; }
-    .hr-rentalone-section .rentalone-logo {
-      height: 127px;
-      width: 300px; }
-    .hr-rentalone-section .rentalone-button {
-      width: 216px;
-      padding: 12.5px 62px;
-      border-radius: 100px;
-      border: solid 2px #fff;
-      margin: 50px auto 0; }
-      .hr-rentalone-section .rentalone-button a {
-        height: 100%;
-        font-size: 18px;
-        line-height: 20px; } }
+    height: 450px; }
+    .hr-rentalone-section .hr-rentalone-overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); }
+      .hr-rentalone-section .hr-rentalone-overlay .rentalone-logo {
+        padding-top: 111px;
+        width: 300px; }
+      .hr-rentalone-section .hr-rentalone-overlay .rentalone-button {
+        width: 216px;
+        padding: 12.5px 62px;
+        border-radius: 100px;
+        border: solid 2px #fff;
+        margin: 50px auto 0; }
+        .hr-rentalone-section .hr-rentalone-overlay .rentalone-button a {
+          height: 100%;
+          font-size: 18px;
+          line-height: 20px; }
+
+  .hr-footer-section {
+    height: 230px;
+    padding: 50px 0;
+    box-shadow: 0 -8px 10px 0 rgba(0, 0, 0, 0.3); }
+    .hr-footer-section img {
+      width: 77px;
+      height: 80px;
+      margin-bottom: 10px; }
+    .hr-footer-section .hr-footer-text {
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 0; }
+    .hr-footer-section .hr-footer-link {
+      font-size: 14px;
+      line-height: 20px; }
+    .hr-footer-section .footer-top {
+      width: 50px;
+      height: 50px;
+      right: 140px;
+      top: 40px; } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .hr-partners-section {
     height: 31.25vw;
@@ -290,21 +360,41 @@ input {
         height: 7.29167vw; }
 
   .hr-rentalone-section {
-    height: 52.08333vw;
-    padding: 13.28125vw 0 13.41146vw 0; }
-    .hr-rentalone-section .rentalone-logo {
-      height: 13.67188vw;
+    height: 52.08333vw; }
+    .hr-rentalone-section .hr-rentalone-overlay .rentalone-logo {
+      padding-top: 13.28125vw;
       width: 32.55208vw; }
-    .hr-rentalone-section .rentalone-button {
+    .hr-rentalone-section .hr-rentalone-overlay .rentalone-button {
       width: 26.04167vw;
       padding: 1.69271vw 8.46354vw;
       border-radius: 13.02083vw;
       border: solid 2px #fff;
       margin: 5.20833vw auto 0; }
-      .hr-rentalone-section .rentalone-button a {
+      .hr-rentalone-section .hr-rentalone-overlay .rentalone-button a {
         height: 100%;
         font-size: 2.08333vw;
-        line-height: 2.60417vw; } }
+        line-height: 2.60417vw; }
+
+  .hr-footer-section {
+    height: 22.65625vw;
+    padding: 2.60417vw 0;
+    box-shadow: 0 -8px 10px 0 rgba(0, 0, 0, 0.3); }
+    .hr-footer-section img {
+      width: 8.59375vw;
+      height: 8.85417vw;
+      margin-bottom: 1.30208vw; }
+    .hr-footer-section .hr-footer-text {
+      font-size: 1.82292vw;
+      line-height: 2.60417vw;
+      margin-bottom: 0; }
+    .hr-footer-section .hr-footer-link {
+      font-size: 1.5625vw;
+      line-height: 2.34375vw; }
+    .hr-footer-section .footer-top {
+      width: 5.20833vw;
+      height: 5.20833vw;
+      right: 7.16146vw;
+      top: 2.60417vw; } }
 @media only screen and (max-width: 767px) {
   .hr-partners-section {
     height: 41.66667vw;
@@ -328,20 +418,40 @@ input {
         height: 8.88889vw; }
 
   .hr-rentalone-section {
-    height: 97.22222vw;
-    padding: 27.77778vw 0; }
-    .hr-rentalone-section .rentalone-logo {
-      height: 22.22222vw;
+    height: 97.22222vw; }
+    .hr-rentalone-section .hr-rentalone-overlay .rentalone-logo {
+      padding-top: 27.77778vw;
       width: 52.77778vw; }
-    .hr-rentalone-section .rentalone-button {
+    .hr-rentalone-section .hr-rentalone-overlay .rentalone-button {
       width: 43.33333vw;
       padding: 2.22222vw 8.88889vw;
       border-radius: 27.77778vw;
       border: solid 2px #fff;
       margin: 8.33333vw auto 0; }
-      .hr-rentalone-section .rentalone-button a {
+      .hr-rentalone-section .hr-rentalone-overlay .rentalone-button a {
         height: 100%;
         font-size: 3.88889vw;
-        line-height: 5.55556vw; } }
+        line-height: 5.55556vw; }
+
+  .hr-footer-section {
+    height: 34.16667vw;
+    padding: 5.55556vw 0;
+    box-shadow: 0 -8px 10px 0 rgba(0, 0, 0, 0.3); }
+    .hr-footer-section img {
+      width: 12.77778vw;
+      height: 13.05556vw;
+      margin-bottom: 2.22222vw; }
+    .hr-footer-section .hr-footer-text {
+      font-size: 2.77778vw;
+      line-height: 3.88889vw;
+      margin-bottom: 0; }
+    .hr-footer-section .hr-footer-link {
+      font-size: 2.77778vw;
+      line-height: 3.88889vw; }
+    .hr-footer-section .footer-top {
+      width: 7.77778vw;
+      height: 7.77778vw;
+      right: 6.94444vw;
+      top: 3.88889vw; } }
 
 /*# sourceMappingURL=style.css.map */
