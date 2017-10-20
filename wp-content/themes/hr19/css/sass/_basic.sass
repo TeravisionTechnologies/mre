@@ -164,6 +164,7 @@ body
 .property-status input[type="radio"]
   opacity: 0.011
   z-index: 100
+  position: absolute
 
 .property-status input[type="radio"]:checked + label
   color: $white
@@ -184,6 +185,9 @@ body
     -ms-transition: .5s
     -o-transition: .5s
     transition: .5s
+    border-right: solid 1px rgba(255, 255, 255, 0.2)
+  #pre
+    border-right: solid 1px $mainblue
 
 .property-status
   label
@@ -361,7 +365,11 @@ input[type="radio"].styled:checked + label
 .no-padding
   padding: 0 !important
 
+.search-text
+  background: $white
+
 .property-search
+  margin-top: -170px !important
   .input-group
     width: 100%
     input

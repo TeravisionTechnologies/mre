@@ -5,6 +5,7 @@
       <h2 class="hero-text-bold">exclusivas para ti</h2>
     </div>
   </section>
+    <div class="clearfix"></div>
     <div class="container property-search-wrapper">
         <div class="row">
             <div class="col-md-12">
@@ -20,11 +21,11 @@
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                             <input type="radio" id="presale" name="status">
-                            <label for="presale"><?php _e('Pre-venta', 'hr') ?></label>
+                            <label for="presale" id="pre"><?php _e('Pre-venta', 'hr') ?></label>
                         </li>
                     </ul>
 
-                    <div class="col-md-12">
+                    <div class="col-xs-12 col-sm-12 col-md-12 search-text">
                         <div class="input-group">
                             <input type="search" name="s" placeholder="<?php _e('Introduzca una dirección, ciudad, barrio o código postal', 'hr') ?>" value="<?php echo get_query_var('s'); ?>" onBlur="if (this.value == '')
                                     this.value = '<?php echo get_query_var('s'); ?>'" onFocus="if (this.value === '<?php echo get_query_var('s'); ?>')
