@@ -154,7 +154,7 @@ body
           vertical-align: middle
           position: relative
           padding-left: 5px
-          font-size: 16px !important
+          font-size: 16px
           opacity: 0.6
           color: $grey
           &::before
@@ -197,7 +197,6 @@ body
     width: 262px
     height: 50px
     border-radius: 100px
-    background-color: $greylight
     border: none
     padding: 10px 20px 10px 20px
     box-shadow: none!important
@@ -205,6 +204,9 @@ body
     letter-spacing: -0.1px
     color: $grey
     opacity: 0.6
+    -webkit-appearance: none  !important
+    -moz-appearance: none
+    background: $greylight url(assets/form-caret-down.png) 100% 50% no-repeat
     &:-moz-focusring
       color: transparent
       text-shadow: 0 0 0 #000
@@ -230,7 +232,6 @@ input[type="radio"].styled:checked + label
   &:after
     font-family: 'FontAwesome'
     content: "\f00c"
-
 
 .property
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5)
@@ -290,7 +291,7 @@ input[type="radio"].styled:checked + label
       opacity: 0.8
       top: 26px
       position: absolute
-      left: 278px
+      left: 180px
 
 .property-filters
   text-align: center
@@ -312,12 +313,15 @@ input
 .styled-select
   select
     border: none
-    border-bottom: solid 1px $grey
+    border-bottom: solid 2px $grey
     background: transparent
     font-size: 18px
     outline: none
-    padding: 10px
+    padding: 10px 24px
     margin-bottom: 30px
+    -webkit-appearance: none  !important
+    -moz-appearance: none
+    background: $greylight url(assets/caret.png) 100% 50% no-repeat
 
 // End Filters
 
