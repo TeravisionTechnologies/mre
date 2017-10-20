@@ -108,7 +108,7 @@
             </div>
         </div>
         <div class="row">
-            <?php /*for ($x = 0; $x <= 8; $x++) { */?>
+            <?php for ($x = 0; $x <= 8; $x++) { ?>
                 <div class="col-md-4">
                     <a class="property">
                         <div class="property-image"
@@ -123,9 +123,7 @@
                 </div>
             <?php } ?>
         </div>
-    </div>-->
-  <section class="col-xs-12" style="height: 200px; background-color: red;">
-  </section>
+    </div>
   <section class="col-xs-12 hr-partners-section text-center">
     <div class="container">
       <p class="hr-partners-title">La nueva forma de <span>invertir en propiedades</span></p>
@@ -139,6 +137,24 @@
     <div class="hr-rentalone-overlay">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/rentalone.svg" alt="Logo Rental One" class="rentalone-logo"/>
       <div class="rentalone-button"><a href="#">Ver más</a></div>
+    </div>
+  </section>
+  <section class="col-xs-12 hr-contact-div no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/contact-us-bg.jpg')">
+    <div class="container-hr center-block">
+      <div class="row">
+        <p class="col-xs-12 text-center hr-contact-text">Nos gustaría asesorarte en tu próxima inversión</p>
+        <p class="col-xs-12 text-center hr-contact-text-bold">¡Contáctanos!</p>
+        <div class="col-xs-12 col-md-4 no-padding">
+          <div class="hr-phone-box text-center center-block">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.png" alt="Llamanos HR19">
+            <p>Llámanos para asesoría <strong>inmediata</strong></p>
+            <a href="#" class="hr-phone-num">+1 786 477.5091</a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-8 hr-contact-form-div no-padding">
+          <?php echo do_shortcode( '[contact-form-7 id="4" title="Home - Contact form"]' ); ?>
+        </div>
+      </div>
     </div>
   </section>
 
