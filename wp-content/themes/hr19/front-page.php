@@ -21,12 +21,13 @@
 
                     <div class="col-md-12">
                         <div class="input-group">
-                            <input type="search" name="search"
-                                   placeholder="<?php _e('Introduzca una dirección, ciudad, barrio o código postal', 'hr') ?>">
-                            <span class="icon-search icon-search-input"></span>
+                            <input type="search" name="s" placeholder="<?php _e('Introduzca una dirección, ciudad, barrio o código postal', 'hr') ?>" value="<?php echo get_query_var('s'); ?>" onBlur="if (this.value == '')
+                                    this.value = '<?php echo get_query_var('s'); ?>'" onFocus="if (this.value === '<?php echo get_query_var('s'); ?>')
+                                    this.value = ''">
+                            <i class="fa fa-search"></i>
+                            <input type="hidden" name="post_type[]" value="mls">
                         </div>
                     </div>
-
 
                     <div class="col-md-12 property-filters">
                         <div class="col-xs-6 col-sm-6 col-md-3">
@@ -66,7 +67,6 @@
                             </div>
                         </div>
                     </div>
-
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
@@ -75,24 +75,44 @@
 
     <div class="container property-list">
         <div class="row">
-            <div class="col-md-7">
-
-            </div>
-            <div class="col-md-5">
-
+            <div class="property-sorting">
+                <div class="col-md-4">
+                    <span class="state-search">Miami, FL</span>
+                    <span class="results-search">Mostrando 10 de 8694 casas</span>
+                </div>
+                <div class="col-md-8">
+                    <select class="pull-right">
+                        <option selected><?php _e('Ordenar por  ', 'hr') ?></option>
+                        <option value="price"><?php _e('Por precio', 'hr') ?></option>
+                        <option value="date"><?php _e('Ultimo agregado', 'hr') ?></option>
+                    </select>
+                    <div class="pull-right choose-search">
+                        <div class="radio radio-inline radio-success">
+                            <input type="radio" id="inlineRadio1" value="option1" name="radioInline" class="styled" checked>
+                            <label for="inlineRadio1"><?php _e('Solo Hr19', 'hr') ?></label>
+                        </div>
+                        <div class="radio radio-inline radio-success">
+                            <input type="radio" id="inlineRadio2" value="option2" name="radioInline" class="styled">
+                            <label for="inlineRadio2"><?php _e('Todos', 'hr') ?></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <hr>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h2></h2>
+                <h2 class="hr-heading"><?php _e('Propiedades Hr19', 'hr') ?></h2>
             </div>
         </div>
         <div class="row">
             <?php for ($x = 0; $x <= 8; $x++) { ?>
-                <div class="col-md-4">
+                <div class="col-xs-12 col-sm-4 col-md-4">
                     <a class="property">
                         <div class="property-image"
-                             style="background: url('http://via.placeholder.com/350x150');"></div>
+                             style="background: url('http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg');"></div>
                         <div class="property-info">
                             <span class="property-price">$224,000</span>
                             <span class="property-highlights">Casa, 4 habitaciones</span>
