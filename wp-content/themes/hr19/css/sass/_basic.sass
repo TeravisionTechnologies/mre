@@ -51,11 +51,11 @@ body
     right: 0
     bottom: -30px
     margin: 0 auto
-    background: #0284ab
+    background: $bluelight
     border: none
     border-radius: 50%
     i
-      color: #fff
+      color: $white
       font-size: 28px
 
 .property-status input[type="radio"]
@@ -63,14 +63,14 @@ body
   z-index: 100
 
 .property-status input[type="radio"]:checked + label
-  color: #fff
+  color: $white
 
 .property-status
   label
     padding: 30px
     cursor: pointer
     width: 100%
-    background: #033c5a
+    background: $mainblue
     color: rgba(255, 255, 255, 0.6)
     text-align: center
     margin: 0
@@ -85,7 +85,7 @@ body
 .property-status
   label
     &:hover
-      color: #fff
+      color: $white
 
 .property
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5)
@@ -101,11 +101,11 @@ body
     background-position: center center !important
   .property-info
     padding: 15px 20px 10px
-    background-color: #f7f7f7
+    background-color: $greylighter
     span
       display: block
       width: 100%
-      color: #4a4a4a
+      color: $grey
       font-size: 16px
     .property-price
       font-size: 26px
@@ -133,7 +133,7 @@ body
 
 .property-filters
   text-align: center
-  background: #F0F0F0
+  background: $greylight
   padding-top: 30px
   padding-bottom: 30px
   display: inline-block
@@ -151,7 +151,7 @@ input
 .styled-select
   select
     border: none
-    border-bottom: solid 1px #4a4a4a
+    border-bottom: solid 1px $grey
     background: transparent
     font-size: 18px
     outline: none
