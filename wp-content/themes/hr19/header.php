@@ -29,7 +29,7 @@
 </head>
 
 <body>
-<!--<div id="o-wrapper" class="o-wrapper">
+<div id="o-wrapper" class="o-wrapper">
   <div id="hr-header">
     <nav id="navbar" class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -42,7 +42,7 @@
         </div>
         <div class="logo-header">
           <div class="img-div pull-right text-center">
-            <a href="<?php /*echo home_url(); */?>"><img src="<?php /*echo get_template_directory_uri(); */?>/assets/hr19.svg" alt="HR19 Logo"></a>
+            <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/hr19.svg" alt="HR19 Logo"></a>
           </div>
         </div>
         <div class="social-header pull-right">
@@ -67,4 +67,4 @@
           <?php /*} */?>
         </div>
       </div>
-    </nav>-->
+    </nav>

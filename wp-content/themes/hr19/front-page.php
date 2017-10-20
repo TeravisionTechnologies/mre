@@ -151,7 +151,7 @@
         <p class="col-xs-12 text-center hr-contact-text-bold">¡Contáctanos!</p>
         <div class="col-xs-12 col-md-4 no-padding">
           <div class="hr-phone-box text-center center-block">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.png" alt="Llamanos HR19">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.svg" alt="Llamanos HR19">
             <p>Llámanos para asesoría <strong>inmediata</strong></p>
             <a href="#" class="hr-phone-num">+1 786 477.5091</a>
           </div>
