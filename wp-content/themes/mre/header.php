@@ -42,7 +42,7 @@ $social_networks = get_post_meta($headerPost[0]->ID, '_hf_social_networks', true
 ?>
 
 <div id="o-wrapper" class="o-wrapper">
-    <div id="mre-header">
+    <div class="mre-header">
         <nav id="navbar" class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div id="c-button--slide-left" class="menu-button c-button pull-right">

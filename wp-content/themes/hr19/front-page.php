@@ -1,5 +1,10 @@
 <?php get_header(); ?>
-
+  <section class="col-xs-12 hr-hero-section text-center no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-image.jpg')">
+    <div class="hero-overlay">
+      <h3 class="hero-text">La mayor variedad de propiedades </h3>
+      <h2 class="hero-text-bold">exclusivas para ti</h2>
+    </div>
+  </section>
     <div class="container property-search-wrapper">
         <div class="row">
             <div class="col-md-12">
@@ -141,6 +146,24 @@
     <div class="hr-rentalone-overlay">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/rentalone.svg" alt="Logo Rental One" class="rentalone-logo"/>
       <div class="rentalone-button"><a href="#">Ver más</a></div>
+    </div>
+  </section>
+  <section class="col-xs-12 hr-contact-div no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/contact-us-bg.jpg')">
+    <div class="container-hr center-block">
+      <div class="row">
+        <p class="col-xs-12 text-center hr-contact-text">Nos gustaría asesorarte en tu próxima inversión</p>
+        <p class="col-xs-12 text-center hr-contact-text-bold">¡Contáctanos!</p>
+        <div class="col-xs-12 col-md-4 no-padding">
+          <div class="hr-phone-box text-center center-block">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.png" alt="Llamanos HR19">
+            <p>Llámanos para asesoría <strong>inmediata</strong></p>
+            <a href="#" class="hr-phone-num">+1 786 477.5091</a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-8 hr-contact-form-div no-padding">
+          <?php echo do_shortcode( '[contact-form-7 id="4" title="Home - Contact form"]' ); ?>
+        </div>
+      </div>
     </div>
   </section>
 

@@ -64,11 +64,93 @@
 body {
   font-family: Montserrat-Regular, sans-serif; }
 
+.container-hr {
+  width: 81.25vw;
+  height: 100%; }
+
 .no-padding {
   padding: 0; }
 
 .no-margin {
   margin: 0; }
+
+#hr-header .logo-header {
+  top: 0;
+  height: 5.55556vw;
+  left: 5.55556vw;
+  position: absolute;
+  width: 56.94444vw;
+  background-color: #fff;
+  z-index: 2; }
+  #hr-header .logo-header .img-div {
+    width: 25vw;
+    position: relative;
+    height: 5.55556vw; }
+    #hr-header .logo-header .img-div img {
+      width: 10.27778vw;
+      height: 3.54167vw;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); }
+#hr-header .social-header {
+  top: 0;
+  left: 62.5vw;
+  height: 5.55556vw;
+  position: absolute;
+  width: 37.5vw;
+  background-color: #fff;
+  z-index: 2; }
+  #hr-header .social-header .social-icons {
+    height: 2.35417vw;
+    position: absolute;
+    list-style: none;
+    right: 3.49306vw;
+    top: 1.61806vw; }
+    #hr-header .social-header .social-icons .social-icon {
+      position: relative;
+      height: 100%;
+      width: 2.35417vw;
+      border-radius: 50%;
+      background: #fff;
+      display: inline-block;
+      margin-right: 0.83333vw; }
+      #hr-header .social-header .social-icons .social-icon:hover {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3); }
+      #hr-header .social-header .social-icons .social-icon a {
+        color: red; }
+        #hr-header .social-header .social-icons .social-icon a i {
+          font-size: 1.52778vw;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
+
+.hr-hero-section {
+  margin-top: 5.55556vw;
+  height: 50vw;
+  position: relative;
+  background-size: cover; }
+  .hr-hero-section .hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); }
+    .hr-hero-section .hero-overlay .hero-text {
+      margin-top: 15.13889vw;
+      margin-bottom: 0;
+      font-family: Montserrat-Regular, sans-serif;
+      font-size: 2.08333vw;
+      line-height: 2.08333vw;
+      color: #fff;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+    .hr-hero-section .hero-overlay .hero-text-bold {
+      margin-top: 0.27778vw;
+      font-family: Montserrat-Bold, sans-serif;
+      font-size: 4.86111vw;
+      line-height: 4.86111vw;
+      color: #fff;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
 
 .hr-partners-section {
   z-index: 1;
@@ -336,7 +418,7 @@ input[type="radio"].styled:checked + label:after {
 
 .property-filters {
   text-align: center;
-  background: #F0F0F0;
+  background: #f0f0f0;
   padding-top: 28px;
   padding-bottom: 30px;
   display: inline-block;
@@ -373,23 +455,159 @@ input {
     height: 100%;
     background: rgba(0, 0, 0, 0.5); }
     .hr-rentalone-section .hr-rentalone-overlay .rentalone-logo {
-      padding-top: 7.7083333333vw;
-      width: 20.8333333333vw; }
+      padding-top: 7.70833vw;
+      width: 20.83333vw; }
     .hr-rentalone-section .hr-rentalone-overlay .rentalone-button {
       display: block;
       width: 15vw;
-      padding: 0.8680555556vw 4.3055555556vw;
-      border-radius: 6.9444444444vw;
+      padding: 0.86806vw 4.30556vw;
+      border-radius: 6.94444vw;
       border: solid 2px #fff;
-      margin: 3.4722222222vw auto 0; }
+      margin: 3.47222vw auto 0; }
       .hr-rentalone-section .hr-rentalone-overlay .rentalone-button a {
         height: 100%;
         font-family: Montserrat-Bold, sans-serif;
         font-size: 1.25vw;
-        line-height: 1.3888888889vw;
+        line-height: 1.38889vw;
         color: #fff; }
         .hr-rentalone-section .hr-rentalone-overlay .rentalone-button a:hover {
           text-decoration: none; }
+
+.screen-reader-response {
+  display: none; }
+
+.wpcf7-response-output {
+  top: -1.73611vw;
+  left: 2.08333vw;
+  position: absolute; }
+
+.hr-contact-div {
+  height: auto;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-size: contain; }
+
+.hr-contact-text {
+  color: #4a4a4a;
+  font-size: 2.5vw;
+  margin-top: 4.16667vw;
+  line-height: 3.19444vw;
+  margin-bottom: 0.20833vw;
+  font-family: Montserrat-Regular, sans-serif; }
+
+.hr-contact-text-bold {
+  color: #4a4a4a;
+  font-size: 2.5vw;
+  line-height: 3.19444vw;
+  font-family: Montserrat-Bold, sans-serif;
+  margin-bottom: 1.38889vw; }
+
+.hr-phone-box {
+  border-radius: 1.25vw;
+  max-width: 25.06944vw;
+  max-height: 18.88889vw;
+  margin-top: 2.77778vw;
+  margin-left: 0;
+  padding: 2.77778vw 2.36111vw;
+  background-color: #fafafa;
+  box-shadow: 0 4px 0.69444vw 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 4px 0.69444vw 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 4px 0.69444vw 0 rgba(0, 0, 0, 0.3); }
+  .hr-phone-box img {
+    width: 5vw;
+    height: 4.44444vw; }
+  .hr-phone-box p {
+    color: #4a4a4a;
+    padding-top: 0.69444vw;
+    line-height: 2.36111vw;
+    font-size: 1.66667vw;
+    padding-bottom: 1.38889vw;
+    font-family: Montserrat-Regular, sans-serif; }
+    .hr-phone-box p strong {
+      font-family: Montserrat-Bold, sans-serif; }
+
+a.hr-phone-num {
+  color: #4a4a4a;
+  cursor: pointer;
+  font-size: 2.5vw;
+  line-height: 2.08333vw;
+  font-family: Montserrat-Black, sans-serif; }
+  a.hr-phone-num:hover {
+    text-decoration: none; }
+
+.hr-contact-form-div {
+  margin-top: 2.77778vw;
+  display: inline-block; }
+
+.wpcf7-form-control-wrap {
+  margin-bottom: 1.38889vw; }
+
+.wpcf7-form p {
+  margin-right: 1.38889vw;
+  display: inline-block; }
+.wpcf7-form input[type="text"], .wpcf7-form input[type="email"], .wpcf7-form input[type="tel"], .wpcf7-form select {
+  width: 25.76389vw;
+  height: 3.33333vw;
+  color: #8f8f8f;
+  padding: 0 1.59722vw;
+  font-size: 1.11111vw;
+  line-height: 1.11111vw;
+  border-radius: 0.27778vw;
+  display: inline-block;
+  background-color: #fafafa;
+  border: 2px solid rgba(143, 143, 143, 0.5);
+  font-family: Montserrat-Regular, sans-serif;
+  margin-bottom: 1.38889vw; }
+  .wpcf7-form input[type="text"]::-webkit-input-placeholder, .wpcf7-form input[type="email"]::-webkit-input-placeholder, .wpcf7-form input[type="tel"]::-webkit-input-placeholder, .wpcf7-form select::-webkit-input-placeholder {
+    color: #8f8f8f; }
+  .wpcf7-form input[type="text"]::-moz-placeholder, .wpcf7-form input[type="email"]::-moz-placeholder, .wpcf7-form input[type="tel"]::-moz-placeholder, .wpcf7-form select::-moz-placeholder {
+    color: #8f8f8f; }
+  .wpcf7-form input[type="text"]:-ms-input-placeholder, .wpcf7-form input[type="email"]:-ms-input-placeholder, .wpcf7-form input[type="tel"]:-ms-input-placeholder, .wpcf7-form select:-ms-input-placeholder {
+    color: #8f8f8f; }
+  .wpcf7-form input[type="text"]:-moz-placeholder, .wpcf7-form input[type="email"]:-moz-placeholder, .wpcf7-form input[type="tel"]:-moz-placeholder, .wpcf7-form select:-moz-placeholder {
+    color: #8f8f8f; }
+.wpcf7-form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  background: #fafafa url(assets/form-caret-down.png) 100% 50% no-repeat; }
+.wpcf7-form textarea {
+  width: 53.81944vw;
+  color: #8f8f8f;
+  font-size: 1.11111vw;
+  max-height: 9.51389vw;
+  line-height: 1.11111vw;
+  padding: 0.97222vw 1.59722vw;
+  border-radius: 0.41667vw;
+  background-color: #fafafa;
+  border: 2px solid rgba(143, 143, 143, 0.5);
+  font-family: Montserrat-Regular, sans-serif; }
+  .wpcf7-form textarea::-webkit-input-placeholder {
+    color: #8f8f8f; }
+  .wpcf7-form textarea::-moz-placeholder {
+    color: #8f8f8f; }
+  .wpcf7-form textarea:-ms-input-placeholder {
+    color: #8f8f8f; }
+  .wpcf7-form textarea:-moz-placeholder {
+    color: #8f8f8f; }
+.wpcf7-form option {
+  padding-left: 1.38889vw; }
+.wpcf7-form .your-name, .wpcf7-form .your-phone {
+  margin-right: 1.38889vw; }
+.wpcf7-form .wpcf7-submit {
+  color: #4a4a4a;
+  height: 3.47222vw;
+  width: 15vw;
+  font-size: 1.25vw;
+  margin: 2.08333vw 0 4.16667vw 0;
+  padding: 0px 5.13889vw;
+  border-radius: 6.94444vw;
+  line-height: 1.38889vw;
+  border: solid 2px #4a4a4a;
+  background-color: transparent;
+  font-family: Montserrat-Bold, sans-serif; }
+  .wpcf7-form .wpcf7-submit:hover {
+    background-color: rgba(255, 255, 255, 0.15); }
 
 .hr-footer-section {
   height: 15.9722222222vw;
@@ -423,7 +641,31 @@ input {
     top: 2.7777777778vw;
     z-index: 100; }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1440px) {
+  .container-hr {
+    width: 1170px;
+    height: 100%; }
+
+  .hr-hero-section {
+    margin-top: 80px;
+    height: 720px; }
+    .hr-hero-section .hero-overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); }
+      .hr-hero-section .hero-overlay .hero-text {
+        margin-top: 218px;
+        margin-bottom: 0;
+        font-size: 30px;
+        line-height: 30px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+      .hr-hero-section .hero-overlay .hero-text-bold {
+        margin-top: 4px;
+        font-size: 70px;
+        line-height: 70px;
+        color: #fff;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+
   .hr-partners-section {
     height: 320px;
     padding: 81px 0 82px 0;
@@ -465,6 +707,87 @@ input {
           font-size: 18px;
           line-height: 20px; }
 
+  .wpcf7-response-output {
+    top: -25px;
+    left: 30px; }
+
+  .hr-contact-text {
+    font-size: 36px;
+    margin-top: 60px;
+    line-height: 46px;
+    margin-bottom: 3px; }
+
+  .hr-contact-text-bold {
+    font-size: 36px;
+    line-height: 46px;
+    margin-bottom: 20px; }
+
+  .hr-phone-box {
+    border-radius: 18px;
+    max-width: 361px;
+    max-height: 272px;
+    margin-top: 40px;
+    margin-left: 0;
+    padding: 40px 34px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3); }
+    .hr-phone-box img {
+      width: 72px;
+      height: 64px; }
+    .hr-phone-box p {
+      padding-top: 10px;
+      line-height: 34px;
+      font-size: 24px;
+      padding-bottom: 20px; }
+
+  a.hr-phone-num {
+    font-size: 36px;
+    line-height: 30px; }
+
+  .hr-contact-form-div {
+    margin-top: 40px; }
+
+  .wpcf7-form-control-wrap {
+    margin-bottom: 20px; }
+
+  .wpcf7-form p {
+    margin-right: 20px; }
+  .wpcf7-form input[type="text"], .wpcf7-form input[type="email"], .wpcf7-form input[type="tel"], .wpcf7-form select {
+    width: 371px;
+    height: 48px;
+    padding: 0 23px;
+    font-size: 16px;
+    line-height: 16px;
+    border-radius: 4px;
+    border: 2px solid rgba(143, 143, 143, 0.5);
+    margin-bottom: 20px; }
+  .wpcf7-form select {
+    background: #fafafa url(assets/form-caret-down.png) 100% 50% no-repeat; }
+  .wpcf7-form textarea {
+    width: 772px;
+    font-size: 16px;
+    max-height: 137px;
+    line-height: 16px;
+    padding: 14px 23px;
+    border-radius: 6px;
+    border: 2px solid rgba(143, 143, 143, 0.5); }
+  .wpcf7-form option {
+    padding-left: 20px; }
+  .wpcf7-form .your-name, .wpcf7-form .your-phone {
+    margin-right: 20px; }
+  .wpcf7-form .wpcf7-submit {
+    height: 50px;
+    width: 216px;
+    font-size: 18px;
+    margin: 30px 0 60px 0;
+    padding: 0 74px;
+    border-radius: 100px;
+    line-height: 20px;
+    border: solid 2px #4a4a4a; }
+    .wpcf7-form .wpcf7-submit:hover {
+      background-color: rgba(255, 255, 255, 0.15); }
+
   .hr-footer-section {
     height: 230px;
     padding: 50px 0;
@@ -486,6 +809,30 @@ input {
       right: 140px;
       top: 40px; } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .container-hr {
+    width: 86.58854vw;
+    height: 100%; }
+
+  .hr-hero-section {
+    margin-top: 10.41667vw;
+    height: 53.38542vw;
+    background-position: center; }
+    .hr-hero-section .hero-overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); }
+      .hr-hero-section .hero-overlay .hero-text {
+        margin-top: 14.45313vw;
+        margin-bottom: 0;
+        font-size: 3.125vw;
+        line-height: 3.90625vw;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+      .hr-hero-section .hero-overlay .hero-text-bold {
+        margin-top: 0;
+        font-size: 7.55208vw;
+        line-height: 7.8125vw;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+
   .hr-partners-section {
     height: 31.25vw;
     padding: 7.8125vw 0;
@@ -493,148 +840,196 @@ input {
     -moz-box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.3); }
     .hr-partners-section .hr-partners-title {
-      font-size: 3.6458333333vw;
-      line-height: 4.4270833333vw;
+      font-size: 3.64583vw;
+      line-height: 4.42708vw;
       margin: 0; }
     .hr-partners-section .hr-partners-images {
       padding-top: 3.90625vw; }
       .hr-partners-section .hr-partners-images .partners-images-one {
         padding-top: 0.78125vw;
         margin-right: 13.28125vw;
-        width: 17.0572916667vw;
-        height: 5.859375vw; }
+        width: 17.05729vw;
+        height: 5.85938vw; }
       .hr-partners-section .hr-partners-images .partners-images-two {
-        width: 21.3541666667vw;
-        height: 7.2916666667vw; }
+        width: 21.35417vw;
+        height: 7.29167vw; }
 
   .hr-rentalone-section {
-    height: 52.0833333333vw; }
+    height: 52.08333vw;
+    background-position: center; }
     .hr-rentalone-section .hr-rentalone-overlay .rentalone-logo {
       padding-top: 13.28125vw;
-      width: 32.5520833333vw; }
+      width: 32.55208vw; }
     .hr-rentalone-section .hr-rentalone-overlay .rentalone-button {
-      width: 26.0416666667vw;
-      padding: 1.6927083333vw 8.4635416667vw;
-      border-radius: 13.0208333333vw;
+      width: 26.04167vw;
+      padding: 1.69271vw 8.46354vw;
+      border-radius: 13.02083vw;
       border: solid 2px #fff;
-      margin: 5.2083333333vw auto 0; }
+      margin: 5.20833vw auto 0; }
       .hr-rentalone-section .hr-rentalone-overlay .rentalone-button a {
         height: 100%;
-        font-size: 2.0833333333vw;
-        line-height: 2.6041666667vw; }
+        font-size: 2.08333vw;
+        line-height: 2.60417vw; }
+
+  .wpcf7-response-output {
+    top: -3.25521vw;
+    left: 3.90625vw; }
+
+  .hr-contact-text {
+    font-size: 3.25521vw;
+    margin-top: 7.8125vw;
+    line-height: 4.42708vw;
+    margin-bottom: 0.39063vw; }
+
+  .hr-contact-text-bold {
+    font-size: 3.125vw;
+    line-height: 4.42708vw;
+    margin: 0; }
+
+  .hr-phone-box {
+    border-radius: 2.34375vw;
+    max-width: 48.4375vw;
+    max-height: 33.85417vw;
+    margin: 6.51042vw auto 0 auto;
+    padding: 5.33854vw 5.72917vw;
+    box-shadow: 0 4px 1.30208vw 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 4px 1.30208vw 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 4px 1.30208vw 0 rgba(0, 0, 0, 0.3); }
+    .hr-phone-box img {
+      width: 6.51042vw;
+      height: 6.51042vw; }
+    .hr-phone-box p {
+      padding-top: 1.30208vw;
+      line-height: 3.90625vw;
+      font-size: 3.125vw;
+      padding-bottom: 3.64583vw; }
+
+  a.hr-phone-num {
+    font-size: 3.90625vw;
+    line-height: 3.90625vw;
+    font-family: Montserrat-Bold; }
+
+  .hr-contact-form-div {
+    margin-top: 5.20833vw; }
+
+  .wpcf7-form-control-wrap {
+    margin-bottom: 2.60417vw; }
+
+  .wpcf7-form p {
+    margin-right: 2.60417vw; }
+  .wpcf7-form input[type="text"], .wpcf7-form input[type="email"], .wpcf7-form input[type="tel"], .wpcf7-form select {
+    width: 41.53646vw;
+    height: 6.11979vw;
+    padding: 0 2.60417vw;
+    font-size: 1.82292vw;
+    line-height: 1.95313vw;
+    border-radius: 0.52083vw;
+    border: 1px solid #8f8f8f;
+    margin-bottom: 2.60417vw; }
+  .wpcf7-form textarea {
+    width: 100%;
+    font-size: 1.82292vw;
+    max-height: 17.31771vw;
+    line-height: 2.08333vw;
+    padding: 1.95313vw 2.60417vw;
+    border-radius: 0.52083vw;
+    border: 1px solid #8f8f8f; }
+  .wpcf7-form option {
+    padding-left: 2.60417vw; }
+  .wpcf7-form .your-name, .wpcf7-form .your-phone {
+    margin-right: 2.60417vw; }
+  .wpcf7-form .wpcf7-submit {
+    border-radius: 13.02083vw;
+    height: 6.51042vw;
+    width: 26.04167vw;
+    font-size: 2.08333vw;
+    margin: 3.90625vw 0 7.8125vw 0;
+    padding: 0px 8.72396vw;
+    line-height: 2.60417vw; }
+    .wpcf7-form .wpcf7-submit:hover {
+      background-color: rgba(255, 255, 255, 0.7); }
 
   .hr-footer-section {
     height: 22.65625vw;
-    padding: 2.6041666667vw 0;
+    padding: 2.60417vw 0;
     box-shadow: 0 -8px 10px 0 rgba(0, 0, 0, 0.3); }
     .hr-footer-section img {
       width: 8.59375vw;
-      height: 8.8541666667vw;
-      margin-bottom: 1.3020833333vw; }
+      height: 8.85417vw;
+      margin-bottom: 1.30208vw; }
     .hr-footer-section .hr-footer-text {
-      font-size: 1.8229166667vw;
-      line-height: 2.6041666667vw;
+      font-size: 1.82292vw;
+      line-height: 2.60417vw;
       margin-bottom: 0; }
     .hr-footer-section .hr-footer-link {
       font-size: 1.5625vw;
       line-height: 2.34375vw; }
     .hr-footer-section .footer-top {
-      width: 5.2083333333vw;
-      height: 5.2083333333vw;
-      right: 7.1614583333vw;
-      top: 2.6041666667vw; }
-
-  .property-status label {
-    font-size: 12px;
-    padding: 13px; }
-
-  .property-search .input-group input {
-    font-size: 12px;
-    height: 40px; }
-
-  .property-filters {
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 15px; }
-    .property-filters .filter {
-      font-size: 11px; }
-
-  .property-search button {
-    width: 40px;
-    height: 40px;
-    bottom: -15px; }
-    .property-search button i {
-      font-size: 16px; }
-  .property-search .input-group i {
-    left: 150px;
-    top: 11px !important; }
-
-  .styled-select select {
-    font-size: 12px; }
-
-  .property-list .property-sorting .state-search {
-    font-size: 18px; }
-  .property-list .property-sorting .results-search {
-    font-size: 14px; }
-  .property-list .property-sorting select {
-    width: 200px;
-    height: 40px;
-    font-size: 14px; }
-  .property-list .property-sorting .choose-search {
-    padding: 10px 20px;
-    margin: -2px 0 0; }
-    .property-list .property-sorting .choose-search .radio label {
-      font-size: 14px; }
-  .property-list .hr-heading {
-    height: 40px;
-    font-size: 14px;
-    padding: 14px 15px 10px 20px; }
-
-  .property .property-image {
-    height: 155px; }
-  .property .property-info {
-    padding: 8px 10px 10px; }
-    .property .property-info span {
-      font-size: 9px; }
-    .property .property-info .property-price {
-      font-size: 16px; } }
+      width: 5.20833vw;
+      height: 5.20833vw;
+      right: 7.16146vw;
+      top: 2.60417vw; } }
 @media only screen and (max-width: 767px) {
+  .container-hr {
+    width: 86.11111vw; }
+
+  .hr-hero-section {
+    margin-top: 16.66667vw;
+    height: 58.33333vw;
+    background-position: center; }
+    .hr-hero-section .hero-overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); }
+      .hr-hero-section .hero-overlay .hero-text {
+        margin-top: 9.72222vw;
+        margin-bottom: 0;
+        font-size: 3.61111vw;
+        line-height: 4.44444vw;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+      .hr-hero-section .hero-overlay .hero-text-bold {
+        margin-top: 0;
+        font-size: 8.33333vw;
+        line-height: 8.33333vw;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+
   .hr-partners-section {
-    height: 41.6666666667vw;
-    padding: 11.1111111111vw 0;
+    height: 41.66667vw;
+    padding: 11.11111vw 0;
     -webkit-box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.3); }
     .hr-partners-section .hr-partners-title {
-      font-size: 3.8888888889vw;
+      font-size: 3.88889vw;
       line-height: 5vw;
       margin: 0; }
     .hr-partners-section .hr-partners-images {
-      padding-top: 5.5555555556vw; }
+      padding-top: 5.55556vw; }
       .hr-partners-section .hr-partners-images .partners-images-one {
-        padding-top: 0.2777777778vw;
-        margin-right: 11.1111111111vw;
+        padding-top: 0.27778vw;
+        margin-right: 11.11111vw;
         width: 25vw;
-        height: 8.3333333333vw; }
+        height: 8.33333vw; }
       .hr-partners-section .hr-partners-images .partners-images-two {
-        width: 26.6666666667vw;
-        height: 8.8888888889vw; }
+        width: 26.66667vw;
+        height: 8.88889vw; }
 
   .hr-rentalone-section {
-    height: 97.2222222222vw; }
+    height: 97.22222vw;
+    background-position: center; }
     .hr-rentalone-section .hr-rentalone-overlay .rentalone-logo {
-      padding-top: 27.7777777778vw;
-      width: 52.7777777778vw; }
+      padding-top: 27.77778vw;
+      width: 52.77778vw; }
     .hr-rentalone-section .hr-rentalone-overlay .rentalone-button {
-      width: 43.3333333333vw;
-      padding: 2.2222222222vw 8.8888888889vw;
-      border-radius: 27.7777777778vw;
+      width: 43.33333vw;
+      padding: 2.22222vw 8.88889vw;
+      border-radius: 27.77778vw;
       border: solid 2px #fff;
-      margin: 8.3333333333vw auto 0; }
+      margin: 8.33333vw auto 0; }
       .hr-rentalone-section .hr-rentalone-overlay .rentalone-button a {
         height: 100%;
-        font-size: 3.8888888889vw;
-        line-height: 5.5555555556vw; }
+        font-size: 3.88889vw;
+        line-height: 5.55556vw; }
 
   .hr-footer-section {
     height: 34.1666666667vw;
