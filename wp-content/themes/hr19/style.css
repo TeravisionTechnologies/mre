@@ -74,6 +74,84 @@ body {
 .no-margin {
   margin: 0; }
 
+#hr-header .logo-header {
+  top: 0;
+  height: 5.55556vw;
+  left: 5.55556vw;
+  position: absolute;
+  width: 56.94444vw;
+  background-color: #fff;
+  z-index: 2; }
+  #hr-header .logo-header .img-div {
+    width: 25vw;
+    position: relative;
+    height: 5.55556vw; }
+    #hr-header .logo-header .img-div img {
+      width: 10.27778vw;
+      height: 3.54167vw;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); }
+#hr-header .social-header {
+  top: 0;
+  left: 62.5vw;
+  height: 5.55556vw;
+  position: absolute;
+  width: 37.5vw;
+  background-color: #fff;
+  z-index: 2; }
+  #hr-header .social-header .social-icons {
+    height: 2.35417vw;
+    position: absolute;
+    list-style: none;
+    right: 3.49306vw;
+    top: 1.61806vw; }
+    #hr-header .social-header .social-icons .social-icon {
+      position: relative;
+      height: 100%;
+      width: 2.35417vw;
+      border-radius: 50%;
+      background: #fff;
+      display: inline-block;
+      margin-right: 0.83333vw; }
+      #hr-header .social-header .social-icons .social-icon:hover {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3); }
+      #hr-header .social-header .social-icons .social-icon a {
+        color: red; }
+        #hr-header .social-header .social-icons .social-icon a i {
+          font-size: 1.52778vw;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
+
+.hr-hero-section {
+  margin-top: 5.55556vw;
+  height: 50vw;
+  position: relative;
+  background-size: cover; }
+  .hr-hero-section .hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); }
+    .hr-hero-section .hero-overlay .hero-text {
+      margin-top: 15.13889vw;
+      margin-bottom: 0;
+      font-family: Montserrat-Regular, sans-serif;
+      font-size: 2.08333vw;
+      line-height: 2.08333vw;
+      color: #fff;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+    .hr-hero-section .hero-overlay .hero-text-bold {
+      margin-top: 0.27778vw;
+      font-family: Montserrat-Bold, sans-serif;
+      font-size: 4.86111vw;
+      line-height: 4.86111vw;
+      color: #fff;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+
 .hr-partners-section {
   z-index: 1;
   height: 22.22222vw;
@@ -563,6 +641,26 @@ a.hr-phone-num {
     width: 1170px;
     height: 100%; }
 
+  .hr-hero-section {
+    margin-top: 80px;
+    height: 720px; }
+    .hr-hero-section .hero-overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); }
+      .hr-hero-section .hero-overlay .hero-text {
+        margin-top: 218px;
+        margin-bottom: 0;
+        font-size: 30px;
+        line-height: 30px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+      .hr-hero-section .hero-overlay .hero-text-bold {
+        margin-top: 4px;
+        font-size: 70px;
+        line-height: 70px;
+        color: #fff;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+
   .hr-partners-section {
     height: 320px;
     padding: 81px 0 82px 0;
@@ -710,6 +808,26 @@ a.hr-phone-num {
     width: 86.58854vw;
     height: 100%; }
 
+  .hr-hero-section {
+    margin-top: 10.41667vw;
+    height: 53.38542vw;
+    background-position: center; }
+    .hr-hero-section .hero-overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); }
+      .hr-hero-section .hero-overlay .hero-text {
+        margin-top: 14.45313vw;
+        margin-bottom: 0;
+        font-size: 3.125vw;
+        line-height: 3.90625vw;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+      .hr-hero-section .hero-overlay .hero-text-bold {
+        margin-top: 0;
+        font-size: 7.55208vw;
+        line-height: 7.8125vw;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+
   .hr-partners-section {
     height: 31.25vw;
     padding: 7.8125vw 0;
@@ -732,7 +850,8 @@ a.hr-phone-num {
         height: 7.29167vw; }
 
   .hr-rentalone-section {
-    height: 52.08333vw; }
+    height: 52.08333vw;
+    background-position: center; }
     .hr-rentalone-section .hr-rentalone-overlay .rentalone-logo {
       padding-top: 13.28125vw;
       width: 32.55208vw; }
@@ -849,6 +968,26 @@ a.hr-phone-num {
   .container-hr {
     width: 86.11111vw; }
 
+  .hr-hero-section {
+    margin-top: 16.66667vw;
+    height: 58.33333vw;
+    background-position: center; }
+    .hr-hero-section .hero-overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); }
+      .hr-hero-section .hero-overlay .hero-text {
+        margin-top: 9.72222vw;
+        margin-bottom: 0;
+        font-size: 3.61111vw;
+        line-height: 4.44444vw;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+      .hr-hero-section .hero-overlay .hero-text-bold {
+        margin-top: 0;
+        font-size: 8.33333vw;
+        line-height: 8.33333vw;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+
   .hr-partners-section {
     height: 41.66667vw;
     padding: 11.11111vw 0;
@@ -871,7 +1010,8 @@ a.hr-phone-num {
         height: 8.88889vw; }
 
   .hr-rentalone-section {
-    height: 97.22222vw; }
+    height: 97.22222vw;
+    background-position: center; }
     .hr-rentalone-section .hr-rentalone-overlay .rentalone-logo {
       padding-top: 27.77778vw;
       width: 52.77778vw; }

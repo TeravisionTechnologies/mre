@@ -13,6 +13,89 @@ body
   margin: 0
 // END General
 
+// Header
+#hr-header
+  .logo-header
+    top: 0
+    height: get-vw-desktop(80px)
+    left: get-vw-desktop(80px)
+    position: absolute
+    width: get-vw-desktop(820px)
+    background-color: $white
+    z-index: 2
+    .img-div
+      width: get-vw-desktop(360px)
+      position: relative
+      height: get-vw-desktop(80px)
+      img
+        width: get-vw-desktop(148px)
+        height: get-vw-desktop(51px)
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+  .social-header
+    top: 0
+    left: get-vw-desktop(900px)
+    height: get-vw-desktop(80px)
+    position: absolute
+    width: get-vw-desktop(540px)
+    background-color: $white
+    z-index: 2
+    .social-icons
+      height: get-vw-desktop(33.9px)
+      position: absolute
+      list-style: none
+      right: get-vw-desktop(50.3px)
+      top: get-vw-desktop(23.3px)
+      .social-icon
+        position: relative
+        height: 100%
+        width: get-vw-desktop(33.9px)
+        border-radius: 50%
+        background: $white
+        display: inline-block
+        margin-right: get-vw-desktop(12px)
+        &:hover
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3)
+        a
+          color: red
+          i
+            font-size: get-vw-desktop(22px)
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+// END Header
+
+// Hero
+.hr-hero-section
+  margin-top: get-vw-desktop(80px)
+  height: get-vw-desktop(720px)
+  position: relative
+  background-size: cover
+  .hero-overlay
+    position: absolute
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.5)
+    .hero-text
+      margin-top: get-vw-desktop(218px)
+      margin-bottom: 0
+      font-family: Montserrat-Regular, sans-serif
+      font-size: get-vw-desktop(30px)
+      line-height: get-vw-desktop(30px)
+      color: $white
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5)
+    .hero-text-bold
+      margin-top: get-vw-desktop(4px)
+      font-family: Montserrat-Bold, sans-serif
+      font-size: get-vw-desktop(70px)
+      line-height: get-vw-desktop(70px)
+      color: $white
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5)
+// END Hero
+
 // Partners
 .hr-partners-section
   z-index: 1

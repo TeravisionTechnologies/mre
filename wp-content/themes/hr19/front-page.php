@@ -1,5 +1,10 @@
 <?php get_header(); ?>
-
+  <section class="col-xs-12 hr-hero-section text-center no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-image.jpg')">
+    <div class="hero-overlay">
+      <h3 class="hero-text">La mayor variedad de propiedades </h3>
+      <h2 class="hero-text-bold">exclusivas para ti</h2>
+    </div>
+  </section>
     <div class="container property-search-wrapper">
         <div class="row">
             <div class="col-md-12">
