@@ -5,6 +5,7 @@
       <h2 class="hero-text-bold">exclusivas para ti</h2>
     </div>
   </section>
+    <div class="clearfix"></div>
     <div class="container property-search-wrapper">
         <div class="row">
             <div class="col-md-12">
@@ -20,11 +21,11 @@
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                             <input type="radio" id="presale" name="status">
-                            <label for="presale"><?php _e('Pre-venta', 'hr') ?></label>
+                            <label for="presale" id="pre"><?php _e('Pre-venta', 'hr') ?></label>
                         </li>
                     </ul>
 
-                    <div class="col-md-12">
+                    <div class="col-xs-12 col-sm-12 col-md-12 search-text">
                         <div class="input-group">
                             <input type="search" name="s" placeholder="<?php _e('Introduzca una dirección, ciudad, barrio o código postal', 'hr') ?>" value="<?php echo get_query_var('s'); ?>" onBlur="if (this.value == '')
                                     this.value = '<?php echo get_query_var('s'); ?>'" onFocus="if (this.value === '<?php echo get_query_var('s'); ?>')
@@ -35,39 +36,43 @@
                     </div>
 
                     <div class="col-md-12 property-filters">
-                        <div class="col-xs-6 col-sm-6 col-md-3">
+                        <div class="col-xs-6 col-sm-3 col-md-3">
                             <span class="filter"><?php _e('Tipo de vivienda', 'hr') ?></span>
                             <div class="styled-select">
                                 <select>
-                                    <option>Here is the first option</option>
-                                    <option>The second option</option>
+                                    <option>--</option>
+                                    <option>Una sola familia</option>
+                                    <option>Duplex</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3">
+                        <div class="col-xs-6 col-sm-3 col-md-3">
                             <span class="filter"><?php _e('Rango de Precio', 'hr') ?></span>
                             <div class="styled-select">
                                 <select>
-                                    <option>Here is the first option</option>
-                                    <option>The second option</option>
+                                    <option>--</option>
+                                    <option>$60.000 - 120.000</option>
+                                    <option>$120.000 - 180.000</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3">
+                        <div class="col-xs-6 col-sm-3 col-md-3">
                             <span class="filter"><?php _e('Nro. de habitaciones', 'hr') ?></span>
                             <div class="styled-select">
                                 <select>
-                                    <option>Here is the first option</option>
-                                    <option>The second option</option>
+                                    <option>--</option>
+                                    <option>2+</option>
+                                    <option>3+</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3">
-                            <span class="filter"> Nro. de baños </span>
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <span class="filter"><?php _e('Nro. de baños', 'hr') ?></span>
                             <div class="styled-select">
                                 <select>
-                                    <option>Here is the first option</option>
-                                    <option>The second option</option>
+                                    <option>--</option>
+                                    <option>2+</option>
+                                    <option>3+</option>
                                 </select>
                             </div>
                         </div>
@@ -81,11 +86,11 @@
     <div class="container property-list">
         <div class="row">
             <div class="property-sorting">
-                <div class="col-md-4">
+                <div class="col-sm-4 col-md-4">
                     <span class="state-search">Miami, FL</span>
                     <span class="results-search">Mostrando 10 de 8694 casas</span>
                 </div>
-                <div class="col-md-8">
+                <div class="col-sm-8 col-md-8 text-center sort-select">
                     <select class="pull-right">
                         <option selected><?php _e('Ordenar por  ', 'hr') ?></option>
                         <option value="price"><?php _e('Por precio', 'hr') ?></option>
@@ -102,9 +107,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <hr>
-                </div>
+                <div class="col-sm-12 col-md-12"><hr></div>
             </div>
         </div>
         <div class="row">
@@ -114,7 +117,7 @@
         </div>
         <div class="row">
             <?php for ($x = 0; $x <= 8; $x++) { ?>
-                <div class="col-md-4">
+                <div class="col-xs-12 col-sm-4 col-md-4">
                     <a class="property">
                         <div class="property-image"
                              style="background: url('http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg');"></div>
@@ -129,6 +132,8 @@
             <?php } ?>
         </div>
     </div>
+  <section class="col-xs-12" style="height: 200px; background-color: red;">
+  </section>
   <section class="col-xs-12 hr-partners-section text-center">
     <div class="container">
       <p class="hr-partners-title">La nueva forma de <span>invertir en propiedades</span></p>
