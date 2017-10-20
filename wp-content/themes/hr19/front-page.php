@@ -1,28 +1,28 @@
 <?php get_header(); ?>
 
-    <!--<div class="container property-search-wrapper">
+    <div class="container property-search-wrapper">
         <div class="row">
             <div class="col-md-12">
                 <form id="property-search" class="property-search" action="./" method="post">
                     <ul class="property-status">
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                             <input type="radio" id="buy" name="status">
-                            <label for="buy"><?php /*_e('Compra', 'hr') */?></label>
+                            <label for="buy"><?php _e('Compra', 'hr') ?></label>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                             <input type="radio" id="rent" name="status">
-                            <label for="rent"><?php /*_e('Alquiler', 'hr') */?></label>
+                            <label for="rent"><?php _e('Alquiler', 'hr') ?></label>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                             <input type="radio" id="presale" name="status">
-                            <label for="presale"><?php /*_e('Pre-venta', 'hr') */?></label>
+                            <label for="presale"><?php _e('Pre-venta', 'hr') ?></label>
                         </li>
                     </ul>
 
                     <div class="col-md-12">
                         <div class="input-group">
                             <input type="search" name="search"
-                                   placeholder="<?php /*_e('Introduzca una dirección, ciudad, barrio o código postal', 'hr') */?>">
+                                   placeholder="<?php _e('Introduzca una dirección, ciudad, barrio o código postal', 'hr') ?>">
                             <span class="icon-search icon-search-input"></span>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
 
                     <div class="col-md-12 property-filters">
                         <div class="col-xs-6 col-sm-6 col-md-3">
-                            <span class="filter"><?php /*_e('Tipo de vivienda', 'hr') */?></span>
+                            <span class="filter"><?php _e('Tipo de vivienda', 'hr') ?></span>
                             <div class="styled-select">
                                 <select>
                                     <option>Here is the first option</option>
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-3">
-                            <span class="filter"><?php /*_e('Rango de Precio', 'hr') */?></span>
+                            <span class="filter"><?php _e('Rango de Precio', 'hr') ?></span>
                             <div class="styled-select">
                                 <select>
                                     <option>Here is the first option</option>
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-3">
-                            <span class="filter"><?php /*_e('Nro. de habitaciones', 'hr') */?></span>
+                            <span class="filter"><?php _e('Nro. de habitaciones', 'hr') ?></span>
                             <div class="styled-select">
                                 <select>
                                     <option>Here is the first option</option>
@@ -88,7 +88,7 @@
             </div>
         </div>
         <div class="row">
-            <?php /*for ($x = 0; $x <= 8; $x++) { */?>
+            <?php for ($x = 0; $x <= 8; $x++) { ?>
                 <div class="col-md-4">
                     <a class="property">
                         <div class="property-image"
@@ -101,9 +101,9 @@
                         </div>
                     </a>
                 </div>
-            <?php /*} */?>
+            <?php } ?>
         </div>
-    </div>-->
+    </div>
   <section class="col-xs-12" style="height: 200px; background-color: red;">
   </section>
   <section class="col-xs-12 hr-partners-section text-center">
