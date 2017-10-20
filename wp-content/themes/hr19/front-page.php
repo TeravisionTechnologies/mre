@@ -132,8 +132,6 @@
             <?php } ?>
         </div>
     </div>
-  <section class="col-xs-12" style="height: 200px; background-color: red;">
-  </section>
   <section class="col-xs-12 hr-partners-section text-center">
     <div class="container">
       <p class="hr-partners-title">La nueva forma de <span>invertir en propiedades</span></p>
