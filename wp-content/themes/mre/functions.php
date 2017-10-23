@@ -38,13 +38,15 @@
 		__DIR__.'/includes/post-types/broker/',
 		__DIR__.'/includes/post-types/developer/',
 		__DIR__.'/includes/post-types/header-footer/',
-    __DIR__.'/includes/post-types/services/'
-	);
+        __DIR__.'/includes/post-types/services/',
+        __DIR__.'/includes/post-types/office/'
+    );
 
 	// File names inside post-types dirs
 	$files = array (
 		'meta-boxes.php',
-		'post-type.php'
+		'post-type.php',
+        'taxonomy.php'
 	);
 
 	foreach ($postTypeDir as $directory) {
@@ -75,6 +77,8 @@
 		create_post_type_header_footer();
 		// Post Type for Services
 		create_post_type_services();
+        // Post Type for Offices
+        create_post_type_offices();
 	}
 
 	/* Remove text area field from header and footer */
