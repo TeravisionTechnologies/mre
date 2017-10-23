@@ -32,4 +32,15 @@ jQuery(document).ready(function () {
     });
   }
 
+  // Go to top functionality
+  $(".footer-top").click(function () {
+    $("html, body").animate({scrollTop: 0}, 2000);
+  });
+
+  //Menu flags
+  $('.hr-menu-language-flag').click(function () {
+        $('.hr-menu-language-flag').css('opacity', 0.4);
+        $(this).css('opacity', 1);
+    });
+
 });

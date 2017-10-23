@@ -4,6 +4,170 @@
   height: 100%
 // END General
 
+// Header
+#hr-header
+  .logo-header
+    top: 0
+    height: 80px
+    .img-div
+      height: 80px
+      img
+        width: 60px
+        height: 62px
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+  .social-header
+    top: 0
+    height: 80px
+    z-index: 2
+    .social-icons
+      height: 33.9px
+      right: 50.3px
+      top: 23.3px
+      .social-icon
+        height: 100%
+        width: 33.9px
+        border-radius: 50%
+        margin-right: 12px
+        &:hover
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3)
+        a
+          i
+            font-size: 22px
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+
+.o-wrapper 
+  -webkit-transition: -webkit-transform 0.3s
+  transition: transform 0.3s
+
+.o-container 
+  margin: 0 auto
+  padding: 0 12px
+  max-width: 960px
+
+@media all and (min-width: 320px) 
+.c-menu--slide-left,
+.c-menu--slide-right,
+.c-menu--push-left,
+.c-menu--push-right 
+  width: 320px
+
+.c-menu--slide-left .c-menu__link,
+.c-menu--slide-right .c-menu__link,
+.c-menu--push-left .c-menu__link,
+.c-menu--push-right .c-menu__link 
+  padding: 12px 24px
+
+@media all and (min-width: 320px) 
+.c-menu--slide-left,
+.c-menu--push-left 
+  -webkit-transform: translateX(-320px)
+  -ms-transform: translateX(-320px)
+  transform: translateX(-320px)
+
+.c-menu__close 
+  font-size: 14px
+
+.c-buttons 
+  margin-bottom: 48px
+
+.c-button 
+  padding: 12px 24px
+  font-size: 14px
+  border: solid 2px $white
+
+.menu-button
+  top: 0
+  left: 0
+  padding: 27px 0 15px 0
+  height: 80px 
+
+.menu
+  min-width: 100px
+  max-width: 320px
+  height: 960px
+  background: rgba($white, 0.95)
+  .hr-menu
+    top: 80px
+    left: 0
+    padding: 0
+    .hr-menu-item
+      border-bottom: 2px solid rgba(127, 129, 130, 0.15)
+      padding: 26px 0 0 50px
+      height: 95px
+      font-size: 24px
+      line-height: 40px
+      a
+        color: $grey-1
+    &:first-child
+      border-top: 2px solid rgba(127, 129, 130, 0.15)
+  .hr-menu-language
+    bottom: 170px
+    left: 0
+    height: 235px
+    .hr-menu-language-text
+      padding-top: 40px
+      font-size: 16px
+      line-height: 20px
+      margin: 0
+    .hr-menu-language-flag
+      margin: 25px 12.5px 0 12.5px
+      width: 50px
+      height: 50px
+  .hr-menu-social
+    height: 63px
+    bottom: 0
+    left: 0
+    .menu-social-icons
+      font-size: 22px
+      padding: 0
+      .menu-social-icon
+        height: 38px
+        width: 38px
+
+#nav-icon4
+  width: 39px
+  height: 45px
+  left: 0
+  right: 0
+  bottom: 0
+     
+#nav-icon4
+  span
+    height: 4px
+    width: 39px
+    border-radius: 9px
+    left: 0
+
+#nav-icon4 span:nth-child(1)
+  top: 0
+
+#nav-icon4 span:nth-child(2)
+  top: 10px
+
+#nav-icon4 span:nth-child(3)
+  top: 20px
+
+#nav-icon4.open span:nth-child(1)
+  top: -3px
+  left: 8px
+  height: 7px
+  width: 30px
+
+#nav-icon4.open span:nth-child(2)
+  width: 0
+
+#nav-icon4.open span:nth-child(3)
+
+  top: 18px
+  left: 8px
+  height: 7px
+  width: 30px
+// END Header
+
 // Hero
 .hr-hero-section
   margin-top: 80px
@@ -12,13 +176,13 @@
     width: 100%
     height: 100%
     background: rgba(0, 0, 0, 0.5)
-    .hero-text
+    h3
       margin-top: 218px
       margin-bottom: 0
       font-size: 30px
       line-height: 30px
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5)
-    .hero-text-bold
+    h2
       margin-top: 4px
       font-size: 70px
       line-height: 70px

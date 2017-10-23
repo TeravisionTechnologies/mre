@@ -3,6 +3,169 @@
   width: get-vw-mobile(310px)
 // END General
 
+// Header
+.menu
+  min-width: get-vw-mobile(100px)
+  width: 100%
+  max-width: get-vw-mobile(300px)
+  height: get-vw-mobile(582px)
+  .hr-menu
+    top: get-vw-mobile(60px)
+    left: 0
+    padding: 0
+    width: 100%
+    .hr-menu-item
+      border-bottom: 2px solid rgba(127, 129, 130, 0.15)
+      padding: get-vw-mobile(20px) 0 0 get-vw-mobile(30px)
+      height: get-vw-mobile(60px)
+      font-size: get-vw-mobile(16px)
+      line-height: get-vw-mobile(20px)
+    &:first-child
+      border-top: 2px solid rgba(127, 129, 130, 0.15)
+  .hr-menu-language
+    width: 100%
+    bottom: get-vw-mobile(160px)
+    left: 0
+    height: get-vw-mobile(60px)
+    .hr-menu-language-text
+      padding-top: get-vw-mobile(20px)
+      font-size: get-vw-mobile(12px)
+      line-height: get-vw-mobile(20px)
+    .hr-menu-language-flag
+      margin: get-vw-mobile(15px) get-vw-mobile(8px) 0 get-vw-mobile(8px)
+      opacity: 0.4
+      width: get-vw-mobile(32px)
+      height: get-vw-mobile(32px)
+    .language-flag-active
+      opacity: 1
+  .hr-menu-social
+    display: block
+    height: get-vw-mobile(52px)
+    bottom: 0
+    width: 100%
+    text-align: center
+    .menu-social-icons
+      font-size: get-vw-mobile(22px)
+      padding: 0
+      text-align: center
+      .menu-social-icon
+        height: get-vw-mobile(37px)
+        width: get-vw-mobile(37px)
+
+.menu-button
+  top: 0
+  left: 0
+  padding: get-vw-mobile(20px) 0 get-vw-mobile(27px) get-vw-mobile(20px)
+  height: get-vw-mobile(60px)
+  -webkit-transition: .3s
+  transition: .3s
+  z-index: 2
+  width: 15.28vw
+
+#nav-icon4
+  width: get-vw-mobile(26px)
+
+#nav-icon4
+  span
+    height: get-vw-mobile(3px)
+    width: get-vw-mobile(26px)
+
+#nav-icon4 span:nth-child(1)
+  top: get-vw-mobile(5px)
+
+#nav-icon4 span:nth-child(2)
+  top: get-vw-mobile(12px)
+
+#nav-icon4 span:nth-child(3)
+  top: get-vw-mobile(20px)
+
+#nav-icon4.open span:nth-child(1)
+  -webkit-transform: rotate(45deg)
+  -moz-transform: rotate(45deg)
+  -o-transform: rotate(45deg)
+  transform: rotate(45deg)
+  top: get-vw-mobile(3px)
+  left: get-vw-mobile(3px)
+  height: 5px
+  width: get-vw-mobile(26px)
+
+#nav-icon4.open span:nth-child(2)
+  width: 0%
+  opacity: 0
+
+#nav-icon4.open span:nth-child(3)
+  -webkit-transform: rotate(-45deg)
+  -moz-transform: rotate(-45deg)
+  -o-transform: rotate(-45deg)
+  transform: rotate(-45deg)
+  top: get-vw-mobile(22px)
+  left: get-vw-mobile(3px)
+  height: 5px
+  width: get-vw-mobile(26px)
+
+#hr-header
+  .logo-header
+    top: 0
+    height: get-vw-mobile(60px)
+    left: 15.28vw
+    width: 48.33vw
+    .img-div
+      width: 27vw
+      height: get-vw-mobile(60px)
+      img
+        width: get-vw-mobile(50px)
+        height: get-vw-mobile(50px)
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+  .social-header
+    top: 0
+    left: 63.61vw
+    height: get-vw-mobile(60px)
+    width: 36.39vw
+    z-index: 2
+    .social-icons
+      display: none
+
+.o-wrapper 
+  -webkit-transition: -webkit-transform 0.3s
+  transition: transform 0.3s
+
+.o-container 
+  margin: 0 auto
+  padding: 0 get-vw-mobile(12px)
+  max-width: get-vw-mobile(960px)
+
+.c-menu--slide-left,
+.c-menu--slide-right,
+.c-menu--push-left,
+.c-menu--push-right 
+  width: get-vw-mobile(300px)
+
+.c-menu--slide-left .c-menu__link,
+.c-menu--slide-right .c-menu__link,
+.c-menu--push-left .c-menu__link,
+.c-menu--push-right .c-menu__link 
+  padding: get-vw-mobile(12px) get-vw-mobile(24px)
+
+.c-menu--slide-left,
+.c-menu--push-left 
+  -webkit-transform: translateX(get-vw-mobile(-300px))
+  -ms-transform: translateX(get-vw-mobile(-300px))
+  transform: translateX(get-vw-mobile(-300px))
+
+.c-menu__close 
+  font-size: get-vw-mobile(14px)
+
+.c-buttons 
+  margin-bottom: get-vw-mobile(48px)
+
+.c-button 
+  padding: get-vw-mobile(12px) get-vw-mobile(24px)
+  font-size: get-vw-mobile(14px)
+  border: solid 2px $white
+// END Header
+
 // Hero
 .hr-hero-section
   margin-top: get-vw-mobile(60px)
@@ -12,13 +175,13 @@
     width: 100%
     height: 100%
     background: rgba(0, 0, 0, 0.5)
-    .hero-text
+    h3
       margin-top: get-vw-mobile(35px)
       margin-bottom: 0
       font-size: get-vw-mobile(13px)
       line-height: get-vw-mobile(16px)
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5)
-    .hero-text-bold
+    h2
       margin-top: 0
       font-size: get-vw-mobile(30px)
       line-height: get-vw-mobile(30px)

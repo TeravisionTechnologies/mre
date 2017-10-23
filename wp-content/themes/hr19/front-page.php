@@ -1,8 +1,22 @@
-<?php get_header(); ?>
-  <section class="col-xs-12 hr-hero-section text-center no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/hero-image.jpg')">
+<?php 
+    get_header();
+    $home_query = get_posts(
+        array(
+            'post_type' => 'header_footer'
+        )
+    );
+    $hero = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
+    $partners = get_post_meta( $home_query[0]->ID, '_hf_partners', true );
+    $rental = get_post_meta( $home_query[0]->ID, '_hf_rental', true );
+    $contact = get_post_meta( $home_query[0]->ID, '_hf_contact_form', true );
+?>
+  <section class="col-xs-12 hr-hero-section text-center no-padding" style="background-image: url('<?php echo $hero[0]["_hf_hero_background"] ?>');">
     <div class="hero-overlay">
-      <h3 class="hero-text">La mayor variedad de propiedades </h3>
-      <h2 class="hero-text-bold">exclusivas para ti</h2>
+    <?php
+      if(isset($hero[0]["_hf_hero_text"])) {
+        echo $hero[0]["_hf_hero_text"];
+      }
+    ?>
     </div>
   </section>
     <div class="clearfix"></div>
@@ -134,29 +148,29 @@
     </div>
   <section class="col-xs-12 hr-partners-section text-center">
     <div class="container">
-      <p class="hr-partners-title">La nueva forma de <span>invertir en propiedades</span></p>
+      <p class="hr-partners-title"><?php if(isset($partners[0]['_hf_partners_text'])) { echo $partners[0]['_hf_partners_text']; }?></p>
     </div>
     <div class="hr-partners-images">
-      <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/ala19.svg" alt="Logo ALA19" class="partners-images-one"/></a>
-      <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/mre.svg" alt="Logo MRE RealEstate" class="partners-images-two"/></a>
+      <a href="#"><img src="<?php echo $partners[0]['_hf_partner_logo_left']; ?>" alt="Logo ALA19" class="partners-images-one"/></a>
+      <a href="#"><img src="<?php echo $partners[0]['_hf_partner_logo_right']; ?>" alt="Logo MRE RealEstate" class="partners-images-two"/></a>
     </div>
   </section>
-  <section class="col-xs-12 hr-rentalone-section text-center no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')">
+  <section class="col-xs-12 hr-rentalone-section text-center no-padding" style="background-image: url('<?php echo $rental[0]["_hf_rental_background"] ?>')">
     <div class="hr-rentalone-overlay">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/rentalone.svg" alt="Logo Rental One" class="rentalone-logo"/>
+      <img src="<?php echo $rental[0]["_hf_rental_logo"] ?>" alt="Logo Rental One" class="rentalone-logo"/>
       <div class="rentalone-button"><a href="#">Ver más</a></div>
     </div>
   </section>
-  <section class="col-xs-12 hr-contact-div no-padding" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/contact-us-bg.jpg')">
+  <section class="col-xs-12 hr-contact-div no-padding" style="background-image: url('<?php if(isset($contact[0]["_hf_contact_background"])) { echo $contact[0]["_hf_contact_background"]; }?>')">
     <div class="container-hr center-block">
       <div class="row">
-        <p class="col-xs-12 text-center hr-contact-text">Nos gustaría asesorarte en tu próxima inversión</p>
-        <p class="col-xs-12 text-center hr-contact-text-bold">¡Contáctanos!</p>
+        <p class="col-xs-12 text-center hr-contact-text"><?php if(isset($contact[0]['_hf_contact_first'])) { echo $contact[0]['_hf_contact_first']; }?></p>
+        <p class="col-xs-12 text-center hr-contact-text-bold"><?php if(isset($contact[0]['_hf_contact_second'])) { echo $contact[0]['_hf_contact_second']; }?></p>
         <div class="col-xs-12 col-md-4 no-padding">
           <div class="hr-phone-box text-center center-block">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.svg" alt="Llamanos HR19">
-            <p>Llámanos para asesoría <strong>inmediata</strong></p>
-            <a href="#" class="hr-phone-num">+1 786 477.5091</a>
+            <p><?php if(isset($contact[0]['_hf_contact_text'])) { echo $contact[0]['_hf_contact_text']; }?></p>
+            <a href="tel:<?php echo str_replace(array(".", " ", "-", "/"), "", $contact[0]['_hf_contact_phone']); ?>" class="hr-phone-num"><?php echo $contact[0]['_hf_contact_phone']; ?></a>
           </div>
         </div>
         <div class="col-xs-12 col-md-8 hr-contact-form-div no-padding">
