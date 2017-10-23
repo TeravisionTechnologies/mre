@@ -52,8 +52,10 @@ jQuery(document).ready(function () {
   $("#menu-item-17").click(function (e) {
     e.preventDefault;
     slideLeft.close();
+    var position = $("#contact-us").offset().top;
+    var finalPosition = position - 80;
     $('html, body').animate({
-      scrollTop: $("#contact-us").offset().top
+      scrollTop: finalPosition
     }, 2000);
   });
 
