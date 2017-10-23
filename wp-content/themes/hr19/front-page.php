@@ -197,7 +197,7 @@
           </div>
         </div>
         <div class="col-xs-12 col-md-8 hr-contact-form-div no-padding">
-          <?php echo do_shortcode( '[contact-form-7 id="4" title="Home - Contact form"]' ); ?>
+          <?php echo do_shortcode( '[contact-form-7 id="5" title="Home - Contact form"]' ); ?>
         </div>
       </div>
     </div>
