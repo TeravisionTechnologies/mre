@@ -101,14 +101,14 @@ body {
 
 .menu {
   min-width: 6.94444vw;
-  width: 70%;
-  max-width: 22.22222vw;
+  width: 100%;
+  max-width: 27.56944vw;
   height: 66.66667vw;
   background: rgba(255, 255, 255, 0.95);
   position: relative; }
   .menu .mre-menu {
     position: absolute;
-    top: 5.41667vw;
+    top: 5.55556vw;
     left: 0;
     list-style: none;
     padding: 0;
@@ -116,11 +116,11 @@ body {
     text-align: left; }
     .menu .mre-menu .mre-menu-item {
       border-bottom: 2px solid rgba(127, 129, 130, 0.15);
-      padding: 1.80556vw 0 0 3.47222vw;
-      height: 6.59722vw;
+      padding: 2.08333vw 0 0 3.47222vw;
+      height: 5.83333vw;
       font-family: "Montserrat-Regular", sans-serif;
-      font-size: 1.66667vw;
-      line-height: 2.77778vw;
+      font-size: 1.38889vw;
+      line-height: 1.66667vw;
       cursor: pointer; }
       .menu .mre-menu .mre-menu-item a {
         opacity: 0.7;
@@ -133,12 +133,12 @@ body {
   .menu .mre-menu-language {
     width: 100%;
     position: absolute;
-    bottom: 11.80556vw;
+    bottom: 15.41667vw;
     left: 0;
     height: 16.31944vw;
     text-align: center; }
     .menu .mre-menu-language .mre-menu-language-text {
-      padding-top: 2.77778vw;
+      padding-top: 3.47222vw;
       font-family: "Archivo", sans-serif;
       font-size: 1.11111vw;
       line-height: 1.38889vw;
@@ -603,6 +603,7 @@ a.al-phone-num {
 .wpcf7-form textarea {
   width: 100%;
   color: #cfcfcf;
+  resize: none;
   font-size: 1.11111vw;
   max-height: 9.51389vw;
   line-height: 1.11111vw;
@@ -698,7 +699,7 @@ a.al-phone-num {
   height: 4px;
   width: 39px;
   background: #0976d1;
-  border-radius: 9px;
+  border-radius: 0.625vw;
   opacity: 1;
   left: 0;
   -webkit-transform: rotate(0deg);
@@ -731,6 +732,12 @@ a.al-phone-num {
   -o-transform-origin: left center;
   transform-origin: left center; }
 
+#nav-icon4.open {
+  margin: 0;
+  top: 45%;
+  right: 0;
+  left: auto; }
+
 #nav-icon4.open span:nth-child(1) {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -739,10 +746,11 @@ a.al-phone-num {
   top: -3px;
   left: 8px;
   height: 7px;
-  width: 30px; }
+  width: 20px;
+  background: #cfcfcf; }
 
 #nav-icon4.open span:nth-child(2) {
-  width: 0%;
+  width: 0;
   opacity: 0; }
 
 #nav-icon4.open span:nth-child(3) {
@@ -750,10 +758,11 @@ a.al-phone-num {
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  top: 18px;
+  top: 11px;
   left: 8px;
   height: 7px;
-  width: 30px; }
+  width: 20px;
+  background: #cfcfcf; }
 
 .c-button-close {
   right: 0 !important;
@@ -1427,29 +1436,29 @@ a.al-phone-num {
 
   .menu {
     min-width: 100px;
-    width: 70%;
-    max-width: 320px;
+    width: 100%;
+    max-width: 397px;
     height: 960px; }
     .menu .mre-menu {
-      top: 78px;
+      top: 80px;
       left: 0;
       padding: 0;
       width: 100%; }
       .menu .mre-menu .mre-menu-item {
         border-bottom: 2px solid rgba(127, 129, 130, 0.15);
         padding: 26px 0 0 50px;
-        height: 95px;
-        font-size: 24px;
-        line-height: 40px; }
+        height: 84px;
+        font-size: 20px;
+        line-height: 24px; }
       .menu .mre-menu:first-child {
         border-top: 2px solid rgba(127, 129, 130, 0.15); }
     .menu .mre-menu-language {
       width: 100%;
-      bottom: 170px;
+      bottom: 222px;
       left: 0;
       height: 235px; }
       .menu .mre-menu-language .mre-menu-language-text {
-        padding-top: 40px;
+        padding-top: 50px;
         font-size: 16px;
         line-height: 20px; }
       .menu .mre-menu-language .mre-menu-language-flag {
@@ -3008,6 +3017,9 @@ a.al-phone-num {
     left: 0.83333vw;
     height: 5px;
     width: 7.22222vw; }
+
+  #nav-icon4.open {
+    top: 30%; }
 
   #mre-header .logo-header {
     top: 0;

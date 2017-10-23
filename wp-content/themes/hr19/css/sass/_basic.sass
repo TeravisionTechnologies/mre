@@ -109,7 +109,7 @@ body
 .c-menu--slide-right,
 .c-menu--push-left,
 .c-menu--push-right 
-  width: get-vw-desktop(320px)
+  width: get-vw-desktop(397px)
 
 .c-menu--slide-left .c-menu__item,
 .c-menu--slide-right .c-menu__item,
@@ -157,9 +157,9 @@ body
 @media all and (min-width: 320px) 
 .c-menu--slide-left,
 .c-menu--push-left 
-  -webkit-transform: translateX(get-vw-desktop(-320px))
-  -ms-transform: translateX(get-vw-desktop(-320px))
-  transform: translateX(get-vw-desktop(-320px))
+  -webkit-transform: translateX(get-vw-desktop(-397px))
+  -ms-transform: translateX(get-vw-desktop(-397px))
+  transform: translateX(get-vw-desktop(-397px))
 
 .c-menu--slide-left.is-active,
 .c-menu--push-left.is-active 
@@ -246,7 +246,7 @@ body.has-active-menu
 .menu
   min-width: get-vw-desktop(100px)
   width: 100%
-  max-width: get-vw-desktop(320px)
+  max-width: get-vw-desktop(397px)
   height: get-vw-desktop(960px)
   background: rgba($white, 0.95)
   position: relative
@@ -260,11 +260,11 @@ body.has-active-menu
     text-align: left
     .hr-menu-item
       border-bottom: 2px solid rgba(127, 129, 130, 0.15)
-      padding: get-vw-desktop(26px) 0 0 get-vw-desktop(50px)
-      height: get-vw-desktop(95px)
+      padding: get-vw-desktop(30px) 0 0 get-vw-desktop(50px)
+      height: get-vw-desktop(84px)
       font-family: Montserrat-Regular, sans-serif
-      font-size: get-vw-desktop(24px)
-      line-height: get-vw-desktop(40px)
+      font-size: get-vw-desktop(20px)
+      line-height: get-vw-desktop(24px)
       cursor: pointer
       a
         opacity: 0.7
@@ -277,12 +277,12 @@ body.has-active-menu
   .hr-menu-language
     width: 100%
     position: absolute
-    bottom: get-vw-desktop(170px)
+    bottom: get-vw-desktop(222px)
     left: 0
     height: get-vw-desktop(235px)
     text-align: center
     .hr-menu-language-text
-      padding-top: get-vw-desktop(40px)
+      padding-top: get-vw-desktop(50px)
       font-family: Montserrat-Regular, sans-serif
       font-size: get-vw-desktop(16px)
       line-height: get-vw-desktop(20px)
@@ -374,6 +374,12 @@ body.has-active-menu
   -o-transform-origin: left center
   transform-origin: left center
 
+#nav-icon4.open
+  margin: 0
+  top: 45%
+  right: 0
+  left: auto
+
 #nav-icon4.open span:nth-child(1)
   -webkit-transform: rotate(45deg)
   -moz-transform: rotate(45deg)
@@ -382,7 +388,8 @@ body.has-active-menu
   top: -3px
   left: 8px
   height: 7px
-  width: 30px
+  width: 20px
+  background: $grey-2
 
 #nav-icon4.open span:nth-child(2)
   width: 0
@@ -393,10 +400,11 @@ body.has-active-menu
   -moz-transform: rotate(-45deg)
   -o-transform: rotate(-45deg)
   transform: rotate(-45deg)
-  top: 18px
+  top: 11px
   left: 8px
   height: 7px
-  width: 30px
+  width: 20px
+  background: $grey-2
 
 .c-button-close
   right: 0 !important
@@ -641,6 +649,7 @@ body.has-active-menu
     width: 262px
     height: 50px
     border-radius: 100px
+    cursor: pointer
     border: none
     padding: 10px 20px 10px 20px
     box-shadow: none!important
@@ -905,6 +914,7 @@ a.hr-phone-num
   textarea
     width: get-vw-desktop(775px)
     color: $grey-1
+    resize: none
     font-size: get-vw-desktop(16px)
     max-height: get-vw-desktop(137px)
     line-height: get-vw-desktop(16px)
