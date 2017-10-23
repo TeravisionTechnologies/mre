@@ -729,7 +729,7 @@ textarea
     height: 4px
     width: 39px
     background: $grey-1
-    border-radius: 9px
+    border-radius: get-vw-desktop(9px)
     opacity: 1
     left: 0
     -webkit-transform: rotate(0deg)
@@ -748,14 +748,12 @@ textarea
   -o-transform-origin: left center
   transform-origin: left center
 
-
 #nav-icon4 span:nth-child(2)
   top: 10px
   -webkit-transform-origin: left center
   -moz-transform-origin: left center
   -o-transform-origin: left center
   transform-origin: left center
-
 
 #nav-icon4 span:nth-child(3)
   top: 20px
@@ -764,6 +762,11 @@ textarea
   -o-transform-origin: left center
   transform-origin: left center
 
+#nav-icon4.open
+  margin: 0
+  top: 45%
+  right: 0
+  left: auto
 
 #nav-icon4.open span:nth-child(1)
   -webkit-transform: rotate(45deg)
@@ -773,11 +776,11 @@ textarea
   top: -3px
   left: 8px
   height: 7px
-  width: 30px
-
+  width: 20px
+  background: $white-3
 
 #nav-icon4.open span:nth-child(2)
-  width: 0%
+  width: 0
   opacity: 0
 
 #nav-icon4.open span:nth-child(3)
@@ -785,10 +788,11 @@ textarea
   -moz-transform: rotate(-45deg)
   -o-transform: rotate(-45deg)
   transform: rotate(-45deg)
-  top: 18px
+  top: 11px
   left: 8px
   height: 7px
-  width: 30px
+  width: 20px
+  background: $white-3
 
 .c-button-close
   right: 0 !important

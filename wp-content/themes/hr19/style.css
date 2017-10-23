@@ -428,6 +428,12 @@ body.has-active-menu {
   -o-transform-origin: left center;
   transform-origin: left center; }
 
+#nav-icon4.open {
+  margin: 0;
+  top: 45%;
+  right: 0;
+  left: auto; }
+
 #nav-icon4.open span:nth-child(1) {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -436,7 +442,8 @@ body.has-active-menu {
   top: -3px;
   left: 8px;
   height: 7px;
-  width: 30px; }
+  width: 20px;
+  background: #cfcfcf; }
 
 #nav-icon4.open span:nth-child(2) {
   width: 0;
@@ -447,10 +454,11 @@ body.has-active-menu {
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  top: 18px;
+  top: 11px;
   left: 8px;
   height: 7px;
-  width: 30px; }
+  width: 20px;
+  background: #cfcfcf; }
 
 .c-button-close {
   right: 0 !important;
@@ -1171,7 +1179,6 @@ h2.active {
   #nav-icon4 {
     width: 39px;
     height: 45px;
-    left: 0;
     right: 0;
     bottom: 0; }
 
@@ -1194,16 +1201,16 @@ h2.active {
     top: -3px;
     left: 8px;
     height: 7px;
-    width: 30px; }
+    width: 20px; }
 
   #nav-icon4.open span:nth-child(2) {
     width: 0; }
 
   #nav-icon4.open span:nth-child(3) {
-    top: 18px;
+    top: 11px;
     left: 8px;
     height: 7px;
-    width: 30px; }
+    width: 20px; }
 
   .hr-hero-section {
     margin-top: 80px;
@@ -1816,6 +1823,9 @@ h2.active {
     left: 0.83333vw;
     height: 5px;
     width: 7.22222vw; }
+
+  #nav-icon4.open {
+    top: 30%; }
 
   #nav-icon4.open span:nth-child(2) {
     width: 0%;
