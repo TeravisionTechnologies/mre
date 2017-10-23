@@ -698,7 +698,7 @@ a.al-phone-num {
   height: 4px;
   width: 39px;
   background: #0976d1;
-  border-radius: 9px;
+  border-radius: 0.625vw;
   opacity: 1;
   left: 0;
   -webkit-transform: rotate(0deg);
@@ -731,6 +731,12 @@ a.al-phone-num {
   -o-transform-origin: left center;
   transform-origin: left center; }
 
+#nav-icon4.open {
+  margin: 0;
+  top: 45%;
+  right: 0;
+  left: auto; }
+
 #nav-icon4.open span:nth-child(1) {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -739,10 +745,11 @@ a.al-phone-num {
   top: -3px;
   left: 8px;
   height: 7px;
-  width: 30px; }
+  width: 20px;
+  background: #cfcfcf; }
 
 #nav-icon4.open span:nth-child(2) {
-  width: 0%;
+  width: 0;
   opacity: 0; }
 
 #nav-icon4.open span:nth-child(3) {
@@ -750,10 +757,11 @@ a.al-phone-num {
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  top: 18px;
+  top: 11px;
   left: 8px;
   height: 7px;
-  width: 30px; }
+  width: 20px;
+  background: #cfcfcf; }
 
 .c-button-close {
   right: 0 !important;
@@ -3008,6 +3016,9 @@ a.al-phone-num {
     left: 0.83333vw;
     height: 5px;
     width: 7.22222vw; }
+
+  #nav-icon4.open {
+    top: 30%; }
 
   #mre-header .logo-header {
     top: 0;
