@@ -101,14 +101,14 @@ body {
 
 .menu {
   min-width: 6.94444vw;
-  width: 70%;
+  width: 100%;
   max-width: 27.56944vw;
   height: 66.66667vw;
   background: rgba(255, 255, 255, 0.95);
   position: relative; }
   .menu .mre-menu {
     position: absolute;
-    top: 5.41667vw;
+    top: 5.55556vw;
     left: 0;
     list-style: none;
     padding: 0;
@@ -176,6 +176,19 @@ body {
 .menu-bar {
   box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.2);
   height: 5.55556vw; }
+
+.menu-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1.875vw 0 1.04167vw 0;
+  height: 5.55556vw;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #ffffff;
+  z-index: 2;
+  width: 5.55556vw; }
 
 .menu-button .bar:nth-of-type(1) {
   margin-top: 0; }
@@ -1414,17 +1427,17 @@ a.al-phone-num {
 
   .menu {
     min-width: 100px;
-    width: 70%;
+    width: 100%;
     max-width: 397px;
     height: 960px; }
     .menu .mre-menu {
-      top: 78px;
+      top: 80px;
       left: 0;
       padding: 0;
       width: 100%; }
       .menu .mre-menu .mre-menu-item {
         border-bottom: 2px solid rgba(127, 129, 130, 0.15);
-        padding: 30px 0 0 50px;
+        padding: 26px 0 0 50px;
         height: 84px;
         font-size: 20px;
         line-height: 24px; }
