@@ -184,7 +184,7 @@
       <div class="rentalone-button"><a href="#">Ver más</a></div>
     </div>
   </section>
-  <section class="col-xs-12 hr-contact-div no-padding" style="background-image: url('<?php if(isset($contact[0]["_hf_contact_background"])) { echo $contact[0]["_hf_contact_background"]; }?>')">
+  <section id="contact-us" class="col-xs-12 hr-contact-div no-padding" style="background-image: url('<?php if(isset($contact[0]["_hf_contact_background"])) { echo $contact[0]["_hf_contact_background"]; }?>')">
     <div class="container-hr center-block">
       <div class="row">
         <p class="col-xs-12 text-center hr-contact-text"><?php if(isset($contact[0]['_hf_contact_first'])) { echo $contact[0]['_hf_contact_first']; }?></p>

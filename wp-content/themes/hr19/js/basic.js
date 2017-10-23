@@ -48,4 +48,13 @@ jQuery(document).ready(function () {
         $(this).css('opacity', 1);
     });
 
+  //Menu contact us functionality
+  $("#menu-item-17").click(function (e) {
+    e.preventDefault;
+    slideLeft.close();
+    $('html, body').animate({
+      scrollTop: $("#contact-us").offset().top
+    }, 2000);
+  });
+
 });
