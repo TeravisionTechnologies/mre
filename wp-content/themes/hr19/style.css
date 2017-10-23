@@ -982,7 +982,7 @@ a.hr-phone-num {
   font-size: 11px !important;
   font-weight: 700 !important;
   padding: 8px !important;
-  width: 100%; }
+  width: 53.61111vw; }
 
 h2.active {
   opacity: 1 !important; }
@@ -1000,7 +1000,7 @@ h2.active {
   font-size: 11px !important;
   font-weight: 700 !important;
   padding: 8px !important;
-  width: 100%; }
+  width: 53.61111vw; }
 
 .hr-footer-section {
   height: 15.97222vw;
@@ -1346,6 +1346,12 @@ h2.active {
     .wpcf7-form .wpcf7-submit:hover {
       background-color: rgba(255, 255, 255, 0.15); }
 
+  .wpcf7-validation-errors, .wpcf7-mail-sent-ng {
+    width: 772px; }
+
+  .wpcf7-mail-sent-ok {
+    width: 772px; }
+
   .hr-footer-section {
     height: 230px;
     padding: 50px 0;
@@ -1631,6 +1637,16 @@ h2.active {
     line-height: 2.60417vw; }
     .wpcf7-form .wpcf7-submit:hover {
       background-color: rgba(255, 255, 255, 0.7); }
+
+  .wpcf7-response-output {
+    top: -3.25521vw;
+    left: 3.90625vw; }
+
+  .wpcf7-validation-errors, .wpcf7-mail-sent-ng {
+    width: 86.58854vw; }
+
+  .wpcf7-mail-sent-ok {
+    width: 86.58854vw; }
 
   .hr-footer-section {
     height: 22.65625vw;
@@ -2011,6 +2027,15 @@ h2.active {
     .wpcf7-form .wpcf7-submit:hover {
       background-color: rgba(255, 255, 255, 0.7); }
 
+  .wpcf7-response-output {
+    margin-top: 0.5em !important; }
+
+  .wpcf7-validation-errors, .wpcf7-mail-sent-ng {
+    width: 86.11111vw; }
+
+  .wpcf7-mail-sent-ok {
+    width: 86.11111vw; }
+
   .hr-footer-section {
     height: 34.16667vw;
     padding: 5.55556vw 0;
@@ -2116,5 +2141,8 @@ h2.active {
 
   .pagination li a {
     padding: 5px 14px !important; } }
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  #nav-icon4 {
+    top: 5%; } }
 
 /*# sourceMappingURL=style.css.map */
