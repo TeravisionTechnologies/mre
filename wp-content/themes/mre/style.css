@@ -102,7 +102,7 @@ body {
 .menu {
   min-width: 6.94444vw;
   width: 70%;
-  max-width: 22.22222vw;
+  max-width: 27.56944vw;
   height: 66.66667vw;
   background: rgba(255, 255, 255, 0.95);
   position: relative; }
@@ -116,11 +116,11 @@ body {
     text-align: left; }
     .menu .mre-menu .mre-menu-item {
       border-bottom: 2px solid rgba(127, 129, 130, 0.15);
-      padding: 1.80556vw 0 0 3.47222vw;
-      height: 6.59722vw;
+      padding: 2.08333vw 0 0 3.47222vw;
+      height: 5.83333vw;
       font-family: "Montserrat-Regular", sans-serif;
-      font-size: 1.66667vw;
-      line-height: 2.77778vw;
+      font-size: 1.38889vw;
+      line-height: 1.66667vw;
       cursor: pointer; }
       .menu .mre-menu .mre-menu-item a {
         opacity: 0.7;
@@ -133,12 +133,12 @@ body {
   .menu .mre-menu-language {
     width: 100%;
     position: absolute;
-    bottom: 11.80556vw;
+    bottom: 15.41667vw;
     left: 0;
     height: 16.31944vw;
     text-align: center; }
     .menu .mre-menu-language .mre-menu-language-text {
-      padding-top: 2.77778vw;
+      padding-top: 3.47222vw;
       font-family: "Archivo", sans-serif;
       font-size: 1.11111vw;
       line-height: 1.38889vw;
@@ -176,19 +176,6 @@ body {
 .menu-bar {
   box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.2);
   height: 5.55556vw; }
-
-.menu-button {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 1.875vw 0 1.04167vw 0;
-  height: 5.55556vw;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  background-color: #ffffff;
-  z-index: 2;
-  width: 5.55556vw; }
 
 .menu-button .bar:nth-of-type(1) {
   margin-top: 0; }
@@ -1428,7 +1415,7 @@ a.al-phone-num {
   .menu {
     min-width: 100px;
     width: 70%;
-    max-width: 320px;
+    max-width: 397px;
     height: 960px; }
     .menu .mre-menu {
       top: 78px;
@@ -1437,19 +1424,19 @@ a.al-phone-num {
       width: 100%; }
       .menu .mre-menu .mre-menu-item {
         border-bottom: 2px solid rgba(127, 129, 130, 0.15);
-        padding: 26px 0 0 50px;
-        height: 95px;
-        font-size: 24px;
-        line-height: 40px; }
+        padding: 30px 0 0 50px;
+        height: 84px;
+        font-size: 20px;
+        line-height: 24px; }
       .menu .mre-menu:first-child {
         border-top: 2px solid rgba(127, 129, 130, 0.15); }
     .menu .mre-menu-language {
       width: 100%;
-      bottom: 170px;
+      bottom: 222px;
       left: 0;
       height: 235px; }
       .menu .mre-menu-language .mre-menu-language-text {
-        padding-top: 40px;
+        padding-top: 50px;
         font-size: 16px;
         line-height: 20px; }
       .menu .mre-menu-language .mre-menu-language-flag {
