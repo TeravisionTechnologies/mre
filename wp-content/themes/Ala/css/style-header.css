@@ -49,7 +49,7 @@
     .c-menu--slide-right,
     .c-menu--push-left,
     .c-menu--push-right {
-        width: 300px;
+        width: 397px;
     }
 }
 
@@ -106,9 +106,9 @@
 @media all and (min-width: 320px) {
     .c-menu--slide-left,
     .c-menu--push-left {
-        -webkit-transform: translateX(-300px);
-        -ms-transform: translateX(-300px);
-        transform: translateX(-300px);
+        -webkit-transform: translateX(-397px);
+        -ms-transform: translateX(-397px);
+        transform: translateX(-397px);
     }
 }
 
