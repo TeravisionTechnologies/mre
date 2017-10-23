@@ -103,76 +103,36 @@ $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
                     echo $ourOffices[0]['_hf_our_offices_text'];
                   }
                 ?>
-                <div class="flags-indicators">
-                  <img id="flag-image-1" class="flag-image flag-image-opacity" data-pagination="1" src="<?php echo get_template_directory_uri(); ?>/assets/ven_flag.svg" />
-                  <img id="flag-image-2" class="flag-image" data-pagination="2" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" />
-                  <img id="flag-image-3" class="flag-image flag-image-opacity" data-pagination="3" src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" />
-                </div>
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <?php
-                    if(isset($officesVe)) {
-                      foreach ($officesVe as $office) {
-                    ?>
-                    <div class="office-detail">
-                      <?php if(isset($office['_hf_offices_ve_city'])) { ?>
-                      <h5>
-                        <span><?php echo $office['_hf_offices_ve_city']; ?>:</span>
-                      </h5>
-                      <?php } ?>
-                      <?php if(isset($office['_hf_offices_ve_address'])) { ?>
-                      <h5><?php echo $office['_hf_offices_ve_address']; ?></h5>
-                      <?php } ?>
-                      <h5>Venezuela</h5>
-                      <?php if(isset($office['_hf_offices_ve_phone'])) { ?>
-                      <h5>Teléfonos: <?php echo $office['_hf_offices_ve_phone'];?></h5>
-                      <?php } ?>
-                    </div>
-                    <?php }} ?>
+                  <div class="flags-indicators">
+                      <?php
+                      $countries = get_terms('country', array('hide_empty' => 1, 'orderby' => 'count', 'order' => 'DESC'));
+                      if (!empty($countries) && !is_wp_error($countries)) {
+                          $j = 1;
+                          foreach ($countries as $country) {
+                              $meta_image = get_wp_term_image($country->term_id);
+                              $clase = ($j == 1 ? "flag-image-opacity" : "");
+                              echo '<img id="flag-image-'.$j.'" class="flag-image '.$clase.'" data-pagination="'.$j.'" src="'.$meta_image.'"/>';
+                              $j++;
+                          }
+                      } ?>
                   </div>
-                  <div class="swiper-slide">
-                    <?php
-                      if(isset($officesUs)) {
-                        foreach ($officesUs as $office) {
-                     ?>
-                      <div class="office-detail">
-                        <?php if(isset($office['_hf_offices_us_city'])) { ?>
-                          <h5>
-                            <span><?php echo $office['_hf_offices_us_city']; ?>:</span>
-                          </h5>
-                        <?php } ?>
-                        <?php if(isset($office['_hf_offices_us_address'])) { ?>
-                          <h5><?php echo $office['_hf_offices_us_address']; ?></h5>
-                        <?php } ?>
-                        <h5>USA</h5>
-                        <?php if(isset($office['_hf_offices_us_phone'])) { ?>
-                          <h5>Teléfonos: <?php echo $office['_hf_offices_us_phone'];?></h5>
-                        <?php } ?>
-                      </div>
-                    <?php }} ?>
+                  <div class="swiper-wrapper">
+                      <?php
+                      $countries = get_terms('country', array('hide_empty' => 1, 'orderby' => 'count', 'order' => 'DESC'));
+                      if (!empty($countries) && !is_wp_error($countries)) {
+                          foreach ($countries as $country) { ?>
+                              <div class="swiper-slide">
+                                  <?php $offices = array('post_type' => 'office', 'tax_query' => array(array('taxonomy' => 'country', 'field' => 'id', 'terms' => $country->term_id)));
+                                  query_posts($offices);
+                                  if (have_posts()): while (have_posts()): the_post(); ?>
+                                      <div class="office-detail">
+                                          <h5><span><?php the_title(); ?></span></h5>
+                                          <?php the_content(); ?>
+                                      </div>
+                                  <?php endwhile; endif; wp_reset_postdata(); ?>
+                              </div>
+                          <?php } } ?>
                   </div>
-                  <div class="swiper-slide">
-                    <?php
-                      if(isset($officesEs)) {
-                        foreach ($officesEs as $office) {
-                    ?>
-                      <div class="office-detail">
-                        <?php if(isset($office['_hf_offices_es_city'])) { ?>
-                          <h5>
-                            <span><?php echo $office['_hf_offices_es_city']; ?>:</span>
-                          </h5>
-                        <?php } ?>
-                        <?php if(isset($office['_hf_offices_es_address'])) { ?>
-                          <h5><?php echo $office['_hf_offices_es_address']; ?></h5>
-                        <?php } ?>
-                        <h5>España</h5>
-                        <?php if(isset($office['_hf_offices_es_phone'])) { ?>
-                          <h5>Teléfonos: <?php echo $office['_hf_offices_es_phone'];?></h5>
-                        <?php } ?>
-                      </div>
-                    <?php }} ?>
-                  </div>
-                </div>
               </div>
             </section>
             <section id="contact-us" class="col-xs-12 al-contact-div no-padding" style="background-image: url('<?php if(isset($contact[0]["_hf_contact_background"])) { echo $contact[0]["_hf_contact_background"]; }?>')">

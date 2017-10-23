@@ -96,45 +96,17 @@ jQuery(document).ready(function () {
     var swiperFlag = new Swiper('.swiper-container-flags', {
         initialSlide: 1,
         nested: true,
-        onSlideChangeEnd: function (swiper) {
-            var currentSlide = swiper.activeIndex + 1;
-            if (currentSlide == 1) {
-                $('#flag-image-1').removeClass('flag-image-opacity');
-                $('#flag-image-2').addClass('flag-image-opacity');
-                $('#flag-image-3').addClass('flag-image-opacity');
-            }
-            else if (currentSlide == 2) {
-                $('#flag-image-1').addClass('flag-image-opacity');
-                $('#flag-image-2').removeClass('flag-image-opacity');
-                $('#flag-image-3').addClass('flag-image-opacity');
-            }
-            else {
-                $('#flag-image-1').addClass('flag-image-opacity');
-                $('#flag-image-2').addClass('flag-image-opacity');
-                $('#flag-image-3').removeClass('flag-image-opacity');
-            }
-        }
     });
 
     // Adding Swiper functionality to flags
     $('.flag-image').on('click', function () {
         var index = $(this).data('pagination');
         swiperFlag.slideTo(index - 1);
-        if (index == 1) {
-            $('#flag-image-1').removeClass('flag-image-opacity');
-            $('#flag-image-2').addClass('flag-image-opacity');
-            $('#flag-image-3').addClass('flag-image-opacity');
-        }
-        else if (index == 2) {
-            $('#flag-image-1').addClass('flag-image-opacity');
-            $('#flag-image-2').removeClass('flag-image-opacity');
-            $('#flag-image-3').addClass('flag-image-opacity');
-        }
-        else {
-            $('#flag-image-1').addClass('flag-image-opacity');
-            $('#flag-image-2').addClass('flag-image-opacity');
-            $('#flag-image-3').removeClass('flag-image-opacity');
-        }
+    });
+
+    $(".flags-indicators img").click(function (e) {
+        $(".flag-image-opacity").removeClass("flag-image-opacity");
+        $(this).addClass("flag-image-opacity");
     });
 
     // Swiper Blog Categories
