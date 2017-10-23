@@ -657,6 +657,23 @@ body.has-active-menu {
           transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33); }
     .property-list .property-sorting .choose-search .radio-inline {
       margin-top: 0 !important; }
+  .property-list .pagination {
+    margin: 40px 0 100px 0; }
+    .property-list .pagination li a {
+      color: #033c5a !important;
+      font-size: 16px;
+      padding: 8px 17px;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -ms-transition: 0.5s;
+      -o-transition: 0.5s;
+      transition: 0.5s; }
+      .property-list .pagination li a:hover {
+        color: #fff !important;
+        background: #033c5a; }
+    .property-list .pagination li .active {
+      color: #fff !important;
+      background: #033c5a; }
   .property-list select {
     width: 262px;
     height: 50px;
@@ -1373,7 +1390,10 @@ a.hr-phone-num {
     .property .property-info span {
       font-size: 9px; }
     .property .property-info .property-price {
-      font-size: 16px; } }
+      font-size: 16px; }
+
+  .pagination li a {
+    padding: 7px 16px !important; } }
 @media only screen and (max-width: 767px) {
   .container-hr {
     width: 86.1111111111vw; }
@@ -1615,6 +1635,9 @@ a.hr-phone-num {
       order: 2;
       margin: 0 auto; }
     .sort-select .choose-search {
-      order: 1; } }
+      order: 1; }
+
+  .pagination li a {
+    padding: 5px 14px !important; } }
 
 /*# sourceMappingURL=style.css.map */

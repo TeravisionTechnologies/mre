@@ -638,6 +638,24 @@ body.has-active-menu
             transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33)
       .radio-inline
         margin-top: 0 !important
+  .pagination
+    margin: 40px 0 100px 0
+    li
+      a
+        color: $mainblue !important
+        font-size: 16px
+        padding: 8px 17px
+        -webkit-transition: .5s
+        -moz-transition: .5s
+        -ms-transition: .5s
+        -o-transition: .5s
+        transition: .5s
+        &:hover
+          color: $white !important
+          background: $mainblue
+      .active
+        color: $white !important
+        background: $mainblue
 
   select
     width: 262px
