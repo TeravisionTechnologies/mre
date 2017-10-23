@@ -1,35 +1,5 @@
 jQuery(document).ready(function () {
 
-
-    // Header Swiper
-    /*var toggleMenu = function() {
-      if (swiperHeader.previousIndex == 0) {
-        swiperHeader.slidePrev();
-      }
-    }
-      , menuButton = document.getElementsByClassName('menu-button')[0]
-      , swiperHeader = new Swiper('.swiper-container-menu', {
-      slidesPerView: 'auto'
-      , initialSlide: 1
-      , resistanceRatio: .00000000000001
-      , onSlideChangeStart: function(slider) {
-        if (slider.activeIndex == 0) {
-          menuButton.classList.add('cross');
-          menuButton.removeEventListener('click', toggleMenu, false);
-        } else {
-          menuButton.classList.remove('cross');
-        }
-      }
-      , onSlideChangeEnd: function(slider) {
-        if (slider.activeIndex == 0) {
-          menuButton.removeEventListener('click', toggleMenu, false);
-        } else {
-          menuButton.addEventListener('click', toggleMenu, false);
-        }
-      }
-       , simulateTouch: false
-    });*/
-
     // Hero Swiper
     var swiperHero = new Swiper('.swiper-container-hero', {
         nextButton: '.swiper-button-next',
@@ -41,39 +11,26 @@ jQuery(document).ready(function () {
         effect: 'fade'
     });
 
-  $(".footer-top").click(function () {
-    $("html, body").animate({scrollTop: 0}, 2000);
-  });
+    // Go to top
+    $(".footer-top").click(function () {
+        $("html, body").animate({scrollTop: 0}, 2000);
+    });
 
     // Add Swiper Flags
     var swiperFlag = new Swiper('.swiper-container-flags', {
         initialSlide: 0,
-        nested: true,
-        onSlideChangeEnd: function (swiper) {
-            var currentSlide = swiper.activeIndex + 1;
-            if (currentSlide == 1) {
-                $('#flag-image-1').removeClass('flag-image-opacity');
-                $('#flag-image-2').addClass('flag-image-opacity');
-            }
-            else {
-                $('#flag-image-1').addClass('flag-image-opacity');
-                $('#flag-image-2').removeClass('flag-image-opacity');
-            }
-        }
+        nested: true
     });
 
     // Adding Swiper functionality to flags
     $('.flag-image').on('click', function () {
         var index = $(this).data('pagination');
         swiperFlag.slideTo(index - 1);
-        if (index == 1) {
-            $('#flag-image-1').removeClass('flag-image-opacity');
-            $('#flag-image-2').addClass('flag-image-opacity');
-        }
-        else {
-            $('#flag-image-1').addClass('flag-image-opacity');
-            $('#flag-image-2').removeClass('flag-image-opacity');
-        }
+    });
+
+    $(".flags-indicators img").click(function (e) {
+        $(".flag-image-opacity").removeClass("flag-image-opacity");
+        $(this).addClass("flag-image-opacity");
     });
 
     // Projects change effect
@@ -97,95 +54,87 @@ jQuery(document).ready(function () {
         }, 2000);
     });
 
-    /*$(".menu-button").click(function() {
-        if (swiperHeader.previousIndex == 0) {
-            swiperHeader.slideNext();
-            swiperHeader.update();
-        }
-    });*/
-
     //Slider Amenities
-
-  var slideComodidades;
-  $('.gallery-comodidades').click(function () {
-    slideComodidades = $(this).attr('data-number');
-    $("#myModal").on('show.bs.modal', function () {
-      setTimeout(function () {
-        var galleryTop = new Swiper('.gallery-top', {
-          nextButton: '.swiper-button-next',
-          prevButton: '.swiper-button-prev',
-          spaceBetween: 10,
-          loop: true,
-          loopedSlides: 5, //looped slides should be the same
+    var slideComodidades;
+    $('.gallery-comodidades').click(function () {
+        slideComodidades = $(this).attr('data-number');
+        $("#myModal").on('show.bs.modal', function () {
+            setTimeout(function () {
+                var galleryTop = new Swiper('.gallery-top', {
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                    spaceBetween: 10,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                });
+                var galleryThumbs = new Swiper('.gallery-thumbs', {
+                    spaceBetween: 10,
+                    slidesPerView: 4,
+                    touchRatio: 0.2,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                    slideToClickedSlide: true
+                });
+                galleryTop.params.control = galleryThumbs;
+                galleryThumbs.params.control = galleryTop;
+                galleryThumbs.slideTo(slideComodidades, 0);
+            }, 500);
         });
-        var galleryThumbs = new Swiper('.gallery-thumbs', {
-          spaceBetween: 10,
-          slidesPerView: 4,
-          touchRatio: 0.2,
-          loop: true,
-          loopedSlides: 5, //looped slides should be the same
-          slideToClickedSlide: true
-        });
-        galleryTop.params.control = galleryThumbs;
-        galleryThumbs.params.control = galleryTop;
-        galleryThumbs.slideTo(slideComodidades, 0);
-      }, 500);
     });
-  });
 
-  var slideDetalles;
-  $('.gallery-detalles').click(function () {
-    slideDetalles = $(this).attr('data-number');
-    $("#myModalDetails").on('show.bs.modal', function () {
-      setTimeout(function () {
-        var galleryTop = new Swiper('.gallery-top-details', {
-          nextButton: '.swiper-button-next',
-          prevButton: '.swiper-button-prev',
-          spaceBetween: 10,
-          loop: true,
-          loopedSlides: 5, //looped slides should be the same
+    var slideDetalles;
+    $('.gallery-detalles').click(function () {
+        slideDetalles = $(this).attr('data-number');
+        $("#myModalDetails").on('show.bs.modal', function () {
+            setTimeout(function () {
+                var galleryTop = new Swiper('.gallery-top-details', {
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                    spaceBetween: 10,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                });
+                var galleryThumbs = new Swiper('.gallery-thumbs-details', {
+                    spaceBetween: 10,
+                    slidesPerView: 4,
+                    touchRatio: 0.2,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                    slideToClickedSlide: true
+                });
+                galleryTop.params.control = galleryThumbs;
+                galleryThumbs.params.control = galleryTop;
+                galleryThumbs.slideTo(slideDetalles, 0);
+            }, 500);
         });
-        var galleryThumbs = new Swiper('.gallery-thumbs-details', {
-          spaceBetween: 10,
-          slidesPerView: 4,
-          touchRatio: 0.2,
-          loop: true,
-          loopedSlides: 5, //looped slides should be the same
-          slideToClickedSlide: true
-        });
-        galleryTop.params.control = galleryThumbs;
-        galleryThumbs.params.control = galleryTop;
-        galleryThumbs.slideTo(slideDetalles, 0);
-      }, 500);
     });
-  });
 
-  var slideNearby;
-  $('.places-wrapper').click(function () {
-    slideNearby = $(this).attr('data-number');
-    $("#myModalNearby").on('show.bs.modal', function () {
-      setTimeout(function () {
-        var galleryTop = new Swiper('.gallery-top-nearby', {
-          nextButton: '.swiper-button-next',
-          prevButton: '.swiper-button-prev',
-          spaceBetween: 10,
-          loop: true,
-          loopedSlides: 5, //looped slides should be the same
+    var slideNearby;
+    $('.places-wrapper').click(function () {
+        slideNearby = $(this).attr('data-number');
+        $("#myModalNearby").on('show.bs.modal', function () {
+            setTimeout(function () {
+                var galleryTop = new Swiper('.gallery-top-nearby', {
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                    spaceBetween: 10,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                });
+                var galleryThumbs = new Swiper('.gallery-thumbs-nearby', {
+                    spaceBetween: 10,
+                    slidesPerView: 4,
+                    touchRatio: 0.2,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                    slideToClickedSlide: true
+                });
+                galleryTop.params.control = galleryThumbs;
+                galleryThumbs.params.control = galleryTop;
+                galleryThumbs.slideTo(slideNearby, 0);
+            }, 500);
         });
-        var galleryThumbs = new Swiper('.gallery-thumbs-nearby', {
-          spaceBetween: 10,
-          slidesPerView: 4,
-          touchRatio: 0.2,
-          loop: true,
-          loopedSlides: 5, //looped slides should be the same
-          slideToClickedSlide: true
-        });
-        galleryTop.params.control = galleryThumbs;
-        galleryThumbs.params.control = galleryTop;
-        galleryThumbs.slideTo(slideNearby, 0);
-      }, 500);
     });
-  });
 
     var galleryTop = new Swiper('.gallery-top-blueprint', {
         nextButton: '.swiper-button-next',
@@ -260,7 +209,6 @@ jQuery(document).ready(function () {
         return value;
     }
 
-
     // Sort function
     $('.sort-by-button-group').on('click', '.orderby', function () {
 
@@ -287,34 +235,17 @@ jQuery(document).ready(function () {
 
     });
 
-    $(function() {
-        $('.locations').on('click','.the-country', function ( e ) {
+    $(function () {
+        $('.locations').on('click', '.the-country', function (e) {
             e.preventDefault();
             $(this).parents('.locations').find('.active').removeClass('active').end().end().addClass('active');
         });
     });
 
-    $('.play-video').click(function() {
+    $('.play-video').click(function () {
         var ff = $(this).attr("data-id");
         document.getElementById(ff).paused ? document.getElementById(ff).play() : document.getElementById(ff).pause();
     });
-
-    /*$('#c-button--slide-right').click(function () {
-        $(this).toggleClass('open');
-    });*/
-
-    /*$('#nav-icon4').click(function () {
-        $(this).toggleClass('open');
-    });*/
-
-    /*if($('body:not(.has-active-menu)' )){
-        $( "#navbar" ).removeClass( "push" );
-        $( "#navbar" ).addClass( "push2" );
-    }*/
-
-    /*$('#c-button--slide-left').on('click', function () {
-        $('#navbar').addClass( 'push' );
-    });*/
 
 });
 

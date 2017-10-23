@@ -31,6 +31,7 @@ $postTypeDir = array (
     __DIR__.'/includes/post-types/broker/',
     __DIR__.'/includes/post-types/header-footer/',
     __DIR__.'/includes/post-types/banner/',
+    __DIR__.'/includes/post-types/office/',
 );
 
 // File names inside post-types dirs
@@ -63,6 +64,8 @@ function call_create_post_types() {
     create_post_type_broker();
     // Post Type for General Settings
     create_post_type_header_footer();
+    // Post Type for Offices
+    create_post_type_offices();
 }
 
 /* Remove text area field from header and footer */
