@@ -4,6 +4,135 @@
   height: 100%
 // END General
 
+// Header
+.menu
+  min-width: get-vw-tablet(100px)
+  width: 100%
+  max-width: get-vw-tablet(344px)
+  height: get-vw-tablet(880px)
+  .hr-menu
+    top: get-vw-tablet(80px)
+    left: 0
+    padding: 0
+    width: 100%
+    .hr-menu-item
+      border-bottom: 2px solid rgba(127, 129, 130, 0.15)
+      padding: get-vw-tablet(25px) 0 0 get-vw-tablet(50px)
+      height: get-vw-tablet(80px)
+      font-size: get-vw-tablet(22px)
+      line-height: get-vw-tablet(30px)
+    &:first-child
+      border-top: 2px solid rgba(127, 129, 130, 0.15)
+  .hr-menu-language
+    width: 100%
+    bottom: get-vw-tablet(165px)
+    left: 0
+    height: get-vw-tablet(235px)
+    .hr-menu-language-text
+      padding-top: get-vw-tablet(40px)
+      font-size: get-vw-tablet(16px)
+      line-height: get-vw-tablet(20px)
+    .hr-menu-language-flag
+      margin: get-vw-tablet(25px) get-vw-tablet(12.5px) 0 get-vw-tablet(12.5px)
+      opacity: 0.4
+      width: get-vw-tablet(50px)
+      height: get-vw-tablet(50px)
+    .language-flag-active
+      opacity: 1
+  .hr-menu-social
+    display: block
+    height: get-vw-tablet(63px)
+    bottom: 0
+    width: 100%
+    text-align: center
+    .menu-social-icons
+      font-size: get-vw-tablet(22px)
+      padding: 0
+      .menu-social-icon
+        height: get-vw-tablet(38px)
+        width: get-vw-tablet(38px)
+
+.o-wrapper 
+  -webkit-transition: -webkit-transform 0.3s
+  transition: transform 0.3s
+
+.o-container 
+  margin: 0 auto
+  padding: 0 get-vw-tablet(12px)
+  max-width: get-vw-tablet(960px)
+
+.c-menu--slide-left,
+.c-menu--slide-right,
+.c-menu--push-left,
+.c-menu--push-right 
+  width: get-vw-tablet(320px)
+
+.c-menu--slide-left .c-menu__link,
+.c-menu--slide-right .c-menu__link,
+.c-menu--push-left .c-menu__link,
+.c-menu--push-right .c-menu__link 
+  padding: get-vw-tablet(12px) get-vw-tablet(24px)
+
+.c-menu--slide-left,
+.c-menu--push-left 
+  -webkit-transform: translateX(get-vw-tablet(-320px))
+  -ms-transform: translateX(get-vw-tablet(-320px))
+  transform: translateX(get-vw-tablet(-320px))
+
+.c-menu__close 
+  font-size: get-vw-tablet(14px)
+
+.c-buttons 
+  margin-bottom: get-vw-tablet(48px)
+
+.c-button 
+  padding: get-vw-tablet(12px) get-vw-tablet(24px)
+  font-size: get-vw-tablet(14px)
+  border: solid 2px $white
+
+.menu-button
+  top: 0
+  left: 0
+  padding: get-vw-tablet(27px) 0 get-vw-tablet(27px) get-vw-tablet(48px)
+  height: get-vw-tablet(80px)
+  -webkit-transition: .3s
+  transition: .3s
+  z-index: 2
+  width: 10.68vw
+
+#hr-header
+  .logo-header
+    top: 0
+    height: get-vw-tablet(80px)
+    left: 10.68vw
+    width: 52.31vw
+    .img-div
+      width: 25vw
+      height: get-vw-tablet(80px)
+      img
+        width: get-vw-tablet(60px)
+        height: get-vw-tablet(62px)
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+  .social-header
+    top: 0
+    left: 62.5vw
+    height: get-vw-tablet(80px)
+    width: 37.5vw
+    z-index: 2
+    .social-icons
+      display: none
+
+  .hero-button
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 1
+    width: get-vw-tablet(57px)
+    height: get-vw-tablet(25px)  
+// END Header
+
 // Hero
 .hr-hero-section
   margin-top: get-vw-tablet(80px)
@@ -13,13 +142,13 @@
     width: 100%
     height: 100%
     background: rgba(0, 0, 0, 0.5)
-    .hero-text
+    h3
       margin-top: get-vw-tablet(111px)
       margin-bottom: 0
       font-size: get-vw-tablet(24px)
       line-height: get-vw-tablet(30px)
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5)
-    .hero-text-bold
+    h2
       margin-top: 0
       font-size: get-vw-tablet(58px)
       line-height: get-vw-tablet(60px)
