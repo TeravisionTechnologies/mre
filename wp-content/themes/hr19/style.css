@@ -939,6 +939,7 @@ a.hr-phone-num {
 .wpcf7-form textarea {
   width: 53.81944vw;
   color: #8f8f8f;
+  resize: none;
   font-size: 1.11111vw;
   max-height: 9.51389vw;
   line-height: 1.11111vw;

@@ -611,6 +611,7 @@ body {
     .al-contact-div .al-contact-form-div .wpcf7-form textarea {
       width: 53.125vw;
       color: #4a4a4a;
+      resize: none;
       font-size: 1.11111vw;
       height: 9.375vw;
       line-height: 1.11111vw;
