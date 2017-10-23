@@ -169,6 +169,14 @@
       )
     );
 
+    // First Partner link
+    $cmb_header->add_group_field( $partners, array(
+      'name'    => __( 'First Partner Link' , 'cmb2' ),
+      'id'      => $prefix . 'partner_link_left',
+      'type' => 'text_url',
+      'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
+    ) );
+
     // Second partner logo
     $cmb_header->add_group_field( $partners, array(
         'name'         => __( 'Second Partner' ),
@@ -187,6 +195,14 @@
         'repeatable'   => false
       )
     );
+
+    // Second Partner link
+    $cmb_header->add_group_field( $partners, array(
+      'name'    => __( 'Second Partner Link' , 'cmb2' ),
+      'id'      => $prefix . 'partner_link_right',
+      'type' => 'text_url',
+      'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
+    ) );
 
     // Initiate the metabox for Rental One Section
     $rental_one = $cmb_header->add_field( array(
@@ -238,6 +254,14 @@
         'repeatable'   => false
       )
     );
+
+    // Rental One link
+    $cmb_header->add_group_field( $rental_one, array(
+      'name'    => __( 'Rental One Link' , 'cmb2' ),
+      'id'      => $prefix . 'rental_link',
+      'type' => 'text_url',
+      'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
+    ) );
 
 		// Initiate the metabox for footer
 		$cmb = new_cmb2_box(
