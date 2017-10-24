@@ -102,13 +102,14 @@
             <div class="property-sorting">
                 <div class="col-sm-4 col-md-4">
                     <span class="state-search">Miami, FL</span>
-                    <span class="results-search">Mostrando 10 de 8694 casas</span>
+                    <span class="results-search">Mostrando 9 de 8694 casas</span>
                 </div>
                 <div class="col-sm-8 col-md-8 text-center sort-select">
                     <select class="pull-right">
                         <option selected><?php _e('Ordenar por  ', 'hr') ?></option>
-                        <option value="price"><?php _e('Por precio', 'hr') ?></option>
-                        <option value="date"><?php _e('Ultimo agregado', 'hr') ?></option>
+                        <option value="newer"><?php _e('Último agregado', 'hr') ?></option>
+                        <option value="lower"><?php _e('Precio más bajo', 'hr') ?></option>
+                        <option value="higher"><?php _e('Precio más alto', 'hr') ?></option>
                     </select>
                     <div class="pull-right choose-search">
                         <div class="radio radio-inline radio-success">
