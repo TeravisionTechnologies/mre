@@ -1,3 +1,4 @@
+// Hero
 .agent-hero
   height: 450px
   background-repeat: no-repeat
@@ -28,4 +29,53 @@
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5)
     height: 70px
     width: 867px
-    font-family: Montserrat-Bold
+    font-family: Montserrat-Bold, sans-serif
+// END Hero
+
+// Agents
+.hr-agents-section
+  height: auto
+  .agent-profile
+    height: get-vw-desktop(200px)
+    background: $greylight
+    padding: get-vw-desktop(30px) get-vw-desktop(195px)
+    .agent-profile-photo
+      width: get-vw-desktop(169px)
+      img
+        width: get-vw-desktop(140px)
+        height: get-vw-desktop(140px)
+        margin-right: get-vw-desktop(29px)
+        border-radius: 50%
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3)
+    .agent-profile-info
+      margin-top: get-vw-desktop(28px)
+      display: inline-block
+      .profile-name
+        margin: 0
+        padding-bottom: get-vw-desktop(5px)
+        color: $grey
+        font-size: get-vw-desktop(26px)
+        line-height: get-vw-desktop(32px)
+        font-family: Montserrat-Bold, sans-serif
+        .profile-position
+          margin: 0
+          font-family: Montserrat-Light, sans-serif
+      .profile-phone, .profile-email
+        margin: 0
+        color: $grey
+        opacity: 0.6
+        font-size: get-vw-desktop(16px)
+        line-height: get-vw-desktop(24px)
+        font-family: Montserrat-Regular, sans-serif
+  .agent-bio
+    height: auto
+    padding: get-vw-desktop(40px) get-vw-desktop(236px) 0 get-vw-desktop(236px)
+    .agent-bio-text
+      font-family: Montserrat-Light, sans-serif
+      font-size: get-vw-desktop(16px)
+      line-height: get-vw-desktop(28px)
+      color: $grey
+      padding-bottom: get-vw-desktop(20px)
+      border-bottom: solid 2px rgba(143, 143, 143, 0.4)
+      margin: 0
+// END Agents

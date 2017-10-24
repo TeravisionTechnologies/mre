@@ -4,10 +4,46 @@
       'post_type' => 'header_footer'
     )
   );
+  $partners = get_post_meta( $footer_query[0]->ID, '_hf_partners', true );
+  $rental = get_post_meta( $footer_query[0]->ID, '_hf_rental', true );
+  $contact = get_post_meta( $footer_query[0]->ID, '_hf_contact_form', true );
   $footer_info = get_post_meta($footer_query[0]->ID);
   $social_networks = get_post_meta( $footer_query[0]->ID, '_hf_social_networks', true );
-  $contact = get_post_meta( $footer_query[0]->ID, '_hf_contact_form', true );
-?>       
+?>
+
+        <section class="col-xs-12 hr-partners-section text-center">
+          <div class="container">
+            <p class="hr-partners-title"><?php if(isset($partners[0]['_hf_partners_text'])) { echo $partners[0]['_hf_partners_text']; }?></p>
+          </div>
+          <div class="hr-partners-images">
+            <a href="<?php echo $partners[0]['_hf_partner_link_left']; ?>" target="_blank"><img src="<?php echo $partners[0]['_hf_partner_logo_left']; ?>" alt="Logo ALA19" class="partners-images-one"/></a>
+            <a href="<?php echo $partners[0]['_hf_partner_link_right']; ?>" target="_blank"><img src="<?php echo $partners[0]['_hf_partner_logo_right']; ?>" alt="Logo MRE RealEstate" class="partners-images-two"/></a>
+          </div>
+        </section>
+        <section class="col-xs-12 hr-rentalone-section text-center no-padding" style="background-image: url('<?php echo $rental[0]["_hf_rental_background"] ?>')">
+          <div class="hr-rentalone-overlay">
+            <img src="<?php echo $rental[0]["_hf_rental_logo"] ?>" alt="Logo Rental One" class="rentalone-logo"/>
+            <div class="rentalone-button"><a href="<?php echo $rental[0]["_hf_rental_link"] ?>" target="_blank">Ver más</a></div>
+          </div>
+        </section>
+        <section id="contact-us" class="col-xs-12 hr-contact-div no-padding" style="background-image: url('<?php if(isset($contact[0]["_hf_contact_background"])) { echo $contact[0]["_hf_contact_background"]; }?>')">
+          <div class="container-hr center-block">
+            <div class="row">
+              <p class="col-xs-12 text-center hr-contact-text"><?php if(isset($contact[0]['_hf_contact_first'])) { echo $contact[0]['_hf_contact_first']; }?></p>
+              <p class="col-xs-12 text-center hr-contact-text-bold"><?php if(isset($contact[0]['_hf_contact_second'])) { echo $contact[0]['_hf_contact_second']; }?></p>
+              <div class="col-xs-12 col-md-4 no-padding">
+                <div class="hr-phone-box text-center center-block">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.svg" alt="Llamanos HR19">
+                  <p><?php if(isset($contact[0]['_hf_contact_text'])) { echo $contact[0]['_hf_contact_text']; }?></p>
+                  <a href="tel:<?php echo str_replace(array(".", " ", "-", "/"), "", $contact[0]['_hf_contact_phone']); ?>" class="hr-phone-num"><?php echo $contact[0]['_hf_contact_phone']; ?></a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-8 hr-contact-form-div no-padding">
+                <?php echo do_shortcode( '[contact-form-7 id="5" title="Home - Contact form"]' ); ?>
+              </div>
+            </div>
+          </div>
+        </section>
         <footer class="col-xs-12 hr-footer-section text-center">
           <div class="container">
             <a href="<?php echo home_url(); ?>"><img src="<?php echo $footer_info['_hf_logo'][0]; ?>" alt="Logo HR19 Footer"></a>
