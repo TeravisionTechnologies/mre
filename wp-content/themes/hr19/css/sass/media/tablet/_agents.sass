@@ -23,6 +23,7 @@
 // Agents
 .hr-agents-section
   height: auto
+  margin-top: get-vw-tablet(5px)
   .agent-profile
     height: get-vw-tablet(160px)
     padding: get-vw-tablet(25px) get-vw-tablet(20px) get-vw-tablet(25px) get-vw-tablet(83px)
@@ -59,4 +60,52 @@
       padding-bottom: get-vw-tablet(20px)
       border-bottom: solid 2px rgba(143, 143, 143, 0.4)
       margin: 0
+  .agent-properties
+    padding: get-vw-tablet(20px) get-vw-tablet(113px) get-vw-tablet(60px) get-vw-tablet(113px)
+    .properties-number
+      margin: 0
+      font-size: get-vw-tablet(16px)
+      line-height: get-vw-tablet(19px)
+      i
+        font-size: get-vw-tablet(20px)
+        margin-left: get-vw-tablet(15px)
+    .properties-list
+      width: get-vw-tablet(542px)
+      .property
+        width: get-vw-tablet(166px)
+        margin: get-vw-tablet(30px) get-vw-tablet(22px) 0 0
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2)
+        &:nth-child(3n+3)
+          margin-right: 0
+        .property-image
+          height: get-vw-tablet(125px)
+        .property-info
+          height: get-vw-tablet(79px)
+          padding: get-vw-tablet(8px) get-vw-tablet(8px) get-vw-tablet(6px) get-vw-tablet(8px)
+          .info-price
+            margin: 0
+            font-size: get-vw-tablet(16px)
+            line-height: get-vw-tablet(19px)
+          .info-features
+            margin: 2px 0 0 0
+            font-size: get-vw-tablet(8px)
+            line-height: get-vw-tablet(10px)
+          .info-address
+            margin: 2px 0 0 0
+            font-size: get-vw-tablet(8px)
+            line-height: get-vw-tablet(10px)
+            opacity: 0.6
+          .info-mls
+            margin: get-vw-tablet(16px) 0 0 0
+            opacity: 0.6
+            font-size: get-vw-tablet(8px)
+            line-height: get-vw-tablet(10px)
+      .more-properties
+        opacity: 0.8
+        border-radius: get-vw-tablet(100px)
+        border: solid 2px $grey
+        padding: get-vw-tablet(10px) get-vw-tablet(27px)
+        font-size: get-vw-tablet(14px)
+        line-height: get-vw-tablet(20px)
+        margin-top: get-vw-tablet(40px)
 // END Agents

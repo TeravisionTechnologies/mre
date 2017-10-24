@@ -22,6 +22,7 @@
 
 // Agents
 .hr-agents-section
+  margin-top: 5px
   .agent-profile
     height: 200px
     padding: 30px 195px
@@ -55,4 +56,52 @@
       padding-bottom: 20px
       border-bottom: solid 2px rgba(143, 143, 143, 0.4)
       margin: 0
+  .agent-properties
+    padding: 20px 235px 80px 235px
+    .properties-number
+      margin: 0
+      font-size: 18px
+      line-height: 22px
+      i
+        font-size: 20px
+        margin-left: 15px
+    .properties-list
+      width: 970px
+      .property
+        width: 300px
+        margin: 30px 34px 0 0
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2)
+        &:nth-child(3n+3)
+          margin-right: 0
+        .property-image
+          height: 224px
+        .property-info
+          height: 108px
+          padding: 10px 17px 8px 17px
+          .info-price
+            margin: 0
+            font-size: 24px
+            line-height: 29px
+          .info-features
+            margin: 0
+            font-size: 14px
+            line-height: 18px
+          .info-address
+            margin: 2px 0 0 0
+            font-size: 13px
+            line-height: 16px
+            opacity: 0.6
+          .info-mls
+            margin: 7px 0 0 0
+            opacity: 0.6
+            font-size: 14px
+            line-height: 18px
+      .more-properties
+        opacity: 0.8
+        border-radius: 100px
+        border: solid 2px $grey
+        padding: 15px 42px
+        font-size: 18px
+        line-height: 20px
+        margin-top: 50px
 // END Agents

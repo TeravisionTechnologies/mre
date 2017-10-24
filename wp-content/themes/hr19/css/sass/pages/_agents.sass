@@ -30,9 +30,10 @@
 // Agents
 .hr-agents-section
   height: auto
+  margin-top: get-vw-desktop(5px)
   .agent-profile
     height: get-vw-desktop(200px)
-    background: $greylight
+    background: $grey-3
     padding: get-vw-desktop(30px) get-vw-desktop(195px)
     .agent-profile-photo
       width: get-vw-desktop(169px)
@@ -73,4 +74,73 @@
       padding-bottom: get-vw-desktop(20px)
       border-bottom: solid 2px rgba(143, 143, 143, 0.4)
       margin: 0
+  .agent-properties
+    height: auto
+    padding: get-vw-desktop(20px) get-vw-desktop(235px) get-vw-desktop(80px) get-vw-desktop(235px)
+    .properties-number
+      margin: 0
+      cursor: pointer
+      font-family: Montserrat-Medium, sans-serif
+      font-size: get-vw-desktop(18px)
+      line-height: get-vw-desktop(22px)
+      color: $grey
+      i
+        font-size: get-vw-desktop(20px)
+        margin-left: get-vw-desktop(15px)
+    .properties-list
+      display: none
+      margin: 0 auto
+      width: get-vw-desktop(970px)
+      height: auto
+      text-align: center
+      .property
+        width: get-vw-desktop(300px)
+        text-align: left
+        margin: get-vw-desktop(30px) get-vw-desktop(34px) 0 0
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2)
+        &:nth-child(3n+3)
+          margin-right: 0
+        .property-image
+          height: get-vw-desktop(224px)
+          background-size: cover
+        .property-info
+          height: get-vw-desktop(108px)
+          padding: get-vw-desktop(10px) get-vw-desktop(17px) get-vw-desktop(8px) get-vw-desktop(17px)
+          .info-price
+            margin: 0
+            font-family: Montserrat-Bold, sans-serif
+            font-size: get-vw-desktop(24px)
+            line-height: get-vw-desktop(29px)
+            color: $grey
+          .info-features
+            margin: 0
+            font-family: Montserrat-Regular, sans-serif
+            font-size: get-vw-desktop(14px)
+            line-height: get-vw-desktop(18px)
+            color: $grey
+          .info-address
+            margin: 2px 0 0 0
+            font-family: Montserrat-Regular, sans-serif
+            font-size: get-vw-desktop(13px)
+            line-height: get-vw-desktop(16px)
+            color: $grey
+            opacity: 0.6
+          .info-mls
+            margin: 7px 0 0 0
+            opacity: 0.6
+            font-family: Montserrat-Regular, sans-serif
+            font-size: get-vw-desktop(14px)
+            line-height: get-vw-desktop(18px)
+            color: $grey
+      .more-properties
+        opacity: 0.8
+        background: $white
+        border-radius: get-vw-desktop(100px)
+        border: solid 2px $grey
+        padding: get-vw-desktop(15px) get-vw-desktop(42px)
+        font-family: Montserrat-Bold, sans-serif
+        font-size: get-vw-desktop(18px)
+        line-height: get-vw-desktop(20px)
+        color: $grey
+        margin-top: get-vw-desktop(50px)
 // END Agents

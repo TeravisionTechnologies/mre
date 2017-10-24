@@ -59,4 +59,14 @@ jQuery(document).ready(function () {
     }, 2000);
   });
 
+  //Agent properties show and hide
+  $(".properties-number").click(function(){
+    $(this).find("i").toggleClass("fa-caret-down").toggleClass("fa-caret-up");
+    if(!$('.properties-list').is(':visible')) {
+      $(".properties-list").slideDown(500);
+    } else {
+      $(".properties-list").slideUp(500);
+    }
+  });
+
 });
