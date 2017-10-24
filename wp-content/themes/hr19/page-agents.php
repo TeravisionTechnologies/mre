@@ -43,8 +43,8 @@ get_header();
       <?php the_content(); ?>
     </div>
     <div class="agent-properties">
-      <h2 class="properties-number">Propiedades asignadas (9)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
-      <div class="properties-list">
+      <h2 class="properties-number" data-target="<?php the_ID(); ?>">Propiedades asignadas (9)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
+      <div class="properties-list" id="<?php the_ID(); ?>">
         <div class="col-xs-12 col-sm-4 no-padding property">
           <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
           <div class="property-info">
