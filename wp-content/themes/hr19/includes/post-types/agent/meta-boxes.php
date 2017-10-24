@@ -2,7 +2,7 @@
 
 function agent_metaboxes() {
 
-    $prefix = '_hf_';
+    $prefix = '_ag_';
 
     $cmb_agent = new_cmb2_box(
         array(
