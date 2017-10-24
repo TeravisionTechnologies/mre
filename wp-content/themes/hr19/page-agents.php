@@ -40,7 +40,7 @@ get_header();
       </div>
     </div>
     <div class="agent-bio">
-      <p class="agent-bio-text"><?php the_content(); ?></p>
+      <?php the_content(); ?>
     </div>
     <div class="agent-properties">
       <h2 class="properties-number">Propiedades asignadas (9)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
@@ -76,5 +76,5 @@ get_header();
       </div>
     </div>
   </section>
-
+        <?php endwhile; endif; ?>
 <?php get_footer(); ?>
