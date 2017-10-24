@@ -23,6 +23,7 @@
 // Agents
 .hr-agents-section
   height: auto
+  margin-top: get-vw-mobile(5px)
   .agent-profile
     height: get-vw-mobile(126px)
     padding: get-vw-mobile(20px) get-vw-mobile(44px) get-vw-mobile(20px) get-vw-mobile(25px)
@@ -60,4 +61,52 @@
       padding-bottom: get-vw-mobile(15px)
       border-bottom: solid 2px rgba(143, 143, 143, 0.4)
       margin: 0
+  .agent-properties
+    padding: get-vw-mobile(15px) get-vw-mobile(51px) get-vw-mobile(60px) get-vw-mobile(51px)
+    .properties-number
+      margin: 0
+      font-size: get-vw-mobile(14px)
+      line-height: get-vw-mobile(18px)
+      i
+        font-size: get-vw-mobile(20px)
+        margin-left: get-vw-mobile(15px)
+    .properties-list
+      width: get-vw-mobile(258px)
+      .property
+        width: get-vw-mobile(258px)
+        margin: get-vw-mobile(20px) 0 0 0
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2)
+        &:nth-child(3n+3)
+          margin-right: 0
+        .property-image
+          height: get-vw-mobile(193px)
+        .property-info
+          height: get-vw-mobile(97px)
+          padding: get-vw-mobile(10px) get-vw-mobile(14px)
+          .info-price
+            margin: 0
+            font-size: get-vw-mobile(18px)
+            line-height: get-vw-mobile(22px)
+          .info-features
+            margin: 2px 0 0 0
+            font-size: get-vw-mobile(12px)
+            line-height: get-vw-mobile(15px)
+          .info-address
+            margin: 2px 0 0 0
+            font-size: get-vw-mobile(12px)
+            line-height: get-vw-mobile(15px)
+            opacity: 0.6
+          .info-mls
+            margin: get-vw-mobile(8px) 0 0 0
+            opacity: 0.6
+            font-size: get-vw-mobile(12px)
+            line-height: get-vw-mobile(15px)
+      .more-properties
+        opacity: 0.8
+        border-radius: get-vw-mobile(100px)
+        border: solid 2px $grey
+        padding: get-vw-mobile(10px) get-vw-mobile(24px)
+        font-size: get-vw-mobile(14px)
+        line-height: get-vw-mobile(20px)
+        margin-top: get-vw-mobile(40px)
 // END Agents
