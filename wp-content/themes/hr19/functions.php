@@ -1,5 +1,13 @@
 <?php
 
+/****** THEME SUPPORTS ******/
+add_theme_support( 'post-thumbnails' );
+add_theme_support( 'automatic-feed-links' );
+add_theme_support( 'title-tag' );
+add_theme_support('menus');
+remove_post_type_support( 'post', 'comments' );
+remove_post_type_support( 'page', 'comments' );
+
 load_theme_textdomain('hr', get_template_directory() . '/languages');
 
 // Register custom navigation walker
@@ -9,9 +17,6 @@ register_nav_menus(array(
     'primary' => __('Primary Menu', 'hr19'),
     'extra-menu' => __('Extra Menu')
 ));
-
-add_theme_support('menus');
-
 
 // Login customization
 add_action('login_head', 'custom_login_logo');
@@ -61,6 +66,7 @@ add_filter('admin_footer_text', 'remove_footer_admin');
     // Directories that contain post-types
     $postTypeDir = array (
         __DIR__.'/includes/post-types/header-footer/',
+        __DIR__.'/includes/post-types/agent/',
     );
 
     // File names inside post-types dirs
@@ -89,6 +95,8 @@ add_filter('admin_footer_text', 'remove_footer_admin');
     function call_create_post_types() {
         // Post Type for General Settings
         create_post_type_header_footer();
+        // Post Type for Agents
+        create_post_type_agent();
     }
 
     /* Remove text area field from header and footer */
@@ -110,6 +118,8 @@ add_filter('admin_footer_text', 'remove_footer_admin');
     function call_metaboxes() {
       // Metaboxes for General Settings
       header_footer_metaboxes();
+      // Metaboxes for General Settings
+      agent_metaboxes();
     }
 
     //SVG Hook
