@@ -696,7 +696,7 @@ body.has-active-menu {
     opacity: 0.6;
     -webkit-appearance: none !important;
     -moz-appearance: none;
-    background: #f0f0f0 url(assets/caret.png) 90% 50% no-repeat; }
+    background: #f0f0f0 url(assets/caret.svg) 90% 50% no-repeat; }
     .property-list select:-moz-focusring {
       color: transparent;
       text-shadow: 0 0 0 #000; }
@@ -809,7 +809,7 @@ input {
   margin-bottom: 30px;
   -webkit-appearance: none !important;
   -moz-appearance: none;
-  background: #f0f0f0 url(assets/caret.png) 100% 50% no-repeat; }
+  background: #f0f0f0 url(assets/caret.svg) 100% 50% no-repeat; }
 
 .hr-rentalone-section {
   height: 31.25vw;
@@ -1055,7 +1055,7 @@ h2.active {
       box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.3); }
 
 .agent-hero {
-  margin-top: 5.55556vw;
+  margin-top: 5.5555555556vw;
   height: 31.25vw;
   background-size: cover;
   position: relative; }
@@ -1075,9 +1075,9 @@ h2.active {
     top: 0;
     bottom: 0;
     margin: auto;
-    font-size: 4.86111vw;
+    font-size: 4.8611111111vw;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    height: 4.86111vw;
+    height: 4.8611111111vw;
     text-align: center;
     font-family: Montserrat-Bold, sans-serif; }
 
@@ -1868,7 +1868,7 @@ h2.active {
     padding: 7px 16px !important; }
 
   .agent-hero {
-    margin-top: 10.41667vw;
+    margin-top: 10.4166666667vw;
     height: 58.59375vw;
     background-position-x: center; }
     .agent-hero .mask {
@@ -1883,7 +1883,7 @@ h2.active {
       right: 0;
       top: 0;
       bottom: 0;
-      font-size: 6.51042vw;
+      font-size: 6.5104166667vw;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
       height: 7.8125vw; }
 
@@ -2267,7 +2267,7 @@ h2.active {
     .property-search .input-group input {
       font-size: 10px;
       height: 35px;
-      padding: 0; }
+      padding: 0 10px; }
     .property-search button {
       width: 40px;
       height: 40px;
@@ -2292,7 +2292,9 @@ h2.active {
     text-align: center; }
 
   .property-search .input-group i {
-    display: none; }
+    font-size: 9px;
+    top: 12px;
+    left: -3px; }
 
   .property-list {
     margin-top: 50px; }
@@ -2344,8 +2346,8 @@ h2.active {
     padding: 5px 14px !important; }
 
   .agent-hero {
-    margin-top: 16.66667vw;
-    height: 97.22222vw;
+    margin-top: 16.6666666667vw;
+    height: 97.2222222222vw;
     background-position-x: center; }
     .agent-hero .mask {
       left: 0;
@@ -2359,7 +2361,7 @@ h2.active {
       right: 0;
       top: 0;
       bottom: 0;
-      font-size: 6.94444vw;
+      font-size: 6.9444444444vw;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
       height: 10vw; }
 
@@ -2378,8 +2380,8 @@ h2.active {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3); }
       .hr-agents-section .agent-profile .agent-profile-info {
         display: inline-block;
-        width: 52.77778vw;
-        margin-top: 4.16667vw; }
+        width: 52.7777777778vw;
+        margin-top: 4.1666666667vw; }
         .hr-agents-section .agent-profile .agent-profile-info .profile-name {
           margin: 0;
           padding-bottom: 1.6666666667vw;
