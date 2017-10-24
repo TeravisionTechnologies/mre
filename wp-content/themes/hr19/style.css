@@ -1084,6 +1084,7 @@ h2.active {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     height: 70px;
     width: 867px;
+    text-align: center;
     font-family: Montserrat-Bold, sans-serif; }
 
 .hr-agents-section {
@@ -2231,7 +2232,8 @@ h2.active {
     margin-top: -85px !important; }
     .property-search .input-group input {
       font-size: 10px;
-      height: 35px; }
+      height: 35px;
+      padding: 0; }
     .property-search button {
       width: 40px;
       height: 40px;
