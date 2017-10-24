@@ -696,7 +696,7 @@ body.has-active-menu {
     opacity: 0.6;
     -webkit-appearance: none !important;
     -moz-appearance: none;
-    background: #f0f0f0 url(assets/caret.png) 100% 50% no-repeat; }
+    background: #f0f0f0 url(assets/caret.png) 90% 50% no-repeat; }
     .property-list select:-moz-focusring {
       color: transparent;
       text-shadow: 0 0 0 #000; }
@@ -2158,5 +2158,7 @@ h2.active {
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   #nav-icon4 {
     top: 5%; } }
+.agent-hero {
+  height: 450px; }
 
 /*# sourceMappingURL=style.css.map */
