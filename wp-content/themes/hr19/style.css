@@ -1205,6 +1205,10 @@ h2.active {
         color: #4a4a4a;
         margin-top: 3.4722222222vw; }
 
+a[href^=tel] {
+  text-decoration: inherit;
+  color: inherit; }
+
 @media only screen and (min-width: 1440px) {
   .container-hr {
     width: 1170px;
