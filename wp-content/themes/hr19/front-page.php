@@ -124,7 +124,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h2 class="hr-heading"><?php _e('Propiedades Hr19', 'hr') ?></h2>
+                <h2 class="hr-heading"><?php _e('Propiedades HR19', 'hr') ?></h2>
             </div>
         </div>
         <div class="row">
