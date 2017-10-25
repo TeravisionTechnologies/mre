@@ -130,7 +130,7 @@
         <div class="row">
             <?php for ($x = 0; $x <= 8; $x++) { ?>
                 <div class="col-xs-12 col-sm-4 col-md-4">
-                    <a class="property">
+                    <a href="#" class="property">
                         <div class="property-image"
                              style="background: url('http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg');"></div>
                         <div class="property-info">
