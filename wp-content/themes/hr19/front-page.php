@@ -134,10 +134,10 @@
                         <div class="property-image"
                              style="background: url('http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg');"></div>
                         <div class="property-info">
-                            <span class="property-price">$224,000</span>
-                            <span class="property-highlights">Casa, 4 habitaciones</span>
-                            <span class="property-address">3215 Stafford Ln</span>
-                            <span class="property-code">MLS: 1258364</span>
+                            <div class="property-price">$224,000</div>
+                            <div class="property-highlights">Casa, 4 habitaciones</div>
+                            <div class="property-address">3215 Stafford Ln</div>
+                            <div class="property-code">MLS: 1258364</div>
                         </div>
                     </a>
                 </div>

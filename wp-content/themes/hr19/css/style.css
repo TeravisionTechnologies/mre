@@ -738,9 +738,7 @@ input[type="radio"].styled:checked + label:after {
   .property .property-info {
     padding: 15px 20px 10px;
     background-color: #f7f7f7; }
-    .property .property-info span {
-      display: block;
-      width: 100%;
+    .property .property-info div {
       color: #4a4a4a;
       font-size: 16px; }
     .property .property-info .property-price {
@@ -1983,7 +1981,7 @@ h2.active {
     height: 155px; }
   .property .property-info {
     padding: 8px 10px 10px; }
-    .property .property-info span {
+    .property .property-info div {
       font-size: 9px; }
     .property .property-info .property-price {
       font-size: 16px; }
@@ -2498,7 +2496,7 @@ h2.active {
       height: 230px; }
     .property .property-info {
       padding: 10px 15px 10px; }
-      .property .property-info span {
+      .property .property-info div {
         font-size: 12px; }
       .property .property-info .property-price {
         font-size: 18px; }
