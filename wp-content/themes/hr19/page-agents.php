@@ -35,7 +35,7 @@ get_header();
             · <span class="profile-position"><?php echo $agentype->name; ?></span>
           <?php } ?>
         </h2>
-        <?php if (!empty($phone)) { ?><h3 class="profile-phone">Tfno. <?php echo $phone; ?></h3><?php } ?>
+        <?php if (!empty($phone)) { ?><a href="tel:<?php echo str_replace(array(".", " ", "-", "/"), "", $phone); ?>" class="profile-phone">Tfno. <?php echo $phone; ?></a><?php } ?>
         <?php if (!empty($email)) { ?><h3 class="profile-email">Email: <?php echo $email; ?></h3><?php } ?>
       </div>
     </div>
