@@ -59,11 +59,14 @@ jQuery(document).ready(function () {
     }, 2000);
   });
 
+  //Agents profiles background color
+  $(".agent-profile:even").css("background", "#d6d6d6");
+  $(".agent-profile:odd").css("background", "#f0f0f0");
+
   //Agent properties show and hide
   $(".properties-number").click(function(){
     $(this).find("i").toggleClass("fa-caret-down").toggleClass("fa-caret-up");
     var t = $(this);
     $('#' + t.data('target')).slideToggle();
   });
-
 });
