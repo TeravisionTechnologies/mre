@@ -696,7 +696,14 @@ input[type="radio"].styled:checked + label
   -ms-transition: .5s
   -o-transition: .5s
   transition: .5s
+  color: $grey
   &:hover
+    text-decoration: none
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5)
+  &:focus
+    text-decoration: none
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5)
+  &:active
     text-decoration: none
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5)
   .property-image
