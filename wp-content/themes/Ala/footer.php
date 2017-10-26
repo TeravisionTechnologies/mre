@@ -49,34 +49,36 @@ $contact = get_post_meta( $footer_query[0]->ID, '_hf_contact_form', true );
         </div>
     </div>
     <div class="menu">
-        <?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_class' => "al-menu c-menu__items")); ?>
-        <div class="al-menu-language">
-            <h2 class="al-menu-language-text">Seleccione su idioma de preferencia:</h2>
-            <img class="al-menu-language-flag language-flag-active"
-                 src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" alt="Inglés">
-            <img class="al-menu-language-flag"
-                 src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" alt="Español">
-        </div>
-        <div class="al-menu-social">
-            <?php if(isset($social_networks[0])) { ?>
-            <ul class="menu-social-icons">
-              <?php if(isset($social_networks[0]['_hf_linkedin'])) { ?>
-                <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_linkedin'] ?>" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-              <?php } ?>
-              <?php if(isset($social_networks[0]['_hf_facebook'])) { ?>
-                <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_facebook'] ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-              <?php } ?>
-              <?php if(isset($social_networks[0]['_hf_instagram'])) { ?>
-                <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_instagram'] ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-              <?php } ?>
-              <?php if(isset($social_networks[0]['_hf_twitter'])) { ?>
-                <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_twitter'] ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-              <?php } ?>
-              <?php if(isset($social_networks[0]['_hf_youtube'])) { ?>
-                <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_youtube'] ?>" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-              <?php } ?>
-            </ul>
-            <?php } ?>
+        <div class="menu-wrapper">
+            <?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_class' => "al-menu c-menu__items")); ?>
+            <div class="al-menu-language">
+                <h2 class="al-menu-language-text">Seleccione su idioma de preferencia:</h2>
+                <img class="al-menu-language-flag language-flag-active"
+                     src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" alt="Inglés">
+                <img class="al-menu-language-flag"
+                     src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" alt="Español">
+            </div>
+            <div class="al-menu-social">
+                <?php if(isset($social_networks[0])) { ?>
+                <ul class="menu-social-icons">
+                  <?php if(isset($social_networks[0]['_hf_linkedin'])) { ?>
+                    <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_linkedin'] ?>" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                  <?php } ?>
+                  <?php if(isset($social_networks[0]['_hf_facebook'])) { ?>
+                    <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_facebook'] ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <?php } ?>
+                  <?php if(isset($social_networks[0]['_hf_instagram'])) { ?>
+                    <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_instagram'] ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  <?php } ?>
+                  <?php if(isset($social_networks[0]['_hf_twitter'])) { ?>
+                    <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_twitter'] ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                  <?php } ?>
+                  <?php if(isset($social_networks[0]['_hf_youtube'])) { ?>
+                    <li class="menu-social-icon"><a href="<?php echo $social_networks[0]['_hf_youtube'] ?>" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                  <?php } ?>
+                </ul>
+                <?php } ?>
+            </div>
         </div>
     </div>
 </nav>

@@ -247,6 +247,11 @@ jQuery(document).ready(function () {
         document.getElementById(ff).paused ? document.getElementById(ff).play() : document.getElementById(ff).pause();
     });
 
+    // Menu landscape height
+    var height = $(window).height();
+    var navheight = $('.menu-button').outerHeight();
+    $('.menu-wrapper').height(height - navheight);
+
 });
 
 

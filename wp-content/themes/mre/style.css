@@ -3610,7 +3610,181 @@ a.al-phone-num {
       width: 2vw; }
 
   #blog-list .blog-list-triangle {
-    top: -10px; } }
+    top: -10px; }
+
+  .navbar-fixed-top {
+    position: absolute; }
+
+  .menu {
+    min-width: 15.625vw;
+    width: 100%;
+    max-width: 46.875vw;
+    height: 90.9375vw; }
+    .menu .mre-menu {
+      top: 12.5vw;
+      left: 0;
+      padding: 0;
+      width: 100%; }
+      .menu .mre-menu .mre-menu-item {
+        border-bottom: 2px solid rgba(127, 129, 130, 0.15);
+        padding: 3.125vw 0 0 4.6875vw;
+        height: 9.375vw;
+        font-size: 2.5vw;
+        line-height: 3.125vw; }
+      .menu .mre-menu:first-child {
+        border-top: 2px solid rgba(127, 129, 130, 0.15); }
+    .menu .mre-menu-language {
+      width: 100%;
+      bottom: 21.09375vw;
+      left: 0;
+      height: 9.375vw; }
+      .menu .mre-menu-language .mre-menu-language-text {
+        padding-top: 3.125vw;
+        font-size: 1.875vw;
+        line-height: 3.125vw; }
+      .menu .mre-menu-language .mre-menu-language-flag {
+        margin: 2.34375vw 1.25vw 0 1.25vw;
+        opacity: 0.4;
+        width: 5vw;
+        height: 5vw; }
+      .menu .mre-menu-language .language-flag-active {
+        opacity: 1; }
+    .menu .mre-menu-social {
+      display: block;
+      height: 8.125vw;
+      bottom: 0;
+      width: 100%;
+      text-align: center; }
+      .menu .mre-menu-social .menu-social-icons {
+        font-size: 3.4375vw;
+        padding: 0;
+        text-align: center; }
+        .menu .mre-menu-social .menu-social-icons .menu-social-icon {
+          height: 5.78125vw;
+          width: 5.78125vw; }
+
+  .menu-button {
+    top: 0;
+    left: 0;
+    padding: 3.125vw 0 4.21875vw 3.125vw;
+    height: 9.375vw;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    z-index: 2;
+    width: 15.28vw; }
+
+  #nav-icon4 {
+    width: 4.6875vw;
+    top: 40%; }
+
+  #nav-icon4 span {
+    height: 0.46875vw;
+    width: 4.6875vw; }
+
+  #nav-icon4 span:nth-child(1) {
+    top: 0; }
+
+  #nav-icon4 span:nth-child(2) {
+    top: 1.5625vw; }
+
+  #nav-icon4 span:nth-child(3) {
+    top: 3.125vw; }
+
+  #nav-icon4.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 0.46875vw;
+    left: 0.46875vw;
+    height: 5px;
+    width: 4.0625vw; }
+
+  #nav-icon4.open {
+    top: 40%; }
+
+  #nav-icon4.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0; }
+
+  #nav-icon4.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 3.4375vw;
+    left: 0.46875vw;
+    height: 5px;
+    width: 4.0625vw; }
+
+  .navbar-fixed-top {
+    position: absolute; }
+
+  .menu-button {
+    height: 12.5vw; }
+
+  #mre-header .logo-header {
+    height: 12.5vw; }
+    #mre-header .logo-header .img-div {
+      height: 12.5vw; }
+      #mre-header .logo-header .img-div img {
+        height: 8.59375vw;
+        width: 21.875vw; }
+  #mre-header .social-header {
+    height: 12.5vw; }
+
+  #mre-header .swiper-container-hero {
+    margin-top: 12.5vw; }
+
+  .o-container {
+    margin: 0 auto;
+    padding: 0 1.875vw;
+    max-width: 150vw; }
+
+  .c-menu--slide-left,
+  .c-menu--slide-right,
+  .c-menu--push-left,
+  .c-menu--push-right {
+    width: 43.75vw; }
+
+  .c-menu--slide-left .c-menu__link,
+  .c-menu--slide-right .c-menu__link,
+  .c-menu--push-left .c-menu__link,
+  .c-menu--push-right .c-menu__link {
+    padding: 1.875vw 3.75vw; }
+
+  .c-menu--slide-left,
+  .c-menu--push-left {
+    -webkit-transform: translateX(-43.75vw);
+    -ms-transform: translateX(-43.75vw);
+    transform: translateX(-43.75vw); }
+
+  .c-menu__close {
+    font-size: 2.1875vw; }
+
+  .c-buttons {
+    margin-bottom: 7.5vw; }
+
+  .c-button {
+    padding: 1.875vw 3.75vw;
+    font-size: 2.1875vw;
+    border: solid 2px #ffffff; }
+
+  .menu-wrapper {
+    position: absolute;
+    overflow: hidden;
+    overflow-y: scroll;
+    top: 12.5vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column; }
+
+  .mre-menu-language, .mre-menu-social, .mre-menu {
+    position: unset !important; }
+
+  .mre-menu-language {
+    height: auto !important;
+    margin-bottom: 20px; } }
 @media only screen and (min-width: 700px) and (max-width: 740px) and (orientation: landscape) {
   #before-contact-us #offices .swiper-pagination .swiper-pagination-bullet {
     margin: 0 5.15vw;
