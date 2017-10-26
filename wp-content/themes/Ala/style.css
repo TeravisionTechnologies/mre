@@ -2325,9 +2325,7 @@ h2.active {
     position: absolute; }
 
   .menu {
-    min-width: 15.625vw;
     width: 100%;
-    max-width: 46.875vw;
     height: 90.9375vw; }
     .menu .al-menu {
       top: 12.5vw;
