@@ -337,7 +337,7 @@ body.has-active-menu {
     height: 16.31944vw;
     text-align: center; }
     .menu .hr-menu-language .hr-menu-language-text {
-      padding-top: 3.47222vw;
+      padding-top: 4.86111vw;
       font-family: Montserrat-Regular, sans-serif;
       font-size: 1.11111vw;
       line-height: 1.38889vw;
@@ -1314,7 +1314,7 @@ a[href^=tel] {
       left: 0;
       height: 235px; }
       .menu .hr-menu-language .hr-menu-language-text {
-        padding-top: 50px;
+        padding-top: 70px;
         font-size: 16px;
         line-height: 20px;
         margin: 0; }
