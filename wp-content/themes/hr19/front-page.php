@@ -32,7 +32,7 @@
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                             <input type="radio" id="presale" name="status">
-                            <label for="presale" id="pre"><?php _e('Pre-venta', 'hr') ?></label>
+                            <label for="presale" id="pre"><?php _e('Preventa', 'hr') ?></label>
                         </li>
                     </ul>
 
