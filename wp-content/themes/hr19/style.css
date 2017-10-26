@@ -2638,6 +2638,54 @@ a[href^=tel] {
   .navbar-fixed-top {
     position: absolute; }
 
+  .menu {
+    min-width: 15.625vw;
+    width: 100%;
+    max-width: 46.875vw;
+    height: 90.9375vw; }
+    .menu .hr-menu {
+      top: 12.5vw;
+      left: 0;
+      padding: 0;
+      width: 100%; }
+      .menu .hr-menu .hr-menu-item {
+        border-bottom: 2px solid rgba(127, 129, 130, 0.15);
+        padding: 3.125vw 0 0 4.6875vw;
+        height: 9.375vw;
+        font-size: 2.5vw;
+        line-height: 3.125vw; }
+      .menu .hr-menu:first-child {
+        border-top: 2px solid rgba(127, 129, 130, 0.15); }
+    .menu .hr-menu-language {
+      width: 100%;
+      bottom: 21.09375vw;
+      left: 0;
+      height: 9.375vw; }
+      .menu .hr-menu-language .hr-menu-language-text {
+        padding-top: 3.125vw;
+        font-size: 1.875vw;
+        line-height: 3.125vw; }
+      .menu .hr-menu-language .hr-menu-language-flag {
+        margin: 2.34375vw 1.25vw 0 1.25vw;
+        opacity: 0.4;
+        width: 5vw;
+        height: 5vw; }
+      .menu .hr-menu-language .language-flag-active {
+        opacity: 1; }
+    .menu .hr-menu-social {
+      display: block;
+      height: 8.125vw;
+      bottom: 0;
+      width: 100%;
+      text-align: center; }
+      .menu .hr-menu-social .menu-social-icons {
+        font-size: 3.4375vw;
+        padding: 0;
+        text-align: center; }
+        .menu .hr-menu-social .menu-social-icons .menu-social-icon {
+          height: 5.78125vw;
+          width: 5.78125vw; }
+
   .menu-button {
     top: 0;
     left: 0;
@@ -2649,7 +2697,8 @@ a[href^=tel] {
     width: 15.28vw; }
 
   #nav-icon4 {
-    width: 4.6875vw; }
+    width: 4.6875vw;
+    top: 40%; }
 
   #nav-icon4 span {
     height: 0.46875vw;
@@ -2672,10 +2721,10 @@ a[href^=tel] {
     top: 0.46875vw;
     left: 0.46875vw;
     height: 5px;
-    width: 4.6875vw; }
+    width: 4.0625vw; }
 
   #nav-icon4.open {
-    top: 30%; }
+    top: 40%; }
 
   #nav-icon4.open span:nth-child(2) {
     width: 0%;
@@ -2689,7 +2738,7 @@ a[href^=tel] {
     top: 3.4375vw;
     left: 0.46875vw;
     height: 5px;
-    width: 4.6875vw; }
+    width: 4.0625vw; }
 
   .navbar-fixed-top {
     position: absolute; }
@@ -2702,12 +2751,46 @@ a[href^=tel] {
     #hr-header .logo-header .img-div {
       height: 12.5vw; }
       #hr-header .logo-header .img-div img {
-        height: 7.8125vw;
-        width: 7.8125vw; }
+        height: 8.59375vw;
+        width: 8.59375vw; }
   #hr-header .social-header {
     height: 12.5vw; }
 
   .hr-hero-section {
-    margin-top: 12.5vw; } }
+    margin-top: 12.5vw; }
+
+  .o-container {
+    margin: 0 auto;
+    padding: 0 1.875vw;
+    max-width: 150vw; }
+
+  .c-menu--slide-left,
+  .c-menu--slide-right,
+  .c-menu--push-left,
+  .c-menu--push-right {
+    width: 43.75vw; }
+
+  .c-menu--slide-left .c-menu__link,
+  .c-menu--slide-right .c-menu__link,
+  .c-menu--push-left .c-menu__link,
+  .c-menu--push-right .c-menu__link {
+    padding: 1.875vw 3.75vw; }
+
+  .c-menu--slide-left,
+  .c-menu--push-left {
+    -webkit-transform: translateX(-43.75vw);
+    -ms-transform: translateX(-43.75vw);
+    transform: translateX(-43.75vw); }
+
+  .c-menu__close {
+    font-size: 2.1875vw; }
+
+  .c-buttons {
+    margin-bottom: 7.5vw; }
+
+  .c-button {
+    padding: 1.875vw 3.75vw;
+    font-size: 2.1875vw;
+    border: solid 2px #fff; } }
 
 /*# sourceMappingURL=style.css.map */
