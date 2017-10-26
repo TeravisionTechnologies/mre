@@ -119,7 +119,7 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
         ?>
         <div class="recommended-posts-overlay">
             <div class="container-mre center-block">
-                <h2 class="recommended-posts-title">Artículos Recomendados</h2>
+                <h2 class="recommended-posts-title">Artículos recomendados</h2>
                 <div class="swiper-container swiper-container-blog-most-viewed">
                     <div class="swiper-wrapper">
                         <?php
