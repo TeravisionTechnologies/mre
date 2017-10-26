@@ -2635,10 +2635,79 @@ a[href^=tel] {
           line-height: 5.55556vw;
           margin-top: 11.11111vw; } }
 @media only screen and (max-width: 767px) and (orientation: landscape) {
+  .navbar-fixed-top {
+    position: absolute; }
+
+  .menu-button {
+    top: 0;
+    left: 0;
+    padding: 3.125vw 0 4.21875vw 3.125vw;
+    height: 9.375vw;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    z-index: 2;
+    width: 15.28vw; }
+
   #nav-icon4 {
-    top: 5%; }
+    width: 4.6875vw; }
+
+  #nav-icon4 span {
+    height: 0.46875vw;
+    width: 4.6875vw; }
+
+  #nav-icon4 span:nth-child(1) {
+    top: 0; }
+
+  #nav-icon4 span:nth-child(2) {
+    top: 1.5625vw; }
+
+  #nav-icon4 span:nth-child(3) {
+    top: 3.125vw; }
+
+  #nav-icon4.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 0.46875vw;
+    left: 0.46875vw;
+    height: 5px;
+    width: 4.6875vw; }
+
+  #nav-icon4.open {
+    top: 30%; }
+
+  #nav-icon4.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0; }
+
+  #nav-icon4.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 3.4375vw;
+    left: 0.46875vw;
+    height: 5px;
+    width: 4.6875vw; }
 
   .navbar-fixed-top {
-    position: absolute; } }
+    position: absolute; }
+
+  .menu-button {
+    height: 12.5vw; }
+
+  #hr-header .logo-header {
+    height: 12.5vw; }
+    #hr-header .logo-header .img-div {
+      height: 12.5vw; }
+      #hr-header .logo-header .img-div img {
+        height: 7.8125vw;
+        width: 7.8125vw; }
+  #hr-header .social-header {
+    height: 12.5vw; }
+
+  .hr-hero-section {
+    margin-top: 12.5vw; } }
 
 /*# sourceMappingURL=style.css.map */

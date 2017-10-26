@@ -1,5 +1,80 @@
+// Header
+.navbar-fixed-top
+  position: absolute
+
+.menu-button
+  top: 0
+  left: 0
+  padding: get-vw-mobileLandscape(20px) 0 get-vw-mobileLandscape(27px) get-vw-mobileLandscape(20px)
+  height: get-vw-mobileLandscape(60px)
+  -webkit-transition: .3s
+  transition: .3s
+  z-index: 2
+  width: 15.28vw
+
 #nav-icon4
-  top: 5%
+  width: get-vw-mobileLandscape(30px)
+
+#nav-icon4
+  span
+    height: get-vw-mobileLandscape(3px)
+    width: get-vw-mobileLandscape(30px)
+
+#nav-icon4 span:nth-child(1)
+  top: 0
+
+#nav-icon4 span:nth-child(2)
+  top: get-vw-mobileLandscape(10px)
+
+#nav-icon4 span:nth-child(3)
+  top: get-vw-mobileLandscape(20px)
+
+#nav-icon4.open span:nth-child(1)
+  -webkit-transform: rotate(45deg)
+  -moz-transform: rotate(45deg)
+  -o-transform: rotate(45deg)
+  transform: rotate(45deg)
+  top: get-vw-mobileLandscape(3px)
+  left: get-vw-mobileLandscape(3px)
+  height: 5px
+  width: get-vw-mobileLandscape(30px)
+
+#nav-icon4.open
+  top: 30%
+
+#nav-icon4.open span:nth-child(2)
+  width: 0%
+  opacity: 0
+
+#nav-icon4.open span:nth-child(3)
+  -webkit-transform: rotate(-45deg)
+  -moz-transform: rotate(-45deg)
+  -o-transform: rotate(-45deg)
+  transform: rotate(-45deg)
+  top: get-vw-mobileLandscape(22px)
+  left: get-vw-mobileLandscape(3px)
+  height: 5px
+  width: get-vw-mobileLandscape(30px)
 
 .navbar-fixed-top
   position: absolute
+
+.menu-button
+  height: get-vw-mobileLandscape(80px)
+
+#hr-header
+  .logo-header
+    height: get-vw-mobileLandscape(80px)
+    .img-div
+      height: get-vw-mobileLandscape(80px)
+      img
+        height: get-vw-mobileLandscape(50px)
+        width: get-vw-mobileLandscape(50px)
+  .social-header
+    height: get-vw-mobileLandscape(80px)
+
+.hr-hero-section
+  margin-top: get-vw-mobileLandscape(80px)
+
+
+// END Header
