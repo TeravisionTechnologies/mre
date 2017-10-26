@@ -94,7 +94,7 @@ jQuery(document).ready(function () {
 
     // Add Swiper Flags
     var swiperFlag = new Swiper('.swiper-container-flags', {
-        initialSlide: 1,
+        //initialSlide: 1,
         nested: true,
     });
 
@@ -104,7 +104,7 @@ jQuery(document).ready(function () {
         swiperFlag.slideTo(index - 1);
     });
 
-    $(".flags-indicators img").click(function (e) {
+    $(".flag-image").click(function (e) {
         $(".flag-image-opacity").removeClass("flag-image-opacity");
         $(this).addClass("flag-image-opacity");
     });

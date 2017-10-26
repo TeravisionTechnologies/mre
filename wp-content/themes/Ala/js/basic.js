@@ -28,7 +28,7 @@ jQuery(document).ready(function () {
         swiperFlag.slideTo(index - 1);
     });
 
-    $(".flags-indicators img").click(function (e) {
+    $(".flag-image").click(function (e) {
         $(".flag-image-opacity").removeClass("flag-image-opacity");
         $(this).addClass("flag-image-opacity");
     });

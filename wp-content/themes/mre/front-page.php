@@ -111,7 +111,7 @@ $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
                           foreach ($countries as $country) {
                               $meta_image = get_wp_term_image($country->term_id);
                               $clase = ($j == 1 ? "flag-image-opacity" : "");
-                              echo '<img id="flag-image-'.$j.'" class="flag-image '.$clase.'" data-pagination="'.$j.'" src="'.$meta_image.'"/>';
+                              echo '<div id="flag-image-'.$j.'" class="flag-image '.$clase.'" data-pagination="'.$j.'" style="background-image: url('.$meta_image.')"></div>';
                               $j++;
                           }
                       } ?>
