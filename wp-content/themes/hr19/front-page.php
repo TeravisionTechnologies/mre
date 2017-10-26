@@ -110,11 +110,11 @@
                     </select>
                     <div class="pull-right choose-search">
                         <div class="radio radio-inline radio-success">
-                            <input type="radio" id="inlineRadio1" value="option1" name="radioInline" class="styled" checked>
+                            <input type="radio" id="inlineRadio1" value="option1" name="radioInline" class="styled">
                             <label for="inlineRadio1"><?php _e('Solo Hr19', 'hr') ?></label>
                         </div>
                         <div class="radio radio-inline radio-success">
-                            <input type="radio" id="inlineRadio2" value="option2" name="radioInline" class="styled">
+                            <input type="radio" id="inlineRadio2" value="option2" name="radioInline" class="styled" checked>
                             <label for="inlineRadio2"><?php _e('Todos', 'hr') ?></label>
                         </div>
                     </div>
