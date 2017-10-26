@@ -332,7 +332,7 @@ body.has-active-menu {
   .menu .hr-menu-language {
     width: 100%;
     position: absolute;
-    bottom: 15.41667vw;
+    bottom: 12.15278vw;
     left: 0;
     height: 16.31944vw;
     text-align: center; }
@@ -1310,7 +1310,7 @@ a[href^=tel] {
       .menu .hr-menu:first-child {
         border-top: 2px solid rgba(127, 129, 130, 0.15); }
     .menu .hr-menu-language {
-      bottom: 222px;
+      bottom: 175px;
       left: 0;
       height: 235px; }
       .menu .hr-menu-language .hr-menu-language-text {
@@ -1666,7 +1666,7 @@ a[href^=tel] {
         border-top: 2px solid rgba(127, 129, 130, 0.15); }
     .menu .hr-menu-language {
       width: 100%;
-      bottom: 21.48438vw;
+      bottom: 11.06771vw;
       left: 0;
       height: 30.59896vw; }
       .menu .hr-menu-language .hr-menu-language-text {
@@ -2130,7 +2130,7 @@ a[href^=tel] {
         border-top: 2px solid rgba(127, 129, 130, 0.15); }
     .menu .hr-menu-language {
       width: 100%;
-      bottom: 44.44444vw;
+      bottom: 27.77778vw;
       left: 0;
       height: 16.66667vw; }
       .menu .hr-menu-language .hr-menu-language-text {

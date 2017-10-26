@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <div class="col-xs-6 col-sm-3 col-md-3">
-                            <span class="filter"><?php _e('Rango de Precio', 'hr') ?></span>
+                            <span class="filter"><?php _e('Rango de precio', 'hr') ?></span>
                             <div class="styled-select">
                                 <select>
                                     <option>--</option>
