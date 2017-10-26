@@ -69,4 +69,10 @@ jQuery(document).ready(function () {
     var t = $(this);
     $('#' + t.data('target')).slideToggle();
   });
+
+  // Menu landscape height
+  var height = $(window).height();
+  var navheight = $('.menu-button').outerHeight();
+  $('.menu-wrapper').height(height - navheight);
+
 });

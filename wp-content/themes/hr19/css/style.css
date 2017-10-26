@@ -1205,6 +1205,10 @@ h2.active {
         color: #4a4a4a;
         margin-top: 3.4722222222vw; }
 
+a[href^=tel] {
+  text-decoration: inherit;
+  color: inherit; }
+
 @media only screen and (min-width: 1440px) {
   .container-hr {
     width: 1170px;
@@ -2632,6 +2636,9 @@ h2.active {
           margin-top: 11.1111111111vw; } }
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   #nav-icon4 {
-    top: 5%; } }
+    top: 5%; }
+
+  .navbar-fixed-top {
+    position: absolute; } }
 
 /*# sourceMappingURL=style.css.map */
