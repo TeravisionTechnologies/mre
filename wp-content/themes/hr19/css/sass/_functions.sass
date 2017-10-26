@@ -9,3 +9,7 @@
 @function get-vw-mobile($object)
   $vw: (360 * 0.01) * 1px
   @return ($object / $vw) * 1vw
+
+@function get-vw-mobileLandscape($object)
+  $vw: (640 * 0.01) * 1px
+  @return ($object / $vw) * 1vw
