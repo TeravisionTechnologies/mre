@@ -143,7 +143,7 @@ $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
                   <p class="col-xs-12 text-center al-contact-text-bold"><?php if(isset($contact[0]['_hf_contact_second'])) { echo $contact[0]['_hf_contact_second']; }?></p>
                   <div class="col-xs-12 col-md-4 no-padding">
                     <div class="al-phone-box text-center center-block">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.png" alt="Llamanos Ala19">
+                      <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.svg" alt="Llamanos Ala19">
                       <p><?php if(isset($contact[0]['_hf_contact_text'])) { echo $contact[0]['_hf_contact_text']; }?></p>
                       <?php if(isset($contact[0]['_hf_contact_phone'])) { ?>
                         <a href="tel:<?php echo str_replace(array(".", " ", "-", "/"), "", $contact[0]['_hf_contact_phone']); ?>" class="al-phone-num"><?php echo $contact[0]['_hf_contact_phone']; ?></a>

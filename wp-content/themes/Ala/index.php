@@ -80,7 +80,7 @@ $officesEs = get_post_meta( $home_query[0]->ID, '_hf_offices_es', true );
                     </button>
                     <ul class="dropdown-menu sort-by-button-group" aria-labelledby="dropdownMenu1">
                         <li><a class="orderby" data-sort-value="name" data-sort-direction="asc"><?php _e('Por nombre', 'ala') ?> <i class="fa fa-chevron-up"></i></a></li>
-                        <li><a class="orderby" data-option-value=".date" data-sort-value=".date" data-sort-direction="asc"><?php _e('Ultimo agregado', 'ala') ?></a></li>
+                        <li><a class="orderby" data-option-value=".date" data-sort-value=".date" data-sort-direction="asc"><?php _e('Último agregado', 'ala') ?></a></li>
                     </ul>
                 </div>
             </div>
