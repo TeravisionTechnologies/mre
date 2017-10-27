@@ -37,42 +37,53 @@ jQuery(document).ready(function () {
         });
     }
 
-  // Go to top functionality
-  $(".footer-top").click(function () {
-    $("html, body").animate({scrollTop: 0}, 2000);
-  });
+    // Go to top functionality
+    $(".footer-top").click(function () {
+        $("html, body").animate({scrollTop: 0}, 2000);
+    });
 
-  //Menu flags
-  $('.hr-menu-language-flag').click(function () {
+    //Menu flags
+    $('.hr-menu-language-flag').click(function () {
         $('.hr-menu-language-flag').css('opacity', 0.4);
         $(this).css('opacity', 1);
     });
 
-  //Menu contact us functionality
-  $("#menu-item-17").click(function (e) {
-    e.preventDefault;
-    slideLeft.close();
-    var position = $("#contact-us").offset().top;
-    var finalPosition = position - 80;
-    $('html, body').animate({
-      scrollTop: finalPosition
-    }, 2000);
-  });
+    //Menu contact us functionality
+    $("#menu-item-17").click(function (e) {
+        e.preventDefault;
+        slideLeft.close();
+        var position = $("#contact-us").offset().top;
+        var finalPosition = position - 80;
+        $('html, body').animate({
+            scrollTop: finalPosition
+        }, 2000);
+    });
 
-  //Agents profiles background color
-  $(".agent-profile:even").css("background", "#d6d6d6");
-  $(".agent-profile:odd").css("background", "#f0f0f0");
+    //Menu rentalone us functionality
+    $("#menu-item-51").click(function (e) {
+        e.preventDefault;
+        slideLeft.close();
+        var position = $("#rentalone").offset().top;
+        var finalPosition = position - 80;
+        $('html, body').animate({
+            scrollTop: finalPosition
+        }, 2000);
+    });
 
-  //Agent properties show and hide
-  $(".properties-number").click(function(){
-    $(this).find("i").toggleClass("fa-caret-down").toggleClass("fa-caret-up");
-    var t = $(this);
-    $('#' + t.data('target')).slideToggle();
-  });
+    //Agents profiles background color
+    $(".agent-profile:even").css("background", "#d6d6d6");
+    $(".agent-profile:odd").css("background", "#f0f0f0");
 
-  // Menu landscape height
-  var height = $(window).height();
-  var navheight = $('.menu-button').outerHeight();
-  $('.menu-wrapper').height(height - navheight);
+    //Agent properties show and hide
+    $(".properties-number").click(function () {
+        $(this).find("i").toggleClass("fa-caret-down").toggleClass("fa-caret-up");
+        var t = $(this);
+        $('#' + t.data('target')).slideToggle();
+    });
+
+    // Menu landscape height
+    var height = $(window).height();
+    var navheight = $('.menu-button').outerHeight();
+    $('.menu-wrapper').height(height - navheight);
 
 });

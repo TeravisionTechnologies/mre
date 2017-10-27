@@ -20,7 +20,7 @@
             <a href="<?php echo $partners[0]['_hf_partner_link_right']; ?>" target="_blank"><img src="<?php echo $partners[0]['_hf_partner_logo_right']; ?>" alt="Logo MRE RealEstate" class="partners-images-two"/></a>
           </div>
         </section>
-        <section class="col-xs-12 hr-rentalone-section text-center no-padding" style="background-image: url('<?php echo $rental[0]["_hf_rental_background"] ?>')">
+        <section id="rentalone" class="col-xs-12 hr-rentalone-section text-center no-padding" style="background-image: url('<?php echo $rental[0]["_hf_rental_background"] ?>')">
           <div class="hr-rentalone-overlay">
             <img src="<?php echo $rental[0]["_hf_rental_logo"] ?>" alt="Logo Rental One" class="rentalone-logo"/>
             <div class="rentalone-button"><a href="<?php echo $rental[0]["_hf_rental_link"] ?>" target="_blank">Ver más</a></div>
