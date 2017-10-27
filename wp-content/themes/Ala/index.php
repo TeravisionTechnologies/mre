@@ -60,7 +60,7 @@ $officesEs = get_post_meta( $home_query[0]->ID, '_hf_offices_es', true );
             <div class="center-block button-group locations" data-filter-group="country">
                 <?php
                 $locations = get_terms('property_location', array(
-                    'orderby' => 'count',
+                    'orderby' => 'description',
                     'hide_empty' => 0
                 ));
                 if (!empty($locations) && !is_wp_error($locations)) {
