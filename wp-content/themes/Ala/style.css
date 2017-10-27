@@ -503,8 +503,9 @@ body {
     cursor: pointer;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center cen;
-    display: inline-block; }
+    background-position: center center;
+    display: inline-block;
+    border-radius: 50%; }
   #al-offices .flags-indicators .flag-image-opacity {
     opacity: 0.6; }
   #al-offices .swiper-wrapper {
