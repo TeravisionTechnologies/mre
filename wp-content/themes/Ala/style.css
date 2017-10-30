@@ -18,7 +18,6 @@
   margin: 0; }
 
 html, body {
-  position: relative;
   height: 100%; }
 
 body {
@@ -681,9 +680,6 @@ body {
 
 textarea {
   resize: none !important; }
-
-#menu-primary {
-  margin-top: 2px !important; }
 
 .menu-button {
   padding: 1.7361111111vw 1.1111111111vw !important; }
@@ -1751,7 +1747,6 @@ h2.active {
     font-size: 5vw; }
 
   .menu {
-    min-width: 27.7777777778vw;
     width: 100%;
     max-width: 83.3333333333vw;
     height: 161.6666666667vw; }
@@ -2441,7 +2436,7 @@ h2.active {
   #ala-header .social-header {
     height: 12.5vw; }
 
-  .swiper-container-hero {
+  #ala-header .swiper-container-hero {
     margin-top: 12.5vw; }
 
   .o-container {

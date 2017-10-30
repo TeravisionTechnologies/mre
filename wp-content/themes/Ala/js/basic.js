@@ -252,6 +252,12 @@ jQuery(document).ready(function () {
     var navheight = $('.menu-button').outerHeight();
     $('.menu-wrapper').height(height - navheight);
 
+    $(window).on('orientationchange', function(event) {
+        var height = $(window).height();
+        var navheight = $('.menu-button').outerHeight();
+        $('.menu-wrapper').height(height - navheight);
+    });
+
 });
 
 
