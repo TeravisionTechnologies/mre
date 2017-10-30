@@ -87,9 +87,11 @@ jQuery(document).ready(function () {
     $('.menu-wrapper').height(height - navheight);
 
     window.addEventListener("orientationchange", function() {
-        var height = $(window).height();
-        var navheight = $('.menu-button').outerHeight();
-        $('.menu-wrapper').height(height - navheight);
+        setTimeout(function () {
+            var height = $(window).height();
+            var navheight = $('.menu-button').outerHeight();
+            $('.menu-wrapper').height(height - navheight);
+        }, 500);
     }, false);
 
 });
