@@ -86,7 +86,7 @@ jQuery(document).ready(function () {
     var navheight = $('.menu-button').outerHeight();
     $('.menu-wrapper').height(height - navheight);
 
-    window.addEventListener("orientationchange", function() {
+    window.addEventListener("resize", function() {
         setTimeout(function () {
             var height = $(window).height();
             var navheight = $('.menu-button').outerHeight();
