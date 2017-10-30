@@ -1,0 +1,72 @@
+.breadcrumb-info
+  margin-top: get-vw-desktop(80px)
+  height: 50px
+  background: $mainblue
+  color: $white
+  padding: 16px 0
+  .breadcrumbs
+    .fa-chevron-left
+      margin-right: 5px
+      cursor: pointer
+  .published, .status
+    display: inline-block
+  .published
+    opacity: 0.5
+    margin-right: 5px
+  .status
+    span
+      color: $green-active
+
+.property-features
+  .panel
+    border: none
+    -webkit-box-shadow: none
+    box-shadow: none
+    .panel-heading
+      background: none
+      .panel-title
+        position: relative
+        background-color: $white
+        &:after
+          content: ""
+          position: absolute
+          bottom: 0
+          left: 0
+          right: 0
+          height: 2px
+          border-top: 2px solid $grey-1
+          top: 0
+          margin: auto
+          opacity: 0.8
+          width: 95%
+        a
+          font-size: 20px
+          letter-spacing: -0.1px
+          font-family: 'Montserrat-Medium'
+          color: $grey
+          position: relative
+          display: inline-block
+          background: $white
+          z-index: 10
+          padding-right: 15px
+          &:hover, &:focus, &:active
+            text-decoration: none
+        i
+          position: absolute
+          right: 0
+          top: 0
+          bottom: 0
+          margin: auto
+          height: 16px
+          font-size: 16px
+        .number
+          display: inline-block
+          width: 32px
+          height: 32px
+          border: solid 3px $grey
+          border-radius: 50%
+          text-align: center
+          line-height: 29px
+          margin-right: 10px
+    .panel-body
+      border-top-color: transparent !important
