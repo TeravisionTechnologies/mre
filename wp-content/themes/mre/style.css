@@ -71,7 +71,6 @@
   margin: 0; }
 
 html, body {
-  position: relative;
   height: 100%; }
 
 body {
@@ -675,9 +674,6 @@ a.al-phone-num {
     right: 9.7222222222vw;
     top: 2.7777777778vw;
     z-index: 100; }
-
-#menu-primary {
-  margin-top: 2px !important; }
 
 #nav-icon4 {
   width: 39px;
