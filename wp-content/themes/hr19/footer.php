@@ -103,6 +103,7 @@
     <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/menu.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.mobile.custom.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.sticky.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/basic.js"></script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH6eKdzSWQ0bic1EiZCzkbhqMqEzYd3eQ&callback=initMap">

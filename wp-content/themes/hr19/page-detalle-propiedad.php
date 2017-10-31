@@ -18,12 +18,44 @@ get_header();
     </div>
 </div>
 
-<div class="property-carousel" style="height: 300px">
-
+<div class="property-carousel">
+    <div class="swiper-container swiper-property">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><div style="background-image: url(http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg)"></div></div>
+            <div class="swiper-slide"><div style="background-image: url(http://elizabethjahn.com/images/country-house-interior-2.jpg)"></div></div>
+            <div class="swiper-slide"><div style="background-image: url(http://elizabethjahn.com/images/country-house-interior-2.jpg)"></div></div>
+            <div class="swiper-slide"><div style="background-image: url(http://www.hooperprojects.com/wp-content/uploads/black-and-white-bathroom-accessories-white-laminated-base-cabinet-table-sink-small-round-wash-basins-for-small-wall-lighting-furniture-small-interior-with-wrought-iron-etagere.jpg)"></div></div>
+        </div>
+        <div class="swiper-button-next"><i class="fa fa-chevron-circle-right"></i></div>
+        <div class="swiper-button-prev"><i class="fa fa-chevron-circle-left"></i></div>
+    </div>
 </div>
 
 <div class="property-info-heading">
-
+    <div class="container">
+        <div class="col-md-3 price borderl">
+            <div><?php _e( 'Precio:', 'hr' ) ?></div>
+            <div class="price-txt">$225,000</div>
+            <div class="sm-text">Estimado de hipoteca: $603/mes</div>
+        </div>
+        <div class="col-md-6 borderl paddingl40">
+            <div class="md-text">153 Jost Manor Dr Florissant, MO 63034</div>
+            <div>Unifamiliar · 5 Habitaciones · 4 Baños · 3 Medios baños</div>
+            <div class="sm-text">Número de MLS: 1258649</div>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="row surface">
+                <div class="col-md-6">
+                    <div class="sm-text"><?php _e( 'Superficie:', 'hr' ) ?></div>
+                    <div class="md-text">7,252 ft</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="sm-text"><?php _e( 'Pies cuadrados:', 'hr' ) ?></div>
+                    <div class="md-text">13,532 ft²</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="property-features">
@@ -184,7 +216,29 @@ get_header();
 </div>
 
 <div class="property-similar">
-
+    <div class="container property-list">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="hr-heading"><?php _e('Propiedades similares', 'hr') ?></h2>
+            </div>
+        </div>
+        <div class="row">
+			<?php for ($x = 0; $x <= 2; $x++) { ?>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <a href="#" class="property">
+                        <div class="property-image"
+                             style="background: url('http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg');"></div>
+                        <div class="property-info">
+                            <div class="property-price">$224,000</div>
+                            <div class="property-highlights">Casa, 4 habitaciones</div>
+                            <div class="property-address">3215 Stafford Ln</div>
+                            <div class="property-code">MLS: 1258364</div>
+                        </div>
+                    </a>
+                </div>
+			<?php } ?>
+        </div>
+    </div>
 </div>
 
 <?php get_footer(); ?>

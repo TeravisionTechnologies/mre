@@ -1,5 +1,15 @@
 jQuery(document).ready(function () {
 
+    // Swiper Property
+    var swiper = new Swiper('.swiper-property', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+    });
+    
+    // Sticky info property
+    var navheight = $('.menu-button').outerHeight();
+    $(".property-info-heading").sticky({topSpacing:navheight});
+
     // Footer Go to top functionality
     $(".footer-top").click(function () {
         $("html, body").animate({scrollTop: 0}, 2000);

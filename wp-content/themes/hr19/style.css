@@ -1226,6 +1226,66 @@ a[href^=tel] {
   .breadcrumb-info .status span {
     color: #21ac03; }
 
+.property-carousel {
+  height: 650px; }
+  .property-carousel .swiper-container {
+    width: 100%;
+    height: 100%; }
+  .property-carousel .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff; }
+    .property-carousel .swiper-slide div {
+      width: 876px;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      margin: 0 auto; }
+  .property-carousel .swiper-button-next, .property-carousel .swiper-button-prev {
+    background-image: none; }
+    .property-carousel .swiper-button-next .fa, .property-carousel .swiper-button-prev .fa {
+      font-size: 36px;
+      color: #8f8f8f; }
+  .property-carousel .swiper-button-next {
+    right: 100px; }
+  .property-carousel .swiper-button-prev {
+    left: 100px; }
+
+.borderl {
+  border-right: solid 1px rgba(74, 74, 74, 0.3); }
+
+.paddingl40 {
+  padding-left: 40px !important; }
+
+.property-info-heading {
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+  height: 120px;
+  margin-bottom: 40px;
+  font-size: 18px;
+  color: #4a4a4a;
+  font-family: "Montserrat-Light";
+  letter-spacing: -0.1px;
+  padding: 24px 0;
+  background: #fff;
+  z-index: 999999 !important; }
+  .property-info-heading div[class*='col'] {
+    padding: 0; }
+  .property-info-heading .sm-text {
+    font-size: 14px; }
+  .property-info-heading .price-txt {
+    font-size: 24px;
+    font-family: "Montserrat-bold";
+    line-height: 28px;
+    margin-bottom: 3px; }
+  .property-info-heading .md-text {
+    font-size: 22px;
+    font-family: "Montserrat-bold";
+    line-height: 26px;
+    margin-bottom: 3px; }
+  .property-info-heading .surface {
+    padding: 13px 0; }
+
 .property-features .open-house {
   color: #033c5a;
   font-size: 16px;
@@ -1235,14 +1295,14 @@ a[href^=tel] {
   border-radius: 40px;
   padding: 7px 20px;
   margin-bottom: 20px;
-  margin-left: 15px; }
+  margin-top: 40px; }
 .property-features .panel {
   border: none;
   -webkit-box-shadow: none;
   box-shadow: none; }
   .property-features .panel .panel-heading {
     background: none;
-    padding: 22px 15px; }
+    padding: 22px 0; }
     .property-features .panel .panel-heading .panel-title {
       position: relative;
       background-color: #fff; }
