@@ -5,7 +5,7 @@ jQuery(document).ready(function () {
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
     });
-    
+
     // Sticky info property
     var navheight = $('.menu-button').outerHeight();
     $(".property-info-heading").sticky({topSpacing:navheight});

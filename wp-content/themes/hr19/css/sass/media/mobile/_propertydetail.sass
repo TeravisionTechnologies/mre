@@ -1,5 +1,85 @@
 .breadcrumb-info
   margin-top: get-vw-mobile(60px)
-  height: auto
+  height:  get-vw-mobile(30px)
+  font-size: get-vw-mobile(6px)
+  padding: get-vw-mobile(12px) 0
   div
     text-align: left !important
+  .col-xs-5
+    padding-right: 0 !important
+
+.property-info-heading
+  height: auto
+  position: relative !important
+  z-index: unset !important
+  top: unset !important
+  font-size: get-vw-mobile(8px)
+  padding: get-vw-mobile(15px) 0
+  .price
+    border: none
+    border-bottom: solid 1px rgba(74, 74, 74, 0.3)
+    padding-bottom: get-vw-mobile(10px) !important
+    margin-bottom: get-vw-mobile(10px)
+  .price-txt
+    font-size: get-vw-mobile(14px)
+    line-height: get-vw-mobile(14px)
+  .sm-text
+    font-size: get-vw-mobile(7px)
+  .md-text
+    font-size: get-vw-mobile(10px)
+    line-height: get-vw-mobile(10px)
+  .paddingl40
+    padding-left: 0 !important
+  .surface
+    .md-text
+      font-size: get-vw-mobile(14px)
+      line-height: get-vw-mobile(14px)
+
+.property-features
+  .oh-wrap
+    text-align: center
+  .open-house
+    font-size: get-vw-mobile(10px)
+  .panel
+    .panel-heading
+      padding: get-vw-mobile(12px) 0
+      .panel-title
+        &:after
+          width: 85%
+        a
+          font-size: get-vw-mobile(12px)
+        .number
+          width: get-vw-mobile(18px)
+          height: get-vw-mobile(18px)
+          border: solid get-vw-mobile(2px) #4a4a4a
+          line-height: get-vw-mobile(15px)
+        i
+          height: get-vw-mobile(14px)
+          font-size: get-vw-mobile(14px)
+    .panel-body
+      padding: get-vw-mobile(15px) get-vw-mobile(30px)
+      font-size: get-vw-mobile(10px)
+      line-height: get-vw-mobile(20px)
+      .main-features
+        font-size: get-vw-mobile(10px)
+        .feature
+          margin-bottom: get-vw-mobile(15px)
+          &:nth-child(3)
+            border-right: none
+          &:last-child
+            border-right: solid 1px rgba(74, 74, 74, 0.3)
+          .info
+            font-size: get-vw-mobile(10px)
+
+.property-carousel
+  .swiper-button-prev
+    left: 30px
+    .fa
+      font-size: get-vw-mobile(20px)
+  .swiper-button-next
+    right: 30px
+    .fa
+      font-size: get-vw-mobile(20px)
+  .total
+    display: none
+

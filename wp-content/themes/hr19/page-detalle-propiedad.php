@@ -5,12 +5,12 @@ get_header();
 <div class="breadcrumb-info">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-7 col-md-6">
+            <div class="col-xs-7 col-sm-7 col-md-6">
                 <div class="breadcrumbs"><i class="fa fa-chevron-left" aria-hidden="true"></i> Miami, FL > 153 Jost
                     Manor Dr Florissant, MO 63034
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-5 col-md-6 text-right">
+            <div class="col-xs-5 col-sm-5 col-md-6 text-right">
                 <div class="published">Publicada hace: 59 días</div>
                 <div class="status">Estatus: <span>Activa</span></div>
             </div>
@@ -23,33 +23,32 @@ get_header();
         <div class="swiper-wrapper">
             <div class="swiper-slide"><div style="background-image: url(http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg)"></div></div>
             <div class="swiper-slide"><div style="background-image: url(http://elizabethjahn.com/images/country-house-interior-2.jpg)"></div></div>
-            <div class="swiper-slide"><div style="background-image: url(http://elizabethjahn.com/images/country-house-interior-2.jpg)"></div></div>
-            <div class="swiper-slide"><div style="background-image: url(http://www.hooperprojects.com/wp-content/uploads/black-and-white-bathroom-accessories-white-laminated-base-cabinet-table-sink-small-round-wash-basins-for-small-wall-lighting-furniture-small-interior-with-wrought-iron-etagere.jpg)"></div></div>
         </div>
         <div class="swiper-button-next"><i class="fa fa-chevron-circle-right"></i></div>
         <div class="swiper-button-prev"><i class="fa fa-chevron-circle-left"></i></div>
+        <div class="total"><i class="fa fa-camera"></i> 1/6 photos</div>
     </div>
 </div>
 
 <div class="property-info-heading">
     <div class="container">
-        <div class="col-md-3 price borderl">
+        <div class="col-xs-12 col-sm-3 col-md-3 price borderl">
             <div><?php _e( 'Precio:', 'hr' ) ?></div>
             <div class="price-txt">$225,000</div>
             <div class="sm-text">Estimado de hipoteca: $603/mes</div>
         </div>
-        <div class="col-md-6 borderl paddingl40">
+        <div class="col-xs-6 col-sm-6 col-md-6 borderl paddingl40">
             <div class="md-text">153 Jost Manor Dr Florissant, MO 63034</div>
             <div>Unifamiliar · 5 Habitaciones · 4 Baños · 3 Medios baños</div>
             <div class="sm-text">Número de MLS: 1258649</div>
         </div>
-        <div class="col-md-3 text-center">
+        <div class="col-xs-6 col-sm-3 col-md-3 text-center">
             <div class="row surface">
-                <div class="col-md-6">
+                <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="sm-text"><?php _e( 'Superficie:', 'hr' ) ?></div>
                     <div class="md-text">7,252 ft</div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="sm-text"><?php _e( 'Pies cuadrados:', 'hr' ) ?></div>
                     <div class="md-text">13,532 ft²</div>
                 </div>
@@ -61,7 +60,7 @@ get_header();
 <div class="property-features">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 oh-wrap">
                 <div class="open-house">Open House: Saturday October 28, 11:00 am - 3:00 pm</div>
             </div>
         </div>
@@ -97,23 +96,23 @@ get_header();
                         <div id="collapse2" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div class="row main-features">
-                                    <div class="col-md-3 feature">
+                                    <div class="col-xs-4 col-sm-3 col-md-3 feature">
                                         <div><i class="fa fa-info-circle"></i> <?php _e( 'Cuotas de HOA:', 'hr' ) ?></div>
                                         <div class="info">3,000/mes</div>
                                     </div>
-                                    <div class="col-md-2 feature">
+                                    <div class="col-xs-4 col-sm-2 col-md-2 feature">
                                         <div><?php _e( 'Impuestos', 'hr' ) ?></div>
                                         <div class="info">$ 42,735</div>
                                     </div>
-                                    <div class="col-md-3 feature">
+                                    <div class="col-xs-4 col-sm-3 col-md-3 feature">
                                         <div><?php _e( 'Año de construcción:', 'hr' ) ?></div>
                                         <div class="info">2017</div>
                                     </div>
-                                    <div class="col-md-2 feature">
+                                    <div class="col-xs-4 col-sm-2 col-md-2 feature">
                                         <div><?php _e( 'Comunidad:', 'hr' ) ?></div>
                                         <div class="info">Bay point</div>
                                     </div>
-                                    <div class="col-md-2 feature">
+                                    <div class="col-xs-4 col-sm-2 col-md-2 feature">
                                         <div><?php _e( 'Subdivision:', 'hr' ) ?></div>
                                         <div class="info">Bay point</div>
                                     </div>
@@ -164,13 +163,13 @@ get_header();
                                 minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                                 commodo consequat.
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
                                         <div class="nb-photo" style="background-image: url(https://www.miamiresidence.com/media/com_estateagent/categories/ea_cat_emerald_bay_205255887.jpg)"></div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
                                         <div class="nb-photo" style="background-image: url(https://www.miamiresidence.com/media/com_estateagent/categories/ea_cat_emerald_bay_205255887.jpg)"></div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
                                         <div class="nb-photo" style="background-image: url(https://www.miamiresidence.com/media/com_estateagent/categories/ea_cat_emerald_bay_205255887.jpg)"></div>
                                     </div>
                                 </div>
@@ -188,21 +187,17 @@ get_header();
                         </div>
                         <div id="collapse4" class="panel-collapse collapse">
                             <div class="panel-body">
-                                <div id="map"></div>
+                                <div id="map-detail"></div>
                                 <script>
                                     function initMap() {
-                                        var uluru = {lat: 25.8321352, lng: -80.1809173};
+                                        var uluru = {lat: -25.363, lng: 131.044};
                                         var map = new google.maps.Map(document.getElementById('map'), {
-                                            zoom: 10,
+                                            zoom: 4,
                                             center: uluru
                                         });
-
-                                       //var alamarker = '<?php //echo get_template_directory_uri(); ?>/assets/marker.png';
                                         var marker = new google.maps.Marker({
                                             position: uluru,
-                                            map: map,
-                                            //icon: alamarker,
-                                            animation: google.maps.Animation.BOUNCE
+                                            map: map
                                         });
                                     }
                                 </script>
