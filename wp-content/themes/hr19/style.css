@@ -1226,12 +1226,23 @@ a[href^=tel] {
   .breadcrumb-info .status span {
     color: #21ac03; }
 
+.property-features .open-house {
+  color: #033c5a;
+  font-size: 16px;
+  font-family: "Montserrat-bold";
+  border: solid 1px #033c5a;
+  display: inline-block;
+  border-radius: 40px;
+  padding: 7px 20px;
+  margin-bottom: 20px;
+  margin-left: 15px; }
 .property-features .panel {
   border: none;
   -webkit-box-shadow: none;
   box-shadow: none; }
   .property-features .panel .panel-heading {
-    background: none; }
+    background: none;
+    padding: 22px 15px; }
     .property-features .panel .panel-heading .panel-title {
       position: relative;
       background-color: #fff; }
@@ -1242,10 +1253,9 @@ a[href^=tel] {
         left: 0;
         right: 0;
         height: 2px;
-        border-top: 2px solid #8f8f8f;
+        border-top: 2px solid rgba(143, 143, 143, 0.4);
         top: 0;
         margin: auto;
-        opacity: 0.8;
         width: 95%; }
       .property-features .panel .panel-heading .panel-title a {
         font-size: 20px;
@@ -1266,7 +1276,12 @@ a[href^=tel] {
         bottom: 0;
         margin: auto;
         height: 16px;
-        font-size: 16px; }
+        font-size: 16px;
+        color: #8f8f8f;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease; }
       .property-features .panel .panel-heading .panel-title .number {
         display: inline-block;
         width: 32px;
@@ -1274,10 +1289,40 @@ a[href^=tel] {
         border: solid 3px #4a4a4a;
         border-radius: 50%;
         text-align: center;
-        line-height: 29px;
+        line-height: 26px;
         margin-right: 10px; }
   .property-features .panel .panel-body {
-    border-top-color: transparent !important; }
+    border-top-color: transparent !important;
+    font-size: 16px;
+    padding: 50px 120px;
+    line-height: 27px;
+    color: #4a4a4a;
+    font-family: "Montserrat-Light"; }
+    .property-features .panel .panel-body h6 {
+      font-size: 18px;
+      font-family: "Montserrat-Bold"; }
+    .property-features .panel .panel-body .main-features {
+      margin-bottom: 60px;
+      text-align: center;
+      font-size: 18px;
+      margin-right: -50px;
+      margin-left: -50px; }
+      .property-features .panel .panel-body .main-features .feature {
+        padding: 5px 0 !important; }
+        .property-features .panel .panel-body .main-features .feature:not(:last-child) {
+          border-right: solid 1px rgba(74, 74, 74, 0.3); }
+        .property-features .panel .panel-body .main-features .feature .info {
+          font-size: 22px; }
+      .property-features .panel .panel-body .main-features .fa-info-circle {
+        color: #8f8f8f;
+        font-size: 16px;
+        cursor: pointer; }
+    .property-features .panel .panel-body .nb-photo {
+      height: 205px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      margin-top: 20px; }
 
 @media only screen and (min-width: 1440px) {
   .container-hr {

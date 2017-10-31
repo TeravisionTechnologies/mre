@@ -94,4 +94,16 @@ jQuery(document).ready(function () {
         }, 500);
     }, false);
 
+
+    $('.panel-title a').click(function() {
+        if ($(this).attr('aria-expanded') === "true") {
+            $(this).next( "i" ).removeClass( "fa-minus" );
+            $(this).next( "i" ).addClass( "fa-plus" );
+        } else {
+            $(this).next( "i" ).removeClass( "fa-plus" );
+            $(this).next( "i" ).addClass( "fa-minus" );
+        }
+    })
+
 });
+
