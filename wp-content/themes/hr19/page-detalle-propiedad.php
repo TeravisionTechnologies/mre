@@ -97,7 +97,7 @@ get_header();
                             <div class="panel-body">
                                 <div class="row main-features">
                                     <div class="col-xs-4 col-sm-3 col-md-3 feature">
-                                        <div><i class="fa fa-info-circle"></i> <?php _e( 'Cuotas de HOA:', 'hr' ) ?></div>
+                                        <div><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="<?php _e( 'La tarifa de asociación de propietarios (HOA) es una cantidad de dinero que deben pagar mensualmente los propietarios de ciertos tipos de propiedades residenciales para ayudar a mantener y mejorar las propiedades en la asociación.', 'hr' ) ?>"></i> <?php _e( 'Cuotas de HOA:', 'hr' ) ?></div>
                                         <div class="info">3,000/mes</div>
                                     </div>
                                     <div class="col-xs-4 col-sm-2 col-md-2 feature">
