@@ -26,7 +26,7 @@ get_header();
         </div>
         <div class="swiper-button-next"><i class="fa fa-chevron-circle-right"></i></div>
         <div class="swiper-button-prev"><i class="fa fa-chevron-circle-left"></i></div>
-        <div class="total"><i class="fa fa-camera"></i> 1/6 photos</div>
+        <div class="total"><i class="fa fa-camera"></i><div class="fraction"></div> <?php _e( 'fotos', 'hr' ) ?></div>
     </div>
 </div>
 

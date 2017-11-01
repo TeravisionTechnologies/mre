@@ -4,6 +4,8 @@ jQuery(document).ready(function () {
     var swiper = new Swiper('.swiper-property', {
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
+        pagination: '.fraction',
+        paginationType: 'fraction'
     });
 
     // Sticky info property
