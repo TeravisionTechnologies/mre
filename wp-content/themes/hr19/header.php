@@ -22,6 +22,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <?php wp_head(); ?>
     <!-- FIX HTML STYLES IE9 -->

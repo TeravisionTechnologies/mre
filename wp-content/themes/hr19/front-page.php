@@ -131,8 +131,8 @@
             <?php for ($x = 0; $x <= 8; $x++) { ?>
                 <div class="col-xs-12 col-sm-4 col-md-4">
                     <a href="#" class="property">
-                        <div class="property-image"
-                             style="background: url('http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg');"></div>
+                        <!--<div class="property-image"
+                             style="background: url('http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg');"></div>-->
                         <div class="property-info">
                             <div class="property-price">$224,000</div>
                             <div class="property-highlights">Casa, 4 habitaciones</div>
