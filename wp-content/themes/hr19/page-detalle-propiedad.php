@@ -199,6 +199,9 @@ get_header();
                                             position: uluru,
                                             map: map
                                         });
+                                        $("#accordion").on('show.bs.collapse', function () {
+                                            google.maps.event.trigger(map, 'resize');
+                                        });
                                     }
                                 </script>
                             </div>
