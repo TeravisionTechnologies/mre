@@ -5,31 +5,7 @@ $home_query = get_posts(
 		'post_type' => 'header_footer'
 	)
 );
-$hero  = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
-
-
-// Begin RETS
-
-date_default_timezone_set( 'America/New_York' );
-
-require_once( "vendor/autoload.php" );
-
-$config = new \PHRETS\Configuration;
-$config->setLoginUrl( 'http://rets.sef.mlsmatrix.com/Rets/Login.ashx' )
-       ->setUsername( 'lesAERfue' )
-       ->setPassword( '8050' )
-       ->setRetsVersion( '1.7.2' );
-
-$rets = new \PHRETS\Session( $config );
-
-$connect = $rets->Login();
-
-if($connect) {
-	$results = $rets->Search( 'Property', 'Listing', ' (Status = A)', [ 'Limit' => '9' ] );
-} else {
-	$error = $rets->Error();
-	print_r($error);
-}
+$hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
 
 ?>
 <section class="col-xs-12 hr-hero-section text-center no-padding"
@@ -159,33 +135,34 @@ if($connect) {
         </div>
     </div>
     <div class="row">
-		<?php foreach ($results as $record) {
-			$sysid = $record['Matrix_Unique_ID'];
-			//$n = 1;
-			//$rootdir = $_SERVER['DOCUMENT_ROOT'];
-			//var_dump($rootdir);
-			//$dir = 'C:/xampp/htdocs/mre/wp-content/themes/hr19/photos/'.$sysid;
-			//if(!is_dir($dir)) mkdir($dir);
-			//$objects = $rets->GetObject('Property', 'Photo', $sysid);
-			//$objects = $objects->first();
+		<?php
+		$propertieslist = array( 'post_type' => 'property', 'posts_per_page' => 9 );
+		query_posts( $propertieslist );
+		if ( have_posts() ): while ( have_posts() ): the_post();
+			$address          = get_post_meta( get_the_ID(), '_pr_address', true );
+			$price            = get_post_meta( get_the_ID(), '_pr_current_price', true );
+			$type             = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
+			$rooms            = get_post_meta( get_the_ID(), '_pr_room_count', true );
+			$baths            = get_post_meta( get_the_ID(), '_pr_baths_total', true );
 			?>
             <div class="col-xs-12 col-sm-4 col-md-4">
-                <a href="#" class="property">
-                    <?php //foreach ($objects as $object) {
-	                    //file_put_contents( $dir . '/' . $n . '.jpg', $object->getContent() );
-	                    //$n ++;
-                   // } ?>
-                    <!--<div class="property-image" style="<?php //echo 'background: url(' .get_template_directory_uri(). '/photos/' . $sysid . '/1.jpg)';?>"></div>-->
-                    <div class="property-image" style="background: url('http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg');"></div>
+                <a href="<?php the_permalink(); ?>" class="property">
+                    <div class="property-image"
+                         style="background: url('http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg');"></div>
                     <div class="property-info">
-                        <div class="property-price">$<?php echo number_format(round($record['CurrentPrice'])) ?></div>
-                        <div class="property-highlights"><?php echo $record['TypeofProperty'] ?>, <?php echo $record['BedsTotal'] ?> habitaciones</div>
-                        <div class="property-address"><?php echo $record['AddressInternetDisplay'] ?></div>
-                        <div class="property-code">MLS: <?php echo $record['MLSNumber'] ?></div>
+                        <div class="property-price"><?php if(!empty($price)){ echo '$'.$price; } ?></div>
+                        <div class="property-highlights">
+                            <?php if(!empty($type)){ echo $type; } else { echo 'N/A'; } ?>
+                            <?php if(!empty($rooms)){ echo '· '. $rooms . ' Habitaciones' ; } ?>
+                            <?php if(!empty($baths)){ echo '· '. $baths . ' Baños' ; } ?>
+                        </div>
+                        <div class="property-address"><?php if(!empty($address)){ echo $address; } else{ echo 'N/A'; }  ?></div>
+                        <div class="property-code">MLS: <?php the_title(); ?></div>
                     </div>
                 </a>
             </div>
-		<?php } ?>
+		<?php endwhile; endif;
+		wp_reset_postdata(); ?>
     </div>
     <div class="row">
         <div class="col-md-12 text-center">

@@ -1,13 +1,31 @@
 <?php
 get_header();
+the_post();
+$address = get_post_meta( get_the_ID(), '_pr_address', true );
+$city = get_post_meta( get_the_ID(), '_pr_city', true );
+$state = get_post_meta( get_the_ID(), '_pr_state', true );
+$community = get_post_meta( get_the_ID(), '_pr_community', true );
+$subdiv = get_post_meta( get_the_ID(), '_pr_subdiv', true );
+$price   = get_post_meta( get_the_ID(), '_pr_current_price', true );
+$type    = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
+$rooms   = get_post_meta( get_the_ID(), '_pr_room_count', true );
+$baths   = get_post_meta( get_the_ID(), '_pr_baths_total', true );
+$bathsf   = get_post_meta( get_the_ID(), '_pr_baths_full', true );
+$bathsh   = get_post_meta( get_the_ID(), '_pr_baths_half', true );
+$sqft   = get_post_meta( get_the_ID(), '_pr_sqft', true );
+$surf  = get_post_meta( get_the_ID(), '_pr_surf', true );
+$hoa  = get_post_meta( get_the_ID(), '_pr_hoa', true );
+$yearbuilt  = get_post_meta( get_the_ID(), '_pr_yearbuilt', true );
 ?>
 
 <div class="breadcrumb-info">
     <div class="container">
         <div class="row">
             <div class="col-xs-7 col-sm-7 col-md-6">
-                <div class="breadcrumbs"><i class="fa fa-chevron-left" aria-hidden="true"></i> Miami, FL > 153 Jost
-                    Manor Dr Florissant, MO 63034
+                <div class="breadcrumbs"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    <?php if(!empty($city)){ echo $city; } ?>,
+	                <?php if(!empty($state)){ echo $state; } ?> >
+                    <?php if(!empty($address)){ echo $address; } else{ echo 'N/A';} ?>
                 </div>
             </div>
             <div class="col-xs-5 col-sm-5 col-md-6 text-right">
@@ -21,12 +39,17 @@ get_header();
 <div class="property-carousel">
     <div class="swiper-container swiper-property">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><div style="background-image: url(http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg)"></div></div>
-            <div class="swiper-slide"><div style="background-image: url(http://elizabethjahn.com/images/country-house-interior-2.jpg)"></div></div>
+            <div class="swiper-slide">
+                <div style="background-image: url(http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+                <div style="background-image: url(http://elizabethjahn.com/images/country-house-interior-2.jpg)"></div>
+            </div>
         </div>
         <div class="swiper-button-next"><i class="fa fa-chevron-circle-right"></i></div>
         <div class="swiper-button-prev"><i class="fa fa-chevron-circle-left"></i></div>
-        <div class="total"><i class="fa fa-camera"></i><div class="fraction"></div> <?php _e( 'fotos', 'hr' ) ?></div>
+        <div class="total"><i class="fa fa-camera"></i>
+            <div class="fraction"></div> <?php _e( 'fotos', 'hr' ) ?></div>
     </div>
 </div>
 
@@ -34,23 +57,28 @@ get_header();
     <div class="container">
         <div class="col-xs-12 col-sm-3 col-md-3 price borderl">
             <div><?php _e( 'Precio:', 'hr' ) ?></div>
-            <div class="price-txt">$225,000</div>
-            <div class="sm-text">Estimado de hipoteca: $603/mes</div>
+            <div class="price-txt"><?php if(!empty($price)){ echo '$'.$price; } ?></div>
+            <div class="sm-text"><?php _e( 'Estimado de hipoteca:', 'hr' ) ?> $603/mes</div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 borderl paddingl40">
-            <div class="md-text">153 Jost Manor Dr Florissant, MO 63034</div>
-            <div>Unifamiliar · 5 Habitaciones · 4 Baños · 3 Medios baños</div>
-            <div class="sm-text">Número de MLS: 1258649</div>
+            <div class="md-text"><?php if(!empty($address)){ echo $address; } else{ echo 'N/A';} ?></div>
+            <div>
+                <?php if(!empty($type)){ echo $type; } ?>
+	            <?php if(!empty($rooms)){ echo '· '. $rooms . ' Habitaciones' ; } ?>
+	            <?php if(!empty($bathsf)){ echo '· '. $bathsf . ' Baños' ; } ?>
+                <?php if(!empty($bathsh)){ echo '· '. $bathsh . ' Medios baños' ; } ?>
+            </div>
+            <div class="sm-text"><?php _e( 'Número de MLS:', 'hr' ) ?> <?php the_title(); ?></div>
         </div>
         <div class="col-xs-6 col-sm-3 col-md-3 text-center">
             <div class="row surface">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="sm-text"><?php _e( 'Superficie:', 'hr' ) ?></div>
-                    <div class="md-text">7,252 ft</div>
+                    <div class="md-text"><?php if(!empty($surf)){ echo $surf . ' ft'; } else { echo 'N/A'; } ?></div>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="sm-text"><?php _e( 'Pies cuadrados:', 'hr' ) ?></div>
-                    <div class="md-text">13,532 ft²</div>
+                    <div class="md-text"><?php if(!empty($sqft)){ echo $sqft . ' ft²'; } else { echo 'N/A'; } ?> </div>
                 </div>
             </div>
         </div>
@@ -77,10 +105,8 @@ get_header();
                             </h4>
                         </div>
                         <div id="collapse1" class="panel-collapse collapse">
-                            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                commodo consequat.
+                            <div class="panel-body">
+								<?php the_content(); ?>
                             </div>
                         </div>
                     </div>
@@ -97,8 +123,10 @@ get_header();
                             <div class="panel-body">
                                 <div class="row main-features">
                                     <div class="col-xs-4 col-sm-3 col-md-3 feature">
-                                        <div><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="<?php _e( 'La tarifa de asociación de propietarios (HOA) es una cantidad de dinero que deben pagar mensualmente los propietarios de ciertos tipos de propiedades residenciales para ayudar a mantener y mejorar las propiedades en la asociación.', 'hr' ) ?>"></i> <?php _e( 'Cuotas de HOA:', 'hr' ) ?></div>
-                                        <div class="info">3,000/mes</div>
+                                        <div><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+                                                title="<?php _e( 'La tarifa de asociación de propietarios (HOA) es una cantidad de dinero que deben pagar mensualmente los propietarios de ciertos tipos de propiedades residenciales para ayudar a mantener y mejorar las propiedades en la asociación.', 'hr' ) ?>"></i> <?php _e( 'Cuotas de HOA:', 'hr' ) ?>
+                                        </div>
+                                        <div class="info"><?php if(!empty($hoa)){ echo $hoa . '/mes'; } else { echo 'N/A'; } ?></div>
                                     </div>
                                     <div class="col-xs-4 col-sm-2 col-md-2 feature">
                                         <div><?php _e( 'Impuestos', 'hr' ) ?></div>
@@ -106,15 +134,15 @@ get_header();
                                     </div>
                                     <div class="col-xs-4 col-sm-3 col-md-3 feature">
                                         <div><?php _e( 'Año de construcción:', 'hr' ) ?></div>
-                                        <div class="info">2017</div>
+                                        <div class="info"><?php if(!empty($yearbuilt)){ echo $yearbuilt; } else { echo 'N/A'; } ?></div>
                                     </div>
                                     <div class="col-xs-4 col-sm-2 col-md-2 feature">
                                         <div><?php _e( 'Comunidad:', 'hr' ) ?></div>
-                                        <div class="info">Bay point</div>
+                                        <div class="info"><?php if(!empty($community)){ echo $community; } else { echo 'N/A'; } ?></div>
                                     </div>
                                     <div class="col-xs-4 col-sm-2 col-md-2 feature">
                                         <div><?php _e( 'Subdivision:', 'hr' ) ?></div>
-                                        <div class="info">Bay point</div>
+                                        <div class="info"><?php if(!empty($subdiv)){ echo $subdiv; } else { echo 'N/A'; } ?></div>
                                     </div>
                                 </div>
                                 <h6><?php _e( 'Otras características:', 'hr' ) ?></h6>
@@ -152,40 +180,11 @@ get_header();
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><span
                                             class="number">3</span>
-									<?php _e( 'Descripción del vecindario', 'hr' ) ?></a>
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </h4>
-                        </div>
-                        <div id="collapse3" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                commodo consequat.
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="nb-photo" style="background-image: url(https://www.miamiresidence.com/media/com_estateagent/categories/ea_cat_emerald_bay_205255887.jpg)"></div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="nb-photo" style="background-image: url(https://www.miamiresidence.com/media/com_estateagent/categories/ea_cat_emerald_bay_205255887.jpg)"></div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-4 col-md-4">
-                                        <div class="nb-photo" style="background-image: url(https://www.miamiresidence.com/media/com_estateagent/categories/ea_cat_emerald_bay_205255887.jpg)"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><span
-                                            class="number">4</span>
 									<?php _e( 'Ubicación de la propiedad', 'hr' ) ?></a>
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                             </h4>
                         </div>
-                        <div id="collapse4" class="panel-collapse collapse">
+                        <div id="collapse3" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div id="map-detail"></div>
                                 <script>
@@ -217,11 +216,11 @@ get_header();
     <div class="container property-list">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="hr-heading"><?php _e('Propiedades similares', 'hr') ?></h2>
+                <h2 class="hr-heading"><?php _e( 'Propiedades similares', 'hr' ) ?></h2>
             </div>
         </div>
         <div class="row">
-			<?php for ($x = 0; $x <= 2; $x++) { ?>
+			<?php for ( $x = 0; $x <= 2; $x ++ ) { ?>
                 <div class="col-xs-12 col-sm-4 col-md-4">
                     <a href="#" class="property">
                         <div class="property-image"

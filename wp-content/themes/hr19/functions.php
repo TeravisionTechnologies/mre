@@ -4,31 +4,31 @@
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'title-tag' );
-add_theme_support('menus');
+add_theme_support( 'menus' );
 remove_post_type_support( 'post', 'comments' );
 remove_post_type_support( 'page', 'comments' );
 
-load_theme_textdomain('hr', get_template_directory() . '/languages');
+load_theme_textdomain( 'hr', get_template_directory() . '/languages' );
 
 // Register custom navigation walker
-require_once('wp_bootstrap_navwalker.php');
+require_once( 'wp_bootstrap_navwalker.php' );
 
-register_nav_menus(array(
-    'primary' => __('Primary Menu', 'hr19'),
-    'extra-menu' => __('Extra Menu')
-));
+register_nav_menus( array(
+	'primary'    => __( 'Primary Menu', 'hr19' ),
+	'extra-menu' => __( 'Extra Menu' )
+) );
 
 // Login customization
-add_action('login_head', 'custom_login_logo');
+add_action( 'login_head', 'custom_login_logo' );
 
 function custom_login_logo() {
-    echo '
+	echo '
     <style type="text/css">
         body{
             background: #ffffff;
         }
         h1 { 
-            background-image:url(' . get_bloginfo('template_directory') . '/assets/hr19.svg) !important;
+            background-image:url(' . get_bloginfo( 'template_directory' ) . '/assets/hr19.svg) !important;
             background-repeat: no-repeat;
             background-position: center;
         }
@@ -56,75 +56,177 @@ function custom_login_logo() {
 
 // Admin footer customization
 function remove_footer_admin() {
-    echo '<span id="footer-thankyou">Desarrollado para HR19</span>';
+	echo '<span id="footer-thankyou">Desarrollado para HR19</span>';
 }
 
-add_filter('admin_footer_text', 'remove_footer_admin');
+add_filter( 'admin_footer_text', 'remove_footer_admin' );
 
-    add_theme_support( 'menus' );
+add_theme_support( 'menus' );
 
-    // Directories that contain post-types
-    $postTypeDir = array (
-        __DIR__.'/includes/post-types/header-footer/',
-        __DIR__.'/includes/post-types/agent/',
-    );
+// Directories that contain post-types
+$postTypeDir = array(
+	__DIR__ . '/includes/post-types/header-footer/',
+	__DIR__ . '/includes/post-types/agent/',
+	__DIR__ . '/includes/post-types/property/',
+);
 
-    // File names inside post-types dirs
-    $files = array (
-        'meta-boxes.php',
-        'post-type.php',
-        'taxonomy.php'
-    );
+// File names inside post-types dirs
+$files = array(
+	'meta-boxes.php',
+	'post-type.php',
+	'taxonomy.php'
+);
 
-    foreach ($postTypeDir as $directory) {
-      foreach ($files as $file) {
-        if ( file_exists( $directory . $file ) ) {
-          require_once( $directory . $file );
-        }
-      }
-    }
+foreach ( $postTypeDir as $directory ) {
+	foreach ( $files as $file ) {
+		if ( file_exists( $directory . $file ) ) {
+			require_once( $directory . $file );
+		}
+	}
+}
 
-    /**
-     * ┌───────────────────┐
-     * │ Custom Post Types │
-     * └───────────────────┘
-     */
+/**
+ * ┌───────────────────┐
+ * │ Custom Post Types │
+ * └───────────────────┘
+ */
 
-    add_action( 'init', 'call_create_post_types' );
+add_action( 'init', 'call_create_post_types' );
 
-    function call_create_post_types() {
-        // Post Type for General Settings
-        create_post_type_header_footer();
-        // Post Type for Agents
-        create_post_type_agent();
-    }
+function call_create_post_types() {
+	// Post Type for General Settings
+	create_post_type_header_footer();
+	// Post Type for Agents
+	create_post_type_agent();
+	// Post Type for Property
+	create_post_type_property();
+}
 
-    /* Remove text area field from header and footer */
-    function remove_page_editor() {
-      remove_post_type_support( 'header_footer', 'editor' );
-      remove_post_type_support( 'banner', 'editor' );
-    }
-    add_action( 'init', 'remove_page_editor' );
+/* Remove text area field from header and footer */
+function remove_page_editor() {
+	remove_post_type_support( 'header_footer', 'editor' );
+	remove_post_type_support( 'banner', 'editor' );
+}
+
+add_action( 'init', 'remove_page_editor' );
 
 
-    /**
-     * ┌───────────────────┐
-     * │ Custom Meta Boxes │
-     * └───────────────────┘
-     */
+/**
+ * ┌───────────────────┐
+ * │ Custom Meta Boxes │
+ * └───────────────────┘
+ */
 
-    add_action( 'cmb2_admin_init', 'call_metaboxes' );
+add_action( 'cmb2_admin_init', 'call_metaboxes' );
 
-    function call_metaboxes() {
-      // Metaboxes for General Settings
-      header_footer_metaboxes();
-      // Metaboxes for General Settings
-      agent_metaboxes();
-    }
+function call_metaboxes() {
+	// Metaboxes for General Settings
+	header_footer_metaboxes();
+	// Metaboxes for Agents
+	agent_metaboxes();
+	// Metaboxes for Properties
+	property_metaboxes();
+}
 
-    //SVG Hook
-    function cc_mime_types($mimes) {
-      $mimes['svg'] = 'image/svg+xml';
-      return $mimes;
-    }
-    add_filter('upload_mimes', 'cc_mime_types');
+//SVG Hook
+function cc_mime_types( $mimes ) {
+	$mimes['svg'] = 'image/svg+xml';
+
+	return $mimes;
+}
+
+add_filter( 'upload_mimes', 'cc_mime_types' );
+
+
+// Begin RETS
+
+date_default_timezone_set( 'America/New_York' );
+
+require_once( "vendor/autoload.php" );
+
+$config = new \PHRETS\Configuration;
+$config->setLoginUrl( 'http://rets.sef.mlsmatrix.com/Rets/Login.ashx' )
+       ->setUsername( 'lesAERfue' )
+       ->setPassword( '8050' )
+       ->setRetsVersion( '1.7.2' );
+
+$rets = new \PHRETS\Session( $config );
+
+$connect = $rets->Login();
+
+if ( $connect ) {
+	$results = $rets->Search(
+		'Property',
+		'Listing',
+		' (Status = A)',
+		[
+			'Format' => 'COMPACT-DECODED',
+			'Limit'  => 10,
+		]
+	);
+} else {
+	$error = $rets->Error();
+	print_r( $error );
+}
+
+foreach ( $results as $property ) {
+
+	$propid = get_page_by_title( $property['MLSNumber'], 'OBJECT', 'property' ); //Check if already exists
+
+	if ( !$propid ) {
+		$post_args       = array(
+			'post_title'   => $property['MLSNumber'],
+			'post_content' => $property['Remarks'],
+			'post_status'  => 'publish',
+			'post_type'    => 'property',
+			'meta_input'   => array(
+				'_pr_address' => $property['AddressInternetDisplay'],
+				'_pr_state' => $property['StateOrProvince'],
+				'_pr_city' => $property['City'],
+				'_pr_community' => $property['CountyOrParish'],
+				'_pr_subdiv' => $property['SubdivisionName'],
+				'_pr_current_price'    => number_format( round( $property['CurrentPrice'] ) ),
+				'_pr_type_of_property' => $property['TypeofProperty'],
+				'_pr_room_count' => number_format( round( $property['RoomCount'] ) ),
+				'_pr_baths_total' => number_format( round( $property['BathsTotal'] ) ),
+				'_pr_baths_full' => number_format( round( $property['BathsFull'] ) ),
+				'_pr_baths_half' => number_format( round( $property['BathsHalf'] ) ),
+				'_pr_sqft' => number_format( round( $property['SqFtTotal'] ) ),
+				'_pr_surf' => number_format( round( $property['TotalAcreage'] ) ),
+				'_pr_hoa' => number_format( round( $property['AssociationFee'] ) ),
+				'_pr_yearbuilt' => number_format( round( $property['YearBuilt'] ) ),
+			)
+		);
+		$posted_property = wp_insert_post( $post_args );
+	} else {
+		$post_args       = array(
+			'ID'           => $propid->ID,
+			'post_title'   => $property['MLSNumber'],
+			'post_content' => $property['Remarks'],
+			'post_status'  => 'publish',
+			'post_type'    => 'property',
+			'meta_input'   => array(
+				'_pr_address' => $property['AddressInternetDisplay'],
+				'_pr_state' => $property['StateOrProvince'],
+				'_pr_city' => $property['City'],
+				'_pr_community' => $property['CountyOrParish'],
+				'_pr_subdiv' => $property['SubdivisionName'],
+				'_pr_current_price'    => number_format( round( $property['CurrentPrice'] ) ),
+				'_pr_type_of_property' => $property['TypeofProperty'],
+				'_pr_room_count' => number_format( round( $property['RoomCount'] ) ),
+				'_pr_baths_total' => number_format( round( $property['BathsTotal'] ) ),
+				'_pr_baths_full' => number_format( round( $property['BathsFull'] ) ),
+				'_pr_baths_half' => number_format( round( $property['BathsHalf'] ) ),
+				'_pr_sqft' => number_format( round( $property['SqFtTotal'] ) ),
+				'_pr_surf' => number_format( round( $property['TotalAcreage'] ) ),
+				'_pr_hoa' => number_format( round( $property['AssociationFee'] ) ),
+				'_pr_yearbuilt' => number_format( round( $property['YearBuilt'] ) ),
+			)
+		);
+		$posted_property = wp_update_post( $post_args );
+	}
+
+}
+
+
+
