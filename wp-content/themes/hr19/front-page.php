@@ -17,90 +17,51 @@ $hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
 		}
 		?>
     </div>
-</section>
-<div class="clearfix"></div>
-<div class="container property-search-wrapper">
-    <div class="row">
-        <div class="col-md-12">
-            <form id="property-search" class="property-search" action="./" method="post">
-                <ul class="property-status">
-                    <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                        <input type="radio" id="buy" name="status">
-                        <label for="buy"><?php _e( 'Compra', 'hr' ) ?></label>
-                    </li>
-                    <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                        <input type="radio" id="rent" name="status">
-                        <label for="rent"><?php _e( 'Alquiler', 'hr' ) ?></label>
-                    </li>
-                    <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                        <input type="radio" id="presale" name="status">
-                        <label for="presale" id="pre"><?php _e( 'Preventa', 'hr' ) ?></label>
-                    </li>
-                </ul>
 
-                <div class="col-xs-12 col-sm-12 col-md-12 search-text">
-                    <div class="input-group">
-                        <input type="search" name="s"
-                               placeholder="<?php _e( 'Introduzca una dirección, ciudad, barrio o código postal', 'hr' ) ?>"
-                               value="<?php echo get_query_var( 's' ); ?>" onBlur="if (this.value == '')
-                                this.value = '<?php echo get_query_var( 's' ); ?>'"
-                               onFocus="if (this.value === '<?php echo get_query_var( 's' ); ?>')
-                                       this.value = ''">
-                        <i class="fa fa-search"></i>
-                        <input type="hidden" name="post_type[]" value="mls">
+    <div class="container property-search-wrapper">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10">
+                <form id="property-search" class="property-search" action="./" method="post">
+                    <ul class="property-status">
+                        <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
+                            <input type="radio" id="buy" name="status">
+                            <label for="buy"><?php _e( 'Compra', 'hr' ) ?></label>
+                        </li>
+                        <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
+                            <input type="radio" id="rent" name="status">
+                            <label for="rent"><?php _e( 'Alquiler', 'hr' ) ?></label>
+                        </li>
+                        <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
+                            <input type="radio" id="presale" name="status">
+                            <label for="presale" id="pre"><?php _e( 'Preventa', 'hr' ) ?></label>
+                        </li>
+                    </ul>
+                    <div class="col-xs-12 col-sm-12 col-md-12 search-text no-padding">
+                        <div class="input-group">
+                            <input type="search" name="s" class="col-xs-10 col-sm-10 col-md-10"
+                                   placeholder="<?php _e( 'Introduzca una dirección, ciudad, barrio o código postal', 'hr' ) ?>"
+                                   value="<?php echo get_query_var( 's' ); ?>" onBlur="if (this.value == '')
+                                    this.value = '<?php echo get_query_var( 's' ); ?>'"
+                                   onFocus="if (this.value === '<?php echo get_query_var( 's' ); ?>')
+                                           this.value = ''">
+                            <input type="hidden" name="post_type[]" value="property">
+                            <button type="submit" class="btn col-xs-2 col-sm-2 col-md-2"><i class="fa fa-search"></i></button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-md-12 property-filters">
-                    <div class="col-xs-6 col-sm-3 col-md-3">
-                        <span class="filter"><?php _e( 'Tipo de vivienda', 'hr' ) ?></span>
-                        <div class="styled-select">
-                            <select>
-                                <option>--</option>
-                                <option>Una sola familia</option>
-                                <option>Duplex</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 col-md-3">
-                        <span class="filter"><?php _e( 'Rango de precio', 'hr' ) ?></span>
-                        <div class="styled-select">
-                            <select>
-                                <option>--</option>
-                                <option>$60.000 - 120.000</option>
-                                <option>$120.000 - 180.000</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 col-md-3">
-                        <span class="filter"><?php _e( 'Nro. de habitaciones', 'hr' ) ?></span>
-                        <div class="styled-select">
-                            <select>
-                                <option>--</option>
-                                <option>2+</option>
-                                <option>3+</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 col-md-3">
-                        <span class="filter"><?php _e( 'Nro. de baños', 'hr' ) ?></span>
-                        <div class="styled-select">
-                            <select>
-                                <option>--</option>
-                                <option>2+</option>
-                                <option>3+</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-
+</section>
+<div class="clearfix"></div>
 <div class="container property-list">
     <div class="row">
+        <div class="col-md-12">
+            <h2 class="hr19-heading"><span><?php _e( 'Propiedades HR19', 'hr' ) ?>&nbsp;&nbsp;&nbsp;</span></h2>
+        </div>
+    </div>
+    <!--<div class="row">
         <div class="property-sorting">
             <div class="col-sm-4 col-md-4">
                 <span class="state-search">Miami, FL</span>
@@ -133,30 +94,44 @@ $hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
         <div class="col-md-12">
             <h2 class="hr-heading"><?php _e( 'Propiedades HR19', 'hr' ) ?></h2>
         </div>
-    </div>
+    </div>-->
     <div class="row">
 		<?php
 		$propertieslist = array( 'post_type' => 'property', 'posts_per_page' => 9 );
 		query_posts( $propertieslist );
 		if ( have_posts() ): while ( have_posts() ): the_post();
-			$address          = get_post_meta( get_the_ID(), '_pr_address', true );
-			$price            = get_post_meta( get_the_ID(), '_pr_current_price', true );
-			$type             = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
-			$rooms            = get_post_meta( get_the_ID(), '_pr_room_count', true );
-			$baths            = get_post_meta( get_the_ID(), '_pr_baths_total', true );
+			$address = get_post_meta( get_the_ID(), '_pr_address', true );
+			$price   = get_post_meta( get_the_ID(), '_pr_current_price', true );
+			$type    = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
+			$rooms   = get_post_meta( get_the_ID(), '_pr_room_count', true );
+			$baths   = get_post_meta( get_the_ID(), '_pr_baths_total', true );
 			?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <a href="<?php the_permalink(); ?>" class="property">
                     <div class="property-image"
                          style="background: url('http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg');"></div>
                     <div class="property-info">
-                        <div class="property-price"><?php if(!empty($price)){ echo '$'.$price; } ?></div>
+                        <div class="property-price"><?php if ( ! empty( $price ) ) {
+								echo '$' . $price;
+							} ?></div>
                         <div class="property-highlights">
-                            <?php if(!empty($type)){ echo $type; } else { echo 'N/A'; } ?>
-                            <?php if(!empty($rooms)){ echo '· '. $rooms . ' Habitaciones' ; } ?>
-                            <?php if(!empty($baths)){ echo '· '. $baths . ' Baños' ; } ?>
+							<?php if ( ! empty( $type ) ) {
+								echo $type;
+							} else {
+								echo 'N/A';
+							} ?>
+							<?php if ( ! empty( $rooms ) ) {
+								echo '· ' . $rooms . ' Habitaciones';
+							} ?>
+							<?php if ( ! empty( $baths ) ) {
+								echo '· ' . $baths . ' Baños';
+							} ?>
                         </div>
-                        <div class="property-address"><?php if(!empty($address)){ echo $address; } else{ echo 'N/A'; }  ?></div>
+                        <div class="property-address"><?php if ( ! empty( $address ) ) {
+								echo $address;
+							} else {
+								echo 'N/A';
+							} ?></div>
                         <div class="property-code">MLS: <?php the_title(); ?></div>
                     </div>
                 </a>
