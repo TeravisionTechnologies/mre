@@ -189,19 +189,33 @@ $yearbuilt  = get_post_meta( get_the_ID(), '_pr_yearbuilt', true );
                                 <div id="map-detail"></div>
                                 <script>
                                     function initMap() {
-                                        var uluru = {lat: -25.363, lng: 131.044};
-                                        var map = new google.maps.Map(document.getElementById('map-detail'), {
-                                            zoom: 4,
-                                            center: uluru
-                                        });
-                                        var marker = new google.maps.Marker({
-                                            position: uluru,
-                                            map: map
-                                        });
-                                        $("#accordion").on('show.bs.collapse', function () {
-                                            google.maps.event.trigger(map, 'resize');
+                                        codeAddress("<?php if(!empty($address)){ echo $address; } ?> <?php if(!empty($city)){ echo $city; } ?> <?php if(!empty($state)){ echo $state; } ?>");
+                                    }
+
+                                    var geocoder, map;
+
+                                    function codeAddress(address) {
+                                        geocoder = new google.maps.Geocoder();
+                                        geocoder.geocode({
+                                            'address': address
+                                        }, function(results, status) {
+                                            if (status == google.maps.GeocoderStatus.OK) {
+                                                var myOptions = {
+                                                    zoom: 18,
+                                                    center: results[0].geometry.location,
+                                                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                                                }
+                                                map = new google.maps.Map(document.getElementById("map-detail"), myOptions);
+
+                                                var marker = new google.maps.Marker({
+                                                    map: map,
+                                                    position: results[0].geometry.location
+                                                });
+
+                                            }
                                         });
                                     }
+
                                 </script>
                             </div>
                         </div>

@@ -106,7 +106,7 @@
     <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.sticky.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/basic.js"></script>
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACuw9XbPiGeZY0zX-84j6ZNdQDcI2BlWk&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqLg2ArgqBdOHK6Nmro4hoJ0ixlBurD_s&callback=initMap">
     </script>
     <script type="text/javascript">
       var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
