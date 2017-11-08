@@ -127,5 +127,11 @@ jQuery(document).ready(function () {
     $('#collapse3').on('shown.bs.collapse', function () {
         initMap();
     })
+
+    $('#map-switch').click(function() {
+        $("#search-map").slideToggle();
+        $("html, body").animate({scrollTop: 0}, 500);
+    });
+
 });
 
