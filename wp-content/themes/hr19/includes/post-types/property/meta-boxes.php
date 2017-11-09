@@ -106,11 +106,11 @@ function property_metaboxes() {
 		'type' => 'text',
 	));
 
-	$cmb_property->add_field(array(
+	/*$cmb_property->add_field(array(
 		'name' => __('Agent ID'),
 		'id' => $prefix . 'agentid',
 		'type' => 'text',
-	));
+	));*/
 
 
 }

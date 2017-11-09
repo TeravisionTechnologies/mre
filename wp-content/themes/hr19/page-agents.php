@@ -3,43 +3,6 @@
 Template Name: Agents
 */
 get_header();
-
-date_default_timezone_set( 'America/New_York' );
-
-require_once( "vendor/autoload.php" );
-
-$config = new \PHRETS\Configuration;
-$config->setLoginUrl( 'http://rets.sef.mlsmatrix.com/Rets/Login.ashx' )
-  ->setUsername( 'lesAERfue' )
-  ->setPassword( '8050' )
-  ->setRetsVersion( '1.7.2' );
-
-$rets = new \PHRETS\Session( $config );
-
-$connect = $rets->Login();
-
-if ( $connect ) {
-  $results = $rets->Search(
-    'Property',
-    'Listing',
-    ' (Status = A)',
-    [
-      'Format' => 'COMPACT-DECODED',
-      'Limit'  => 1000,
-    ]
-  );
-} else {
-  $error = $rets->Error();
-  print_r( $error );
-}
-foreach ($results as $record){
-  /*echo '<pre>';
-  print_r($record);
-  echo '</pre>';*/
-
-}
-
-
 ?>
   <section class="agent-hero" style="<?php if ($thumbnail_id = get_post_thumbnail_id()) {
     if ($image_src = wp_get_attachment_image_src($thumbnail_id, 'full')) printf('background-image: url(%s)"', $image_src[0]);
@@ -55,8 +18,25 @@ foreach ($results as $record){
     the_post();
     $phone = get_post_meta(get_the_ID(), '_ag_phone', true);
     $email = get_post_meta(get_the_ID(), '_ag_mail', true);
+    $agentID = get_post_meta(get_the_ID(), '_ag_mls', true);
     $agentypes = get_the_terms( get_the_ID(), 'agent_type' );
     $agentype = $agentypes[0];
+
+    //Agent Properties
+    $args = array(
+      'post_type' => 'property',
+      'meta_key' => '_pr_agentid',
+      'posts_per_page'    => -1,
+      'meta_query' => array(
+        array(
+          'key' => '_pr_agentid',
+          'value' => $agentID,
+          'compare' => '=',
+        )
+      )
+    );
+    $agentProperties = new WP_Query($args);
+    $properties = $agentProperties->get_posts();
   ?>
   <?php if($postOrder == 0){ ?>
       <section class="col-xs-12 no-padding hr-agents-section">
@@ -82,36 +62,31 @@ foreach ($results as $record){
           <?php the_content(); ?>
         </div>
         <div class="agent-properties">
-          <h2 class="properties-number" data-target="<?php the_ID(); ?>">Propiedades asignadas (9)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
+          <h2 class="properties-number" data-target="<?php the_ID(); ?>">Propiedades asignadas (<?php echo $agentProperties->post_count; ?>)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
           <div class="properties-list" id="<?php the_ID(); ?>">
-            <div class="col-xs-12 col-sm-4 no-padding property">
-              <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
-              <div class="property-info">
-                <h2 class="info-price">$150,000</h2>
-                <h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>
-                <h3 class="info-address">Florissant, MO 63031</h3>
-                <h3 class="info-mls">MLS: 1258590</h3>
+            <?php foreach ($properties as $property){
+              $address = get_post_meta( $property->ID, '_pr_address', true );
+              $price   = get_post_meta( $property->ID, '_pr_current_price', true );
+              $type    = get_post_meta( $property->ID, '_pr_type_of_property', true );
+              $rooms   = get_post_meta( $property->ID, '_pr_room_count', true );
+              $baths   = get_post_meta( $property->ID, '_pr_baths_total', true );
+            ?>
+              <div class="col-xs-12 col-sm-4 no-padding property">
+                <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
+                <div class="property-info">
+                  <h2 class="info-price"><?php echo $price; ?></h2>
+                  <!--<h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>-->
+                  <h3 class="info-features"><?php echo $type . " · " . $rooms . " Habitaciones · " . $baths . " Baños";?></h3>
+                  <h3 class="info-address"><?php echo $address; ?></h3>
+                  <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
+                </div>
               </div>
-            </div>
-            <div class="col-xs-12 col-sm-4 no-padding property">
-              <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
-              <div class="property-info">
-                <h2 class="info-price">$150,000</h2>
-                <h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>
-                <h3 class="info-address">Florissant, MO 63031</h3>
-                <h3 class="info-mls">MLS: 1258590</h3>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-4 no-padding property">
-              <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
-              <div class="property-info">
-                <h2 class="info-price">$150,000</h2>
-                <h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>
-                <h3 class="info-address">Florissant, MO 63031</h3>
-                <h3 class="info-mls">MLS: 1258590</h3>
-              </div>
-            </div>
-            <button class="more-properties">Ver más propiedades</button>
+            <?php } ?>
+            <?php if ($agentProperties->post_count > 3) { ?>
+              <button class="more-properties">Ver más propiedades</button>
+            <?php } else { ?>
+              <div class="col-xs-12 few-properties" style="height: 130px;"></div>
+            <?php } ?>
           </div>
         </div>
       </section>
@@ -139,36 +114,31 @@ foreach ($results as $record){
           <?php the_content(); ?>
         </div>
         <div class="agent-properties">
-          <h2 class="properties-number properties-number-right" data-target="<?php the_ID(); ?>">Propiedades asignadas (9)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
+          <h2 class="properties-number properties-number-right" data-target="<?php the_ID(); ?>">Propiedades asignadas (<?php echo $agentProperties->post_count; ?>)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
           <div class="properties-list" id="<?php the_ID(); ?>">
+          <?php foreach ($properties as $property){
+            $address = get_post_meta( $property->ID, '_pr_address', true );
+            $price   = get_post_meta( $property->ID, '_pr_current_price', true );
+            $type    = get_post_meta( $property->ID, '_pr_type_of_property', true );
+            $rooms   = get_post_meta( $property->ID, '_pr_room_count', true );
+            $baths   = get_post_meta( $property->ID, '_pr_baths_total', true );
+          ?>
             <div class="col-xs-12 col-sm-4 no-padding property">
               <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
               <div class="property-info">
-                <h2 class="info-price">$150,000</h2>
-                <h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>
-                <h3 class="info-address">Florissant, MO 63031</h3>
-                <h3 class="info-mls">MLS: 1258590</h3>
+                <h2 class="info-price"><?php echo $price; ?></h2>
+                <!--<h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>-->
+                <h3 class="info-features"><?php echo $type . " · " . $rooms . " Habitaciones · " . $baths . " Baños";?></h3>
+                <h3 class="info-address"><?php echo $address; ?></h3>
+                <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
               </div>
             </div>
-            <div class="col-xs-12 col-sm-4 no-padding property">
-              <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
-              <div class="property-info">
-                <h2 class="info-price">$150,000</h2>
-                <h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>
-                <h3 class="info-address">Florissant, MO 63031</h3>
-                <h3 class="info-mls">MLS: 1258590</h3>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-4 no-padding property">
-              <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
-              <div class="property-info">
-                <h2 class="info-price">$150,000</h2>
-                <h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>
-                <h3 class="info-address">Florissant, MO 63031</h3>
-                <h3 class="info-mls">MLS: 1258590</h3>
-              </div>
-            </div>
+          <?php } ?>
+          <?php if ($agentProperties->post_count > 3) { ?>
             <button class="more-properties">Ver más propiedades</button>
+          <?php } else { ?>
+            <div class="col-xs-12 few-properties" style="height: 130px;"></div>
+          <?php } ?>
           </div>
         </div>
       </section>

@@ -29,4 +29,10 @@ function agent_metaboxes() {
         'type' => 'text_email',
     ));
 
+    $cmb_agent->add_field(array(
+      'name' => __('MLS License Number'),
+      'id' => $prefix . 'mls',
+      'type' => 'text',
+    ));
+
 }
