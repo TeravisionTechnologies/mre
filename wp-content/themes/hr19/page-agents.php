@@ -78,14 +78,16 @@ get_header();
             <?php } else { ?>
               <div class="col-xs-12 col-sm-4 no-padding property">
             <?php } ?>
-                <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
-                <div class="property-info">
-                  <h2 class="info-price"><?php echo $price; ?></h2>
-                  <!--<h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>-->
-                  <h3 class="info-features"><?php echo $type . " · " . $rooms . " Habitaciones · " . $baths . " Baños";?></h3>
-                  <h3 class="info-address"><?php echo $address; ?></h3>
-                  <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
-                </div>
+                <a href="/property/<?php echo $property->post_title; ?>" class="property">
+                  <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
+                  <div class="property-info">
+                    <h2 class="info-price"><?php echo $price; ?></h2>
+                    <!--<h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>-->
+                    <h3 class="info-features"><?php echo $type . " · " . $rooms . " Habitaciones · " . $baths . " Baños";?></h3>
+                    <h3 class="info-address"><?php echo $address; ?></h3>
+                    <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
+                  </div>
+                </a>
               </div>
             <?php
                 $propertiesCounter1++;
@@ -140,14 +142,16 @@ get_header();
           <?php } else { ?>
               <div class="col-xs-12 col-sm-4 no-padding property">
           <?php } ?>
-              <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
-              <div class="property-info">
-                <h2 class="info-price"><?php echo $price; ?></h2>
-                <!--<h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>-->
-                <h3 class="info-features"><?php echo $type . " · " . $rooms . " Habitaciones · " . $baths . " Baños";?></h3>
-                <h3 class="info-address"><?php echo $address; ?></h3>
-                <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
-              </div>
+              <a href="/property/<?php echo $property->post_title; ?>" class="property">
+                <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
+                <div class="property-info">
+                  <h2 class="info-price"><?php echo $price; ?></h2>
+                  <!--<h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>-->
+                  <h3 class="info-features"><?php echo $type . " · " . $rooms . " Habitaciones · " . $baths . " Baños";?></h3>
+                  <h3 class="info-address"><?php echo $address; ?></h3>
+                  <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
+                </div>
+              </a>
             </div>
           <?php
               $propertiesCounter1++;
