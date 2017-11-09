@@ -156,7 +156,7 @@ $config->setLoginUrl( 'http://rets.sef.mlsmatrix.com/Rets/Login.ashx' )
        ->setPassword( '8050' )
        ->setRetsVersion( '1.7.2' );
 
-$rets = new \PHRETS\Session( $config );
+/*$rets = new \PHRETS\Session( $config );
 
 $connect = $rets->Login();
 
@@ -232,6 +232,6 @@ foreach ( $results as $property ) {
 			)
 		);
 		$posted_property = wp_update_post( $post_args );
-	}
+	}*/
 
 }
