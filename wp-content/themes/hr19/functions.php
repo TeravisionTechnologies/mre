@@ -201,7 +201,6 @@ foreach ( $results as $property ) {
 				'_pr_surf' => number_format( round( $property['TotalAcreage'] ) ),
 				'_pr_hoa' => number_format( round( $property['AssociationFee'] ) ),
 				'_pr_yearbuilt' => number_format( round( $property['YearBuilt'] ) ),
-				//'_pr_agentid' =>$property['ListAgentMLSID'],
 			)
 		);
 		$posted_property = wp_insert_post( $post_args );
@@ -228,7 +227,6 @@ foreach ( $results as $property ) {
 				'_pr_surf' => number_format( round( $property['TotalAcreage'] ) ),
 				'_pr_hoa' => number_format( round( $property['AssociationFee'] ) ),
 				'_pr_yearbuilt' => number_format( round( $property['YearBuilt'] ) ),
-				'_pr_agentid' =>$property['ListAgentMLSID'],
 			)
 		);
 		$posted_property = wp_update_post( $post_args );

@@ -70,7 +70,7 @@ $hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
 			$type    = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
 			$rooms   = get_post_meta( get_the_ID(), '_pr_room_count', true );
 			$baths   = get_post_meta( get_the_ID(), '_pr_baths_total', true );
-			?>
+		?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <a href="<?php the_permalink(); ?>" class="property">
                     <div class="property-image"

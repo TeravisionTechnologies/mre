@@ -78,7 +78,7 @@ get_header();
             <?php } else { ?>
               <div class="col-xs-12 col-sm-4 no-padding property">
             <?php } ?>
-                <a href="/property/<?php echo $property->post_title; ?>" class="property">
+                <a href="/property/<?php echo $property->post_title; ?>">
                   <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
                   <div class="property-info">
                     <h2 class="info-price"><?php echo $price; ?></h2>
@@ -142,7 +142,7 @@ get_header();
           <?php } else { ?>
               <div class="col-xs-12 col-sm-4 no-padding property">
           <?php } ?>
-              <a href="/property/<?php echo $property->post_title; ?>" class="property">
+              <a href="/property/<?php echo $property->post_title; ?>">
                 <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
                 <div class="property-info">
                   <h2 class="info-price"><?php echo $price; ?></h2>
