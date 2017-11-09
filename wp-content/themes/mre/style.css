@@ -867,6 +867,9 @@ a.al-phone-num {
     padding: 0 !important;
     padding-top: 3.5px !important; }
 
+#mre-header {
+  background-color: #ffffff; }
+
 #blog-list-categories {
   background: #303030;
   height: 23.81944vw;
