@@ -150,13 +150,13 @@ date_default_timezone_set( 'America/New_York' );
 
 require_once( "vendor/autoload.php" );
 
-$config = new \PHRETS\Configuration;
+/*$config = new \PHRETS\Configuration;
 $config->setLoginUrl( 'http://rets.sef.mlsmatrix.com/Rets/Login.ashx' )
        ->setUsername( 'lesAERfue' )
        ->setPassword( '8050' )
        ->setRetsVersion( '1.7.2' );
 
-/*$rets = new \PHRETS\Session( $config );
+$rets = new \PHRETS\Session( $config );
 
 $connect = $rets->Login();
 
@@ -232,6 +232,6 @@ foreach ( $results as $property ) {
 			)
 		);
 		$posted_property = wp_update_post( $post_args );
-	}*/
+	}
 
-}
+}*/
