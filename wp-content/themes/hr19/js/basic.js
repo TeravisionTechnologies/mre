@@ -137,7 +137,14 @@ jQuery(document).ready(function () {
         if (e.isDefaultPrevented()) {
             $('#s').addClass('placeholder-error shake');
         }
-    })
+    });
+
+    //Agents Page more properties button
+    $('.more-properties').click(function(){
+        $(this).parent().children('.property').removeClass('hidden-properties');
+        $(this).css('display', 'none');
+        $(this).next('.few-properties-more').css('display', 'block');
+    });
 
 });
 

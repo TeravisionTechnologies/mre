@@ -64,14 +64,20 @@ get_header();
         <div class="agent-properties">
           <h2 class="properties-number" data-target="<?php the_ID(); ?>">Propiedades asignadas (<?php echo $agentProperties->post_count; ?>)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
           <div class="properties-list" id="<?php the_ID(); ?>">
-            <?php foreach ($properties as $property){
+            <?php
+              $propertiesCounter1 = 1;
+              foreach ($properties as $property){
               $address = get_post_meta( $property->ID, '_pr_address', true );
               $price   = get_post_meta( $property->ID, '_pr_current_price', true );
               $type    = get_post_meta( $property->ID, '_pr_type_of_property', true );
               $rooms   = get_post_meta( $property->ID, '_pr_room_count', true );
               $baths   = get_post_meta( $property->ID, '_pr_baths_total', true );
             ?>
+            <?php if($propertiesCounter1 > 3) { ?>
+              <div class="col-xs-12 col-sm-4 no-padding property hidden-properties">
+            <?php } else { ?>
               <div class="col-xs-12 col-sm-4 no-padding property">
+            <?php } ?>
                 <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
                 <div class="property-info">
                   <h2 class="info-price"><?php echo $price; ?></h2>
@@ -81,11 +87,15 @@ get_header();
                   <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
                 </div>
               </div>
-            <?php } ?>
+            <?php
+                $propertiesCounter1++;
+              }
+            ?>
             <?php if ($agentProperties->post_count > 3) { ?>
-              <button class="more-properties">Ver más propiedades</button>
+               <button class="more-properties">Ver más propiedades</button>
+               <div class="col-xs-12 few-properties-more"></div>
             <?php } else { ?>
-              <div class="col-xs-12 few-properties" style="height: 130px;"></div>
+               <div class="col-xs-12 few-properties-less"></div>
             <?php } ?>
           </div>
         </div>
@@ -116,14 +126,20 @@ get_header();
         <div class="agent-properties">
           <h2 class="properties-number properties-number-right" data-target="<?php the_ID(); ?>">Propiedades asignadas (<?php echo $agentProperties->post_count; ?>)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
           <div class="properties-list" id="<?php the_ID(); ?>">
-          <?php foreach ($properties as $property){
+          <?php
+            $propertiesCounter1 = 1;
+            foreach ($properties as $property){
             $address = get_post_meta( $property->ID, '_pr_address', true );
             $price   = get_post_meta( $property->ID, '_pr_current_price', true );
             $type    = get_post_meta( $property->ID, '_pr_type_of_property', true );
             $rooms   = get_post_meta( $property->ID, '_pr_room_count', true );
             $baths   = get_post_meta( $property->ID, '_pr_baths_total', true );
           ?>
-            <div class="col-xs-12 col-sm-4 no-padding property">
+          <?php if($propertiesCounter1 > 3) { ?>
+            <div class="col-xs-12 col-sm-4 no-padding property hidden-properties">
+          <?php } else { ?>
+              <div class="col-xs-12 col-sm-4 no-padding property">
+          <?php } ?>
               <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
               <div class="property-info">
                 <h2 class="info-price"><?php echo $price; ?></h2>
@@ -133,11 +149,15 @@ get_header();
                 <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
               </div>
             </div>
-          <?php } ?>
+          <?php
+              $propertiesCounter1++;
+              }
+          ?>
           <?php if ($agentProperties->post_count > 3) { ?>
             <button class="more-properties">Ver más propiedades</button>
+            <div class="col-xs-12 few-properties-more"></div>
           <?php } else { ?>
-            <div class="col-xs-12 few-properties" style="height: 130px;"></div>
+            <div class="col-xs-12 few-properties-less"></div>
           <?php } ?>
           </div>
         </div>

@@ -2152,7 +2152,7 @@ a[href^=tel] {
               margin: 15px 0 0 0;
               opacity: 0.6;
               font-size: 10px;
-              line-height: 13px0; }
+              line-height: 13px; }
         .hr-agents-section .agent-properties .properties-list .more-properties {
           opacity: 0.8;
           border-radius: 100px;
@@ -2161,6 +2161,16 @@ a[href^=tel] {
           font-size: 18px;
           line-height: 20px;
           margin-top: 50px; }
+
+  .hidden-properties {
+    display: none; }
+
+  .few-properties-more {
+    height: 130px;
+    display: none; }
+
+  .few-properties-less {
+    height: 130px; }
 
   #about-hero-section {
     height: 450px;
