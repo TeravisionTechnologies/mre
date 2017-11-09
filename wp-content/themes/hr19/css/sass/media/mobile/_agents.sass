@@ -26,8 +26,16 @@
   margin-top: get-vw-mobile(5px)
   .agent-profile
     height: get-vw-mobile(126px)
-    padding: get-vw-mobile(20px) get-vw-mobile(44px) get-vw-mobile(20px) get-vw-mobile(25px)
+    padding: get-vw-mobile(20px) get-vw-mobile(52px) get-vw-mobile(20px) get-vw-mobile(52px)
     .agent-profile-photo
+      width: get-vw-mobile(101px)
+      img
+        width: get-vw-mobile(86px)
+        height: get-vw-mobile(86px)
+        margin-right: get-vw-mobile(15px)
+        border-radius: 50%
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3)
+    .agent-profile-photo-right
       width: get-vw-mobile(101px)
       img
         width: get-vw-mobile(86px)
@@ -37,27 +45,27 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3)
     .agent-profile-info
       display: inline-block
-      width: get-vw-mobile(190px)
+      width: get-vw-mobile(150px)
       margin-top: get-vw-mobile(15px)
       .profile-name
         margin: 0
         padding-bottom: get-vw-mobile(6px)
-        font-size: get-vw-mobile(14px)
-        line-height: get-vw-mobile(14px)
+        font-size: get-vw-mobile(12px)
+        line-height: get-vw-mobile(13px)
         .profile-position
           font-size: get-vw-mobile(12px)
           margin: 0
       .profile-phone, .profile-email
         margin: 0
         opacity: 1
-        font-size: get-vw-mobile(11px)
+        font-size: get-vw-mobile(9px)
         line-height: get-vw-mobile(14px)
   .agent-bio
     height: auto
     padding: get-vw-mobile(30px) get-vw-mobile(51px) 0 get-vw-mobile(51px)
     p
       font-size: get-vw-mobile(12px)
-      line-height: get-vw-mobile(20px)
+      line-height: get-vw-mobile(18px)
       padding-bottom: get-vw-mobile(15px)
       border-bottom: solid 2px rgba(143, 143, 143, 0.4)
       margin: 0
@@ -65,8 +73,8 @@
     padding: get-vw-mobile(15px) get-vw-mobile(51px) get-vw-mobile(60px) get-vw-mobile(51px)
     .properties-number
       margin: 0
-      font-size: get-vw-mobile(14px)
-      line-height: get-vw-mobile(18px)
+      font-size: get-vw-mobile(12px)
+      line-height: get-vw-mobile(15px)
       i
         font-size: get-vw-mobile(20px)
         margin-left: get-vw-mobile(15px)
@@ -109,4 +117,10 @@
         font-size: get-vw-mobile(14px)
         line-height: get-vw-mobile(20px)
         margin-top: get-vw-mobile(40px)
+
+.agent-profile-info-right
+  text-align: right
+  width: 60% !important
+.agent-profile-photo-right
+  width: 40% !important
 // END Agents

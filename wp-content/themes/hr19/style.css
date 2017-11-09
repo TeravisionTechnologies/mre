@@ -1094,10 +1094,18 @@ h2.active {
   margin-top: 0.3472222222vw; }
   .hr-agents-section .agent-profile {
     height: 13.8888888889vw;
-    padding: 2.0833333333vw 13.5416666667vw; }
+    padding: 2.0833333333vw 23.3333333333vw; }
     .hr-agents-section .agent-profile .agent-profile-photo {
       width: 11.7361111111vw; }
       .hr-agents-section .agent-profile .agent-profile-photo img {
+        width: 9.7222222222vw;
+        height: 9.7222222222vw;
+        margin-right: 2.0138888889vw;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3); }
+    .hr-agents-section .agent-profile .agent-profile-photo-right {
+      width: 11.7361111111vw; }
+      .hr-agents-section .agent-profile .agent-profile-photo-right img {
         width: 9.7222222222vw;
         height: 9.7222222222vw;
         margin-right: 2.0138888889vw;
@@ -1119,13 +1127,13 @@ h2.active {
       .hr-agents-section .agent-profile .agent-profile-info .profile-phone, .hr-agents-section .agent-profile .agent-profile-info .profile-email {
         margin: 0;
         color: #4a4a4a;
-        opacity: 0.6;
+        opacity: 0.8;
         font-size: 1.1111111111vw;
         line-height: 1.6666666667vw;
         font-family: Montserrat-Regular, sans-serif; }
   .hr-agents-section .agent-bio {
     height: auto;
-    padding: 2.7777777778vw 16.3888888889vw 0 16.3888888889vw; }
+    padding: 2.7777777778vw 23.3333333333vw 0 23.3333333333vw; }
     .hr-agents-section .agent-bio p {
       font-family: Montserrat-Light, sans-serif;
       font-size: 1.1111111111vw;
@@ -1136,7 +1144,7 @@ h2.active {
       margin: 0; }
   .hr-agents-section .agent-properties {
     height: auto;
-    padding: 1.3888888889vw 16.3194444444vw 5.5555555556vw 16.3194444444vw; }
+    padding: 1.3888888889vw 23.3333333333vw 6.9444444444vw 23.3333333333vw; }
     .hr-agents-section .agent-properties .properties-number {
       margin: 0;
       cursor: pointer;
@@ -1150,13 +1158,13 @@ h2.active {
     .hr-agents-section .agent-properties .properties-list {
       display: none;
       margin: 0 auto;
-      width: 67.3611111111vw;
+      width: 53.3333333333vw;
       height: auto;
       text-align: center; }
       .hr-agents-section .agent-properties .properties-list .property {
-        width: 20.8333333333vw;
+        width: 15.9722222222vw;
         text-align: left;
-        margin: 2.0833333333vw 2.3611111111vw 0 0;
+        margin: 2.0833333333vw 2.7083333333vw 0 0;
         box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2); }
         .hr-agents-section .agent-properties .properties-list .property:nth-child(3n+3) {
           margin-right: 0; }
@@ -1169,35 +1177,35 @@ h2.active {
           .hr-agents-section .agent-properties .properties-list .property .property-info .info-price {
             margin: 0;
             font-family: Montserrat-Bold, sans-serif;
-            font-size: 1.6666666667vw;
-            line-height: 2.0138888889vw;
+            font-size: 1.25vw;
+            line-height: 1.3888888889vw;
             color: #4a4a4a; }
           .hr-agents-section .agent-properties .properties-list .property .property-info .info-features {
-            margin: 0;
+            margin: 5px 0 0 0;
             font-family: Montserrat-Regular, sans-serif;
-            font-size: 0.9722222222vw;
-            line-height: 1.25vw;
+            font-size: 0.6944444444vw;
+            line-height: 0.9027777778vw;
             color: #4a4a4a; }
           .hr-agents-section .agent-properties .properties-list .property .property-info .info-address {
-            margin: 2px 0 0 0;
+            margin: 5px 0 0 0;
             font-family: Montserrat-Regular, sans-serif;
-            font-size: 0.9027777778vw;
-            line-height: 1.1111111111vw;
+            font-size: 0.6944444444vw;
+            line-height: 0.9027777778vw;
             color: #4a4a4a;
             opacity: 0.6; }
           .hr-agents-section .agent-properties .properties-list .property .property-info .info-mls {
-            margin: 7px 0 0 0;
+            margin: 15px 0 0 0;
             opacity: 0.6;
             font-family: Montserrat-Regular, sans-serif;
-            font-size: 0.9722222222vw;
-            line-height: 1.25vw;
+            font-size: 0.6944444444vw;
+            line-height: 0.9027777778vw;
             color: #4a4a4a; }
       .hr-agents-section .agent-properties .properties-list .more-properties {
         opacity: 0.8;
         background: #fff;
         border-radius: 6.9444444444vw;
         border: solid 2px #4a4a4a;
-        padding: 1.0416666667vw 2.9166666667vw;
+        padding: 0.9027777778vw 3.5416666667vw;
         font-family: Montserrat-Bold, sans-serif;
         font-size: 1.25vw;
         line-height: 1.3888888889vw;
@@ -1207,6 +1215,22 @@ h2.active {
 a[href^=tel] {
   text-decoration: inherit;
   color: inherit; }
+
+.agent-profile-info-right {
+  text-align: right;
+  width: 77% !important; }
+
+.agent-profile-photo-right {
+  width: 23% !important; }
+  .agent-profile-photo-right img {
+    margin-right: 0 !important;
+    float: right; }
+
+.agent-bio-right p {
+  text-align: right; }
+
+.properties-number-right {
+  text-align: right; }
 
 .breadcrumb-info {
   margin-top: 5.5555555556vw;
@@ -1965,10 +1989,18 @@ a[href^=tel] {
     margin-top: 5px; }
     .hr-agents-section .agent-profile {
       height: 200px;
-      padding: 30px 195px; }
+      padding: 30px 336px; }
       .hr-agents-section .agent-profile .agent-profile-photo {
         width: 169px; }
         .hr-agents-section .agent-profile .agent-profile-photo img {
+          width: 140px;
+          height: 140px;
+          margin-right: 29px;
+          border-radius: 50%;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3); }
+      .hr-agents-section .agent-profile .agent-profile-photo-right {
+        width: 169px; }
+        .hr-agents-section .agent-profile .agent-profile-photo-right img {
           width: 140px;
           height: 140px;
           margin-right: 29px;
@@ -1985,11 +2017,11 @@ a[href^=tel] {
             margin: 0; }
         .hr-agents-section .agent-profile .agent-profile-info .profile-phone, .hr-agents-section .agent-profile .agent-profile-info .profile-email {
           margin: 0;
-          opacity: 0.6;
+          opacity: 0.8;
           font-size: 16px;
           line-height: 24px; }
     .hr-agents-section .agent-bio {
-      padding: 40px 236px 0 236px; }
+      padding: 40px 336px 0 336px; }
       .hr-agents-section .agent-bio p {
         font-size: 16px;
         line-height: 28px;
@@ -1997,7 +2029,7 @@ a[href^=tel] {
         border-bottom: solid 2px rgba(143, 143, 143, 0.4);
         margin: 0; }
     .hr-agents-section .agent-properties {
-      padding: 20px 235px 80px 235px; }
+      padding: 20px 336px 100px 336px; }
       .hr-agents-section .agent-properties .properties-number {
         margin: 0;
         font-size: 18px;
@@ -2006,10 +2038,10 @@ a[href^=tel] {
           font-size: 20px;
           margin-left: 15px; }
       .hr-agents-section .agent-properties .properties-list {
-        width: 970px; }
+        width: 768px; }
         .hr-agents-section .agent-properties .properties-list .property {
-          width: 300px;
-          margin: 30px 34px 0 0;
+          width: 230px;
+          margin: 30px 39px 0 0;
           box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2); }
           .hr-agents-section .agent-properties .properties-list .property:nth-child(3n+3) {
             margin-right: 0; }
@@ -2020,27 +2052,27 @@ a[href^=tel] {
             padding: 10px 17px 8px 17px; }
             .hr-agents-section .agent-properties .properties-list .property .property-info .info-price {
               margin: 0;
-              font-size: 24px;
-              line-height: 29px; }
+              font-size: 18px;
+              line-height: 20px; }
             .hr-agents-section .agent-properties .properties-list .property .property-info .info-features {
-              margin: 0;
-              font-size: 14px;
-              line-height: 18px; }
+              margin: 5px 0 0 0;
+              font-size: 10px;
+              line-height: 13px; }
             .hr-agents-section .agent-properties .properties-list .property .property-info .info-address {
-              margin: 2px 0 0 0;
-              font-size: 13px;
-              line-height: 16px;
+              margin: 5px 0 0 0;
+              font-size: 10px;
+              line-height: 13px;
               opacity: 0.6; }
             .hr-agents-section .agent-properties .properties-list .property .property-info .info-mls {
-              margin: 7px 0 0 0;
+              margin: 15px 0 0 0;
               opacity: 0.6;
-              font-size: 14px;
-              line-height: 18px; }
+              font-size: 10px;
+              line-height: 13px0; }
         .hr-agents-section .agent-properties .properties-list .more-properties {
           opacity: 0.8;
           border-radius: 100px;
           border: solid 2px #4a4a4a;
-          padding: 15px 42px;
+          padding: 13px 51px;
           font-size: 18px;
           line-height: 20px;
           margin-top: 50px; }
@@ -2566,7 +2598,7 @@ a[href^=tel] {
     margin-top: 0.6510416667vw; }
     .hr-agents-section .agent-profile {
       height: 20.8333333333vw;
-      padding: 3.2552083333vw 2.6041666667vw 3.2552083333vw 10.8072916667vw; }
+      padding: 3.2552083333vw 14.7135416667vw 3.2552083333vw 14.7135416667vw; }
       .hr-agents-section .agent-profile .agent-profile-photo {
         width: 16.9270833333vw; }
         .hr-agents-section .agent-profile .agent-profile-photo img {
@@ -2575,9 +2607,17 @@ a[href^=tel] {
           margin-right: 2.6041666667vw;
           border-radius: 50%;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3); }
+      .hr-agents-section .agent-profile .agent-profile-photo-right {
+        width: 16.9270833333vw; }
+        .hr-agents-section .agent-profile .agent-profile-photo-right img {
+          width: 14.3229166667vw;
+          height: 14.3229166667vw;
+          margin-right: 2.6041666667vw;
+          border-radius: 50%;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3); }
       .hr-agents-section .agent-profile .agent-profile-info {
         display: inline-block;
-        width: 69.0104166667vw;
+        width: 50.78125vw;
         margin-top: 3.7760416667vw; }
         .hr-agents-section .agent-profile .agent-profile-info .profile-name {
           margin: 0;
@@ -3291,7 +3331,7 @@ a[href^=tel] {
     margin-top: 1.3888888889vw; }
     .hr-agents-section .agent-profile {
       height: 35vw;
-      padding: 5.5555555556vw 12.2222222222vw 5.5555555556vw 6.9444444444vw; }
+      padding: 5.5555555556vw 14.4444444444vw 5.5555555556vw 14.4444444444vw; }
       .hr-agents-section .agent-profile .agent-profile-photo {
         width: 28.0555555556vw; }
         .hr-agents-section .agent-profile .agent-profile-photo img {
@@ -3300,29 +3340,37 @@ a[href^=tel] {
           margin-right: 4.1666666667vw;
           border-radius: 50%;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3); }
+      .hr-agents-section .agent-profile .agent-profile-photo-right {
+        width: 28.0555555556vw; }
+        .hr-agents-section .agent-profile .agent-profile-photo-right img {
+          width: 23.8888888889vw;
+          height: 23.8888888889vw;
+          margin-right: 4.1666666667vw;
+          border-radius: 50%;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3); }
       .hr-agents-section .agent-profile .agent-profile-info {
         display: inline-block;
-        width: 52.7777777778vw;
+        width: 41.6666666667vw;
         margin-top: 4.1666666667vw; }
         .hr-agents-section .agent-profile .agent-profile-info .profile-name {
           margin: 0;
           padding-bottom: 1.6666666667vw;
-          font-size: 3.8888888889vw;
-          line-height: 3.8888888889vw; }
+          font-size: 3.3333333333vw;
+          line-height: 3.6111111111vw; }
           .hr-agents-section .agent-profile .agent-profile-info .profile-name .profile-position {
             font-size: 3.3333333333vw;
             margin: 0; }
         .hr-agents-section .agent-profile .agent-profile-info .profile-phone, .hr-agents-section .agent-profile .agent-profile-info .profile-email {
           margin: 0;
           opacity: 1;
-          font-size: 3.0555555556vw;
+          font-size: 2.5vw;
           line-height: 3.8888888889vw; }
     .hr-agents-section .agent-bio {
       height: auto;
       padding: 8.3333333333vw 14.1666666667vw 0 14.1666666667vw; }
       .hr-agents-section .agent-bio p {
         font-size: 3.3333333333vw;
-        line-height: 5.5555555556vw;
+        line-height: 5vw;
         padding-bottom: 4.1666666667vw;
         border-bottom: solid 2px rgba(143, 143, 143, 0.4);
         margin: 0; }
@@ -3330,8 +3378,8 @@ a[href^=tel] {
       padding: 4.1666666667vw 14.1666666667vw 16.6666666667vw 14.1666666667vw; }
       .hr-agents-section .agent-properties .properties-number {
         margin: 0;
-        font-size: 3.8888888889vw;
-        line-height: 5vw; }
+        font-size: 3.3333333333vw;
+        line-height: 4.1666666667vw; }
         .hr-agents-section .agent-properties .properties-number i {
           font-size: 5.5555555556vw;
           margin-left: 4.1666666667vw; }
@@ -3374,6 +3422,13 @@ a[href^=tel] {
           font-size: 3.8888888889vw;
           line-height: 5.5555555556vw;
           margin-top: 11.1111111111vw; }
+
+  .agent-profile-info-right {
+    text-align: right;
+    width: 60% !important; }
+
+  .agent-profile-photo-right {
+    width: 40% !important; }
 
   .breadcrumb-info {
     margin-top: 16.6666666667vw;

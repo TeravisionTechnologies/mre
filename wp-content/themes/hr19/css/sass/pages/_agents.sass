@@ -33,8 +33,16 @@
   margin-top: get-vw-desktop(5px)
   .agent-profile
     height: get-vw-desktop(200px)
-    padding: get-vw-desktop(30px) get-vw-desktop(195px)
+    padding: get-vw-desktop(30px) get-vw-desktop(336px)
     .agent-profile-photo
+      width: get-vw-desktop(169px)
+      img
+        width: get-vw-desktop(140px)
+        height: get-vw-desktop(140px)
+        margin-right: get-vw-desktop(29px)
+        border-radius: 50%
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3)
+    .agent-profile-photo-right
       width: get-vw-desktop(169px)
       img
         width: get-vw-desktop(140px)
@@ -58,13 +66,13 @@
       .profile-phone, .profile-email
         margin: 0
         color: $grey
-        opacity: 0.6
+        opacity: 0.8
         font-size: get-vw-desktop(16px)
         line-height: get-vw-desktop(24px)
         font-family: Montserrat-Regular, sans-serif
   .agent-bio
     height: auto
-    padding: get-vw-desktop(40px) get-vw-desktop(236px) 0 get-vw-desktop(236px)
+    padding: get-vw-desktop(40px) get-vw-desktop(336px) 0 get-vw-desktop(336px)
     p
       font-family: Montserrat-Light, sans-serif
       font-size: get-vw-desktop(16px)
@@ -75,7 +83,7 @@
       margin: 0
   .agent-properties
     height: auto
-    padding: get-vw-desktop(20px) get-vw-desktop(235px) get-vw-desktop(80px) get-vw-desktop(235px)
+    padding: get-vw-desktop(20px) get-vw-desktop(336px) get-vw-desktop(100px) get-vw-desktop(336px)
     .properties-number
       margin: 0
       cursor: pointer
@@ -89,13 +97,13 @@
     .properties-list
       display: none
       margin: 0 auto
-      width: get-vw-desktop(970px)
+      width: get-vw-desktop(768px)
       height: auto
       text-align: center
       .property
-        width: get-vw-desktop(300px)
+        width: get-vw-desktop(230px)
         text-align: left
-        margin: get-vw-desktop(30px) get-vw-desktop(34px) 0 0
+        margin: get-vw-desktop(30px) get-vw-desktop(39px) 0 0
         box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2)
         &:nth-child(3n+3)
           margin-right: 0
@@ -108,35 +116,35 @@
           .info-price
             margin: 0
             font-family: Montserrat-Bold, sans-serif
-            font-size: get-vw-desktop(24px)
-            line-height: get-vw-desktop(29px)
+            font-size: get-vw-desktop(18px)
+            line-height: get-vw-desktop(20px)
             color: $grey
           .info-features
-            margin: 0
+            margin: 5px 0 0 0
             font-family: Montserrat-Regular, sans-serif
-            font-size: get-vw-desktop(14px)
-            line-height: get-vw-desktop(18px)
+            font-size: get-vw-desktop(10px)
+            line-height: get-vw-desktop(13px)
             color: $grey
           .info-address
-            margin: 2px 0 0 0
+            margin: 5px 0 0 0
             font-family: Montserrat-Regular, sans-serif
-            font-size: get-vw-desktop(13px)
-            line-height: get-vw-desktop(16px)
+            font-size: get-vw-desktop(10px)
+            line-height: get-vw-desktop(13px)
             color: $grey
             opacity: 0.6
           .info-mls
-            margin: 7px 0 0 0
+            margin: 15px 0 0 0
             opacity: 0.6
             font-family: Montserrat-Regular, sans-serif
-            font-size: get-vw-desktop(14px)
-            line-height: get-vw-desktop(18px)
+            font-size: get-vw-desktop(10px)
+            line-height: get-vw-desktop(13px)
             color: $grey
       .more-properties
         opacity: 0.8
         background: $white
         border-radius: get-vw-desktop(100px)
         border: solid 2px $grey
-        padding: get-vw-desktop(15px) get-vw-desktop(42px)
+        padding: get-vw-desktop(13px) get-vw-desktop(51px)
         font-family: Montserrat-Bold, sans-serif
         font-size: get-vw-desktop(18px)
         line-height: get-vw-desktop(20px)
@@ -146,5 +154,19 @@
 a[href^=tel]
   text-decoration: inherit
   color: inherit
+
+.agent-profile-info-right
+  text-align: right
+  width: 77% !important
+.agent-profile-photo-right
+  width: 23% !important
+  img
+    margin-right: 0 !important
+    float: right
+.agent-bio-right
+  p
+    text-align: right
+.properties-number-right
+  text-align: right
 
 // END Agents

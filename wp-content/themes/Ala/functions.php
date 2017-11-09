@@ -32,6 +32,7 @@ $postTypeDir = array (
     __DIR__.'/includes/post-types/header-footer/',
     __DIR__.'/includes/post-types/banner/',
     __DIR__.'/includes/post-types/office/',
+    __DIR__.'/includes/post-types/about-us/',
 );
 
 // File names inside post-types dirs
@@ -66,12 +67,15 @@ function call_create_post_types() {
     create_post_type_header_footer();
     // Post Type for Offices
     create_post_type_offices();
+    // Post Type for About Us
+    create_post_type_about_us();
 }
 
 /* Remove text area field from header and footer */
 function remove_page_editor() {
   remove_post_type_support( 'header_footer', 'editor' );
   remove_post_type_support( 'banner', 'editor' );
+  remove_post_type_support( 'about_us', 'editor' );
 }
 add_action( 'init', 'remove_page_editor' );
 
@@ -90,6 +94,8 @@ function call_metaboxes() {
   // Metaboxes for General Settings
   header_footer_metaboxes();
   banner_metaboxes();
+  // Metaboxes for About  Us
+  about_us_metaboxes();
 }
 
 /*function custom_form_validation_filter($result, $tag) {
