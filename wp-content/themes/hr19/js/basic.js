@@ -131,11 +131,13 @@ jQuery(document).ready(function () {
     $('#map-switch').click(function() {
         $("#search-map").slideToggle();
         $("html, body").animate({scrollTop: 0}, 500);
+        $(".property-list").toggleClass('property-list-search');
+        setTimeout( initMap, 200 );
     });
 
     $('#property-search').validator().on('submit', function (e) {
         if (e.isDefaultPrevented()) {
-            $('#s').addClass('placeholder-error shake');
+            $('#s').addClass('placeholder-error');
         }
     })
 

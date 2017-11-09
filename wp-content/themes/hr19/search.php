@@ -1,17 +1,100 @@
 <?php
 get_header();
 ?>
-<section id="search-map" class="search-map">
-    <div class="container" >
-        <div class="row">
-            <div class="col-md-12">
 
-            </div>
+<nav id="search-filters" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-filter"></i>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <div class="input-group">
+                        <input type="search" class="form-control search-box" placeholder="<?php _e( 'Buscar', 'hr' ) ?>">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php _e( 'Tipo <br>de vivienda', 'hr' ) ?> <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="single_family" class=""><?php _e( 'Unifamiliar', 'hr' ) ?></label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="condo" class=""><?php _e( 'Condominios/Townhouses', 'hr' ) ?></label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="mobile" class=""><?php _e( 'Casas móviles', 'hr' ) ?></label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="farm" class=""><?php _e( 'Granjas/Ranchos', 'hr' ) ?></label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="land" class=""><?php _e( 'Terreno', 'hr' ) ?></label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="multi_family" class=""><?php _e( 'Multifamiliar', 'hr' ) ?></label>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php _e( 'Rango <br>de precio', 'hr' ) ?> <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">$0</a></li>
+                        <li><a href="#">$100k</a></li>
+                        <li><a href="#">$200k</a></li>
+                        <li><a href="#">$300k</a></li>
+                        <li><a href="#">$400k</a></li>
+                        <li><a href="#">$500k</a></li>
+                        <li><a href="#">$600k</a></li>
+                        <li><a href="#">$700k</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php _e( 'Nro. <br>de habitaciones', 'hr' ) ?> <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><?php _e( 'Cualquiera', 'hr' ) ?></a></li>
+                        <li><a href="#"><?php _e( 'Estudio', 'hr' ) ?></a></li>
+                        <li><a href="#">1+</a></li>
+                        <li><a href="#">2+</a></li>
+                        <li><a href="#">3+</a></li>
+                        <li><a href="#">4+</a></li>
+                        <li><a href="#">5+</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php _e( 'Nro. <br>de baños', 'hr' ) ?> <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><?php _e( 'Cualquiera', 'hr' ) ?></a></li>
+                        <li><a href="#">1+</a></li>
+                        <li><a href="#">2+</a></li>
+                        <li><a href="#">3+</a></li>
+                        <li><a href="#">4+</a></li>
+                        <li><a href="#">5+</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="btn btn-search"><i class="fa fa-search"></i></button>
+                </li>
+            </ul>
         </div>
     </div>
+</nav>
+
+<section id="search-map" class="search-map">
+
 </section>
 
-<div class="container property-list" style="margin-top: 100px;">
+<div class="container property-list property-list-search">
     <div class="row">
         <div class="property-sorting">
             <div class="col-sm-4 col-md-3">
@@ -124,5 +207,14 @@ get_header();
     </div>
 </div>
 
+<script>
+    var map3;
+    function initMap() {
+        map3 = new google.maps.Map(document.getElementById('search-map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+        });
+    }
+</script>
 
 <?php get_footer(); ?>

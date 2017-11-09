@@ -534,6 +534,8 @@ body.has-active-menu
 
 .property-list
   margin-top: 40px
+  -webkit-transition: margin-top 0.3s
+  transition: margin-top 0.3s
   .hr19-heading
     font-size: 24px
     font-family: 'Montserrat-Bold'
@@ -1130,3 +1132,82 @@ input:checked + .slider:before
     color: $errortxt
   &:-moz-placeholder
     color: $errortxt
+
+#search-filters
+  margin-top: get-vw-desktop(80px)
+  background: transparent
+  border: none
+  border-radius: 0
+  -webkit-box-shadow: none
+  box-shadow: none
+  height: 70px
+  z-index: 1025
+  .navbar-collapse
+    text-align: center
+    .navbar-nav
+      background: $white
+      float: initial
+      display: inline-block
+      box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2)
+      .dropdown-menu
+        padding: 0
+        border: none
+        min-width: 100%
+        li
+          a
+            padding: 5px 40px
+          .checkbox
+            padding: 5px 20px
+            margin: 0
+            label
+              color: $greyfilter
+      .dropdown
+        &:not(:first-child)
+          border-left: solid 1px rgba(74, 74, 74, 0.2)
+        a
+          padding: 15px 40px
+          letter-spacing: -0.1px
+          -webkit-transition: .5s ease-in-out
+          -moz-transition: .5s ease-in-out
+          -o-transition: .5s ease-in-out
+          transition: .5s ease-in-out
+          color: $greyfilter
+          &:hover
+            background: $greylighter
+      .btn-search
+        width: 102px
+        height: 70px
+        background-color: $bluebtn
+        border-radius: 0
+        font-size: 20px
+        i
+          color: $white
+      li.open
+        a
+          background-color: $white
+          background-image: none
+          -webkit-box-shadow: none
+          box-shadow: none
+      .input-group
+        .search-box
+          height: 70px
+          border: none
+          box-shadow: none
+          border-radius: 0
+          padding-left: 50px
+          background: $greylighter
+          font-size: 18px
+        i
+          color: $greyfilter
+          position: absolute
+          font-size: 16px
+          left: 20px
+          z-index: 5
+          top: 0
+          bottom: 0
+          margin: auto
+          height: 17px
+.property-list-search
+  margin-top: 200px
+  -webkit-transition: margin-top 0.3s
+  transition: margin-top 0.3s
