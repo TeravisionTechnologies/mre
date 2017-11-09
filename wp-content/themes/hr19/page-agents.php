@@ -64,7 +64,8 @@ get_header();
         <div class="agent-properties">
           <h2 class="properties-number" data-target="<?php the_ID(); ?>">Propiedades asignadas (<?php echo $agentProperties->post_count; ?>)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
           <div class="properties-list" id="<?php the_ID(); ?>">
-            <?php foreach ($properties as $property){
+            <?php
+              foreach ($properties as $property){
               $address = get_post_meta( $property->ID, '_pr_address', true );
               $price   = get_post_meta( $property->ID, '_pr_current_price', true );
               $type    = get_post_meta( $property->ID, '_pr_type_of_property', true );
@@ -72,21 +73,19 @@ get_header();
               $baths   = get_post_meta( $property->ID, '_pr_baths_total', true );
             ?>
               <div class="col-xs-12 col-sm-4 no-padding property">
-                <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
-                <div class="property-info">
-                  <h2 class="info-price"><?php echo $price; ?></h2>
-                  <!--<h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>-->
-                  <h3 class="info-features"><?php echo $type . " · " . $rooms . " Habitaciones · " . $baths . " Baños";?></h3>
-                  <h3 class="info-address"><?php echo $address; ?></h3>
-                  <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
-                </div>
+                <a href="/property/<?php echo $property->post_title; ?>">
+                  <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
+                  <div class="property-info">
+                    <h2 class="info-price"><?php echo $price; ?></h2>
+                    <!--<h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>-->
+                    <h3 class="info-features"><?php echo $type . " · " . $rooms . " Habitaciones · " . $baths . " Baños";?></h3>
+                    <h3 class="info-address"><?php echo $address; ?></h3>
+                    <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
+                  </div>
+                </a>
               </div>
             <?php } ?>
-            <?php if ($agentProperties->post_count > 3) { ?>
-              <button class="more-properties">Ver más propiedades</button>
-            <?php } else { ?>
-              <div class="col-xs-12 few-properties" style="height: 130px;"></div>
-            <?php } ?>
+            <div class="col-xs-12 properties-footer"></div>
           </div>
         </div>
       </section>
@@ -116,29 +115,28 @@ get_header();
         <div class="agent-properties">
           <h2 class="properties-number properties-number-right" data-target="<?php the_ID(); ?>">Propiedades asignadas (<?php echo $agentProperties->post_count; ?>)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
           <div class="properties-list" id="<?php the_ID(); ?>">
-          <?php foreach ($properties as $property){
+          <?php
+            foreach ($properties as $property){
             $address = get_post_meta( $property->ID, '_pr_address', true );
             $price   = get_post_meta( $property->ID, '_pr_current_price', true );
             $type    = get_post_meta( $property->ID, '_pr_type_of_property', true );
             $rooms   = get_post_meta( $property->ID, '_pr_room_count', true );
             $baths   = get_post_meta( $property->ID, '_pr_baths_total', true );
           ?>
-            <div class="col-xs-12 col-sm-4 no-padding property">
-              <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
-              <div class="property-info">
-                <h2 class="info-price"><?php echo $price; ?></h2>
-                <!--<h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>-->
-                <h3 class="info-features"><?php echo $type . " · " . $rooms . " Habitaciones · " . $baths . " Baños";?></h3>
-                <h3 class="info-address"><?php echo $address; ?></h3>
-                <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
-              </div>
+          <div class="col-xs-12 col-sm-4 no-padding property">
+              <a href="/property/<?php echo $property->post_title; ?>">
+                <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
+                <div class="property-info">
+                  <h2 class="info-price"><?php echo $price; ?></h2>
+                  <!--<h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>-->
+                  <h3 class="info-features"><?php echo $type . " · " . $rooms . " Habitaciones · " . $baths . " Baños";?></h3>
+                  <h3 class="info-address"><?php echo $address; ?></h3>
+                  <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
+                </div>
+              </a>
             </div>
           <?php } ?>
-          <?php if ($agentProperties->post_count > 3) { ?>
-            <button class="more-properties">Ver más propiedades</button>
-          <?php } else { ?>
-            <div class="col-xs-12 few-properties" style="height: 130px;"></div>
-          <?php } ?>
+          <div class="col-xs-12 properties-footer"></div>
           </div>
         </div>
       </section>

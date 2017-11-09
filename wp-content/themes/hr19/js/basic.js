@@ -139,7 +139,7 @@ jQuery(document).ready(function () {
         if (e.isDefaultPrevented()) {
             $('#s').addClass('placeholder-error');
         }
-    })
-
+    });
+  
 });
 
