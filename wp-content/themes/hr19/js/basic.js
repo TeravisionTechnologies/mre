@@ -133,5 +133,11 @@ jQuery(document).ready(function () {
         $("html, body").animate({scrollTop: 0}, 500);
     });
 
+    $('#property-search').validator().on('submit', function (e) {
+        if (e.isDefaultPrevented()) {
+            $('#s').addClass('placeholder-error shake');
+        }
+    })
+
 });
 

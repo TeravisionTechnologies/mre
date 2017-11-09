@@ -783,7 +783,8 @@ input[type="radio"].styled:checked + label:after {
   background: #fff; }
 
 .property-search .input-group {
-  width: 100%; }
+  width: 100%;
+  overflow: hidden; }
   .property-search .input-group input {
     border: none;
     height: 60px;
@@ -1137,6 +1138,15 @@ input:checked + .slider:before {
   height: 650px;
   background: #4a4a4a;
   display: none; }
+
+.placeholder-error::-webkit-input-placeholder {
+  color: #7b0a0a; }
+.placeholder-error::-moz-placeholder {
+  color: #7b0a0a; }
+.placeholder-error:-ms-input-placeholder {
+  color: #7b0a0a; }
+.placeholder-error:-moz-placeholder {
+  color: #7b0a0a; }
 
 .agent-hero {
   margin-top: 5.5555555556vw;

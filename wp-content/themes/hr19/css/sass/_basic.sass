@@ -754,6 +754,7 @@ input[type="radio"].styled:checked + label
 .property-search
   .input-group
     width: 100%
+    overflow: hidden
     input
       border: none
       height: 60px
@@ -1119,3 +1120,13 @@ input:checked + .slider:before
   height: 650px
   background: $grey
   display: none
+
+.placeholder-error
+  &::-webkit-input-placeholder
+    color: $errortxt
+  &::-moz-placeholder
+    color: $errortxt
+  &:-ms-input-placeholder
+    color: $errortxt
+  &:-moz-placeholder
+    color: $errortxt
