@@ -470,6 +470,12 @@ body.has-active-menu
 
 // Filters
 
+.property-search-wrapper
+  position: absolute
+  bottom: get-vw-desktop(180px)
+  left: 0
+  right: 0
+
 .property-status
   list-style-type: none
   padding: 0
@@ -481,27 +487,17 @@ body.has-active-menu
 
 .property-search
   button
-    position: absolute
-    width: 70px
-    height: 70px
-    left: 0
-    right: 0
-    bottom: -30px
-    margin: 0 auto
     background: $bluelight
-    border: none
-    border-radius: 50%
+    height: 60px
+    border-radius: 0
     -webkit-transition: .5s
     -moz-transition: .5s
     -ms-transition: .5s
     -o-transition: .5s
     transition: .5s
-    &:hover
-      -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2)
-      box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2)
     i
       color: $white
-      font-size: 28px
+      font-size: 22px
 
 .property-status input[type="radio"]
   opacity: 0.011
@@ -513,14 +509,14 @@ body.has-active-menu
 
 .property-status
   label
-    padding: 30px
+    padding: 20px
     cursor: pointer
     width: 100%
     background: $mainblue
     color: rgba(255, 255, 255, 0.6)
     text-align: center
     margin: 0
-    font-size: 20px
+    font-size: 18px
     line-height: 20px
     -webkit-transition: .5s
     -moz-transition: .5s
@@ -537,7 +533,28 @@ body.has-active-menu
       color: $white
 
 .property-list
-  margin-top: 70px
+  margin-top: 40px
+  .hr19-heading
+    font-size: 24px
+    font-family: 'Montserrat-Bold'
+    letter-spacing: -0.1px
+    margin-bottom: 40px
+    position: relative
+    background-color: $white
+    span
+      background-color: $white
+      position: relative
+      z-index: 10
+    &:after
+      content: ""
+      position: absolute
+      bottom: 0
+      right: 0
+      height: 2px
+      border-top: 2px solid rgba(143, 143, 143, 0.4)
+      top: 0
+      margin: auto
+      width: 100%
   .hr-heading
     font-size: 18px
     font-weight: bold
@@ -726,7 +743,7 @@ input[type="radio"].styled:checked + label
     .property-address
       margin-bottom: 10px
     .property-address, .property-code
-      opacity: 0.6
+      opacity: 0.8
 
 .no-padding
   padding: 0 !important
@@ -735,25 +752,16 @@ input[type="radio"].styled:checked + label
   background: $white
 
 .property-search
-  margin-top: -170px !important
   .input-group
     width: 100%
     input
       border: none
-      width: 100%
-      height: 70px
-      font-size: 18px
+      height: 60px
+      font-size: 16px
       text-align: center
       color: $grey
       opacity: 0.8
-      padding: 0 210px
-    i
-      font-size: 18px
-      color: $grey
-      opacity: 0.8
-      top: 26px
-      position: absolute
-      left: 180px
+      padding: 0 50px
 
 .property-filters
   text-align: center
@@ -1040,3 +1048,74 @@ h2.active
     &:hover
       box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.3)
 // END Footer
+
+// The switch */
+
+.switch-map
+  padding: 14px 20px
+  div
+    display: inline-block
+    vertical-align: middle
+    position: relative
+    padding-left: 10px
+    font-size: 16px
+    opacity: 0.6
+    color: $grey
+  .text-map
+    opacity: 1
+
+.switch
+  position: relative
+  display: inline-block
+  width: 40px
+  height: 20px
+  margin-bottom: 0
+
+.switch input
+  display: none
+
+.slider
+  position: absolute
+  cursor: pointer
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: #f0f0f0
+  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.3)
+  -webkit-transition: .4s
+  transition: .4s
+
+.slider:before
+  position: absolute
+  content: ""
+  height: 19px
+  width: 19px
+  left: 20px
+  bottom: 0
+  background-color: $grey-1
+  -webkit-transition: .4s
+  transition: .4s
+
+input:checked + .slider:before
+  background-color: $greenradio
+  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.2)
+
+input:focus + .slider
+  box-shadow: 0 0 1px #2196F3
+
+input:checked + .slider:before
+  -webkit-transform: translateX(-20px)
+  -ms-transform: translateX(-20px)
+  transform: translateX(-20px)
+
+.slider.round
+  border-radius: 34px
+
+.slider.round:before
+  border-radius: 50%
+
+.search-map
+  height: 650px
+  background: $grey
+  display: none
