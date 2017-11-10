@@ -66,7 +66,7 @@ $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
             </section>
             <section id="mre-partners" class="container-fluid no-padding">
               <div class="col-xs-12 col-md-6 partner-left" style="background-image: url('<?php if(isset($partnerLeft[0]["_hf_partner_left_background"])){ echo $partnerLeft[0]["_hf_partner_left_background"]; } ?>');">
-                <a href="">
+                <a href="<?php echo $partnerLeft[0]['_hf_partner_link_left']; ?>" target="_blank">
                   <div class="overlay-left">
                     <?php
                     if (isset($partnerLeft[0]["_hf_partner_left_title"])) {
@@ -81,7 +81,7 @@ $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
                 </a>
               </div>
               <div class="col-xs-12 col-md-6 partner-right" style="background-image: url('<?php if(isset($partnerRight[0]["_hf_partner_right_background"])){ echo $partnerRight[0]["_hf_partner_right_background"]; } ?>');">
-                <a href="">
+                <a href="<?php echo $partnerRight[0]['_hf_partner_link_right']; ?>" target="_blank">
                   <div class="overlay-right">
                     <?php
                     if (isset($partnerRight[0]["_hf_partner_right_title"])) {

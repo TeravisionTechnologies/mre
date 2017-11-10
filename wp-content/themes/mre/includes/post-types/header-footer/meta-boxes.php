@@ -236,6 +236,14 @@
       'options' => array(),
     ) );
 
+    // First Partner link
+    $cmb->add_group_field( $partner_left, array(
+      'name'    => __( 'First Partner Link' , 'cmb2' ),
+      'id'      => $prefix . 'partner_link_left',
+      'type' => 'text_url',
+      'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
+    ) );
+
     // Partner Right Section
     $partner_right = $cmb->add_field( array(
       'id'          => $prefix . 'partner_right',
@@ -293,6 +301,14 @@
       'id'      => $prefix . 'partner_right_title',
       'type'    => 'wysiwyg',
       'options' => array(),
+    ) );
+
+    // Second Partner link
+    $cmb->add_group_field( $partner_right, array(
+      'name'    => __( 'Second Partner Link' , 'cmb2' ),
+      'id'      => $prefix . 'partner_link_right',
+      'type' => 'text_url',
+      'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
     ) );
 
     // Our offices Section
