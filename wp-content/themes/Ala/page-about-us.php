@@ -8,9 +8,7 @@ $about_query = get_posts(
     'post_type' => 'about_us'
   )
 );
-echo $about_query[0]->ID;
 $hero = get_post_meta( $about_query[0]->ID, '_au_hero', true );
-var_dump($hero);
 $main_text = get_post_meta( $about_query[0]->ID, '_au_main', true );
 $values = get_post_meta( $about_query[0]->ID, '_au_values', true );
 

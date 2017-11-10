@@ -61,7 +61,7 @@ $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
                     </li>
                   <?php } ?>
                 </ul>
-                <a href="#" class="about-us-button">Ver más</a>
+                <a href="/sobre-nosotros" class="about-us-button">Ver más</a>
               </div>
             </section>
             <section id="mre-partners" class="container-fluid no-padding">
