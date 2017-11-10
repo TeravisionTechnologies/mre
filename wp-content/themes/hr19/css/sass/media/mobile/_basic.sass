@@ -392,7 +392,7 @@ a.hr-phone-num
       left: -3px
 
 .property-list
-  margin-top: 50px
+  margin-top: get-vw-mobile(60px + 60px)
   .hr-heading
     height: 40px
     font-size: 14px
@@ -449,3 +449,56 @@ a.hr-phone-num
   li
     a
       padding: 5px 14px !important
+
+#search-filters
+  margin-top: get-vw-mobile(60px)
+  background: $white
+  margin-bottom: 0
+  height: auto
+  .navbar-collapse
+    .navbar-nav
+      width: 100%
+      margin: 0
+      .dropdown
+        border-left: none !important
+        a
+          text-align: left
+          padding: 10px 30px
+          font-size: 12px
+          br
+            display: none
+          .caret
+            float: right
+            margin-top: 8px
+      .dropdown:nth-child(2)
+        a
+          padding: 10px 30px
+          font-size: 12px
+      li:not(:last-child)
+        border-bottom: solid 2px rgba(74, 74, 74, 0.2)
+      .input-group
+        width: 100%
+        .search-box
+          font-size: 12px
+          height: 40px
+          padding-left: 54px
+        i
+          left: 30px
+      .dropdown-menu
+        li
+          .checkbox
+            padding: 5px 10px 5px 40px
+            label
+              font-size: 12px
+      .btn-search
+        width: 100%
+        height: 40px
+
+.navbar-toggle
+  color: $white
+  background: $bluebtn
+  border-radius: 0
+  padding: 5px 15px
+  font-size: 16px
+  border: none
+  margin-bottom: 0

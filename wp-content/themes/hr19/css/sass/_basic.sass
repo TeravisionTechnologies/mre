@@ -1155,17 +1155,20 @@ input:checked + .slider:before
         min-width: 100%
         li
           a
-            padding: 5px 40px
+            padding: 5px 40px !important
           .checkbox
-            padding: 5px 20px
+            padding: 5px 40px
             margin: 0
             label
               color: $greyfilter
       .dropdown
         &:not(:first-child)
           border-left: solid 1px rgba(74, 74, 74, 0.2)
+        &:nth-child(2)
+          a
+            padding: 25px 30px
         a
-          padding: 15px 40px
+          padding: 15px 30px
           letter-spacing: -0.1px
           -webkit-transition: .5s ease-in-out
           -moz-transition: .5s ease-in-out
@@ -1211,3 +1214,15 @@ input:checked + .slider:before
   margin-top: 200px
   -webkit-transition: margin-top 0.3s
   transition: margin-top 0.3s
+
+
+@media only screen and (min-width: 1024px) and (max-width: 1199px)
+  #search-filters
+    .navbar-collapse
+      .navbar-nav
+        .dropdown
+          &:nth-child(2)
+            a
+              padding: 25px 10px
+          a
+            padding: 15px 10px

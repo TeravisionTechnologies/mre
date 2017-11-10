@@ -1171,16 +1171,18 @@ input:checked + .slider:before {
         border: none;
         min-width: 100%; }
         #search-filters .navbar-collapse .navbar-nav .dropdown-menu li a {
-          padding: 5px 40px; }
+          padding: 5px 40px !important; }
         #search-filters .navbar-collapse .navbar-nav .dropdown-menu li .checkbox {
-          padding: 5px 20px;
+          padding: 5px 40px;
           margin: 0; }
           #search-filters .navbar-collapse .navbar-nav .dropdown-menu li .checkbox label {
             color: #727272; }
       #search-filters .navbar-collapse .navbar-nav .dropdown:not(:first-child) {
         border-left: solid 1px rgba(74, 74, 74, 0.2); }
+      #search-filters .navbar-collapse .navbar-nav .dropdown:nth-child(2) a {
+        padding: 25px 30px; }
       #search-filters .navbar-collapse .navbar-nav .dropdown a {
-        padding: 15px 40px;
+        padding: 15px 30px;
         letter-spacing: -0.1px;
         -webkit-transition: 0.5s ease-in-out;
         -moz-transition: 0.5s ease-in-out;
@@ -1226,6 +1228,11 @@ input:checked + .slider:before {
   -webkit-transition: margin-top 0.3s;
   transition: margin-top 0.3s; }
 
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+  #search-filters .navbar-collapse .navbar-nav .dropdown:nth-child(2) a {
+    padding: 25px 10px; }
+  #search-filters .navbar-collapse .navbar-nav .dropdown a {
+    padding: 15px 10px; } }
 .agent-hero {
   margin-top: 5.5555555556vw;
   height: 31.25vw;
@@ -2727,6 +2734,23 @@ a[href^=tel] {
 
   #search-filters {
     margin-top: 10.4166666667vw; }
+    #search-filters .navbar-collapse .navbar-nav .dropdown a {
+      padding: 15px 12px;
+      font-size: 12px; }
+    #search-filters .navbar-collapse .navbar-nav .dropdown:nth-child(2) a {
+      padding: 25px 12px; }
+    #search-filters .navbar-collapse .navbar-nav .input-group .search-box {
+      width: 150px;
+      font-size: 12px;
+      padding-left: 40px; }
+      #search-filters .navbar-collapse .navbar-nav .input-group .search-box i {
+        font-size: 15px; }
+    #search-filters .navbar-collapse .navbar-nav .btn-search {
+      width: 60px; }
+    #search-filters .navbar-collapse .dropdown-menu li .checkbox label {
+      font-size: 12px; }
+    #search-filters .navbar-collapse .dropdown-menu li a {
+      padding: 5px 20px !important; }
 
   .agent-hero {
     margin-top: 10.4166666667vw;
@@ -3407,7 +3431,7 @@ a[href^=tel] {
     left: -3px; }
 
   .property-list {
-    margin-top: 50px; }
+    margin-top: 33.3333333333vw; }
     .property-list .hr-heading {
       height: 40px;
       font-size: 14px;
@@ -3459,6 +3483,55 @@ a[href^=tel] {
 
   .pagination li a {
     padding: 5px 14px !important; }
+
+  #search-filters {
+    margin-top: 16.6666666667vw;
+    background: #fff;
+    margin-bottom: 0;
+    height: auto; }
+    #search-filters .navbar-collapse .navbar-nav {
+      width: 100%;
+      margin: 0; }
+      #search-filters .navbar-collapse .navbar-nav .dropdown {
+        border-left: none !important; }
+        #search-filters .navbar-collapse .navbar-nav .dropdown a {
+          text-align: left;
+          padding: 10px 30px;
+          font-size: 12px; }
+          #search-filters .navbar-collapse .navbar-nav .dropdown a br {
+            display: none; }
+          #search-filters .navbar-collapse .navbar-nav .dropdown a .caret {
+            float: right;
+            margin-top: 8px; }
+      #search-filters .navbar-collapse .navbar-nav .dropdown:nth-child(2) a {
+        padding: 10px 30px;
+        font-size: 12px; }
+      #search-filters .navbar-collapse .navbar-nav li:not(:last-child) {
+        border-bottom: solid 2px rgba(74, 74, 74, 0.2); }
+      #search-filters .navbar-collapse .navbar-nav .input-group {
+        width: 100%; }
+        #search-filters .navbar-collapse .navbar-nav .input-group .search-box {
+          font-size: 12px;
+          height: 40px;
+          padding-left: 54px; }
+        #search-filters .navbar-collapse .navbar-nav .input-group i {
+          left: 30px; }
+      #search-filters .navbar-collapse .navbar-nav .dropdown-menu li .checkbox {
+        padding: 5px 10px 5px 40px; }
+        #search-filters .navbar-collapse .navbar-nav .dropdown-menu li .checkbox label {
+          font-size: 12px; }
+      #search-filters .navbar-collapse .navbar-nav .btn-search {
+        width: 100%;
+        height: 40px; }
+
+  .navbar-toggle {
+    color: #fff;
+    background: #00a0c6;
+    border-radius: 0;
+    padding: 5px 15px;
+    font-size: 16px;
+    border: none;
+    margin-bottom: 0; }
 
   .agent-hero {
     margin-top: 16.6666666667vw;

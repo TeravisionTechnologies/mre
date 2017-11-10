@@ -22,6 +22,14 @@ get_header();
                     </div>
                 </li>
                 <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php _e( 'Compra', 'hr' ) ?> <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><?php _e( 'Compra', 'hr' ) ?></a></li>
+                        <li><a href="#"><?php _e( 'Alquiler', 'hr' ) ?></a></li>
+                        <li><a href="#"><?php _e( 'Preventa', 'hr' ) ?></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php _e( 'Tipo <br>de vivienda', 'hr' ) ?> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li>
