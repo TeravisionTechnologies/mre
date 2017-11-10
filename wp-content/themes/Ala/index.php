@@ -133,8 +133,8 @@ $officesEs = get_post_meta( $home_query[0]->ID, '_hf_offices_es', true );
             <p class="al-partners-title"><?php echo $home_info['_hf_partners_text'][0]; ?></p>
         </div>
         <div class="partners-images">
-            <img src="<?php echo $home_info['_hf_partners-one'][0]; ?>" alt="Logo HR19 Realty" class="partners-images-one"/>
-            <img src="<?php echo $home_info['_hf_partners-two'][0]; ?>" alt="Logo MRE RealEstate" class="partners-images-two"/>
+          <a href="<?php echo $home_info['_hf_partner_link_left'][0]; ?>" target="_blank"><img src="<?php echo $home_info['_hf_partners-one'][0]; ?>" alt="Logo HR19 Realty" class="partners-images-one"/></a>
+          <a href="<?php echo $home_info['_hf_partner_link_right'][0]; ?>" target="_blank"><img src="<?php echo $home_info['_hf_partners-two'][0]; ?>" alt="Logo MRE RealEstate" class="partners-images-two"/></a>
         </div>
     </div>
     <section class="col-xs-12" id="al-offices" style="background-image: url('<?php if(isset($ourOffices[0]['_hf_our_offices_background'])) { echo $ourOffices[0]['_hf_our_offices_background']; } ?>');">
