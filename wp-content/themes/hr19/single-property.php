@@ -16,6 +16,9 @@ $sqft   = get_post_meta( get_the_ID(), '_pr_sqft', true );
 $surf  = get_post_meta( get_the_ID(), '_pr_surf', true );
 $hoa  = get_post_meta( get_the_ID(), '_pr_hoa', true );
 $yearbuilt  = get_post_meta( get_the_ID(), '_pr_yearbuilt', true );
+$sysid   = get_post_meta( get_the_ID(), '_pr_matrixid', true );
+$directory = get_template_directory().'/photos/'.$sysid.'/';
+$images = glob($directory . "*.jpg");
 ?>
 
 <div class="breadcrumb-info">
@@ -39,12 +42,11 @@ $yearbuilt  = get_post_meta( get_the_ID(), '_pr_yearbuilt', true );
 <div class="property-carousel">
     <div class="swiper-container swiper-property">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div style="background-image: url(http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg)"></div>
-            </div>
-            <div class="swiper-slide">
-                <div style="background-image: url(http://elizabethjahn.com/images/country-house-interior-2.jpg)"></div>
-            </div>
+            <?php foreach($images as $image) { $end = end(explode('/', rtrim($image, '/'))); ?>
+                <div class="swiper-slide">
+                    <div style="background-image: url(<?php echo  get_template_directory_uri().'/photos/'.$sysid.'/'.$end; ?>)"></div>
+                </div>
+            <?php } ?>
         </div>
         <div class="swiper-button-next"><i class="fa fa-chevron-circle-right"></i></div>
         <div class="swiper-button-prev"><i class="fa fa-chevron-circle-left"></i></div>

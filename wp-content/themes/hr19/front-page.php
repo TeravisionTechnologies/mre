@@ -70,11 +70,12 @@ $hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
 			$type    = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
 			$rooms   = get_post_meta( get_the_ID(), '_pr_room_count', true );
 			$baths   = get_post_meta( get_the_ID(), '_pr_baths_total', true );
+			$sysid   = get_post_meta( get_the_ID(), '_pr_matrixid', true );
 		?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <a href="<?php the_permalink(); ?>" class="property">
                     <div class="property-image"
-                         style="background: url('http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg');"></div>
+                         style="background: url(<?php echo get_template_directory_uri(); ?>/photos/<?php echo $sysid ?>/1.jpg"></div>
                     <div class="property-info">
                         <div class="property-price"><?php if ( ! empty( $price ) ) {
 								echo '$' . $price;
