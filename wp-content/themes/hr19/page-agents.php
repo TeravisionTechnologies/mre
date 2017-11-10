@@ -85,7 +85,6 @@ get_header();
                 </a>
               </div>
             <?php } ?>
-            <div class="col-xs-12 properties-footer"></div>
           </div>
         </div>
       </section>
@@ -136,7 +135,6 @@ get_header();
               </a>
             </div>
           <?php } ?>
-          <div class="col-xs-12 properties-footer"></div>
           </div>
         </div>
       </section>

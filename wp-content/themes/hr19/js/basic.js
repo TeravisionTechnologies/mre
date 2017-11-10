@@ -90,7 +90,7 @@ jQuery(document).ready(function () {
     $(".properties-number").click(function () {
         $(this).find("i").toggleClass("fa-caret-down").toggleClass("fa-caret-up");
         var t = $(this);
-        $('#' + t.data('target')).slideToggle();
+        $('#' + t.data('target')).slideToggle("slow");
     });
 
     // Menu landscape height
