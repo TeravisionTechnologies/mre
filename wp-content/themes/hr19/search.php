@@ -215,7 +215,7 @@ get_header();
     </div>
 </div>
 
-<script>
+<!--<script>
     var map3;
     function initMap() {
         map3 = new google.maps.Map(document.getElementById('search-map'), {
@@ -223,6 +223,6 @@ get_header();
             zoom: 8
         });
     }
-</script>
+</script>-->
 
 <?php get_footer(); ?>
