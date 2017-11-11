@@ -150,88 +150,131 @@ date_default_timezone_set( 'America/New_York' );
 
 require_once( "vendor/autoload.php" );
 
-$config = new \PHRETS\Configuration;
-$config->setLoginUrl( 'http://rets.sef.mlsmatrix.com/Rets/Login.ashx' )
-       ->setUsername( 'lesAERfue' )
-       ->setPassword( '8050' )
-       ->setRetsVersion( '1.7.2' );
+function get_mls(){
+	$config = new \PHRETS\Configuration;
+	$config->setLoginUrl( 'http://rets.sef.mlsmatrix.com/Rets/Login.ashx' )
+	       ->setUsername( 'lesAERfue' )
+	       ->setPassword( '8050' )
+	       ->setRetsVersion( '1.7.2' );
 
-$rets = new \PHRETS\Session( $config );
+	$rets = new \PHRETS\Session( $config );
 
-$connect = $rets->Login();
+	$connect = $rets->Login();
 
-if ( $connect ) {
-	$results = $rets->Search(
-		'Property',
-		'Listing',
-		' (Status = A)',
-		[
-			'Format' => 'COMPACT-DECODED',
-			'Limit'  => 10,
-		]
-	);
-} else {
-	$error = $rets->Error();
-	print_r( $error );
-}
-
-foreach ( $results as $property ) {
-
-	$propid = get_page_by_title( $property['MLSNumber'], 'OBJECT', 'property' ); //Check if already exists
-
-	if ( !$propid ) {
-		$post_args       = array(
-			'post_title'   => $property['MLSNumber'],
-			'post_content' => $property['Remarks'],
-			'post_status'  => 'publish',
-			'post_type'    => 'property',
-			'meta_input'   => array(
-				'_pr_address' => $property['AddressInternetDisplay'],
-				'_pr_state' => $property['StateOrProvince'],
-				'_pr_city' => $property['City'],
-				'_pr_community' => $property['CountyOrParish'],
-				'_pr_subdiv' => $property['SubdivisionName'],
-				'_pr_current_price'    => number_format( round( $property['CurrentPrice'] ) ),
-				'_pr_type_of_property' => $property['TypeofProperty'],
-				'_pr_room_count' => number_format( round( $property['RoomCount'] ) ),
-				'_pr_baths_total' => number_format( round( $property['BathsTotal'] ) ),
-				'_pr_baths_full' => number_format( round( $property['BathsFull'] ) ),
-				'_pr_baths_half' => number_format( round( $property['BathsHalf'] ) ),
-				'_pr_sqft' => number_format( round( $property['SqFtTotal'] ) ),
-				'_pr_surf' => number_format( round( $property['TotalAcreage'] ) ),
-				'_pr_hoa' => number_format( round( $property['AssociationFee'] ) ),
-				'_pr_yearbuilt' => number_format( round( $property['YearBuilt'] ) ),
-				'_pr_agentid' =>$property['ListAgentMLSID'],
-			)
+	if ( $connect ) {
+		$results = $rets->Search(
+			'Property',
+			'Listing',
+			' (Status = A)',
+			[
+				'Format' => 'COMPACT-DECODED',
+				'Limit'  => 5,
+			]
 		);
-		$posted_property = wp_insert_post( $post_args );
 	} else {
-		$post_args       = array(
-			'ID'           => $propid->ID,
-			'post_title'   => $property['MLSNumber'],
-			'post_content' => $property['Remarks'],
-			'post_status'  => 'publish',
-			'post_type'    => 'property',
-			'meta_input'   => array(
-				'_pr_address' => $property['AddressInternetDisplay'],
-				'_pr_state' => $property['StateOrProvince'],
-				'_pr_city' => $property['City'],
-				'_pr_community' => $property['CountyOrParish'],
-				'_pr_subdiv' => $property['SubdivisionName'],
-				'_pr_current_price'    => number_format( round( $property['CurrentPrice'] ) ),
-				'_pr_type_of_property' => $property['TypeofProperty'],
-				'_pr_room_count' => number_format( round( $property['RoomCount'] ) ),
-				'_pr_baths_total' => number_format( round( $property['BathsTotal'] ) ),
-				'_pr_baths_full' => number_format( round( $property['BathsFull'] ) ),
-				'_pr_baths_half' => number_format( round( $property['BathsHalf'] ) ),
-				'_pr_sqft' => number_format( round( $property['SqFtTotal'] ) ),
-				'_pr_surf' => number_format( round( $property['TotalAcreage'] ) ),
-				'_pr_hoa' => number_format( round( $property['AssociationFee'] ) ),
-				'_pr_yearbuilt' => number_format( round( $property['YearBuilt'] ) ),
-				'_pr_agentid' =>$property['ListAgentMLSID'],
-			)
-		);
-		$posted_property = wp_update_post( $post_args );
+		$error = $rets->Error();
+		print_r( $error );
 	}
 
+	foreach ( $results as $property ) {
+
+		$propid = get_page_by_title( $property['MLSNumber'], 'OBJECT', 'property' ); //Check if already exists
+
+		if ( !$propid ) {
+			$post_args       = array(
+				'post_title'   => $property['MLSNumber'],
+				'post_content' => $property['Remarks'],
+				'post_status'  => 'publish',
+				'post_type'    => 'property',
+				'meta_input'   => array(
+					'_pr_address' => $property['AddressInternetDisplay'],
+					'_pr_state' => $property['StateOrProvince'],
+					'_pr_city' => $property['City'],
+					'_pr_community' => $property['CountyOrParish'],
+					'_pr_subdiv' => $property['SubdivisionName'],
+					'_pr_current_price'    => number_format( round( $property['CurrentPrice'] ) ),
+					'_pr_type_of_property' => $property['TypeofProperty'],
+					'_pr_room_count' => number_format( round( $property['RoomCount'] ) ),
+					'_pr_baths_total' => number_format( round( $property['BathsTotal'] ) ),
+					'_pr_baths_full' => number_format( round( $property['BathsFull'] ) ),
+					'_pr_baths_half' => number_format( round( $property['BathsHalf'] ) ),
+					'_pr_sqft' => number_format( round( $property['SqFtTotal'] ) ),
+					'_pr_surf' => number_format( round( $property['TotalAcreage'] ) ),
+					'_pr_hoa' => number_format( round( $property['AssociationFee'] ) ),
+					'_pr_yearbuilt' => number_format( round( $property['YearBuilt'] ) ),
+					'_pr_agentid' =>$property['ListAgentMLSID'],
+					'_pr_matrixid' =>$property['Matrix_Unique_ID'],
+				)
+			);
+			$posted_property = wp_insert_post( $post_args );
+
+			$sysid = $property['Matrix_Unique_ID'];
+			$n = 1;
+			$themedir = get_template_directory();
+			$dir = $themedir.'/photos/'.$sysid;
+			if(!is_dir($dir)) mkdir($dir);
+			$objects = $rets->GetObject('Property', 'HighRes', $sysid);
+			foreach ($objects as $object) {
+				file_put_contents( $dir . '/' . $n . '.jpg', $object->getContent() );
+				$n ++;
+			}
+
+		} else {
+			$post_args       = array(
+				'ID'           => $propid->ID,
+				'post_title'   => $property['MLSNumber'],
+				'post_content' => $property['Remarks'],
+				'post_status'  => 'publish',
+				'post_type'    => 'property',
+				'meta_input'   => array(
+					'_pr_address' => $property['AddressInternetDisplay'],
+					'_pr_state' => $property['StateOrProvince'],
+					'_pr_city' => $property['City'],
+					'_pr_community' => $property['CountyOrParish'],
+					'_pr_subdiv' => $property['SubdivisionName'],
+					'_pr_current_price'    => number_format( round( $property['CurrentPrice'] ) ),
+					'_pr_type_of_property' => $property['TypeofProperty'],
+					'_pr_room_count' => number_format( round( $property['RoomCount'] ) ),
+					'_pr_baths_total' => number_format( round( $property['BathsTotal'] ) ),
+					'_pr_baths_full' => number_format( round( $property['BathsFull'] ) ),
+					'_pr_baths_half' => number_format( round( $property['BathsHalf'] ) ),
+					'_pr_sqft' => number_format( round( $property['SqFtTotal'] ) ),
+					'_pr_surf' => number_format( round( $property['TotalAcreage'] ) ),
+					'_pr_hoa' => number_format( round( $property['AssociationFee'] ) ),
+					'_pr_yearbuilt' => number_format( round( $property['YearBuilt'] ) ),
+					'_pr_agentid' =>$property['ListAgentMLSID'],
+					'_pr_matrixid' =>$property['Matrix_Unique_ID'],
+				)
+			);
+			$posted_property = wp_update_post( $post_args );
+
+			$sysid = $property['Matrix_Unique_ID'];
+			$n = 1;
+			$themedir = get_template_directory();
+			$dir = $themedir.'/photos/'.$sysid;
+			if(!is_dir($dir)) mkdir($dir);
+			$objects = $rets->GetObject('Property', 'HighRes', $sysid);
+			foreach ($objects as $object) {
+				file_put_contents( $dir . '/' . $n . '.jpg', $object->getContent() );
+				$n ++;
+			}
+		}
+
+	}
+
+	$rets->Disconnect();
 }
+
+/*add_action( 'get_mls_properties', 'get_mls' );
+
+
+function custom_js_to_head() {
+	?>
+	<script>
+        jQuery(function(){
+            jQuery("body.post-type-property .wrap h1").append('<a href="index.php?param=get_mls" class="page-title-action">Importar datos desde MLS</a>');
+        });
+	</script>
+	<?php
+}
+add_action('admin_head', 'custom_js_to_head');*/

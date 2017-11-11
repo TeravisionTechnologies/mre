@@ -112,5 +112,11 @@ function property_metaboxes() {
 		'type' => 'text',
 	));
 
+	$cmb_property->add_field(array(
+		'name' => __('Matrix ID'),
+		'id' => $prefix . 'matrixid',
+		'type' => 'text',
+	));
+
 
 }

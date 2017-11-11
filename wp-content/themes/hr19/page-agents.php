@@ -45,7 +45,7 @@ get_header();
             <?php if (has_post_thumbnail()) {
               the_post_thumbnail();
             } else {
-              echo '<img src="' . get_template_directory_uri(). '/assets/no-photo.jpg" alt="">';
+              echo '<img src="' . get_template_directory_uri(). '/assets/no-photo.png" alt="no photo">';
             } ?>
           </div>
           <div class="agent-profile-info col-xs-9 no-padding">
@@ -104,7 +104,7 @@ get_header();
             <?php if (has_post_thumbnail()) {
               the_post_thumbnail();
             } else {
-              echo '<img src="' . get_template_directory_uri(). '/assets/no-photo.jpg" alt="">';
+              echo '<img src="' . get_template_directory_uri(). '/assets/no-photo.png" alt="no photo">';
             } ?>
           </div>
         </div>
