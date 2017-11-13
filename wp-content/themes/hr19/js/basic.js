@@ -118,14 +118,14 @@ jQuery(document).ready(function () {
 
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
-    })
+    });
 
-/*    $('#collapse3').on('hidden.bs.collapse', function () {
-        //initMap();
-    })
+  $('#collapse3').on('hidden.bs.collapse', function () {
+        initMap();
+    });
     $('#collapse3').on('shown.bs.collapse', function () {
-        //initMap();
-    })*/
+        initMap();
+    });
 
     $('#map-switch').click(function() {
       $("#search-map").show();
@@ -172,6 +172,6 @@ jQuery(document).ready(function () {
             $(this).children( "i" ).addClass( "fa-times" );
         }
     });
-  
+
 });
 
