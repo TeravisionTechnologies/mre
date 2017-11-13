@@ -19,6 +19,7 @@ $yearbuilt  = get_post_meta( get_the_ID(), '_pr_yearbuilt', true );
 $sysid   = get_post_meta( get_the_ID(), '_pr_matrixid', true );
 $directory = get_template_directory().'/photos/'.$sysid.'/';
 $images = glob($directory . "*.jpg");
+$currentproperty = get_the_ID();
 ?>
 
 <div class="breadcrumb-info">
@@ -62,7 +63,7 @@ $images = glob($directory . "*.jpg");
             <div class="price-txt"><?php if(!empty($price)){ echo '$'.$price; } ?></div>
             <div class="sm-text"><?php _e( 'Estimado de hipoteca:', 'hr' ) ?> $603/mes</div>
         </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 borderl paddingl40">
+        <div class="col-xs-6 col-sm-6 col-md-6 paddingl40 borderl">
             <div class="md-text"><?php if(!empty($address)){ echo $address; } else{ echo 'N/A';} ?></div>
             <div>
                 <?php if(!empty($type)){ echo $type; } ?>
@@ -74,14 +75,18 @@ $images = glob($directory . "*.jpg");
         </div>
         <div class="col-xs-6 col-sm-3 col-md-3 text-center">
             <div class="row surface">
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="sm-text"><?php _e( 'Superficie:', 'hr' ) ?></div>
-                    <div class="md-text"><?php if(!empty($surf)){ echo $surf . ' ft'; } else { echo 'N/A'; } ?></div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="sm-text"><?php _e( 'Pies cuadrados:', 'hr' ) ?></div>
-                    <div class="md-text"><?php if(!empty($sqft)){ echo $sqft . ' ft²'; } else { echo 'N/A'; } ?> </div>
-                </div>
+	            <?php if(!empty($surf)){ ?>
+                    <div class="<?php (empty($sqft ? 'col-xs-12 col-sm-12 col-md-12' : 'col-xs-6 col-sm-6 col-md-6')) ?>">
+                        <div class="sm-text"><?php _e( 'Superficie:', 'hr' ) ?></div>
+                        <div class="md-text"><?php echo $surf . ' ft'; ?></div>
+                    </div>
+                <?php } ?>
+	            <?php if(!empty($sqft)){ ?>
+                    <div class="<?php (empty($surf ? 'col-xs-12 col-sm-12 col-md-12' : 'col-xs-6 col-sm-6 col-md-6')) ?>">
+                        <div class="sm-text"><?php _e( 'Pies cuadrados:', 'hr' ) ?></div>
+                        <div class="md-text"><?php if(!empty($sqft)){ echo $sqft . ' ft²'; } else { echo 'N/A'; } ?> </div>
+                    </div>
+	            <?php } ?>
             </div>
         </div>
     </div>
@@ -236,20 +241,78 @@ $images = glob($directory . "*.jpg");
             </div>
         </div>
         <div class="row">
-			<?php for ( $x = 0; $x <= 2; $x ++ ) { ?>
+	        <?php
+	        $similarproperties = array(
+		        'post_type'      => 'property',
+		        'post__not_in' => array( $currentproperty ),
+		        'posts_per_page' => 3,
+		        'meta_query'     => array(
+			        'relation' => 'AND',
+			        array(
+				        'key'     => '_pr_city',
+				        'value'   => $city,
+				        'compare' => '='
+			        ),
+			        array(
+				        'key'     => '_pr_type_of_property',
+				        'value'   => $type,
+				        'compare' => '='
+			        ),
+			        array(
+				        'key'     => '_pr_room_count',
+				        'value'   => $rooms,
+				        'compare' => '='
+			        )
+		        )
+	        );
+	        query_posts( $similarproperties );
+	        if ( have_posts() ): while ( have_posts() ): the_post();
+	        $address = get_post_meta( get_the_ID(), '_pr_address', true );
+	        $price   = get_post_meta( get_the_ID(), '_pr_current_price', true );
+	        $type    = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
+	        $rooms   = get_post_meta( get_the_ID(), '_pr_room_count', true );
+	        $baths   = get_post_meta( get_the_ID(), '_pr_baths_total', true );
+	        $sysid   = get_post_meta( get_the_ID(), '_pr_matrixid', true );
+	        $city   = get_post_meta( get_the_ID(), '_pr_city', true );
+	        $state  = get_post_meta( get_the_ID(), '_pr_state', true );
+	        ?>
                 <div class="col-xs-12 col-sm-4 col-md-4">
-                    <a href="#" class="property">
+                    <a href="<?php the_permalink(); ?>" class="property">
                         <div class="property-image"
-                             style="background: url('http://www.bestofinteriors.com/wp-content/uploads/2014/11/4e29c__architecture-Lindsay-Chambers-Professorville.jpg');"></div>
+                             style="background: url(<?php echo get_template_directory_uri(); ?>/photos/<?php echo $sysid ?>/1.jpg"></div>
                         <div class="property-info">
-                            <div class="property-price">$224,000</div>
-                            <div class="property-highlights">Casa, 4 habitaciones</div>
-                            <div class="property-address">3215 Stafford Ln</div>
-                            <div class="property-code">MLS: 1258364</div>
+                            <div class="property-price"><?php if ( ! empty( $price ) ) {
+				                    echo '$' . $price;
+			                    } ?>
+                            </div>
+                            <div class="property-highlights">
+			                    <?php if ( ! empty( $type ) ) {
+				                    echo $type;
+			                    } else {
+				                    echo 'N/A';
+			                    } ?>
+			                    <?php if ( ! empty( $rooms ) ) {
+				                    echo '· ' . $rooms . ' Habitaciones';
+			                    } ?>
+			                    <?php if ( ! empty( $baths ) ) {
+				                    echo '· ' . $baths . ' Baños';
+			                    } ?>
+                            </div>
+                            <div class="property-address">
+                                <?php if ( ! empty( $address ) ) {
+				                    echo $city;
+			                    } else if ( ! empty( $city ) and !empty( $state ) ) {
+				                    echo $city .', '. $state;
+			                    } else{
+                                    echo $state;
+                                } ?>
+                            </div>
+                            <div class="property-code">MLS: <?php the_title(); ?></div>
                         </div>
                     </a>
                 </div>
-			<?php } ?>
+	        <?php endwhile; endif;
+	        wp_reset_postdata(); ?>
         </div>
     </div>
 </div>
