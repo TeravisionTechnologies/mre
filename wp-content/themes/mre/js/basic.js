@@ -210,7 +210,7 @@ jQuery(document).ready(function () {
     slideLeft.open();
   });
 
-  $("#menu-item-124").click(function (e) {
+  $("#menu-item-125").click(function (e) {
     e.preventDefault;
     slideLeft.close();
     var position = $("#mre-about-us").offset().top;
