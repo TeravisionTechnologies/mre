@@ -107,8 +107,10 @@
     <script src="<?php echo get_template_directory_uri(); ?>/js/validator.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/basic.js"></script>
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH6eKdzSWQ0bic1EiZCzkbhqMqEzYd3eQ&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqLg2ArgqBdOHK6Nmro4hoJ0ixlBurD_s">
     </script>
+
+    <script src="https://cdn.jsdelivr.net/gmap3/7.2.0/gmap3.min.js">
     <script type="text/javascript">
       var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
     </script>

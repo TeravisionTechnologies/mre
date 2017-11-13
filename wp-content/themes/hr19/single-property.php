@@ -196,7 +196,7 @@ $currentproperty = get_the_ID();
                                 <div id="map-detail"></div>
                                 <script>
                                     function initMap() {
-                                        codeAddress("<?php if(!empty($address)){ echo $address; } ?> <?php if(!empty($city)){ echo $city; } ?> <?php if(!empty($state)){ echo $state; } ?>");
+                                      codeAddress("<?php if(!empty($address)){ echo $address; } ?> <?php if(!empty($city)){ echo $city; } ?> <?php if(!empty($state)){ echo $state; } ?>");
                                     }
 
                                     var geocoder, map;
