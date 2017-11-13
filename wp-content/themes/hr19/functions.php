@@ -278,3 +278,89 @@ function custom_js_to_head() {
 	<?php
 }
 add_action('admin_head', 'custom_js_to_head');*/
+
+
+
+// Register custom query vars
+
+function pr_register_query_vars( $vars ) {
+	$vars[] = 'city';
+	$vars[] = 'type';
+	$vars[] = 'price';
+	$vars[] = 'beds';
+	$vars[] = 'baths';
+	return $vars;
+}
+add_filter( 'query_vars', 'pr_register_query_vars' );
+
+function pr_pre_get_posts( $query ) {
+	// check if the user is requesting an admin page
+	// or current query is not the main query
+	if ( is_admin() || ! $query->is_main_query() ){
+		return;
+	}
+
+	// edit the query only when post type is 'property'
+	// if it isn't, return
+	if ( !is_post_type_archive( 'property' ) ){
+		return;
+	}
+
+	$meta_query = array();
+
+	// add meta_query elements
+	if( !empty( get_query_var( 'city' ) ) ){
+		$meta_query[] = array( 'key' => '_pr_city', 'value' => get_query_var( 'city' ), 'compare' => '=' );
+	}
+
+	if( !empty( get_query_var( 'type' ) ) ){
+		$meta_query[] = array( 'key' => '_pr_type_of_property', 'value' => get_query_var( 'type' ), 'compare' => '=' );
+	}
+
+	if( !empty( get_query_var( 'price' ) ) ){
+		$meta_query[] = array( 'key' => '_pr_current_price', 'value' => get_query_var( 'price' ), 'compare' => '=' );
+	}
+
+	if( !empty( get_query_var( 'beds' ) ) ){
+		$meta_query[] = array( 'key' => '_pr_room_count', 'value' => get_query_var( 'beds' ), 'compare' => '=' );
+	}
+
+	if( !empty( get_query_var( 'baths' ) ) ){
+		$meta_query[] = array( 'key' => '_pr_baths_total', 'value' => get_query_var( 'baths' ), 'compare' => '=' );
+	}
+
+	if( count( $meta_query ) > 1 ){
+		$meta_query['relation'] = 'AND';
+	}
+
+	if( count( $meta_query ) > 0 ){
+		$query->set( 'meta_query', $meta_query );
+	}
+}
+add_action( 'pre_get_posts', 'pr_pre_get_posts', 1 );
+
+
+
+add_action( 'pre_get_posts', function( $q )
+{
+	if( $title = $q->get( '_meta_or_title' ) )
+	{
+		add_filter( 'get_meta_sql', function( $sql ) use ( $title )
+		{
+			global $wpdb;
+
+			// Only run once:
+			static $nr = 0;
+			if( 0 != $nr++ ) return $sql;
+
+			// Modified WHERE
+			$sql['where'] = sprintf(
+				" AND ( %s OR %s ) ",
+				$wpdb->prepare( "{$wpdb->posts}.post_title like '%%%s%%'", $title),
+				mb_substr( $sql['where'], 5, mb_strlen( $sql['where'] ) )
+			);
+
+			return $sql;
+		});
+	}
+});

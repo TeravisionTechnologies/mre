@@ -24,7 +24,7 @@ $hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
                 <form id="property-search" class="property-search" action="./" method="get" role="form" data-toggle="validator">
                     <ul class="property-status">
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                            <input type="radio" id="buy" name="status" checked>
+                            <input type="radio" id="buy" name="status">
                             <label for="buy"><?php _e( 'Compra', 'hr' ) ?></label>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
@@ -40,7 +40,7 @@ $hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
                         <div class="input-group">
                             <input type="search" id="s" name="s" class="col-xs-10 col-sm-10 col-md-10"
                                    placeholder="<?php _e( 'Introduzca una dirección, ciudad, barrio o código postal', 'hr' ) ?>"
-                                   value="<?php echo get_query_var( 's' ); ?>" onBlur="if (this.value == '')
+                                   value="Miami" onBlur="if (this.value == '')
                                     this.value = '<?php echo get_query_var( 's' ); ?>'"
                                    onFocus="if (this.value === '<?php echo get_query_var( 's' ); ?>')
                                            this.value = ''" required>
