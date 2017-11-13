@@ -90,9 +90,9 @@ $contact = get_post_meta( $footer_query[0]->ID, '_hf_contact_form', true );
 <script src="<?php echo get_template_directory_uri(); ?>/js/isotope.pkgd.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/menu.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/basic.js"></script>
-<script async defer
+<!--<script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH6eKdzSWQ0bic1EiZCzkbhqMqEzYd3eQ&callback=initMap">
-</script>
+</script>-->
 <script type="text/javascript">
     var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
 </script>

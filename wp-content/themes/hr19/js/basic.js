@@ -128,26 +128,31 @@ jQuery(document).ready(function () {
     })*/
 
     $('#map-switch').click(function() {
-        $("#search-map").show();
-        $("html, body").animate({scrollTop: 0}, 500);
-        $(".property-list").toggleClass('property-list-search');
-        var addressArray = new Array();
-        $('.property').each(function(){
-            var address = $(this).find('.property-address').html();
-            addressArray.push(address);
-        });
-
+      $("#search-map").show();
+      $("html, body").animate({scrollTop: 0}, 500);
+      $(".property-list").toggleClass('property-list-search');
+      var addressArray = new Array();
+      $('.property').each(function(){
+        var address = $(this).find('.property-address').html();
+        addressArray.push(address);
+      });
+      var address_array = [];
+      var address_object = {};
+      for (var i in addressArray) {
+        if (addressArray[i] !== 'N/A') {
+          address_object.address = addressArray[i];
+          address_array.push(address_object);
+        }
+      }
       $('#search-map')
         .gmap3({
           center:[48.8620722, 2.352047],
           zoom:4
         })
-        .marker([
-          {address:"1255 West Ave, Miami Beach, FL 33139, EE. UU"},
-          {address:"Chacao Caracas Miranda"},
-        ])
+        .marker(address_array)
         .on('mouseover', function (marker) {
-          marker.setIcon('http://maps.google.com/mapfiles/marker_green.png');
+          marker.setIcon('http://maps.google.com/mapfile' +
+            's/marker_green.png');
         });
 
     });

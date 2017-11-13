@@ -187,7 +187,7 @@ function get_mls(){
 				'post_status'  => 'publish',
 				'post_type'    => 'property',
 				'meta_input'   => array(
-					'_pr_address' => $property['AddressInternetDisplay'],
+					'_pr_address' => $property['AddressInternetDisplay'] . ' ' . $property['City'] . ', ' . $property['StateOrProvince'],
 					'_pr_state' => $property['StateOrProvince'],
 					'_pr_city' => $property['City'],
 					'_pr_community' => $property['CountyOrParish'],
@@ -227,7 +227,7 @@ function get_mls(){
 				'post_status'  => 'publish',
 				'post_type'    => 'property',
 				'meta_input'   => array(
-					'_pr_address' => $property['AddressInternetDisplay'],
+					'_pr_address' => $property['AddressInternetDisplay'] . ' ' . $property['City'] . ', ' . $property['StateOrProvince'],
 					'_pr_state' => $property['StateOrProvince'],
 					'_pr_city' => $property['City'],
 					'_pr_community' => $property['CountyOrParish'],
