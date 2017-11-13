@@ -120,7 +120,7 @@ jQuery(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip()
     });
 
-  $('#collapse3').on('hidden.bs.collapse', function () {
+    $('#collapse3').on('hidden.bs.collapse', function () {
         initMap();
     });
     $('#collapse3').on('shown.bs.collapse', function () {
