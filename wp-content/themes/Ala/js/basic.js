@@ -260,34 +260,40 @@ jQuery(document).ready(function () {
         }, 500);
     }, false);
 
-});
-
-
-var slideLeft = new Menu({
+  var slideLeft = new Menu({
     wrapper: '#o-wrapper',
     type: 'slide-left',
     menuOpenerClass: '.c-button',
     maskId: '#c-mask'
-});
+  });
 
-var slideLeftBtn = document.querySelector('#c-button--slide-left');
-
-slideLeftBtn.addEventListener('click', function (e) {
+  var slideLeftBtn = document.querySelector('#c-button--slide-left');
+  slideLeftBtn.addEventListener('click', function (e) {
     e.preventDefault;
     slideLeft.open();
-});
+  });
 
-var close = document.querySelector('#menu-item-15');
-
-close.addEventListener('click', function (e) {
+  $("#menu-item-15").click(function (e) {
     e.preventDefault;
     slideLeft.close();
-});
+    var position = $("#al-projects").offset().top;
+    var finalPosition = position - 80;
+    $('html, body').animate({
+      scrollTop: finalPosition
+    }, 2000);
+  });
 
-var closecnt = document.querySelector('#menu-item-19');
-
-closecnt.addEventListener('click', function (e) {
+  $("#menu-item-19").click(function (e) {
     e.preventDefault;
     slideLeft.close();
+    var position = $("#contact-us").offset().top;
+    var finalPosition = position - 80;
+    $('html, body').animate({
+      scrollTop: finalPosition
+    }, 2000);
+  });
 });
+
+
+
 

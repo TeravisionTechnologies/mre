@@ -499,11 +499,13 @@ body.has-active-menu {
   -moz-box-shadow: -4px -10px 23px -7px rgba(0, 0, 0, 0.37);
   -webkit-box-shadow: -4px -10px 23px -7px rgba(0, 0, 0, 0.37); }
   .hr-partners-section .hr-partners-title {
-    color: #000;
+    color: #4a4a4a;
     font-size: 2.3611111111vw;
     line-height: 2.5694444444vw;
     margin: 0;
-    font-family: Archivo, sans-serif; }
+    font-family: Montserrat-Regular, sans-serif; }
+    .hr-partners-section .hr-partners-title strong {
+      font-family: Montserrat-Bold, sans-serif; }
   .hr-partners-section .hr-partners-images {
     padding-top: 2.0833333333vw; }
     .hr-partners-section .hr-partners-images .partners-images-one {
@@ -1991,10 +1993,10 @@ a[href^=tel] {
       .hr-partners-section .hr-partners-images .partners-images-one {
         padding-top: 8px;
         margin-right: 185px;
-        width: 196px;
+        width: auto;
         height: 67px; }
       .hr-partners-section .hr-partners-images .partners-images-two {
-        width: 242px;
+        width: auto;
         height: 83px; }
 
   .hr-rentalone-section {
@@ -2533,10 +2535,10 @@ a[href^=tel] {
       .hr-partners-section .hr-partners-images .partners-images-one {
         padding-top: 0.78125vw;
         margin-right: 13.28125vw;
-        width: 17.0572916667vw;
+        width: auto;
         height: 5.859375vw; }
       .hr-partners-section .hr-partners-images .partners-images-two {
-        width: 21.3541666667vw;
+        width: auto;
         height: 7.2916666667vw; }
 
   .hr-rentalone-section {
@@ -3255,10 +3257,10 @@ a[href^=tel] {
       .hr-partners-section .hr-partners-images .partners-images-one {
         padding-top: 0.2777777778vw;
         margin-right: 11.1111111111vw;
-        width: 25vw;
+        width: auto;
         height: 8.3333333333vw; }
       .hr-partners-section .hr-partners-images .partners-images-two {
-        width: 26.6666666667vw;
+        width: auto;
         height: 8.8888888889vw; }
 
   .hr-rentalone-section {

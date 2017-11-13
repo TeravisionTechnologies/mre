@@ -118,14 +118,14 @@ jQuery(document).ready(function () {
 
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
-    })
+    });
 
-/*    $('#collapse3').on('hidden.bs.collapse', function () {
-        //initMap();
-    })
+    $('#collapse3').on('hidden.bs.collapse', function () {
+        initMap();
+    });
     $('#collapse3').on('shown.bs.collapse', function () {
-        //initMap();
-    })*/
+        initMap();
+    });
 
     $('#map-switch').click(function() {
       $("#search-map").show();
@@ -171,11 +171,6 @@ jQuery(document).ready(function () {
             $(this).children( "i" ).removeClass( "fa-filter" );
             $(this).children( "i" ).addClass( "fa-times" );
         }
-    });
-
-    $(".dropdown-menu li a").click(function(){
-        $(this).parents(".dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
-        $(this).parents(".dropdown").find('.dropdown-toggle').val($(this).data('value'));
     });
 
 });
