@@ -3,7 +3,7 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0">
-    <title><?php wp_title('-', true, 'right'); ?></title>
+    <title><?php bloginfo('name'); ?> » <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
     <meta name="description" content="<?php bloginfo( 'description' ); ?>">
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/apple-icon-60x60.png">
@@ -24,6 +24,9 @@
     <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqLg2ArgqBdOHK6Nmro4hoJ0ixlBurD_s&callback=initMap">
+    </script>
     <?php wp_head(); ?>
     <!-- FIX HTML STYLES IE9 -->
     <!--[if gte IE 9]>
@@ -54,7 +57,7 @@
     $theMeta = get_post_meta($headerPost[0]->ID);
     $social_networks = get_post_meta( $headerPost[0]->ID, '_hf_social_networks', true );
 ?>
-<body>
+<body <?php body_class() ?>>
 <div id="o-wrapper" class="o-wrapper">
   <div id="hr-header">
     <nav id="navbar" class="navbar navbar-default navbar-fixed-top">

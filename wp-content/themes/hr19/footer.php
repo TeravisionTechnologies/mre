@@ -20,6 +20,7 @@
             <a href="<?php echo $partners[0]['_hf_partner_link_right']; ?>" target="_blank"><img src="<?php echo $partners[0]['_hf_partner_logo_right']; ?>" alt="Logo MRE RealEstate" class="partners-images-two"/></a>
           </div>
         </section>
+        <?php wp_reset_query(); ?>
         <?php if ( is_front_page() ) { ?>
         <section id="rentalone" class="col-xs-12 hr-rentalone-section text-center no-padding" style="background-image: url('<?php echo $rental[0]["_hf_rental_background"] ?>')">
           <div class="hr-rentalone-overlay">
@@ -105,6 +106,7 @@
     <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.mobile.custom.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.sticky.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/validator.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/typeahead.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/basic.js"></script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqLg2ArgqBdOHK6Nmro4hoJ0ixlBurD_s">
