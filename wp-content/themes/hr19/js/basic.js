@@ -120,66 +120,84 @@ jQuery(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip()
     });
 
-    /*$('#collapse3').on('hidden.bs.collapse', function () {
+    $('#collapse3').on('hidden.bs.collapse', function () {
         initMap();
     });
     $('#collapse3').on('shown.bs.collapse', function () {
         initMap();
-    });*/
+    });
 
-      function initMapSearch() {
-        var geocoder = new google.maps.Geocoder();
-        var map = new google.maps.Map(document.getElementById('search-map'), {
-          zoom: 4
-        });
-        var propertiesArray = [];
-        $('.property').each(function(){
-          var propertyData = {};
-          propertyData.address = $(this).find('.property-address').html();
-          propertyData.price = $(this).find('.property-price').html();
-          propertyData.highlights = $(this).find('.property-highlights').html();
-          propertyData.mls = $(this).find('.property-code').html();
-          propertiesArray.push(propertyData);
-        });
-        //console.log(propertiesArray);
-
-        var addressArray = [
-          {address: 'Miami, Florida, EE. UU.', price:'10.000$'},
-          {address:'Caracas, Distrito Capital', price:'15.000$'},
-          {address:'Santo Domingo, República Dominicana', price:'20.000$'},
-        ];
-        //console.log(addressArray);
-
-        for (var i in addressArray) {
-          //console.log(addressArray[i].price);
-          var contentString = '<h2>'+ i + '</h2>';
-          geocoder.geocode( { 'address': addressArray[i].address}, function(results, status) {
-            if (status == 'OK') {
-              map.setCenter(results[0].geometry.location);
-              var infowindow = new google.maps.InfoWindow({
-                content: contentString
-              });
-              var marker = new google.maps.Marker({
-                map: map,
-                position: results[0].geometry.location
-              });
-              marker.addListener('click', function() {
-                infowindow.open(map, marker);
-              });
-            } else {
-              alert('Geocode was not successful for the following reason: ' + status);
-            }
-          });
-        }
-
-      }
-
-    $('#map-switch').click(function() {
-      $("#search-map").show();
+    $('#map-switch').click(function () {
+      $("#search-map").slideToggle();
       $("html, body").animate({scrollTop: 0}, 500);
       $(".property-list").toggleClass('property-list-search');
-      setTimeout(initMapSearch, 500);
     });
+
+    //Search Google Maps
+    var geocoder = new google.maps.Geocoder();
+    var map = new google.maps.Map(document.getElementById('search-map'), {
+      zoom: 4
+    });
+    var propertiesArray = [];
+    $('.property').each(function(){
+      var propertyData = {};
+      propertyData.address = $(this).find('.property-address').html();
+      propertyData.price = $(this).find('.property-price').html();
+      propertyData.highlights = $(this).find('.property-highlights').html();
+      propertyData.mls = $(this).find('.property-code').html();
+      propertiesArray.push(propertyData);
+    });
+
+    // DATA DE PRUEBA
+    var addressArray = [
+      {address: 'Miami, Florida, EE. UU.', price:'10000', mls:'1258649'},
+      {address:'Caracas, Distrito Capital', price:'15000', mls:'1258649'},
+      {address:'Santo Domingo, República Dominicana', price:'15000', mls:'1258649'},
+    ];
+    // DATA DE PRUEBA
+
+    for (var i in addressArray) {
+      //Change map markers currency format
+      var labelString = '';
+      if(addressArray[i].price > 999  && addressArray[i].price < 1000000) {
+        labelString = '$' + (addressArray[i].price/1000) + 'K';
+      }
+      else if (addressArray[i].price >= 1000000) {
+        labelString = '$' + (addressArray[i].price/1000000) + 'm';
+      }
+      else {
+        labelString = '$' + addressArray[i].price;
+      }
+
+      //Info Windows for each property
+      var contentString = '<div><h2>' + addressArray[i].price + '</h2><h3>MLS: ' + addressArray[i].mls + '</h3></div>';
+      geocoder.geocode( { 'address': addressArray[i].address}, function(results, status) {
+        if (status == 'OK') {
+          map.setCenter(results[0].geometry.location);
+          var infowindow = new google.maps.InfoWindow({
+            content: contentString
+          });
+          var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location,
+            icon: hr19.root + '/assets/map-icon.svg',
+            label: { text: labelString, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px' }
+          });
+          marker.addListener('mouseover', function() {
+            infowindow.open(map, marker);
+            this.setLabel({ text: labelString, color: 'black', fontFamily: 'Montserrat-Regular', fontSize: '12px' });
+            this.setIcon(hr19.root + '/assets/map-icon.svg');
+          });
+          marker.addListener('mouseout', function() {
+            infowindow.close();
+            this.setLabel({ text: labelString, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px' });
+            this.setIcon(hr19.root + '/assets/map-icon.svg');
+          });
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    }
 
     $('#property-search').validator().on('submit', function (e) {
         if (e.isDefaultPrevented()) {

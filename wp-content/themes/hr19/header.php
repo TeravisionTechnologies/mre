@@ -24,9 +24,6 @@
     <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqLg2ArgqBdOHK6Nmro4hoJ0ixlBurD_s&callback=initMap">
-    </script>
     <?php wp_head(); ?>
     <!-- FIX HTML STYLES IE9 -->
     <!--[if gte IE 9]>

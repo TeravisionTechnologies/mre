@@ -364,3 +364,7 @@ add_action( 'pre_get_posts', function( $q )
 		});
 	}
 });
+wp_enqueue_script('my-script', get_template_directory_uri() . 'js/basic.js');
+wp_localize_script('my-script', 'hr19', array(
+  'root' => get_template_directory_uri()
+));
