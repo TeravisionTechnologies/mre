@@ -120,41 +120,65 @@ jQuery(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip()
     });
 
-    $('#collapse3').on('hidden.bs.collapse', function () {
+    /*$('#collapse3').on('hidden.bs.collapse', function () {
         initMap();
     });
     $('#collapse3').on('shown.bs.collapse', function () {
         initMap();
-    });
+    });*/
+
+      function initMapSearch() {
+        var geocoder = new google.maps.Geocoder();
+        var map = new google.maps.Map(document.getElementById('search-map'), {
+          zoom: 4
+        });
+        var propertiesArray = [];
+        $('.property').each(function(){
+          var propertyData = {};
+          propertyData.address = $(this).find('.property-address').html();
+          propertyData.price = $(this).find('.property-price').html();
+          propertyData.highlights = $(this).find('.property-highlights').html();
+          propertyData.mls = $(this).find('.property-code').html();
+          propertiesArray.push(propertyData);
+        });
+        //console.log(propertiesArray);
+
+        var addressArray = [
+          {address: 'Miami, Florida, EE. UU.', price:'10.000$'},
+          {address:'Caracas, Distrito Capital', price:'15.000$'},
+          {address:'Santo Domingo, República Dominicana', price:'20.000$'},
+        ];
+        //console.log(addressArray);
+
+        for (var i in addressArray) {
+          //console.log(addressArray[i].price);
+          var contentString = '<h2>'+ i + '</h2>';
+          geocoder.geocode( { 'address': addressArray[i].address}, function(results, status) {
+            if (status == 'OK') {
+              map.setCenter(results[0].geometry.location);
+              var infowindow = new google.maps.InfoWindow({
+                content: contentString
+              });
+              var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+              });
+              marker.addListener('click', function() {
+                infowindow.open(map, marker);
+              });
+            } else {
+              alert('Geocode was not successful for the following reason: ' + status);
+            }
+          });
+        }
+
+      }
 
     $('#map-switch').click(function() {
       $("#search-map").show();
       $("html, body").animate({scrollTop: 0}, 500);
       $(".property-list").toggleClass('property-list-search');
-      var addressArray = new Array();
-      $('.property').each(function(){
-        var address = $(this).find('.property-address').html();
-        addressArray.push(address);
-      });
-      var address_array = [];
-      var address_object = {};
-      for (var i in addressArray) {
-        if (addressArray[i] !== 'N/A') {
-          address_object.address = addressArray[i];
-          address_array.push(address_object);
-        }
-      }
-      $('#search-map')
-        .gmap3({
-          center:[48.8620722, 2.352047],
-          zoom:4
-        })
-        .marker(address_array)
-        .on('mouseover', function (marker) {
-          marker.setIcon('http://maps.google.com/mapfile' +
-            's/marker_green.png');
-        });
-
+      setTimeout(initMapSearch, 500);
     });
 
     $('#property-search').validator().on('submit', function (e) {
