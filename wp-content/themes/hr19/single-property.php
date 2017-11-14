@@ -64,7 +64,15 @@ $currentproperty = get_the_ID();
             <div class="sm-text"><?php _e( 'Estimado de hipoteca:', 'hr' ) ?> $603/mes</div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 paddingl40 borderl">
-            <div class="md-text"><?php if(!empty($address)){ echo $address; } else{ echo 'N/A';} ?></div>
+            <div class="md-text">
+                <?php if ( ! empty( $address ) ) {
+		            echo $address;
+	            } else if ( ! empty( $city ) and !empty( $state ) ) {
+		            echo $city .', '. $state;
+	            } else{
+		            echo $state;
+	            } ?>
+            </div>
             <div>
                 <?php if(!empty($type)){ echo $type; } ?>
 	            <?php if(!empty($rooms)){ echo '· '. $rooms . ' Habitaciones' ; } ?>
