@@ -168,7 +168,7 @@ function get_mls(){
 			' (Status = A)',
 			[
 				'Format' => 'COMPACT-DECODED',
-				'Limit'  => 5,
+				'Limit'  => 10,
 			]
 		);
 	} else {
@@ -210,9 +210,12 @@ function get_mls(){
 
 			$sysid = $property['Matrix_Unique_ID'];
 			$n = 1;
-			$themedir = get_template_directory();
-			$dir = $themedir.'/photos/'.$sysid;
-			if(!is_dir($dir)) mkdir($dir);
+			$url = wp_upload_dir();
+			$upload = $url['basedir'];
+			$dir = $upload.'/photos/'.$sysid;
+			if ( ! file_exists( $dir ) ) {
+				wp_mkdir_p( $dir );
+			}
 			$objects = $rets->GetObject('Property', 'HighRes', $sysid);
 			foreach ($objects as $object) {
 				file_put_contents( $dir . '/' . $n . '.jpg', $object->getContent() );
@@ -250,14 +253,18 @@ function get_mls(){
 
 			$sysid = $property['Matrix_Unique_ID'];
 			$n = 1;
-			$themedir = get_template_directory();
-			$dir = $themedir.'/photos/'.$sysid;
-			if(!is_dir($dir)) mkdir($dir);
+			$url = wp_upload_dir();
+			$upload = $url['basedir'];
+			$dir = $upload.'/photos/'.$sysid;
+			if ( ! file_exists( $dir ) ) {
+				wp_mkdir_p( $dir );
+			}
 			$objects = $rets->GetObject('Property', 'HighRes', $sysid);
 			foreach ($objects as $object) {
 				file_put_contents( $dir . '/' . $n . '.jpg', $object->getContent() );
 				$n ++;
 			}
+
 		}
 
 	}

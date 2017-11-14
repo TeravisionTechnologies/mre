@@ -17,9 +17,12 @@ $surf  = get_post_meta( get_the_ID(), '_pr_surf', true );
 $hoa  = get_post_meta( get_the_ID(), '_pr_hoa', true );
 $yearbuilt  = get_post_meta( get_the_ID(), '_pr_yearbuilt', true );
 $sysid   = get_post_meta( get_the_ID(), '_pr_matrixid', true );
-$directory = get_template_directory().'/photos/'.$sysid.'/';
+$url = wp_upload_dir();
+$directory = $url['basedir'].'/photos/'.$sysid.'/';
 $images = glob($directory . "*.jpg");
+
 $currentproperty = get_the_ID();
+
 ?>
 
 <div class="breadcrumb-info">
@@ -45,7 +48,7 @@ $currentproperty = get_the_ID();
         <div class="swiper-wrapper">
             <?php foreach($images as $image) { $end = end(explode('/', rtrim($image, '/'))); ?>
                 <div class="swiper-slide">
-                    <div style="background-image: url(<?php echo  get_template_directory_uri().'/photos/'.$sysid.'/'.$end; ?>)"></div>
+                    <div style="background-image: url(<?php echo $url['baseurl'].'/photos/'.$sysid.'/'.$end; ?>)"></div>
                 </div>
             <?php } ?>
         </div>
@@ -83,16 +86,16 @@ $currentproperty = get_the_ID();
         </div>
         <div class="col-xs-6 col-sm-3 col-md-3 text-center">
             <div class="row surface">
-	            <?php if(!empty($surf)){ ?>
-                    <div class="<?php (empty($sqft ? 'col-xs-12 col-sm-12 col-md-12' : 'col-xs-6 col-sm-6 col-md-6')) ?>">
+	            <?php if(!empty( $surf )){ ?>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="sm-text"><?php _e( 'Superficie:', 'hr' ) ?></div>
                         <div class="md-text"><?php echo $surf . ' ft'; ?></div>
                     </div>
                 <?php } ?>
-	            <?php if(!empty($sqft)){ ?>
-                    <div class="<?php (empty($surf ? 'col-xs-12 col-sm-12 col-md-12' : 'col-xs-6 col-sm-6 col-md-6')) ?>">
+	            <?php if(!empty( $sqft )){ ?>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="sm-text"><?php _e( 'Pies cuadrados:', 'hr' ) ?></div>
-                        <div class="md-text"><?php if(!empty($sqft)){ echo $sqft . ' ft²'; } else { echo 'N/A'; } ?> </div>
+                        <div class="md-text"><?php if(!empty( $sqft )){ echo $sqft . ' ft²'; } else { echo 'N/A'; } ?> </div>
                     </div>
 	            <?php } ?>
             </div>
@@ -287,7 +290,7 @@ $currentproperty = get_the_ID();
                 <div class="col-xs-12 col-sm-4 col-md-4">
                     <a href="<?php the_permalink(); ?>" class="property">
                         <div class="property-image"
-                             style="background: url(<?php echo get_template_directory_uri(); ?>/photos/<?php echo $sysid ?>/1.jpg"></div>
+                             style="background: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"></div>
                         <div class="property-info">
                             <div class="property-price"><?php if ( ! empty( $price ) ) {
 				                    echo '$' . $price;

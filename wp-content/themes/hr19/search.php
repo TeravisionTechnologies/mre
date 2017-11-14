@@ -1,13 +1,11 @@
 <?php
 get_header();
-$s = get_query_var( 's' );
-$home = $_SERVER['HTTP_REFERER'];
-var_dump($home);
+$s   = get_query_var( 's' );
+$url = wp_upload_dir();
 ?>
 
 <nav id="search-filters" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -16,7 +14,6 @@ var_dump($home);
             </button>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <form id="property-search-top" action="./" method="get" role="form">
                 <input type="hidden" name="post_type[]" value="property">
@@ -120,9 +117,7 @@ var_dump($home);
     </div>
 </nav>
 
-<section id="search-map" class="search-map">
-
-</section>
+<section id="search-map" class="search-map"></section>
 
 <div class="container property-list">
     <div class="row">
@@ -206,7 +201,7 @@ var_dump($home);
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <a href="<?php the_permalink(); ?>" class="property">
                     <div class="property-image"
-                         style="background: url(<?php echo get_template_directory_uri(); ?>/photos/<?php echo $sysid ?>/1.jpg"></div>
+                         style="background: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"></div>
                     <div class="property-info">
                         <div class="property-price"><?php if ( ! empty( $price ) ) {
 								echo '$' . $price;
@@ -233,7 +228,7 @@ var_dump($home);
 								echo $state;
 							} ?>
                         </div>
-                        <div class="property-code">MLS: <?php the_title(); echo $city; ?></div>
+                        <div class="property-code">MLS: <?php the_title(); ?></div>
                     </div>
                 </a>
             </div>
