@@ -1,10 +1,12 @@
 <?php
 get_header();
 $s = get_query_var( 's' );
+$home = $_SERVER['HTTP_REFERER'];
+var_dump($home);
 ?>
 
 <nav id="search-filters" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+    <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -71,6 +73,7 @@ $s = get_query_var( 's' );
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false"><?php _e( 'Rango <br>de precio', 'hr' ) ?> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a href="#" data-value="any"><?php _e( 'Todos', 'hr' ) ?></a></li>
                             <li><a href="#">$0</a></li>
                             <li><a href="#">$100k</a></li>
                             <li><a href="#">$200k</a></li>
@@ -90,7 +93,7 @@ $s = get_query_var( 's' );
                             <li><a href="#" data-value="estudio"><?php _e( 'Estudio', 'hr' ) ?></a></li>
                             <li><a href="#" data-value="1">1+</a></li>
                             <li><a href="#" data-value="2">2+</a></li>
-                            <li><a href="#" data-value="3" >3+</a></li>
+                            <li><a href="#" data-value="3">3+</a></li>
                             <li><a href="#" data-value="4">4+</a></li>
                             <li><a href="#" data-value="5">5+</a></li>
                         </ul>
@@ -101,11 +104,11 @@ $s = get_query_var( 's' );
                                     class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#"><?php _e( 'Cualquiera', 'hr' ) ?></a></li>
-                            <li><a href="#">1+</a></li>
-                            <li><a href="#">2+</a></li>
-                            <li><a href="#">3+</a></li>
-                            <li><a href="#">4+</a></li>
-                            <li><a href="#">5+</a></li>
+                            <li><a href="#" data-value="1">1+</a></li>
+                            <li><a href="#" data-value="2">2+</a></li>
+                            <li><a href="#" data-value="3">3+</a></li>
+                            <li><a href="#" data-value="4">4+</a></li>
+                            <li><a href="#" data-value="5">5+</a></li>
                         </ul>
                     </li>
                     <li>
@@ -121,7 +124,7 @@ $s = get_query_var( 's' );
 
 </section>
 
-<div class="container property-list property-list-search">
+<div class="container property-list">
     <div class="row">
         <div class="property-sorting">
             <div class="col-sm-4 col-md-3">
@@ -174,13 +177,14 @@ $s = get_query_var( 's' );
 		$meta_query[]  = array(
 			'key'     => '_pr_city',
 			'value'   => $search_string,
-			'compare' => 'LIKE'
+			'compare' => '='
 		);
 		$meta_query[]  = array(
 			'key'     => '_pr_address',
 			'value'   => $search_string,
 			'compare' => 'LIKE'
 		);
+
 		if ( count( $meta_query ) > 1 ) {
 			$meta_query['relation'] = 'OR';
 		}
@@ -229,7 +233,7 @@ $s = get_query_var( 's' );
 								echo $state;
 							} ?>
                         </div>
-                        <div class="property-code">MLS: <?php the_title(); ?></div>
+                        <div class="property-code">MLS: <?php the_title(); echo $city; ?></div>
                     </div>
                 </a>
             </div>

@@ -10,7 +10,7 @@ jQuery(document).ready(function () {
 
     // Sticky info property
     var navheight = $('.menu-button').outerHeight();
-    $(".property-info-heading").sticky({topSpacing:navheight});
+    $(".property-info-heading").sticky({topSpacing: navheight});
 
     // Footer Go to top functionality
     $(".footer-top").click(function () {
@@ -98,7 +98,7 @@ jQuery(document).ready(function () {
     var navheight = $('.menu-button').outerHeight();
     $('.menu-wrapper').height(height - navheight);
 
-    window.addEventListener("resize", function() {
+    window.addEventListener("resize", function () {
         setTimeout(function () {
             var height = $(window).height();
             var navheight = $('.menu-button').outerHeight();
@@ -106,13 +106,13 @@ jQuery(document).ready(function () {
         }, 500);
     }, false);
 
-    $('.panel-title a').click(function() {
+    $('.panel-title a').click(function () {
         if ($(this).attr('aria-expanded') === "true") {
-            $(this).next( "i" ).removeClass( "fa-minus" );
-            $(this).next( "i" ).addClass( "fa-plus" );
+            $(this).next("i").removeClass("fa-minus");
+            $(this).next("i").addClass("fa-plus");
         } else {
-            $(this).next( "i" ).removeClass( "fa-plus" );
-            $(this).next( "i" ).addClass( "fa-minus" );
+            $(this).next("i").removeClass("fa-plus");
+            $(this).next("i").addClass("fa-minus");
         }
     });
 
@@ -127,35 +127,35 @@ jQuery(document).ready(function () {
         initMap();
     });
 
-    $('#map-switch').click(function() {
-      $("#search-map").show();
-      $("html, body").animate({scrollTop: 0}, 500);
-      $(".property-list").toggleClass('property-list-search');
-      var addressArray = new Array();
-      $('.property').each(function(){
+    $('#map-switch').click(function () {
+        $("#search-map").slideToggle();
+        $("html, body").animate({scrollTop: 0}, 500);
+        $(".property-list").toggleClass('property-list-search');
+    });
+
+    var addressArray = new Array();
+    $('.property').each(function () {
         var address = $(this).find('.property-address').html();
         addressArray.push(address);
-      });
-      var address_array = [];
-      var address_object = {};
-      for (var i in addressArray) {
+    });
+    var address_array = [];
+    var address_object = {};
+    for (var i in addressArray) {
         if (addressArray[i] !== 'N/A') {
-          address_object.address = addressArray[i];
-          address_array.push(address_object);
+            address_object.address = addressArray[i];
+            address_array.push(address_object);
         }
-      }
-      $('#search-map')
+    }
+    $('#search-map')
         .gmap3({
-          center:[48.8620722, 2.352047],
-          zoom:4
+            center: [48.8620722, 2.352047],
+            zoom: 4
         })
         .marker(address_array)
         .on('mouseover', function (marker) {
-          marker.setIcon('http://maps.google.com/mapfile' +
-            's/marker_green.png');
+            marker.setIcon('http://maps.google.com/mapfile' +
+                's/marker_green.png');
         });
-
-    });
 
     $('#property-search').validator().on('submit', function (e) {
         if (e.isDefaultPrevented()) {
@@ -163,17 +163,17 @@ jQuery(document).ready(function () {
         }
     });
 
-    $('.navbar-toggle').click(function() {
+    $('.navbar-toggle').click(function () {
         if ($(this).attr('aria-expanded') === "true") {
-            $(this).children( "i" ).removeClass( "fa-times" );
-            $(this).children( "i" ).addClass( "fa-filter" );
+            $(this).children("i").removeClass("fa-times");
+            $(this).children("i").addClass("fa-filter");
         } else {
-            $(this).children( "i" ).removeClass( "fa-filter" );
-            $(this).children( "i" ).addClass( "fa-times" );
+            $(this).children("i").removeClass("fa-filter");
+            $(this).children("i").addClass("fa-times");
         }
     });
 
-    $(".dropdown-menu li a").click(function(){
+    $(".dropdown-menu li a").click(function () {
         $(this).parents(".dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
         $(this).parents(".dropdown").find('.dropdown-toggle').val($(this).data('value'));
     });
