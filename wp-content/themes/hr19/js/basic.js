@@ -311,16 +311,28 @@ jQuery(document).ready(function ($) {
         $(this).parents(".dropdown").find('.dropdown-toggle').val($(this).data('value'));
     });
 
+    $('#s').click(function () {
+        $(this).val('');
+    });
+
+    $('#s').onmouseout(function () {
+        $(this).val('');
+    });
+
+    $('#s').focus(function(){
+        $(this).val('');
+    });
+
     var nbaTeams = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('team'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        prefetch: '../data/source.json'
+        prefetch: hr19.root + '/data/source.json'
     });
 
     var nhlTeams = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('team'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        prefetch: '../data/source.json'
+        prefetch: hr19.root + '/data/source2.json'
     });
 
     $('#multiple-datasets .typeahead').typeahead({

@@ -99,7 +99,6 @@
     </nav>
     <div id="c-mask" class="c-mask"></div>
     <?php wp_footer(); ?>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqLg2ArgqBdOHK6Nmro4hoJ0ixlBurD_s"></script>
     <!--<script src="<?php /*echo get_template_directory_uri(); */?>/js/gmap3.js"></script>-->
     <script type="text/javascript">
       var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";

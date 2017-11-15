@@ -1303,6 +1303,14 @@ input:checked + .slider:before {
     padding: 25px 10px; }
   #search-filters .navbar-collapse .navbar-nav .dropdown a {
     padding: 15px 10px; } }
+.twitter-typeahead {
+  display: initial !important; }
+
+#multiple-datasets .league-name {
+  margin: 0 20px 5px 20px;
+  padding: 3px 0;
+  border-bottom: 1px solid #ccc; }
+
 .agent-hero {
   margin-top: 5.5555555556vw;
   height: 31.25vw;
