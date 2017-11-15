@@ -38,7 +38,7 @@ $hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
                         </li>
                     </ul>
                     <div class="col-xs-12 col-sm-12 col-md-12 search-text no-padding">
-                        <div class="input-group">
+                        <div id="multiple-datasets" class="input-group">
                             <input type="search" id="s" name="s" class="col-xs-10 col-sm-10 col-md-10 typeahead"
                                    placeholder="<?php _e( 'Introduzca una dirección, ciudad, barrio o código postal', 'hr' ) ?>"
                                    value="Miami" onBlur="if (this.value == '')
