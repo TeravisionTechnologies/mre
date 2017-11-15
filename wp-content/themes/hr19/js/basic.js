@@ -150,56 +150,121 @@ jQuery(document).ready(function () {
 
     // DATA DE PRUEBA
     var addressArray = [
-      {address: 'Miami, Florida, EE. UU.', price:'10000', mls:'1258649'},
-      {address:'Caracas, Distrito Capital', price:'15000', mls:'1258649'},
-      {address:'Santo Domingo, República Dominicana', price:'15000', mls:'1258649'},
+      {address:'Caracas, Distrito Capital', price:'15000', highlights: 'Multifamiliar · 5 Habitaciones · 4 Baños', mls:'1258649'},
+      {address:'Santo Domingo, República Dominicana', price:'25000', highlights: 'Multifamiliar · 5 Habitaciones · 4 Baños', mls:'1258649'},
+      {address: 'Miami, Florida, EE. UU.', price:'10000', highlights: 'Multifamiliar · 5 Habitaciones · 4 Baños', mls:'1258649'},
     ];
     // DATA DE PRUEBA
 
-    for (var i in addressArray) {
-      //Change map markers currency format
-      var labelString = '';
-      if(addressArray[i].price > 999  && addressArray[i].price < 1000000) {
-        labelString = '$' + (addressArray[i].price/1000) + 'K';
-      }
-      else if (addressArray[i].price >= 1000000) {
-        labelString = '$' + (addressArray[i].price/1000000) + 'm';
-      }
-      else {
-        labelString = '$' + addressArray[i].price;
-      }
+  //Search Google Maps
 
-      //Info Windows for each property
-      var contentString = '<div><h2>' + addressArray[i].price + '</h2><h3>MLS: ' + addressArray[i].mls + '</h3></div>';
-      geocoder.geocode( { 'address': addressArray[i].address}, function(results, status) {
-        if (status == 'OK') {
-          map.setCenter(results[0].geometry.location);
-          var infowindow = new google.maps.InfoWindow({
-            content: contentString
-          });
+  var locations = [
+    ['500', 'Caracas, Distrito Capital', 'Multifamiliar · 5 Habitaciones · 4 Baños', '1258649'],
+    ['15000', 'Santo Domingo, República Dominicana', 'Multifamiliar · 5 Habitaciones · 4 Baños', '1258649'],
+    ['2500000', 'Miami, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', '1258649']
+  ];
+
+  var geocoder;
+  var map;
+  var bounds = new google.maps.LatLngBounds();
+
+  function initialize() {
+    map = new google.maps.Map(
+      document.getElementById("search-map"), {
+        center: new google.maps.LatLng(37.4419, -122.1419),
+        zoom: 13,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+    geocoder = new google.maps.Geocoder();
+
+    for (i = 0; i < locations.length; i++) {
+      geocodeAddress(locations, i);
+    }
+  }
+  google.maps.event.addDomListener(window, "load", initialize);
+
+  function geocodeAddress(locations, i) {
+    var priceUnformatted = locations[i][0];
+    var price = '';
+    if(priceUnformatted > 999  && priceUnformatted < 1000000) {
+      price = '$' + (priceUnformatted/1000) + 'K';
+    }
+    else if (priceUnformatted >= 1000000) {
+      price = '$' + (priceUnformatted/1000000) + 'm';
+    }
+    else {
+      price = '$' + priceUnformatted;
+    }
+    var address = locations[i][1];
+    var highlights = locations[i][2];
+    var mls = locations[i][3];
+    geocoder.geocode({
+        'address': locations[i][1]
+      },
+
+      function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
           var marker = new google.maps.Marker({
+            icon: hr19.root + '/assets/map-icon-open.svg',
             map: map,
             position: results[0].geometry.location,
-            icon: hr19.root + '/assets/map-icon.svg',
-            label: { text: labelString, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px' }
+            animation: google.maps.Animation.DROP,
+            address: address,
+            price: price,
+            highlights: highlights,
+            mls: mls,
+            label: { text: price, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px' }
           });
           marker.addListener('mouseover', function() {
-            infowindow.open(map, marker);
-            this.setLabel({ text: labelString, color: 'black', fontFamily: 'Montserrat-Regular', fontSize: '12px' });
-            this.setIcon(hr19.root + '/assets/map-icon.svg');
+            this.setLabel({ text: price, color: 'black', fontFamily: 'Montserrat-Regular', fontSize: '12px' });
+            //this.setIcon(hr19.root + '/assets/map-icon-close.svg');
           });
           marker.addListener('mouseout', function() {
-            infowindow.close();
-            this.setLabel({ text: labelString, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px' });
-            this.setIcon(hr19.root + '/assets/map-icon.svg');
+            this.setLabel({ text: price, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px' });
+            //this.setIcon(hr19.root + '/assets/map-icon-open.svg');
           });
+
+          infoWindow(marker, map, price, address, highlights, mls);
+          bounds.extend(marker.getPosition());
+          map.fitBounds(bounds);
         } else {
-          alert('Geocode was not successful for the following reason: ' + status);
+          alert("geocode of " + address + " failed:" + status);
         }
       });
-    }
+  }
 
-    $('#property-search').validator().on('submit', function (e) {
+  function infoWindow(marker, map, price, address, highlights, mls) {
+    google.maps.event.addListener(marker, 'click', function() {
+      var html = "<div class='info-container'>" +
+                 "<div class='info-image'></div>" +
+                 "<div class='info-data'>" +
+                 "<h2 class='info-data-price'>" + price + "</h2>" +
+                 "<h3 class='info-data-highlights'>" + highlights + "</h3>" +
+                 "<h3 class='info-data-address'>" + address + "</h3>" +
+                 "<h3 class='info-data-mls'>MLS: " + mls + "</h3>" +
+                 "</div>" +
+                 "</div>"
+      ;
+      iw = new google.maps.InfoWindow({
+        content: html,
+        maxWidth: 283
+      });
+      iw.open(map, marker);
+      google.maps.event.addListener(iw, 'domready', function() {
+        var iwOuter = $('.gm-style-iw');
+        var iwBackground = iwOuter.prev();
+        iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+        iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+
+        var arrow_div = $(".gm-style-iw").prev();
+
+        $("div:eq(0)", arrow_div).hide();
+        $("div:eq(2)", arrow_div).hide();
+      });
+    });
+  }
+
+  $('#property-search').validator().on('submit', function (e) {
         if (e.isDefaultPrevented()) {
             $('#s').addClass('placeholder-error');
         }
