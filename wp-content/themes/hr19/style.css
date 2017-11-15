@@ -1150,7 +1150,6 @@ input:checked + .slider:before {
   overflow-x: hidden; }
 
 .info-image {
-  background: blue;
   width: 120px;
   height: 87px;
   margin: 3px 10px 0 3px;
@@ -1314,7 +1313,6 @@ input:checked + .slider:before {
   overflow-x: hidden; }
 
 .info-image {
-  background: blue;
   width: 120px;
   height: 87px;
   margin: 3px 10px 0 3px;

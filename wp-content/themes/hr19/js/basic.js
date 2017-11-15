@@ -137,6 +137,7 @@ jQuery(document).ready(function ($) {
     var propertiesArray = [];
     $('.property').each(function () {
         var propertyData = {};
+        propertyData.image = $(this).find('.property-image').attr('data-url');
         propertyData.address = $(this).find('.property-address').html();
         propertyData.price = $(this).find('.property-price').html();
         propertyData.highlights = $(this).find('.property-highlights').html();
@@ -147,14 +148,20 @@ jQuery(document).ready(function ($) {
     //Search Google Maps
 
     var locations = [
-        ['500', 'Caracas, Distrito Capital', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266'],
-        ['15000', 'Santo Domingo, República Dominicana', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266'],
-        ['2500000', 'Miami, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266']
+        ['500', 'West Palm Beach, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
+        ['15000', 'Fort Lauderdale, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
+        ['2500000', 'Hollywood, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
+        ['32000', 'Doral, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
+        ['32000', 'Miami Beach, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
+        ['32000', 'Aventura, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
+        ['32000', 'Hialeah, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
     ];
 
     var geocoder;
     var map;
     var bounds = new google.maps.LatLngBounds();
+    var infowindows = [];
+    var activeMarker = '';
 
     function initialize() {
         map = new google.maps.Map(
@@ -166,8 +173,15 @@ jQuery(document).ready(function ($) {
         geocoder = new google.maps.Geocoder();
 
         for (i = 0; i < locations.length; i++) {
-            geocodeAddress(locations, i);
+          geocodeAddress(locations, i);
         }
+          google.maps.event.addListener(map, 'click', function() {
+            if (infowindows.length > 0) {
+              var text = activeMarker.price;
+              activeMarker.setLabel({text: text, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px'});
+              closeInfoWindows();
+            }
+          });
     }
 
     google.maps.event.addDomListener(window, "load", initialize);
@@ -187,6 +201,7 @@ jQuery(document).ready(function ($) {
         var address = locations[i][1];
         var highlights = locations[i][2];
         var mls = locations[i][3];
+        var image = locations[i][4];
         geocoder.geocode({
                 'address': locations[i][1]
             },
@@ -202,28 +217,35 @@ jQuery(document).ready(function ($) {
                         price: price,
                         highlights: highlights,
                         mls: mls,
-                        label: {text: price, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px'}
+                        label: {text: price, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px'},
+                        image: image
                     });
                     marker.addListener('mouseover', function () {
-                        this.setLabel({
+                        if(infowindows == 0) {
+                          this.setLabel({
                             text: price,
                             color: 'black',
                             fontFamily: 'Montserrat-Regular',
                             fontSize: '12px'
-                        });
-                        this.setIcon(hr19.root + '/assets/pointwhite.svg');
+                          });
+                          this.setZIndex(100);
+                          this.setIcon(hr19.root + '/assets/pointwhite.svg');
+                        }
                     });
                     marker.addListener('mouseout', function () {
-                        this.setLabel({
+                        if(infowindows == 0) {
+                          this.setLabel({
                             text: price,
                             color: 'white',
                             fontFamily: 'Montserrat-Regular',
                             fontSize: '12px'
-                        });
-                        this.setIcon(hr19.root + '/assets/pointgreen.svg');
+                          });
+                          this.setZIndex(0);
+                          this.setIcon(hr19.root + '/assets/pointgreen.svg');
+                        }
                     });
 
-                    infoWindow(marker, map, price, address, highlights, mls);
+                    infoWindow(marker, map, price, address, highlights, mls, image);
                     bounds.extend(marker.getPosition());
                     map.fitBounds(bounds);
                 } else {
@@ -232,10 +254,10 @@ jQuery(document).ready(function ($) {
             });
     }
 
-    function infoWindow(marker, map, price, address, highlights, mls) {
+    function infoWindow(marker, map, price, address, highlights, mls, image) {
         google.maps.event.addListener(marker, 'click', function () {
             var html = "<a href=property/" + mls  +"><div class='info-container'>" +
-                "<div class='info-image'></div>" +
+                "<div class='info-image' style='background-image: url("+ image +")'></div>" +
                 "<div class='info-data'>" +
                 "<h2 class='info-data-price'>" + price + "</h2>" +
                 "<h3 class='info-data-highlights'>" + highlights + "</h3>" +
@@ -248,19 +270,36 @@ jQuery(document).ready(function ($) {
                 content: html,
                 maxWidth: 283
             });
-            iw.open(map, marker);
+            if(infowindows.length > 0){
+              closeInfoWindows();
+            }
+            else {
+              iw.open(map, marker);
+              infowindows.push(iw);
+              activeMarker = this;
+              console.log(activeMarker);
+            }
+            //alert(infowindows.length);
             google.maps.event.addListener(iw, 'domready', function () {
-            var iwOuter = $('.gm-style-iw');
-            var iwBackground = iwOuter.prev();
-            iwBackground.children(':nth-child(2)').css({'display': 'none'});
-            iwBackground.children(':nth-child(4)').css({'display': 'none'});
+                var iwOuter = $('.gm-style-iw');
+                var iwBackground = iwOuter.prev();
+                iwBackground.children(':nth-child(2)').css({'display': 'none'});
+                iwBackground.children(':nth-child(4)').css({'display': 'none'});
 
-            var arrow_div = $(".gm-style-iw").prev();
-
-            $("div:eq(0)", arrow_div).css('display', 'none');
-            $("div:eq(2)", arrow_div).css('display', 'none');
-          });
+                var arrow_div = $(".gm-style-iw").prev();
+                $("div:eq(0)", arrow_div).css('display', 'none');
+                $("div:eq(2)", arrow_div).css('display', 'none');
+            });
         });
+    }
+
+    function closeInfoWindows() {
+      for (var i = 0; i < infowindows.length; i++) {
+         infowindows[i].close();
+      }
+      infowindows = [];
+      activeMarker.setIcon(hr19.root + '/assets/pointgreen.svg');
+      activeMarker = '';
     }
 
     $('#property-search').validator().on('submit', function (e) {
