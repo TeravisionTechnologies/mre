@@ -139,15 +139,22 @@ jQuery(document).ready(function ($) {
         var propertyData = {};
         propertyData.image = $(this).find('.property-image').attr('data-url');
         propertyData.address = $(this).find('.property-address').html();
+        propertyData.address = propertyData.address.replace(/[\t\n,]/g,'');
         propertyData.price = $(this).find('.property-price').html();
+        propertyData.price = propertyData.price.replace(/[$,]/g,'');
         propertyData.highlights = $(this).find('.property-highlights').html();
+        propertyData.highlights = propertyData.highlights.replace(/[\t\n,]/g,'');
         propertyData.mls = $(this).find('.property-code').html();
+        propertyData.mls = (propertyData.mls).substring(5);
         propertiesArray.push(propertyData);
     });
 
     //Search Google Maps
-
-    var locations = [
+    var locations = [];
+    for(var i in propertiesArray) {
+        locations.push(propertiesArray[i]);
+    }
+    /*var locations = [
         ['500', 'West Palm Beach, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
         ['15000', 'Fort Lauderdale, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
         ['2500000', 'Hollywood, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
@@ -155,7 +162,7 @@ jQuery(document).ready(function ($) {
         ['32000', 'Miami Beach, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
         ['32000', 'Aventura, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
         ['32000', 'Hialeah, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
-    ];
+    ];*/
 
     var geocoder;
     var map;
@@ -187,7 +194,7 @@ jQuery(document).ready(function ($) {
     google.maps.event.addDomListener(window, "load", initialize);
 
     function geocodeAddress(locations, i) {
-        var priceUnformatted = locations[i][0];
+        var priceUnformatted = locations[i].price;
         var price = '';
         if (priceUnformatted > 999 && priceUnformatted < 1000000) {
             price = '$' + (priceUnformatted / 1000) + 'K';
@@ -198,12 +205,12 @@ jQuery(document).ready(function ($) {
         else {
             price = '$' + priceUnformatted;
         }
-        var address = locations[i][1];
-        var highlights = locations[i][2];
-        var mls = locations[i][3];
-        var image = locations[i][4];
+        var address = locations[i].address;
+        var highlights = locations[i].highlights;
+        var mls = locations[i].mls;
+        var image = locations[i].highlights;
         geocoder.geocode({
-                'address': locations[i][1]
+                'address': address
             },
 
             function (results, status) {
