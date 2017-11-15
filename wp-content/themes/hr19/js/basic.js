@@ -174,9 +174,9 @@ jQuery(document).ready(function ($) {
     //Search Google Maps
 
     var locations = [
-        ['500', 'Caracas, Distrito Capital', 'Multifamiliar · 5 Habitaciones · 4 Baños', '1258649'],
-        ['15000', 'Santo Domingo, República Dominicana', 'Multifamiliar · 5 Habitaciones · 4 Baños', '1258649'],
-        ['2500000', 'Miami, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', '1258649']
+        ['500', 'Caracas, Distrito Capital', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266'],
+        ['15000', 'Santo Domingo, República Dominicana', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266'],
+        ['2500000', 'Miami, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266']
     ];
 
     var geocoder;
@@ -221,7 +221,7 @@ jQuery(document).ready(function ($) {
             function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     var marker = new google.maps.Marker({
-                        icon: hr19.root + '/assets/map-icon-open.svg',
+                        icon: hr19.root + '/assets/pointgreen.svg',
                         map: map,
                         position: results[0].geometry.location,
                         animation: google.maps.Animation.DROP,
@@ -238,7 +238,7 @@ jQuery(document).ready(function ($) {
                             fontFamily: 'Montserrat-Regular',
                             fontSize: '12px'
                         });
-                        //this.setIcon(hr19.root + '/assets/map-icon-close.svg');
+                        this.setIcon(hr19.root + '/assets/pointwhite.svg');
                     });
                     marker.addListener('mouseout', function () {
                         this.setLabel({
@@ -247,7 +247,7 @@ jQuery(document).ready(function ($) {
                             fontFamily: 'Montserrat-Regular',
                             fontSize: '12px'
                         });
-                        //this.setIcon(hr19.root + '/assets/map-icon-open.svg');
+                        this.setIcon(hr19.root + '/assets/pointgreen.svg');
                     });
 
                     infoWindow(marker, map, price, address, highlights, mls);
@@ -261,7 +261,7 @@ jQuery(document).ready(function ($) {
 
     function infoWindow(marker, map, price, address, highlights, mls) {
         google.maps.event.addListener(marker, 'click', function () {
-            var html = "<div class='info-container'>" +
+            var html = "<a href=property/" + mls  +"><div class='info-container'>" +
                 "<div class='info-image'></div>" +
                 "<div class='info-data'>" +
                 "<h2 class='info-data-price'>" + price + "</h2>" +
@@ -269,7 +269,7 @@ jQuery(document).ready(function ($) {
                 "<h3 class='info-data-address'>" + address + "</h3>" +
                 "<h3 class='info-data-mls'>MLS: " + mls + "</h3>" +
                 "</div>" +
-                "</div>"
+                "</div></a>"
             ;
             iw = new google.maps.InfoWindow({
                 content: html,
@@ -315,15 +315,11 @@ jQuery(document).ready(function ($) {
         $(this).val('');
     });
 
-    $('#s').onmouseout(function () {
+    $('#s').focus(function () {
         $(this).val('');
     });
 
-    $('#s').focus(function(){
-        $(this).val('');
-    });
-
-    var nbaTeams = new Bloodhound({
+    /*var nbaTeams = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('team'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         prefetch: hr19.root + '/data/source.json'
@@ -353,7 +349,12 @@ jQuery(document).ready(function ($) {
             templates: {
                 header: '<h3 class="league-name">NHL Teams</h3>'
             }
-        });
+        });*/
+
+    $('#multiple-datasets .typeahead').typeahead({
+        name: 'search',
+        prefetch: hr19.root + '/data/source.json'
+    });
 
 });
 
