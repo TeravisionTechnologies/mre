@@ -10,6 +10,33 @@ remove_post_type_support( 'page', 'comments' );
 
 load_theme_textdomain( 'hr', get_template_directory() . '/languages' );
 
+function hr_scripts() {
+
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
+	wp_enqueue_style( 'bootstrap-theme', get_template_directory_uri() . '/css/bootstrap-theme.min.css' );
+	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/css/swiper.min.css' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+	wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css' );
+
+	wp_deregister_script( 'jquery' );
+	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-3.2.1.min.js', array(), '3.2.1', true );
+
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.4', true );
+	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/js/swiper.min.js', array(), '3.4.2', true );
+	wp_enqueue_script( 'menu', get_template_directory_uri() . '/js/menu.min.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'jquery-mobile', get_template_directory_uri() . '/js/jquery.mobile.custom.min.js', array(), '1.4.5', true );
+	wp_enqueue_script( 'sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array(), '1.0.4', true );
+	wp_enqueue_script( 'validator', get_template_directory_uri() . '/js/validator.min.js', array(), '0.11.9', true );
+	wp_enqueue_script( 'typeahead', get_template_directory_uri() . '/js/typeahead.js', array(), '0.11.1', true );
+	wp_enqueue_script( 'my-script', get_template_directory_uri() . '/js/basic.js' );
+	wp_localize_script( 'my-script', 'hr19', array(
+		'root' => get_template_directory_uri()
+	) );
+}
+
+add_action( 'wp_enqueue_scripts', 'hr_scripts' );
+
+
 // Register custom navigation walker
 require_once( 'wp_bootstrap_navwalker.php' );
 
@@ -68,7 +95,7 @@ $postTypeDir = array(
 	__DIR__ . '/includes/post-types/header-footer/',
 	__DIR__ . '/includes/post-types/agent/',
 	__DIR__ . '/includes/post-types/property/',
-  __DIR__ . '/includes/post-types/about-us/',
+	__DIR__ . '/includes/post-types/about-us/',
 );
 
 // File names inside post-types dirs
@@ -100,16 +127,16 @@ function call_create_post_types() {
 	// Post Type for Agents
 	create_post_type_agent();
 	// Post Type for Property
-  create_post_type_property();
-  // Post Type for About Us
-  create_post_type_about_us();
+	create_post_type_property();
+	// Post Type for About Us
+	create_post_type_about_us();
 }
 
 /* Remove text area field from header and footer */
 function remove_page_editor() {
 	remove_post_type_support( 'header_footer', 'editor' );
-  remove_post_type_support( 'banner', 'editor' );
-  remove_post_type_support( 'about_us', 'editor' );
+	remove_post_type_support( 'banner', 'editor' );
+	remove_post_type_support( 'about_us', 'editor' );
 }
 
 add_action( 'init', 'remove_page_editor' );
@@ -130,8 +157,8 @@ function call_metaboxes() {
 	agent_metaboxes();
 	// Metaboxes for Properties
 	property_metaboxes();
-  // Metaboxes for About Us
-  about_us_metaboxes();
+	// Metaboxes for About Us
+	about_us_metaboxes();
 }
 
 //SVG Hook
@@ -150,7 +177,7 @@ date_default_timezone_set( 'America/New_York' );
 
 require_once( "vendor/autoload.php" );
 
-function get_mls(){
+function get_mls() {
 	$config = new \PHRETS\Configuration;
 	$config->setLoginUrl( 'http://rets.sef.mlsmatrix.com/Rets/Login.ashx' )
 	       ->setUsername( 'lesAERfue' )
@@ -180,44 +207,44 @@ function get_mls(){
 
 		$propid = get_page_by_title( $property['MLSNumber'], 'OBJECT', 'property' ); //Check if already exists
 
-		if ( !$propid ) {
+		if ( ! $propid ) {
 			$post_args       = array(
 				'post_title'   => $property['MLSNumber'],
 				'post_content' => $property['Remarks'],
 				'post_status'  => 'publish',
 				'post_type'    => 'property',
 				'meta_input'   => array(
-					'_pr_address' => $property['AddressInternetDisplay'] . ' ' . $property['City'] . ', ' . $property['StateOrProvince'],
-					'_pr_state' => $property['StateOrProvince'],
-					'_pr_city' => $property['City'],
-					'_pr_community' => $property['CountyOrParish'],
-					'_pr_subdiv' => $property['SubdivisionName'],
+					'_pr_address'          => $property['AddressInternetDisplay'] . ' ' . $property['City'] . ', ' . $property['StateOrProvince'],
+					'_pr_state'            => $property['StateOrProvince'],
+					'_pr_city'             => $property['City'],
+					'_pr_community'        => $property['CountyOrParish'],
+					'_pr_subdiv'           => $property['SubdivisionName'],
 					'_pr_current_price'    => number_format( round( $property['CurrentPrice'] ) ),
 					'_pr_type_of_property' => $property['TypeofProperty'],
-					'_pr_room_count' => number_format( round( $property['RoomCount'] ) ),
-					'_pr_baths_total' => number_format( round( $property['BathsTotal'] ) ),
-					'_pr_baths_full' => number_format( round( $property['BathsFull'] ) ),
-					'_pr_baths_half' => number_format( round( $property['BathsHalf'] ) ),
-					'_pr_sqft' => number_format( round( $property['SqFtTotal'] ) ),
-					'_pr_surf' => number_format( round( $property['TotalAcreage'] ) ),
-					'_pr_hoa' => number_format( round( $property['AssociationFee'] ) ),
-					'_pr_yearbuilt' => number_format( round( $property['YearBuilt'] ) ),
-					'_pr_agentid' =>$property['ListAgentMLSID'],
-					'_pr_matrixid' =>$property['Matrix_Unique_ID'],
+					'_pr_room_count'       => number_format( round( $property['RoomCount'] ) ),
+					'_pr_baths_total'      => number_format( round( $property['BathsTotal'] ) ),
+					'_pr_baths_full'       => number_format( round( $property['BathsFull'] ) ),
+					'_pr_baths_half'       => number_format( round( $property['BathsHalf'] ) ),
+					'_pr_sqft'             => number_format( round( $property['SqFtTotal'] ) ),
+					'_pr_surf'             => number_format( round( $property['TotalAcreage'] ) ),
+					'_pr_hoa'              => number_format( round( $property['AssociationFee'] ) ),
+					'_pr_yearbuilt'        => number_format( round( $property['YearBuilt'] ) ),
+					'_pr_agentid'          => $property['ListAgentMLSID'],
+					'_pr_matrixid'         => $property['Matrix_Unique_ID'],
 				)
 			);
 			$posted_property = wp_insert_post( $post_args );
 
-			$sysid = $property['Matrix_Unique_ID'];
-			$n = 1;
-			$url = wp_upload_dir();
+			$sysid  = $property['Matrix_Unique_ID'];
+			$n      = 1;
+			$url    = wp_upload_dir();
 			$upload = $url['basedir'];
-			$dir = $upload.'/photos/'.$sysid;
+			$dir    = $upload . '/photos/' . $sysid;
 			if ( ! file_exists( $dir ) ) {
 				wp_mkdir_p( $dir );
 			}
-			$objects = $rets->GetObject('Property', 'HighRes', $sysid);
-			foreach ($objects as $object) {
+			$objects = $rets->GetObject( 'Property', 'HighRes', $sysid );
+			foreach ( $objects as $object ) {
 				file_put_contents( $dir . '/' . $n . '.jpg', $object->getContent() );
 				$n ++;
 			}
@@ -230,37 +257,37 @@ function get_mls(){
 				'post_status'  => 'publish',
 				'post_type'    => 'property',
 				'meta_input'   => array(
-					'_pr_address' => $property['AddressInternetDisplay'] . ' ' . $property['City'] . ', ' . $property['StateOrProvince'],
-					'_pr_state' => $property['StateOrProvince'],
-					'_pr_city' => $property['City'],
-					'_pr_community' => $property['CountyOrParish'],
-					'_pr_subdiv' => $property['SubdivisionName'],
+					'_pr_address'          => $property['AddressInternetDisplay'] . ' ' . $property['City'] . ', ' . $property['StateOrProvince'],
+					'_pr_state'            => $property['StateOrProvince'],
+					'_pr_city'             => $property['City'],
+					'_pr_community'        => $property['CountyOrParish'],
+					'_pr_subdiv'           => $property['SubdivisionName'],
 					'_pr_current_price'    => number_format( round( $property['CurrentPrice'] ) ),
 					'_pr_type_of_property' => $property['TypeofProperty'],
-					'_pr_room_count' => number_format( round( $property['RoomCount'] ) ),
-					'_pr_baths_total' => number_format( round( $property['BathsTotal'] ) ),
-					'_pr_baths_full' => number_format( round( $property['BathsFull'] ) ),
-					'_pr_baths_half' => number_format( round( $property['BathsHalf'] ) ),
-					'_pr_sqft' => number_format( round( $property['SqFtTotal'] ) ),
-					'_pr_surf' => number_format( round( $property['TotalAcreage'] ) ),
-					'_pr_hoa' => number_format( round( $property['AssociationFee'] ) ),
-					'_pr_yearbuilt' => number_format( round( $property['YearBuilt'] ) ),
-					'_pr_agentid' =>$property['ListAgentMLSID'],
-					'_pr_matrixid' =>$property['Matrix_Unique_ID'],
+					'_pr_room_count'       => number_format( round( $property['RoomCount'] ) ),
+					'_pr_baths_total'      => number_format( round( $property['BathsTotal'] ) ),
+					'_pr_baths_full'       => number_format( round( $property['BathsFull'] ) ),
+					'_pr_baths_half'       => number_format( round( $property['BathsHalf'] ) ),
+					'_pr_sqft'             => number_format( round( $property['SqFtTotal'] ) ),
+					'_pr_surf'             => number_format( round( $property['TotalAcreage'] ) ),
+					'_pr_hoa'              => number_format( round( $property['AssociationFee'] ) ),
+					'_pr_yearbuilt'        => number_format( round( $property['YearBuilt'] ) ),
+					'_pr_agentid'          => $property['ListAgentMLSID'],
+					'_pr_matrixid'         => $property['Matrix_Unique_ID'],
 				)
 			);
 			$posted_property = wp_update_post( $post_args );
 
-			$sysid = $property['Matrix_Unique_ID'];
-			$n = 1;
-			$url = wp_upload_dir();
+			$sysid  = $property['Matrix_Unique_ID'];
+			$n      = 1;
+			$url    = wp_upload_dir();
 			$upload = $url['basedir'];
-			$dir = $upload.'/photos/'.$sysid;
+			$dir    = $upload . '/photos/' . $sysid;
 			if ( ! file_exists( $dir ) ) {
 				wp_mkdir_p( $dir );
 			}
-			$objects = $rets->GetObject('Property', 'HighRes', $sysid);
-			foreach ($objects as $object) {
+			$objects = $rets->GetObject( 'Property', 'HighRes', $sysid );
+			foreach ( $objects as $object ) {
 				file_put_contents( $dir . '/' . $n . '.jpg', $object->getContent() );
 				$n ++;
 			}
@@ -287,7 +314,6 @@ function custom_js_to_head() {
 add_action('admin_head', 'custom_js_to_head');*/
 
 
-
 // Register custom query vars
 
 function pr_register_query_vars( $vars ) {
@@ -296,82 +322,81 @@ function pr_register_query_vars( $vars ) {
 	$vars[] = 'price';
 	$vars[] = 'beds';
 	$vars[] = 'baths';
+
 	return $vars;
 }
+
 add_filter( 'query_vars', 'pr_register_query_vars' );
 
 function pr_pre_get_posts( $query ) {
 	// check if the user is requesting an admin page
 	// or current query is not the main query
-	if ( is_admin() || ! $query->is_main_query() ){
+	if ( is_admin() || ! $query->is_main_query() ) {
 		return;
 	}
 
 	// edit the query only when post type is 'property'
 	// if it isn't, return
-	if ( !is_post_type_archive( 'property' ) ){
+	if ( ! is_post_type_archive( 'property' ) ) {
 		return;
 	}
 
 	$meta_query = array();
 
 	// add meta_query elements
-	if( !empty( get_query_var( 'city' ) ) ){
+	if ( ! empty( get_query_var( 'city' ) ) ) {
 		$meta_query[] = array( 'key' => '_pr_city', 'value' => get_query_var( 'city' ), 'compare' => '=' );
 	}
 
-	if( !empty( get_query_var( 'type' ) ) ){
+	if ( ! empty( get_query_var( 'type' ) ) ) {
 		$meta_query[] = array( 'key' => '_pr_type_of_property', 'value' => get_query_var( 'type' ), 'compare' => '=' );
 	}
 
-	if( !empty( get_query_var( 'price' ) ) ){
+	if ( ! empty( get_query_var( 'price' ) ) ) {
 		$meta_query[] = array( 'key' => '_pr_current_price', 'value' => get_query_var( 'price' ), 'compare' => '=' );
 	}
 
-	if( !empty( get_query_var( 'beds' ) ) ){
+	if ( ! empty( get_query_var( 'beds' ) ) ) {
 		$meta_query[] = array( 'key' => '_pr_room_count', 'value' => get_query_var( 'beds' ), 'compare' => '=' );
 	}
 
-	if( !empty( get_query_var( 'baths' ) ) ){
+	if ( ! empty( get_query_var( 'baths' ) ) ) {
 		$meta_query[] = array( 'key' => '_pr_baths_total', 'value' => get_query_var( 'baths' ), 'compare' => '=' );
 	}
 
-	if( count( $meta_query ) > 1 ){
+	if ( count( $meta_query ) > 1 ) {
 		$meta_query['relation'] = 'AND';
 	}
 
-	if( count( $meta_query ) > 0 ){
+	if ( count( $meta_query ) > 0 ) {
 		$query->set( 'meta_query', $meta_query );
 	}
 }
+
 add_action( 'pre_get_posts', 'pr_pre_get_posts', 1 );
 
 
-
-add_action( 'pre_get_posts', function( $q )
-{
-	if( $title = $q->get( '_meta_or_title' ) )
-	{
-		add_filter( 'get_meta_sql', function( $sql ) use ( $title )
-		{
+add_action( 'pre_get_posts', function ( $q ) {
+	if ( $title = $q->get( '_meta_or_title' ) ) {
+		add_filter( 'get_meta_sql', function ( $sql ) use ( $title ) {
 			global $wpdb;
 
 			// Only run once:
 			static $nr = 0;
-			if( 0 != $nr++ ) return $sql;
+			if ( 0 != $nr ++ ) {
+				return $sql;
+			}
 
 			// Modified WHERE
 			$sql['where'] = sprintf(
 				" AND ( %s OR %s ) ",
-				$wpdb->prepare( "{$wpdb->posts}.post_title like '%%%s%%'", $title),
+				$wpdb->prepare( "{$wpdb->posts}.post_title like '%%%s%%'", $title ),
 				mb_substr( $sql['where'], 5, mb_strlen( $sql['where'] ) )
 			);
 
 			return $sql;
-		});
+		} );
 	}
-});
-/*wp_enqueue_script('my-script', get_template_directory_uri() . 'js/basic.js');
-wp_localize_script('my-script', 'hr19', array(
-  'root' => get_template_directory_uri()
-));*/
+} );
+
+

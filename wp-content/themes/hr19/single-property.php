@@ -36,8 +36,8 @@ $currentproperty = get_the_ID();
                 </div>
             </div>
             <div class="col-xs-5 col-sm-5 col-md-6 text-right">
-                <div class="published">Publicada hace: 59 días</div>
-                <div class="status">Estatus: <span>Activa</span></div>
+                <!--<div class="published">Publicada hace: 59 días</div>-->
+                <div class="status"><?php _e( 'Estatus:', 'hr' ) ?> <span>Activa</span></div>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-jQuery(document).ready(function () {
+jQuery(document).ready(function ($) {
 
     // Swiper Property
     var swiper = new Swiper('.swiper-property', {
@@ -128,143 +128,169 @@ jQuery(document).ready(function () {
     });
 
     $('#map-switch').click(function () {
-      $("#search-map").slideToggle();
-      $("html, body").animate({scrollTop: 0}, 500);
-      $(".property-list").toggleClass('property-list-search');
+        $("#search-map").slideToggle();
+        $("html, body").animate({scrollTop: 0}, 500);
+        $(".property-list").toggleClass('property-list-search');
     });
 
     //Search Google Maps
     var geocoder = new google.maps.Geocoder();
     var map = new google.maps.Map(document.getElementById('search-map'), {
-      zoom: 4
+        zoom: 4
     });
     var propertiesArray = [];
-    $('.property').each(function(){
-      var propertyData = {};
-      propertyData.address = $(this).find('.property-address').html();
-      propertyData.price = $(this).find('.property-price').html();
-      propertyData.highlights = $(this).find('.property-highlights').html();
-      propertyData.mls = $(this).find('.property-code').html();
-      propertiesArray.push(propertyData);
+    $('.property').each(function () {
+        var propertyData = {};
+        propertyData.address = $(this).find('.property-address').html();
+        propertyData.price = $(this).find('.property-price').html();
+        propertyData.highlights = $(this).find('.property-highlights').html();
+        propertyData.mls = $(this).find('.property-code').html();
+        propertiesArray.push(propertyData);
     });
 
     // DATA DE PRUEBA
     var addressArray = [
-      {address:'Caracas, Distrito Capital', price:'15000', highlights: 'Multifamiliar · 5 Habitaciones · 4 Baños', mls:'1258649'},
-      {address:'Santo Domingo, República Dominicana', price:'25000', highlights: 'Multifamiliar · 5 Habitaciones · 4 Baños', mls:'1258649'},
-      {address: 'Miami, Florida, EE. UU.', price:'10000', highlights: 'Multifamiliar · 5 Habitaciones · 4 Baños', mls:'1258649'},
+        {
+            address: 'Caracas, Distrito Capital',
+            price: '15000',
+            highlights: 'Multifamiliar · 5 Habitaciones · 4 Baños',
+            mls: '1258649'
+        },
+        {
+            address: 'Santo Domingo, República Dominicana',
+            price: '25000',
+            highlights: 'Multifamiliar · 5 Habitaciones · 4 Baños',
+            mls: '1258649'
+        },
+        {
+            address: 'Miami, Florida, EE. UU.',
+            price: '10000',
+            highlights: 'Multifamiliar · 5 Habitaciones · 4 Baños',
+            mls: '1258649'
+        },
     ];
     // DATA DE PRUEBA
 
-  //Search Google Maps
+    //Search Google Maps
 
-  var locations = [
-    ['500', 'Caracas, Distrito Capital', 'Multifamiliar · 5 Habitaciones · 4 Baños', '1258649'],
-    ['15000', 'Santo Domingo, República Dominicana', 'Multifamiliar · 5 Habitaciones · 4 Baños', '1258649'],
-    ['2500000', 'Miami, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', '1258649']
-  ];
+    var locations = [
+        ['500', 'Caracas, Distrito Capital', 'Multifamiliar · 5 Habitaciones · 4 Baños', '1258649'],
+        ['15000', 'Santo Domingo, República Dominicana', 'Multifamiliar · 5 Habitaciones · 4 Baños', '1258649'],
+        ['2500000', 'Miami, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', '1258649']
+    ];
 
-  var geocoder;
-  var map;
-  var bounds = new google.maps.LatLngBounds();
+    var geocoder;
+    var map;
+    var bounds = new google.maps.LatLngBounds();
 
-  function initialize() {
-    map = new google.maps.Map(
-      document.getElementById("search-map"), {
-        center: new google.maps.LatLng(37.4419, -122.1419),
-        zoom: 13,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      });
-    geocoder = new google.maps.Geocoder();
+    function initialize() {
+        map = new google.maps.Map(
+            document.getElementById("search-map"), {
+                center: new google.maps.LatLng(37.4419, -122.1419),
+                zoom: 13,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+        geocoder = new google.maps.Geocoder();
 
-    for (i = 0; i < locations.length; i++) {
-      geocodeAddress(locations, i);
-    }
-  }
-  google.maps.event.addDomListener(window, "load", initialize);
-
-  function geocodeAddress(locations, i) {
-    var priceUnformatted = locations[i][0];
-    var price = '';
-    if(priceUnformatted > 999  && priceUnformatted < 1000000) {
-      price = '$' + (priceUnformatted/1000) + 'K';
-    }
-    else if (priceUnformatted >= 1000000) {
-      price = '$' + (priceUnformatted/1000000) + 'm';
-    }
-    else {
-      price = '$' + priceUnformatted;
-    }
-    var address = locations[i][1];
-    var highlights = locations[i][2];
-    var mls = locations[i][3];
-    geocoder.geocode({
-        'address': locations[i][1]
-      },
-
-      function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          var marker = new google.maps.Marker({
-            icon: hr19.root + '/assets/map-icon-open.svg',
-            map: map,
-            position: results[0].geometry.location,
-            animation: google.maps.Animation.DROP,
-            address: address,
-            price: price,
-            highlights: highlights,
-            mls: mls,
-            label: { text: price, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px' }
-          });
-          marker.addListener('mouseover', function() {
-            this.setLabel({ text: price, color: 'black', fontFamily: 'Montserrat-Regular', fontSize: '12px' });
-            //this.setIcon(hr19.root + '/assets/map-icon-close.svg');
-          });
-          marker.addListener('mouseout', function() {
-            this.setLabel({ text: price, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px' });
-            //this.setIcon(hr19.root + '/assets/map-icon-open.svg');
-          });
-
-          infoWindow(marker, map, price, address, highlights, mls);
-          bounds.extend(marker.getPosition());
-          map.fitBounds(bounds);
-        } else {
-          alert("geocode of " + address + " failed:" + status);
+        for (i = 0; i < locations.length; i++) {
+            geocodeAddress(locations, i);
         }
-      });
-  }
+    }
 
-  function infoWindow(marker, map, price, address, highlights, mls) {
-    google.maps.event.addListener(marker, 'click', function() {
-      var html = "<div class='info-container'>" +
-                 "<div class='info-image'></div>" +
-                 "<div class='info-data'>" +
-                 "<h2 class='info-data-price'>" + price + "</h2>" +
-                 "<h3 class='info-data-highlights'>" + highlights + "</h3>" +
-                 "<h3 class='info-data-address'>" + address + "</h3>" +
-                 "<h3 class='info-data-mls'>MLS: " + mls + "</h3>" +
-                 "</div>" +
-                 "</div>"
-      ;
-      iw = new google.maps.InfoWindow({
-        content: html,
-        maxWidth: 283
-      });
-      iw.open(map, marker);
-      google.maps.event.addListener(iw, 'domready', function() {
-        var iwOuter = $('.gm-style-iw');
-        var iwBackground = iwOuter.prev();
-        iwBackground.children(':nth-child(2)').css({'display' : 'none'});
-        iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    google.maps.event.addDomListener(window, "load", initialize);
 
-        var arrow_div = $(".gm-style-iw").prev();
+    function geocodeAddress(locations, i) {
+        var priceUnformatted = locations[i][0];
+        var price = '';
+        if (priceUnformatted > 999 && priceUnformatted < 1000000) {
+            price = '$' + (priceUnformatted / 1000) + 'K';
+        }
+        else if (priceUnformatted >= 1000000) {
+            price = '$' + (priceUnformatted / 1000000) + 'm';
+        }
+        else {
+            price = '$' + priceUnformatted;
+        }
+        var address = locations[i][1];
+        var highlights = locations[i][2];
+        var mls = locations[i][3];
+        geocoder.geocode({
+                'address': locations[i][1]
+            },
 
-        $("div:eq(0)", arrow_div).hide();
-        $("div:eq(2)", arrow_div).hide();
-      });
-    });
-  }
+            function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var marker = new google.maps.Marker({
+                        icon: hr19.root + '/assets/map-icon-open.svg',
+                        map: map,
+                        position: results[0].geometry.location,
+                        animation: google.maps.Animation.DROP,
+                        address: address,
+                        price: price,
+                        highlights: highlights,
+                        mls: mls,
+                        label: {text: price, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px'}
+                    });
+                    marker.addListener('mouseover', function () {
+                        this.setLabel({
+                            text: price,
+                            color: 'black',
+                            fontFamily: 'Montserrat-Regular',
+                            fontSize: '12px'
+                        });
+                        //this.setIcon(hr19.root + '/assets/map-icon-close.svg');
+                    });
+                    marker.addListener('mouseout', function () {
+                        this.setLabel({
+                            text: price,
+                            color: 'white',
+                            fontFamily: 'Montserrat-Regular',
+                            fontSize: '12px'
+                        });
+                        //this.setIcon(hr19.root + '/assets/map-icon-open.svg');
+                    });
 
-  $('#property-search').validator().on('submit', function (e) {
+                    infoWindow(marker, map, price, address, highlights, mls);
+                    bounds.extend(marker.getPosition());
+                    map.fitBounds(bounds);
+                } else {
+                    alert("geocode of " + address + " failed:" + status);
+                }
+            });
+    }
+
+    function infoWindow(marker, map, price, address, highlights, mls) {
+        google.maps.event.addListener(marker, 'click', function () {
+            var html = "<div class='info-container'>" +
+                "<div class='info-image'></div>" +
+                "<div class='info-data'>" +
+                "<h2 class='info-data-price'>" + price + "</h2>" +
+                "<h3 class='info-data-highlights'>" + highlights + "</h3>" +
+                "<h3 class='info-data-address'>" + address + "</h3>" +
+                "<h3 class='info-data-mls'>MLS: " + mls + "</h3>" +
+                "</div>" +
+                "</div>"
+            ;
+            iw = new google.maps.InfoWindow({
+                content: html,
+                maxWidth: 283
+            });
+            iw.open(map, marker);
+            google.maps.event.addListener(iw, 'domready', function () {
+                var iwOuter = $('.gm-style-iw');
+                var iwBackground = iwOuter.prev();
+                iwBackground.children(':nth-child(2)').css({'display': 'none'});
+                iwBackground.children(':nth-child(4)').css({'display': 'none'});
+
+                var arrow_div = $(".gm-style-iw").prev();
+
+                $("div:eq(0)", arrow_div).hide();
+                $("div:eq(2)", arrow_div).hide();
+            });
+        });
+    }
+
+    $('#property-search').validator().on('submit', function (e) {
         if (e.isDefaultPrevented()) {
             $('#s').addClass('placeholder-error');
         }
@@ -288,13 +314,13 @@ jQuery(document).ready(function () {
     var nbaTeams = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('team'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        prefetch: 'source.json'
+        prefetch: '../data/source.json'
     });
 
     var nhlTeams = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('team'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        prefetch: 'source.json'
+        prefetch: '../data/source.json'
     });
 
     $('#multiple-datasets .typeahead').typeahead({
