@@ -134,10 +134,6 @@ jQuery(document).ready(function ($) {
     });
 
     //Search Google Maps
-    var geocoder = new google.maps.Geocoder();
-    var map = new google.maps.Map(document.getElementById('search-map'), {
-        zoom: 4
-    });
     var propertiesArray = [];
     $('.property').each(function () {
         var propertyData = {};
@@ -147,29 +143,6 @@ jQuery(document).ready(function ($) {
         propertyData.mls = $(this).find('.property-code').html();
         propertiesArray.push(propertyData);
     });
-
-    // DATA DE PRUEBA
-    var addressArray = [
-        {
-            address: 'Caracas, Distrito Capital',
-            price: '15000',
-            highlights: 'Multifamiliar · 5 Habitaciones · 4 Baños',
-            mls: '1258649'
-        },
-        {
-            address: 'Santo Domingo, República Dominicana',
-            price: '25000',
-            highlights: 'Multifamiliar · 5 Habitaciones · 4 Baños',
-            mls: '1258649'
-        },
-        {
-            address: 'Miami, Florida, EE. UU.',
-            price: '10000',
-            highlights: 'Multifamiliar · 5 Habitaciones · 4 Baños',
-            mls: '1258649'
-        },
-    ];
-    // DATA DE PRUEBA
 
     //Search Google Maps
 
@@ -277,16 +250,16 @@ jQuery(document).ready(function ($) {
             });
             iw.open(map, marker);
             google.maps.event.addListener(iw, 'domready', function () {
-                var iwOuter = $('.gm-style-iw');
-                var iwBackground = iwOuter.prev();
-                iwBackground.children(':nth-child(2)').css({'display': 'none'});
-                iwBackground.children(':nth-child(4)').css({'display': 'none'});
+            var iwOuter = $('.gm-style-iw');
+            var iwBackground = iwOuter.prev();
+            iwBackground.children(':nth-child(2)').css({'display': 'none'});
+            iwBackground.children(':nth-child(4)').css({'display': 'none'});
 
-                var arrow_div = $(".gm-style-iw").prev();
+            var arrow_div = $(".gm-style-iw").prev();
 
-                $("div:eq(0)", arrow_div).hide();
-                $("div:eq(2)", arrow_div).hide();
-            });
+            $("div:eq(0)", arrow_div).css('display', 'none');
+            $("div:eq(2)", arrow_div).css('display', 'none');
+          });
         });
     }
 
