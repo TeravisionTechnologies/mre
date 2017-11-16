@@ -118,5 +118,34 @@ function property_metaboxes() {
 		'type' => 'text',
 	));
 
+	$cmb_property->add_field(array(
+		'name' => __('Estatus'),
+		'id' => $prefix . 'status',
+		'type' => 'text',
+	));
+
+	$cmb_property->add_field(array(
+		'name' => __('En Venta'),
+		'id' => $prefix . 'forsale',
+		'type' => 'text',
+	));
+
+	$cmb_property->add_field(array(
+		'name' => __('En Alquiler'),
+		'id' => $prefix . 'forlease',
+		'type' => 'text',
+	));
+
+	$cmb_property->add_field(array(
+		'name' => __('En Alquiler'),
+		'id' => $prefix . 'forlease',
+		'type' => 'text',
+	));
+
+	$cmb_property->add_field(array(
+		'name' => __('Codigo Postal'),
+		'id' => $prefix . 'postalcode',
+		'type' => 'text',
+	));
 
 }

@@ -12,6 +12,15 @@ load_theme_textdomain( 'hr', get_template_directory() . '/languages' );
 
 function hr_scripts() {
 
+	global $wpdb;
+	$cities = $wpdb->get_col($wpdb->prepare("SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_city' ) );
+	$address = $wpdb->get_col($wpdb->prepare("SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_address' ) );
+	$postalcode = $wpdb->get_col($wpdb->prepare("SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_postalcode' ) );
+
+	$jsonaddress = wp_json_encode( $cities );
+	$jsoncities = wp_json_encode( $address );
+	$jsonpostalcode = wp_json_encode( $postalcode );
+
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
 	wp_enqueue_style( 'bootstrap-theme', get_template_directory_uri() . '/css/bootstrap-theme.min.css' );
 	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/css/swiper.min.css' );
@@ -27,10 +36,13 @@ function hr_scripts() {
 	wp_enqueue_script( 'jquery-mobile', get_template_directory_uri() . '/js/jquery.mobile.custom.min.js', array(), '1.4.5', true );
 	wp_enqueue_script( 'sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array(), '1.0.4', true );
 	wp_enqueue_script( 'validator', get_template_directory_uri() . '/js/validator.min.js', array(), '0.11.9', true );
-	wp_enqueue_script( 'typeahead', get_template_directory_uri() . '/js/typeahead.js', array(), '0.11.1', true );
+	wp_enqueue_script( 'autocomplete', get_template_directory_uri() . '/js/jquery.autocomplete.js', array(), '0.11.1', true );
 	wp_enqueue_script( 'my-script', get_template_directory_uri() . '/js/basic.js', array(), '1.0', true );
 	wp_localize_script( 'my-script', 'hr19', array(
-		'root' => get_template_directory_uri()
+		'root' => get_template_directory_uri(),
+		'cities' => $jsoncities,
+		'addresses' => $jsonaddress,
+		'postalcodes' => $jsonpostalcode,
 	) );
 }
 
@@ -231,6 +243,10 @@ function get_mls() {
 					'_pr_yearbuilt'        => number_format( round( $property['YearBuilt'] ) ),
 					'_pr_agentid'          => $property['ListAgentMLSID'],
 					'_pr_matrixid'         => $property['Matrix_Unique_ID'],
+					'_pr_status'           => $property['Status'],
+					'_pr_forsale'          => $property['ForSaleYN'],
+					'_pr_forlease'         => $property['ForLeaseYN'],
+					'_pr_postalcode'       => $property['PostalCode'] . ', ' . $property['City'] . ', ' . $property['StateOrProvince'],
 				)
 			);
 			$posted_property = wp_insert_post( $post_args );
@@ -274,6 +290,10 @@ function get_mls() {
 					'_pr_yearbuilt'        => number_format( round( $property['YearBuilt'] ) ),
 					'_pr_agentid'          => $property['ListAgentMLSID'],
 					'_pr_matrixid'         => $property['Matrix_Unique_ID'],
+					'_pr_status'           => $property['Status'],
+					'_pr_forsale'          => $property['ForSaleYN'],
+					'_pr_forlease'         => $property['ForLeaseYN'],
+					'_pr_postalcode'       => $property['PostalCode'] . ', ' . $property['City'] . ', ' . $property['StateOrProvince'],
 				)
 			);
 			$posted_property = wp_update_post( $post_args );

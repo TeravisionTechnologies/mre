@@ -16,6 +16,7 @@ $sqft   = get_post_meta( get_the_ID(), '_pr_sqft', true );
 $surf  = get_post_meta( get_the_ID(), '_pr_surf', true );
 $hoa  = get_post_meta( get_the_ID(), '_pr_hoa', true );
 $yearbuilt  = get_post_meta( get_the_ID(), '_pr_yearbuilt', true );
+$status  = get_post_meta( get_the_ID(), '_pr_status', true );
 $sysid   = get_post_meta( get_the_ID(), '_pr_matrixid', true );
 $url = wp_upload_dir();
 $directory = $url['basedir'].'/photos/'.$sysid.'/';
@@ -37,7 +38,7 @@ $currentproperty = get_the_ID();
             </div>
             <div class="col-xs-5 col-sm-5 col-md-6 text-right">
                 <!--<div class="published">Publicada hace: 59 días</div>-->
-                <div class="status"><?php _e( 'Estatus:', 'hr' ) ?> <span>Activa</span></div>
+                <div class="status"><?php _e( 'Estatus:', 'hr' ) ?> <span><?php if(!empty($status)){ echo $status; } ?></span></div>
             </div>
         </div>
     </div>

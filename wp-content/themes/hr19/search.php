@@ -21,7 +21,7 @@ $url = wp_upload_dir();
                     <li>
                         <div class="input-group">
                             <input type="search" class="form-control search-box" id="s" name="s"
-                                   placeholder="<?php _e( 'Buscar', 'hr' ) ?>" value="<?php echo $s; ?>">
+                                   placeholder="<?php _e( 'Buscar', 'hr' ) ?>" value="<?php echo $s; ?>" required>
                             <i class="fa fa-search"></i>
                         </div>
                     </li>
@@ -179,6 +179,11 @@ $url = wp_upload_dir();
 			'value'   => $search_string,
 			'compare' => 'LIKE'
 		);
+		$meta_query[]  = array(
+			'key'     => '_pr_postalcode',
+			'value'   => $search_string,
+			'compare' => 'LIKE'
+		);
 
 		if ( count( $meta_query ) > 1 ) {
 			$meta_query['relation'] = 'OR';
@@ -259,15 +264,5 @@ $url = wp_upload_dir();
         </div>
     </div>
 </div>
-
-<!--<script>
-    var map3;
-    function initMap() {
-        map3 = new google.maps.Map(document.getElementById('search-map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
-        });
-    }
-</script>-->
 
 <?php get_footer(); ?>

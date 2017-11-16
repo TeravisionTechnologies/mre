@@ -1347,13 +1347,52 @@ input:checked + .slider:before
   border: 1px solid rgba(72, 181, 233, 0.6)
   border-radius: 2px 2px 0 0
 
-.twitter-typeahead
-  display: initial !important
+.autocomplete-suggestions
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  border: 1px solid #999
+  background: $white
+  cursor: default
+  overflow: auto
+  -webkit-box-shadow: 0px 3px 10px rgba(50, 50, 50, 0.28)
+  -moz-box-shadow: 0px 3px 10px rgba(50, 50, 50, 0.28)
+  box-shadow: 0px 3px 10px rgba(50, 50, 50, 0.28)
 
-#multiple-datasets
-  .league-name
-    margin: 0 20px 5px 20px
-    padding: 3px 0
-    border-bottom: 1px solid #ccc
+.autocomplete-suggestion
+  padding: 2px 20px
+  white-space: nowrap
+  overflow: hidden
+  font-size: 13px
+  font-weight: 300
+  letter-spacing: -0.1px
+  color: rgba(57, 57, 57, 0.6)
 
+.autocomplete-no-suggestion
+  padding: 10px
+
+.autocomplete-selected
+  background: #F0F0F0
+
+.autocomplete-suggestions
+  strong
+    font-weight: bold
+
+.autocomplete-group
+  padding: 2px 10px
+  font-weight: bold
+  font-size: 14px
+  color: $grey
+  display: block
+
+.no-results
+  font-size: 13px
+  font-weight: 300
+  letter-spacing: -0.1px
+  color: rgba(57, 57, 57, 0.6)
+  margin-bottom: 0
+  span
+    font-size: 14px
+    font-weight: bold
+    color: #c30016
 

@@ -1,6 +1,6 @@
 <?php
 get_header();
-$url = wp_upload_dir();
+$url        = wp_upload_dir();
 $home_query = get_posts(
 	array(
 		'post_type' => 'header_footer'
@@ -22,7 +22,8 @@ $hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
     <div class="container property-search-wrapper">
         <div class="row">
             <div class="col-md-offset-1 col-md-10">
-                <form id="property-search" class="property-search" action="./" method="get" role="form" data-toggle="validator">
+                <form id="property-search" class="property-search" action="./" method="get" role="form"
+                      data-toggle="validator">
                     <ul class="property-status">
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                             <input type="radio" id="buy" name="status">
@@ -38,14 +39,12 @@ $hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
                         </li>
                     </ul>
                     <div class="col-xs-12 col-sm-12 col-md-12 search-text no-padding">
-                        <div id="multiple-datasets">
-                            <div class="input-group">
-                                <input type="text" id="s" name="s" class="col-xs-10 col-sm-10 col-md-10 typeahead"
-                                       placeholder="<?php _e( 'Dirección, ciudad, barrio o código postal', 'hr' ) ?>"
-                                       value="Miami" autocomplete="off" required>
-                                <input type="hidden" name="post_type[]" value="property">
-                                <button type="submit" class="btn col-xs-2 col-sm-2 col-md-2"><i class="fa fa-search"></i></button>
-                            </div>
+                        <div class="input-group">
+                            <input type="text" id="s" name="s" class="col-xs-10 col-sm-10 col-md-10"
+                                   placeholder="<?php _e( 'Dirección, ciudad, barrio o código postal', 'hr' ) ?>"
+                                   value="Miami" autocomplete="off" required>
+                            <input type="hidden" name="post_type[]" value="property">
+                            <button id="btn-search-home" type="submit" class="btn col-xs-2 col-sm-2 col-md-2"><i class="fa fa-search"></i></button>
                         </div>
                     </div>
                 </form>
@@ -71,9 +70,9 @@ $hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
 			$rooms   = get_post_meta( get_the_ID(), '_pr_room_count', true );
 			$baths   = get_post_meta( get_the_ID(), '_pr_baths_total', true );
 			$sysid   = get_post_meta( get_the_ID(), '_pr_matrixid', true );
-			$city   = get_post_meta( get_the_ID(), '_pr_city', true );
-			$state  = get_post_meta( get_the_ID(), '_pr_state', true );
-		?>
+			$city    = get_post_meta( get_the_ID(), '_pr_city', true );
+			$state   = get_post_meta( get_the_ID(), '_pr_state', true );
+			?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <a href="<?php the_permalink(); ?>" class="property">
                     <div class="property-image"
@@ -96,13 +95,13 @@ $hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
 							} ?>
                         </div>
                         <div class="property-address">
-		                    <?php if ( ! empty( $address ) ) {
-			                    echo $address;
-		                    } else if ( ! empty( $city ) and !empty( $state ) ) {
-			                    echo $city .', '. $state;
-		                    } else{
-			                    echo $state;
-		                    } ?>
+							<?php if ( ! empty( $address ) ) {
+								echo $address;
+							} else if ( ! empty( $city ) and ! empty( $state ) ) {
+								echo $city . ', ' . $state;
+							} else {
+								echo $state;
+							} ?>
                         </div>
                         <div class="property-code">MLS: <?php the_title(); ?></div>
                     </div>
