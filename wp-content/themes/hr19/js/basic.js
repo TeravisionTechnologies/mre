@@ -106,6 +106,7 @@ jQuery(document).ready(function ($) {
         }, 500);
     }, false);
 
+    //Panel plus-minus change
     $('.panel-title a').click(function () {
         if ($(this).attr('aria-expanded') === "true") {
             $(this).next("i").removeClass("fa-minus");
@@ -116,10 +117,12 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    //HOA tooltip
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     });
 
+    //Int property detail map
     $('#collapse3').on('hidden.bs.collapse', function () {
         initMap();
     });
@@ -127,10 +130,81 @@ jQuery(document).ready(function ($) {
         initMap();
     });
 
+    // Show-Hide search map
     $('#map-switch').click(function () {
         $("#search-map").slideToggle();
         $("html, body").animate({scrollTop: 0}, 500);
         $(".property-list").toggleClass('property-list-search');
+    });
+
+    // Search form validation
+    $('#property-search').validator().on('submit', function (e) {
+        if (e.isDefaultPrevented()) {
+            $('#s').addClass('placeholder-error');
+        }
+    });
+    $('#property-search-top').validator().on('submit', function (e) {
+        if (e.isDefaultPrevented()) {
+            $('#s').addClass('placeholder-error');
+        }
+    });
+
+    //Menu mobile change icon
+    $('.navbar-toggle').click(function () {
+        if ($(this).attr('aria-expanded') === "true") {
+            $(this).children("i").removeClass("fa-times");
+            $(this).children("i").addClass("fa-filter");
+        } else {
+            $(this).children("i").removeClass("fa-filter");
+            $(this).children("i").addClass("fa-times");
+        }
+    });
+
+    //Filters get selected option
+    $(".dropdown-menu li a").click(function () {
+        $(this).parents(".dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
+        $(this).parents(".dropdown").find('.dropdown-toggle').val($(this).data('value'));
+    });
+
+    // Clear search input
+    $('#s').click(function () {
+        $(this).val('');
+    });
+    $('#s').focus(function () {
+        $(this).val('');
+    });
+
+    // Autocomplete data from database
+    var cities = JSON.parse(hr19.cities);
+    var addresses = JSON.parse(hr19.addresses);
+    var postalcodes = JSON.parse(hr19.postalcodes);
+
+    var city = $.map(cities, function (q) {
+        return {value: q, data: {category: 'Dirección'}};
+    });
+    var add = $.map(addresses, function (q) {
+        return {value: q, data: {category: 'Ciudad'}};
+    });
+    var pc = $.map(postalcodes, function (q) {
+        return {value: q, data: {category: 'Código Postal'}};
+    });
+
+    var query = city.concat(add,pc);
+
+    // Initialize autocomplete
+    $('#s').devbridgeAutocomplete({
+        lookup: query,
+        minChars: 1,
+        autoSelectFirst: true,
+        showNoSuggestionNotice: true,
+        noSuggestionNotice: '<p class="no-results"><span>No pudimos encontrar su búsqueda</span><br>Verifique su ortografía o vuelva a hacer su búsqueda usando una ubicación dentro de los E.E.U.U</p>',
+        groupBy: 'category',
+        onSelect: function (suggestion) {
+            $('#property-search').submit();
+        },
+        onSearchError: function (query, jqXHR, textStatus, errorThrown) {
+            $("#btn-search-home").attr("disabled", true);
+        }
     });
 
     //Search Google Maps
@@ -139,11 +213,11 @@ jQuery(document).ready(function ($) {
         var propertyData = {};
         propertyData.image = $(this).find('.property-image').attr('data-url');
         propertyData.address = $(this).find('.property-address').html();
-        propertyData.address = propertyData.address.replace(/[\t\n,]/g,'');
+        propertyData.address = propertyData.address.replace(/[\t\n,]/g, '');
         propertyData.price = $(this).find('.property-price').html();
-        propertyData.price = propertyData.price.replace(/[$,]/g,'');
+        propertyData.price = propertyData.price.replace(/[$,]/g, '');
         propertyData.highlights = $(this).find('.property-highlights').html();
-        propertyData.highlights = propertyData.highlights.replace(/[\t\n,]/g,'');
+        propertyData.highlights = propertyData.highlights.replace(/[\t\n,]/g, '');
         propertyData.mls = $(this).find('.property-code').html();
         propertyData.mls = (propertyData.mls).substring(5);
         propertiesArray.push(propertyData);
@@ -151,7 +225,7 @@ jQuery(document).ready(function ($) {
 
     //Search Google Maps
     var locations = [];
-    for(var i in propertiesArray) {
+    for (var i in propertiesArray) {
         locations.push(propertiesArray[i]);
     }
     /*var locations = [
@@ -180,15 +254,15 @@ jQuery(document).ready(function ($) {
         geocoder = new google.maps.Geocoder();
 
         for (i = 0; i < locations.length; i++) {
-          geocodeAddress(locations, i);
+            geocodeAddress(locations, i);
         }
-          google.maps.event.addListener(map, 'click', function() {
+        google.maps.event.addListener(map, 'click', function () {
             if (infowindows.length > 0) {
-              var text = activeMarker.price;
-              activeMarker.setLabel({text: text, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px'});
-              closeInfoWindows();
+                var text = activeMarker.price;
+                activeMarker.setLabel({text: text, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px'});
+                closeInfoWindows();
             }
-          });
+        });
     }
 
     google.maps.event.addDomListener(window, "load", initialize);
@@ -228,27 +302,27 @@ jQuery(document).ready(function ($) {
                         image: image
                     });
                     marker.addListener('mouseover', function () {
-                        if(infowindows == 0) {
-                          this.setLabel({
-                            text: price,
-                            color: 'black',
-                            fontFamily: 'Montserrat-Regular',
-                            fontSize: '12px'
-                          });
-                          this.setZIndex(100);
-                          this.setIcon(hr19.root + '/assets/pointwhite.svg');
+                        if (infowindows == 0) {
+                            this.setLabel({
+                                text: price,
+                                color: 'black',
+                                fontFamily: 'Montserrat-Regular',
+                                fontSize: '12px'
+                            });
+                            this.setZIndex(100);
+                            this.setIcon(hr19.root + '/assets/pointwhite.svg');
                         }
                     });
                     marker.addListener('mouseout', function () {
-                        if(infowindows == 0) {
-                          this.setLabel({
-                            text: price,
-                            color: 'white',
-                            fontFamily: 'Montserrat-Regular',
-                            fontSize: '12px'
-                          });
-                          this.setZIndex(0);
-                          this.setIcon(hr19.root + '/assets/pointgreen.svg');
+                        if (infowindows == 0) {
+                            this.setLabel({
+                                text: price,
+                                color: 'white',
+                                fontFamily: 'Montserrat-Regular',
+                                fontSize: '12px'
+                            });
+                            this.setZIndex(0);
+                            this.setIcon(hr19.root + '/assets/pointgreen.svg');
                         }
                     });
 
@@ -263,8 +337,8 @@ jQuery(document).ready(function ($) {
 
     function infoWindow(marker, map, price, address, highlights, mls, image) {
         google.maps.event.addListener(marker, 'click', function () {
-            var html = "<a href=property/" + mls  +"><div class='info-container'>" +
-                "<div class='info-image' style='background-image: url("+ image +")'></div>" +
+            var html = "<a href=property/" + mls + "><div class='info-container'>" +
+                "<div class='info-image' style='background-image: url(" + image + ")'></div>" +
                 "<div class='info-data'>" +
                 "<h2 class='info-data-price'>" + price + "</h2>" +
                 "<h3 class='info-data-highlights'>" + highlights + "</h3>" +
@@ -277,14 +351,14 @@ jQuery(document).ready(function ($) {
                 content: html,
                 maxWidth: 283
             });
-            if(infowindows.length > 0){
-              closeInfoWindows();
+            if (infowindows.length > 0) {
+                closeInfoWindows();
             }
             else {
-              iw.open(map, marker);
-              infowindows.push(iw);
-              activeMarker = this;
-              console.log(activeMarker);
+                iw.open(map, marker);
+                infowindows.push(iw);
+                activeMarker = this;
+                console.log(activeMarker);
             }
             //alert(infowindows.length);
             google.maps.event.addListener(iw, 'domready', function () {
@@ -301,79 +375,13 @@ jQuery(document).ready(function ($) {
     }
 
     function closeInfoWindows() {
-      for (var i = 0; i < infowindows.length; i++) {
-         infowindows[i].close();
-      }
-      infowindows = [];
-      activeMarker.setIcon(hr19.root + '/assets/pointgreen.svg');
-      activeMarker = '';
+        for (var i = 0; i < infowindows.length; i++) {
+            infowindows[i].close();
+        }
+        infowindows = [];
+        activeMarker.setIcon(hr19.root + '/assets/pointgreen.svg');
+        activeMarker = '';
     }
-
-    $('#property-search').validator().on('submit', function (e) {
-        if (e.isDefaultPrevented()) {
-            $('#s').addClass('placeholder-error');
-        }
-    });
-
-    $('.navbar-toggle').click(function () {
-        if ($(this).attr('aria-expanded') === "true") {
-            $(this).children("i").removeClass("fa-times");
-            $(this).children("i").addClass("fa-filter");
-        } else {
-            $(this).children("i").removeClass("fa-filter");
-            $(this).children("i").addClass("fa-times");
-        }
-    });
-
-    $(".dropdown-menu li a").click(function () {
-        $(this).parents(".dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
-        $(this).parents(".dropdown").find('.dropdown-toggle').val($(this).data('value'));
-    });
-
-    $('#s').click(function () {
-        $(this).val('');
-    });
-
-    $('#s').focus(function () {
-        $(this).val('');
-    });
-
-    /*var nbaTeams = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('team'),
-        queryTokenizer: Bloodhound.tokenizers.whitespace,
-        prefetch: hr19.root + '/data/source.json'
-    });
-
-    var nhlTeams = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('team'),
-        queryTokenizer: Bloodhound.tokenizers.whitespace,
-        prefetch: hr19.root + '/data/source2.json'
-    });
-
-    $('#multiple-datasets .typeahead').typeahead({
-            highlight: true
-        },
-        {
-            name: 'nba-teams',
-            display: 'team',
-            source: nbaTeams,
-            templates: {
-                header: '<h3 class="league-name">NBA Teams</h3>'
-            }
-        },
-        {
-            name: 'nhl-teams',
-            display: 'team',
-            source: nhlTeams,
-            templates: {
-                header: '<h3 class="league-name">NHL Teams</h3>'
-            }
-        });*/
-
-    $('#multiple-datasets .typeahead').typeahead({
-        name: 'search',
-        prefetch: hr19.root + '/data/source.json'
-    });
 
 });
 
