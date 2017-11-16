@@ -134,169 +134,182 @@ jQuery(document).ready(function ($) {
     });
 
     //Search Google Maps
-    var geocoder = new google.maps.Geocoder();
-     var map = new google.maps.Map(document.getElementById('search-map'), {
-         zoom: 4
-     });
-     var propertiesArray = [];
-     $('.property').each(function () {
-         var propertyData = {};
-         propertyData.address = $(this).find('.property-address').html();
-         propertyData.price = $(this).find('.property-price').html();
-         propertyData.highlights = $(this).find('.property-highlights').html();
-         propertyData.mls = $(this).find('.property-code').html();
-         propertiesArray.push(propertyData);
-     });
-
-     // DATA DE PRUEBA
-     var addressArray = [
-         {
-             address: 'Caracas, Distrito Capital',
-             price: '15000',
-             highlights: 'Multifamiliar · 5 Habitaciones · 4 Baños',
-             mls: '1258649'
-         },
-         {
-             address: 'Santo Domingo, República Dominicana',
-             price: '25000',
-             highlights: 'Multifamiliar · 5 Habitaciones · 4 Baños',
-             mls: '1258649'
-         },
-         {
-             address: 'Miami, Florida, EE. UU.',
-             price: '10000',
-             highlights: 'Multifamiliar · 5 Habitaciones · 4 Baños',
-             mls: '1258649'
-         },
-     ];
-     // DATA DE PRUEBA
-
-     //Search Google Maps
-
-     var locations = [
-         ['500', 'Caracas, Distrito Capital', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266'],
-         ['15000', 'Santo Domingo, República Dominicana', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266'],
-         ['2500000', 'Miami, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266']
-     ];
-
-     var geocoder;
-     var map;
-     var bounds = new google.maps.LatLngBounds();
-
-     function initialize() {
-         map = new google.maps.Map(
-             document.getElementById("search-map"), {
-                 center: new google.maps.LatLng(37.4419, -122.1419),
-                 zoom: 13,
-                 mapTypeId: google.maps.MapTypeId.ROADMAP
-             });
-         geocoder = new google.maps.Geocoder();
-
-         for (i = 0; i < locations.length; i++) {
-             geocodeAddress(locations, i);
-         }
-     }
-
-     google.maps.event.addDomListener(window, "load", initialize);
-
-     function geocodeAddress(locations, i) {
-         var priceUnformatted = locations[i][0];
-         var price = '';
-         if (priceUnformatted > 999 && priceUnformatted < 1000000) {
-             price = '$' + (priceUnformatted / 1000) + 'K';
-         }
-         else if (priceUnformatted >= 1000000) {
-             price = '$' + (priceUnformatted / 1000000) + 'm';
-         }
-         else {
-             price = '$' + priceUnformatted;
-         }
-         var address = locations[i][1];
-         var highlights = locations[i][2];
-         var mls = locations[i][3];
-         geocoder.geocode({
-                 'address': locations[i][1]
-             },
-
-             function (results, status) {
-                 if (status == google.maps.GeocoderStatus.OK) {
-                     var marker = new google.maps.Marker({
-                         icon: hr19.root + '/assets/pointgreen.svg',
-                         map: map,
-                         position: results[0].geometry.location,
-                         animation: google.maps.Animation.DROP,
-                         address: address,
-                         price: price,
-                         highlights: highlights,
-                         mls: mls,
-                         label: {text: price, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px'}
-                     });
-                     marker.addListener('mouseover', function () {
-                         this.setLabel({
-                             text: price,
-                             color: 'black',
-                             fontFamily: 'Montserrat-Regular',
-                             fontSize: '12px'
-                         });
-                         this.setIcon(hr19.root + '/assets/pointwhite.svg');
-                     });
-                     marker.addListener('mouseout', function () {
-                         this.setLabel({
-                             text: price,
-                             color: 'white',
-                             fontFamily: 'Montserrat-Regular',
-                             fontSize: '12px'
-                         });
-                         this.setIcon(hr19.root + '/assets/pointgreen.svg');
-                     });
-
-                     infoWindow(marker, map, price, address, highlights, mls);
-                     bounds.extend(marker.getPosition());
-                     map.fitBounds(bounds);
-                 } else {
-                     alert("geocode of " + address + " failed:" + status);
-                 }
-             });
-     }
-
-     function infoWindow(marker, map, price, address, highlights, mls) {
-         google.maps.event.addListener(marker, 'click', function () {
-             var html = "<a href=property/" + mls + "><div class='info-container'>" +
-                 "<div class='info-image'></div>" +
-                 "<div class='info-data'>" +
-                 "<h2 class='info-data-price'>" + price + "</h2>" +
-                 "<h3 class='info-data-highlights'>" + highlights + "</h3>" +
-                 "<h3 class='info-data-address'>" + address + "</h3>" +
-                 "<h3 class='info-data-mls'>MLS: " + mls + "</h3>" +
-                 "</div>" +
-                 "</div></a>"
-             ;
-             iw = new google.maps.InfoWindow({
-                 content: html,
-                 maxWidth: 283
-             });
-             iw.open(map, marker);
-             google.maps.event.addListener(iw, 'domready', function () {
-                 var iwOuter = $('.gm-style-iw');
-                 var iwBackground = iwOuter.prev();
-                 iwBackground.children(':nth-child(2)').css({'display': 'none'});
-                 iwBackground.children(':nth-child(4)').css({'display': 'none'});
-
-                 var arrow_div = $(".gm-style-iw").prev();
-
-                 $("div:eq(0)", arrow_div).hide();
-                 $("div:eq(2)", arrow_div).hide();
-             });
-         });
-     }
-
-    $('#property-search').validator().on('submit', function (e) {
-        if (e.isDefaultPrevented()) {
-            $('#s').addClass('placeholder-error');
-        }
+    var propertiesArray = [];
+    $('.property').each(function () {
+        var propertyData = {};
+        propertyData.image = $(this).find('.property-image').attr('data-url');
+        propertyData.address = $(this).find('.property-address').html();
+        propertyData.address = propertyData.address.replace(/[\t\n,]/g,'');
+        propertyData.price = $(this).find('.property-price').html();
+        propertyData.price = propertyData.price.replace(/[$,]/g,'');
+        propertyData.highlights = $(this).find('.property-highlights').html();
+        propertyData.highlights = propertyData.highlights.replace(/[\t\n,]/g,'');
+        propertyData.mls = $(this).find('.property-code').html();
+        propertyData.mls = (propertyData.mls).substring(5);
+        propertiesArray.push(propertyData);
     });
 
-    $('#property-search-top').validator().on('submit', function (e) {
+    //Search Google Maps
+    var locations = [];
+    for(var i in propertiesArray) {
+        locations.push(propertiesArray[i]);
+    }
+    /*var locations = [
+        ['500', 'West Palm Beach, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
+        ['15000', 'Fort Lauderdale, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
+        ['2500000', 'Hollywood, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
+        ['32000', 'Doral, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
+        ['32000', 'Miami Beach, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
+        ['32000', 'Aventura, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
+        ['32000', 'Hialeah, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
+    ];*/
+
+    var geocoder;
+    var map;
+    var bounds = new google.maps.LatLngBounds();
+    var infowindows = [];
+    var activeMarker = '';
+
+    function initialize() {
+        map = new google.maps.Map(
+            document.getElementById("search-map"), {
+                center: new google.maps.LatLng(37.4419, -122.1419),
+                zoom: 13,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+        geocoder = new google.maps.Geocoder();
+
+        for (i = 0; i < locations.length; i++) {
+          geocodeAddress(locations, i);
+        }
+          google.maps.event.addListener(map, 'click', function() {
+            if (infowindows.length > 0) {
+              var text = activeMarker.price;
+              activeMarker.setLabel({text: text, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px'});
+              closeInfoWindows();
+            }
+          });
+    }
+
+    google.maps.event.addDomListener(window, "load", initialize);
+
+    function geocodeAddress(locations, i) {
+        var priceUnformatted = locations[i].price;
+        var price = '';
+        if (priceUnformatted > 999 && priceUnformatted < 1000000) {
+            price = '$' + (priceUnformatted / 1000) + 'K';
+        }
+        else if (priceUnformatted >= 1000000) {
+            price = '$' + (priceUnformatted / 1000000) + 'm';
+        }
+        else {
+            price = '$' + priceUnformatted;
+        }
+        var address = locations[i].address;
+        var highlights = locations[i].highlights;
+        var mls = locations[i].mls;
+        var image = locations[i].highlights;
+        geocoder.geocode({
+                'address': address
+            },
+
+            function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var marker = new google.maps.Marker({
+                        icon: hr19.root + '/assets/pointgreen.svg',
+                        map: map,
+                        position: results[0].geometry.location,
+                        animation: google.maps.Animation.DROP,
+                        address: address,
+                        price: price,
+                        highlights: highlights,
+                        mls: mls,
+                        label: {text: price, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px'},
+                        image: image
+                    });
+                    marker.addListener('mouseover', function () {
+                        if(infowindows == 0) {
+                          this.setLabel({
+                            text: price,
+                            color: 'black',
+                            fontFamily: 'Montserrat-Regular',
+                            fontSize: '12px'
+                          });
+                          this.setZIndex(100);
+                          this.setIcon(hr19.root + '/assets/pointwhite.svg');
+                        }
+                    });
+                    marker.addListener('mouseout', function () {
+                        if(infowindows == 0) {
+                          this.setLabel({
+                            text: price,
+                            color: 'white',
+                            fontFamily: 'Montserrat-Regular',
+                            fontSize: '12px'
+                          });
+                          this.setZIndex(0);
+                          this.setIcon(hr19.root + '/assets/pointgreen.svg');
+                        }
+                    });
+
+                    infoWindow(marker, map, price, address, highlights, mls, image);
+                    bounds.extend(marker.getPosition());
+                    map.fitBounds(bounds);
+                } else {
+                    alert("geocode of " + address + " failed:" + status);
+                }
+            });
+    }
+
+    function infoWindow(marker, map, price, address, highlights, mls, image) {
+        google.maps.event.addListener(marker, 'click', function () {
+            var html = "<a href=property/" + mls  +"><div class='info-container'>" +
+                "<div class='info-image' style='background-image: url("+ image +")'></div>" +
+                "<div class='info-data'>" +
+                "<h2 class='info-data-price'>" + price + "</h2>" +
+                "<h3 class='info-data-highlights'>" + highlights + "</h3>" +
+                "<h3 class='info-data-address'>" + address + "</h3>" +
+                "<h3 class='info-data-mls'>MLS: " + mls + "</h3>" +
+                "</div>" +
+                "</div></a>"
+            ;
+            iw = new google.maps.InfoWindow({
+                content: html,
+                maxWidth: 283
+            });
+            if(infowindows.length > 0){
+              closeInfoWindows();
+            }
+            else {
+              iw.open(map, marker);
+              infowindows.push(iw);
+              activeMarker = this;
+              console.log(activeMarker);
+            }
+            //alert(infowindows.length);
+            google.maps.event.addListener(iw, 'domready', function () {
+                var iwOuter = $('.gm-style-iw');
+                var iwBackground = iwOuter.prev();
+                iwBackground.children(':nth-child(2)').css({'display': 'none'});
+                iwBackground.children(':nth-child(4)').css({'display': 'none'});
+
+                var arrow_div = $(".gm-style-iw").prev();
+                $("div:eq(0)", arrow_div).css('display', 'none');
+                $("div:eq(2)", arrow_div).css('display', 'none');
+            });
+        });
+    }
+
+    function closeInfoWindows() {
+      for (var i = 0; i < infowindows.length; i++) {
+         infowindows[i].close();
+      }
+      infowindows = [];
+      activeMarker.setIcon(hr19.root + '/assets/pointgreen.svg');
+      activeMarker = '';
+    }
+
+    $('#property-search').validator().on('submit', function (e) {
         if (e.isDefaultPrevented()) {
             $('#s').addClass('placeholder-error');
         }
@@ -325,36 +338,41 @@ jQuery(document).ready(function ($) {
         $(this).val('');
     });
 
-    var cities = JSON.parse(hr19.cities);
-    var addresses = JSON.parse(hr19.addresses);
-    var postalcodes = JSON.parse(hr19.postalcodes);
-
-    var city = $.map(cities, function (q) {
-        return {value: q, data: {category: 'Dirección'}};
-    });
-    var add = $.map(addresses, function (q) {
-        return {value: q, data: {category: 'Ciudad'}};
-    });
-    var pc = $.map(postalcodes, function (q) {
-        return {value: q, data: {category: 'Código Postal'}};
+    /*var nbaTeams = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('team'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: hr19.root + '/data/source.json'
     });
 
-    var query = city.concat(add,pc);
+    var nhlTeams = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('team'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: hr19.root + '/data/source2.json'
+    });
 
-    // Initialize autocomplete
-    $('#s').devbridgeAutocomplete({
-        lookup: query,
-        minChars: 1,
-        autoSelectFirst: true,
-        showNoSuggestionNotice: true,
-        noSuggestionNotice: '<p class="no-results"><span>No pudimos encontrar su búsqueda</span><br>Verifique su ortografía o vuelva a hacer su búsqueda usando una ubicación dentro de los E.E.U.U</p>',
-        groupBy: 'category',
-        onSelect: function (suggestion) {
-            $('#property-search').submit();
+    $('#multiple-datasets .typeahead').typeahead({
+            highlight: true
         },
-        onSearchError: function (query, jqXHR, textStatus, errorThrown) {
-            $("#btn-search-home").attr("disabled", true);
-        }
+        {
+            name: 'nba-teams',
+            display: 'team',
+            source: nbaTeams,
+            templates: {
+                header: '<h3 class="league-name">NBA Teams</h3>'
+            }
+        },
+        {
+            name: 'nhl-teams',
+            display: 'team',
+            source: nhlTeams,
+            templates: {
+                header: '<h3 class="league-name">NHL Teams</h3>'
+            }
+        });*/
+
+    $('#multiple-datasets .typeahead').typeahead({
+        name: 'search',
+        prefetch: hr19.root + '/data/source.json'
     });
 
 });
