@@ -1524,6 +1524,8 @@ input:checked + .slider:before {
         text-align: left;
         margin: 2.0833333333vw 2.7083333333vw 0 0;
         box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2); }
+        .hr-agents-section .agent-properties .properties-list .property a:hover {
+          text-decoration: none; }
         .hr-agents-section .agent-properties .properties-list .property:nth-child(3n+3) {
           margin-right: 0; }
         .hr-agents-section .agent-properties .properties-list .property .property-image {
