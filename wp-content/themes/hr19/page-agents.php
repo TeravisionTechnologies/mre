@@ -3,6 +3,7 @@
 Template Name: Agents
 */
 get_header();
+$url        = wp_upload_dir();
 ?>
   <section class="agent-hero" style="<?php if ($thumbnail_id = get_post_thumbnail_id()) {
     if ($image_src = wp_get_attachment_image_src($thumbnail_id, 'full')) printf('background-image: url(%s)"', $image_src[0]);
@@ -71,12 +72,13 @@ get_header();
               $type    = get_post_meta( $property->ID, '_pr_type_of_property', true );
               $rooms   = get_post_meta( $property->ID, '_pr_room_count', true );
               $baths   = get_post_meta( $property->ID, '_pr_baths_total', true );
+              $sysid   = get_post_meta( $property->ID, '_pr_matrixid', true );
             ?>
               <div class="col-xs-12 col-sm-4 no-padding property">
                 <a href="/property/<?php echo $property->post_title; ?>">
-                  <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
+                  <div class="property-image" style="background: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"></div>
                   <div class="property-info">
-                    <h2 class="info-price"><?php echo $price; ?></h2>
+                    <h2 class="info-price">$<?php echo $price; ?></h2>
                     <!--<h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>-->
                     <h3 class="info-features"><?php echo $type . " · " . $rooms . " Habitaciones · " . $baths . " Baños";?></h3>
                     <h3 class="info-address"><?php echo $address; ?></h3>
@@ -121,10 +123,11 @@ get_header();
             $type    = get_post_meta( $property->ID, '_pr_type_of_property', true );
             $rooms   = get_post_meta( $property->ID, '_pr_room_count', true );
             $baths   = get_post_meta( $property->ID, '_pr_baths_total', true );
+            $sysid   = get_post_meta( $property->ID, '_pr_matrixid', true );
           ?>
           <div class="col-xs-12 col-sm-4 no-padding property">
               <a href="/property/<?php echo $property->post_title; ?>">
-                <div class="property-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/rentalone-background.jpg')"></div>
+                  <div class="property-image" style="background: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"></div>
                 <div class="property-info">
                   <h2 class="info-price"><?php echo $price; ?></h2>
                   <!--<h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>-->

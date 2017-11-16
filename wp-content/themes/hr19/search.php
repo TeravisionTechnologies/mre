@@ -15,7 +15,7 @@ $url = wp_upload_dir();
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <form id="property-search-top" action="./" method="get" role="form">
+            <form id="property-search-top" action="./" method="get" role="form" data-toggle="validator">
                 <input type="hidden" name="post_type[]" value="property">
                 <ul class="nav navbar-nav">
                     <li>
