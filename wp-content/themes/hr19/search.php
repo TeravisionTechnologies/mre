@@ -177,12 +177,12 @@ $url = wp_upload_dir();
 		$meta_query[]  = array(
 			'key'     => '_pr_address',
 			'value'   => $search_string,
-			'compare' => 'LIKE'
+			'compare' => '='
 		);
 		$meta_query[]  = array(
 			'key'     => '_pr_postalcode',
 			'value'   => $search_string,
-			'compare' => 'LIKE'
+			'compare' => '='
 		);
 
 		if ( count( $meta_query ) > 1 ) {

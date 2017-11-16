@@ -200,7 +200,7 @@ jQuery(document).ready(function ($) {
         noSuggestionNotice: '<p class="no-results"><span>No pudimos encontrar su búsqueda</span><br>Verifique su ortografía o vuelva a hacer su búsqueda usando una ubicación dentro de los E.E.U.U</p>',
         groupBy: 'category',
         onSelect: function (suggestion) {
-            $('#property-search').submit();
+            $(this).closest('form').submit();
         },
         onSearchError: function (query, jqXHR, textStatus, errorThrown) {
             $("#btn-search-home").attr("disabled", true);
