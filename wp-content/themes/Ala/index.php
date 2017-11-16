@@ -42,7 +42,7 @@ $officesEs = get_post_meta( $home_query[0]->ID, '_hf_offices_es', true );
         <div class="container center-block al-project-list button-group no-padding" data-filter-group="status">
             <?php
             $terms = get_terms('property_status', array(
-                'orderby' => 'count',
+                'orderby' => 'description',
                 'hide_empty' => 0
             ));
             if (!empty($terms) && !is_wp_error($terms)) {
