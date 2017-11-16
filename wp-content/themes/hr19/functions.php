@@ -13,12 +13,12 @@ load_theme_textdomain( 'hr', get_template_directory() . '/languages' );
 function hr_scripts() {
 
 	global $wpdb;
-	$cities = $wpdb->get_col($wpdb->prepare("SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_city' ) );
-	$address = $wpdb->get_col($wpdb->prepare("SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_address' ) );
-	$postalcode = $wpdb->get_col($wpdb->prepare("SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_postalcode' ) );
+	$cities     = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_city' ) );
+	$address    = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_address' ) );
+	$postalcode = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_postalcode' ) );
 
-	$jsonaddress = wp_json_encode( $cities );
-	$jsoncities = wp_json_encode( $address );
+	$jsonaddress    = wp_json_encode( $cities );
+	$jsoncities     = wp_json_encode( $address );
 	$jsonpostalcode = wp_json_encode( $postalcode );
 
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
@@ -31,7 +31,7 @@ function hr_scripts() {
 	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-3.2.1.min.js', array(), '3.2.1', true );
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.4', true );
-	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/js/swiper.min.js', array(), '3.4.2', true );
+	wp_enqueue_script( 'swiperjs', get_template_directory_uri() . '/js/swiper.min.js', array(), '3.4.2', true );
 	wp_enqueue_script( 'menu', get_template_directory_uri() . '/js/menu.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'jquery-mobile', get_template_directory_uri() . '/js/jquery.mobile.custom.min.js', array(), '1.4.5', true );
 	wp_enqueue_script( 'sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array(), '1.0.4', true );
@@ -39,9 +39,9 @@ function hr_scripts() {
 	wp_enqueue_script( 'autocomplete', get_template_directory_uri() . '/js/jquery.autocomplete.js', array(), '0.11.1', true );
 	wp_enqueue_script( 'my-script', get_template_directory_uri() . '/js/basic.js', array(), '1.0', true );
 	wp_localize_script( 'my-script', 'hr19', array(
-		'root' => get_template_directory_uri(),
-		'cities' => $jsoncities,
-		'addresses' => $jsonaddress,
+		'root'        => get_template_directory_uri(),
+		'cities'      => $jsoncities,
+		'addresses'   => $jsonaddress,
 		'postalcodes' => $jsonpostalcode,
 	) );
 }
@@ -204,7 +204,7 @@ function get_mls() {
 		$results = $rets->Search(
 			'Property',
 			'Listing',
-			' (Status = A)',
+			' (AgentLicenseNum = 3196679)',
 			[
 				'Format' => 'COMPACT-DECODED',
 				'Limit'  => 10,
@@ -266,6 +266,7 @@ function get_mls() {
 			}
 
 		} else {
+
 			$post_args       = array(
 				'ID'           => $propid->ID,
 				'post_title'   => $property['MLSNumber'],
@@ -294,11 +295,19 @@ function get_mls() {
 					'_pr_forsale'          => $property['ForSaleYN'],
 					'_pr_forlease'         => $property['ForLeaseYN'],
 					'_pr_postalcode'       => $property['PostalCode'] . ', ' . $property['City'] . ', ' . $property['StateOrProvince'],
-				)
+				),
 			);
 			$posted_property = wp_update_post( $post_args );
 
-			$sysid  = $property['Matrix_Unique_ID'];
+			if ( $property['ForSaleYN'] = "0" ) {
+				$type_id = array( 18 );
+			} else{
+				$type_id = array( 17 );
+			}
+
+			wp_set_object_terms( 429, $type_id, 'property_type', true );
+
+			/*$sysid  = $property['Matrix_Unique_ID'];
 			$n      = 1;
 			$url    = wp_upload_dir();
 			$upload = $url['basedir'];
@@ -310,10 +319,8 @@ function get_mls() {
 			foreach ( $objects as $object ) {
 				file_put_contents( $dir . '/' . $n . '.jpg', $object->getContent() );
 				$n ++;
-			}
-
+			}*/
 		}
-
 	}
 
 	$rets->Disconnect();
@@ -418,8 +425,3 @@ add_action( 'pre_get_posts', function ( $q ) {
 		} );
 	}
 } );
-
-wp_enqueue_script('my-script', get_template_directory_uri() . '/js/basic.js');
-wp_localize_script('my-script', 'hr19', array(
-  'root' => get_template_directory_uri()
-));

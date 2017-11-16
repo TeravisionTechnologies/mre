@@ -120,7 +120,7 @@ $currentproperty = get_the_ID();
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="aa"><span
                                             class="number">1</span><?php _e( 'Descripción de la propiedad', 'hr' ) ?>
                                 </a>
-                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <i class="fa fa-plus" aria-hidden="true" data-toggle="collapse" data-parent="#accordion" href="#collapse1"></i>
                             </h4>
                         </div>
                         <div id="collapse1" class="panel-collapse collapse">
@@ -135,7 +135,7 @@ $currentproperty = get_the_ID();
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><span
                                             class="number">2</span>
 									<?php _e( 'Características de la propiedad', 'hr' ) ?></a>
-                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <i class="fa fa-plus" aria-hidden="true" data-toggle="collapse" data-parent="#accordion" href="#collapse2"></i>
                             </h4>
                         </div>
                         <div id="collapse2" class="panel-collapse collapse">
@@ -200,7 +200,7 @@ $currentproperty = get_the_ID();
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><span
                                             class="number">3</span>
 									<?php _e( 'Ubicación de la propiedad', 'hr' ) ?></a>
-                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <i class="fa fa-plus" aria-hidden="true" data-toggle="collapse" data-parent="#accordion" href="#collapse3"></i>
                             </h4>
                         </div>
                         <div id="collapse3" class="panel-collapse collapse">

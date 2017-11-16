@@ -26,11 +26,11 @@ $hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
                       data-toggle="validator">
                     <ul class="property-status">
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                            <input type="radio" id="buy" name="status" checked>
+                            <input type="radio" id="buy" name="status">
                             <label for="buy"><?php _e( 'Compra', 'hr' ) ?></label>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                            <input type="radio" id="rent" name="status">
+                            <input type="radio" id="rent" name="status" checked>
                             <label for="rent"><?php _e( 'Alquiler', 'hr' ) ?></label>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
@@ -44,7 +44,8 @@ $hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
                                    placeholder="<?php _e( 'Dirección, ciudad, barrio o código postal', 'hr' ) ?>"
                                    autocomplete="off" required>
                             <input type="hidden" name="post_type[]" value="property">
-                            <button id="btn-search-home" type="submit" class="btn col-xs-2 col-sm-2 col-md-2"><i class="fa fa-search"></i></button>
+                            <button id="btn-search-home" type="submit" class="btn col-xs-2 col-sm-2 col-md-2"><i
+                                        class="fa fa-search"></i></button>
                         </div>
                     </div>
                 </form>
@@ -61,8 +62,6 @@ $hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
     </div>
     <div class="row">
 		<?php
-		$propertieslist = array( 'post_type' => 'property', 'posts_per_page' => 9 );
-		query_posts( $propertieslist );
 		if ( have_posts() ): while ( have_posts() ): the_post();
 			$address = get_post_meta( get_the_ID(), '_pr_address', true );
 			$price   = get_post_meta( get_the_ID(), '_pr_current_price', true );

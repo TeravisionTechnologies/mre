@@ -123,7 +123,7 @@ $url = wp_upload_dir();
     <div class="row">
         <div class="property-sorting">
             <div class="col-sm-4 col-md-3">
-                <span class="state-search"><?php echo $s; ?>, FL</span>
+                <span class="state-search"><?php echo $s; ?></span>
                 <span class="results-search"><?php _e( 'Mostrando', 'hr' ) ?> 9 <?php _e( 'de', 'hr' ) ?>
                     8694 <?php _e( 'casas', 'hr' ) ?></span>
             </div>
@@ -177,12 +177,12 @@ $url = wp_upload_dir();
 		$meta_query[]  = array(
 			'key'     => '_pr_address',
 			'value'   => $search_string,
-			'compare' => '='
+                'compare' => 'LIKE'
 		);
 		$meta_query[]  = array(
 			'key'     => '_pr_postalcode',
 			'value'   => $search_string,
-			'compare' => '='
+			'compare' => 'LIKE'
 		);
 
 		if ( count( $meta_query ) > 1 ) {
