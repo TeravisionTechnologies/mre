@@ -15,7 +15,7 @@ $url = wp_upload_dir();
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <form id="property-search-top" action="./" method="get" role="form" data-toggle="validator">
+            <form id="property-search-top" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="post" role="form" data-toggle="validator">
                 <input type="hidden" name="post_type[]" value="property">
                 <ul class="nav navbar-nav">
                     <li>
@@ -37,7 +37,7 @@ $url = wp_upload_dir();
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false"><?php _e( 'Tipo <br>de vivienda', 'hr' ) ?> <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu property-type-dd">
                             <li>
                                 <div class="checkbox">
                                     <label><input type="checkbox" value="single_family"
@@ -85,33 +85,38 @@ $url = wp_upload_dir();
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="true"><?php _e( 'Nro. <br>de habitaciones', 'hr' ) ?> <span
                                     class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" data-value="any"><?php _e( 'Cualquiera', 'hr' ) ?></a></li>
-                            <li><a href="#" data-value="estudio"><?php _e( 'Estudio', 'hr' ) ?></a></li>
-                            <li><a href="#" data-value="1">1+</a></li>
-                            <li><a href="#" data-value="2">2+</a></li>
-                            <li><a href="#" data-value="3">3+</a></li>
-                            <li><a href="#" data-value="4">4+</a></li>
-                            <li><a href="#" data-value="5">5+</a></li>
+                        <ul id="rooms-dd" class="dropdown-menu">
+                            <li><a role="button" data-value=""><?php _e( 'Cualquiera', 'hr' ) ?></a></li>
+                            <li><a role="button" data-value="1"><?php _e( 'Estudio', 'hr' ) ?></a></li>
+                            <li><a role="button" data-value="1">1+</a></li>
+                            <li><a role="button" data-value="2">2+</a></li>
+                            <li><a role="button" data-value="3">3+</a></li>
+                            <li><a role="button" data-value="4">4+</a></li>
+                            <li><a role="button" data-value="5">5+</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false"><?php _e( 'Nro. <br>de baños', 'hr' ) ?> <span
                                     class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#"><?php _e( 'Cualquiera', 'hr' ) ?></a></li>
-                            <li><a href="#" data-value="1">1+</a></li>
-                            <li><a href="#" data-value="2">2+</a></li>
-                            <li><a href="#" data-value="3">3+</a></li>
-                            <li><a href="#" data-value="4">4+</a></li>
-                            <li><a href="#" data-value="5">5+</a></li>
+                        <ul id="baths-dd" class="dropdown-menu">
+                            <li><a role="button" data-value=""><?php _e( 'Cualquiera', 'hr' ) ?></a></li>
+                            <li><a role="button" data-value="1">1+</a></li>
+                            <li><a role="button" data-value="2">2+</a></li>
+                            <li><a role="button" data-value="3">3+</a></li>
+                            <li><a role="button" data-value="4">4+</a></li>
+                            <li><a role="button" data-value="5">5+</a></li>
                         </ul>
                     </li>
                     <li>
                         <button class="btn btn-search"><i class="fa fa-search"></i></button>
                     </li>
                 </ul>
+                <input type="hidden" name="action" value="myfilter">
+                <input type="hidden" id="transaction" name="transaction" value="">
+                <input type="hidden" id="price" name="price" value="">
+                <input type="hidden" id="rooms" name="rooms" value="">
+                <input type="hidden" id="baths" name="baths" value="">
             </form>
         </div>
     </div>
@@ -164,7 +169,7 @@ $url = wp_upload_dir();
             <h2 class="hr-heading"><?php _e( 'Propiedades HR19', 'hr' ) ?></h2>
         </div>
     </div>
-    <div class="row">
+    <div id="response" class="row">
 		<?php
 		$meta_query    = array();
 		$args          = array();
@@ -177,12 +182,12 @@ $url = wp_upload_dir();
 		$meta_query[]  = array(
 			'key'     => '_pr_address',
 			'value'   => $search_string,
-                'compare' => 'LIKE'
+                'compare' => '='
 		);
 		$meta_query[]  = array(
 			'key'     => '_pr_postalcode',
 			'value'   => $search_string,
-			'compare' => 'LIKE'
+			'compare' => '='
 		);
 
 		if ( count( $meta_query ) > 1 ) {
@@ -205,7 +210,7 @@ $url = wp_upload_dir();
 			?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <a href="<?php the_permalink(); ?>" class="property">
-                    <div class="property-image" data-url="<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>1.jpg"
+                    <div class="property-image" data-url="<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"
                          style="background: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"></div>
                     <div class="property-info">
                         <div class="property-price"><?php if ( ! empty( $price ) ) {
@@ -240,7 +245,7 @@ $url = wp_upload_dir();
 		<?php endwhile; endif;
 		wp_reset_postdata(); ?>
     </div>
-    <div class="row">
+    <!--<div class="row">
         <div class="col-md-12 text-center">
             <nav>
                 <ul class="pagination">
@@ -262,7 +267,7 @@ $url = wp_upload_dir();
                 </ul>
             </nav>
         </div>
-    </div>
+    </div>-->
 </div>
 
 <?php get_footer(); ?>

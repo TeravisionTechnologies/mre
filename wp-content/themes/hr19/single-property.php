@@ -67,7 +67,7 @@ $currentproperty = get_the_ID();
             <div class="price-txt"><?php if(!empty($price)){ echo '$'.$price; } ?></div>
             <div class="sm-text"><?php _e( 'Estimado de hipoteca:', 'hr' ) ?> $603/mes</div>
         </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 paddingl40 borderl">
+        <div class="col-xs-6 col-sm-6 col-md-5 paddingl30 borderl">
             <div class="md-text">
                 <?php if ( ! empty( $address ) ) {
 		            echo $address;
@@ -85,7 +85,7 @@ $currentproperty = get_the_ID();
             </div>
             <div class="sm-text"><?php _e( 'Número de MLS:', 'hr' ) ?> <?php the_title(); ?></div>
         </div>
-        <div class="col-xs-6 col-sm-3 col-md-3 text-center">
+        <div class="col-xs-6 col-sm-3 col-md-4 text-center">
             <div class="row surface">
 	            <?php if(!empty( $surf )){ ?>
                     <div class="col-xs-6 col-sm-6 col-md-6">
@@ -123,7 +123,7 @@ $currentproperty = get_the_ID();
                                 <i class="fa fa-plus" aria-hidden="true" data-toggle="collapse" data-parent="#accordion" href="#collapse1"></i>
                             </h4>
                         </div>
-                        <div id="collapse1" class="panel-collapse collapse">
+                        <div id="collapse1" class="panel-collapse collapse in">
                             <div class="panel-body">
 								<?php the_content(); ?>
                             </div>
@@ -138,7 +138,7 @@ $currentproperty = get_the_ID();
                                 <i class="fa fa-plus" aria-hidden="true" data-toggle="collapse" data-parent="#accordion" href="#collapse2"></i>
                             </h4>
                         </div>
-                        <div id="collapse2" class="panel-collapse collapse">
+                        <div id="collapse2" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <div class="row main-features">
                                     <div class="col-xs-4 col-sm-3 col-md-3 feature">
@@ -151,7 +151,7 @@ $currentproperty = get_the_ID();
                                         <div><?php _e( 'Impuestos', 'hr' ) ?></div>
                                         <div class="info">$ 42,735</div>
                                     </div>
-                                    <div class="col-xs-4 col-sm-3 col-md-3 feature">
+                                    <div class="col-xs-4 col-sm-3 col-md-2 feature">
                                         <div><?php _e( 'Año de construcción:', 'hr' ) ?></div>
                                         <div class="info"><?php if(!empty($yearbuilt)){ echo $yearbuilt; } else { echo 'N/A'; } ?></div>
                                     </div>
@@ -159,7 +159,7 @@ $currentproperty = get_the_ID();
                                         <div><?php _e( 'Comunidad:', 'hr' ) ?></div>
                                         <div class="info"><?php if(!empty($community)){ echo $community; } else { echo 'N/A'; } ?></div>
                                     </div>
-                                    <div class="col-xs-4 col-sm-2 col-md-2 feature">
+                                    <div class="col-xs-4 col-sm-2 col-md-3 feature">
                                         <div><?php _e( 'Subdivision:', 'hr' ) ?></div>
                                         <div class="info"><?php if(!empty($subdiv)){ echo $subdiv; } else { echo 'N/A'; } ?></div>
                                     </div>
@@ -203,7 +203,7 @@ $currentproperty = get_the_ID();
                                 <i class="fa fa-plus" aria-hidden="true" data-toggle="collapse" data-parent="#accordion" href="#collapse3"></i>
                             </h4>
                         </div>
-                        <div id="collapse3" class="panel-collapse collapse">
+                        <div id="collapse3" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <div id="map-detail"></div>
                                 <script>

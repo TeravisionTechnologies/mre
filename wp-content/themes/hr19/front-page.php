@@ -47,7 +47,6 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
                                    placeholder="<?php _e('Dirección, ciudad, barrio o código postal', 'hr') ?>"
                                    autocomplete="off" required>
                             <input type="hidden" name="post_type[]" value="property">
-                            <input type="hidden" name="term_name" value="For Lease">
                             <button id="btn-search-home" type="submit" class="btn col-xs-2 col-sm-2 col-md-2"><i
                                         class="fa fa-search"></i></button>
                         </div>

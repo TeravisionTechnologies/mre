@@ -1,15 +1,17 @@
 .breadcrumb-info
   margin-top: get-vw-desktop(80px)
-  height: 50px
+  height: 46px
   background: $mainblue
   color: $white
-  padding: 16px 0
+  padding: 13px 0
   .breadcrumbs
+    font-size: 13px
     .fa-chevron-left
       margin-right: 5px
       cursor: pointer
   .published, .status
     display: inline-block
+    font-size: 13px
   .published
     opacity: 0.5
     margin-right: 5px
@@ -18,7 +20,7 @@
       color: $green-active
 
 .property-carousel
-  height: get-vw-desktop(650px)
+  height: get-vw-desktop(420px)
   .swiper-container
     width: 100%
     height: 100%
@@ -27,7 +29,7 @@
     font-size: 18px
     background: #fff
     div
-      width: get-vw-desktop(876px)
+      width: get-vw-desktop(600px)
       height: 100%
       background-repeat: no-repeat
       background-size: cover
@@ -36,7 +38,7 @@
   .swiper-button-next, .swiper-button-prev
     background-image: none
     .fa
-      font-size: 36px
+      font-size: 30px
       color: $grey-1
   .swiper-button-next
     right: 100px
@@ -67,18 +69,18 @@
 .borderl
   border-right: solid 1px rgba(74, 74, 74, 0.3)
 
-.paddingl40
-  padding-left: 40px !important
+.paddingl30
+  padding-left: 30px !important
 
 .property-info-heading
   box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2)
-  height: get-vw-desktop(120px)
+  height: get-vw-desktop(100px)
   margin-bottom: 40px
-  font-size: get-vw-desktop(18px)
+  font-size: get-vw-desktop(14px)
   color: $grey
   font-family: 'Montserrat-Light'
   letter-spacing: -0.1px
-  padding:  get-vw-desktop(24px) 0
+  padding: get-vw-desktop(20px) 0
   background: $white
   z-index: 999999 !important
   div[class*='col']
@@ -86,14 +88,13 @@
   .sm-text
     font-size: get-vw-desktop(14px)
   .price-txt
-    font-size: 24px
+    font-size: 20px
     font-family: 'Montserrat-bold'
-    line-height: 28px
-    margin-bottom: 3px
+    line-height: 24px
   .md-text
-    font-size: get-vw-desktop(22px)
+    font-size: get-vw-desktop(16px)
     font-family: 'Montserrat-bold'
-    line-height: 26px
+    line-height: 16px
     margin-bottom: 3px
   .surface
     padding: 13px 0
@@ -131,7 +132,7 @@
           margin: auto
           width: 95%
         a
-          font-size: 20px
+          font-size: 16px
           letter-spacing: -0.1px
           font-family: 'Montserrat-Medium'
           color: $grey
@@ -157,39 +158,44 @@
           transition: all 0.5s ease
         .number
           display: inline-block
-          width: 32px
-          height: 32px
-          border: solid 3px $grey
+          width: 22px
+          height: 22px
+          border: solid 2px $grey
           border-radius: 50%
           text-align: center
-          line-height: 26px
           margin-right: 10px
+          font-size: 14px
+          line-height: 18px
     .panel-body
       border-top-color: transparent !important
-      font-size: 16px
-      padding: 50px 120px
-      line-height: 27px
+      font-size: 14px
+      padding: 20px 120px
+      line-height: 25px
       color: $grey
       font-family: 'Montserrat-Light'
+      p
+        margin-bottom: 0
       h6
-        font-size: 18px
+        font-size: 15px
         font-family: 'Montserrat-Bold'
       .main-features
-        margin-bottom: 60px
+        margin-bottom: 50px
         text-align: center
         font-size: 18px
         margin-right: -50px
         margin-left: -50px
         .feature
           padding: 5px 0 !important
+          font-size: 14px
           &:not(:last-child)
             border-right: solid 1px rgba(74, 74, 74, 0.3)
           .info
-            font-size: 22px
+            font-size: 14px
         .fa-info-circle
           color: $grey-1
           font-size: 16px
           cursor: pointer
+          margin-right: 6px
       .nb-photo
         height: 205px
         background-repeat: no-repeat

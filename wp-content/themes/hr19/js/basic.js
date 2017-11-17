@@ -10,7 +10,7 @@ jQuery(document).ready(function ($) {
 
     // Sticky info property
     var navheight = $('.menu-button').outerHeight();
-    $(".property-info-heading").sticky({topSpacing: navheight});
+    $(".property-info-heading").sticky({});
 
     // Footer Go to top functionality
     $(".footer-top").click(function () {
@@ -123,12 +123,12 @@ jQuery(document).ready(function ($) {
     });
 
     //Int property detail map
-    $('#collapse3').on('hidden.bs.collapse', function () {
+    /*$('#collapse3').on('hidden.bs.collapse', function () {
         initMap();
     });
     $('#collapse3').on('shown.bs.collapse', function () {
         initMap();
-    });
+    });*/
 
     // Show-Hide search map
     $('#map-switch').click(function () {
@@ -207,6 +207,43 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    // Filtering data
+    $('#property-search-top').submit(function(){
+        var filter = $('#property-search-top');
+        $.ajax({
+            url:filter.attr('action'),
+            data:filter.serialize(),
+            type:filter.attr('method'),
+            beforeSend:function(xhr){
+                filter.find('button').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
+            },
+            success:function(data){
+                filter.find('button').html('<i class="fa fa-search"></i>');
+                $('#response').html(data); // insert data
+            }
+        });
+        return false;
+    });
+
+    // Stop propagation (close) propety types dropdown
+    $(document).on('click', '.property-type-dd', function (e) {
+        e.stopPropagation();
+    });
+
+    $(document).on('click', '.search .dropdown-menu li a', function (e) {
+        $(this).closest('form').submit();
+    });
+
+    // Set input hidden values by selected option clicked
+    $("#baths-dd li a").click(function(){
+        var selbath = $(this).attr('data-value');
+        $("#baths").val(selbath);
+    });
+    $("#rooms-dd li a").click(function(){
+        var selroom = $(this).attr('data-value');
+        $("#rooms").val(selroom);
+    });
+
     //Search Google Maps
     var propertiesArray = [];
     $('.property').each(function () {
@@ -282,7 +319,7 @@ jQuery(document).ready(function ($) {
         var address = locations[i].address;
         var highlights = locations[i].highlights;
         var mls = locations[i].mls;
-        var image = locations[i].highlights;
+        var image = locations[i].image;
         geocoder.geocode({
                 'address': address
             },
@@ -293,7 +330,7 @@ jQuery(document).ready(function ($) {
                         icon: hr19.root + '/assets/pointgreen.svg',
                         map: map,
                         position: results[0].geometry.location,
-                        animation: google.maps.Animation.DROP,
+                        //animation: google.maps.Animation.DROP,
                         address: address,
                         price: price,
                         highlights: highlights,

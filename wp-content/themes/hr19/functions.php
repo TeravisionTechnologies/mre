@@ -189,7 +189,7 @@ date_default_timezone_set( 'America/New_York' );
 
 require_once( "vendor/autoload.php" );
 
-//function get_mls() {
+function get_mls() {
 	$config = new \PHRETS\Configuration;
 	$config->setLoginUrl( 'http://rets.sef.mlsmatrix.com/Rets/Login.ashx' )
 	       ->setUsername( 'lesAERfue' )
@@ -233,7 +233,7 @@ require_once( "vendor/autoload.php" );
 					'_pr_subdiv'           => $property['SubdivisionName'],
 					'_pr_current_price'    => number_format( round( $property['CurrentPrice'] ) ),
 					'_pr_type_of_property' => $property['TypeofProperty'],
-					'_pr_room_count'       => number_format( round( $property['RoomCount'] ) ),
+					'_pr_room_count'       => $property['BedsTotal'],
 					'_pr_baths_total'      => number_format( round( $property['BathsTotal'] ) ),
 					'_pr_baths_full'       => number_format( round( $property['BathsFull'] ) ),
 					'_pr_baths_half'       => number_format( round( $property['BathsHalf'] ) ),
@@ -281,7 +281,7 @@ require_once( "vendor/autoload.php" );
 					'_pr_subdiv'           => $property['SubdivisionName'],
 					'_pr_current_price'    => number_format( round( $property['CurrentPrice'] ) ),
 					'_pr_type_of_property' => $property['TypeofProperty'],
-					'_pr_room_count'       => number_format( round( $property['RoomCount'] ) ),
+					'_pr_room_count'       => $property['BedsTotal'],
 					'_pr_baths_total'      => number_format( round( $property['BathsTotal'] ) ),
 					'_pr_baths_full'       => number_format( round( $property['BathsFull'] ) ),
 					'_pr_baths_half'       => number_format( round( $property['BathsHalf'] ) ),
@@ -316,7 +316,7 @@ require_once( "vendor/autoload.php" );
 	}
 
 	$rets->Disconnect();
-//}
+}
 
 /*add_action( 'get_mls_properties', 'get_mls' );
 
@@ -417,3 +417,89 @@ add_action( 'pre_get_posts', function ( $q ) {
 		} );
 	}
 } );
+
+
+// Filtering data
+
+function property_filter_function() {
+	$args = array(
+		'post_type' => 'property',
+		'orderby'   => 'date',
+		'order'     => $_POST['date']
+	);
+
+	// create $args['meta_query'] array if one of the following fields is filled
+	if ( isset( $_POST['rooms'] ) && $_POST['rooms'] || isset( $_POST['baths'] ) && $_POST['baths']  || isset( $_POST['s'] ) && $_POST['s'] ) {
+		$args['meta_query'] = array( 'relation' => 'OR' );
+	}
+
+	if( isset( $_POST['rooms'] ) && $_POST['rooms'] )
+		$args['meta_query'][] = array(
+			'key' => '_pr_room_count',
+			'value' => $_POST['rooms'],
+			'compare' => '='
+		);
+
+	if( isset( $_POST['baths'] ) && $_POST['baths'] )
+		$args['meta_query'][] = array(
+			'key' => '_pr_baths_total',
+			'value' => $_POST['baths'],
+			'compare' => '='
+		);
+
+	if( isset( $_POST['s'] ) && $_POST['s'] )
+		$args['meta_query'][] = array(
+			'key' => '_pr_city',
+			'value' => $_POST['s'],
+			'compare' => '='
+		);
+
+	if( isset( $_POST['s'] ) && $_POST['s'] )
+		$args['meta_query'][] = array(
+			'key' => '_pr_address',
+			'value' => $_POST['s'],
+			'compare' => '='
+		);
+
+	if( isset( $_POST['s'] ) && $_POST['s'] )
+		$args['meta_query'][] = array(
+			'key' => '_pr_postalcode',
+			'value' => $_POST['s'],
+			'compare' => '='
+		);
+
+	$query = new WP_Query( $args );
+
+	if ( $query->have_posts() ) :
+		$url = wp_upload_dir();
+		while ( $query->have_posts() ): $query->the_post();
+			$address = get_post_meta( $query->post->ID, '_pr_address', true );
+			$price   = get_post_meta( $query->post->ID, '_pr_current_price', true );
+			$type    = get_post_meta( $query->post->ID, '_pr_type_of_property', true );
+			$rooms   = get_post_meta( $query->post->ID, '_pr_room_count', true );
+			$baths   = get_post_meta( $query->post->ID, '_pr_baths_total', true );
+			$sysid   = get_post_meta( $query->post->ID, '_pr_matrixid', true );
+			$city    = get_post_meta( $query->post->ID, '_pr_city', true );
+			$state   = get_post_meta( $query->post->ID, '_pr_state', true );
+			echo '<div class="col-xs-12 col-sm-4 col-md-4">
+                <a href="<?php the_permalink(); ?>" class="property">
+                    <div class="property-image" data-url="" style="background: url(' . $url['baseurl'] . '/photos/' .$sysid. '/1.jpg"></div>
+                    <div class="property-info">
+                        <div class="property-price">$'. $price .'</div>
+						<div class="property-highlights">' . $type . ' ' . $rooms . ' habitaciones '. $baths . ' baños</div>
+						<div class="property-address">'. $address .'</div>
+						<div class="property-code">MLS: ' . $query->post->post_title . '</div>
+						</div>
+						</a>
+						</div>';
+		endwhile;
+		wp_reset_postdata();
+	else :
+		echo '<div class="col-md-12"><p class="no-results"><span>No encontramos ninguna propiedad que coincida con su búsqueda</span></p></div>';
+	endif;
+
+	die();
+}
+
+add_action( 'wp_ajax_myfilter', 'property_filter_function' );
+add_action( 'wp_ajax_nopriv_myfilter', 'property_filter_function' );
