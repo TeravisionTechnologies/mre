@@ -137,8 +137,8 @@ function property_metaboxes() {
 	));
 
 	$cmb_property->add_field(array(
-		'name' => __('En Alquiler'),
-		'id' => $prefix . 'forlease',
+		'name' => __('Preventa'),
+		'id' => $prefix . 'preventa',
 		'type' => 'text',
 	));
 
@@ -147,5 +147,6 @@ function property_metaboxes() {
 		'id' => $prefix . 'postalcode',
 		'type' => 'text',
 	));
+
 
 }

@@ -510,7 +510,8 @@ body.has-active-menu
   color: $white
 
 .property-status
-  label
+  a
+    display: block
     padding: 20px
     cursor: pointer
     width: 100%
@@ -526,8 +527,16 @@ body.has-active-menu
     -o-transition: .5s
     transition: .5s
     border-right: solid 1px rgba(255, 255, 255, 0.2)
+    &:hover
+      color: $white
+      text-decoration: none
   #pre
     border-right: solid 1px $mainblue
+
+.property-status
+  .active
+    color: $white
+
 
 .property-status
   label
@@ -1400,3 +1409,5 @@ input:checked + .slider:before
     font-weight: bold
     color: #c30016
 
+.no-results-info
+  padding-bottom: 50px

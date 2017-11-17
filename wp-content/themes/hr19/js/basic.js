@@ -384,4 +384,3 @@ jQuery(document).ready(function ($) {
     }
 
 });
-

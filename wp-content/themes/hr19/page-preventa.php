@@ -1,4 +1,7 @@
 <?php
+/*
+Template Name: Presale
+*/
 get_header();
 $url = wp_upload_dir();
 $home_query = get_posts(
@@ -28,7 +31,7 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                             <!--<input type="radio" id="buy" name="status" checked>-->
                             <!--<label for="buy"><?php //_e( 'Compra', 'hr' ) ?></label>-->
-                            <a href="<?php echo home_url(); ?>" class="active"><?php _e('Compra', 'hr') ?></a>
+                            <a href="<?php echo home_url(); ?>"><?php _e('Compra', 'hr') ?></a>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                             <!--<input type="radio" id="rent" name="status">
@@ -38,7 +41,7 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                             <!--<input type="radio" id="presale" name="status">
                             <label for="presale" id="pre"><?php //_e( 'Preventa', 'hr' ) ?></label>-->
-                            <a href="<?php echo home_url(); ?>/preventa"><?php _e('Preventa', 'hr') ?></a>
+                            <a href="<?php echo home_url(); ?>/preventa" class="active"><?php _e('Preventa', 'hr') ?></a>
                         </li>
                     </ul>
                     <div class="col-xs-12 col-sm-12 col-md-12 search-text no-padding">
@@ -71,8 +74,8 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
             'posts_per_page' => 9,
             'meta_query' => array(
                 array(
-                    'key' => '_pr_forsale',
-                    'value' => '',
+                    'key' => '_pr_presale',
+                    'value' => '1',
                     'compare' => '=',
                 )
             )
@@ -122,8 +125,12 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
                     </div>
                 </a>
             </div>
-        <?php endwhile; endif;
-        wp_reset_postdata(); ?>
+        <?php endwhile; else: ?>
+            <div class="col-md-12 no-results-info">
+                <h4>0 resultados</h4>
+                <p>No existen propiedades en preventa en estos momentos</p>
+            </div>
+        <?php endif; wp_reset_postdata(); ?>
     </div>
     <!--<div class="row">
         <div class="col-md-12 text-center">

@@ -1,4 +1,7 @@
 <?php
+/*
+Template Name: For lease
+*/
 get_header();
 $url = wp_upload_dir();
 $home_query = get_posts(
@@ -28,12 +31,12 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                             <!--<input type="radio" id="buy" name="status" checked>-->
                             <!--<label for="buy"><?php //_e( 'Compra', 'hr' ) ?></label>-->
-                            <a href="<?php echo home_url(); ?>" class="active"><?php _e('Compra', 'hr') ?></a>
+                            <a href="<?php echo home_url(); ?>"><?php _e('Compra', 'hr') ?></a>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                             <!--<input type="radio" id="rent" name="status">
                             <label for="rent"><?php //_e( 'Alquiler', 'hr' ) ?></label>-->
-                            <a href="<?php echo home_url(); ?>/alquileres"><?php _e('Alquiler', 'hr') ?></a>
+                            <a href="<?php echo home_url(); ?>/alquileres" class="active"><?php _e('Alquiler', 'hr') ?></a>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                             <!--<input type="radio" id="presale" name="status">
@@ -58,7 +61,7 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
     </div>
 </section>
 <div class="clearfix"></div>
-<div class="container property-list">
+<div class="container property-list pl">
     <div class="row">
         <div class="col-md-12">
             <h2 class="hr19-heading"><span><?php _e('Propiedades HR19', 'hr') ?>&nbsp;&nbsp;&nbsp;</span></h2>
@@ -72,7 +75,7 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
             'meta_query' => array(
                 array(
                     'key' => '_pr_forsale',
-                    'value' => '',
+                    'value' => '0',
                     'compare' => '=',
                 )
             )

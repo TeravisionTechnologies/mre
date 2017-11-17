@@ -189,7 +189,7 @@ date_default_timezone_set( 'America/New_York' );
 
 require_once( "vendor/autoload.php" );
 
-function get_mls() {
+//function get_mls() {
 	$config = new \PHRETS\Configuration;
 	$config->setLoginUrl( 'http://rets.sef.mlsmatrix.com/Rets/Login.ashx' )
 	       ->setUsername( 'lesAERfue' )
@@ -299,15 +299,7 @@ function get_mls() {
 			);
 			$posted_property = wp_update_post( $post_args );
 
-			if ( $property['ForSaleYN'] = "0" ) {
-				$type_id = array( 18 );
-			} else{
-				$type_id = array( 17 );
-			}
-
-			wp_set_object_terms( 429, $type_id, 'property_type', true );
-
-			/*$sysid  = $property['Matrix_Unique_ID'];
+			$sysid  = $property['Matrix_Unique_ID'];
 			$n      = 1;
 			$url    = wp_upload_dir();
 			$upload = $url['basedir'];
@@ -319,12 +311,12 @@ function get_mls() {
 			foreach ( $objects as $object ) {
 				file_put_contents( $dir . '/' . $n . '.jpg', $object->getContent() );
 				$n ++;
-			}*/
+			}
 		}
 	}
 
 	$rets->Disconnect();
-}
+//}
 
 /*add_action( 'get_mls_properties', 'get_mls' );
 
