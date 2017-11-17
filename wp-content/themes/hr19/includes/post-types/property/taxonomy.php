@@ -17,7 +17,7 @@ function create_taxonomy_type() {
 		'show_in_nav_menus' => true,
 		'show_tagcloud'     => true,
 	);
-	register_taxonomy( 'property_type', array( 'property' ), $args );
+	register_taxonomy( 'property_type', array( 'property2' ), $args );
 
 }
 

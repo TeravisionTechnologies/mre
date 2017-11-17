@@ -25,7 +25,7 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
     <div class="container property-search-wrapper">
         <div class="row">
             <div class="col-md-offset-1 col-md-10">
-                <form id="property-search" class="property-search" action="./" method="get" role="form"
+                <form id="property-search" class="property-search" action="<?php echo home_url(); ?>" method="get" role="form"
                       data-toggle="validator">
                     <ul class="property-status">
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
