@@ -429,8 +429,8 @@ function property_filter_function() {
 	);
 
 	// create $args['meta_query'] array if one of the following fields is filled
-	if ( isset( $_POST['rooms'] ) && $_POST['rooms'] || isset( $_POST['baths'] ) && $_POST['baths']  || isset( $_POST['s'] ) && $_POST['s'] ) {
-		$args['meta_query'] = array( 'relation' => 'OR' );
+	if ( isset( $_POST['s'] ) && $_POST['s'] || isset( $_POST['rooms'] ) && $_POST['rooms'] || isset( $_POST['baths'] ) && $_POST['baths']  || isset( $_POST['s'] ) && $_POST['s'] ) {
+		$args['meta_query'] = array( 'relation' => 'AND' );
 	}
 
 	if( isset( $_POST['rooms'] ) && $_POST['rooms'] )
@@ -449,12 +449,25 @@ function property_filter_function() {
 
 	if( isset( $_POST['s'] ) && $_POST['s'] )
 		$args['meta_query'][] = array(
-			'key' => '_pr_city',
-			'value' => $_POST['s'],
-			'compare' => '='
+            'relation' => 'OR',
+            array(
+                'key' => '_pr_city',
+                'value' => $_POST['s'],
+                'compare' => '='
+            ),
+            array(
+                'key' => '_pr_address',
+                'value' => $_POST['s'],
+                'compare' => '='
+            ),
+            array(
+                'key' => '_pr_postalcode',
+                'value' => $_POST['s'],
+                'compare' => '='
+            )
 		);
 
-	if( isset( $_POST['s'] ) && $_POST['s'] )
+	/*if( isset( $_POST['s'] ) && $_POST['s'] )
 		$args['meta_query'][] = array(
 			'key' => '_pr_address',
 			'value' => $_POST['s'],
@@ -466,7 +479,7 @@ function property_filter_function() {
 			'key' => '_pr_postalcode',
 			'value' => $_POST['s'],
 			'compare' => '='
-		);
+		);*/
 
 	$query = new WP_Query( $args );
 
@@ -482,7 +495,7 @@ function property_filter_function() {
 			$city    = get_post_meta( $query->post->ID, '_pr_city', true );
 			$state   = get_post_meta( $query->post->ID, '_pr_state', true );
 			echo '<div class="col-xs-12 col-sm-4 col-md-4">
-                <a href="<?php the_permalink(); ?>" class="property">
+                <a href="'. get_permalink( $query->post->ID ) .'" class="property">
                     <div class="property-image" data-url="" style="background: url(' . $url['baseurl'] . '/photos/' .$sysid. '/1.jpg"></div>
                     <div class="property-info">
                         <div class="property-price">$'. $price .'</div>

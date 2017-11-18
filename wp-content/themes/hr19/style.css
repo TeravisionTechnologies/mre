@@ -1685,16 +1685,18 @@ a[href^=tel] {
   .property-info-heading .surface {
     padding: 13px 0; }
 
+.property-features .oh-wrap {
+  margin-top: 20px;
+  margin-bottom: 40px; }
 .property-features .open-house {
   color: #033c5a;
   font-size: 16px;
   font-family: "Montserrat-bold";
   border: solid 1px #033c5a;
-  display: inline-block;
   border-radius: 40px;
   padding: 7px 20px;
-  margin-bottom: 20px;
-  margin-top: 40px; }
+  margin-top: 40px;
+  display: none; }
 .property-features .panel {
   border: none;
   -webkit-box-shadow: none;

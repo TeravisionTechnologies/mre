@@ -207,24 +207,6 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    // Filtering data
-    $('#property-search-top').submit(function(){
-        var filter = $('#property-search-top');
-        $.ajax({
-            url:filter.attr('action'),
-            data:filter.serialize(),
-            type:filter.attr('method'),
-            beforeSend:function(xhr){
-                filter.find('button').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
-            },
-            success:function(data){
-                filter.find('button').html('<i class="fa fa-search"></i>');
-                $('#response').html(data); // insert data
-            }
-        });
-        return false;
-    });
-
     // Stop propagation (close) propety types dropdown
     $(document).on('click', '.property-type-dd', function (e) {
         e.stopPropagation();
@@ -242,6 +224,25 @@ jQuery(document).ready(function ($) {
     $("#rooms-dd li a").click(function(){
         var selroom = $(this).attr('data-value');
         $("#rooms").val(selroom);
+    });
+
+    // Filtering data
+    $('#property-search-top').submit(function(){
+        var filter = $('#property-search-top');
+        $.ajax({
+            url:filter.attr('action'),
+            data:filter.serialize(),
+            type:filter.attr('method'),
+            beforeSend:function(xhr){
+                filter.find('button').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
+            },
+            success:function(data){
+                filter.find('button').html('<i class="fa fa-search"></i>');
+                $('#response').html(data);
+            }
+        });
+        setTimeout(initialize(), 5000);
+        return false;
     });
 
     //Search Google Maps
@@ -265,15 +266,6 @@ jQuery(document).ready(function ($) {
     for (var i in propertiesArray) {
         locations.push(propertiesArray[i]);
     }
-    /*var locations = [
-        ['500', 'West Palm Beach, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
-        ['15000', 'Fort Lauderdale, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
-        ['2500000', 'Hollywood, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
-        ['32000', 'Doral, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
-        ['32000', 'Miami Beach, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
-        ['32000', 'Aventura, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
-        ['32000', 'Hialeah, Florida, EE. UU', 'Multifamiliar · 5 Habitaciones · 4 Baños', 'A1924266', 'http://mre.dev/wp-content/uploads/photos/1.jpg'],
-    ];*/
 
     var geocoder;
     var map;
@@ -284,9 +276,9 @@ jQuery(document).ready(function ($) {
     function initialize() {
         map = new google.maps.Map(
             document.getElementById("search-map"), {
-                center: new google.maps.LatLng(37.4419, -122.1419),
+                center: new google.maps.LatLng(25.743954, -80.186812),
                 zoom: 13,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
             });
         geocoder = new google.maps.Geocoder();
 
@@ -330,7 +322,6 @@ jQuery(document).ready(function ($) {
                         icon: hr19.root + '/assets/pointgreen.svg',
                         map: map,
                         position: results[0].geometry.location,
-                        //animation: google.maps.Animation.DROP,
                         address: address,
                         price: price,
                         highlights: highlights,
@@ -342,7 +333,7 @@ jQuery(document).ready(function ($) {
                         if (infowindows == 0) {
                             this.setLabel({
                                 text: price,
-                                color: 'black',
+                                color: '#498306',
                                 fontFamily: 'Montserrat-Regular',
                                 fontSize: '12px'
                             });
@@ -366,9 +357,10 @@ jQuery(document).ready(function ($) {
                     infoWindow(marker, map, price, address, highlights, mls, image);
                     bounds.extend(marker.getPosition());
                     map.fitBounds(bounds);
-                } else {
-                    alert("geocode of " + address + " failed:" + status);
                 }
+                /*else {
+                    alert("geocode of " + address + " failed:" + status);
+                }*/
             });
     }
 
@@ -397,13 +389,11 @@ jQuery(document).ready(function ($) {
                 activeMarker = this;
                 console.log(activeMarker);
             }
-            //alert(infowindows.length);
             google.maps.event.addListener(iw, 'domready', function () {
                 var iwOuter = $('.gm-style-iw');
                 var iwBackground = iwOuter.prev();
                 iwBackground.children(':nth-child(2)').css({'display': 'none'});
                 iwBackground.children(':nth-child(4)').css({'display': 'none'});
-
                 var arrow_div = $(".gm-style-iw").prev();
                 $("div:eq(0)", arrow_div).css('display', 'none');
                 $("div:eq(2)", arrow_div).css('display', 'none');
