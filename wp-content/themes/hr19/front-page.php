@@ -64,8 +64,8 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
             'posts_per_page' => 9,
             'meta_query' => array(
                 array(
-                    'key' => '_pr_forsale',
-                    'value' => '',
+                    'key' => '_pr_transaction',
+                    'value' => 'Sale',
                     'compare' => '=',
                 )
             )

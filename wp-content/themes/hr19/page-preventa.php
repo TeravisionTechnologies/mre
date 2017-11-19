@@ -29,18 +29,12 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
                       data-toggle="validator">
                     <ul class="property-status">
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                            <!--<input type="radio" id="buy" name="status" checked>-->
-                            <!--<label for="buy"><?php //_e( 'Compra', 'hr' ) ?></label>-->
                             <a href="<?php echo home_url(); ?>"><?php _e('Compra', 'hr') ?></a>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                            <!--<input type="radio" id="rent" name="status">
-                            <label for="rent"><?php //_e( 'Alquiler', 'hr' ) ?></label>-->
                             <a href="<?php echo home_url(); ?>/alquileres"><?php _e('Alquiler', 'hr') ?></a>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                            <!--<input type="radio" id="presale" name="status">
-                            <label for="presale" id="pre"><?php //_e( 'Preventa', 'hr' ) ?></label>-->
                             <a href="<?php echo home_url(); ?>/preventa" class="active"><?php _e('Preventa', 'hr') ?></a>
                         </li>
                     </ul>
@@ -73,8 +67,8 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
             'posts_per_page' => 9,
             'meta_query' => array(
                 array(
-                    'key' => '_pr_presale',
-                    'value' => '1',
+                    'key' => '_pr_transaction',
+                    'value' => 'Presale',
                     'compare' => '=',
                 )
             )

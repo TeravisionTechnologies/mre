@@ -125,6 +125,12 @@ function property_metaboxes() {
 	));
 
 	$cmb_property->add_field(array(
+		'name' => __('Tipo de Transacci&oacute;n'),
+		'id' => $prefix . 'transaction',
+		'type' => 'text',
+	));
+
+	/*$cmb_property->add_field(array(
 		'name' => __('En Venta'),
 		'id' => $prefix . 'forsale',
 		'type' => 'text',
@@ -140,7 +146,8 @@ function property_metaboxes() {
 		'name' => __('Preventa'),
 		'id' => $prefix . 'preventa',
 		'type' => 'text',
-	));
+	));*/
+
 
 	$cmb_property->add_field(array(
 		'name' => __('Codigo Postal'),

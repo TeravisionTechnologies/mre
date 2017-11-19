@@ -208,9 +208,13 @@ jQuery(document).ready(function ($) {
     });
 
     // Stop propagation (close) propety types dropdown
-    $(document).on('click', '.property-type-dd', function (e) {
+    $(document).on('click', '#property-type-dd', function (e) {
         e.stopPropagation();
     });
+    $(document).on('click', '#price-dd', function (e) {
+        e.stopPropagation();
+    });
+
 
     $(document).on('click', '.search .dropdown-menu li a', function (e) {
         $(this).closest('form').submit();
@@ -225,6 +229,23 @@ jQuery(document).ready(function ($) {
         var selroom = $(this).attr('data-value');
         $("#rooms").val(selroom);
     });
+    $("#transction-dd li a").click(function(){
+        var seltransc = $(this).attr('data-value');
+        $("#transaction").val(seltransc);
+    });
+    $('#property-type-dd input[type=checkbox]').change(function() {
+        if ($('input[type=checkbox]:checked')) {
+                var vals = $('input[type=checkbox]:checked').map(function() {
+                    return $(this).val();
+                }).get().join(',');
+                $('#proptype').val(vals);
+                $(this).closest('form').submit();
+        } else{
+            $('#proptype').val("");
+            $(this).closest('form').submit();
+        }
+    });
+
 
     // Filtering data
     $('#property-search-top').submit(function(){
@@ -279,6 +300,8 @@ jQuery(document).ready(function ($) {
                 center: new google.maps.LatLng(25.743954, -80.186812),
                 zoom: 13,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControl: false,
+                fullscreenControl: false
             });
         geocoder = new google.maps.Geocoder();
 
@@ -313,51 +336,51 @@ jQuery(document).ready(function ($) {
         var mls = locations[i].mls;
         var image = locations[i].image;
         geocoder.geocode({
-                'address': address
-            },
+            'address': address
+        },
 
-            function (results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    var marker = new google.maps.Marker({
-                        icon: hr19.root + '/assets/pointgreen.svg',
-                        map: map,
-                        position: results[0].geometry.location,
-                        address: address,
-                        price: price,
-                        highlights: highlights,
-                        mls: mls,
-                        label: {text: price, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px'},
-                        image: image
-                    });
-                    marker.addListener('mouseover', function () {
-                        if (infowindows == 0) {
-                            this.setLabel({
-                                text: price,
-                                color: '#498306',
-                                fontFamily: 'Montserrat-Regular',
-                                fontSize: '12px'
-                            });
-                            this.setZIndex(100);
-                            this.setIcon(hr19.root + '/assets/pointwhite.svg');
-                        }
-                    });
-                    marker.addListener('mouseout', function () {
-                        if (infowindows == 0) {
-                            this.setLabel({
-                                text: price,
-                                color: 'white',
-                                fontFamily: 'Montserrat-Regular',
-                                fontSize: '12px'
-                            });
-                            this.setZIndex(0);
-                            this.setIcon(hr19.root + '/assets/pointgreen.svg');
-                        }
-                    });
+        function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var marker = new google.maps.Marker({
+                    icon: hr19.root + '/assets/pointgreen.svg',
+                    map: map,
+                    position: results[0].geometry.location,
+                    address: address,
+                    price: price,
+                    highlights: highlights,
+                    mls: mls,
+                    label: {text: price, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px'},
+                    image: image
+                });
+                marker.addListener('mouseover', function () {
+                    if (infowindows == 0) {
+                        this.setLabel({
+                            text: price,
+                            color: '#498306',
+                            fontFamily: 'Montserrat-Regular',
+                            fontSize: '12px'
+                        });
+                        this.setZIndex(100);
+                        this.setIcon(hr19.root + '/assets/pointwhite.svg');
+                    }
+                });
+                marker.addListener('mouseout', function () {
+                    if (infowindows == 0) {
+                        this.setLabel({
+                            text: price,
+                            color: 'white',
+                            fontFamily: 'Montserrat-Regular',
+                            fontSize: '12px'
+                        });
+                        this.setZIndex(0);
+                        this.setIcon(hr19.root + '/assets/pointgreen.svg');
+                    }
+                });
 
-                    infoWindow(marker, map, price, address, highlights, mls, image);
-                    bounds.extend(marker.getPosition());
-                    map.fitBounds(bounds);
-                }
+                infoWindow(marker, map, price, address, highlights, mls, image);
+                bounds.extend(marker.getPosition());
+                map.fitBounds(bounds);
+            }
                 /*else {
                     alert("geocode of " + address + " failed:" + status);
                 }*/
@@ -367,14 +390,14 @@ jQuery(document).ready(function ($) {
     function infoWindow(marker, map, price, address, highlights, mls, image) {
         google.maps.event.addListener(marker, 'click', function () {
             var html = "<a href=property/" + mls + "><div class='info-container'>" +
-                "<div class='info-image' style='background-image: url(" + image + ")'></div>" +
-                "<div class='info-data'>" +
-                "<h2 class='info-data-price'>" + price + "</h2>" +
-                "<h3 class='info-data-highlights'>" + highlights + "</h3>" +
-                "<h3 class='info-data-address'>" + address + "</h3>" +
-                "<h3 class='info-data-mls'>MLS: " + mls + "</h3>" +
-                "</div>" +
-                "</div></a>"
+            "<div class='info-image' style='background-image: url(" + image + ")'></div>" +
+            "<div class='info-data'>" +
+            "<h2 class='info-data-price'>" + price + "</h2>" +
+            "<h3 class='info-data-highlights'>" + highlights + "</h3>" +
+            "<h3 class='info-data-address'>" + address + "</h3>" +
+            "<h3 class='info-data-mls'>MLS: " + mls + "</h3>" +
+            "</div>" +
+            "</div></a>"
             ;
             iw = new google.maps.InfoWindow({
                 content: html,
@@ -436,3 +459,8 @@ $(window).on('load', function() {
     }*/
 });
 
+    $("#min").focusin(function() {
+        $("#min-list").show();
+    }).focusout(function () {
+        $("#min-list").hide();
+    });

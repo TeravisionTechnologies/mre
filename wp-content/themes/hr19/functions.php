@@ -217,6 +217,15 @@ function get_mls() {
 
 	foreach ( $results as $property ) {
 
+			$transaction = "";
+
+			if($property['ForSaleYN'] == "0"){
+				$transaction = 'Lease';
+			} else {
+				$transaction = 'Sale';
+			}
+
+
 		$propid = get_page_by_title( $property['MLSNumber'], 'OBJECT', 'property' ); //Check if already exists
 
 		if ( ! $propid ) {
@@ -295,6 +304,7 @@ function get_mls() {
 					'_pr_forsale'          => $property['ForSaleYN'],
 					'_pr_forlease'         => $property['ForLeaseYN'],
 					'_pr_postalcode'       => $property['PostalCode'] . ', ' . $property['City'] . ', ' . $property['StateOrProvince'],
+					'_pr_transaction'      => $transaction,
 				),
 			);
 			$posted_property = wp_update_post( $post_args );
@@ -429,7 +439,11 @@ function property_filter_function() {
 	);
 
 	// create $args['meta_query'] array if one of the following fields is filled
-	if ( isset( $_POST['s'] ) && $_POST['s'] || isset( $_POST['rooms'] ) && $_POST['rooms'] || isset( $_POST['baths'] ) && $_POST['baths']  || isset( $_POST['s'] ) && $_POST['s'] ) {
+	if (isset( $_POST['s'] ) && $_POST['s'] || 
+		isset( $_POST['rooms'] ) && $_POST['rooms']  || 
+		isset( $_POST['baths'] ) && $_POST['baths']  || 
+		isset( $_POST['transaction'] ) && $_POST['transaction'] ||
+		isset( $_POST['proptype'] ) && $_POST['proptype']) {
 		$args['meta_query'] = array( 'relation' => 'AND' );
 	}
 
@@ -444,6 +458,20 @@ function property_filter_function() {
 		$args['meta_query'][] = array(
 			'key' => '_pr_baths_total',
 			'value' => $_POST['baths'],
+			'compare' => '='
+		);
+
+	if( isset( $_POST['proptype'] ) && $_POST['proptype'] )
+		$args['meta_query'][] = array(
+			'key' => '_pr_type_of_property',
+			'value' => $_POST['proptype'],
+			'compare' => 'IN'
+		);
+
+	if( isset( $_POST['transaction'] ) && $_POST['transaction'] )
+		$args['meta_query'][] = array(
+			'key' => '_pr_transaction',
+			'value' => $_POST['transaction'],
 			'compare' => '='
 		);
 

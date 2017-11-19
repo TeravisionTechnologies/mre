@@ -28,39 +28,39 @@ $url = wp_upload_dir();
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false"><?php _e( 'Compra', 'hr' ) ?> <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#"><?php _e( 'Compra', 'hr' ) ?></a></li>
-                            <li><a href="#"><?php _e( 'Alquiler', 'hr' ) ?></a></li>
-                            <li><a href="#"><?php _e( 'Preventa', 'hr' ) ?></a></li>
+                        <ul id="transction-dd" class="dropdown-menu">
+                            <li><a href="#" data-value="Sale"><?php _e( 'Compra', 'hr' ) ?></a></li>
+                            <li><a href="#" data-value="Lease"><?php _e( 'Alquiler', 'hr' ) ?></a></li>
+                            <li><a href="#" data-value="Presale"><?php _e( 'Preventa', 'hr' ) ?></a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false"><?php _e( 'Tipo <br>de vivienda', 'hr' ) ?> <span class="caret"></span></a>
-                        <ul class="dropdown-menu property-type-dd">
+                        <ul id="property-type-dd" class="dropdown-menu">
                             <li>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" value="single_family"
+                                    <label><input type="checkbox" value="Single"
                                                   class=""><?php _e( 'Unifamiliar', 'hr' ) ?></label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" value="condo"
+                                    <label><input type="checkbox" value="Condo"
                                                   class=""><?php _e( 'Condominios/Townhouses', 'hr' ) ?></label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" value="mobile"
+                                    <label><input type="checkbox" value="Mobile"
                                                   class=""><?php _e( 'Casas móviles', 'hr' ) ?></label>
                                 </div>
-                                <div class="checkbox">
+                                <!--<div class="checkbox">
                                     <label><input type="checkbox" value="farm"
-                                                  class=""><?php _e( 'Granjas/Ranchos', 'hr' ) ?></label>
+                                                  class=""><?php //_e( 'Granjas/Ranchos', 'hr' ) ?></label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" value="land" class=""><?php _e( 'Terreno', 'hr' ) ?>
+                                    <label><input type="checkbox" value="land" class=""><?php //_e( 'Terreno', 'hr' ) ?>
                                     </label>
-                                </div>
+                                </div>-->
                                 <div class="checkbox">
-                                    <label><input type="checkbox" value="multi_family"
+                                    <label><input type="checkbox" value="Multifamily"
                                                   class=""><?php _e( 'Multifamiliar', 'hr' ) ?></label>
                                 </div>
                             </li>
@@ -69,16 +69,39 @@ $url = wp_upload_dir();
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false"><?php _e( 'Rango <br>de precio', 'hr' ) ?> <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" data-value="any"><?php _e( 'Todos', 'hr' ) ?></a></li>
-                            <li><a href="#">$0</a></li>
-                            <li><a href="#">$100k</a></li>
-                            <li><a href="#">$200k</a></li>
-                            <li><a href="#">$300k</a></li>
-                            <li><a href="#">$400k</a></li>
-                            <li><a href="#">$500k</a></li>
-                            <li><a href="#">$600k</a></li>
-                            <li><a href="#">$700k</a></li>
+                        <ul id="price-dd" class="dropdown-menu">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="input-group col-md-6 pull-left">
+                                        <span class="input-group-addon" name="min" id="min">$</span>
+                                        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="input-group col-md-6 pull-left">
+                                        <span class="input-group-addon" name="max" id="max">$</span>
+                                        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="min-list" class="col-md-6">
+                                <li><a href="#">$0</a></li>
+                                <li><a href="#">$100k</a></li>
+                                <li><a href="#">$200k</a></li>
+                                <li><a href="#">$300k</a></li>
+                                <li><a href="#">$400k</a></li>
+                                <li><a href="#">$500k</a></li>
+                                <li><a href="#">$600k</a></li>
+                                <li><a href="#">$700k</a></li>
+                            </div>
+                            <div id="max-list" class="col-md-6">
+                                <li><a href="#">$180</a></li>
+                                <li><a href="#">$350</a></li>
+                                <li><a href="#">$500k</a></li>
+                                <li><a href="#">$700k</a></li>
+                                <li><a href="#">$900k</a></li>
+                                <li><a href="#">$1m</a></li>
+                                <li><a href="#">$1.2k</a></li>
+                            </div>
+                            <li><a href="#" data-value="" class="text-center"><?php _e( 'Todos', 'hr' ) ?></a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -117,6 +140,7 @@ $url = wp_upload_dir();
                 <input type="hidden" id="price" name="price" value="">
                 <input type="hidden" id="rooms" name="rooms" value="">
                 <input type="hidden" id="baths" name="baths" value="">
+                <input type="hidden" id="proptype" name="proptype" value="">
             </form>
         </div>
     </div>
@@ -182,7 +206,7 @@ $url = wp_upload_dir();
 		$meta_query[]  = array(
 			'key'     => '_pr_address',
 			'value'   => $search_string,
-                'compare' => '='
+            'compare' => '='
 		);
 		$meta_query[]  = array(
 			'key'     => '_pr_postalcode',
