@@ -60,7 +60,7 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
     </div>
 </section>
 <div class="clearfix"></div>
-<div class="container property-list pl">
+<div id="lease-list" class="container property-list pl">
     <div class="row">
         <div class="col-md-12">
             <h2 class="hr19-heading"><span><?php _e('Propiedades HR19', 'hr') ?>&nbsp;&nbsp;&nbsp;</span></h2>

@@ -228,7 +228,7 @@ function get_mls() {
 				'meta_input'   => array(
 					'_pr_address'          => $property['AddressInternetDisplay'] . ' ' . $property['City'] . ', ' . $property['StateOrProvince'],
 					'_pr_state'            => $property['StateOrProvince'],
-					'_pr_city'             => $property['City'],
+					'_pr_city'             => $property['City'].', '.$property['StateOrProvince'],
 					'_pr_community'        => $property['CountyOrParish'],
 					'_pr_subdiv'           => $property['SubdivisionName'],
 					'_pr_current_price'    => number_format( round( $property['CurrentPrice'] ) ),
@@ -276,7 +276,7 @@ function get_mls() {
 				'meta_input'   => array(
 					'_pr_address'          => $property['AddressInternetDisplay'] . ' ' . $property['City'] . ', ' . $property['StateOrProvince'],
 					'_pr_state'            => $property['StateOrProvince'],
-					'_pr_city'             => $property['City'],
+					'_pr_city'             => $property['City'].', '.$property['StateOrProvince'],
 					'_pr_community'        => $property['CountyOrParish'],
 					'_pr_subdiv'           => $property['SubdivisionName'],
 					'_pr_current_price'    => number_format( round( $property['CurrentPrice'] ) ),
@@ -299,7 +299,7 @@ function get_mls() {
 			);
 			$posted_property = wp_update_post( $post_args );
 
-			$sysid  = $property['Matrix_Unique_ID'];
+			/*$sysid  = $property['Matrix_Unique_ID'];
 			$n      = 1;
 			$url    = wp_upload_dir();
 			$upload = $url['basedir'];
@@ -311,7 +311,7 @@ function get_mls() {
 			foreach ( $objects as $object ) {
 				file_put_contents( $dir . '/' . $n . '.jpg', $object->getContent() );
 				$n ++;
-			}
+			}*/
 		}
 	}
 
@@ -507,9 +507,15 @@ function property_filter_function() {
 						</div>';
 		endwhile;
 		wp_reset_postdata();
-	else :
-		echo '<div class="col-md-12"><p class="no-results"><span>No encontramos ninguna propiedad que coincida con su búsqueda</span></p></div>';
-	endif;
+	else : ?>
+		<div class="col-md-12">
+                <div class="no-results-info">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">
+                    <h4><?php _e('No pudimos encontrar ninguna propiedad', 'hr') ?></h4>
+                    <p><?php _e('Por favor verifique sus criterios de b&uacute;squeda', 'hr') ?></p>
+                </div>
+            </div>
+	<?php endif;
 
 	die();
 }

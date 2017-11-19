@@ -411,3 +411,28 @@ jQuery(document).ready(function ($) {
     }
 
 });
+
+$(window).on('load', function() {
+    if($('#presale-list').length){
+        var position = $("#presale-list").offset().top;
+        var finalPosition = position - 80;
+        $('html, body').animate({
+            scrollTop: finalPosition
+        }, 1000);
+    }
+    if($('#lease-list').length){
+        var position = $("#lease-list").offset().top;
+        var finalPosition = position - 80;
+        $('html, body').animate({
+            scrollTop: finalPosition
+        }, 1000);
+    }
+    /*if($('#presale-list').length){
+        var position = $("#presale-list").offset().top;
+        var finalPosition = position - 80;
+        $('html, body').animate({
+            scrollTop: finalPosition
+        }, 1000);
+    }*/
+});
+

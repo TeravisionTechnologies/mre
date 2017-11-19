@@ -50,7 +50,6 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
                                    placeholder="<?php _e('Dirección, ciudad, barrio o código postal', 'hr') ?>"
                                    autocomplete="off" required>
                             <input type="hidden" name="post_type[]" value="property">
-                            <input type="hidden" name="term_name" value="For Lease">
                             <button id="btn-search-home" type="submit" class="btn col-xs-2 col-sm-2 col-md-2"><i
                                         class="fa fa-search"></i></button>
                         </div>
@@ -61,7 +60,7 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
     </div>
 </section>
 <div class="clearfix"></div>
-<div class="container property-list">
+<div id="presale-list" class="container property-list">
     <div class="row">
         <div class="col-md-12">
             <h2 class="hr19-heading"><span><?php _e('Propiedades HR19', 'hr') ?>&nbsp;&nbsp;&nbsp;</span></h2>
@@ -126,9 +125,12 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
                 </a>
             </div>
         <?php endwhile; else: ?>
-            <div class="col-md-12 no-results-info">
-                <h4>0 resultados</h4>
-                <p>No existen propiedades en preventa en estos momentos</p>
+            <div class="col-md-12">
+                <div class="no-results-info">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">
+                    <h4><?php _e('No existen propiedades disponibles en estos momentos', 'hr') ?></h4>
+                    <p><?php _e('0 resultados', 'hr') ?></p>
+                </div>
             </div>
         <?php endif; wp_reset_postdata(); ?>
     </div>
