@@ -63,7 +63,7 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $propertieslist = array(
             'post_type' => 'property',
-            'posts_per_page' => 3,
+            'posts_per_page' => 9,
             'paged' => $paged,
             'meta_query' => array(
                 array(
