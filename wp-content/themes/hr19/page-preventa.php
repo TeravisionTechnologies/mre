@@ -42,7 +42,7 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
                         <div class="input-group">
                             <input type="text" id="s" name="s" class="col-xs-10 col-sm-10 col-md-10"
                                    placeholder="<?php _e('Dirección, ciudad, barrio o código postal', 'hr') ?>"
-                                   autocomplete="off" required>
+                                   autocomplete="off" required value="Miami, FL">
                             <input type="hidden" name="post_type[]" value="property">
                             <button id="btn-search-home" type="submit" class="btn col-xs-2 col-sm-2 col-md-2"><i
                                         class="fa fa-search"></i></button>
@@ -57,14 +57,16 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
 <div id="presale-list" class="container property-list">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="hr19-heading"><span><?php _e('Propiedades HR19', 'hr') ?>&nbsp;&nbsp;&nbsp;</span></h2>
+            <h2 class="hr19-heading"><span><?php _e('Propiedades HR19 Miami, FL', 'hr') ?>&nbsp;&nbsp;&nbsp;</span></h2>
         </div>
     </div>
     <div class="row">
         <?php
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $propertieslist = array(
             'post_type' => 'property',
             'posts_per_page' => 9,
+            'paged' => $paged,
             'meta_query' => array(
                 array(
                     'key' => '_pr_transaction',
@@ -118,7 +120,13 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
                     </div>
                 </a>
             </div>
-        <?php endwhile; else: ?>
+        <?php endwhile; ?>
+            <div class="row">
+                <div class="col-md-12 text-center">
+			        <?php wp_pagenavi(); ?>
+                </div>
+            </div>
+        <?php else: ?>
             <div class="col-md-12">
                 <div class="no-results-info">
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">

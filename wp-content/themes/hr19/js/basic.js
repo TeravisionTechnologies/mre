@@ -116,6 +116,15 @@ jQuery(document).ready(function ($) {
             $(this).next("i").addClass("fa-minus");
         }
     });
+    $('.panel-title i').click(function () {
+        if ($(this).attr('aria-expanded') === "true") {
+            $(this).removeClass("fa-minus");
+            $(this).addClass("fa-plus");
+        } else {
+            $(this).removeClass("fa-plus");
+            $(this).addClass("fa-minus");
+        }
+    });
 
     //HOA tooltip
     $(function () {
@@ -483,6 +492,14 @@ jQuery(document).ready(function ($) {
     $("#max").focus(function() {
         $("#min-list").hide();
         $("#max-list").show();
+    });
+
+    $('.wp-pagenavi a').on('click', function(e){
+        e.preventDefault();
+        var link = $(this).attr('href');
+        $('#presponse').load(link + ' #presponse', function() {
+            $('#presponse').fadeIn();
+        });
     });
 
 });

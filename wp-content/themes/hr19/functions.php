@@ -461,8 +461,12 @@ function property_filter_function() {
 		);
     }
 
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
 	$args = array(
 		'post_type' => 'property',
+		'posts_per_page' => 1,
+		'paged' => $paged,
 		'orderby'    => $orderby,
 		'order'      => $sort,
 		'meta_query' => $mq,
@@ -585,9 +589,13 @@ function property_filter_function() {
 						</div>
 						</a>
 						</div>';
-		endwhile;
-		wp_reset_postdata();
-	else : ?>
+		endwhile; ?>
+        <div class="row">
+            <div class="col-md-12 text-center">
+				<?php wp_pagenavi(); ?>
+            </div>
+        </div>
+	    <?php else: ?>
         <div class="col-md-12">
             <div class="no-results-info">
                 <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">
@@ -595,7 +603,7 @@ function property_filter_function() {
                 <p><?php _e( 'Por favor verifique sus criterios de b&uacute;squeda', 'hr' ) ?></p>
             </div>
         </div>
-	<?php endif;
+	<?php endif; wp_reset_postdata();
 
 	die();
 }

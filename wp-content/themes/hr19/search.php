@@ -271,9 +271,13 @@ $url = wp_upload_dir();
                     </div>
                 </a>
             </div>
-		<?php endwhile;
-		wp_reset_postdata();
-		else : ?>
+		<?php endwhile; ?>
+            <div class="row">
+                <div class="col-md-12 text-center">
+					<?php wp_pagenavi(); ?>
+                </div>
+            </div>
+		<?php else: ?>
             <div class="col-md-12">
                 <div class="no-results-info">
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">
@@ -281,7 +285,7 @@ $url = wp_upload_dir();
                     <p><?php _e( 'Por favor verifique sus criterios de b&uacute;squeda', 'hr' ) ?></p>
                 </div>
             </div>
-		<?php endif; ?>
+		<?php endif; wp_reset_postdata(); ?>
     </div>
     <!--<div class="row">
         <div class="col-md-12 text-center">
