@@ -220,6 +220,14 @@ jQuery(document).ready(function ($) {
         $(this).closest('form').submit();
     });
 
+    $(document).on('click', '#min-list li a', function (e) {
+        $(this).closest('form').submit();
+    });
+
+    $(document).on('click', '#max-list li a', function (e) {
+        $(this).closest('form').submit();
+    });
+
     // Set input hidden values by selected option clicked
     $("#baths-dd li a").click(function(){
         var selbath = $(this).attr('data-value');

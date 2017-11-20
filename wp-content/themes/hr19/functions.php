@@ -435,7 +435,7 @@ function property_filter_function() {
 	$args = array(
 		'post_type' => 'property',
 		'orderby'   => 'date',
-		'order'     => $_POST['date']
+		//'order'     => $_POST['date']
 	);
 
 	// create $args['meta_query'] array if one of the following fields is filled
@@ -443,7 +443,8 @@ function property_filter_function() {
 		isset( $_POST['rooms'] ) && $_POST['rooms']  || 
 		isset( $_POST['baths'] ) && $_POST['baths']  || 
 		isset( $_POST['transaction'] ) && $_POST['transaction'] ||
-		isset( $_POST['proptype'] ) && $_POST['proptype']) {
+		isset( $_POST['proptype'] ) && $_POST['proptype'] ||
+	 	isset( $_POST['min'] ) && $_POST['min'] || isset( $_POST['max'] ) && $_POST['max']) {
 		$args['meta_query'] = array( 'relation' => 'AND' );
 	}
 
@@ -494,20 +495,34 @@ function property_filter_function() {
                 'compare' => '='
             )
 		);
-
-	/*if( isset( $_POST['s'] ) && $_POST['s'] )
+ 
+	// if both minimum price and maximum price are specified we will use BETWEEN comparison
+	if( isset( $_POST['min'] ) && $_POST['min'] && isset( $_POST['max'] ) && $_POST['max'] ) {
 		$args['meta_query'][] = array(
-			'key' => '_pr_address',
-			'value' => $_POST['s'],
-			'compare' => '='
+			'key' => '_pr_current_price',
+			'value' => array( $_POST['min'], $_POST['max'] ),
+			'type' => 'numeric',
+			'compare' => 'between'
 		);
-
-	if( isset( $_POST['s'] ) && $_POST['s'] )
-		$args['meta_query'][] = array(
-			'key' => '_pr_postalcode',
-			'value' => $_POST['s'],
-			'compare' => '='
-		);*/
+	} else {
+		// if only min price is set
+		if( isset( $_POST['min'] ) && $_POST['min'] )
+			$args['meta_query'][] = array(
+				'key' => '_pr_current_price',
+				'value' => $_POST['min'],
+				'type' => 'numeric',
+				'compare' => '>='
+			);
+ 
+		// if only max price is set
+		if( isset( $_POST['max'] ) && $_POST['max'] )
+			$args['meta_query'][] = array(
+				'key' => '_pr_current_price',
+				'value' => $_POST['max'],
+				'type' => 'numeric',
+				'compare' => '<='
+			);
+	}
 
 	$query = new WP_Query( $args );
 

@@ -3,6 +3,7 @@ get_header();
 $s   = get_query_var( 's' );
 $url = wp_upload_dir();
 ?>
+<form id="property-search-top" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="post" role="form" data-toggle="validator">
 
 <nav id="search-filters" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -15,7 +16,7 @@ $url = wp_upload_dir();
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <form id="property-search-top" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="post" role="form" data-toggle="validator">
+            
                 <input type="hidden" name="post_type[]" value="property">
                 <ul class="nav navbar-nav">
                     <li>
@@ -74,11 +75,11 @@ $url = wp_upload_dir();
                                 <div class="row">
                                     <div class="input-group col-xs-6 col-sm-6 col-md-6 pull-left">
                                         <span class="input-group-addon" name="min">$</span>
-                                        <input type="text" id="min" class="form-control" placeholder="No min">
+                                        <input type="text" id="min" name="min" class="form-control" placeholder="No min">
                                     </div>
                                     <div class="input-group col-xs-6 col-sm-6 col-md-6 pull-left">
                                         <span class="input-group-addon" name="max">$</span>
-                                        <input type="text" id="max" class="form-control" placeholder="No max">
+                                        <input type="text" id="max" name="max" class="form-control" placeholder="No max">
                                     </div>
                                 </div>
                                 <div class="row prices">
@@ -143,7 +144,7 @@ $url = wp_upload_dir();
                 <input type="hidden" id="rooms" name="rooms" value="">
                 <input type="hidden" id="baths" name="baths" value="">
                 <input type="hidden" id="proptype" name="proptype" value="">
-            </form>
+            
         </div>
     </div>
 </nav>
@@ -294,6 +295,8 @@ $url = wp_upload_dir();
             </nav>
         </div>
     </div>-->
+
 </div>
+</form>
 
 <?php get_footer(); ?>
