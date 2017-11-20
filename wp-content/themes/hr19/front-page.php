@@ -23,7 +23,7 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
         <div class="row">
             <div class="col-md-offset-1 col-md-10">
                 <form id="property-search" class="property-search" action="./" method="get" role="form"
-                      data-toggle="validator">
+                      data-toggle="validator" data-disable="false">
                     <ul class="property-status">
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                             <a href="<?php echo home_url(); ?>" class="active"><?php _e('Compra', 'hr') ?></a>
