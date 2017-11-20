@@ -114,11 +114,11 @@ $url = wp_upload_dir();
                         <ul id="rooms-dd" class="dropdown-menu clickdd">
                             <li><a role="button" data-value=""><?php _e( 'Cualquiera', 'hr' ) ?></a></li>
                             <li><a role="button" data-value="1"><?php _e( 'Estudio', 'hr' ) ?></a></li>
-                            <li><a role="button" data-value="1">1+</a></li>
-                            <li><a role="button" data-value="2">2+</a></li>
-                            <li><a role="button" data-value="3">3+</a></li>
-                            <li><a role="button" data-value="4">4+</a></li>
-                            <li><a role="button" data-value="5">5+</a></li>
+                            <li><a role="button" data-value="1">1+ hab.</a></li>
+                            <li><a role="button" data-value="2">2+ hab.</a></li>
+                            <li><a role="button" data-value="3">3+ hab.</a></li>
+                            <li><a role="button" data-value="4">4+ hab.</a></li>
+                            <li><a role="button" data-value="5">5+ hab.</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -127,11 +127,11 @@ $url = wp_upload_dir();
                                     class="caret"></span></a>
                         <ul id="baths-dd" class="dropdown-menu clickdd">
                             <li><a role="button" data-value=""><?php _e( 'Cualquiera', 'hr' ) ?></a></li>
-                            <li><a role="button" data-value="1">1+</a></li>
-                            <li><a role="button" data-value="2">2+</a></li>
-                            <li><a role="button" data-value="3">3+</a></li>
-                            <li><a role="button" data-value="4">4+</a></li>
-                            <li><a role="button" data-value="5">5+</a></li>
+                            <li><a role="button" data-value="1">1+ baños</a></li>
+                            <li><a role="button" data-value="2">2+ baños</a></li>
+                            <li><a role="button" data-value="3">3+ baños</a></li>
+                            <li><a role="button" data-value="4">4+ baños</a></li>
+                            <li><a role="button" data-value="5">5+ baños</a></li>
                         </ul>
                     </li>
                     <li>
