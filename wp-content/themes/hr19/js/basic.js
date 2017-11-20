@@ -150,6 +150,7 @@ jQuery(document).ready(function ($) {
     $('#property-search').validator().on('submit', function (e) {
         if (e.isDefaultPrevented()) {
             $('#s').addClass('placeholder-error');
+            $("#s").attr("placeholder", "Introduzca una ubicación o #MLS");
         }
     });
     $('#property-search-top').validator().on('submit', function (e) {
@@ -176,12 +177,33 @@ jQuery(document).ready(function ($) {
     });
 
     // Clear search input
-    $('#s').click(function () {
+    /*$('#s').click(function () {
         $(this).val('');
     });
     $('#s').focus(function () {
         $(this).val('');
-    });
+    });*/
+
+    /*if( $('#s').val().length > 0 ) {
+        $('.fa-times').css("display", "block");
+    } else{
+        $('.fa-times').css("display", "none");
+    }
+
+    $('#s').keyup(function() {
+        if( $('#s').val().length > 0 ) {
+            $('.fa-times').css("display", "block");
+        } else{
+            $('.fa-times').css("display", "none");
+        }
+    });*/
+
+    /*$('#s').keyup(function() {
+        if( $('#s').val().length > 0 ) {
+            $('.fa-times').css("display", "none");
+        }
+    });*/
+
 
     // Autocomplete data from database
     var cities = JSON.parse(hr19.cities);

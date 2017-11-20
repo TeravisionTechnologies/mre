@@ -339,7 +339,7 @@ if (have_posts()): ?>
                     <div class="col-xs-12 col-sm-4 col-md-4">
                         <a href="<?php the_permalink(); ?>" class="property">
                             <div class="property-image"
-                                 style="background: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"></div>
+                                 style="background-image: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"></div>
                             <div class="property-info">
                                 <div class="property-price"><?php if (!empty($price)) {
                                         echo '$' . $price;
