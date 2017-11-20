@@ -29,7 +29,7 @@ $contact = get_post_meta( $footer_query[0]->ID, '_hf_contact_form', true );
           <footer class="al-footer-container col-xs-12">
             <div class="container">
               <div class="col-xs-12 text-center">
-                <img src="<?php echo $footer_info['_hf_logo'][0]; ?>" alt="Logo Ala19 Footer" class="img-responsive center-block">
+                <a href="<?php echo home_url(); ?>"><img src="<?php echo $footer_info['_hf_logo'][0]; ?>" alt="Logo Ala19 Footer" class="img-responsive center-block"></a>
                 <p class="al-text-white"><?php echo $footer_info['_hf_copy'][0]; ?></p>
                 <a href="#" class="al-text-white">Disclaimers</a>
               </div>
@@ -90,9 +90,9 @@ $contact = get_post_meta( $footer_query[0]->ID, '_hf_contact_form', true );
 <script src="<?php echo get_template_directory_uri(); ?>/js/isotope.pkgd.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/menu.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/basic.js"></script>
-<!--<script async defer
+<script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH6eKdzSWQ0bic1EiZCzkbhqMqEzYd3eQ&callback=initMap">
-</script>-->
+</script>
 <script type="text/javascript">
     var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
 </script>
