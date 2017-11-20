@@ -253,6 +253,31 @@ jQuery(document).ready(function ($) {
             $(this).closest('form').submit();
         }
     });
+    $("#proporder").change(function () {
+        switch (+this.value) {
+            case 0:
+                $("#proporderby").val("date");
+                $("#propsort").val("ASC");
+                $("#proporder").closest('form').submit();
+                break;
+            case 1:
+                $("#proporderby").val("date");
+                $("#propsort").val("DESC");
+                $("#proporder").closest('form').submit();
+                break;
+            case 2:
+                $("#proporderby").val("_pr_current_price");
+                $("#propsort").val("DESC");
+                $("#proporder").closest('form').submit();
+                break;
+            case 3:
+                $("#proporderby").val("_pr_current_price");
+                $("#propsort").val("ASC");
+                $("#proporder").closest('form').submit();
+                break;
+        }
+
+    }).change();
 
     // Set min-max values
     $("#min-list li a").click(function(){

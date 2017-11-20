@@ -144,7 +144,8 @@ $url = wp_upload_dir();
                 <input type="hidden" id="rooms" name="rooms" value="">
                 <input type="hidden" id="baths" name="baths" value="">
                 <input type="hidden" id="proptype" name="proptype" value="">
-            
+                <input type="hidden" id="proporderby" name="proporderby" value="">
+                <input type="hidden" id="propsort" name="propsort" value="">
         </div>
     </div>
 </nav>
@@ -160,11 +161,12 @@ $url = wp_upload_dir();
                     8694 <?php _e( 'casas', 'hr' ) ?></span>
             </div>
             <div class="col-sm-8 col-md-9 text-center sort-select">
-                <select class="pull-right">
+                <select class="pull-right" id="proporder" name="proporder">
                     <option selected><?php _e( 'Ordenar por  ', 'hr' ) ?></option>
-                    <option value="newer"><?php _e( 'Último agregado', 'hr' ) ?></option>
-                    <option value="lower"><?php _e( 'Precio más bajo', 'hr' ) ?></option>
-                    <option value="higher"><?php _e( 'Precio más alto', 'hr' ) ?></option>
+                    <option value="0"><?php _e( 'Último agregado ASC', 'hr' ) ?></option>
+                    <option value="1"><?php _e( 'Último agregado DESC', 'hr' ) ?></option>
+                    <option value="2"><?php _e( 'Precio más bajo', 'hr' ) ?></option>
+                    <option value="3"><?php _e( 'Precio más alto', 'hr' ) ?></option>
                 </select>
                 <div class="pull-right choose-search">
                     <div class="radio radio-inline radio-success">
@@ -269,8 +271,17 @@ $url = wp_upload_dir();
                     </div>
                 </a>
             </div>
-		<?php endwhile; endif;
-		wp_reset_postdata(); ?>
+		<?php endwhile;
+		wp_reset_postdata();
+		else : ?>
+            <div class="col-md-12">
+                <div class="no-results-info">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">
+                    <h4><?php _e( 'No pudimos encontrar ninguna propiedad', 'hr' ) ?></h4>
+                    <p><?php _e( 'Por favor verifique sus criterios de b&uacute;squeda', 'hr' ) ?></p>
+                </div>
+            </div>
+		<?php endif; ?>
     </div>
     <!--<div class="row">
         <div class="col-md-12 text-center">
