@@ -161,7 +161,7 @@ jQuery(document).ready(function ($) {
     });
 
     //Filters get selected option
-    $(".dropdown-menu li a").click(function () {
+    $(".clickdd li a").click(function () {
         $(this).parents(".dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
         $(this).parents(".dropdown").find('.dropdown-toggle').val($(this).data('value'));
     });
@@ -216,7 +216,7 @@ jQuery(document).ready(function ($) {
     });
 
 
-    $(document).on('click', '.search .dropdown-menu li a', function (e) {
+    $(document).on('click', '.clickdd li a', function (e) {
         $(this).closest('form').submit();
     });
 
@@ -246,6 +246,15 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    // Set min-max values
+    $("#min-list li a").click(function(){
+        var selmin = $(this).attr('data-value');
+        $("#min").val(selmin);
+    });
+    $("#max-list li a").click(function(){
+        var selmax = $(this).attr('data-value');
+        $("#max").val(selmax);
+    });
 
     // Filtering data
     $('#property-search-top').submit(function(){
@@ -433,6 +442,16 @@ jQuery(document).ready(function ($) {
         activeMarker = '';
     }
 
+    $("#min").focus(function() {
+        $("#min-list").show();
+        $("#max-list").hide();
+    });
+
+    $("#max").focus(function() {
+        $("#min-list").hide();
+        $("#max-list").show();
+    });
+
 });
 
 $(window).on('load', function() {
@@ -459,8 +478,4 @@ $(window).on('load', function() {
     }*/
 });
 
-    $("#min").focusin(function() {
-        $("#min-list").show();
-    }).focusout(function () {
-        $("#min-list").hide();
-    });
+

@@ -1442,6 +1442,35 @@ input:checked + .slider:before {
 .search .no-results {
   margin-bottom: 100px !important; }
 
+#price-dd {
+  width: 280px;
+  padding-top: 13px !important; }
+  #price-dd .input-group-addon {
+    padding: 6px 6px;
+    font-size: 12px; }
+  #price-dd .input-group {
+    padding: 0 10px !important; }
+    #price-dd .input-group input {
+      font-size: 12px;
+      outline: none !important; }
+  #price-dd .prices {
+    margin-top: 15px;
+    border-top: solid 1px #f0f0f0;
+    padding-top: 10px; }
+  #price-dd li a {
+    width: 100%;
+    display: block; }
+    #price-dd li a:hover {
+      text-decoration: none; }
+
+#max-list {
+  display: none; }
+  #max-list li a {
+    text-align: right !important; }
+
+#navbar {
+  min-height: 5.5555555556vw !important; }
+
 .agent-hero {
   margin-top: 5.5555555556vw;
   height: 31.25vw;
@@ -2971,6 +3000,9 @@ a[href^=tel] {
   .property-highlights {
     height: 36px; }
 
+  #navbar {
+    min-height: 10.4166666667vw !important; }
+
   .agent-hero {
     margin-top: 10.4166666667vw;
     height: 58.59375vw;
@@ -3755,6 +3787,9 @@ a[href^=tel] {
 
   .search-map {
     height: 83.3333333333vw; }
+
+  #navbar {
+    min-height: 12.5vw !important; }
 
   .agent-hero {
     margin-top: 16.6666666667vw;

@@ -28,7 +28,7 @@ $url = wp_upload_dir();
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false"><?php _e( 'Compra', 'hr' ) ?> <span class="caret"></span></a>
-                        <ul id="transction-dd" class="dropdown-menu">
+                        <ul id="transction-dd" class="dropdown-menu clickdd">
                             <li><a href="#" data-value="Sale"><?php _e( 'Compra', 'hr' ) ?></a></li>
                             <li><a href="#" data-value="Lease"><?php _e( 'Alquiler', 'hr' ) ?></a></li>
                             <li><a href="#" data-value="Presale"><?php _e( 'Preventa', 'hr' ) ?></a></li>
@@ -72,43 +72,45 @@ $url = wp_upload_dir();
                         <ul id="price-dd" class="dropdown-menu">
                             <div class="col-md-12">
                                 <div class="row">
-                                    <div class="input-group col-md-6 pull-left">
-                                        <span class="input-group-addon" name="min" id="min">$</span>
-                                        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                                    <div class="input-group col-xs-6 col-sm-6 col-md-6 pull-left">
+                                        <span class="input-group-addon" name="min">$</span>
+                                        <input type="text" id="min" class="form-control" placeholder="No min">
                                     </div>
-                                    <div class="input-group col-md-6 pull-left">
-                                        <span class="input-group-addon" name="max" id="max">$</span>
-                                        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                                    <div class="input-group col-xs-6 col-sm-6 col-md-6 pull-left">
+                                        <span class="input-group-addon" name="max">$</span>
+                                        <input type="text" id="max" class="form-control" placeholder="No max">
+                                    </div>
+                                </div>
+                                <div class="row prices">
+                                    <div id="min-list" class="col-md-12 no-padding">
+                                        <li><a href="#" data-value="0">$0</a></li>
+                                        <li><a href="#" data-value="100,000">$100k</a></li>
+                                        <li><a href="#" data-value="200,000">$200k</a></li>
+                                        <li><a href="#" data-value="300,000">$300k</a></li>
+                                        <li><a href="#" data-value="400,000">$400k</a></li>
+                                        <li><a href="#" data-value="500,000">$500k</a></li>
+                                        <li><a href="#" data-value="600,000">$600k</a></li>
+                                        <li><a href="#" data-value="700,000">$700k</a></li>
+                                    </div>
+                                    <div id="max-list" class="col-md-12 no-padding">
+                                        <li><a href="#" data-value="180,000">$180</a></li>
+                                        <li><a href="#" data-value="350,000">$350</a></li>
+                                        <li><a href="#" data-value="500,000">$500k</a></li>
+                                        <li><a href="#" data-value="700,000">$700k</a></li>
+                                        <li><a href="#" data-value="900,000">$900k</a></li>
+                                        <li><a href="#" data-value="1,000,000">$1m</a></li>
+                                        <li><a href="#" data-value="1,200,000">$1.2k</a></li>
                                     </div>
                                 </div>
                             </div>
-                            <div id="min-list" class="col-md-6">
-                                <li><a href="#">$0</a></li>
-                                <li><a href="#">$100k</a></li>
-                                <li><a href="#">$200k</a></li>
-                                <li><a href="#">$300k</a></li>
-                                <li><a href="#">$400k</a></li>
-                                <li><a href="#">$500k</a></li>
-                                <li><a href="#">$600k</a></li>
-                                <li><a href="#">$700k</a></li>
-                            </div>
-                            <div id="max-list" class="col-md-6">
-                                <li><a href="#">$180</a></li>
-                                <li><a href="#">$350</a></li>
-                                <li><a href="#">$500k</a></li>
-                                <li><a href="#">$700k</a></li>
-                                <li><a href="#">$900k</a></li>
-                                <li><a href="#">$1m</a></li>
-                                <li><a href="#">$1.2k</a></li>
-                            </div>
-                            <li><a href="#" data-value="" class="text-center"><?php _e( 'Todos', 'hr' ) ?></a></li>
+                            <li><a href="#" data-value="" class="text-center"><?php _e( 'Cualquier precio', 'hr' ) ?></a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="true"><?php _e( 'Nro. <br>de habitaciones', 'hr' ) ?> <span
                                     class="caret"></span></a>
-                        <ul id="rooms-dd" class="dropdown-menu">
+                        <ul id="rooms-dd" class="dropdown-menu clickdd">
                             <li><a role="button" data-value=""><?php _e( 'Cualquiera', 'hr' ) ?></a></li>
                             <li><a role="button" data-value="1"><?php _e( 'Estudio', 'hr' ) ?></a></li>
                             <li><a role="button" data-value="1">1+</a></li>
@@ -122,7 +124,7 @@ $url = wp_upload_dir();
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false"><?php _e( 'Nro. <br>de baños', 'hr' ) ?> <span
                                     class="caret"></span></a>
-                        <ul id="baths-dd" class="dropdown-menu">
+                        <ul id="baths-dd" class="dropdown-menu clickdd">
                             <li><a role="button" data-value=""><?php _e( 'Cualquiera', 'hr' ) ?></a></li>
                             <li><a role="button" data-value="1">1+</a></li>
                             <li><a role="button" data-value="2">2+</a></li>
