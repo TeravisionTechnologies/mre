@@ -204,10 +204,10 @@ function get_mls() {
 		$results = $rets->Search(
 			'Property',
 			'Listing',
-			' (AgentLicenseNum = 3196679)',
+			' (Status = A)',
 			[
 				'Format' => 'COMPACT-DECODED',
-				'Limit'  => 10,
+				'Limit'  => 20,
 			]
 		);
 	} else {
@@ -224,7 +224,6 @@ function get_mls() {
 		} else {
 			$transaction = 'Sale';
 		}
-
 
 		$propid = get_page_by_title( $property['MLSNumber'], 'OBJECT', 'property' ); //Check if already exists
 
@@ -256,6 +255,7 @@ function get_mls() {
 					'_pr_forsale'          => $property['ForSaleYN'],
 					'_pr_forlease'         => $property['ForLeaseYN'],
 					'_pr_postalcode'       => $property['PostalCode'] . ', ' . $property['City'] . ', ' . $property['StateOrProvince'],
+					'_pr_transaction'      => $transaction,
 				)
 			);
 			$posted_property = wp_insert_post( $post_args );

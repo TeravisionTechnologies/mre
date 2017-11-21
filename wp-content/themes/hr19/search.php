@@ -180,7 +180,7 @@ $url = wp_upload_dir();
                 </div>
                 <div class="pull-right switch-map">
                     <div>
-                        <div class="pull-right text-map"><?php _e( 'Ver mapa', 'hr' ) ?></div>
+                        <div class="pull-right text-map">Ocultar mapa</div>
                         <label class="switch pull-right">
                             <input type="checkbox" id="map-switch">
                             <span class="slider round"></span>

@@ -144,6 +144,7 @@ jQuery(document).ready(function ($) {
         $("#search-map").slideToggle();
         $("html, body").animate({scrollTop: 0}, 500);
         $(".property-list").toggleClass('property-list-search');
+        $('.text-map').html($('.text-map').text() == 'Ocultar mapa' ? 'Ver mapa' : 'Ocultar mapa');
     });
 
     // Search form validation
@@ -233,9 +234,10 @@ jQuery(document).ready(function ($) {
         onSelect: function (suggestion) {
             $(this).closest('form').submit();
         },
-        onSearchError: function (query, jqXHR, textStatus, errorThrown) {
-            $("#btn-search-home").attr("disabled", true);
-        }
+        /*onSearchError: function (query, jqXHR, textStatus, errorThrown) {
+            $('.property-search').attr('data-disable', 'true');
+            alert('error');
+        }*/
     });
 
     // Stop propagation (close) propety types dropdown
