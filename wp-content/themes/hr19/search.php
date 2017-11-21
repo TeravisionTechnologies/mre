@@ -275,8 +275,9 @@ var_dump($referer);
 			?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <a href="<?php the_permalink(); ?>" class="property">
-                    <div class="property-image" data-url="<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"
-                         style="background: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg);"></div>
+                    <div class="property-image"
+                         style="background: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg);"
+                         data-url="<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"></div>
                     <div class="property-info">
                         <div class="property-price"><?php if ( ! empty( $price ) ) {
 								echo '$' . $price;
@@ -304,6 +305,13 @@ var_dump($referer);
 							} ?>
                         </div>
                         <div class="property-code">MLS: <?php the_title(); ?></div>
+                        <div class="hidden addressfull"><?php if (!empty($address)) {
+		                        echo $address;
+	                        } ?> <?php if (!empty($city)) {
+		                        echo $city;
+	                        } ?> <?php if (!empty($state)) {
+		                        echo $state;
+	                        } ?></div>
                     </div>
                 </a>
             </div>

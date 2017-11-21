@@ -348,7 +348,7 @@ jQuery(document).ready(function ($) {
     $('.property').each(function () {
         var propertyData = {};
         propertyData.image = $(this).find('.property-image').attr('data-url');
-        propertyData.address = $(this).find('.property-address').html();
+        propertyData.address = $(this).find('.addressfull').html();
         propertyData.address = propertyData.address.replace(/[\t\n,]/g, '');
         propertyData.price = $(this).find('.property-price').html();
         propertyData.price = propertyData.price.replace(/[$,]/g, '');
