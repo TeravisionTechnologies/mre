@@ -1515,6 +1515,9 @@ input:checked + .slider:before {
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px; }
 
+.results-search span {
+  display: inline-block !important; }
+
 .agent-hero {
   margin-top: 5.5555555556vw;
   height: 31.25vw;

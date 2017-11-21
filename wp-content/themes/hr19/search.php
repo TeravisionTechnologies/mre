@@ -2,7 +2,11 @@
 get_header();
 $s   = get_query_var( 's' );
 $url = wp_upload_dir();
+$referer = wp_get_referer();
+$homepage = home_url();
+var_dump($referer);
 ?>
+<?php $meta_query=array();$args=array();$search_string=$s;$meta_query[]=array('key'=> '_pr_city','value'=> $search_string,'compare'=> '=');$meta_query[]=array('key'=> '_pr_address','value'=> $search_string, 'compare'=> '=');$meta_query[]=array('key'=> '_pr_postalcode','value'=> $search_string,'compare'=> '=');if ( count( $meta_query ) > 1 ){$meta_query['relation']='OR';}$args['post_type']="property";$args['_meta_or_title']=$search_string;$args['meta_query']=$meta_query;$the_query=new WP_Query( $args );$count=$the_query->post_count;?>
 <form id="property-search-top" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="post" role="form" data-toggle="validator">
 
 <nav id="search-filters" class="navbar navbar-default navbar-fixed-top">
@@ -157,8 +161,8 @@ $url = wp_upload_dir();
         <div class="property-sorting">
             <div class="col-sm-4 col-md-3">
                 <span class="state-search"><?php echo $s; ?></span>
-                <span class="results-search"><?php _e( 'Mostrando', 'hr' ) ?> 9 <?php _e( 'de', 'hr' ) ?>
-                    8694 <?php _e( 'casas', 'hr' ) ?></span>
+                <span class="results-search"><?php _e( 'Mostrando', 'hr' ) ?> <span id="counter"></span> <?php _e( 'de', 'hr' ) ?>
+	                <span id="total"><?php echo $count; ?></span> <?php _e( 'casas', 'hr' ) ?></span>
             </div>
             <div class="col-sm-8 col-md-9 text-center sort-select">
                 <select class="pull-right" id="proporder" name="proporder">
@@ -200,10 +204,38 @@ $url = wp_upload_dir();
     </div>
     <div id="response" class="row">
 		<?php
-		$meta_query    = array();
-		$args          = array();
 		$search_string = $s;
-		$meta_query[]  = array(
+		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+		$propertieslist = array(
+			'post_type' => 'property',
+			'posts_per_page' => 9,
+			'_meta_or_title' => $search_string,
+			'paged' => $paged,
+			'meta_query' => array(
+                'relation' => 'OR',
+				array(
+					'key' => '_pr_city',
+					'value' => $search_string,
+					'compare' => '=',
+				),
+				array(
+					'key' => '_pr_address',
+					'value' => $search_string,
+					'compare' => '=',
+				),
+				array(
+					'key' => '_pr_postalcode',
+					'value' => $search_string,
+					'compare' => '=',
+				)
+			)
+		);
+		query_posts($propertieslist);
+
+		//$meta_query    = array();
+		//$args          = array();
+
+		/*$meta_query[]  = array(
 			'key'     => '_pr_city',
 			'value'   => $search_string,
 			'compare' => '='
@@ -217,17 +249,21 @@ $url = wp_upload_dir();
 			'key'     => '_pr_postalcode',
 			'value'   => $search_string,
 			'compare' => '='
-		);
+		);*/
 
-		if ( count( $meta_query ) > 1 ) {
+		/*if ( count( $meta_query ) > 1 ) {
 			$meta_query['relation'] = 'OR';
-		}
-		$args['post_type']      = "property";
-		$args['_meta_or_title'] = $search_string;
-		$args['meta_query']     = $meta_query;
-		$the_query              = new WP_Query( $args );
+		}*/
 
-		if ( $the_query->have_posts() ): while ( $the_query->have_posts() ): $the_query->the_post();
+		//$args['post_type']      = "property";
+		//$args['_meta_or_title'] = $search_string;
+		//$args['meta_query']     = $meta_query;
+		//$args['posts_per_page'] = 3;
+		//$args['paged'] =  $paged;
+		//$the_query = new WP_Query( $args );
+
+
+		if ( have_posts() ): while ( have_posts() ): the_post();
 			$address = get_post_meta( get_the_ID(), '_pr_address', true );
 			$price   = get_post_meta( get_the_ID(), '_pr_current_price', true );
 			$type    = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
@@ -287,30 +323,6 @@ $url = wp_upload_dir();
             </div>
 		<?php endif; wp_reset_postdata(); ?>
     </div>
-    <!--<div class="row">
-        <div class="col-md-12 text-center">
-            <nav>
-                <ul class="pagination">
-                    <li>
-                        <a href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li><a href="#" class="active">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>-->
-
 </div>
 </form>
 

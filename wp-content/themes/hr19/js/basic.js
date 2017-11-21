@@ -335,6 +335,9 @@ jQuery(document).ready(function ($) {
             success:function(data){
                 filter.find('button').html('<i class="fa fa-search"></i>');
                 $('#response').html(data);
+                var count = $('#response .property').length;
+                $('#counter').text(count);
+                alert(data);
             }
         });
         setTimeout(initialize(), 5000);
@@ -525,6 +528,29 @@ jQuery(document).ready(function ($) {
             $('#presponse').fadeIn();
         });
     });
+
+    /*var link = $('.search .wp-pagenavi a').attr('href');
+    var to = link.lastIndexOf('/');
+    to = to == -1 ? link.length : to + 1;
+    link = link.substring(0, to);
+    //$('.search .wp-pagenavi a').attr(link);
+    $('.search .wp-pagenavi a').attr("href", link);
+    //alert(link);*/
+
+    $('.search .wp-pagenavi a').on('click', function(e){
+        e.preventDefault();
+        //var link = $(this).attr('href');
+       // var to = link.lastIndexOf('/');
+       // to = to == -1 ? link.length : to + 1;
+       // link = link.substring(0, to);
+        //alert(link);
+        $('#response').load(link + ' #response', function() {
+            $('#response').fadeIn();
+        });
+    });
+
+    var count = $('#response .property').length;
+    $('#counter').text(count)
 
 });
 

@@ -610,3 +610,9 @@ function property_filter_function() {
 
 add_action( 'wp_ajax_myfilter', 'property_filter_function' );
 add_action( 'wp_ajax_nopriv_myfilter', 'property_filter_function' );
+
+
+function wpse8170_get_posts_count() {
+	global $the_query;
+	return $the_query->post_count;
+}
