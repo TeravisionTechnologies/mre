@@ -129,7 +129,7 @@ $currentproperty = get_the_ID();
         <div class="container">
             <div class="row">
                 <div class="col-md-12 oh-wrap">
-                    <div class="open-house">Open House: Saturday October 28, 11:00 am - 3:00 pm</div>
+                    <div class="open-house"><spam class="open-blue">Open House</spam> Saturday October 28, 11:00 am - 3:00 pm</div>
                 </div>
             </div>
             <div class="row">
