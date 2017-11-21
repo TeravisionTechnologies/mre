@@ -337,7 +337,6 @@ jQuery(document).ready(function ($) {
                 $('#response').html(data);
                 var count = $('#response .property').length;
                 $('#counter').text(count);
-                alert(data);
             }
         });
         setTimeout(initialize(), 5000);
