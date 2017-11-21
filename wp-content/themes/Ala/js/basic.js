@@ -292,6 +292,9 @@ jQuery(document).ready(function () {
       scrollTop: finalPosition
     }, 2000);
   });
+
+  setTimeout($grid.isotope({filter: '.proyectos-actuales'}),2000);
+
 });
 
 
