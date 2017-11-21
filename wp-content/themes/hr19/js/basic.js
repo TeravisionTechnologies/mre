@@ -276,11 +276,11 @@ jQuery(document).ready(function ($) {
     });
     $('#property-type-dd input[type=checkbox]').change(function() {
         if ($('input[type=checkbox]:checked')) {
-                var vals = $('input[type=checkbox]:checked').map(function() {
-                    return $(this).val();
-                }).get().join(',');
-                $('#proptype').val(vals);
-                $(this).closest('form').submit();
+            var vals = $('input[type=checkbox]:checked').map(function() {
+                return $(this).val();
+            }).get().join(',');
+            $('#proptype').val(vals);
+            $(this).closest('form').submit();
         } else{
             $('#proptype').val("");
             $(this).closest('form').submit();
@@ -335,8 +335,6 @@ jQuery(document).ready(function ($) {
             success:function(data){
                 filter.find('button').html('<i class="fa fa-search"></i>');
                 $('#response').html(data);
-                var count = $('#response .property').length;
-                $('#counter').text(count);
             }
         });
         setTimeout(initialize(), 5000);
@@ -348,7 +346,7 @@ jQuery(document).ready(function ($) {
     $('.property').each(function () {
         var propertyData = {};
         propertyData.image = $(this).find('.property-image').attr('data-url');
-        propertyData.address = $(this).find('.addressfull').html();
+        propertyData.address = $(this).find('.property-address').html();
         propertyData.address = propertyData.address.replace(/[\t\n,]/g, '');
         propertyData.price = $(this).find('.property-price').html();
         propertyData.price = propertyData.price.replace(/[$,]/g, '');
@@ -413,51 +411,51 @@ jQuery(document).ready(function ($) {
         var mls = locations[i].mls;
         var image = locations[i].image;
         geocoder.geocode({
-            'address': address
-        },
+                'address': address
+            },
 
-        function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                var marker = new google.maps.Marker({
-                    icon: hr19.root + '/assets/pointgreen.svg',
-                    map: map,
-                    position: results[0].geometry.location,
-                    address: address,
-                    price: price,
-                    highlights: highlights,
-                    mls: mls,
-                    label: {text: price, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px'},
-                    image: image
-                });
-                marker.addListener('mouseover', function () {
-                    if (infowindows == 0) {
-                        this.setLabel({
-                            text: price,
-                            color: '#498306',
-                            fontFamily: 'Montserrat-Regular',
-                            fontSize: '12px'
-                        });
-                        this.setZIndex(100);
-                        this.setIcon(hr19.root + '/assets/pointwhite.svg');
-                    }
-                });
-                marker.addListener('mouseout', function () {
-                    if (infowindows == 0) {
-                        this.setLabel({
-                            text: price,
-                            color: 'white',
-                            fontFamily: 'Montserrat-Regular',
-                            fontSize: '12px'
-                        });
-                        this.setZIndex(0);
-                        this.setIcon(hr19.root + '/assets/pointgreen.svg');
-                    }
-                });
+            function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var marker = new google.maps.Marker({
+                        icon: hr19.root + '/assets/pointgreen.svg',
+                        map: map,
+                        position: results[0].geometry.location,
+                        address: address,
+                        price: price,
+                        highlights: highlights,
+                        mls: mls,
+                        label: {text: price, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px'},
+                        image: image
+                    });
+                    marker.addListener('mouseover', function () {
+                        if (infowindows == 0) {
+                            this.setLabel({
+                                text: price,
+                                color: '#498306',
+                                fontFamily: 'Montserrat-Regular',
+                                fontSize: '12px'
+                            });
+                            this.setZIndex(100);
+                            this.setIcon(hr19.root + '/assets/pointwhite.svg');
+                        }
+                    });
+                    marker.addListener('mouseout', function () {
+                        if (infowindows == 0) {
+                            this.setLabel({
+                                text: price,
+                                color: 'white',
+                                fontFamily: 'Montserrat-Regular',
+                                fontSize: '12px'
+                            });
+                            this.setZIndex(0);
+                            this.setIcon(hr19.root + '/assets/pointgreen.svg');
+                        }
+                    });
 
-                infoWindow(marker, map, price, address, highlights, mls, image);
-                bounds.extend(marker.getPosition());
-                map.fitBounds(bounds);
-            }
+                    infoWindow(marker, map, price, address, highlights, mls, image);
+                    bounds.extend(marker.getPosition());
+                    map.fitBounds(bounds);
+                }
                 /*else {
                     alert("geocode of " + address + " failed:" + status);
                 }*/
@@ -467,14 +465,14 @@ jQuery(document).ready(function ($) {
     function infoWindow(marker, map, price, address, highlights, mls, image) {
         google.maps.event.addListener(marker, 'click', function () {
             var html = "<a href=property/" + mls + "><div class='info-container'>" +
-            "<div class='info-image' style='background-image: url(" + image + ")'></div>" +
-            "<div class='info-data'>" +
-            "<h2 class='info-data-price'>" + price + "</h2>" +
-            "<h3 class='info-data-highlights'>" + highlights + "</h3>" +
-            "<h3 class='info-data-address'>" + address + "</h3>" +
-            "<h3 class='info-data-mls'>MLS: " + mls + "</h3>" +
-            "</div>" +
-            "</div></a>"
+                "<div class='info-image' style='background-image: url(" + image + ")'></div>" +
+                "<div class='info-data'>" +
+                "<h2 class='info-data-price'>" + price + "</h2>" +
+                "<h3 class='info-data-highlights'>" + highlights + "</h3>" +
+                "<h3 class='info-data-address'>" + address + "</h3>" +
+                "<h3 class='info-data-mls'>MLS: " + mls + "</h3>" +
+                "</div>" +
+                "</div></a>"
             ;
             iw = new google.maps.InfoWindow({
                 content: html,
@@ -527,29 +525,6 @@ jQuery(document).ready(function ($) {
             $('#presponse').fadeIn();
         });
     });
-
-    /*var link = $('.search .wp-pagenavi a').attr('href');
-    var to = link.lastIndexOf('/');
-    to = to == -1 ? link.length : to + 1;
-    link = link.substring(0, to);
-    //$('.search .wp-pagenavi a').attr(link);
-    $('.search .wp-pagenavi a').attr("href", link);
-    //alert(link);*/
-
-    $('.search .wp-pagenavi a').on('click', function(e){
-        e.preventDefault();
-        //var link = $(this).attr('href');
-       // var to = link.lastIndexOf('/');
-       // to = to == -1 ? link.length : to + 1;
-       // link = link.substring(0, to);
-        //alert(link);
-        $('#response').load(link + ' #response', function() {
-            $('#response').fadeIn();
-        });
-    });
-
-    var count = $('#response .property').length;
-    $('#counter').text(count)
 
 });
 

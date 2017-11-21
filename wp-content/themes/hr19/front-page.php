@@ -1,5 +1,6 @@
 <?php
 get_header();
+global $wpdb;
 $url = wp_upload_dir();
 $home_query = get_posts(
     array(
@@ -7,7 +8,7 @@ $home_query = get_posts(
     )
 );
 $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
-
+$agentids  = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_ag_mls' ) );
 ?>
 <section class="col-xs-12 hr-hero-section text-center no-padding"
          style="background-image: url('<?php echo $hero[0]["_hf_hero_background"] ?>');">
@@ -22,7 +23,7 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
     <div class="container property-search-wrapper">
         <div class="row">
             <div class="col-md-offset-1 col-md-10">
-                <form id="property-search" class="property-search" action="./" method="get" role="form"
+                <form id="property-search" class="property-search" action="<?php echo home_url(); ?>" method="get" role="form"
                       data-toggle="validator" data-disable="false">
                     <ul class="property-status">
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
@@ -66,11 +67,17 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
             'posts_per_page' => 9,
             'paged' => $paged,
             'meta_query' => array(
+                'relation' => 'AND',
                 array(
                     'key' => '_pr_transaction',
                     'value' => 'Sale',
                     'compare' => '=',
-                )
+                ),
+	            array(
+		            'key' => '_pr_agentid',
+		            'value' => $agentids,
+		            'compare' => 'IN',
+	            )
             )
         );
         query_posts($propertieslist);

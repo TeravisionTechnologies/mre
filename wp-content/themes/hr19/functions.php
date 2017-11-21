@@ -204,10 +204,10 @@ function get_mls() {
 		$results = $rets->Search(
 			'Property',
 			'Listing',
-			'(AgentLicenseNum = 3196679)',
+			'(Status = A)',
 			[
 				'Format' => 'COMPACT-DECODED',
-				'Limit'  => 20,
+				'Limit'  => 30,
 			]
 		);
 	} else {
@@ -218,12 +218,18 @@ function get_mls() {
 	foreach ( $results as $property ) {
 
 		$transaction = "";
-
+        $rooms = "";
 		if ( $property['ForSaleYN'] == "0" ) {
 			$transaction = 'Lease';
 		} else {
 			$transaction = 'Sale';
 		}
+		if ( $property['BedsTotal'] == "" ) {
+			$rooms = '0';
+		} else {
+			$rooms = $property['BedsTotal'];
+		}
+
 
 		$propid = get_page_by_title( $property['MLSNumber'], 'OBJECT', 'property' ); //Check if already exists
 
@@ -290,7 +296,7 @@ function get_mls() {
 					'_pr_subdiv'           => $property['SubdivisionName'],
 					'_pr_current_price'    => number_format( round( $property['CurrentPrice'] ) ),
 					'_pr_type_of_property' => $property['TypeofProperty'],
-					'_pr_room_count'       => $property['BedsTotal'],
+					'_pr_room_count'       => $rooms,
 					'_pr_baths_total'      => number_format( round( $property['BathsTotal'] ) ),
 					'_pr_baths_full'       => number_format( round( $property['BathsFull'] ) ),
 					'_pr_baths_half'       => number_format( round( $property['BathsHalf'] ) ),
@@ -309,7 +315,7 @@ function get_mls() {
 			);
 			$posted_property = wp_update_post( $post_args );
 
-			/*$sysid  = $property['Matrix_Unique_ID'];
+			$sysid  = $property['Matrix_Unique_ID'];
 			$n      = 1;
 			$url    = wp_upload_dir();
 			$upload = $url['basedir'];
@@ -321,7 +327,7 @@ function get_mls() {
 			foreach ( $objects as $object ) {
 				file_put_contents( $dir . '/' . $n . '.jpg', $object->getContent() );
 				$n ++;
-			}*/
+			}
 		}
 	}
 
@@ -461,12 +467,12 @@ function property_filter_function() {
 		);
     }
 
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	//$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 	$args = array(
 		'post_type' => 'property',
-		'posts_per_page' => 1,
-		'paged' => $paged,
+		'posts_per_page' => 9,
+		//'paged' => $paged,
 		'orderby'    => $orderby,
 		'order'      => $sort,
 		'meta_query' => $mq,
@@ -612,7 +618,7 @@ add_action( 'wp_ajax_myfilter', 'property_filter_function' );
 add_action( 'wp_ajax_nopriv_myfilter', 'property_filter_function' );
 
 
-function wpse8170_get_posts_count() {
+/*function wpse8170_get_posts_count() {
 	global $the_query;
 	return $the_query->post_count;
-}
+}*/

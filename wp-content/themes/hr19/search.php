@@ -2,25 +2,21 @@
 get_header();
 $s   = get_query_var( 's' );
 $url = wp_upload_dir();
-$referer = wp_get_referer();
-$homepage = home_url();
-var_dump($referer);
 ?>
-<?php $meta_query=array();$args=array();$search_string=$s;$meta_query[]=array('key'=> '_pr_city','value'=> $search_string,'compare'=> '=');$meta_query[]=array('key'=> '_pr_address','value'=> $search_string, 'compare'=> '=');$meta_query[]=array('key'=> '_pr_postalcode','value'=> $search_string,'compare'=> '=');if ( count( $meta_query ) > 1 ){$meta_query['relation']='OR';}$args['post_type']="property";$args['_meta_or_title']=$search_string;$args['meta_query']=$meta_query;$the_query=new WP_Query( $args );$count=$the_query->post_count;?>
 <form id="property-search-top" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="post" role="form" data-toggle="validator">
 
-<nav id="search-filters" class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <i class="fa fa-filter"></i>
-            </button>
-        </div>
+    <nav id="search-filters" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-filter"></i>
+                </button>
+            </div>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
                 <input type="hidden" name="post_type[]" value="property">
                 <ul class="nav navbar-nav">
                     <li>
@@ -150,188 +146,172 @@ var_dump($referer);
                 <input type="hidden" id="proptype" name="proptype" value="">
                 <input type="hidden" id="proporderby" name="proporderby" value="">
                 <input type="hidden" id="propsort" name="propsort" value="">
-        </div>
-    </div>
-</nav>
-
-<section id="search-map" class="search-map"></section>
-
-<div class="container property-list">
-    <div class="row">
-        <div class="property-sorting">
-            <div class="col-sm-4 col-md-3">
-                <span class="state-search"><?php echo $s; ?></span>
-                <span class="results-search"><?php _e( 'Mostrando', 'hr' ) ?> <span id="counter"></span> <?php _e( 'de', 'hr' ) ?>
-	                <span id="total"><?php echo $count; ?></span> <?php _e( 'casas', 'hr' ) ?></span>
             </div>
-            <div class="col-sm-8 col-md-9 text-center sort-select">
-                <select class="pull-right" id="proporder" name="proporder">
-                    <option selected><?php _e( 'Ordenar por  ', 'hr' ) ?></option>
-                    <option value="0"><?php _e( 'Último agregado ASC', 'hr' ) ?></option>
-                    <option value="1"><?php _e( 'Último agregado DESC', 'hr' ) ?></option>
-                    <option value="2"><?php _e( 'Precio más bajo', 'hr' ) ?></option>
-                    <option value="3"><?php _e( 'Precio más alto', 'hr' ) ?></option>
-                </select>
-                <div class="pull-right choose-search">
-                    <div class="radio radio-inline radio-success">
-                        <input type="radio" id="inlineRadio1" value="option1" name="radioInline" class="styled">
-                        <label for="inlineRadio1"><?php _e( 'Solo Hr19', 'hr' ) ?></label>
-                    </div>
-                    <div class="radio radio-inline radio-success">
-                        <input type="radio" id="inlineRadio2" value="option2" name="radioInline" class="styled" checked>
-                        <label for="inlineRadio2"><?php _e( 'Todos', 'hr' ) ?></label>
-                    </div>
+        </div>
+    </nav>
+
+    <section id="search-map" class="search-map"></section>
+
+    <div class="container property-list">
+        <div class="row">
+            <div class="property-sorting">
+                <div class="col-sm-4 col-md-3">
+                    <span class="state-search"><?php echo $s; ?></span>
+                    <span class="results-search"><?php _e( 'Mostrando', 'hr' ) ?> 9 <?php _e( 'de', 'hr' ) ?>
+                        8694 <?php _e( 'casas', 'hr' ) ?></span>
                 </div>
-                <div class="pull-right switch-map">
-                    <div>
-                        <div class="pull-right text-map">Ocultar mapa</div>
-                        <label class="switch pull-right">
-                            <input type="checkbox" id="map-switch">
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-12">
-                <hr>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <h2 class="hr-heading"><?php _e( 'Propiedades HR19', 'hr' ) ?></h2>
-        </div>
-    </div>
-    <div id="response" class="row">
-		<?php
-		$search_string = $s;
-		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-		$propertieslist = array(
-			'post_type' => 'property',
-			'posts_per_page' => 9,
-			'_meta_or_title' => $search_string,
-			'paged' => $paged,
-			'meta_query' => array(
-                'relation' => 'OR',
-				array(
-					'key' => '_pr_city',
-					'value' => $search_string,
-					'compare' => '=',
-				),
-				array(
-					'key' => '_pr_address',
-					'value' => $search_string,
-					'compare' => '=',
-				),
-				array(
-					'key' => '_pr_postalcode',
-					'value' => $search_string,
-					'compare' => '=',
-				)
-			)
-		);
-		query_posts($propertieslist);
-
-		//$meta_query    = array();
-		//$args          = array();
-
-		/*$meta_query[]  = array(
-			'key'     => '_pr_city',
-			'value'   => $search_string,
-			'compare' => '='
-		);
-		$meta_query[]  = array(
-			'key'     => '_pr_address',
-			'value'   => $search_string,
-            'compare' => '='
-		);
-		$meta_query[]  = array(
-			'key'     => '_pr_postalcode',
-			'value'   => $search_string,
-			'compare' => '='
-		);*/
-
-		/*if ( count( $meta_query ) > 1 ) {
-			$meta_query['relation'] = 'OR';
-		}*/
-
-		//$args['post_type']      = "property";
-		//$args['_meta_or_title'] = $search_string;
-		//$args['meta_query']     = $meta_query;
-		//$args['posts_per_page'] = 3;
-		//$args['paged'] =  $paged;
-		//$the_query = new WP_Query( $args );
-
-
-		if ( have_posts() ): while ( have_posts() ): the_post();
-			$address = get_post_meta( get_the_ID(), '_pr_address', true );
-			$price   = get_post_meta( get_the_ID(), '_pr_current_price', true );
-			$type    = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
-			$rooms   = get_post_meta( get_the_ID(), '_pr_room_count', true );
-			$baths   = get_post_meta( get_the_ID(), '_pr_baths_total', true );
-			$sysid   = get_post_meta( get_the_ID(), '_pr_matrixid', true );
-			$city    = get_post_meta( get_the_ID(), '_pr_city', true );
-			$state   = get_post_meta( get_the_ID(), '_pr_state', true );
-			?>
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <a href="<?php the_permalink(); ?>" class="property">
-                    <div class="property-image"
-                         style="background: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg);"
-                         data-url="<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"></div>
-                    <div class="property-info">
-                        <div class="property-price"><?php if ( ! empty( $price ) ) {
-								echo '$' . $price;
-							} ?></div>
-                        <div class="property-highlights">
-							<?php if ( ! empty( $type ) ) {
-								echo $type;
-							} else {
-								echo 'N/A';
-							} ?>
-							<?php if ( ! empty( $rooms ) ) {
-								echo '· ' . $rooms . ' Habitaciones';
-							} ?>
-							<?php if ( ! empty( $baths ) ) {
-								echo '· ' . $baths . ' Baños';
-							} ?>
+                <div class="col-sm-8 col-md-9 text-center sort-select">
+                    <select class="pull-right" id="proporder" name="proporder">
+                        <option selected><?php _e( 'Ordenar por  ', 'hr' ) ?></option>
+                        <option value="0"><?php _e( 'Último agregado &#x25B2', 'hr' ) ?></option>
+                        <option value="1"><?php _e( 'Último agregado &#x25BC;', 'hr' ) ?></option>
+                        <option value="2"><?php _e( 'Precio más bajo', 'hr' ) ?></option>
+                        <option value="3"><?php _e( 'Precio más alto', 'hr' ) ?></option>
+                    </select>
+                    <div class="pull-right choose-search">
+                        <div class="radio radio-inline radio-success">
+                            <input type="radio" id="inlineRadio1" value="option1" name="radioInline" class="styled">
+                            <label for="inlineRadio1"><?php _e( 'Solo Hr19', 'hr' ) ?></label>
                         </div>
-                        <div class="property-address">
-							<?php if ( ! empty( $address ) ) {
-								echo $address;
-							} else if ( ! empty( $city ) and ! empty( $state ) ) {
-								echo $city . ', ' . $state;
-							} else {
-								echo $state;
-							} ?>
+                        <div class="radio radio-inline radio-success">
+                            <input type="radio" id="inlineRadio2" value="option2" name="radioInline" class="styled" checked>
+                            <label for="inlineRadio2"><?php _e( 'Todos', 'hr' ) ?></label>
                         </div>
-                        <div class="property-code">MLS: <?php the_title(); ?></div>
-                        <div class="hidden addressfull"><?php if (!empty($address)) {
-		                        echo $address;
-	                        } ?> <?php if (!empty($city)) {
-		                        echo $city;
-	                        } ?> <?php if (!empty($state)) {
-		                        echo $state;
-	                        } ?></div>
                     </div>
-                </a>
-            </div>
-		<?php endwhile; ?>
-            <div class="row">
-                <div class="col-md-12 text-center">
-					<?php wp_pagenavi(); ?>
+                    <div class="pull-right switch-map">
+                        <div>
+                            <div class="pull-right text-map">Ocultar mapa</div>
+                            <label class="switch pull-right">
+                                <input type="checkbox" id="map-switch">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    <hr>
                 </div>
             </div>
-		<?php else: ?>
+        </div>
+        <div class="row">
             <div class="col-md-12">
-                <div class="no-results-info">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">
-                    <h4><?php _e( 'No pudimos encontrar ninguna propiedad', 'hr' ) ?></h4>
-                    <p><?php _e( 'Por favor verifique sus criterios de b&uacute;squeda', 'hr' ) ?></p>
-                </div>
+                <h2 class="hr-heading"><?php _e( 'Propiedades HR19', 'hr' ) ?></h2>
             </div>
-		<?php endif; wp_reset_postdata(); ?>
+        </div>
+        <div id="response" class="row">
+			<?php
+			$meta_query    = array();
+			$args          = array();
+			$search_string = $s;
+			$meta_query[]  = array(
+				'key'     => '_pr_city',
+				'value'   => $search_string,
+				'compare' => '='
+			);
+			$meta_query[]  = array(
+				'key'     => '_pr_address',
+				'value'   => $search_string,
+				'compare' => '='
+			);
+			$meta_query[]  = array(
+				'key'     => '_pr_postalcode',
+				'value'   => $search_string,
+				'compare' => '='
+			);
+
+			if ( count( $meta_query ) > 1 ) {
+				$meta_query['relation'] = 'OR';
+			}
+			$args['post_type']      = "property";
+			$args['_meta_or_title'] = $search_string;
+			$args['meta_query']     = $meta_query;
+			$the_query              = new WP_Query( $args );
+
+			if ( $the_query->have_posts() ): while ( $the_query->have_posts() ): $the_query->the_post();
+				$address = get_post_meta( get_the_ID(), '_pr_address', true );
+				$price   = get_post_meta( get_the_ID(), '_pr_current_price', true );
+				$type    = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
+				$rooms   = get_post_meta( get_the_ID(), '_pr_room_count', true );
+				$baths   = get_post_meta( get_the_ID(), '_pr_baths_total', true );
+				$sysid   = get_post_meta( get_the_ID(), '_pr_matrixid', true );
+				$city    = get_post_meta( get_the_ID(), '_pr_city', true );
+				$state   = get_post_meta( get_the_ID(), '_pr_state', true );
+				?>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <a href="<?php the_permalink(); ?>" class="property">
+                        <div class="property-image" data-url="<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"
+                             style="background: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"></div>
+                        <div class="property-info">
+                            <div class="property-price"><?php if ( ! empty( $price ) ) {
+									echo '$' . $price;
+								} ?></div>
+                            <div class="property-highlights">
+								<?php if ( ! empty( $type ) ) {
+									echo $type;
+								} else {
+									echo 'N/A';
+								} ?>
+								<?php if ( ! empty( $rooms ) ) {
+									echo '· ' . $rooms . ' Habitaciones';
+								} ?>
+								<?php if ( ! empty( $baths ) ) {
+									echo '· ' . $baths . ' Baños';
+								} ?>
+                            </div>
+                            <div class="property-address">
+								<?php if ( ! empty( $address ) ) {
+									echo $address;
+								} else if ( ! empty( $city ) and ! empty( $state ) ) {
+									echo $city . ', ' . $state;
+								} else {
+									echo $state;
+								} ?>
+                            </div>
+                            <div class="property-code">MLS: <?php the_title(); ?></div>
+                        </div>
+                    </a>
+                </div>
+			<?php endwhile; ?>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+						<?php wp_pagenavi(); ?>
+                    </div>
+                </div>
+			<?php else: ?>
+                <div class="col-md-12">
+                    <div class="no-results-info">
+                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">
+                        <h4><?php _e( 'No pudimos encontrar ninguna propiedad', 'hr' ) ?></h4>
+                        <p><?php _e( 'Por favor verifique sus criterios de b&uacute;squeda', 'hr' ) ?></p>
+                    </div>
+                </div>
+			<?php endif; wp_reset_postdata(); ?>
+        </div>
+        <!--<div class="row">
+			<div class="col-md-12 text-center">
+				<nav>
+					<ul class="pagination">
+						<li>
+							<a href="#" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+						<li><a href="#" class="active">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li>
+							<a href="#" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>-->
+
     </div>
-</div>
 </form>
 
 <?php get_footer(); ?>
