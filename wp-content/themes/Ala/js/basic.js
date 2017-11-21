@@ -219,11 +219,8 @@ jQuery(document).ready(function () {
         var direction = $(this).attr('data-sort-direction');
 
         /* convert it to a boolean */
-        var isAscending = (direction == 'asc');
-        var newDirection = (isAscending) ? 'desc' : 'asc';
-
-        console.log(sortValue);
-        console.log(direction);
+        var isAscending = (direction == 'desc');
+        var newDirection = (isAscending) ? 'asc' : 'desc';
 
         /* pass it to isotope */
         $grid.isotope({sortBy: sortValue, sortAscending: isAscending});
