@@ -1782,11 +1782,14 @@ a[href^=tel] {
   color: #033c5a;
   font-size: 16px;
   font-family: "Montserrat-bold";
-  border: solid 1px #033c5a;
-  border-radius: 40px;
   padding: 7px 20px;
   margin-top: 40px;
-  display: none; }
+  display: none;
+  background-color: #dfdfdf; }
+.property-features .open-blue {
+  background-color: #033c5a;
+  padding: 7px 20px;
+  color: #fff; }
 .property-features .panel {
   border: none;
   -webkit-box-shadow: none;
