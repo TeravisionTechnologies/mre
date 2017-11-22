@@ -455,16 +455,14 @@ function property_filter_function() {
 
 	}
 
-	//$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 	$args = array(
 		'post_type'      => 'property',
 		'posts_per_page' => 9,
-		//'paged' => $paged,
+		'paged' => $paged,
 		'orderby'        => $orderby,
 		'order'          => $sort,
-		'meta_key' => '_pr_current_price',
-		'type' => 'NUMERIC'
 	);
 
 	// create $args['meta_query'] array if one of the following fields is filled
@@ -535,7 +533,7 @@ function property_filter_function() {
 		$args['meta_query'][] = array(
 			'key'     => '_pr_current_price',
 			'value'   => array( $_POST['min'], $_POST['max'] ),
-			'type'    => 'numeric',
+			'type'    => 'NUMERIC',
 			'compare' => 'between'
 		);
 	} else {
@@ -544,7 +542,7 @@ function property_filter_function() {
 			$args['meta_query'][] = array(
 				'key'     => '_pr_current_price',
 				'value'   => $_POST['min'],
-				'type'    => 'numeric',
+				'type'    => 'NUMERIC',
 				'compare' => '>='
 			);
 		}
@@ -554,7 +552,7 @@ function property_filter_function() {
 			$args['meta_query'][] = array(
 				'key'     => '_pr_current_price',
 				'value'   => $_POST['max'],
-				'type'    => 'numeric',
+				'type'    => 'NUMERIC',
 				'compare' => '<='
 			);
 		}
@@ -606,27 +604,3 @@ function property_filter_function() {
 
 add_action( 'wp_ajax_myfilter', 'property_filter_function' );
 add_action( 'wp_ajax_nopriv_myfilter', 'property_filter_function' );
-
-
-// Change single property title tag
-add_filter( 'wp_title', 'archive_titles' );
-
-function archive_titles( $orig_title ) {
-
-	global $post;
-	$post_type = $post->post_type;
-
-	$types = array(
-		array( //Create an array for each post type you wish to control.
-			'post_type' => 'property',
-			//Your custom post type name
-			'title'     => $post->post_title . ', ' . get_post_meta( $post->ID, '_pr_city', true )
-			//The title tag you'd like displayed
-		),
-	);
-	foreach ( $types as $k => $v ) {
-		if ( in_array( $post_type, $types[ $k ] ) ) {
-			return $types[ $k ]['title'];
-		}
-	}
-}
