@@ -12,6 +12,43 @@ if ( $referer == $home ) {
 } else {
 	$transc = "Presale";
 }
+$search_string  = $s;
+$paged          = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$propertieslist = array(
+	'post_type'      => 'property',
+	'posts_per_page' => -1,
+	'_meta_or_title' => $search_string,
+	'paged'          => $paged,
+	'meta_query'     => array(
+		'relation'   => 'AND',
+		array(
+			'key'     => '_pr_transaction',
+			'value'   => $transc,
+			'compare' => '=',
+		),
+		array(
+			'relation' => 'OR',
+			array(
+				'key'     => '_pr_city',
+				'value'   => $search_string,
+				'compare' => '=',
+			),
+			array(
+				'key'     => '_pr_address',
+				'value'   => $search_string,
+				'compare' => '=',
+			),
+			array(
+				'key'     => '_pr_postalcode',
+				'value'   => $search_string,
+				'compare' => '=',
+			)
+		)
+	)
+);
+query_posts( $propertieslist );
+global $wp_query;
+$total =  $wp_query->found_posts;
 ?>
 <form id="property-search-top" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="post" role="form"
       data-toggle="validator">
@@ -172,7 +209,7 @@ if ( $referer == $home ) {
                 <div class="col-sm-4 col-md-3">
                     <span class="state-search"><?php echo $s; ?></span>
                     <span class="results-search"><?php _e( 'Mostrando', 'hr' ) ?> 9 <?php _e( 'de', 'hr' ) ?>
-                        8694 <?php _e( 'casas', 'hr' ) ?></span>
+                        <?php echo $total; ?></php> <?php _e( 'casas', 'hr' ) ?></span>
                 </div>
                 <div class="col-sm-8 col-md-9 text-center sort-select">
                     <select class="pull-right" id="proporder" name="proporder">
@@ -214,44 +251,8 @@ if ( $referer == $home ) {
             </div>
         </div>
         <div id="response" class="row">
-			<?php
-			$search_string  = $s;
-			$paged          = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-			$propertieslist = array(
-				'post_type'      => 'property',
-				'posts_per_page' => 9,
-				'_meta_or_title' => $search_string,
-				'paged'          => $paged,
-				'meta_query'     => array(
-					'relation'   => 'AND',
-					array(
-						'key'     => '_pr_transaction',
-						'value'   => $transc,
-						'compare' => '=',
-					),
-					array(
-						'relation' => 'OR',
-						array(
-							'key'     => '_pr_city',
-							'value'   => $search_string,
-							'compare' => '=',
-						),
-						array(
-							'key'     => '_pr_address',
-							'value'   => $search_string,
-							'compare' => '=',
-						),
-						array(
-							'key'     => '_pr_postalcode',
-							'value'   => $search_string,
-							'compare' => '=',
-						)
-					)
-				)
-			);
-			query_posts( $propertieslist );
+			<?php if ( have_posts() ): while ( have_posts() ): the_post();
 
-			if ( have_posts() ): while ( have_posts() ): the_post();
 				$address = get_post_meta( get_the_ID(), '_pr_address', true );
 				$price   = get_post_meta( get_the_ID(), '_pr_current_price', true );
 				$type    = get_post_meta( get_the_ID(), '_pr_type_of_property', true );

@@ -442,29 +442,17 @@ function property_filter_function() {
 	if ( ( isset( $_POST['proporderby'] ) && $_POST['proporderby'] == "date" ) && ( isset( $_POST['propsort'] ) && $_POST['propsort'] == "ASC" ) ) {
 		$orderby = 'date';
 		$sort    = 'ASC';
-		$mq      = '';
 	} elseif ( ( isset( $_POST['proporderby'] ) && $_POST['proporderby'] == "date" ) && ( isset( $_POST['propsort'] ) && $_POST['propsort'] == "DESC" ) ) {
 		$orderby = 'date';
 		$sort    = 'DESC';
-		$mq      = '';
 	} elseif ( ( isset( $_POST['proporderby'] ) && $_POST['proporderby'] == "_pr_current_price" ) && ( isset( $_POST['propsort'] ) && $_POST['propsort'] == "ASC" ) ) {
-		$orderby = 'order_clause';
+		$orderby = '_pr_current_price';
 		$sort    = 'ASC';
-		$mq      = array(
-			'order_clause' => array(
-				'key'  => '_pr_current_price',
-				'type' => 'NUMERIC'
-			)
-		);
+
 	} else {
-		$orderby = 'order_clause';
+		$orderby = '_pr_current_price';
 		$sort    = 'DESC';
-		$mq      = array(
-			'order_clause' => array(
-				'key'  => '_pr_current_price',
-				'type' => 'NUMERIC'
-			)
-		);
+
 	}
 
 	//$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -475,7 +463,8 @@ function property_filter_function() {
 		//'paged' => $paged,
 		'orderby'        => $orderby,
 		'order'          => $sort,
-		'meta_query'     => $mq,
+		'meta_key' => '_pr_current_price',
+		'type' => 'NUMERIC'
 	);
 
 	// create $args['meta_query'] array if one of the following fields is filled
@@ -618,11 +607,6 @@ function property_filter_function() {
 add_action( 'wp_ajax_myfilter', 'property_filter_function' );
 add_action( 'wp_ajax_nopriv_myfilter', 'property_filter_function' );
 
-
-/*function wpse8170_get_posts_count() {
-	global $the_query;
-	return $the_query->post_count;
-}*/
 
 // Change single property title tag
 add_filter( 'wp_title', 'archive_titles' );

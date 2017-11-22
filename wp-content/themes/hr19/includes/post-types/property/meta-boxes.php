@@ -48,7 +48,7 @@ function property_metaboxes() {
 		array(
 			'name' => __('Property Price'),
 			'id' => $prefix . 'current_price',
-			'type' => 'text'
+			'type' => 'text_money'
 		)
 	);
 
