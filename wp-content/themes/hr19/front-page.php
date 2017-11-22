@@ -9,6 +9,7 @@ $home_query = get_posts(
 );
 $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
 $agentids  = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_ag_mls' ) );
+$transc = "";
 ?>
 <section class="col-xs-12 hr-hero-section text-center no-padding"
          style="background-image: url('<?php echo $hero[0]["_hf_hero_background"] ?>');">

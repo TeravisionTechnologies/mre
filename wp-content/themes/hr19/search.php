@@ -6,6 +6,7 @@ $agentids  = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $w
 $referer = wp_get_referer();
 $home    = home_url() . '/';
 $lease   = home_url() . '/alquileres/';
+$transc = "";
 if ( $referer == $home ) {
 	$transc = "Sale";
 } elseif ( $referer == $lease ) {
@@ -50,7 +51,7 @@ $propertieslist = array(
 query_posts( $propertieslist );
 
 // Propiedades HR19
-$propertieslistmls = array(
+/*$propertieslistmls = array(
 	'post_type'      => 'property',
 	'posts_per_page' => -1,
 	'_meta_or_title' => $search_string,
@@ -87,7 +88,7 @@ $propertieslistmls = array(
 		)
 	)
 );
-query_posts( $propertieslistmls );
+query_posts( $propertieslistmls );*/
 
 global $wp_query;
 $total =  $wp_query->found_posts;
@@ -358,7 +359,7 @@ $total =  $wp_query->found_posts;
                     </div>
                 </div>
 			<?php endif;
-			wp_reset_postdata(); ?>
+			wp_reset_postdata(); wp_reset_query(); ?>
         </div>
     </div>
 </form>
