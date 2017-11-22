@@ -527,6 +527,8 @@ body.has-active-menu {
 .property-status {
   list-style-type: none;
   padding: 0; }
+  .property-status li:last-child a {
+    border-right: none !important; }
 
 .property-search {
   position: relative;
@@ -795,9 +797,6 @@ input[type="radio"].styled:checked + label:after {
 .no-padding {
   padding: 0 !important; }
 
-.search-text {
-  background: #fff; }
-
 .property-search .input-group {
   width: 100%;
   overflow: hidden; }
@@ -807,7 +806,6 @@ input[type="radio"].styled:checked + label:after {
     font-size: 16px;
     text-align: center;
     color: #4a4a4a;
-    opacity: 0.8;
     padding: 0 50px; }
   .property-search .input-group .fa-times {
     position: absolute;
@@ -1393,7 +1391,8 @@ input:checked + .slider:before {
   overflow: auto;
   -webkit-box-shadow: 0px 3px 10px rgba(50, 50, 50, 0.28);
   -moz-box-shadow: 0px 3px 10px rgba(50, 50, 50, 0.28);
-  box-shadow: 0px 3px 10px rgba(50, 50, 50, 0.28); }
+  box-shadow: 0px 3px 10px rgba(50, 50, 50, 0.28);
+  z-index: 99 !important; }
 
 .autocomplete-suggestion {
   padding: 2px 20px;
