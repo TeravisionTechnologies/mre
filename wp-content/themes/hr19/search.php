@@ -2,6 +2,7 @@
 get_header();
 $s       = get_query_var( 's' );
 $url     = wp_upload_dir();
+$agentids  = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_ag_mls' ) );
 $referer = wp_get_referer();
 $home    = home_url() . '/';
 $lease   = home_url() . '/alquileres/';
@@ -47,6 +48,47 @@ $propertieslist = array(
 	)
 );
 query_posts( $propertieslist );
+
+// Propiedades HR19
+$propertieslistmls = array(
+	'post_type'      => 'property',
+	'posts_per_page' => -1,
+	'_meta_or_title' => $search_string,
+	'paged'          => $paged,
+	'meta_query'     => array(
+		'relation'   => 'AND',
+		array(
+			'key'     => '_pr_transaction',
+			'value'   => $transc,
+			'compare' => '=',
+		),
+		array(
+			'key' => '_pr_agentid',
+			'value' => $agentids,
+			'compare' => 'IN',
+		),
+		array(
+			'relation' => 'OR',
+			array(
+				'key'     => '_pr_city',
+				'value'   => $search_string,
+				'compare' => '=',
+			),
+			array(
+				'key'     => '_pr_address',
+				'value'   => $search_string,
+				'compare' => '=',
+			),
+			array(
+				'key'     => '_pr_postalcode',
+				'value'   => $search_string,
+				'compare' => '=',
+			)
+		)
+	)
+);
+query_posts( $propertieslistmls );
+
 global $wp_query;
 $total =  $wp_query->found_posts;
 ?>
@@ -261,12 +303,16 @@ $total =  $wp_query->found_posts;
 				$sysid   = get_post_meta( get_the_ID(), '_pr_matrixid', true );
 				$city    = get_post_meta( get_the_ID(), '_pr_city', true );
 				$state   = get_post_meta( get_the_ID(), '_pr_state', true );
+				$bgimg = $url['baseurl'].'/photos/'.$sysid.'/1.jpg';
+				$urlimage = wp_remote_head( $bgimg );
+				$urlimage = $urlimage['response']['code'];
+				$placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
 				?>
                 <div class="col-xs-12 col-sm-4 col-md-4">
                     <a href="<?php the_permalink(); ?>" class="property">
                         <div class="property-image"
-                             data-url="<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"
-                             style="background: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg);"></div>
+                             data-url="<?php echo ( $urlimage != 404 ? $bgimg : $placeholder ) ?>"
+                             style="background: url(<?php echo ( $urlimage != 404 ? $bgimg : $placeholder ) ?>);"></div>
                         <div class="property-info">
                             <div class="property-price"><?php if ( ! empty( $price ) ) {
 									echo '$' . $price;

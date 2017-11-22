@@ -78,11 +78,15 @@ if ( have_posts() ): while ( have_posts() ):
 					$rooms   = get_post_meta( $property->ID, '_pr_room_count', true );
 					$baths   = get_post_meta( $property->ID, '_pr_baths_total', true );
 					$sysid   = get_post_meta( $property->ID, '_pr_matrixid', true );
+					$bgimg = $url['baseurl'].'/photos/'.$sysid.'/1.jpg';
+					$urlimage = wp_remote_head( $bgimg );
+					$urlimage = $urlimage['response']['code'];
+					$placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
 					?>
                     <div class="col-xs-12 col-sm-4 no-padding property">
-                        <a href="/property/<?php echo $property->post_title; ?>">
+                        <a href="<?php echo get_permalink( $property->ID ); ?>">
                             <div class="property-image"
-                                 style="background: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg);"></div>
+                                 style="background: url(<?php echo ( $urlimage != 404 ? $bgimg : $placeholder ) ?>);"></div>
                             <div class="property-info">
                                 <h2 class="info-price">$<?php echo $price; ?></h2>
                                 <!--<h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>-->
@@ -133,14 +137,17 @@ if ( have_posts() ): while ( have_posts() ):
 					$rooms   = get_post_meta( $property->ID, '_pr_room_count', true );
 					$baths   = get_post_meta( $property->ID, '_pr_baths_total', true );
 					$sysid   = get_post_meta( $property->ID, '_pr_matrixid', true );
+					$bgimg = $url['baseurl'].'/photos/'.$sysid.'/1.jpg';
+					$urlimage = wp_remote_head( $bgimg );
+					$urlimage = $urlimage['response']['code'];
+					$placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
 					?>
                     <div class="col-xs-12 col-sm-4 no-padding property">
-                        <a href="/property/<?php echo $property->post_title; ?>">
+                        <a href="<?php echo get_permalink( $property->ID ); ?>">
                             <div class="property-image"
-                                 style="background: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg);"></div>
+                                 style="background: url(<?php echo ( $urlimage != 404 ? $bgimg : $placeholder ) ?>);"></div>
                             <div class="property-info">
                                 <h2 class="info-price"><?php echo $price; ?></h2>
-                                <!--<h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>-->
                                 <h3 class="info-features"><?php echo $type . " · " . $rooms . " Habitaciones · " . $baths . " Baños"; ?></h3>
                                 <h3 class="info-address"><?php echo $address; ?></h3>
                                 <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>

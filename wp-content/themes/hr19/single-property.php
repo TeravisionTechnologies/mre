@@ -22,8 +22,8 @@ $url = wp_upload_dir();
 $directory = $url['basedir'] . '/photos/' . $sysid . '/';
 $images = glob($directory . "*.jpg");
 $currentproperty = get_the_ID();
+$placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
 ?>
-
     <div class="breadcrumb-info">
         <div class="container">
             <div class="row">
@@ -53,10 +53,16 @@ $currentproperty = get_the_ID();
     <div class="property-carousel">
         <div class="swiper-container swiper-property">
             <div class="swiper-wrapper">
-                <?php foreach ($images as $image) {
-                    $end = end(explode('/', rtrim($image, '/'))); ?>
+                <?php if( !empty( $images ) ){ ?>
+                    <?php foreach ($images as $image) {
+                        $end = end(explode('/', rtrim($image, '/'))); ?>
+                        <div class="swiper-slide">
+                            <div style="background-image: url(<?php echo $url['baseurl'] . '/photos/' . $sysid . '/' . $end; ?>)"></div>
+                        </div>
+                    <?php } ?>
+	            <?php } else{ ?>
                     <div class="swiper-slide">
-                        <div style="background-image: url(<?php echo $url['baseurl'] . '/photos/' . $sysid . '/' . $end; ?>)"></div>
+                        <div style="background-image: url(<?php echo $placeholder; ?>)"></div>
                     </div>
                 <?php } ?>
             </div>

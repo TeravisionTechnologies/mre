@@ -204,7 +204,7 @@ function get_mls() {
 		$results = $rets->Search(
 			'Property',
 			'Listing',
-			'(Status = A)',
+			'(AgentLicenseNum = 3196679)',
 			[
 				'Format' => 'COMPACT-DECODED',
 				'Limit'  => 30,

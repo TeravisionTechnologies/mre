@@ -806,7 +806,8 @@ input[type="radio"].styled:checked + label:after {
     font-size: 16px;
     text-align: center;
     color: #4a4a4a;
-    padding: 0 50px; }
+    padding: 0 50px;
+    border-radius: 0; }
   .property-search .input-group .fa-times {
     position: absolute;
     right: 179px;
@@ -1373,7 +1374,7 @@ input:checked + .slider:before {
   display: none; }
 
 .gm-style-iw {
-  top: 3px !important;
+  top: 40px !important;
   left: 3px !important;
   width: 283px !important;
   height: 96px !important;
@@ -1622,7 +1623,7 @@ input:checked + .slider:before {
         text-align: left;
         margin: 2.0833333333vw 2.7083333333vw 0 0;
         box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2); }
-        .hr-agents-section .agent-properties .properties-list .property a:hover {
+        .hr-agents-section .agent-properties .properties-list .property a:hover, .hr-agents-section .agent-properties .properties-list .property a:active, .hr-agents-section .agent-properties .properties-list .property a:focus {
           text-decoration: none; }
         .hr-agents-section .agent-properties .properties-list .property:nth-child(3n+3) {
           margin-right: 0; }
