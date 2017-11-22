@@ -247,8 +247,8 @@ $total = $wp_query->found_posts;
                 <div class="col-sm-8 col-md-9 text-center sort-select">
                     <select class="pull-right" id="proporder" name="proporder">
                         <option selected><?php _e( 'Ordenar por  ', 'hr' ) ?></option>
-                        <option value="0"><?php _e( 'Último agregado &#x25B2', 'hr' ) ?></option>
-                        <option value="1"><?php _e( 'Último agregado &#x25BC;', 'hr' ) ?></option>
+                        <option value="0"><?php _e( 'A &#x25B2', 'hr' ) ?></option>
+                        <option value="1"><?php _e( 'D &#x25BC;', 'hr' ) ?></option>
                         <option value="2"><?php _e( 'Precio más bajo', 'hr' ) ?></option>
                         <option value="3"><?php _e( 'Precio más alto', 'hr' ) ?></option>
                     </select>

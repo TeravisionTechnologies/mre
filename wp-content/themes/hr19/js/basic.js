@@ -177,6 +177,10 @@ jQuery(document).ready(function ($) {
         $(this).parents(".dropdown").find('.dropdown-toggle').val($(this).data('value'));
     });
 
+    $("#any-price").click(function () {
+        $(this).parents(".dropdown").removeClass('open');
+    });
+
     // Clear search input
     /*$('#s').click(function () {
         $(this).val('');
@@ -422,13 +426,15 @@ jQuery(document).ready(function ($) {
                     var marker = new google.maps.Marker({
                         icon: hr19.root + '/assets/pointgreen.svg',
                         map: map,
+                        optimized: false,
                         position: results[0].geometry.location,
                         address: address,
                         price: price,
                         highlights: highlights,
                         mls: mls,
                         label: {text: price, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px'},
-                        image: image
+                        image: image,
+
                     });
                     marker.addListener('mouseover', function () {
                         if (infowindows == 0) {
