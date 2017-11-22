@@ -4030,18 +4030,16 @@ a[href^=tel] {
         .property-features .panel .panel-body .main-features .feature .info {
           font-size: 2.7777777778vw; }
 
-  .property-carousel {
-    height: 100% !important; }
-    .property-carousel .swiper-button-prev {
-      left: 30px; }
-      .property-carousel .swiper-button-prev .fa {
-        font-size: 5.5555555556vw; }
-    .property-carousel .swiper-button-next {
-      right: 30px; }
-      .property-carousel .swiper-button-next .fa {
-        font-size: 5.5555555556vw; }
-    .property-carousel .total {
-      display: none; }
+  .property-carousel .swiper-button-prev {
+    left: 30px; }
+    .property-carousel .swiper-button-prev .fa {
+      font-size: 5.5555555556vw; }
+  .property-carousel .swiper-button-next {
+    right: 30px; }
+    .property-carousel .swiper-button-next .fa {
+      font-size: 5.5555555556vw; }
+  .property-carousel .total {
+    display: none; }
 
   #about-hero-section {
     height: 111.1111111111vw;

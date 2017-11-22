@@ -1,9 +1,20 @@
 <?php
 get_header();
-$s   = get_query_var( 's' );
-$url = wp_upload_dir();
+$s       = get_query_var( 's' );
+$url     = wp_upload_dir();
+$referer = wp_get_referer();
+$home    = home_url() . '/';
+$lease   = home_url() . '/alquileres/';
+if ( $referer == $home ) {
+	$transc = "Sale";
+} elseif ( $referer == $lease ) {
+	$transc = "Lease";
+} else {
+	$transc = "Presale";
+}
 ?>
-<form id="property-search-top" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="post" role="form" data-toggle="validator">
+<form id="property-search-top" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="post" role="form"
+      data-toggle="validator">
 
     <nav id="search-filters" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -75,11 +86,13 @@ $url = wp_upload_dir();
                                 <div class="row">
                                     <div class="input-group col-xs-6 col-sm-6 col-md-6 pull-left">
                                         <span class="input-group-addon" name="min">$</span>
-                                        <input type="text" id="min" name="min" class="form-control" placeholder="No min">
+                                        <input type="text" id="min" name="min" class="form-control"
+                                               placeholder="No min">
                                     </div>
                                     <div class="input-group col-xs-6 col-sm-6 col-md-6 pull-left">
                                         <span class="input-group-addon" name="max">$</span>
-                                        <input type="text" id="max" name="max" class="form-control" placeholder="No max">
+                                        <input type="text" id="max" name="max" class="form-control"
+                                               placeholder="No max">
                                     </div>
                                 </div>
                                 <div class="row prices">
@@ -104,7 +117,8 @@ $url = wp_upload_dir();
                                     </div>
                                 </div>
                             </div>
-                            <li><a href="#" data-value="" class="text-center"><?php _e( 'Cualquier precio', 'hr' ) ?></a></li>
+                            <li><a href="#" data-value=""
+                                   class="text-center"><?php _e( 'Cualquier precio', 'hr' ) ?></a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -139,7 +153,7 @@ $url = wp_upload_dir();
                     </li>
                 </ul>
                 <input type="hidden" name="action" value="myfilter">
-                <input type="hidden" id="transaction" name="transaction" value="">
+                <input type="hidden" id="transaction" name="transaction" value="<?php echo $transc; ?>">
                 <input type="hidden" id="price" name="price" value="">
                 <input type="hidden" id="rooms" name="rooms" value="">
                 <input type="hidden" id="baths" name="baths" value="">
@@ -174,7 +188,8 @@ $url = wp_upload_dir();
                             <label for="inlineRadio1"><?php _e( 'Solo Hr19', 'hr' ) ?></label>
                         </div>
                         <div class="radio radio-inline radio-success">
-                            <input type="radio" id="inlineRadio2" value="option2" name="radioInline" class="styled" checked>
+                            <input type="radio" id="inlineRadio2" value="option2" name="radioInline" class="styled"
+                                   checked>
                             <label for="inlineRadio2"><?php _e( 'Todos', 'hr' ) ?></label>
                         </div>
                     </div>
@@ -200,34 +215,43 @@ $url = wp_upload_dir();
         </div>
         <div id="response" class="row">
 			<?php
-			$meta_query    = array();
-			$args          = array();
-			$search_string = $s;
-			$meta_query[]  = array(
-				'key'     => '_pr_city',
-				'value'   => $search_string,
-				'compare' => '='
+			$search_string  = $s;
+			$paged          = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+			$propertieslist = array(
+				'post_type'      => 'property',
+				'posts_per_page' => 9,
+				'_meta_or_title' => $search_string,
+				'paged'          => $paged,
+				'meta_query'     => array(
+					'relation'   => 'AND',
+					array(
+						'key'     => '_pr_transaction',
+						'value'   => $transc,
+						'compare' => '=',
+					),
+					array(
+						'relation' => 'OR',
+						array(
+							'key'     => '_pr_city',
+							'value'   => $search_string,
+							'compare' => '=',
+						),
+						array(
+							'key'     => '_pr_address',
+							'value'   => $search_string,
+							'compare' => '=',
+						),
+						array(
+							'key'     => '_pr_postalcode',
+							'value'   => $search_string,
+							'compare' => '=',
+						)
+					)
+				)
 			);
-			$meta_query[]  = array(
-				'key'     => '_pr_address',
-				'value'   => $search_string,
-				'compare' => '='
-			);
-			$meta_query[]  = array(
-				'key'     => '_pr_postalcode',
-				'value'   => $search_string,
-				'compare' => '='
-			);
+			query_posts( $propertieslist );
 
-			if ( count( $meta_query ) > 1 ) {
-				$meta_query['relation'] = 'OR';
-			}
-			$args['post_type']      = "property";
-			$args['_meta_or_title'] = $search_string;
-			$args['meta_query']     = $meta_query;
-			$the_query              = new WP_Query( $args );
-
-			if ( $the_query->have_posts() ): while ( $the_query->have_posts() ): $the_query->the_post();
+			if ( have_posts() ): while ( have_posts() ): the_post();
 				$address = get_post_meta( get_the_ID(), '_pr_address', true );
 				$price   = get_post_meta( get_the_ID(), '_pr_current_price', true );
 				$type    = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
@@ -239,7 +263,8 @@ $url = wp_upload_dir();
 				?>
                 <div class="col-xs-12 col-sm-4 col-md-4">
                     <a href="<?php the_permalink(); ?>" class="property">
-                        <div class="property-image" data-url="<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"
+                        <div class="property-image"
+                             data-url="<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"
                              style="background: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg"></div>
                         <div class="property-info">
                             <div class="property-price"><?php if ( ! empty( $price ) ) {
@@ -273,7 +298,7 @@ $url = wp_upload_dir();
                 </div>
 			<?php endwhile; ?>
                 <div class="row">
-                    <div class="col-md-12 text-center">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 						<?php wp_pagenavi(); ?>
                     </div>
                 </div>
@@ -285,32 +310,9 @@ $url = wp_upload_dir();
                         <p><?php _e( 'Por favor verifique sus criterios de b&uacute;squeda', 'hr' ) ?></p>
                     </div>
                 </div>
-			<?php endif; wp_reset_postdata(); ?>
+			<?php endif;
+			wp_reset_postdata(); ?>
         </div>
-        <!--<div class="row">
-			<div class="col-md-12 text-center">
-				<nav>
-					<ul class="pagination">
-						<li>
-							<a href="#" aria-label="Previous">
-								<span aria-hidden="true">&laquo;</span>
-							</a>
-						</li>
-						<li><a href="#" class="active">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li>
-							<a href="#" aria-label="Next">
-								<span aria-hidden="true">&raquo;</span>
-							</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</div>-->
-
     </div>
 </form>
 

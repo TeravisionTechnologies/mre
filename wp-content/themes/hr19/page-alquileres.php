@@ -130,7 +130,7 @@ $agentids  = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $w
             </div>
         <?php endwhile; ?>
             <div class="row">
-                <div class="col-md-12 text-center">
+                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 			        <?php wp_pagenavi(); ?>
                 </div>
             </div>

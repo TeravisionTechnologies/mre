@@ -248,15 +248,13 @@ jQuery(document).ready(function ($) {
         e.stopPropagation();
     });
 
-
+    // Submit form on click option
     $(document).on('click', '.clickdd li a', function (e) {
         $(this).closest('form').submit();
     });
-
     $(document).on('click', '#min-list li a', function (e) {
         $(this).closest('form').submit();
     });
-
     $(document).on('click', '#max-list li a', function (e) {
         $(this).closest('form').submit();
     });
@@ -508,11 +506,11 @@ jQuery(document).ready(function ($) {
         activeMarker = '';
     }
 
+    // Price range function
     $("#min").focus(function() {
         $("#min-list").show();
         $("#max-list").hide();
     });
-
     $("#max").focus(function() {
         $("#min-list").hide();
         $("#max-list").show();
@@ -528,6 +526,8 @@ jQuery(document).ready(function ($) {
 
 });
 
+
+// Property sale/lease/presale scroll animation
 $(window).on('load', function() {
     if($('#presale-list').length){
         var position = $("#presale-list").offset().top;
@@ -551,5 +551,18 @@ $(window).on('load', function() {
         }, 1000);
     }*/
 });
+
+// Show/Hide Filter button on scroll
+var screen = $(window);
+if (screen.width() < 768) {
+    $(window).scroll(function() {
+        if ($(this).scrollTop()>0) {
+            $('#search-filters').fadeOut();
+        } else {
+            $('#search-filters').fadeIn();
+        }
+    });
+}
+
 
 

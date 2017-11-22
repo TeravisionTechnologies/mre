@@ -218,7 +218,7 @@ function get_mls() {
 	foreach ( $results as $property ) {
 
 		$transaction = "";
-        $rooms = "";
+		$rooms       = "";
 		if ( $property['ForSaleYN'] == "0" ) {
 			$transaction = 'Lease';
 		} else {
@@ -439,43 +439,43 @@ add_action( 'pre_get_posts', function ( $q ) {
 
 function property_filter_function() {
 
-	if ( ( isset( $_POST['proporderby'] ) && $_POST['proporderby'] == "date" ) && ( isset( $_POST['propsort'] ) && $_POST['propsort'] == "ASC"  ) ) {
+	if ( ( isset( $_POST['proporderby'] ) && $_POST['proporderby'] == "date" ) && ( isset( $_POST['propsort'] ) && $_POST['propsort'] == "ASC" ) ) {
 		$orderby = 'date';
 		$sort    = 'ASC';
-		$mq    = '';
-	} elseif ( ( isset( $_POST['proporderby'] ) && $_POST['proporderby'] == "date" ) && ( isset( $_POST['propsort'] ) && $_POST['propsort'] == "DESC"  ) ) {
+		$mq      = '';
+	} elseif ( ( isset( $_POST['proporderby'] ) && $_POST['proporderby'] == "date" ) && ( isset( $_POST['propsort'] ) && $_POST['propsort'] == "DESC" ) ) {
 		$orderby = 'date';
 		$sort    = 'DESC';
-		$mq    = '';
-	} elseif ( ( isset( $_POST['proporderby'] ) && $_POST['proporderby'] == "_pr_current_price" ) && ( isset( $_POST['propsort'] ) && $_POST['propsort'] == "ASC"  ) ){
-        $orderby = 'order_clause';
+		$mq      = '';
+	} elseif ( ( isset( $_POST['proporderby'] ) && $_POST['proporderby'] == "_pr_current_price" ) && ( isset( $_POST['propsort'] ) && $_POST['propsort'] == "ASC" ) ) {
+		$orderby = 'order_clause';
 		$sort    = 'ASC';
-		$mq = array(
+		$mq      = array(
 			'order_clause' => array(
-				'key'   => '_pr_current_price',
-				'type'  => 'NUMERIC'
+				'key'  => '_pr_current_price',
+				'type' => 'NUMERIC'
 			)
 		);
-    } else{
+	} else {
 		$orderby = 'order_clause';
 		$sort    = 'DESC';
-		$mq = array(
+		$mq      = array(
 			'order_clause' => array(
-				'key'   => '_pr_current_price',
-				'type'  => 'NUMERIC'
+				'key'  => '_pr_current_price',
+				'type' => 'NUMERIC'
 			)
 		);
-    }
+	}
 
 	//$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 	$args = array(
-		'post_type' => 'property',
+		'post_type'      => 'property',
 		'posts_per_page' => 9,
 		//'paged' => $paged,
-		'orderby'    => $orderby,
-		'order'      => $sort,
-		'meta_query' => $mq,
+		'orderby'        => $orderby,
+		'order'          => $sort,
+		'meta_query'     => $mq,
 	);
 
 	// create $args['meta_query'] array if one of the following fields is filled
@@ -601,7 +601,7 @@ function property_filter_function() {
 				<?php wp_pagenavi(); ?>
             </div>
         </div>
-	    <?php else: ?>
+	<?php else: ?>
         <div class="col-md-12">
             <div class="no-results-info">
                 <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">
@@ -609,7 +609,8 @@ function property_filter_function() {
                 <p><?php _e( 'Por favor verifique sus criterios de b&uacute;squeda', 'hr' ) ?></p>
             </div>
         </div>
-	<?php endif; wp_reset_postdata();
+	<?php endif;
+	wp_reset_postdata();
 
 	die();
 }
@@ -622,3 +623,26 @@ add_action( 'wp_ajax_nopriv_myfilter', 'property_filter_function' );
 	global $the_query;
 	return $the_query->post_count;
 }*/
+
+// Change single property title tag
+add_filter( 'wp_title', 'archive_titles' );
+
+function archive_titles( $orig_title ) {
+
+	global $post;
+	$post_type = $post->post_type;
+
+	$types = array(
+		array( //Create an array for each post type you wish to control.
+			'post_type' => 'property',
+			//Your custom post type name
+			'title'     => $post->post_title . ', ' . get_post_meta( $post->ID, '_pr_city', true )
+			//The title tag you'd like displayed
+		),
+	);
+	foreach ( $types as $k => $v ) {
+		if ( in_array( $post_type, $types[ $k ] ) ) {
+			return $types[ $k ]['title'];
+		}
+	}
+}
