@@ -336,7 +336,7 @@ jQuery(document).ready(function ($) {
                 filter.find('button').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
             },
             success:function(data){
-                filter.find('button').html('<i class="fa fa-search"></i>');
+                filter.find('.btn-search').html('<i class="fa fa-search"></i>');
                 $('#response').html(data);
             }
         });
