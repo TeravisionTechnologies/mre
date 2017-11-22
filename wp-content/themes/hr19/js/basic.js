@@ -258,6 +258,11 @@ jQuery(document).ready(function ($) {
     $(document).on('click', '#max-list li a', function (e) {
         $(this).closest('form').submit();
     });
+    $(document).on('click', '#any-price', function (e) {
+        $('#min').val('');
+        $('#max').val('');
+        $(this).closest('form').submit();
+    });
 
     // Set input hidden values by selected option clicked
     $("#baths-dd li a").click(function(){

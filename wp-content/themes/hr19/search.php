@@ -7,6 +7,7 @@ $referer = wp_get_referer();
 $home    = home_url() . '/';
 $lease   = home_url() . '/alquileres/';
 $transc = "";
+var_dump($referer);
 if ( $referer == $home ) {
 	$transc = "Sale";
 } elseif ( $referer == $lease ) {
@@ -197,8 +198,7 @@ $total =  $wp_query->found_posts;
                                     </div>
                                 </div>
                             </div>
-                            <li><a href="#" data-value=""
-                                   class="text-center"><?php _e( 'Cualquier precio', 'hr' ) ?></a></li>
+                            <li><a href="#" data-value="" id="any-price" class="text-center"><?php _e( 'Cualquier precio', 'hr' ) ?></a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
