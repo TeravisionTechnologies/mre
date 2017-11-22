@@ -1,20 +1,9 @@
 <?php
 get_header();
-$s       = get_query_var( 's' );
-$url     = wp_upload_dir();
-$agentids  = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_ag_mls' ) );
-$referer = wp_get_referer();
-$home    = home_url() . '/';
-$lease   = home_url() . '/alquileres/';
-$transc = "";
-var_dump($referer);
-if ( $referer == $home ) {
-	$transc = "Sale";
-} elseif ( $referer == $lease ) {
-	$transc = "Lease";
-} else {
-	$transc = "Presale";
-}
+$s              = get_query_var( 's' );
+$propstatus     = get_query_var( 'property_status' );
+$url            = wp_upload_dir();
+$agentids       = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_ag_mls' ) );
 $search_string  = $s;
 $paged          = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $propertieslist = array(
@@ -23,10 +12,10 @@ $propertieslist = array(
 	'_meta_or_title' => $search_string,
 	'paged'          => $paged,
 	'meta_query'     => array(
-		'relation'   => 'AND',
+		'relation' => 'AND',
 		array(
 			'key'     => '_pr_transaction',
-			'value'   => $transc,
+			'value'   => $propstatus,
 			'compare' => '=',
 		),
 		array(
@@ -92,7 +81,7 @@ query_posts( $propertieslist );
 query_posts( $propertieslistmls );*/
 
 global $wp_query;
-$total =  $wp_query->found_posts;
+$total = $wp_query->found_posts;
 ?>
 <form id="property-search-top" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="post" role="form"
       data-toggle="validator">
@@ -198,7 +187,8 @@ $total =  $wp_query->found_posts;
                                     </div>
                                 </div>
                             </div>
-                            <li><a href="#" data-value="" id="any-price" class="text-center"><?php _e( 'Cualquier precio', 'hr' ) ?></a></li>
+                            <li><a href="#" data-value="" id="any-price"
+                                   class="text-center"><?php _e( 'Cualquier precio', 'hr' ) ?></a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -233,7 +223,7 @@ $total =  $wp_query->found_posts;
                     </li>
                 </ul>
                 <input type="hidden" name="action" value="myfilter">
-                <input type="hidden" id="transaction" name="transaction" value="<?php echo $transc; ?>">
+                <input type="hidden" id="transaction" name="transaction" value="<?php echo $propstatus; ?>">
                 <input type="hidden" id="price" name="price" value="">
                 <input type="hidden" id="rooms" name="rooms" value="">
                 <input type="hidden" id="baths" name="baths" value="">
@@ -252,7 +242,7 @@ $total =  $wp_query->found_posts;
                 <div class="col-sm-4 col-md-3">
                     <span class="state-search"><?php echo $s; ?></span>
                     <span class="results-search"><?php _e( 'Mostrando', 'hr' ) ?> 9 <?php _e( 'de', 'hr' ) ?>
-                        <?php echo $total; ?></php> <?php _e( 'casas', 'hr' ) ?></span>
+						<?php echo $total; ?></php> <?php _e( 'casas', 'hr' ) ?></span>
                 </div>
                 <div class="col-sm-8 col-md-9 text-center sort-select">
                     <select class="pull-right" id="proporder" name="proporder">
@@ -296,24 +286,24 @@ $total =  $wp_query->found_posts;
         <div id="response" class="row">
 			<?php if ( have_posts() ): while ( have_posts() ): the_post();
 
-				$address = get_post_meta( get_the_ID(), '_pr_address', true );
-				$price   = get_post_meta( get_the_ID(), '_pr_current_price', true );
-				$type    = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
-				$rooms   = get_post_meta( get_the_ID(), '_pr_room_count', true );
-				$baths   = get_post_meta( get_the_ID(), '_pr_baths_total', true );
-				$sysid   = get_post_meta( get_the_ID(), '_pr_matrixid', true );
-				$city    = get_post_meta( get_the_ID(), '_pr_city', true );
-				$state   = get_post_meta( get_the_ID(), '_pr_state', true );
-				$bgimg = $url['baseurl'].'/photos/'.$sysid.'/1.jpg';
-				$urlimage = wp_remote_head( $bgimg );
-				$urlimage = $urlimage['response']['code'];
-				$placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
+				$address     = get_post_meta( get_the_ID(), '_pr_address', true );
+				$price       = get_post_meta( get_the_ID(), '_pr_current_price', true );
+				$type        = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
+				$rooms       = get_post_meta( get_the_ID(), '_pr_room_count', true );
+				$baths       = get_post_meta( get_the_ID(), '_pr_baths_total', true );
+				$sysid       = get_post_meta( get_the_ID(), '_pr_matrixid', true );
+				$city        = get_post_meta( get_the_ID(), '_pr_city', true );
+				$state       = get_post_meta( get_the_ID(), '_pr_state', true );
+				$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
+				$urlimage    = wp_remote_head( $bgimg );
+				$urlimage    = $urlimage['response']['code'];
+				$placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
 				?>
                 <div class="col-xs-12 col-sm-4 col-md-4">
                     <a href="<?php the_permalink(); ?>" class="property">
                         <div class="property-image"
-                             data-url="<?php echo ( $urlimage != 404 ? $bgimg : $placeholder ) ?>"
-                             style="background: url(<?php echo ( $urlimage != 404 ? $bgimg : $placeholder ) ?>);"></div>
+                             data-url="<?php echo( $urlimage != 404 ? $bgimg : $placeholder ) ?>"
+                             style="background: url(<?php echo( $urlimage != 404 ? $bgimg : $placeholder ) ?>);"></div>
                         <div class="property-info">
                             <div class="property-price"><?php if ( ! empty( $price ) ) {
 									echo '$' . $price;
@@ -359,7 +349,8 @@ $total =  $wp_query->found_posts;
                     </div>
                 </div>
 			<?php endif;
-			wp_reset_postdata(); wp_reset_query(); ?>
+			wp_reset_postdata();
+			wp_reset_query(); ?>
         </div>
     </div>
 </form>

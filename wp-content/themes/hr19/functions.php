@@ -357,7 +357,7 @@ function pr_register_query_vars( $vars ) {
 	$vars[] = 'price';
 	$vars[] = 'beds';
 	$vars[] = 'baths';
-
+	$vars[] = 'property_status';
 	return $vars;
 }
 

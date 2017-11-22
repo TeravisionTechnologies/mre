@@ -13,7 +13,7 @@ $home_query = get_posts(
 $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
 $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
 $agentids  = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_ag_mls' ) );
-?>>
+?>
 <section class="col-xs-12 hr-hero-section text-center no-padding"
          style="background-image: url('<?php echo $hero[0]["_hf_hero_background"] ?>');">
     <div class="hero-overlay">
@@ -45,6 +45,7 @@ $agentids  = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $w
                             <input type="text" id="s" name="s" class="col-xs-10 col-sm-10 col-md-10"
                                    placeholder="<?php _e('Dirección, ciudad, barrio o código postal', 'hr') ?>"
                                    autocomplete="off" required value="Miami, FL">
+                            <input type="hidden" id="property_status" name="property_status" value="Lease">
                             <input type="hidden" name="post_type[]" value="property">
                             <button id="btn-search-home" type="submit" class="btn col-xs-2 col-sm-2 col-md-2"><i
                                         class="fa fa-search"></i></button>
