@@ -190,6 +190,8 @@ date_default_timezone_set( 'America/New_York' );
 require_once( "vendor/autoload.php" );
 
 function get_mls() {
+	global $wpdb;
+	$agentids  = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_ag_mls' ) );
 	$config = new \PHRETS\Configuration;
 	$config->setLoginUrl( 'http://rets.sef.mlsmatrix.com/Rets/Login.ashx' )
 	       ->setUsername( 'lesAERfue' )
@@ -219,6 +221,7 @@ function get_mls() {
 
 		$transaction = "";
 		$rooms       = "";
+		$owner = "";
 		if ( $property['ForSaleYN'] == "0" ) {
 			$transaction = 'Lease';
 		} else {
@@ -229,6 +232,11 @@ function get_mls() {
 		} else {
 			$rooms = $property['BedsTotal'];
 		}
+		if (in_array( $property['ListAgentMLSID'], $agentids )) {
+			$owner = "HR19";
+		} else{
+			$owner = "Other";
+        }
 
 
 		$propid = get_page_by_title( $property['MLSNumber'], 'OBJECT', 'property' ); //Check if already exists
@@ -262,6 +270,7 @@ function get_mls() {
 					'_pr_forlease'         => $property['ForLeaseYN'],
 					'_pr_postalcode'       => $property['PostalCode'] . ', ' . $property['City'] . ', ' . $property['StateOrProvince'],
 					'_pr_transaction'      => $transaction,
+					'_pr_owner'      => $owner,
 				)
 			);
 			$posted_property = wp_insert_post( $post_args );
@@ -311,6 +320,7 @@ function get_mls() {
 					'_pr_forlease'         => $property['ForLeaseYN'],
 					'_pr_postalcode'       => $property['PostalCode'] . ', ' . $property['City'] . ', ' . $property['StateOrProvince'],
 					'_pr_transaction'      => $transaction,
+					'_pr_owner'             => $owner,
 				),
 			);
 			$posted_property = wp_update_post( $post_args );
@@ -362,53 +372,6 @@ function pr_register_query_vars( $vars ) {
 }
 
 add_filter( 'query_vars', 'pr_register_query_vars' );
-
-function pr_pre_get_posts( $query ) {
-	// check if the user is requesting an admin page
-	// or current query is not the main query
-	if ( is_admin() || ! $query->is_main_query() ) {
-		return;
-	}
-
-	// edit the query only when post type is 'property'
-	// if it isn't, return
-	if ( ! is_post_type_archive( 'property' ) ) {
-		return;
-	}
-
-	$meta_query = array();
-
-	// add meta_query elements
-	if ( ! empty( get_query_var( 'city' ) ) ) {
-		$meta_query[] = array( 'key' => '_pr_city', 'value' => get_query_var( 'city' ), 'compare' => '=' );
-	}
-
-	if ( ! empty( get_query_var( 'type' ) ) ) {
-		$meta_query[] = array( 'key' => '_pr_type_of_property', 'value' => get_query_var( 'type' ), 'compare' => '=' );
-	}
-
-	if ( ! empty( get_query_var( 'price' ) ) ) {
-		$meta_query[] = array( 'key' => '_pr_current_price', 'value' => get_query_var( 'price' ), 'compare' => '=' );
-	}
-
-	if ( ! empty( get_query_var( 'beds' ) ) ) {
-		$meta_query[] = array( 'key' => '_pr_room_count', 'value' => get_query_var( 'beds' ), 'compare' => '=' );
-	}
-
-	if ( ! empty( get_query_var( 'baths' ) ) ) {
-		$meta_query[] = array( 'key' => '_pr_baths_total', 'value' => get_query_var( 'baths' ), 'compare' => '=' );
-	}
-
-	if ( count( $meta_query ) > 1 ) {
-		$meta_query['relation'] = 'AND';
-	}
-
-	if ( count( $meta_query ) > 0 ) {
-		$query->set( 'meta_query', $meta_query );
-	}
-}
-
-add_action( 'pre_get_posts', 'pr_pre_get_posts', 1 );
 
 
 add_action( 'pre_get_posts', function ( $q ) {
@@ -585,7 +548,7 @@ function property_filter_function() {
 		endwhile; ?>
         <div class="row">
             <div class="col-md-12 text-center">
-				<?php wp_pagenavi(); ?>
+	            <?php wp_pagenavi( array( 'query' => $query ) ); ?>
             </div>
         </div>
 	<?php else: ?>

@@ -91,14 +91,23 @@ $agentids  = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $w
             $city = get_post_meta(get_the_ID(), '_pr_city', true);
             $state = get_post_meta(get_the_ID(), '_pr_state', true);
             $bgimg = $url['baseurl'].'/photos/'.$sysid.'/1.jpg';
+	        $headers  = get_headers($bgimg, 1);
+	        $fsize    = $headers['Content-Length'];
+	        $fsize = (int)$fsize;
 	        $urlimage = wp_remote_head( $bgimg );
 	        $urlimage = $urlimage['response']['code'];
 	        $placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
             ?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <a href="<?php the_permalink(); ?>" class="property">
-                    <div class="property-image"
-                         style="background: url(<?php echo ( $urlimage != 404 ? $bgimg : $placeholder ) ?>);"></div>
+                    <div class="property-image" style="background: url(
+                         <?php if($urlimage == 404 or $fsize < 100){
+                             echo $placeholder;
+                         } else {
+	                         echo $bgimg;
+                         } ?>
+                         );">
+                    </div>
                     <div class="property-info">
                         <div class="property-price"><?php if (!empty($price)) {
                                 echo '$' . $price;

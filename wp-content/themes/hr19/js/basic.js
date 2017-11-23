@@ -500,13 +500,21 @@ jQuery(document).ready(function ($) {
         $("#max-list").show();
     });
 
-    $('.wp-pagenavi a').on('click', function(e){
+    /*$('.wp-pagenavi a').on('click', function(e){
         e.preventDefault();
         var link = $(this).attr('href');
         $('#presponse').load(link + ' #presponse', function() {
             $('#presponse').fadeIn();
         });
     });
+
+    $('.wp-pagenavi a').on('click', function(e){
+        e.preventDefault();
+        var link = $(this).attr('href');
+        $('#response').load(link + ' #presponse', function() {
+            $('#response').fadeIn();
+        });
+    });*/
 
 });
 

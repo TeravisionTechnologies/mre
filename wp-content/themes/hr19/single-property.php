@@ -23,6 +23,10 @@ $directory = $url['basedir'] . '/photos/' . $sysid . '/';
 $images = glob($directory . "*.jpg");
 $currentproperty = get_the_ID();
 $placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
+$bgimg = $url['baseurl'].'/photos/'.$sysid.'/1.jpg';
+$headers  = get_headers($bgimg, 1);
+$bgimg    = $headers['Content-Length'];
+$bgimg = (int)$bgimg;
 ?>
     <div class="breadcrumb-info">
         <div class="container">
@@ -53,17 +57,17 @@ $placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
     <div class="property-carousel">
         <div class="swiper-container swiper-property">
             <div class="swiper-wrapper">
-                <?php if( !empty( $images ) ){ ?>
-                    <?php foreach ($images as $image) {
-                        $end = end(explode('/', rtrim($image, '/'))); ?>
-                        <div class="swiper-slide">
-                            <div style="background-image: url(<?php echo $url['baseurl'] . '/photos/' . $sysid . '/' . $end; ?>)"></div>
-                        </div>
-                    <?php } ?>
-	            <?php } else{ ?>
+                <?php if( empty( $images ) or $bgimg < 100 ){ ?>
                     <div class="swiper-slide">
                         <div style="background-image: url(<?php echo $placeholder; ?>)"></div>
                     </div>
+	            <?php } else{ ?>
+	                <?php foreach ($images as $image) {
+		                $end = end(explode('/', rtrim($image, '/'))); ?>
+                        <div class="swiper-slide">
+                            <div style="background-image: url(<?php echo $url['baseurl'] . '/photos/' . $sysid . '/' . $end; ?>)"></div>
+                        </div>
+	                <?php } ?>
                 <?php } ?>
             </div>
             <div class="swiper-button-next"><i class="fa fa-chevron-circle-right"></i></div>

@@ -154,6 +154,12 @@ function property_metaboxes() {
 		'id' => $prefix . 'postalcode',
 		'type' => 'text',
 	));
+	$cmb_property->add_field(array(
+		'name' => __('Propietario'),
+		'id' => $prefix . 'owner',
+		'type' => 'text',
+	));
+
 
 
 }

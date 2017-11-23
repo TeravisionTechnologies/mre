@@ -1,87 +1,16 @@
 <?php
 get_header();
-$s              = get_query_var( 's' );
-$propstatus     = get_query_var( 'property_status' );
-$url            = wp_upload_dir();
-$agentids       = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_ag_mls' ) );
-$search_string  = $s;
-$paged          = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-$propertieslist = array(
-	'post_type'      => 'property',
-	'posts_per_page' => 9,
-	'_meta_or_title' => $search_string,
-	'paged'          => $paged,
-	'meta_query'     => array(
-		'relation' => 'AND',
-		array(
-			'key'     => '_pr_transaction',
-			'value'   => $propstatus,
-			'compare' => '=',
-		),
-		array(
-			'relation' => 'OR',
-			array(
-				'key'     => '_pr_city',
-				'value'   => $search_string,
-				'compare' => '=',
-			),
-			array(
-				'key'     => '_pr_address',
-				'value'   => $search_string,
-				'compare' => '=',
-			),
-			array(
-				'key'     => '_pr_postalcode',
-				'value'   => $search_string,
-				'compare' => '=',
-			)
-		)
-	)
-);
-query_posts( $propertieslist );
-
-// Propiedades HR19
-/*$propertieslistmls = array(
-	'post_type'      => 'property',
-	'posts_per_page' => -1,
-	'_meta_or_title' => $search_string,
-	'paged'          => $paged,
-	'meta_query'     => array(
-		'relation'   => 'AND',
-		array(
-			'key'     => '_pr_transaction',
-			'value'   => $transc,
-			'compare' => '=',
-		),
-		array(
-			'key' => '_pr_agentid',
-			'value' => $agentids,
-			'compare' => 'IN',
-		),
-		array(
-			'relation' => 'OR',
-			array(
-				'key'     => '_pr_city',
-				'value'   => $search_string,
-				'compare' => '=',
-			),
-			array(
-				'key'     => '_pr_address',
-				'value'   => $search_string,
-				'compare' => '=',
-			),
-			array(
-				'key'     => '_pr_postalcode',
-				'value'   => $search_string,
-				'compare' => '=',
-			)
-		)
-	)
-);
-query_posts( $propertieslistmls );*/
-
-global $wp_query;
-$total = $wp_query->found_posts;
+//global $wp_query;
+//$total = $wp_query->found_posts;
+$s             = get_query_var( 's' );
+$propstatus    = get_query_var( 'property_status' );
+$url           = wp_upload_dir();
+$search_string = $s;
+if(isset($_POST["target_page"])) {
+	$page = $_POST["target_page"];
+} else {
+	$page = 1;
+}
 ?>
 <form id="property-search-top" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="post" role="form"
       data-toggle="validator">
@@ -108,33 +37,36 @@ $total = $wp_query->found_posts;
                         </div>
                     </li>
                     <li class="dropdown">
-                        <?php if($propstatus == "Sale") { ?>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+						<?php if ( $propstatus == "Sale" ) { ?>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true"
                                aria-expanded="false"><?php _e( 'Compra', 'hr' ) ?> <span class="caret"></span></a>
                             <ul id="transction-dd" class="dropdown-menu clickdd">
                                 <li><a href="#" data-value="Sale"><?php _e( 'Compra', 'hr' ) ?></a></li>
                                 <li><a href="#" data-value="Lease"><?php _e( 'Alquiler', 'hr' ) ?></a></li>
                                 <li><a href="#" data-value="Presale"><?php _e( 'Preventa', 'hr' ) ?></a></li>
                             </ul>
-                        <?php } ?>
-                        <?php if($propstatus == "Lease") { ?>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+						<?php } ?>
+						<?php if ( $propstatus == "Lease" ) { ?>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true"
                                aria-expanded="false"><?php _e( 'Alquiler', 'hr' ) ?> <span class="caret"></span></a>
                             <ul id="transction-dd" class="dropdown-menu clickdd">
                                 <li><a href="#" data-value="Lease"><?php _e( 'Alquiler', 'hr' ) ?></a></li>
                                 <li><a href="#" data-value="Sale"><?php _e( 'Compra', 'hr' ) ?></a></li>
                                 <li><a href="#" data-value="Presale"><?php _e( 'Preventa', 'hr' ) ?></a></li>
                             </ul>
-                        <?php } ?>
-                        <?php if($propstatus == "Presale") { ?>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+						<?php } ?>
+						<?php if ( $propstatus == "Presale" ) { ?>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true"
                                aria-expanded="false"><?php _e( 'Preventa', 'hr' ) ?> <span class="caret"></span></a>
                             <ul id="transction-dd" class="dropdown-menu clickdd">
                                 <li><a href="#" data-value="Presale"><?php _e( 'Preventa', 'hr' ) ?></a></li>
                                 <li><a href="#" data-value="Lease"><?php _e( 'Alquiler', 'hr' ) ?></a></li>
                                 <li><a href="#" data-value="Sale"><?php _e( 'Compra', 'hr' ) ?></a></li>
                             </ul>
-                        <?php } ?>
+						<?php } ?>
 
                     </li>
                     <li class="dropdown">
@@ -299,81 +231,131 @@ $total = $wp_query->found_posts;
                 </div>
             </div>
         </div>
+</form>
+<div id="response" class="row">
+	<?php $owner = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_owner' ) ); ?>
+	<?php foreach ( $owner as $ow ) { ?>
+        <div class="col-md-12">
+            <h2 class="hr-heading"><?php echo( $ow == "HR19" ? "Propiedades HR19" : "Otras propiedades · MLS" ); ?></h2>
+        </div>
+		<?php
+		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+		$loop  = new WP_Query( array(
+			'post_type'      => 'property',
+			'posts_per_page' => 9,
+			'paged'          => get_query_var( 'page' ),
+			'_meta_or_title' => $search_string,
+			'meta_query'     => array(
+				'relation' => 'AND',
+				array(
+					'key'     => '_pr_transaction',
+					'value'   => $propstatus,
+					'compare' => '=',
+				),
+				array(
+					'key'     => '_pr_owner',
+					'value'   => $ow,
+					'compare' => '=',
+				),
+				array(
+					'relation' => 'OR',
+					array(
+						'key'     => '_pr_city',
+						'value'   => $search_string,
+						'compare' => '=',
+					),
+					array(
+						'key'     => '_pr_address',
+						'value'   => $search_string,
+						'compare' => '=',
+					),
+					array(
+						'key'     => '_pr_postalcode',
+						'value'   => $search_string,
+						'compare' => '=',
+					)
+				)
+			)
+		) );
+		if ($loop->have_posts()): while ( $loop->have_posts() ) : $loop->the_post();
+			$address     = get_post_meta( get_the_ID(), '_pr_address', true );
+			$price       = get_post_meta( get_the_ID(), '_pr_current_price', true );
+			$type        = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
+			$rooms       = get_post_meta( get_the_ID(), '_pr_room_count', true );
+			$baths       = get_post_meta( get_the_ID(), '_pr_baths_total', true );
+			$sysid       = get_post_meta( get_the_ID(), '_pr_matrixid', true );
+			$city        = get_post_meta( get_the_ID(), '_pr_city', true );
+			$state       = get_post_meta( get_the_ID(), '_pr_state', true );
+			$agentid     = get_post_meta( get_the_ID(), '_pr_agentid', true );
+			$bgimg = $url['baseurl'].'/photos/'.$sysid.'/1.jpg';
+			$headers  = get_headers($bgimg, 1);
+			$fsize    = $headers['Content-Length'];
+			$fsize = (int)$fsize;
+			$urlimage = wp_remote_head( $bgimg );
+			$urlimage = $urlimage['response']['code'];
+			$placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
+			?>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <a href="<?php the_permalink(); ?>" class="property">
+                    <div class="property-image" style="background: url(
+	                <?php if($urlimage == 404 or $fsize < 100){
+		                echo $placeholder;
+	                } else {
+		                echo $bgimg;
+	                } ?>);" data-url="<?php if($urlimage == 404 or $fsize < 100){
+	                    echo $placeholder;
+                    } else {
+	                    echo $bgimg;
+                    } ?>">
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price"><?php if ( ! empty( $price ) ) {
+								echo '$' . $price;
+							} ?></div>
+                        <div class="property-highlights">
+							<?php if ( ! empty( $type ) ) {
+								echo $type;
+							} else {
+								echo 'N/A';
+							} ?>
+							<?php if ( ! empty( $rooms ) ) {
+								echo '· ' . $rooms . ' Habitaciones';
+							} ?>
+							<?php if ( ! empty( $baths ) ) {
+								echo '· ' . $baths . ' Baños';
+							} ?>
+                        </div>
+                        <div class="property-address">
+							<?php if ( ! empty( $address ) ) {
+								echo $address;
+							} else if ( ! empty( $city ) and ! empty( $state ) ) {
+								echo $city . ', ' . $state;
+							} else {
+								echo $state;
+							} ?>
+                        </div>
+                        <div class="property-code">MLS: <?php the_title(); ?></div>
+                    </div>
+                </a>
+            </div>
+		<?php endwhile; ?>
         <div class="row">
-            <div class="col-md-12">
-                <h2 class="hr-heading"><?php _e( 'Propiedades HR19', 'hr' ) ?></h2>
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+				<?php wp_pagenavi( array( 'query' => $loop ) ); ?>
             </div>
         </div>
-        <div id="response" class="row">
-			<?php if ( have_posts() ): while ( have_posts() ): the_post();
+		<?php else: ?>
+            <div class="col-md-12">
+                <div class="no-results-info">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">
+                    <h4><?php _e('No existen propiedades disponibles en estos momentos', 'hr') ?></h4>
+                    <p><?php _e('0 resultados', 'hr') ?></p>
+                </div>
+            </div>
+		<?php endif; wp_reset_postdata(); ?>
+	<?php } ?>
+</div>
+</div>
 
-				$address     = get_post_meta( get_the_ID(), '_pr_address', true );
-				$price       = get_post_meta( get_the_ID(), '_pr_current_price', true );
-				$type        = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
-				$rooms       = get_post_meta( get_the_ID(), '_pr_room_count', true );
-				$baths       = get_post_meta( get_the_ID(), '_pr_baths_total', true );
-				$sysid       = get_post_meta( get_the_ID(), '_pr_matrixid', true );
-				$city        = get_post_meta( get_the_ID(), '_pr_city', true );
-				$state       = get_post_meta( get_the_ID(), '_pr_state', true );
-				$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
-				$urlimage    = wp_remote_head( $bgimg );
-				$urlimage    = $urlimage['response']['code'];
-				$placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
-				?>
-                <div class="col-xs-12 col-sm-4 col-md-4">
-                    <a href="<?php the_permalink(); ?>" class="property">
-                        <div class="property-image"
-                             data-url="<?php echo( $urlimage != 404 ? $bgimg : $placeholder ) ?>"
-                             style="background: url(<?php echo( $urlimage != 404 ? $bgimg : $placeholder ) ?>);"></div>
-                        <div class="property-info">
-                            <div class="property-price"><?php if ( ! empty( $price ) ) {
-									echo '$' . $price;
-								} ?></div>
-                            <div class="property-highlights">
-								<?php if ( ! empty( $type ) ) {
-									echo $type;
-								} else {
-									echo 'N/A';
-								} ?>
-								<?php if ( ! empty( $rooms ) ) {
-									echo '· ' . $rooms . ' Habitaciones';
-								} ?>
-								<?php if ( ! empty( $baths ) ) {
-									echo '· ' . $baths . ' Baños';
-								} ?>
-                            </div>
-                            <div class="property-address">
-								<?php if ( ! empty( $address ) ) {
-									echo $address;
-								} else if ( ! empty( $city ) and ! empty( $state ) ) {
-									echo $city . ', ' . $state;
-								} else {
-									echo $state;
-								} ?>
-                            </div>
-                            <div class="property-code">MLS: <?php the_title(); ?></div>
-                        </div>
-                    </a>
-                </div>
-			<?php endwhile; ?>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-						<?php wp_pagenavi(); ?>
-                    </div>
-                </div>
-			<?php else: ?>
-                <div class="col-md-12">
-                    <div class="no-results-info">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">
-                        <h4><?php _e( 'No pudimos encontrar ninguna propiedad', 'hr' ) ?></h4>
-                        <p><?php _e( 'Por favor verifique sus criterios de b&uacute;squeda', 'hr' ) ?></p>
-                    </div>
-                </div>
-			<?php endif;
-			wp_reset_postdata();
-			wp_reset_query(); ?>
-        </div>
-    </div>
-</form>
 
 <?php get_footer(); ?>
