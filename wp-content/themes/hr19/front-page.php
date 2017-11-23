@@ -41,7 +41,6 @@ $agentids  = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $w
                             <input type="text" id="s" name="s" class="col-xs-10 col-sm-10 col-md-10"
                                    placeholder="<?php _e('Dirección, ciudad, barrio o código postal', 'hr') ?>"
                                    autocomplete="off" required value="Miami, FL">
-                            <i class="fa fa-times"></i>
                             <input type="hidden" id="property_status" name="property_status" value="Sale">
                             <input type="hidden" name="post_type[]" value="property">
                             <button id="btn-search-home" type="submit" class="btn col-xs-2 col-sm-2 col-md-2"><i

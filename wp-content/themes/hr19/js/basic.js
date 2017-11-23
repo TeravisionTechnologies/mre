@@ -176,39 +176,12 @@ jQuery(document).ready(function ($) {
         $(this).parents(".dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
         $(this).parents(".dropdown").find('.dropdown-toggle').val($(this).data('value'));
     });
-
     $("#any-price").click(function () {
         $(this).parents(".dropdown").removeClass('open');
     });
-
-    // Clear search input
-    /*$('#s').click(function () {
-        $(this).val('');
+    $("#max-list li a").click(function () {
+        $(this).parents(".dropdown").removeClass('open');
     });
-    $('#s').focus(function () {
-        $(this).val('');
-    });*/
-
-    /*if( $('#s').val().length > 0 ) {
-        $('.fa-times').css("display", "block");
-    } else{
-        $('.fa-times').css("display", "none");
-    }
-
-    $('#s').keyup(function() {
-        if( $('#s').val().length > 0 ) {
-            $('.fa-times').css("display", "block");
-        } else{
-            $('.fa-times').css("display", "none");
-        }
-    });*/
-
-    /*$('#s').keyup(function() {
-        if( $('#s').val().length > 0 ) {
-            $('.fa-times').css("display", "none");
-        }
-    });*/
-
 
     // Autocomplete data from database
     var cities = JSON.parse(hr19.cities);

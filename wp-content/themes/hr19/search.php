@@ -108,13 +108,34 @@ $total = $wp_query->found_posts;
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false"><?php _e( 'Compra', 'hr' ) ?> <span class="caret"></span></a>
-                        <ul id="transction-dd" class="dropdown-menu clickdd">
-                            <li><a href="#" data-value="Sale"><?php _e( 'Compra', 'hr' ) ?></a></li>
-                            <li><a href="#" data-value="Lease"><?php _e( 'Alquiler', 'hr' ) ?></a></li>
-                            <li><a href="#" data-value="Presale"><?php _e( 'Preventa', 'hr' ) ?></a></li>
-                        </ul>
+                        <?php if($propstatus == "Sale") { ?>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false"><?php _e( 'Compra', 'hr' ) ?> <span class="caret"></span></a>
+                            <ul id="transction-dd" class="dropdown-menu clickdd">
+                                <li><a href="#" data-value="Sale"><?php _e( 'Compra', 'hr' ) ?></a></li>
+                                <li><a href="#" data-value="Lease"><?php _e( 'Alquiler', 'hr' ) ?></a></li>
+                                <li><a href="#" data-value="Presale"><?php _e( 'Preventa', 'hr' ) ?></a></li>
+                            </ul>
+                        <?php } ?>
+                        <?php if($propstatus == "Lease") { ?>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false"><?php _e( 'Alquiler', 'hr' ) ?> <span class="caret"></span></a>
+                            <ul id="transction-dd" class="dropdown-menu clickdd">
+                                <li><a href="#" data-value="Lease"><?php _e( 'Alquiler', 'hr' ) ?></a></li>
+                                <li><a href="#" data-value="Sale"><?php _e( 'Compra', 'hr' ) ?></a></li>
+                                <li><a href="#" data-value="Presale"><?php _e( 'Preventa', 'hr' ) ?></a></li>
+                            </ul>
+                        <?php } ?>
+                        <?php if($propstatus == "Presale") { ?>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false"><?php _e( 'Preventa', 'hr' ) ?> <span class="caret"></span></a>
+                            <ul id="transction-dd" class="dropdown-menu clickdd">
+                                <li><a href="#" data-value="Presale"><?php _e( 'Preventa', 'hr' ) ?></a></li>
+                                <li><a href="#" data-value="Lease"><?php _e( 'Alquiler', 'hr' ) ?></a></li>
+                                <li><a href="#" data-value="Sale"><?php _e( 'Compra', 'hr' ) ?></a></li>
+                            </ul>
+                        <?php } ?>
+
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
