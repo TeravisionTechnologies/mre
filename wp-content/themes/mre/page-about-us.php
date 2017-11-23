@@ -53,6 +53,25 @@ get_header();
     <p><?php echo $main_text[0]['_au_properties_text']; ?></p>
   </div>
 </section>
+<?php
+  $headerPost = get_posts(
+    array(
+      'post_type' => 'header_footer',
+      'numberposts' => 1
+    )
+  );
+  $partnerLeft = get_post_meta( $headerPost[0]->ID, '_hf_partner_left', true );
+  $partnerRight = get_post_meta( $headerPost[0]->ID, '_hf_partner_right', true );
+?>
+  <section class="col-xs-12 hr-partners-section text-center">
+    <div class="container">
+      <p class="hr-partners-title">La nueva forma de <strong>invertir en propiedades</strong></p>
+    </div>
+    <div class="hr-partners-images">
+      <a href="<?php echo $partnerLeft[0]['_hf_partner_link_left']; ?>" target="_blank"><img src="<?php echo $partnerLeft[0]["_hf_partner_left_logo"]; ?>" alt="Logo ALA19" class="partners-images-one"/></a>
+      <a href="<?php echo $partnerRight[0]['_hf_partner_link_right']; ?>" target="_blank"><img src="<?php echo $partnerRight[0]["_hf_partner_right_logo"]; ?>" alt="Logo MRE RealEstate" class="partners-images-two"/></a>
+    </div>
+  </section>
   <section id="contact-us" class="col-xs-12 al-contact-div no-padding" style="background-image: url('<?php if(isset($contact[0]["_hf_contact_background"])) { echo $contact[0]["_hf_contact_background"]; }?>')">
     <div class="overlay"></div>
     <div class="container-mre center-block">
