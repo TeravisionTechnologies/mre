@@ -240,6 +240,9 @@ jQuery(document).ready(function ($) {
         $('#max').val('');
         $(this).closest('form').submit();
     });
+    $('input[type=radio][name=showowner]').change(function() {
+        $(this).closest('form').submit();
+    });
 
     // Set input hidden values by selected option clicked
     $("#baths-dd li a").click(function(){
@@ -310,13 +313,13 @@ jQuery(document).ready(function ($) {
             data:filter.serialize(),
             type:filter.attr('method'),
             beforeSend:function(xhr){
-                //filter.find('button').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
+                filter.find('button').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
                 $('#loader').show();
             },
             success:function(data){
-                //filter.find('.btn-search').html('<i class="fa fa-search"></i>');
+                filter.find('.btn-search').html('<i class="fa fa-search"></i>');
                 $('#loader').hide();
-                $('#response').html(data);
+                $('#responsed').html(data);
             }
         });
         setTimeout(initialize(), 10000);
@@ -502,13 +505,13 @@ jQuery(document).ready(function ($) {
         $("#max-list").show();
     });
 
-    /*$('.wp-pagenavi a').on('click', function(e){
+    $('.wp-pagenavi a').on('click', function(e){
         e.preventDefault();
         var link = $(this).attr('href');
-        $('#presponse').load(link + ' #presponse', function() {
-            $('#presponse').fadeIn();
+        $('#responsed').load(link + ' #responsed', function() {
+            $('#responsed').fadeIn();
         });
-    });*/
+    });
 
     $('.nn .wp-pagenavi a').on('click', function(e){
         e.preventDefault();
@@ -517,6 +520,12 @@ jQuery(document).ready(function ($) {
             $('#responses').fadeIn();
         });
     });
+
+    var sum = 0;
+    $('.tot').each(function(){
+        sum += parseFloat($(this).data('myval'));
+    });
+    $("#ptotal").html(sum);
 
 });
 
@@ -544,6 +553,7 @@ $(window).on('load', function() {
             scrollTop: finalPosition
         }, 1000);
     }*/
+
 });
 
 // Show/Hide Filter button on scroll

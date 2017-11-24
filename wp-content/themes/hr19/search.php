@@ -1,16 +1,9 @@
 <?php
 get_header();
-//global $wp_query;
-//$total = $wp_query->found_posts;
 $s             = get_query_var( 's' );
 $propstatus    = get_query_var( 'property_status' );
 $url           = wp_upload_dir();
 $search_string = $s;
-if(isset($_POST["target_page"])) {
-	$page = $_POST["target_page"];
-} else {
-	$page = 1;
-}
 ?>
 <form id="property-search-top" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="post" role="form"
       data-toggle="validator">
@@ -26,7 +19,6 @@ if(isset($_POST["target_page"])) {
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
                 <input type="hidden" name="post_type[]" value="property">
                 <ul class="nav navbar-nav">
                     <li>
@@ -67,7 +59,6 @@ if(isset($_POST["target_page"])) {
                                 <li><a href="#" data-value="Sale"><?php _e( 'Compra', 'hr' ) ?></a></li>
                             </ul>
 						<?php } ?>
-
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -198,7 +189,7 @@ if(isset($_POST["target_page"])) {
                 <div class="col-sm-4 col-md-3">
                     <span class="state-search"><?php echo $s; ?></span>
                     <span class="results-search"><?php _e( 'Mostrando', 'hr' ) ?> 9 <?php _e( 'de', 'hr' ) ?>
-						<?php echo $total; ?></php> <?php _e( 'casas', 'hr' ) ?></span>
+						<span id="ptotal"></span> <?php _e( 'casas', 'hr' ) ?></span>
                 </div>
                 <div class="col-sm-8 col-md-9 text-center sort-select">
                     <select class="pull-right" id="proporder" name="proporder">
@@ -210,11 +201,11 @@ if(isset($_POST["target_page"])) {
                     </select>
                     <div class="pull-right choose-search">
                         <div class="radio radio-inline radio-success">
-                            <input type="radio" id="inlineRadio1" value="option1" name="radioInline" class="styled">
+                            <input type="radio" id="showowner1" value="HR19" name="showowner" class="styled">
                             <label for="inlineRadio1"><?php _e( 'Solo Hr19', 'hr' ) ?></label>
                         </div>
                         <div class="radio radio-inline radio-success">
-                            <input type="radio" id="inlineRadio2" value="option2" name="radioInline" class="styled"
+                            <input type="radio" id="showowner2" value="" name="showowner" class="styled"
                                    checked>
                             <label for="inlineRadio2"><?php _e( 'Todos', 'hr' ) ?></label>
                         </div>
@@ -237,7 +228,7 @@ if(isset($_POST["target_page"])) {
 </form>
 <div id="responsed" class="row">
 	<?php $owner = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_owner' ) ); ?>
-	<?php foreach ( $owner as $ow ) { ?>
+	<?php foreach ( $owner as $key => $ow ) { ?>
         <div class="col-md-12">
             <h2 class="hr-heading"><?php echo( $ow == "HR19" ? "Propiedades HR19" : "Otras propiedades · MLS" ); ?></h2>
         </div>
@@ -342,11 +333,12 @@ if(isset($_POST["target_page"])) {
                 </a>
             </div>
 		<?php endwhile; ?>
-        <div class="row">
+            <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 				<?php wp_pagenavi( array( 'query' => $query ) ); ?>
             </div>
         </div>
+            <div class="tot" data-myval="<?php echo $count = $query->found_posts;  ?>"></div>
 		<?php else: ?>
             <div class="col-md-12">
                 <div class="no-results-info">
@@ -359,6 +351,5 @@ if(isset($_POST["target_page"])) {
 	<?php } ?>
 </div>
 </div>
-
 
 <?php get_footer(); ?>

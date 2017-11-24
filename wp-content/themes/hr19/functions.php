@@ -431,8 +431,8 @@ function property_filter_function() {
 			'post_type' => 'property',
 			'showposts' => 9,
 			'paged'     => get_query_var( 'paged' ),
-			//'orderby'        => $orderby,
-			//'order'          => $sort,
+			'orderby'        => $orderby,
+			'order'          => $sort,
 		);
 
 		// create $args['meta_query'] array if one of the following fields is filled
@@ -483,6 +483,13 @@ function property_filter_function() {
 			'compare' => '='
 		);
 
+		if ( isset( $_POST['showowner'] ) && $_POST['showowner'] ) {
+			$args['meta_query'][] = array(
+				'key'     => '_pr_owner',
+				'value'   => $_POST['showowner'],
+				'compare' => '='
+			);
+        }
 
 		if ( isset( $_POST['s'] ) && $_POST['s'] ) {
 			$args['meta_query'][] = array(
