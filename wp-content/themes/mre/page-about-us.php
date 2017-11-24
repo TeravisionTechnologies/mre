@@ -8,10 +8,17 @@ $about_query = get_posts(
     'post_type' => 'about_us'
   )
 );
+$headerPost = get_posts(
+	array(
+		'post_type' => 'header_footer',
+		'numberposts' => 1
+	)
+);
+$theMeta = get_post_meta($headerPost[0]->ID);
 $hero = get_post_meta( $about_query[0]->ID, '_au_hero', true );
 $main_text = get_post_meta( $about_query[0]->ID, '_au_main', true );
 $values = get_post_meta( $about_query[0]->ID, '_au_values', true );
-
+$contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
 get_header();
 ?>
 

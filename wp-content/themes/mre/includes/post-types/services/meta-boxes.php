@@ -6,49 +6,86 @@
  * Time: 03:18 PM
  */
 
-	function services_metaboxes() {
+function services_metaboxes() {
 
-		// Start with an underscore to hide fields from custom fields list
-		$prefix = '_sv_';
+	// Start with an underscore to hide fields from custom fields list
+	$prefix = '_sv_';
 
-		// Initiate the metabox
-		$cmb = new_cmb2_box(
-			array(
-				'id'            => 'services_boxes',
-				'title'         => __( 'Services Boxes' ),
-				'object_types'  => 'services', // Post type
-				'context'       => 'normal',
-				'priority'      => 'high'
-			)
-		);
+	// Initiate the metabox for About Us
+	$cmb_about = new_cmb2_box(
+		array(
+			'id'           => 'Services Information',
+			'title'        => __( 'Services Setup' ),
+			'object_types' => 'services', // Post type
+			'context'      => 'normal',
+			'priority'     => 'high'
+		)
+	);
 
-        // Image
-        $cmb->add_field(
-            array(
-                'name'         => __( 'Property Images' ),
-                'id'           => $prefix . 'image',
-                'type'         => 'file',
-                'preview_size' => array(100,100),
-                'text'         =>
-                    array(
-                        'add_upload_file_text' => __( 'Add or Upload an Image' ), // default: "Add or Upload Files"
-                    ),
-                'repeatable'   => false,
-                'options'      => array(
-                    'url' => false, // Hide the text input for the url
-                )
-            )
-        );
+	// Hero
+	$cmb_hero = $cmb_about->add_field( array(
+		'id'         => $prefix . 'hero',
+		'type'       => 'group',
+		'repeatable' => false,
+		'options'    => array(
+			'group_title'   => __( 'Hero Section', 'cmb2' ),
+			'add_button'    => __( 'Add Another Entry', 'cmb2' ),
+			'remove_button' => __( 'Remove Entry', 'cmb2' ),
+			'sortable'      => true,
+		),
+	) );
 
-		// Description
-		$cmb->add_field(
-			array(
-				'name'       => __( 'Description' ),
-				'desc'       => __( 'Description of the service' ),
-				'id'         => $prefix . 'desc',
-				'type'       => 'textarea',
-				'repeatable' => false
-			)
-		);
+	// Hero Background
+	$cmb_about->add_group_field( $cmb_hero, array(
+			'name'         => __( 'Hero Background' ),
+			'id'           => $prefix . 'hero_background',
+			'type'         => 'file',
+			'preview_size' => array( 100, 100 ),
+			'text'         =>
+				array(
+					'add_upload_files_text' => __( 'Add or Upload Images' ), // default: "Add or Upload Files"
+					'file_text'             => __( 'Image:' ), // default: "File:"
+				),
+			'options'      =>
+				array(
+					'url' => false, // Hide the text input for the url
+				),
+			'repeatable'   => false
+		)
+	);
 
-	}
+	// Hero Text
+	$cmb_about->add_group_field( $cmb_hero, array(
+		'name' => __( 'Hero Section Text' ),
+		'id'   => $prefix . 'hero_text',
+		'type' => 'wysiwyg',
+	) );
+
+	// Main Section
+	$cmb_main = $cmb_about->add_field( array(
+		'id'         => $prefix . 'main',
+		'type'       => 'group',
+		'repeatable' => false,
+		'options'    => array(
+			'group_title'   => __( 'Main Section', 'cmb2' ),
+			'add_button'    => __( 'Add Another Entry', 'cmb2' ),
+			'remove_button' => __( 'Remove Entry', 'cmb2' ),
+			'sortable'      => true,
+		),
+	) );
+
+	// Main Text
+	$cmb_about->add_group_field( $cmb_main, array(
+		'name' => __( 'Main Text' ),
+		'id'   => $prefix . 'main_text',
+		'type' => 'wysiwyg',
+	) );
+
+	// Services Text
+	$cmb_about->add_group_field( $cmb_main, array(
+		'name'    => __( 'Services Text' ),
+		'id'      => $prefix . 'services_text',
+		'type'    => 'wysiwyg',
+	) );
+
+}
