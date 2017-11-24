@@ -304,7 +304,7 @@ $search_string = $s;
                     </div>
                     <div class="property-info">
                         <div class="property-price"><?php if ( ! empty( $price ) ) {
-								echo '$' . $price;
+								echo '$' . number_format_i18n($price);
 							} ?></div>
                         <div class="property-highlights">
 							<?php if ( ! empty( $type ) ) {

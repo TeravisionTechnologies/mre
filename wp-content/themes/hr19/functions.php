@@ -206,7 +206,7 @@ function get_mls() {
 		$results = $rets->Search(
 			'Property',
 			'Listing',
-			'(AgentLicenseNum = 3196679)',
+			'(STATUS = A)',
 			[
 				'Format' => 'COMPACT-DECODED',
 				'Limit'  => 30,
@@ -253,7 +253,7 @@ function get_mls() {
 					'_pr_city'             => $property['City'] . ', ' . $property['StateOrProvince'],
 					'_pr_community'        => $property['CountyOrParish'],
 					'_pr_subdiv'           => $property['SubdivisionName'],
-					'_pr_current_price'    => number_format( round( $property['CurrentPrice'] ) ),
+					'_pr_current_price'    => round($property['CurrentPrice']),
 					'_pr_type_of_property' => $property['TypeofProperty'],
 					'_pr_room_count'       => $property['BedsTotal'],
 					'_pr_baths_total'      => number_format( round( $property['BathsTotal'] ) ),
@@ -275,7 +275,7 @@ function get_mls() {
 			);
 			$posted_property = wp_insert_post( $post_args );
 
-			$sysid  = $property['Matrix_Unique_ID'];
+			/*$sysid  = $property['Matrix_Unique_ID'];
 			$n      = 1;
 			$url    = wp_upload_dir();
 			$upload = $url['basedir'];
@@ -287,7 +287,7 @@ function get_mls() {
 			foreach ( $objects as $object ) {
 				file_put_contents( $dir . '/' . $n . '.jpg', $object->getContent() );
 				$n ++;
-			}
+			}*/
 
 		} else {
 
@@ -303,7 +303,7 @@ function get_mls() {
 					'_pr_city'             => $property['City'] . ', ' . $property['StateOrProvince'],
 					'_pr_community'        => $property['CountyOrParish'],
 					'_pr_subdiv'           => $property['SubdivisionName'],
-					'_pr_current_price'    => number_format( round( $property['CurrentPrice'] ) ),
+					'_pr_current_price'    => round($property['CurrentPrice']),
 					'_pr_type_of_property' => $property['TypeofProperty'],
 					'_pr_room_count'       => $rooms,
 					'_pr_baths_total'      => number_format( round( $property['BathsTotal'] ) ),
@@ -325,7 +325,7 @@ function get_mls() {
 			);
 			$posted_property = wp_update_post( $post_args );
 
-			$sysid  = $property['Matrix_Unique_ID'];
+			/*$sysid  = $property['Matrix_Unique_ID'];
 			$n      = 1;
 			$url    = wp_upload_dir();
 			$upload = $url['basedir'];
@@ -337,7 +337,7 @@ function get_mls() {
 			foreach ( $objects as $object ) {
 				file_put_contents( $dir . '/' . $n . '.jpg', $object->getContent() );
 				$n ++;
-			}
+			}*/
 		}
 	}
 
@@ -414,10 +414,10 @@ function property_filter_function() {
 		$sort    = 'DESC';
 	} elseif ( ( isset( $_POST['proporderby'] ) && $_POST['proporderby'] == "_pr_current_price" ) && ( isset( $_POST['propsort'] ) && $_POST['propsort'] == "ASC" ) ) {
 		$orderby = '_pr_current_price';
-		$sort    = 'ASC';
+		$sort    = 'DESC';
 	} else {
 		$orderby = '_pr_current_price';
-		$sort    = 'DESC';
+		$sort    = 'ASC';
 	} ?>
 
 	<?php foreach ( $owner as $ow ) { ?>
@@ -431,7 +431,9 @@ function property_filter_function() {
 			'post_type' => 'property',
 			'showposts' => 9,
 			'paged'     => get_query_var( 'paged' ),
-			'orderby'        => $orderby,
+			'meta_key'		=> $orderby,
+			'orderby'        => 'meta_value_num',
+			//'type' => 'NUMERIC',
 			'order'          => $sort,
 		);
 
@@ -566,7 +568,7 @@ function property_filter_function() {
                 <a href="' . get_permalink( $query->post->ID ) . '" class="property">
                     <div class="property-image" data-url="" style="background: url(' . $url['baseurl'] . '/photos/' . $sysid . '/1.jpg"></div>
                     <div class="property-info">
-                        <div class="property-price">$' . $price . '</div>
+                        <div class="property-price">$' . number_format_i18n($price) . '</div>
 						<div class="property-highlights">' . $type . ' ' . $rooms . ' habitaciones ' . $baths . ' baños</div>
 						<div class="property-address">' . $address . '</div>
 						<div class="property-code">MLS: ' . $query->post->post_title . '</div>
