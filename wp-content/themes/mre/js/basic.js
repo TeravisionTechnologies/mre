@@ -124,7 +124,9 @@ jQuery(document).ready(function () {
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         spaceBetween: 35,
-        loop: true,
+        loop: false,
+        initialSlide: 1,
+        centeredSlides: true,
         breakpoints: {
             1023: {
                 slidesPerView: 2,

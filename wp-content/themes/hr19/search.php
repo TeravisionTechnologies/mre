@@ -187,7 +187,10 @@ if(isset($_POST["target_page"])) {
         </div>
     </nav>
 
-    <section id="search-map" class="search-map"></section>
+    <div id="map-wrapper">
+        <section id="search-map" class="search-map"></section>
+        <div id="loader"><i class="fa fa-spinner fa-pulse fa-fw"></i></div>
+    </div>
 
     <div class="container property-list">
         <div class="row">

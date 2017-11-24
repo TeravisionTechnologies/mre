@@ -310,14 +310,16 @@ jQuery(document).ready(function ($) {
             data:filter.serialize(),
             type:filter.attr('method'),
             beforeSend:function(xhr){
-                filter.find('button').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
+                //filter.find('button').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
+                $('#loader').show();
             },
             success:function(data){
-                filter.find('.btn-search').html('<i class="fa fa-search"></i>');
+                //filter.find('.btn-search').html('<i class="fa fa-search"></i>');
+                $('#loader').hide();
                 $('#response').html(data);
             }
         });
-        setTimeout(initialize(), 5000);
+        setTimeout(initialize(), 10000);
         return false;
     });
 
