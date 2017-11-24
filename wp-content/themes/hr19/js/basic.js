@@ -508,15 +508,15 @@ jQuery(document).ready(function ($) {
         $('#presponse').load(link + ' #presponse', function() {
             $('#presponse').fadeIn();
         });
-    });
+    });*/
 
-    $('.wp-pagenavi a').on('click', function(e){
+    $('.nn .wp-pagenavi a').on('click', function(e){
         e.preventDefault();
         var link = $(this).attr('href');
-        $('#response').load(link + ' #presponse', function() {
-            $('#response').fadeIn();
+        $('#responses').load(link + ' #responses', function() {
+            $('#responses').fadeIn();
         });
-    });*/
+    });
 
 });
 

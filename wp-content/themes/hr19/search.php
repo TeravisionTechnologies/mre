@@ -235,7 +235,7 @@ if(isset($_POST["target_page"])) {
             </div>
         </div>
 </form>
-<div id="response" class="row">
+<div id="responsed" class="row">
 	<?php $owner = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_owner' ) ); ?>
 	<?php foreach ( $owner as $ow ) { ?>
         <div class="col-md-12">
@@ -243,10 +243,10 @@ if(isset($_POST["target_page"])) {
         </div>
 		<?php
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-		$loop  = new WP_Query( array(
+		$query  = new WP_Query( array(
 			'post_type'      => 'property',
-			'posts_per_page' => 9,
-			'paged'          => get_query_var( 'page' ),
+			'showposts'      => 9,
+			'paged'          => get_query_var( 'paged' ),
 			'_meta_or_title' => $search_string,
 			'meta_query'     => array(
 				'relation' => 'AND',
@@ -280,7 +280,7 @@ if(isset($_POST["target_page"])) {
 				)
 			)
 		) );
-		if ($loop->have_posts()): while ( $loop->have_posts() ) : $loop->the_post();
+		if ($query->have_posts()): while ( $query->have_posts() ) : $query->the_post();
 			$address     = get_post_meta( get_the_ID(), '_pr_address', true );
 			$price       = get_post_meta( get_the_ID(), '_pr_current_price', true );
 			$type        = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
@@ -344,7 +344,7 @@ if(isset($_POST["target_page"])) {
 		<?php endwhile; ?>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-				<?php wp_pagenavi( array( 'query' => $loop ) ); ?>
+				<?php wp_pagenavi( array( 'query' => $query ) ); ?>
             </div>
         </div>
 		<?php else: ?>
