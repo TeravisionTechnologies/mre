@@ -52,11 +52,15 @@ $contact = get_post_meta( $footer_query[0]->ID, '_hf_contact_form', true );
         <div class="menu-wrapper">
             <?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_class' => "al-menu c-menu__items")); ?>
             <div class="al-menu-language">
+	            <?php
+	            $i         = 0;
+	            $languages = pll_the_languages( array( 'raw' => 1 ) );
+	            ?>
                 <h2 class="al-menu-language-text">Seleccione su idioma de preferencia:</h2>
-                <img class="al-menu-language-flag language-flag-active"
-                     src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" alt="Inglés">
-                <img class="al-menu-language-flag"
-                     src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" alt="Español">
+                <a href="<?php echo $languages['en']['url'] ?>"><img class="al-menu-language-flag language-flag-active"
+                                                                     src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" alt="Inglés"></a>
+                <a href="<?php echo $languages['es']['url'] ?>"><img class="al-menu-language-flag"
+                                                                     src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" alt="Español"></a>
             </div>
             <div class="al-menu-social">
                 <?php if(isset($social_networks[0])) { ?>
