@@ -62,7 +62,8 @@
   font-family: "Montserrat-ThinItalic";
   src: url("fonts/Montserrat-ThinItalic.ttf") format("truetype"); }
 body {
-  font-family: Montserrat-Regular, sans-serif; }
+  font-family: Montserrat-Regular, sans-serif;
+  overflow-x: hidden; }
 
 .container-hr {
   width: 81.25vw;
