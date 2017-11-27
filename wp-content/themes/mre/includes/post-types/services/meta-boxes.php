@@ -83,9 +83,48 @@ function services_metaboxes() {
 
 	// Services Text
 	$cmb_about->add_group_field( $cmb_main, array(
-		'name'    => __( 'Services Text' ),
-		'id'      => $prefix . 'services_text',
-		'type'    => 'wysiwyg',
+		'name' => __( 'Services Text' ),
+		'id'   => $prefix . 'services_text',
+		'type' => 'wysiwyg',
 	) );
+
+	// Other Services
+	$cmb_values = $cmb_about->add_field( array(
+		'id'         => $prefix . 'services',
+		'type'       => 'group',
+		'repeatable' => true,
+		'options'    => array(
+			'group_title'   => __( 'Service', 'cmb2' ),
+			'add_button'    => __( 'Add Another Entry', 'cmb2' ),
+			'remove_button' => __( 'Remove Entry', 'cmb2' ),
+			'sortable'      => true,
+		),
+	) );
+
+	// Other Service Title
+	$cmb_about->add_group_field( $cmb_values, array(
+		'name' => __( 'Service Title' ),
+		'id'   => $prefix . 'serv_title',
+		'type' => 'text',
+	) );
+
+	// Other Service Image
+	$cmb_about->add_group_field( $cmb_values, array(
+			'name'         => __( 'Service Image' ),
+			'id'           => $prefix . 'serv_image',
+			'type'         => 'file',
+			'preview_size' => array( 100, 100 ),
+			'text'         =>
+				array(
+					'add_upload_files_text' => __( 'Add or Upload Images' ),
+					'file_text'             => __( 'Image:' ),
+				),
+			'options'      =>
+				array(
+					'url' => false,
+				),
+			'repeatable'   => false
+		)
+	);
 
 }

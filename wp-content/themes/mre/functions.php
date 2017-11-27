@@ -103,9 +103,9 @@ function call_metaboxes() {
 	// Metaboxes for About Us
 	about_us_metaboxes();
 	// Metaboxes for Broker
-	broker_metaboxes();
+	//broker_metaboxes();
 	// Metaboxes for Developer
-	developer_metaboxes();
+	//developer_metaboxes();
 	// Metaboxes for Header and Footer
 	header_footer_metaboxes();
 	// Metaboxes for Services

@@ -3,7 +3,7 @@
 Template Name: Services
 */
 
-$about_query = get_posts(
+$serv_query = get_posts(
 	array(
 		'post_type' => 'services'
 	)
@@ -14,14 +14,14 @@ $headerPost = get_posts(
 		'numberposts' => 1
 	)
 );
-$hero = get_post_meta( $about_query[0]->ID, '_sv_hero', true );
-$main_text = get_post_meta( $about_query[0]->ID, '_sv_main', true );
+$hero = get_post_meta( $serv_query[0]->ID, '_sv_hero', true );
+$main_text = get_post_meta( $serv_query[0]->ID, '_sv_main', true );
+$services = get_post_meta( $serv_query[0]->ID, '_sv_services', true );
+
 $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
-//$values = get_post_meta( $about_query[0]->ID, '_au_values', true );
 
 get_header();
 ?>
-
 	<section id="about-hero-section" style="background-image: url(<?php echo $hero[0]['_sv_hero_background']; ?>)">
 		<div class="about-hero-overlay">
 			<?php echo $hero[0]['_sv_hero_text']; ?>
@@ -29,11 +29,17 @@ get_header();
 	</section>
 	<section id="about-main-text">
 		<?php echo $main_text[0]['_sv_main_text']; ?>
-	</section>
-	<section id="about-secondary-text">
-		<div class="vision">
-			<?php echo $main_text[0]['_sv_services_text']; ?>
-		</div>
+        <div class="servs">
+            <?php echo $main_text[0]['_sv_services_text']; ?>
+        </div>
+        <div id="services-icon" class="row">
+			<?php foreach ($services as $service) { ?>
+                <div class="col-xs-6 col-sm-3 col-md-3 text-center">
+                    <div class="srv-icon"><img class="img-responsive" src="<?php echo $service['_sv_serv_image'];?>"></div>
+                    <div class="srv-tlt"><?php echo $service['_sv_serv_title']; ?></div>
+                </div>
+			<?php } ?>
+        </div>
 	</section>
 <?php
 $headerPost = get_posts(
