@@ -113,7 +113,7 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
                     </div>
                     <div class="property-info">
                         <div class="property-price"><?php if (!empty($price)) {
-                                echo '$' . $price;
+                                echo '$' . number_format($price, 0, '.', ',');
                             } ?></div>
                         <div class="property-highlights">
                             <?php if (!empty($type)) {

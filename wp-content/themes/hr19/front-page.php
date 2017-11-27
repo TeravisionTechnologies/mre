@@ -109,7 +109,7 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
                     </div>
                     <div class="property-info">
                         <div class="property-price"><?php setlocale(LC_MONETARY,"en_US"); if (!empty($price)) {
-                                echo '$' . number_format_i18n($price);
+                                echo '$' . number_format($price, 0, '.', ',');
                             } ?></div>
                         <div class="property-highlights">
                             <?php if (!empty($type)) {

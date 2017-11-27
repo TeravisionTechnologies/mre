@@ -97,7 +97,7 @@ if ( have_posts() ): while ( have_posts() ):
                                     );">
                             </div>
                             <div class="property-info">
-                                <h2 class="info-price">$<?php echo $price; ?></h2>
+                                <h2 class="info-price">$<?php echo number_format($price, 0, '.', ','); ?></h2>
                                 <!--<h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>-->
                                 <h3 class="info-features"><?php echo $type . " · " . $rooms . " Habitaciones · " . $baths . " Baños"; ?></h3>
                                 <h3 class="info-address"><?php echo $address; ?></h3>
@@ -156,7 +156,7 @@ if ( have_posts() ): while ( have_posts() ):
                             <div class="property-image"
                                  style="background: url(<?php echo ( $urlimage != 404 ? $bgimg : $placeholder ) ?>);"></div>
                             <div class="property-info">
-                                <h2 class="info-price"><?php echo $price; ?></h2>
+                                <h2 class="info-price"><?php echo number_format($price, 0, '.', ','); ?></h2>
                                 <h3 class="info-features"><?php echo $type . " · " . $rooms . " Habitaciones · " . $baths . " Baños"; ?></h3>
                                 <h3 class="info-address"><?php echo $address; ?></h3>
                                 <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
