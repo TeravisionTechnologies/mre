@@ -232,13 +232,30 @@ jQuery(document).ready(function () {
         }, 2000);
     });
 
+
     $('.ebook-form').validator().on('submit', function (e) {
         if (e.isDefaultPrevented()) {
             // handle the invalid form...
         } else {
-            // everything looks good!
+            e.preventDefault();
+            $.ajax({
+                type: 'post',
+                url: 'http://localhost/mre/ebook-submit/',
+                data: $('.ebook-form').serialize(),
+                beforeSend:function(xhr){
+                    $('.ebook-btn').attr({disabled: 'disabled', value: 'ENVIANDO...'});
+                },
+                success: function (data) {
+                    //$('#susc-modal').modal('show');
+                    alert(data);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                }
+            });
         }
     })
+
 
 
 });

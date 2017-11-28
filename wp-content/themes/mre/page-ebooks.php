@@ -89,7 +89,7 @@ $dates = get_terms(
                                             <div class="ebook-dates">E-books <?php echo $date->slug ?> <?php echo ( !empty($period) ? '// '. $period : '&nbsp;' ) ?></div>
                                             <h3><?php the_title(); ?></h3>
 	                                        <?php the_content(); ?>
-                                            <form class="ebook-form" method="post" action="<?php echo home_url(); ?>" method="post" role="form"
+                                            <form id="ebook-form-<?php echo get_the_ID(); ?>" class="ebook-form" method="post" action="<?php echo home_url(); ?>" method="post" role="form"
                                                   data-toggle="validator" data-disable="false">
                                                 <div class="form-group">
                                                     <input type="text" class="form-control" id="eb_name" name="eb_name" placeholder="<?php _e('Nombre y Apellido', 'mre') ?>" required>
@@ -97,8 +97,9 @@ $dates = get_terms(
                                                 <div class="form-group">
                                                     <input type="email" class="form-control" id="eb_mail" name="eb_mail" placeholder="<?php _e('Email', 'mre') ?>" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}">
                                                 </div>
-                                                <button type="submit" class="btn ebook-btn"><?php _e('Descargar', 'mre') ?></button>
+                                                <button type="submit" class="btn ebook-btn" data-number="<?php echo get_the_ID(); ?>"><?php _e('Descargar', 'mre') ?></button>
                                             </form>
+                                            <div id="ebookresponse"></div>
                                         </div>
                                     </div>
                                 </div>
