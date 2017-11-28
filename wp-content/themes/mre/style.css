@@ -1674,6 +1674,139 @@ a.al-phone-num {
   color: #4a4a4a;
   height: 2.3611111111vw; }
 
+#ebook-hero-section {
+  height: 31.25vw;
+  background-size: cover;
+  background-position: center;
+  margin-top: 5.5555555556vw;
+  position: relative; }
+  #ebook-hero-section .ebook-hero-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); }
+    #ebook-hero-section .ebook-hero-overlay h2 {
+      font-family: Montserrat-Bold, sans-serif;
+      font-size: 4.8611111111vw;
+      line-height: 4.8611111111vw;
+      text-align: center;
+      color: #ffffff;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      padding-top: 13.1944444444vw;
+      margin: 0; }
+
+#ebook-list {
+  padding-bottom: 10.4166666667vw; }
+  #ebook-list .heading-date {
+    font-size: 1.8055555556vw;
+    font-family: "Montserrat-Bold";
+    letter-spacing: -0.2px;
+    color: #4a4a4a;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 4.8611111111vw 0 3.4722222222vw 0; }
+    #ebook-list .heading-date:after {
+      background-color: #8f8f8f;
+      opacity: 0.6;
+      flex-grow: 1;
+      height: 1px;
+      content: " ";
+      position: relative;
+      top: 0.7em;
+      margin-left: 0.6944444444vw; }
+  #ebook-list .the-ebook {
+    outline: none; }
+    #ebook-list .the-ebook:hover, #ebook-list .the-ebook:active, #ebook-list .the-ebook:focus {
+      text-decoration: none; }
+    #ebook-list .the-ebook .months {
+      font-size: 1.3888888889vw;
+      letter-spacing: -0.1px;
+      text-align: center;
+      color: #4a4a4a;
+      padding: 10px; }
+    #ebook-list .the-ebook .cover {
+      height: 23.6111111111vw;
+      position: relative;
+      background-size: cover;
+      background-position: center center; }
+      #ebook-list .the-ebook .cover .mask {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000); }
+        #ebook-list .the-ebook .cover .mask .ebook-title {
+          font-size: 1.1111111111vw;
+          letter-spacing: -0.1px;
+          color: #ffffff;
+          position: absolute;
+          bottom: 1.3888888889vw;
+          left: 1.3888888889vw;
+          font-family: "Montserrat-Light"; }
+    #ebook-list .the-ebook .ebook-link {
+      font-size: 1.25vw;
+      font-weight: bold;
+      line-height: 1.11;
+      text-align: center;
+      background: #0976d1;
+      color: #ffffff;
+      display: block;
+      padding: 1.3888888889vw;
+      margin-top: 0.1388888889vw; }
+
+.modal-ebook .close {
+  position: absolute;
+  right: 1.3888888889vw;
+  font-size: 1.7361111111vw;
+  top: 1.0416666667vw;
+  color: #4a4a4a;
+  z-index: 999;
+  outline: none;
+  opacity: 1; }
+.modal-ebook .modal-content {
+  border-radius: 1.25vw; }
+  .modal-ebook .modal-content .modal-body {
+    padding: 4.8611111111vw 0.6944444444vw; }
+    .modal-ebook .modal-content .modal-body .ebook-content h3 {
+      font-size: 1.8055555556vw;
+      font-family: "Montserrat-Bold";
+      color: #4a4a4a;
+      letter-spacing: -0.2px; }
+    .modal-ebook .modal-content .modal-body .ebook-content p {
+      font-size: 0.9722222222vw;
+      font-weight: 300;
+      line-height: 1.64;
+      letter-spacing: -0.2px;
+      font-family: "Montserrat-Light";
+      color: #4a4a4a; }
+    .modal-ebook .modal-content .modal-body .ebook-content .ebook-dates {
+      font-size: 0.9722222222vw;
+      letter-spacing: -0.1px;
+      color: #4a4a4a;
+      opacity: 0.6;
+      line-height: 0.8333333333vw; }
+    .modal-ebook .modal-content .modal-body .ebook-content .ebook-form .form-control {
+      height: 3.3333333333vw;
+      border-radius: 0.2777777778vw;
+      background-color: #fafafa;
+      border: solid 1px #8f8f8f;
+      font-size: 1.1111111111vw; }
+    .modal-ebook .modal-content .modal-body .ebook-content .ebook-form .ebook-btn {
+      border-radius: 0.6944444444vw;
+      background-color: rgba(255, 255, 255, 0.3);
+      border: solid 2px #4a4a4a;
+      font-size: 1.25vw;
+      font-family: "Montserrat-Bold";
+      color: #4a4a4a;
+      padding: 0.6944444444vw 4.1666666667vw;
+      margin: 0 auto;
+      display: block;
+      margin-top: 2.0833333333vw; }
+
+.ebook-img {
+  box-shadow: -4px 4px 6px 0 rgba(0, 0, 0, 0.4); }
+
 @media screen\0 {
   #blog-recommended-posts .swiper-container-blog-most-viewed {
     position: static; }
@@ -2594,7 +2727,134 @@ a.al-phone-num {
         #about-secondary-text #about-values .value-block p {
           font-size: 14px;
           line-height: 24px;
-          letter-spacing: -0.3px; } }
+          letter-spacing: -0.3px; }
+
+  #ebook-hero-section {
+    height: 450px;
+    margin-top: 80px; }
+    #ebook-hero-section .ebook-hero-overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); }
+      #ebook-hero-section .ebook-hero-overlay h2 {
+        font-size: 70px;
+        line-height: 70px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        padding-top: 190px;
+        margin: 0; }
+
+  #ebook-list {
+    padding-bottom: 150px; }
+    #ebook-list .heading-date {
+      font-size: 26px;
+      font-family: "Montserrat-Bold";
+      letter-spacing: -0.2px;
+      color: #4a4a4a;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 70px 0 50px 0; }
+      #ebook-list .heading-date:after {
+        background-color: #8f8f8f;
+        opacity: 0.6;
+        flex-grow: 1;
+        height: 1px;
+        content: " ";
+        position: relative;
+        top: 0.7em;
+        margin-left: 10px; }
+    #ebook-list .the-ebook {
+      outline: none; }
+      #ebook-list .the-ebook:hover, #ebook-list .the-ebook:active, #ebook-list .the-ebook:focus {
+        text-decoration: none; }
+      #ebook-list .the-ebook .months {
+        font-size: 20px;
+        letter-spacing: -0.1px;
+        text-align: center;
+        color: #4a4a4a;
+        padding: 10px; }
+      #ebook-list .the-ebook .cover {
+        height: 340px;
+        position: relative;
+        background-size: cover;
+        background-position: center center; }
+        #ebook-list .the-ebook .cover .mask {
+          position: absolute;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000); }
+          #ebook-list .the-ebook .cover .mask .ebook-title {
+            font-size: 16px;
+            letter-spacing: -0.1px;
+            color: #ffffff;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-family: "Montserrat-Light"; }
+      #ebook-list .the-ebook .ebook-link {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.11;
+        text-align: center;
+        background: #0976d1;
+        color: #ffffff;
+        display: block;
+        padding: 20px;
+        margin-top: 2px; }
+
+  .modal-ebook .close {
+    position: absolute;
+    right: 20px;
+    font-size: 25px;
+    top: 15px;
+    color: #4a4a4a;
+    z-index: 999;
+    outline: none;
+    opacity: 1; }
+  .modal-ebook .modal-content {
+    border-radius: 18px; }
+    .modal-ebook .modal-content .modal-body {
+      padding: 70px 10px; }
+      .modal-ebook .modal-content .modal-body .ebook-content h3 {
+        font-size: 26px;
+        font-family: "Montserrat-Bold";
+        color: #4a4a4a;
+        letter-spacing: -0.2px; }
+      .modal-ebook .modal-content .modal-body .ebook-content p {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.64;
+        letter-spacing: -0.2px;
+        font-family: "Montserrat-Light";
+        color: #4a4a4a; }
+      .modal-ebook .modal-content .modal-body .ebook-content .ebook-dates {
+        font-size: 14px;
+        letter-spacing: -0.1px;
+        color: #4a4a4a;
+        opacity: 0.6;
+        line-height: 12px; }
+      .modal-ebook .modal-content .modal-body .ebook-content .ebook-form .form-control {
+        height: 48px;
+        border-radius: 4px;
+        background-color: #fafafa;
+        border: solid 1px #8f8f8f;
+        font-size: 16px; }
+      .modal-ebook .modal-content .modal-body .ebook-content .ebook-form .ebook-btn {
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border: solid 2px #4a4a4a;
+        font-size: 18px;
+        font-family: "Montserrat-Bold";
+        color: #4a4a4a;
+        padding: 10px 60px;
+        margin: 0 auto;
+        display: block;
+        margin-top: 30px; }
+
+  .ebook-img {
+    box-shadow: -4px 4px 6px 0 rgba(0, 0, 0, 0.4); } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .container-mre {
     width: 85.8072916667vw;
@@ -3478,7 +3738,63 @@ a.al-phone-num {
     font-size: 1.4322916667vw;
     height: 4.4270833333vw; }
   #services-icon .srv-icon img {
-    height: 30px; } }
+    height: 30px; }
+
+  #ebook-hero-section {
+    height: 52.0833333333vw;
+    margin-top: 10.4166666667vw; }
+    #ebook-hero-section .ebook-hero-overlay h2 {
+      font-size: 7.8125vw;
+      line-height: 9.1145833333vw;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      padding-top: 21.484375vw;
+      margin: 0; }
+
+  #ebook-list {
+    padding-bottom: 15.625vw; }
+    #ebook-list .heading-date {
+      font-size: 1.8229166667vw;
+      margin: 6.5104166667vw 0 3.90625vw 0; }
+      #ebook-list .heading-date:after {
+        margin-left: 1.3020833333vw; }
+    #ebook-list .the-ebook .months {
+      font-size: 1.4322916667vw;
+      padding: 1.3020833333vw; }
+    #ebook-list .the-ebook .cover {
+      height: 24.7395833333vw; }
+      #ebook-list .the-ebook .cover .mask .ebook-title {
+        font-size: 1.3020833333vw;
+        bottom: 1.953125vw;
+        left: 1.953125vw;
+        width: 80%; }
+    #ebook-list .the-ebook .ebook-link {
+      font-size: 1.5625vw;
+      padding: 1.3020833333vw;
+      margin-top: 0.2604166667vw; }
+
+  .modal-ebook .close {
+    right: 2.2135416667vw;
+    font-size: 2.6041666667vw;
+    top: 1.953125vw; }
+  .modal-ebook .modal-content {
+    border-radius: 2.34375vw; }
+    .modal-ebook .modal-content .modal-body {
+      padding: 5.2083333333vw 6.5104166667vw; }
+      .modal-ebook .modal-content .modal-body .ebook-content h3 {
+        font-size: 2.0833333333vw; }
+      .modal-ebook .modal-content .modal-body .ebook-content p {
+        font-size: 1.3020833333vw; }
+      .modal-ebook .modal-content .modal-body .ebook-content .ebook-dates {
+        font-size: 1.3020833333vw; }
+      .modal-ebook .modal-content .modal-body .ebook-content .ebook-form .form-control {
+        height: 4.4270833333vw;
+        border-radius: 0.5208333333vw;
+        font-size: 1.4322916667vw; }
+      .modal-ebook .modal-content .modal-body .ebook-content .ebook-form .ebook-btn {
+        border-radius: 0.78125vw;
+        font-size: 1.5625vw;
+        padding: 1.171875vw 3.90625vw;
+        margin-top: 1.3020833333vw; } }
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   #before-contact-us #offices .swiper-pagination {
     bottom: 14.6vw; }
@@ -4432,7 +4748,68 @@ a.al-phone-num {
     width: 16.6666666667vw;
     height: 16.6666666667vw; }
     #services-icon .srv-icon img {
-      height: 30px; } }
+      height: 30px; }
+
+  #ebook-hero-section {
+    height: 111.1111111111vw;
+    margin-top: 16.6666666667vw; }
+    #ebook-hero-section .ebook-hero-overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); }
+      #ebook-hero-section .ebook-hero-overlay h2 {
+        font-size: 10vw;
+        line-height: 11.1111111111vw;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        padding-top: 50vw;
+        margin: 0; }
+
+  #ebook-list {
+    padding-bottom: 27.7777777778vw; }
+    #ebook-list .heading-date {
+      font-size: 4.4444444444vw;
+      margin: 11.1111111111vw 0 5.5555555556vw 0; }
+      #ebook-list .heading-date:after {
+        margin-left: 2.7777777778vw; }
+    #ebook-list .the-ebook .months {
+      font-size: 3.0555555556vw;
+      padding: 2.7777777778vw; }
+    #ebook-list .the-ebook .cover {
+      height: 52.7777777778vw; }
+      #ebook-list .the-ebook .cover .mask .ebook-title {
+        font-size: 2.7777777778vw;
+        bottom: 4.1666666667vw;
+        left: 4.1666666667vw;
+        width: 80%; }
+    #ebook-list .the-ebook .ebook-link {
+      font-size: 3.3333333333vw;
+      padding: 2.7777777778vw;
+      margin-top: 0.5555555556vw; }
+
+  .modal-ebook .close {
+    right: 3.8888888889vw;
+    font-size: 4.1666666667vw;
+    top: 3.8888888889vw; }
+  .modal-ebook .modal-content {
+    border-radius: 2.7777777778vw; }
+    .modal-ebook .modal-content .modal-body {
+      padding: 11.1111111111vw 6.9444444444vw; }
+      .modal-ebook .modal-content .modal-body .ebook-content h3 {
+        font-size: 3.3333333333vw; }
+      .modal-ebook .modal-content .modal-body .ebook-content p {
+        font-size: 2.5vw; }
+      .modal-ebook .modal-content .modal-body .ebook-content .ebook-dates {
+        font-size: 2.5vw;
+        margin-top: 6.9444444444vw; }
+      .modal-ebook .modal-content .modal-body .ebook-content .ebook-form .form-control {
+        height: 9.4444444444vw;
+        border-radius: 1.1111111111vw;
+        font-size: 3.0555555556vw; }
+      .modal-ebook .modal-content .modal-body .ebook-content .ebook-form .ebook-btn {
+        border-radius: 1.6666666667vw;
+        font-size: 3.3333333333vw;
+        padding: 2.5vw 8.3333333333vw;
+        margin-top: 2.7777777778vw; } }
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   #before-contact-us #offices .swiper-pagination {
     bottom: 91.5vw; }
