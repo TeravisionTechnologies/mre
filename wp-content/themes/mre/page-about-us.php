@@ -31,11 +31,11 @@ get_header();
   <?php echo $main_text[0]['_au_main_text']; ?>
 </section>
 <section id="about-secondary-text">
-  <div class="vision">
+  <div class="vision col-xs-12 col-sm-6">
     <h2>Visión</h2>
     <p><?php echo $main_text[0]['_au_vision_text']; ?></p>
   </div>
-  <div class="mission">
+  <div class="mission col-xs-12 col-sm-6">
     <h2>Misión</h2>
     <p><?php echo $main_text[0]['_au_mission_text']; ?></p>
   </div>
