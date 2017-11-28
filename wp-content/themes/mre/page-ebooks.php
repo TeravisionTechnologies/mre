@@ -34,6 +34,8 @@ $dates = get_terms(
 	        foreach ( $dates as $date ) {
 		        $ebooks = new WP_Query( array(
 			        'post_type' => 'ebook',
+			        'orderby' => 'date',
+			        'order' => 'ASC',
 			        'tax_query' => array(
 				        array(
 					        'taxonomy' => 'years',
