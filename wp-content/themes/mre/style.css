@@ -1807,6 +1807,9 @@ a.al-phone-num {
 .ebook-img {
   box-shadow: -4px 4px 6px 0 rgba(0, 0, 0, 0.4); }
 
+.has-error .form-control {
+  border: solid 1px #cc6a67 !important; }
+
 @media screen\0 {
   #blog-recommended-posts .swiper-container-blog-most-viewed {
     position: static; }
