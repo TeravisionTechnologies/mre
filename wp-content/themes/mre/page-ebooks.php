@@ -3,6 +3,7 @@
 Template Name: Ebooks
 */
 get_header();
+$placeholder = get_template_directory_uri().'/assets/no-cover.jpg';
 ?>
     <section id="about-hero-section" <?php
 	if ( $thumbnail_id = get_post_thumbnail_id() ) {
@@ -58,6 +59,8 @@ $dates = get_terms(
 	                            if ( $image_src = wp_get_attachment_image_src( $thumbnail_id, 'full' ) ) {
 		                            printf( 'style="background-image: url(%s)"', $image_src[0] );
 	                            }
+                            } else{
+	                            printf( 'style="background-image: url('. $placeholder. ')"');
                             }
                             ?>>
                                 <div class="mask"><div class="ebook-title"><?php the_title(); ?></div></div>
@@ -76,7 +79,7 @@ $dates = get_terms(
 	                                        if (has_post_thumbnail()) {
 		                                        the_post_thumbnail('full', array('class' => "img-responsive anim ebook-img"));
 	                                        } else {
-		                                        echo '<img src="" class="anim"/>';
+		                                        echo '<img src="'. $placeholder. '" class="img-responsive anim ebook-img">';
 	                                        }
 	                                        ?>
                                         </div>
