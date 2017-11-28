@@ -1,0 +1,139 @@
+#ebook-hero-section
+  height: get-vw-desktop(450px)
+  background-size: cover
+  background-position: center
+  margin-top: get-vw-desktop(80px)
+  position: relative
+  .ebook-hero-overlay
+    width: 100%
+    height: 100%
+    background: rgba($black, 0.5)
+    h2
+      font-family: Montserrat-Bold, sans-serif
+      font-size: get-vw-desktop(70px)
+      line-height: get-vw-desktop(70px)
+      text-align: center
+      color: $white
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5)
+      padding-top: get-vw-desktop(190px)
+      margin: 0
+
+#ebook-list
+  padding-bottom: get-vw-desktop(150px)
+  .heading-date
+    font-size: get-vw-desktop(26px)
+    font-family: 'Montserrat-Bold'
+    letter-spacing: -0.2px
+    color: $grey
+    display: flex
+    flex-direction: row
+    justify-content: center
+    margin: get-vw-desktop(70px) 0 get-vw-desktop(50px) 0
+    &:after
+      background-color: $arrow-grey
+      opacity: 0.6
+      flex-grow: 1
+      height: 1px
+      content: '\a0'
+      position: relative
+      top: 0.7em
+      margin-left: get-vw-desktop(10px)
+  .the-ebook
+    outline: none
+    &:hover, &:active, &:focus
+      text-decoration: none
+    .months
+      font-size: get-vw-desktop(20px)
+      letter-spacing: -0.1px
+      text-align: center
+      color: $grey
+      padding: 10px
+    .cover
+      height: get-vw-desktop(340px)
+      position: relative
+      background-size: cover
+      background-position: center center
+      .mask
+        position: absolute
+        left: 0
+        right: 0
+        width: 100%
+        height: 100%
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), $black)
+        .ebook-title
+          font-size: get-vw-desktop(16px)
+          letter-spacing: -0.1px
+          color: $white
+          position: absolute
+          bottom: get-vw-desktop(20px)
+          left: get-vw-desktop(20px)
+          font-family: 'Montserrat-Light'
+    .ebook-link
+      font-size: get-vw-desktop(18px)
+      font-weight: bold
+      line-height: 1.11
+      text-align: center
+      background: $values-image
+      color: $white
+      display: block
+      padding: get-vw-desktop(20px)
+      margin-top: get-vw-desktop(2px)
+
+.modal-ebook
+  .close
+    position: absolute
+    right: get-vw-desktop(20px)
+    font-size: get-vw-desktop(25px)
+    top: get-vw-desktop(15px)
+    color: $grey
+    z-index: 999
+    outline: none
+    opacity: 1
+  .modal-content
+    border-radius: get-vw-desktop(18px)
+    .modal-body
+      padding: get-vw-desktop(70px) get-vw-desktop(10px)
+      .ebook-content
+        h3
+          font-size: get-vw-desktop(26px)
+          font-family: 'Montserrat-Bold'
+          color: $grey
+          letter-spacing: -0.2px
+        p
+          font-size: get-vw-desktop(14px)
+          font-weight: 300
+          line-height: 1.64
+          letter-spacing: -0.2px
+          font-family: 'Montserrat-Light'
+          color: $grey
+        .ebook-dates
+          font-size: get-vw-desktop(14px)
+          letter-spacing: -0.1px
+          color: $grey
+          opacity: 0.6
+          line-height: get-vw-desktop(12px)
+        .ebook-form
+          .form-control
+            height: get-vw-desktop(48px)
+            border-radius: get-vw-desktop(4px)
+            background-color: $grey-input
+            border: solid 1px $arrow-grey
+            font-size: get-vw-desktop(16px)
+          .ebook-btn
+            border-radius: get-vw-desktop(10px)
+            background-color: rgba(255, 255, 255, 0.3)
+            border: solid 2px $grey
+            font-size: get-vw-desktop(18px)
+            font-family: 'Montserrat-Bold'
+            color: $grey
+            padding: get-vw-desktop(10px) get-vw-desktop(60px)
+            margin: 0 auto
+            display: block
+            margin-top: get-vw-desktop(30px)
+
+.ebook-img
+  box-shadow: -4px 4px 6px 0 rgba(0, 0, 0, 0.4)
+
+.has-error
+  .form-control
+    border: solid 1px $red-error !important

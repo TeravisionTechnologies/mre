@@ -1,0 +1,129 @@
+#ebook-hero-section
+  height: 450px
+  margin-top: 80px
+  .ebook-hero-overlay
+    width: 100%
+    height: 100%
+    background: rgba($black, 0.5)
+    h2
+      font-size: 70px
+      line-height: 70px
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5)
+      padding-top: 190px
+      margin: 0
+
+#ebook-list
+  padding-bottom: 150px
+  .heading-date
+    font-size: 26px
+    font-family: 'Montserrat-Bold'
+    letter-spacing: -0.2px
+    color: $grey
+    display: flex
+    flex-direction: row
+    justify-content: center
+    margin: 70px 0 50px 0
+    &:after
+      background-color: $arrow-grey
+      opacity: 0.6
+      flex-grow: 1
+      height: 1px
+      content: '\a0'
+      position: relative
+      top: 0.7em
+      margin-left: 10px
+  .the-ebook
+    outline: none
+    &:hover, &:active, &:focus
+      text-decoration: none
+    .months
+      font-size: 20px
+      letter-spacing: -0.1px
+      text-align: center
+      color: $grey
+      padding: 10px
+    .cover
+      height: 340px
+      position: relative
+      background-size: cover
+      background-position: center center
+      .mask
+        position: absolute
+        left: 0
+        right: 0
+        width: 100%
+        height: 100%
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), $black)
+        .ebook-title
+          font-size: 16px
+          letter-spacing: -0.1px
+          color: $white
+          position: absolute
+          bottom: 20px
+          left: 20px
+          font-family: 'Montserrat-Light'
+    .ebook-link
+      font-size: 18px
+      font-weight: bold
+      line-height: 1.11
+      text-align: center
+      background: $values-image
+      color: $white
+      display: block
+      padding: 20px
+      margin-top: 2px
+
+.modal-ebook
+  .close
+    position: absolute
+    right: 20px
+    font-size: 25px
+    top: 15px
+    color: $grey
+    z-index: 999
+    outline: none
+    opacity: 1
+  .modal-content
+    border-radius: 18px
+    .modal-body
+      padding: 70px 10px
+      .ebook-content
+        h3
+          font-size: 26px
+          font-family: 'Montserrat-Bold'
+          color: $grey
+          letter-spacing: -0.2px
+        p
+          font-size: 14px
+          font-weight: 300
+          line-height: 1.64
+          letter-spacing: -0.2px
+          font-family: 'Montserrat-Light'
+          color: $grey
+        .ebook-dates
+          font-size: 14px
+          letter-spacing: -0.1px
+          color: $grey
+          opacity: 0.6
+          line-height: 12px
+        .ebook-form
+          .form-control
+            height: 48px
+            border-radius: 4px
+            background-color: $grey-input
+            border: solid 1px $arrow-grey
+            font-size: 16px
+          .ebook-btn
+            border-radius: 10px
+            background-color: rgba(255, 255, 255, 0.3)
+            border: solid 2px $grey
+            font-size: 18px
+            font-family: 'Montserrat-Bold'
+            color: $grey
+            padding: 10px 60px
+            margin: 0 auto
+            display: block
+            margin-top: 30px
+
+.ebook-img
+  box-shadow: -4px 4px 6px 0 rgba(0, 0, 0, 0.4)

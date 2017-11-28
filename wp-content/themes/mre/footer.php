@@ -34,13 +34,9 @@ wp_footer();
         <div class="menu-wrapper">
             <?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_class' => "mre-menu c-menu__items")); ?>
             <div class="mre-menu-language">
-	            <?php
-	            $i         = 0;
-	            $languages = pll_the_languages( array( 'raw' => 1 ) );
-	            ?>
                 <h2 class="mre-menu-language-text">Seleccione su idioma de preferencia:</h2>
                 <a href="<?php echo $languages['es']['url'] ?>"><img class="mre-menu-language-flag " src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" alt="Spanish"></a>
-                <a href="<?php echo $languages['en']['url'] ?>"><img class="mre-menu-language-flag language-flag-active" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" alt="English"></a>
+                <img class="mre-menu-language-flag language-flag-active" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" alt="English">
             </div>
             <div class="mre-menu-social">
                 <?php if(isset($social_networks[0])) { ?>
@@ -73,6 +69,7 @@ wp_footer();
 <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/menu.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.simplePagination.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/validator.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/basic.js"></script>
 <script type="text/javascript">
     var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";

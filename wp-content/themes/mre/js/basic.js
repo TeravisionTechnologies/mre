@@ -191,7 +191,7 @@ jQuery(document).ready(function () {
     var navheight = $('.menu-button').outerHeight();
     $('.menu-wrapper').height(height - navheight);
 
-    window.addEventListener("resize", function() {
+    window.addEventListener("resize", function () {
         setTimeout(function () {
             var height = $(window).height();
             var navheight = $('.menu-button').outerHeight();
@@ -199,38 +199,48 @@ jQuery(document).ready(function () {
         }, 500);
     }, false);
 
-  var slideLeft = new Menu({
-    wrapper: '#o-wrapper',
-    type: 'slide-left',
-    menuOpenerClass: '.c-button',
-    maskId: '#c-mask'
-  });
+    var slideLeft = new Menu({
+        wrapper: '#o-wrapper',
+        type: 'slide-left',
+        menuOpenerClass: '.c-button',
+        maskId: '#c-mask'
+    });
 
-  var slideLeftBtn = document.querySelector('#c-button--slide-left');
-  slideLeftBtn.addEventListener('click', function (e) {
-    e.preventDefault;
-    slideLeft.open();
-  });
+    var slideLeftBtn = document.querySelector('#c-button--slide-left');
+    slideLeftBtn.addEventListener('click', function (e) {
+        e.preventDefault;
+        slideLeft.open();
+    });
 
-  $("#menu-item-125").click(function (e) {
-    e.preventDefault;
-    slideLeft.close();
-    var position = $("#mre-about-us").offset().top;
-    var finalPosition = position - 80;
-    $('html, body').animate({
-      scrollTop: finalPosition
-    }, 2000);
-  });
+    $("#menu-item-125").click(function (e) {
+        e.preventDefault;
+        slideLeft.close();
+        var position = $("#mre-about-us").offset().top;
+        var finalPosition = position - 80;
+        $('html, body').animate({
+            scrollTop: finalPosition
+        }, 2000);
+    });
 
-  $("#menu-item-24").click(function (e) {
-    e.preventDefault;
-    slideLeft.close();
-    var position = $("#contact-us").offset().top;
-    var finalPosition = position - 80;
-    $('html, body').animate({
-      scrollTop: finalPosition
-    }, 2000);
-  });
+    $("#menu-item-24").click(function (e) {
+        e.preventDefault;
+        slideLeft.close();
+        var position = $("#contact-us").offset().top;
+        var finalPosition = position - 80;
+        $('html, body').animate({
+            scrollTop: finalPosition
+        }, 2000);
+    });
+
+    $('.ebook-form').validator().on('submit', function (e) {
+        if (e.isDefaultPrevented()) {
+            // handle the invalid form...
+        } else {
+            // everything looks good!
+        }
+    })
+
+
 });
 
 

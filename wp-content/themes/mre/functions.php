@@ -110,6 +110,8 @@ function call_metaboxes() {
 	header_footer_metaboxes();
 	// Metaboxes for Services
 	services_metaboxes();
+	// Metaboxes for Ebook
+	ebook_metaboxes();
 }
 
 function custom_form_validation_filter( $result, $tag ) {
