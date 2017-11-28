@@ -65,6 +65,9 @@ body {
   font-family: Montserrat-Regular, sans-serif;
   overflow-x: hidden; }
 
+.o-wrapper {
+  overflow-x: hidden; }
+
 .container-hr {
   width: 81.25vw;
   height: 100%; }
