@@ -1872,6 +1872,79 @@ a.al-phone-num {
 .has-error .form-control {
   border: solid 1px #cc6a67 !important; }
 
+.not-found {
+  margin-top: 5.5555555556vw;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  color: #ffffff;
+  background-position: center center;
+  background-size: cover; }
+  .not-found .mask-not-found {
+    position: absolute;
+    opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0; }
+  .not-found .error {
+    height: 326px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; }
+    .not-found .error h5 {
+      font-size: 11.1111111111vw;
+      font-family: "Montserrat-Bold";
+      line-height: 0.88;
+      letter-spacing: 2.0833333333vw;
+      text-align: center;
+      color: #ffffff;
+      text-shadow: 0 0.1388888889vw 0.6944444444vw rgba(0, 0, 0, 0.5); }
+    .not-found .error a {
+      color: #ffffff;
+      font-size: 1.25vw;
+      font-family: "Montserrat-Bold";
+      line-height: 1.11;
+      border-radius: 0.6944444444vw;
+      border: solid 2px #ffffff;
+      width: 17.3611111111vw;
+      height: 3.4722222222vw;
+      padding: 0.8333333333vw;
+      -webkit-transition: 0.5s ease-in-out;
+      -moz-transition: 0.5s ease-in-out;
+      -o-transition: 0.5s ease-in-out;
+      transition: 0.5s ease-in-out; }
+      .not-found .error a:hover {
+        background-color: rgba(255, 255, 255, 0.15); }
+    .not-found .error p {
+      font-size: 2.0833333333vw;
+      line-height: 1.2;
+      margin-bottom: 3.2638888889vw; }
+      .not-found .error p:first-of-type {
+        font-family: "Montserrat-Bold";
+        font-size: 2.7777777778vw;
+        line-height: 0.9;
+        text-align: center;
+        margin-bottom: 0.3472222222vw; }
+
+@keyframes rotateIn {
+  from {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0; }
+  to {
+    transform-origin: center;
+    transform: none;
+    opacity: 1; } }
+.rotateIn {
+  animation-name: rotateIn; }
+
 @media screen\0 {
   #blog-recommended-posts .swiper-container-blog-most-viewed {
     position: static; }
@@ -2991,7 +3064,79 @@ a.al-phone-num {
         margin-top: 30px; }
 
   .ebook-img {
-    box-shadow: -4px 4px 6px 0 rgba(0, 0, 0, 0.4); } }
+    box-shadow: -4px 4px 6px 0 rgba(0, 0, 0, 0.4); }
+
+  .not-found {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    color: #ffffff;
+    background-position: center center;
+    background-size: cover; }
+    .not-found .mask-not-found {
+      position: absolute;
+      opacity: 0.9;
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0; }
+    .not-found .error {
+      height: 326px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto; }
+      .not-found .error h5 {
+        font-size: 160px;
+        font-family: "Montserrat-Bold";
+        line-height: 0.88;
+        letter-spacing: 30px;
+        text-align: center;
+        color: #ffffff;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+      .not-found .error a {
+        color: #ffffff;
+        font-size: 18px;
+        font-family: "Montserrat-Bold";
+        line-height: 1.11;
+        border-radius: 10px;
+        border: solid 2px #ffffff;
+        width: 250px;
+        height: 50px;
+        padding: 15px;
+        -webkit-transition: 0.5s ease-in-out;
+        -moz-transition: 0.5s ease-in-out;
+        -o-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out; }
+        .not-found .error a:hover {
+          background-color: rgba(255, 255, 255, 0.15); }
+      .not-found .error p {
+        font-size: 30px;
+        line-height: 1.2;
+        margin-bottom: 47px; }
+        .not-found .error p:first-of-type {
+          font-family: "Montserrat-Bold";
+          font-size: 40px;
+          line-height: 0.9;
+          text-align: center;
+          margin-bottom: 5px; }
+
+  @keyframes rotateIn {
+    from {
+      transform-origin: center;
+      transform: rotate3d(0, 0, 1, -200deg);
+      opacity: 0; }
+    to {
+      transform-origin: center;
+      transform: none;
+      opacity: 1; } }
+  .rotateIn {
+    animation-name: rotateIn; } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .container-mre {
     width: 85.8072916667vw;
