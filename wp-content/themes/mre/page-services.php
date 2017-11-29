@@ -4,6 +4,7 @@ Template Name: Services
 */
 
 get_header();
+$lang = get_locale();
 $serv_query   = get_posts(
 	array(
 		'post_type' => 'services'
