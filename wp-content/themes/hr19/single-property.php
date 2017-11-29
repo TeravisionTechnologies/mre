@@ -31,7 +31,7 @@ $bgimg = (int)$bgimg;
     <div class="breadcrumb-info">
         <div class="container">
             <div class="row">
-                <div class="col-xs-7 col-sm-7 col-md-6">
+                <div class="col-xs-9 col-sm-7 col-md-6">
                     <div class="breadcrumbs"><i class="fa fa-chevron-left" aria-hidden="true"></i>
                         <?php if (!empty($city)) {
                             echo $city;
@@ -46,7 +46,7 @@ $bgimg = (int)$bgimg;
                         } ?>
                     </div>
                 </div>
-                <div class="col-xs-5 col-sm-5 col-md-6 text-right">
+                <div class="col-xs-3 col-sm-5 col-md-6 text-right">
                     <!--<div class="published">Publicada hace: 59 días</div>-->
                     <?php if (!empty($status)) { ?><div class="status"><?php _e('Estatus: ', 'hr') ?><span><?php echo $status; ?></span></div><?php } ?>
                 </div>
@@ -89,7 +89,7 @@ $bgimg = (int)$bgimg;
             <div class="col-xs-6 col-sm-6 col-md-5 paddingl30 borderl">
                 <div class="md-text">
                     <?php if (!empty($address)) {
-                        echo $address;
+                        echo '<div class="addr">'.$address.'</div>';
                     } else if (!empty($city) and !empty($state)) {
                         echo $city . ', ' . $state;
                     } else {
