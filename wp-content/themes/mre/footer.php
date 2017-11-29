@@ -34,9 +34,13 @@ wp_footer();
         <div class="menu-wrapper">
             <?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_class' => "mre-menu c-menu__items")); ?>
             <div class="mre-menu-language">
+	            <?php
+	            $i         = 0;
+	            $languages = pll_the_languages( array( 'raw' => 1 ) );
+	            ?>
                 <h2 class="mre-menu-language-text">Seleccione su idioma de preferencia:</h2>
                 <a href="<?php echo $languages['es']['url'] ?>"><img class="mre-menu-language-flag " src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg" alt="Spanish"></a>
-                <img class="mre-menu-language-flag language-flag-active" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" alt="English">
+                <a href="<?php echo $languages['en']['url'] ?>"><img class="mre-menu-language-flag language-flag-active" src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg" alt="English"></a>
             </div>
             <div class="mre-menu-social">
                 <?php if(isset($social_networks[0])) { ?>
