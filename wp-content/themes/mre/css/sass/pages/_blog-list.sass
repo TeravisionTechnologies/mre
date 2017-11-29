@@ -31,9 +31,13 @@
         height: get-vw-desktop(128px)
         margin-right: get-vw-desktop(16px)
         margin-left: get-vw-desktop(16px)
-        img
+        a
           height: get-vw-desktop(128px)
           width: get-vw-desktop(128px)
+          border-radius: 50%
+          display: block
+          background-position: center center
+          background-size: cover
         .swiper-overlay
           background: $overlay-blue
           border-radius: 50%
@@ -334,3 +338,10 @@
       border-radius: get-vw-desktop(10px)
       border: solid 2px $white
       padding: get-vw-desktop(14px) get-vw-desktop(115px)
+
+
+.loading-posts
+  padding: 50px 0
+  .fa-pulse
+    font-size: 30px
+    color: $light-blue

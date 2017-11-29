@@ -935,9 +935,13 @@ a.al-phone-num {
         height: 8.8888888889vw;
         margin-right: 1.1111111111vw;
         margin-left: 1.1111111111vw; }
-        #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide img {
+        #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide a {
           height: 8.8888888889vw;
-          width: 8.8888888889vw; }
+          width: 8.8888888889vw;
+          border-radius: 50%;
+          display: block;
+          background-position: center center;
+          background-size: cover; }
         #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide .swiper-overlay {
           background: rgba(9, 118, 209, 0.5);
           border-radius: 50%;
@@ -1238,6 +1242,12 @@ a.al-phone-num {
       border-radius: 0.6944444444vw;
       border: solid 2px #ffffff;
       padding: 0.9722222222vw 7.9861111111vw; }
+
+.loading-posts {
+  padding: 50px 0; }
+  .loading-posts .fa-pulse {
+    font-size: 30px;
+    color: #0976d1; }
 
 #blog-detail-breadcrumb {
   padding: 3.4722222222vw 0 1.3888888889vw 0;
@@ -2328,9 +2338,13 @@ a.al-phone-num {
           width: 128px !important;
           margin-right: 16px;
           margin-left: 16px; }
-          #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide img {
+          #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide a {
             height: 128px;
-            width: 128px; }
+            width: 128px;
+            border-radius: 50%;
+            display: block;
+            background-position: center center;
+            background-size: cover; }
           #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide .swiper-overlay {
             border-radius: 50%;
             height: 128px;
@@ -3375,9 +3389,13 @@ a.al-phone-num {
           width: 9.2447916667vw !important;
           margin-right: 1.2369791667vw;
           margin-left: 1.2369791667vw; }
-          #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide img {
+          #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide a {
             height: 9.2447916667vw;
-            width: 9.2447916667vw; }
+            width: 9.2447916667vw;
+            border-radius: 50%;
+            display: block;
+            background-position: center center;
+            background-size: cover; }
           #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide .swiper-overlay {
             border-radius: 50%;
             height: 9.2447916667vw;
@@ -4397,9 +4415,13 @@ a.al-phone-num {
           width: 35.5555555556vw !important;
           height: 35.5555555556vw;
           margin: 0; }
-          #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide img {
+          #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide a {
             height: 35.5555555556vw;
-            width: 35.5555555556vw; }
+            width: 35.5555555556vw;
+            border-radius: 50%;
+            display: block;
+            background-position: center center;
+            background-size: cover; }
           #blog-list-categories .swiper-container-blog-categories .swiper-wrapper .swiper-slide .swiper-overlay {
             border-radius: 50%;
             height: 35.5555555556vw;

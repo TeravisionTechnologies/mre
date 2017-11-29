@@ -19,7 +19,6 @@ function ajax_blog_cats(cat, container, loader, filter, order){
             container.html(result);
             loader.hide();
             var pages = Math.ceil(container.children().length/4);
-            console.log(pages);
             container.show();
             $('#blog-pagination').pagination({
                 items: pages,
@@ -30,7 +29,6 @@ function ajax_blog_cats(cat, container, loader, filter, order){
                 onInit: function () {
                     var container = $(".blog-post-container");
                     var all_childrens = container.children();
-                    //alert(all_childrens.length);
                     container.html("");
                     for(var i = 0; i < all_childrens.length; i++){
                         container.append(all_childrens[i]);
@@ -39,7 +37,6 @@ function ajax_blog_cats(cat, container, loader, filter, order){
                     for(var j = 0; j < new_container.length; j++){
                         if(j >= 4 ){
                             $(new_container[j]).addClass("hidden");
-                            console.log($(new_container[j]));
                         }
                     }
                 },

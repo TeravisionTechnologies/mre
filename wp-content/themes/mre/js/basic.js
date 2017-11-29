@@ -21,7 +21,6 @@ jQuery(document).ready(function () {
             for (var j = 0; j < new_container.length; j++) {
                 if (j >= 4) {
                     $(new_container[j]).addClass("hidden");
-                    console.log($(new_container[j]));
                 }
             }
         },
@@ -110,7 +109,7 @@ jQuery(document).ready(function () {
             ajax_blog_cats(active_slide_cat, container, loader, paged, filter, order);
         },
         onClick: function (sw, e) {
-            console.log(e);
+
         }
     });
     $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
