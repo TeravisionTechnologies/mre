@@ -125,7 +125,6 @@ jQuery(document).ready(function () {
         spaceBetween: 35,
         loop: false,
         initialSlide: 1,
-        centeredSlides: true,
         breakpoints: {
             1023: {
                 slidesPerView: 2,

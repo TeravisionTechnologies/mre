@@ -1241,7 +1241,13 @@ a.al-phone-num {
       line-height: 1.11;
       border-radius: 0.6944444444vw;
       border: solid 2px #ffffff;
-      padding: 0.9722222222vw 7.9861111111vw; }
+      padding: 0.9722222222vw 7.9861111111vw;
+      -webkit-transition: 0.5s ease-in-out;
+      -moz-transition: 0.5s ease-in-out;
+      -o-transition: 0.5s ease-in-out;
+      transition: 0.5s ease-in-out; }
+      #our-ebooks .mask a:hover {
+        background-color: rgba(255, 255, 255, 0.15); }
 
 .loading-posts {
   padding: 50px 0; }
@@ -2496,7 +2502,7 @@ a.al-phone-num {
         right: 125px; }
 
   #our-ebooks {
-    height: 24.3055555556vw;
+    height: 350px;
     position: relative;
     -webkit-background-size: cover;
     background-size: cover;
@@ -4569,8 +4575,7 @@ a.al-phone-num {
       margin-top: 8.3333333333vw;
       width: 71.1111111111vw; }
       #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide {
-        width: 71.1111111111vw !important;
-        padding: 0 5px; }
+        width: 71.1111111111vw !important; }
         #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-image {
           height: 30.2777777778vw; }
           #blog-recommended-posts .swiper-container-blog-most-viewed .swiper-wrapper .swiper-slide .blog-most-viewed-image .blog-most-viewed-category {

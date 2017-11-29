@@ -194,7 +194,7 @@ $categories      = get_categories(
             <div class="mask">
                 <h3><?php _e( 'Disfruta de nuestros e-books', 'mre' ) ?></h3>
                 <p><?php _e( 'la información que necesitas completamente gratis', 'mre' ) ?></p>
-                <a href="#" class="btn"><?php _e( 'Ver todos', 'mre' ) ?></a>
+                <a href="<?php echo ( $lang == 'es_ES' ? home_url('e-books') : home_url('en/our-e-books') ) ?>" class="btn"><?php _e( 'Ver todos', 'mre' ) ?></a>
             </div>
         </section>
     </section>
