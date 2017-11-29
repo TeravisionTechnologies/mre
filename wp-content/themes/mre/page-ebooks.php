@@ -10,6 +10,7 @@ $headerPost   = get_posts(
 		'numberposts' => 1
 	)
 );
+$contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
 $partnerLeft  = get_post_meta( $headerPost[0]->ID, '_hf_partner_left', true );
 $partnerRight = get_post_meta( $headerPost[0]->ID, '_hf_partner_right', true );
 $dates        = get_terms(
