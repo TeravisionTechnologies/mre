@@ -232,20 +232,33 @@ jQuery(document).ready(function () {
 
 
     $('.ebook-form').validator().on('submit', function (e) {
+        var filepath = $(this).attr('data-filepath');
         if (e.isDefaultPrevented()) {
-            // handle the invalid form...
+            $('.error').fadeIn();
         } else {
             e.preventDefault();
+            $('.error').fadeOut();
             $.ajax({
                 type: 'post',
                 url: 'http://localhost/mre/ebook-submit/',
-                data: $('.ebook-form').serialize(),
+                data: $(this).serialize(),
                 beforeSend:function(xhr){
-                    $('.ebook-btn').attr({disabled: 'disabled', value: 'ENVIANDO...'});
+                    $('.ebook-btn').attr({disabled: 'disabled'});
+                    $('body').addClass('thanks');
                 },
                 success: function (data) {
-                    //$('#susc-modal').modal('show');
-                    alert(data);
+                    //console.log(data);
+                    $('.modal-ebook').modal('hide');
+                    $('.thankyou').fadeIn();
+                    setTimeout(function() {
+                        $('.thankyou').fadeOut();
+                        $('body').removeClass('thanks');
+                    }, 3000);
+                    $('.ebook-btn').removeAttr('disabled');
+                    setTimeout(function() {
+                        //window.location.href = filepath;
+                        window.open(filepath, '_blank');
+                    }, 2000);
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     alert("Status: " + textStatus); alert("Error: " + errorThrown);
@@ -253,8 +266,6 @@ jQuery(document).ready(function () {
             });
         }
     })
-
-
 
 });
 

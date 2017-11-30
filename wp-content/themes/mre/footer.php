@@ -87,6 +87,12 @@ wp_footer();
     </div>
 </nav>
 <div id="c-mask" class="c-mask"></div>
+<div class="thankyou">
+    <div class="wrap">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/check.svg" alt="Thank you">
+        <h6><?php _e( '¡Gracias por descargar nuestro ebook!', 'mre' ) ?></h6>
+    </div>
+</div>
 <?php wp_footer(); ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.2.1.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/swiper.min.js"></script>

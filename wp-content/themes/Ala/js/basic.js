@@ -165,8 +165,19 @@ jQuery(document).ready(function () {
     galleryThumbs.params.control = galleryTop;
 
     // init Isotope
+
+
+    /*$('.filters a').click(function () {
+        var filter = $(this).attr(filterAtribute);
+        currentFilter = filter;
+        setPagination();
+        goToPage(1);
+    });*/
+
+    var itemSelector = '.country-status';
+
     var $grid = $('.properties-list').isotope({
-        itemSelector: '.country-status',
+        itemSelector: itemSelector,
         //layoutMode: 'fitRows',
         getSortData: {
             name: '.property-title',
@@ -180,6 +191,12 @@ jQuery(document).ready(function () {
 
     $('.filters').on('click', '.button', function () {
         var $this = $(this);
+
+        //var filter = $(this).attr(filterAtribute);
+        //currentFilter = filter;
+        setPagination();
+        goToPage(1);
+
         var $buttonGroup = $this.parents('.button-group');
         var filterGroup = $buttonGroup.attr('data-filter-group');
         filters[filterGroup] = $this.attr('data-filter');
@@ -249,7 +266,7 @@ jQuery(document).ready(function () {
     var navheight = $('.menu-button').outerHeight();
     $('.menu-wrapper').height(height - navheight);
 
-    window.addEventListener("resize", function() {
+    window.addEventListener("resize", function () {
         setTimeout(function () {
             var height = $(window).height();
             var navheight = $('.menu-button').outerHeight();
@@ -257,42 +274,139 @@ jQuery(document).ready(function () {
         }, 500);
     }, false);
 
-  var slideLeft = new Menu({
-    wrapper: '#o-wrapper',
-    type: 'slide-left',
-    menuOpenerClass: '.c-button',
-    maskId: '#c-mask'
-  });
+    var slideLeft = new Menu({
+        wrapper: '#o-wrapper',
+        type: 'slide-left',
+        menuOpenerClass: '.c-button',
+        maskId: '#c-mask'
+    });
 
-  var slideLeftBtn = document.querySelector('#c-button--slide-left');
-  slideLeftBtn.addEventListener('click', function (e) {
-    e.preventDefault;
-    slideLeft.open();
-  });
+    var slideLeftBtn = document.querySelector('#c-button--slide-left');
+    slideLeftBtn.addEventListener('click', function (e) {
+        e.preventDefault;
+        slideLeft.open();
+    });
 
-  $("#menu-item-15").click(function (e) {
-    e.preventDefault;
-    slideLeft.close();
-    var position = $("#al-projects").offset().top;
-    var finalPosition = position - 80;
-    $('html, body').animate({
-      scrollTop: finalPosition
-    }, 2000);
-  });
+    $("#menu-item-15").click(function (e) {
+        e.preventDefault;
+        slideLeft.close();
+        var position = $("#al-projects").offset().top;
+        var finalPosition = position - 80;
+        $('html, body').animate({
+            scrollTop: finalPosition
+        }, 2000);
+    });
 
-  $("#menu-item-19").click(function (e) {
-    e.preventDefault;
-    slideLeft.close();
-    var position = $("#contact-us").offset().top;
-    var finalPosition = position - 80;
-    $('html, body').animate({
-      scrollTop: finalPosition
-    }, 2000);
-  });
+    $("#menu-item-19").click(function (e) {
+        e.preventDefault;
+        slideLeft.close();
+        var position = $("#contact-us").offset().top;
+        var finalPosition = position - 80;
+        $('html, body').animate({
+            scrollTop: finalPosition
+        }, 2000);
+    });
 
-  setTimeout($grid.isotope({filter: '.proyectos-actuales'}),2000);
+    //setTimeout($grid.isotope({filter: '.proyectos-actuales'}), 2000);
+
+    //Ascending order
+    var responsiveIsotope = [
+        [480, 4],
+        [720, 6]
+    ];
+
+    var itemsPerPageDefault = 6;
+    var itemsPerPage = defineItemsPerPage();
+    var currentNumberPages = 1;
+    var currentPage = 1;
+    var currentFilter = '*';
+    var filterAtribute = 'data-filter';
+    var pageAtribute = 'data-page';
+    var pagerClass = 'isotope-pager';
+
+    function changeFilter(selector) {
+        $grid.isotope({
+            filter: selector
+        });
+    }
+
+    function goToPage(n) {
+        currentPage = n;
+        var selector = itemSelector;
+        selector += ( currentFilter != '*' ) ? '[' + filterAtribute + '="' + currentFilter + '"]' : '';
+        selector += '[' + pageAtribute + '="' + currentPage + '"]';
+        changeFilter(selector);
+    }
+
+    function defineItemsPerPage() {
+        var pages = itemsPerPageDefault;
+        for (var i = 0; i < responsiveIsotope.length; i++) {
+            if ($(window).width() <= responsiveIsotope[i][0]) {
+                pages = responsiveIsotope[i][1];
+                break;
+            }
+        }
+        return pages;
+    }
+
+    function setPagination() {
+
+        var SettingsPagesOnItems = function () {
+            var itemsLength = $grid.children(itemSelector).length;
+            var pages = Math.ceil(itemsLength / itemsPerPage);
+            var item = 1;
+            var page = 1;
+            var selector = itemSelector;
+            selector += ( currentFilter != '*' ) ? '[' + filterAtribute + '="' + currentFilter + '"]' : '';
+
+            $grid.children(selector).each(function () {
+                if (item > itemsPerPage) {
+                    page++;
+                    item = 1;
+                }
+                $(this).attr(pageAtribute, page);
+                item++;
+            });
+
+            currentNumberPages = page;
+
+        }();
+
+        var CreatePagers = function () {
+
+            var $isotopePager = ( $('.' + pagerClass).length == 0 ) ? $('<div class="' + pagerClass + '"></div>') : $('.' + pagerClass);
+            $isotopePager.html('');
+
+            for (var i = 0; i < currentNumberPages; i++) {
+                var $pager = $('<a href="javascript:void(0);" class="pager" ' + pageAtribute + '="' + (i + 1) + '"></a>');
+                $pager.html(i + 1);
+
+                $pager.click(function () {
+                    var page = $(this).eq(0).attr(pageAtribute);
+                    goToPage(page);
+                });
+
+                $pager.appendTo($isotopePager);
+            }
+
+            $grid.after($isotopePager);
+
+        }();
+
+    }
+
+    setPagination();
+    goToPage(1);
+
+    $(window).resize(function () {
+        itemsPerPage = defineItemsPerPage();
+        setPagination();
+        goToPage(1);
+    });
 
 });
+
+
 
 
 
