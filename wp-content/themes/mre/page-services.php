@@ -49,14 +49,6 @@ $partnerRight = get_post_meta( $headerPost[0]->ID, '_hf_partner_right', true );
 			<?php } ?>
         </div>
     </section>
-    <section id="our-ebooks" class="col-xs-12 text-center"
-             style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/imageservices.png)">
-        <div class="mask">
-            <h3><?php _e( 'Disfruta de tu tiempo', 'mre' ) ?></h3>
-            <p><?php _e( 'mientras nosotros gestionamos tu propiedad', 'mre' ) ?></p>
-            <a href="<?php echo ( $lang == 'es_ES' ? home_url('nuestros-servicios') : home_url('en/our-services') ) ?>" class="btn"><?php _e( 'Ve nuestros servicios', 'mre' ) ?></a>
-        </div>
-    </section>
     <section class="col-xs-12 hr-partners-section text-center">
         <div class="container">
             <p class="hr-partners-title">La nueva forma de <strong>invertir en propiedades</strong></p>
