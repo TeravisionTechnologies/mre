@@ -56,6 +56,7 @@ $dates        = get_terms(
 					<?php
 					if ( $ebooks->have_posts() ) : while ( $ebooks->have_posts() ) : $ebooks->the_post();
 						$period = get_post_meta( get_the_ID(), '_eb_ebook_period', true );
+						$efile = get_post_meta( get_the_ID(), '_eb_ebook_file', true );
 						?>
                         <div class="col-xs-6 col-sm-3 col-md-3">
                             <a href="#" class="the-ebook" data-toggle="modal"
@@ -100,22 +101,24 @@ $dates        = get_terms(
                                                     E-books <?php echo $date->slug ?> <?php echo( ! empty( $period ) ? '// ' . $period : '&nbsp;' ) ?></div>
                                                 <h3><?php the_title(); ?></h3>
 												<?php the_content(); ?>
+                                                <div class="error"><i class="fa fa-asterisk"></i> <?php _e( 'Estos campos son requeridos', 'mre' ) ?></div>
                                                 <form id="ebook-form-<?php echo get_the_ID(); ?>" class="ebook-form"
                                                       method="post" action="<?php echo home_url(); ?>" method="post"
                                                       role="form"
-                                                      data-toggle="validator" data-disable="false">
+                                                      data-toggle="validator" data-disable="false" data-filepath="<?php echo $efile; ?>">
                                                     <div class="form-group">
-                                                        <input type="text" class="form-control" id="eb_name"
+                                                        <input type="text" class="form-control"
                                                                name="eb_name"
-                                                               placeholder="<?php _e( 'Nombre y Apellido', 'mre' ) ?>"
+                                                               placeholder="<?php _e( '* Nombre y Apellido', 'mre' ) ?>"
                                                                required>
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="email" class="form-control" id="eb_mail"
+                                                        <input type="email" class="form-control"
                                                                name="eb_mail"
-                                                               placeholder="<?php _e( 'Email', 'mre' ) ?>" required
+                                                               placeholder="<?php _e( '* Email', 'mre' ) ?>" required
                                                                pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}">
                                                     </div>
+                                                    <input type="hidden" name="eb_id" value="<?php echo get_the_ID(); ?>">
                                                     <button type="submit" class="btn ebook-btn"
                                                             data-number="<?php echo get_the_ID(); ?>"><?php _e( 'Descargar', 'mre' ) ?></button>
                                                 </form>
@@ -184,4 +187,7 @@ $dates        = get_terms(
             </div>
         </div>
     </section>
+<?php
+$url = wp_upload_dir();
+var_dump($url['basedir']); ?>
 <?php get_footer(); ?>

@@ -178,7 +178,8 @@ function broker_metaboxes() {
                 'name' => __('Longitude'),
                 'id' => $prefix . 'lng',
                 'type' => 'text',
-                'repeatable' => false
+                'repeatable' => false,
+	            'desc' => 'Example: -115.1762154'
             )
     );
 
@@ -188,7 +189,8 @@ function broker_metaboxes() {
                 'name' => __('Latitude'),
                 'id' => $prefix . 'lat',
                 'type' => 'text',
-                'repeatable' => false
+                'repeatable' => false,
+                'desc' => 'Example: 36.0954894'
             )
     );
 

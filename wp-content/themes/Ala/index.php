@@ -35,9 +35,6 @@ $officesEs = get_post_meta( $home_query[0]->ID, '_hf_offices_es', true );
     </div>
 
     <div class="filters">
-
-
-
     <section id="al-projects" class="col-xs-12 al-projects no-padding">
         <div class="container center-block al-project-list button-group no-padding" data-filter-group="status">
             <?php
@@ -88,7 +85,7 @@ $officesEs = get_post_meta( $home_query[0]->ID, '_hf_offices_es', true );
             <div class="row properties-list">
                 <div class=" grid">
                     <?php
-                    $propertieslist = array('post_type' => 'broker', 'posts_per_page' => -1);
+                    $propertieslist = array('post_type' => 'broker');
                     query_posts($propertieslist);
                     if (have_posts()): while (have_posts()): the_post();
                         $background_image = wp_get_attachment_url(get_post_meta(get_the_ID(), '_br_images_id', true));
