@@ -18,6 +18,7 @@ $officesVe = get_post_meta( $headerPost[0]->ID, '_hf_offices_ve', true );
 $officesUs = get_post_meta( $headerPost[0]->ID, '_hf_offices_us', true );
 $officesEs = get_post_meta( $headerPost[0]->ID, '_hf_offices_es', true );
 $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
+$url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 ?>
             <div class="swiper-container swiper-container-hero">
               <div class="swiper-wrapper">
@@ -61,7 +62,14 @@ $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
                     </li>
                   <?php } ?>
                 </ul>
-                <a href="/sobre-nosotros" class="about-us-button">Ver más</a>
+                <?php
+                    if (false !== strpos($url_wp, '/en' )) {
+                        echo '<a href="/sobre-nosotros" class="about-us-button">View more</a>';
+                    } else {
+                        echo '<a href="/sobre-nosotros" class="about-us-button">Ver más</a>';
+                    }
+                ?>
+
               </div>
             </section>
             <section id="mre-partners" class="container-fluid no-padding">
@@ -151,7 +159,13 @@ $contact = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-8 al-contact-form-div no-padding">
-                            <?php echo do_shortcode( '[contact-form-7 id="4" title="Home - Contact form"]' ); ?>
+                            <?php
+                            if (false !== strpos($url_wp, '/en' )) {
+                                echo do_shortcode('[contact-form-7 id="275" title="Contact Form (English)"]');
+                            } else {
+                                echo do_shortcode( '[contact-form-7 id="4" title="Home - Contact form"]' );
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
