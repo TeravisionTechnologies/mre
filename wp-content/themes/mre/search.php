@@ -44,7 +44,8 @@ $categories      = get_categories(
                 <div class="swiper-container swiper-container-blog-categories">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" name="Todas las categorías" data-slug="all">
-                            <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/todas.png);">
+                            <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"
+                               style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/todas.png);">
                                 <div class="swiper-overlay"></div>
                             </a>
                         </div>
@@ -53,7 +54,7 @@ $categories      = get_categories(
 							$name          = $category->name;
 							$slug          = $category->slug;
 							$category_link = get_category_link( $category->cat_ID );
-							$meta_image = get_wp_term_image($category->term_id);
+							$meta_image    = get_wp_term_image( $category->term_id );
 							?>
                             <div class="swiper-slide" name="<?php echo $name; ?>" data-slug="<?php echo $slug; ?>">
                                 <a style="background-image: url(<?php echo $meta_image; ?>)">
@@ -105,43 +106,46 @@ $categories      = get_categories(
                     <i class="fa fa-spinner fa-pulse fa-fw"></i>
                 </div>
                 <div class="blog-post-container">
-					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                        <div class="col-xs-12 col-sm-6 blog-post">
-                            <a href="<?php $link = get_permalink( $post->ID );
-							echo $link; ?>">
-                                <div class="blog-image"
-                                     style="background-image: url('<?php echo get_the_post_thumbnail_url( $post->ID ); ?>')">
+					<?php if ( have_posts() ) :
+						while ( have_posts() ) : the_post(); ?>
+                            <div class="col-xs-12 col-sm-6 blog-post">
+                                <a href="<?php $link = get_permalink( $post->ID );
+								echo $link; ?>">
+                                    <div class="blog-image"
+                                         style="background-image: url('<?php echo get_the_post_thumbnail_url( $post->ID ); ?>')">
                                 <span class="blog-category"><?php $taxonomy = get_post_taxonomies( $post );
 	                                $term                                   = get_the_terms( $post->ID, $taxonomy[0] );
 	                                echo $term[0]->name; ?></span>
-                                </div>
-                                <div class="blog-text">
-                                    <a href="<?php $link = get_permalink( $post->ID );
-									echo $link; ?>"><h1 class="blog-text-title"><?php echo $post->post_title; ?></h1>
-                                    </a>
-                                    <h2 class="blog-text-author"><?php _e( 'Por: ', 'mre' ) ?><?php $author = get_user_by( 'ID', $post->post_author );
-										echo $author->display_name ?><span
-                                                class="blog-text-date"><?php $date = strtotime( $post->post_date );
-											echo date( 'd F, Y', $date ) ?></span><span
-                                                class="blog-text-comments hidden-xs hidden-sm">- <?php echo $post->comment_count ?>
-											<?php _e( 'Comentarios', 'mre' ) ?></span></h2>
-                                    <p class="blog-text-summary"><?php echo $post->post_excerpt ?></p>
-                                </div>
-                            </a>
+                                    </div>
+                                    <div class="blog-text">
+                                        <a href="<?php $link = get_permalink( $post->ID );
+										echo $link; ?>"><h1
+                                                    class="blog-text-title"><?php echo $post->post_title; ?></h1>
+                                        </a>
+                                        <h2 class="blog-text-author"><?php _e( 'Por: ', 'mre' ) ?><?php $author = get_user_by( 'ID', $post->post_author );
+											echo $author->display_name ?><span
+                                                    class="blog-text-date"><?php $date = strtotime( $post->post_date );
+												echo date( 'd F, Y', $date ) ?></span><span
+                                                    class="blog-text-comments hidden-xs hidden-sm">- <?php echo $post->comment_count ?>
+												<?php _e( 'Comentarios', 'mre' ) ?></span></h2>
+                                        <p class="blog-text-summary"><?php echo $post->post_excerpt ?></p>
+                                    </div>
+                                </a>
+                            </div>
+                            <nav id="blog-pagination" class="text-center">
+                            </nav>
+						<?php endwhile; ?>
+					<?php else: ?>
+                        <div class="col-md-12 no-results text-center">
+                            <p><?php _e( 'No existen publicaciones disponibles en estos momentos', 'mre' ) ?></p>
+                            <p><?php _e( '0 resultados', 'mre' ) ?></p>
                         </div>
-					<?php endwhile; ?>
 					<?php endif; ?>
                 </div>
 				<?php if ( $wp_query->post_count == 1 ) {
 					echo '<div class="col-xs-12 marginb80"></div>';
 				} ?>
-                <nav id="blog-pagination" class="text-center">
-					<?php
-					/*if (function_exists('wp_paginate')) {
-						wp_paginate();
-					}*/
-					?>
-                </nav>
+
             </div>
         </section>
         <section class="col-xs-12" id="blog-recommended-posts"
@@ -189,7 +193,8 @@ $categories      = get_categories(
             <div class="mask">
                 <h3><?php _e( 'Disfruta de nuestros e-books', 'mre' ) ?></h3>
                 <p><?php _e( 'la información que necesitas completamente gratis', 'mre' ) ?></p>
-                <a href="<?php echo ( $lang == 'es_ES' ? home_url('e-books') : home_url('en/our-e-books') ) ?>" class="btn"><?php _e( 'Ver todos', 'mre' ) ?></a>
+                <a href="<?php echo( $lang == 'es_ES' ? home_url( 'e-books' ) : home_url( 'en/our-e-books' ) ) ?>"
+                   class="btn"><?php _e( 'Ver todos', 'mre' ) ?></a>
             </div>
         </section>
     </section>

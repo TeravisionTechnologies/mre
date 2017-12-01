@@ -230,6 +230,7 @@ jQuery(document).ready(function () {
         }, 2000);
     });
 
+    // Download ebook
     function downloadFile(filePath){
         var link = document.createElement('a');
         link.href = filePath;
@@ -240,7 +241,12 @@ jQuery(document).ready(function () {
     $('.ebook-form').validator().on('submit', function (e) {
         var filepath = $(this).attr('data-filepath');
         if (e.isDefaultPrevented()) {
+            $('.error').html("<i class='fa fa-asterisk'></i> Estos campos son requeridos");
             $('.error').fadeIn();
+            var error = $('#eb_mail').attr('data-error');
+            if( $('#eb_name', this).val().length > 0 ) {
+                $('.error').html(error);
+            }
         } else {
             e.preventDefault();
             $('.error').fadeOut();
@@ -253,7 +259,6 @@ jQuery(document).ready(function () {
                     $('body').addClass('thanks');
                 },
                 success: function (data) {
-                    //console.log(data);
                     $('.modal-ebook').modal('hide');
                     $('.thankyou').fadeIn();
                     setTimeout(function() {
@@ -262,8 +267,6 @@ jQuery(document).ready(function () {
                     }, 3000);
                     $('.ebook-btn').removeAttr('disabled');
                     setTimeout(function() {
-                        //window.location.href = filepath;
-                        //window.open(filepath, '_blank');
                         downloadFile(filepath);
                     }, 2000);
                 },
