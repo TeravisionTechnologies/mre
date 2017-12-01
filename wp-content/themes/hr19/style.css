@@ -2137,6 +2137,67 @@ a[href^=tel] {
   z-index: 1;
   box-shadow: 0 -2px 1.0416666667vw 0 rgba(0, 0, 0, 0.3); }
 
+.not-found {
+  margin-top: 5.5555555556vw;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  color: #fff;
+  background-position: center center;
+  background-size: cover; }
+  .not-found .mask-not-found {
+    position: absolute;
+    opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0; }
+  .not-found .error {
+    height: 326px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; }
+    .not-found .error h5 {
+      font-size: 11.1111111111vw;
+      font-family: "Montserrat-Bold";
+      line-height: 0.88;
+      letter-spacing: 2.0833333333vw;
+      text-align: center;
+      color: #ffffff;
+      text-shadow: 0 0.1388888889vw 0.6944444444vw rgba(0, 0, 0, 0.5); }
+    .not-found .error a {
+      color: #fff;
+      font-size: 1.25vw;
+      font-family: "Montserrat-Bold";
+      line-height: 1.11;
+      border-radius: 0.6944444444vw;
+      border: solid 2px #fff;
+      width: 17.3611111111vw;
+      height: 3.4722222222vw;
+      padding: 0.8333333333vw;
+      -webkit-transition: 0.5s ease-in-out;
+      -moz-transition: 0.5s ease-in-out;
+      -o-transition: 0.5s ease-in-out;
+      transition: 0.5s ease-in-out; }
+      .not-found .error a:hover {
+        background-color: rgba(255, 255, 255, 0.15); }
+    .not-found .error p {
+      font-size: 2.0833333333vw;
+      line-height: 1.2;
+      margin-bottom: 3.2638888889vw; }
+      .not-found .error p:first-of-type {
+        font-family: "Montserrat-Bold";
+        font-size: 2.7777777778vw;
+        line-height: 0.9;
+        text-align: center;
+        margin-bottom: 0.3472222222vw; }
+
 @media only screen and (min-width: 1440px) {
   .container-hr {
     width: 1170px;
@@ -2708,7 +2769,67 @@ a[href^=tel] {
         #about-secondary-text #about-values .value-block p {
           font-size: 14px;
           line-height: 24px;
-          letter-spacing: -0.3px; } }
+          letter-spacing: -0.3px; }
+
+  .not-found {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    color: #fff;
+    background-position: center center;
+    background-size: cover; }
+    .not-found .mask-not-found {
+      position: absolute;
+      opacity: 0.9;
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0; }
+    .not-found .error {
+      height: 326px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto; }
+      .not-found .error h5 {
+        font-size: 160px;
+        font-family: "Montserrat-Bold";
+        line-height: 0.88;
+        letter-spacing: 30px;
+        text-align: center;
+        color: #ffffff;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+      .not-found .error a {
+        color: #fff;
+        font-size: 18px;
+        font-family: "Montserrat-Bold";
+        line-height: 1.11;
+        border-radius: 10px;
+        border: solid 2px #fff;
+        width: 250px;
+        height: 50px;
+        padding: 15px;
+        -webkit-transition: 0.5s ease-in-out;
+        -moz-transition: 0.5s ease-in-out;
+        -o-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out; }
+        .not-found .error a:hover {
+          background-color: rgba(255, 255, 255, 0.15); }
+      .not-found .error p {
+        font-size: 30px;
+        line-height: 1.2;
+        margin-bottom: 47px; }
+        .not-found .error p:first-of-type {
+          font-family: "Montserrat-Bold";
+          font-size: 40px;
+          line-height: 0.9;
+          text-align: center;
+          margin-bottom: 5px; } }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .container-hr {
     width: 86.5885416667vw;
@@ -3400,7 +3521,27 @@ a[href^=tel] {
 
   #contact-us {
     z-index: 1;
-    box-shadow: 0 -2px 1.953125vw 0 rgba(0, 0, 0, 0.3); } }
+    box-shadow: 0 -2px 1.953125vw 0 rgba(0, 0, 0, 0.3); }
+
+  .not-found {
+    margin-top: 7.8125vw; }
+    .not-found .error {
+      height: 326px; }
+      .not-found .error h5 {
+        font-size: 15.3645833333vw !important;
+        margin-bottom: 3.2552083333vw; }
+      .not-found .error a {
+        font-size: 2.0833333333vw;
+        border-radius: 1.3020833333vw;
+        width: 29.9479166667vw;
+        height: 6.5104166667vw;
+        padding: 1.8229166667vw; }
+      .not-found .error p {
+        font-size: 3.3854166667vw;
+        margin-bottom: 6.5104166667vw; }
+        .not-found .error p:first-of-type {
+          font-size: 3.90625vw;
+          margin-bottom: 0.6510416667vw; } }
 @media only screen and (max-width: 767px) {
   .container-hr {
     width: 86.1111111111vw; }
@@ -4262,7 +4403,27 @@ a[href^=tel] {
 
   #contact-us {
     z-index: 1;
-    box-shadow: 0 -2px 4.1666666667vw 0 rgba(0, 0, 0, 0.3); } }
+    box-shadow: 0 -2px 4.1666666667vw 0 rgba(0, 0, 0, 0.3); }
+
+  .not-found {
+    margin-top: 11.1111111111vw; }
+    .not-found .error {
+      height: 326px; }
+      .not-found .error h5 {
+        font-size: 27.7777777778vw !important;
+        margin-bottom: 6.9444444444vw; }
+      .not-found .error a {
+        font-size: 3.8888888889vw;
+        border-radius: 2.7777777778vw;
+        width: 50vw;
+        height: 11.1111111111vw;
+        padding: 2.7777777778vw; }
+      .not-found .error p {
+        font-size: 5.5555555556vw;
+        margin-bottom: 8.3333333333vw; }
+        .not-found .error p:first-of-type {
+          font-size: 7.2222222222vw;
+          margin-bottom: 1.3888888889vw; } }
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   .navbar-fixed-top {
     position: absolute; }

@@ -6,6 +6,7 @@ $footerPost      = get_posts(
 );
 $theMeta         = get_post_meta( $footerPost[0]->ID );
 $social_networks = get_post_meta( $footerPost[0]->ID, '_hf_social_networks', true );
+$lang = get_locale();
 wp_footer();
 ?>
 <?php if ( ! is_404() ) { ?>
@@ -45,10 +46,10 @@ wp_footer();
 				$languages = pll_the_languages( array( 'raw' => 1 ) );
 				?>
                 <h2 class="mre-menu-language-text">Seleccione su idioma de preferencia:</h2>
-                <a href="<?php echo $languages['es']['url'] ?>"><img class="mre-menu-language-flag "
+                <a href="<?php echo $languages['es']['url'] ?>"><img class="mre-menu-language-flag <?php echo ( $lang == "es_ES" ? 'language-flag-active' : '' ) ?>"
                                                                      src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg"
                                                                      alt="Spanish"></a>
-                <a href="<?php echo $languages['en']['url'] ?>"><img class="mre-menu-language-flag language-flag-active"
+                <a href="<?php echo $languages['en']['url'] ?>"><img class="mre-menu-language-flag <?php echo ( $lang == "en_US" ? 'language-flag-active' : '' ) ?>"
                                                                      src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg"
                                                                      alt="English"></a>
             </div>

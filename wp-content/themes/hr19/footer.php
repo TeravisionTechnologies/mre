@@ -9,8 +9,9 @@ $rental          = get_post_meta( $footer_query[0]->ID, '_hf_rental', true );
 $contact         = get_post_meta( $footer_query[0]->ID, '_hf_contact_form', true );
 $footer_info     = get_post_meta( $footer_query[0]->ID );
 $social_networks = get_post_meta( $footer_query[0]->ID, '_hf_social_networks', true );
+$lang = get_locale();
 ?>
-
+<?php if ( ! is_404() ) { ?>
 <section class="col-xs-12 hr-partners-section text-center">
     <div class="container">
         <p class="hr-partners-title"><?php if ( isset( $partners[0]['_hf_partners_text'] ) ) {
@@ -26,6 +27,7 @@ $social_networks = get_post_meta( $footer_query[0]->ID, '_hf_social_networks', t
                     class="partners-images-two"/></a>
     </div>
 </section>
+<?php } ?>
 <?php wp_reset_query(); ?>
 <?php if ( is_front_page() or is_page_template( 'page-alquileres.php' ) or is_page_template( 'page-preventa.php' ) ) { ?>
     <section id="rentalone" class="col-xs-12 hr-rentalone-section text-center no-padding"
@@ -37,6 +39,7 @@ $social_networks = get_post_meta( $footer_query[0]->ID, '_hf_social_networks', t
         </div>
     </section>
 <?php } ?>
+<?php if ( ! is_404() ) { ?>
 <section id="contact-us" class="col-xs-12 hr-contact-div no-padding"
          style="background-image: url('<?php if ( isset( $contact[0]["_hf_contact_background"] ) ) {
 	         echo $contact[0]["_hf_contact_background"];
@@ -79,6 +82,7 @@ $social_networks = get_post_meta( $footer_query[0]->ID, '_hf_social_networks', t
     </div>
     <img src="<?php echo get_template_directory_uri(); ?>/assets/top.svg" class="footer-top" alt="Go to top">
 </footer>
+<?php } ?>
 </div>
 </div>
 <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
@@ -102,10 +106,10 @@ $social_networks = get_post_meta( $footer_query[0]->ID, '_hf_social_networks', t
 				$languages = pll_the_languages( array( 'raw' => 1 ) );
 				?>
                 <h2 class="hr-menu-language-text">Seleccione su idioma de preferencia:</h2>
-                <a href="<?php echo $languages['es']['url'] ?>"><img class="hr-menu-language-flag "
+                <a href="<?php echo $languages['es']['url'] ?>"><img class="hr-menu-language-flag <?php echo ( $lang == "es_ES" ? 'language-flag-active' : '' ) ?>"
                                                                       src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg"
                                                                       alt="Spanish"></a>
-                <a href="<?php echo $languages['en']['url'] ?>"><img class="hr-menu-language-flag language-flag-active"
+                <a href="<?php echo $languages['en']['url'] ?>"><img class="hr-menu-language-flag <?php echo ( $lang == "en_US" ? 'language-flag-active' : '' ) ?>"
                                                                       src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg"
                                                                       alt="English"></a>
             </div>

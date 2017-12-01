@@ -188,6 +188,6 @@ $dates        = get_terms(
         </div>
     </section>
 <?php
-$url = wp_upload_dir();
-var_dump($url['basedir']); ?>
+//$url = wp_upload_dir();
+//var_dump($url['basedir']); ?>
 <?php get_footer(); ?>
