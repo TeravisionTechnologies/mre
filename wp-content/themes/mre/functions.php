@@ -232,9 +232,16 @@ function trv_ajax_blog_cats() {
 				<p class="blog-text-summary">' . $posts->post->post_excerpt . '</p>
 			</div>
 		</a>
-	</div>';
+	</div><nav id="blog-pagination" class="text-center">
+                            </nav>';
 
 	endwhile;
+	else:
+		echo '<div class="col-md-12 no-results text-center">
+                            <p>' . _e( 'No existen publicaciones disponibles en estos momentos', 'mre' ). '</p>
+                            <p>' . _e( '0 resultados', 'mre' ). '</p>
+                        </div>';
+
 	endif;
 	//wp_send_json( $posts );
 	//echo get_bloginfo( 'title' );

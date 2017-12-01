@@ -108,15 +108,16 @@ $dates        = get_terms(
                                                       data-toggle="validator" data-disable="false" data-filepath="<?php echo $efile; ?>">
                                                     <div class="form-group">
                                                         <input type="text" class="form-control"
-                                                               name="eb_name"
+                                                               name="eb_name" id="eb_name"
                                                                placeholder="<?php _e( '* Nombre y Apellido', 'mre' ) ?>"
                                                                required>
                                                     </div>
                                                     <div class="form-group">
                                                         <input type="email" class="form-control"
-                                                               name="eb_mail"
+                                                               name="eb_mail" id="eb_mail"
                                                                placeholder="<?php _e( '* Email', 'mre' ) ?>" required
-                                                               pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}">
+                                                               pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}"
+                                                               data-error="<?php _e( 'Correo inv&aacute;lido', 'mre' ) ?>">
                                                     </div>
                                                     <input type="hidden" name="eb_id" value="<?php echo get_the_ID(); ?>">
                                                     <button type="submit" class="btn ebook-btn"
@@ -187,7 +188,4 @@ $dates        = get_terms(
             </div>
         </div>
     </section>
-<?php
-//$url = wp_upload_dir();
-//var_dump($url['basedir']); ?>
 <?php get_footer(); ?>
