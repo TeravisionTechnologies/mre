@@ -191,12 +191,6 @@ jQuery(document).ready(function () {
 
     $('.filters').on('click', '.button', function () {
         var $this = $(this);
-
-        //var filter = $(this).attr(filterAtribute);
-        //currentFilter = filter;
-        setPagination();
-        goToPage(1);
-
         var $buttonGroup = $this.parents('.button-group');
         var filterGroup = $buttonGroup.attr('data-filter-group');
         filters[filterGroup] = $this.attr('data-filter');
@@ -315,7 +309,7 @@ jQuery(document).ready(function () {
         [720, 6]
     ];
 
-    var itemsPerPageDefault = 6;
+    var itemsPerPageDefault = 3;
     var itemsPerPage = defineItemsPerPage();
     var currentNumberPages = 1;
     var currentPage = 1;
@@ -335,7 +329,7 @@ jQuery(document).ready(function () {
         var selector = itemSelector;
         selector += ( currentFilter != '*' ) ? '[' + filterAtribute + '="' + currentFilter + '"]' : '';
         selector += '[' + pageAtribute + '="' + currentPage + '"]';
-        changeFilter(selector);
+        //changeFilter(selector);
     }
 
     function defineItemsPerPage() {
@@ -396,7 +390,7 @@ jQuery(document).ready(function () {
     }
 
     setPagination();
-    goToPage(1);
+    //goToPage(1);
 
     $(window).resize(function () {
         itemsPerPage = defineItemsPerPage();

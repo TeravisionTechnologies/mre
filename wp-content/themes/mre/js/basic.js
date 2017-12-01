@@ -252,7 +252,7 @@ jQuery(document).ready(function () {
             $('.error').fadeOut();
             $.ajax({
                 type: 'post',
-                url: 'http://localhost/mre/ebook-submit/',
+                url: 'http://test-mre.pantheonsite.io/ebook-submit/',
                 data: $(this).serialize(),
                 beforeSend:function(xhr){
                     $('.ebook-btn').attr({disabled: 'disabled'});
