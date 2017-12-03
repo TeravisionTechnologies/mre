@@ -4,6 +4,7 @@ Template Name: Presale
 */
 global $wpdb;
 get_header();
+$lang = get_locale();
 $url = wp_upload_dir();
 $home_query = get_posts(
     array(
@@ -30,19 +31,19 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
                       data-toggle="validator" data-disable="false">
                     <ul class="property-status">
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                            <a href="<?php echo home_url(); ?>"><?php _e('Compra', 'hr') ?></a>
+                            <a href="<?php echo home_url(); ?>"><?php echo ( $lang == "es_ES" ? 'Compra' : 'Sale' ) ?></a>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                            <a href="<?php echo home_url(); ?>/alquileres"><?php _e('Alquiler', 'hr') ?></a>
+                            <a href="<?php echo home_url(); ?>/alquileres"><?php echo ( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                            <a href="<?php echo home_url(); ?>/preventa" class="active"><?php _e('Preventa', 'hr') ?></a>
+                            <a href="<?php echo home_url(); ?>/preventa" class="active"><?php echo ( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?></a>
                         </li>
                     </ul>
                     <div class="col-xs-12 col-sm-12 col-md-12 search-text no-padding">
                         <div class="input-group">
                             <input type="text" id="s" name="s" class="col-xs-10 col-sm-10 col-md-10"
-                                   placeholder="<?php _e('Dirección, ciudad, barrio o código postal', 'hr') ?>"
+                                   placeholder="<?php echo ( $lang == "es_ES" ? 'Dirección, ciudad, barrio o código postal' : 'Address, city, neighborhood or zip code' ) ?>"
                                    autocomplete="off" required value="Miami, FL">
                             <input type="hidden" id="property_status" name="property_status" value="Presale">
                             <input type="hidden" name="post_type[]" value="property">
@@ -59,7 +60,7 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
 <div id="presale-list" class="container property-list">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="hr19-heading"><span><?php _e('Propiedades HR19 Miami, FL', 'hr') ?>&nbsp;&nbsp;&nbsp;</span></h2>
+            <h2 class="hr19-heading"><span><?php echo ( $lang == "es_ES" ? 'Propiedades HR19 Miami, FL' : 'HR19 Properties Miami, FL' ) ?>&nbsp;&nbsp;&nbsp;</span></h2>
         </div>
     </div>
     <div class="row">
@@ -122,10 +123,10 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
                                 echo 'N/A';
                             } ?>
                             <?php if (!empty($rooms)) {
-                                echo '· ' . $rooms . ' Habitaciones';
+                                echo '· ' . $rooms . ( $lang == "es_ES" ? ' Habitaciones' : ' Rooms' );
                             } ?>
                             <?php if (!empty($baths)) {
-                                echo '· ' . $baths . ' Baños';
+                                echo '· ' . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' );
                             } ?>
                         </div>
                         <div class="property-address">
@@ -151,8 +152,8 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
             <div class="col-md-12">
                 <div class="no-results-info">
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">
-                    <h4><?php _e('No existen propiedades disponibles en estos momentos', 'hr') ?></h4>
-                    <p><?php _e('0 resultados', 'hr') ?></p>
+                    <h4><?php echo ( $lang == "es_ES" ? 'No existen propiedades disponibles en estos momentos' : 'There are no properties available at this time' ) ?></h4>
+                    <p><?php echo ( $lang == "es_ES" ? '0 resultados' : '0 results' ) ?></p>
                 </div>
             </div>
         <?php endif; wp_reset_postdata(); ?>
