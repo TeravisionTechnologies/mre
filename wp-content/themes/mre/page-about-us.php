@@ -61,11 +61,11 @@ $partnerRight = get_post_meta( $headerPost[0]->ID, '_hf_partner_right', true );
 			<?php } ?>
         </div>
         <div class="our-team">
-            <?php echo ( $lang == "es_ES" ? 'Nuestro equipo' : 'Our team' ) ?>
+            <h2><?php echo ( $lang == "es_ES" ? 'Nuestro equipo' : 'Our team' ) ?></h2>
             <p><?php echo $main_text[0]['_au_team_text']; ?></p>
         </div>
         <div class="our-properties">
-            <?php echo ( $lang == "es_ES" ? 'Nuestras propiedades' : 'Our properties' ) ?>
+            <h2><?php echo ( $lang == "es_ES" ? 'Nuestras propiedades' : 'Our properties' ) ?></h2>
             <p><?php echo $main_text[0]['_au_properties_text']; ?></p>
         </div>
     </section>
