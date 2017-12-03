@@ -48,7 +48,7 @@ $partnerRight = get_post_meta( $headerPost[0]->ID, '_hf_partner_right', true );
             <p><?php echo $main_text[0]['_au_mission_text']; ?></p>
         </div>
         <div id="about-values" class="col-xs-12 no-padding">
-            <h2><?php echo ( $lang == "es_ES" ? 'Valores' : 'Values' ) ?></h2>
+            <h2 class="values-title"><?php echo ( $lang == "es_ES" ? 'Valores' : 'Values' ) ?></h2>
 			<?php foreach ( $values as $value ) { ?>
                 <div class="col-xs-12 col-sm-6 value-block">
                     <div class="value-image">
