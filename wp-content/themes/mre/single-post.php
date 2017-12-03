@@ -8,6 +8,7 @@
  */
 
 get_header();
+$lang = get_locale();
 global $post;
 $author_id = $post->post_author;
 if (have_posts()) : the_post(); endif;
@@ -52,7 +53,7 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
             </div>
             <div class="blog-detail-content-share">
                 <?php do_shortcode('[USM_plus_form]'); ?>
-                <h2 class="blog-detail-content-share-title">Share this article</h2>
+                <h2 class="blog-detail-content-share-title"><?php echo ( $lang == "es_ES" ? 'Comparte este art&iacute;culo' : 'Share this article' ) ?></h2>
                 <ul class="blog-detail-content-share-list">
                     <li><?php echo do_shortcode('[ssba]'); ?></li>
                 </ul>
@@ -72,9 +73,9 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
         <div class="container-mre center-block">
             <?php
             if ($count_comments == 1) {
-                echo '<h2 class="blog-detail-comments-number">' . $count_comments . ' Comentario</h2>';
+                echo '<h2 class="blog-detail-comments-number">' . $count_comments . ( $lang == "es_ES" ? 'Comentario' : 'Comment' ) '</h2>';
             } else if ($count_comments > 0) {
-                echo '<h2 class="blog-detail-comments-number">' . $count_comments . ' Comentarios</h2>';
+                echo '<h2 class="blog-detail-comments-number">' . $count_comments . ( $lang == "es_ES" ? 'Comentarios' : 'Comments' ) ' </h2>';
             }
             ?>
             <?php
@@ -93,12 +94,11 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
     </section>
     <section class="col-xs-12" id="blog-detail-form">
         <div class="blog-detail-comments-form center-block">
-            <h2 class="blog-detail-comments-form-title">Escribe un comentario</h2>
-            <h3 class="blog-detail-comments-form-subtitle">Su dirección de correo electrónico no será publicada</h3>
+            <h2 class="blog-detail-comments-form-title"><?php echo ( $lang == "es_ES" ? 'Escribe un comentario' : 'Write a comment' ) ?></h2>
+            <h3 class="blog-detail-comments-form-subtitle"><?php echo ( $lang == "es_ES" ? 'Su dirección de correo electrónico no será publicada' : 'Your email address will not be published' ) ?></h3>
             <?php comment_form($args_form_comments, $post_id); ?>
         </div>
     </section>
-
     <section class="col-xs-12" id="blog-recommended-posts"
              style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/notice.jpg')">
         <?php
@@ -119,7 +119,7 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
         ?>
         <div class="recommended-posts-overlay">
             <div class="container-mre center-block">
-                <h2 class="recommended-posts-title">Artículos recomendados</h2>
+                <h2 class="recommended-posts-title"><?php echo ( $lang == "es_ES" ? 'Artículos recomendados' : 'Recommended posts' ) ?></h2>
                 <div class="swiper-container swiper-container-blog-most-viewed">
                     <div class="swiper-wrapper">
                         <?php
@@ -148,10 +148,10 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
                                         <p class="blog-most-viewed-text-title"><?php echo $post_item->post_title ?></p>
                                     </a>
                                     <p class="blog-most-viewed-text-author">
-                                        Por: <?php echo the_author_meta('nickname', $post_item->post_author) ?><span
+                                        <?php echo ( $lang == "es_ES" ? 'Por:' : 'By:' ) ?> <?php echo the_author_meta('nickname', $post_item->post_author) ?><span
                                                 class="blog-most-viewed-text-date"><?php echo get_the_time('j F, Y', $post_item->ID); ?></span><span
                                                 class="blog-most-viewed-text-comments">- <?php echo $count_comments_list; ?>
-                                            Comments</span></p>
+                                            <?php echo ( $lang == "es_ES" ? 'Comentarios' : 'Comments' ) ?></span></p>
                                 </div>
                             </div>
 
@@ -168,4 +168,3 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
 </section>
 
 <?php get_footer(); ?>
-

@@ -102,10 +102,6 @@ function call_metaboxes() {
 
 	// Metaboxes for About Us
 	about_us_metaboxes();
-	// Metaboxes for Broker
-	//broker_metaboxes();
-	// Metaboxes for Developer
-	//developer_metaboxes();
 	// Metaboxes for Header and Footer
 	header_footer_metaboxes();
 	// Metaboxes for Services
@@ -236,16 +232,13 @@ function trv_ajax_blog_cats() {
                             </nav>';
 
 	endwhile;
-	else:
+	else:( $lang == "es_ES" ? 'Comentarios' : 'Comments' ) 
 		echo '<div class="col-md-12 no-results text-center">
-                            <p>' . _e( 'No existen publicaciones disponibles en estos momentos', 'mre' ). '</p>
-                            <p>' . _e( '0 resultados', 'mre' ). '</p>
+                            <p>' . ( $lang == "es_ES" ? 'No existen publicaciones disponibles en estos momentos' : 'There are no publications available at this time' ) . '</p>
+                            <p>' .( $lang == "es_ES" ? '0 resultados' : '0 results' ) . '</p>
                         </div>';
 
 	endif;
-	//wp_send_json( $posts );
-	//echo get_bloginfo( 'title' );
-
 	die();
 }
 

@@ -44,7 +44,7 @@ $categories      = get_categories(
     <section class="container-fluid no-padding">
         <section class="col-xs-12" id="blog-list-categories">
             <div class="container-mre center-block">
-                <h3 class="blog-list-category-title"><?php _e( 'Categoría', 'mre' ) ?></h3>
+                <h3 class="blog-list-category-title"><?php echo ( $lang == "es_ES" ? 'Categoría' : 'Category' ) ?></h3>
                 <h2 class="blog-list-category-text"></h2>
                 <div class="swiper-container swiper-container-blog-categories">
                     <div class="swiper-wrapper">
@@ -83,7 +83,7 @@ $categories      = get_categories(
                             <i class="fa fa-search" aria-hidden="true"></i>
                             <input type="text" class="form-control" id="search" name="s"
                                    value="<?php echo get_query_var( 's' ); ?>"
-                                   placeholder="<?php _e( 'Buscar...', 'mre' ) ?>">
+                                   placeholder="<?php echo ( $lang == "es_ES" ? 'Buscar...' : 'Search...' ) ?>">
                         </div>
                         <input type="hidden" name="post_type[]" value="post">
                     </form>
@@ -91,11 +91,11 @@ $categories      = get_categories(
                 <div class="col-xs-12 col-sm-3 blog-select">
                     <form name="filters" class="post-filters" method="get">
                         <select name="orderby" id="orderby" class="form-control blog-filter pull-right">
-                            <option selected="selected"><?php _e( 'Ordenar por...', 'mre' ) ?></option>
+                            <option selected="selected"><?php echo ( $lang == "es_ES" ? 'Ordenar por...' : 'Order by...' ) ?></option> 
 							<?php
 							$orderby_options = array(
-								'post_date'  => 'Order By Date',
-								'post_title' => 'Order By Title',
+								'post_date'  => echo ( $lang == "es_ES" ? 'Ordenar por fecha' : 'Order by date' ),  
+								'post_title' => echo ( $lang == "es_ES" ? 'Ordenar por t&iacute;tulo' : 'Order by title' ),
 							);
 							foreach ( $orderby_options as $value => $label ) {
 								echo "<option " . selected( $_GET['orderby'], $value ) . " value='$value'>$label</option>";
@@ -124,36 +124,30 @@ $categories      = get_categories(
                                     <a href="<?php $link = get_permalink( $post->ID );
 									echo $link; ?>"><h1 class="blog-text-title"><?php echo $post->post_title; ?></h1>
                                     </a>
-                                    <h2 class="blog-text-author"><?php _e( 'Por: ', 'mre' ) ?><?php $author = get_user_by( 'ID', $post->post_author );
+                                    <h2 class="blog-text-author"><?php echo ( $lang == "es_ES" ? 'Por:' : 'By:' ) ?><?php $author = get_user_by( 'ID', $post->post_author );
 										echo $author->display_name ?><span
                                                 class="blog-text-date"><?php $date = strtotime( $post->post_date );
 											echo date( 'd F, Y', $date ) ?></span><span
                                                 class="blog-text-comments hidden-xs hidden-sm">- <?php echo $post->comment_count ?>
-											<?php _e( 'Comentarios', 'mre' ) ?></span></h2>
+											<?php echo ( $lang == "es_ES" ? 'Comentarios' : 'Comments' ) ?></span></h2>
                                     <p class="blog-text-summary"><?php echo $post->post_excerpt ?></p>
                                 </div>
-                            </a>
+                            </a> 
                         </div>
-					<?php endwhile; ?>
+					<?php endwhile; ?> 
 					<?php endif; ?>
                 </div>
 				<?php if ( $wp_query->post_count == 1 ) {
 					echo '<div class="col-xs-12 marginb80"></div>';
 				} ?>
-                <nav id="blog-pagination" class="text-center">
-					<?php
-					/*if (function_exists('wp_paginate')) {
-						wp_paginate();
-					}*/
-					?>
-                </nav>
+                <nav id="blog-pagination" class="text-center"></nav>
             </div>
         </section>
         <section class="col-xs-12" id="blog-recommended-posts"
                  style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/notice.jpg')">
             <div class="recommended-posts-overlay">
                 <div class="container-mre center-block">
-                    <h2 class="recommended-posts-title"><?php _e( 'Artículos recomendados', 'mre' ) ?></h2>
+                    <h2 class="recommended-posts-title"><?php echo ( $lang == "es_ES" ? 'Artículos recomendados' : 'Recommended posts' ) ?></h2>
                     <div class="swiper-container swiper-container-blog-most-viewed">
                         <div class="swiper-wrapper">
 							<?php foreach ( $postRecommended as $post ) { ?>
@@ -173,12 +167,12 @@ $categories      = get_categories(
                                             <h1 class="blog-most-viewed-text-title"><?php echo $post->post_title; ?></h1>
                                         </a>
                                         <h2 class="blog-most-viewed-text-author">
-											<?php _e( 'Por: ', 'mre' ) ?> <?php $author = get_user_by( 'ID', $post->post_author );
+											<?php echo ( $lang == "es_ES" ? 'Por:' : 'By:' ) ?> <?php $author = get_user_by( 'ID', $post->post_author );
 											echo $author->display_name ?><span
                                                     class="blog-most-viewed-text-date"><?php $date = strtotime( $post->post_date );
 												echo date( 'd F, Y', $date ) ?></span><span
                                                     class="blog-most-viewed-text-comments">- <?php echo $post->comment_count ?>
-												<?php _e( 'Comentarios', 'mre' ) ?></span></h2>
+												<?php echo ( $lang == "es_ES" ? 'Comentarios' : 'Comments' ) ?></span></h2>
                                     </div>
                                 </div>
 							<?php } ?>
@@ -192,9 +186,9 @@ $categories      = get_categories(
         <section id="our-ebooks" class="col-xs-12 text-center"
                  style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/ebook-hero.jpg')">
             <div class="mask">
-                <h3><?php _e( 'Disfruta de nuestros e-books', 'mre' ) ?></h3>
-                <p><?php _e( 'la información que necesitas completamente gratis', 'mre' ) ?></p>
-                <a href="<?php echo ( $lang == 'es_ES' ? home_url('e-books') : home_url('en/our-e-books') ) ?>" class="btn"><?php _e( 'Ver todos', 'mre' ) ?></a>
+                <h3><?php echo ( $lang == "es_ES" ? 'Disfruta de nuestros e-books' : 'Enjoy our ebooks' ) ?></h3>
+                <p><?php echo ( $lang == "es_ES" ? 'la información que necesitas completamente gratis' : 'the information you need completely free' ) ?></p>
+                <a href="<?php echo ( $lang == 'es_ES' ? home_url('e-books') : home_url('en/our-e-books') ) ?>" class="btn"><?php echo ( $lang == "es_ES" ? 'Ver todos' : 'See all' ) ?></a>
             </div>
         </section>
     </section>
