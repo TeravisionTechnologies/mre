@@ -232,7 +232,7 @@ function trv_ajax_blog_cats() {
                             </nav>';
 
 	endwhile;
-	else:( $lang == "es_ES" ? 'Comentarios' : 'Comments' ) 
+	else:
 		echo '<div class="col-md-12 no-results text-center">
                             <p>' . ( $lang == "es_ES" ? 'No existen publicaciones disponibles en estos momentos' : 'There are no publications available at this time' ) . '</p>
                             <p>' .( $lang == "es_ES" ? '0 resultados' : '0 results' ) . '</p>
