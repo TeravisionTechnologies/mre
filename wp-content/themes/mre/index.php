@@ -48,7 +48,7 @@ $categories      = get_categories(
                 <h2 class="blog-list-category-text"></h2>
                 <div class="swiper-container swiper-container-blog-categories">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" name="Todas las categorías" data-slug="all">
+                        <div class="swiper-slide" name="<?php echo ( $lang == "es_ES" ? 'Todas las categorías' : 'All the categories' ) ?>" data-slug="all">
                             <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/todas.png);">
                                 <div class="swiper-overlay"></div>
                             </a>
@@ -92,11 +92,17 @@ $categories      = get_categories(
                     <form name="filters" class="post-filters" method="get">
                         <select name="orderby" id="orderby" class="form-control blog-filter pull-right">
                             <option selected="selected"><?php echo ( $lang == "es_ES" ? 'Ordenar por...' : 'Order by...' ) ?></option> 
-							<?php
-							$orderby_options = array(
-								'post_date'  => echo ( $lang == "es_ES" ? 'Ordenar por fecha' : 'Order by date' ),  
-								'post_title' => echo ( $lang == "es_ES" ? 'Ordenar por t&iacute;tulo' : 'Order by title' ),
-							);
+							<?php 
+                            if ( $lang == "es_ES" ) { 
+    							$orderby_options = array(
+    								'post_date'  => 'Ordenar por fecha',  
+    								'post_title' => 'Ordenar por t&iacute;tulo'); 
+                            }  else{
+                                $orderby_options = array(
+                                'post_date'  => 'Order by date',  
+                                'post_title' => 'Order by title');
+                            }
+
 							foreach ( $orderby_options as $value => $label ) {
 								echo "<option " . selected( $_GET['orderby'], $value ) . " value='$value'>$label</option>";
 							}

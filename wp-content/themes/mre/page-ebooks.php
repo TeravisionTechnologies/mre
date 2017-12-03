@@ -185,11 +185,9 @@ $dates        = get_terms(
                 </div>
                 <div class="col-xs-12 col-md-8 al-contact-form-div no-padding">
 					<?php
-                    if (false !== strpos($url_wp, '/en' )) {
-                        echo do_shortcode('[contact-form-7 id="275" title="Contact Form (English)"]');
-                    } else {
-                        echo do_shortcode( '[contact-form-7 id="4" title="Home - Contact form"]' );
-                    }
+                        $contacteng = do_shortcode( '[contact-form-7 id="275" title="Contact Form"]');
+                        $contactesp = do_shortcode( '[contact-form-7 id="4" title="Home - Contact form"]');
+                        echo ( $lang == "es_ES" ? $contactesp : $contacteng );
                     ?>
                 </div>
             </div>
