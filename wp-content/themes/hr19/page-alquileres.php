@@ -13,6 +13,15 @@ $home_query = get_posts(
 );
 $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
 $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
+if(function_exists('pll_current_language')){
+	$current_language = pll_current_language();
+	$default_language = pll_default_language();
+	if($current_language != $default_language){
+		$language_subdir = $current_language.'/';
+	} else {
+		$language_subdir = '';
+	}
+}
 ?>
 <section class="col-xs-12 hr-hero-section text-center no-padding"
          style="background-image: url('<?php echo $hero[0]["_hf_hero_background"] ?>');">
@@ -27,17 +36,17 @@ $hero = get_post_meta($home_query[0]->ID, '_hf_hero', true);
     <div class="container property-search-wrapper">
         <div class="row">
             <div class="col-md-offset-1 col-md-10">
-                <form id="property-search" class="property-search" action="<?php echo home_url(); ?>" method="get" role="form"
+                <form id="property-search" class="property-search" action="<?php echo esc_url(home_url('/'.$language_subdir)); ?>" method="get" role="form"
                       data-toggle="validator" data-disable="false">
                     <ul class="property-status">
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                             <a href="<?php echo home_url(); ?>"><?php echo ( $lang == "es_ES" ? 'Compra' : 'Sale' ) ?></a>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                            <a href="<?php echo home_url(); ?>/alquileres" class="active"><?php echo ( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a>
+                            <a href="<?php echo home_url() . ( $lang == "es_ES" ? '/alquileres' : '/rent' ) ?>" class="active"><?php echo ( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                            <a href="<?php echo home_url(); ?>/preventa"><?php echo ( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?></a>
+                            <a href="<?php echo home_url() . ( $lang == "es_ES" ? '/preventa' : '/presale' ) ?>"><?php echo ( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?></a>
                         </li>
                     </ul>
                     <div class="col-xs-12 col-sm-12 col-md-12 search-text no-padding">
