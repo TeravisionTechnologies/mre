@@ -869,3 +869,20 @@ a.al-phone-num
       margin-bottom: get-vw-desktop(3px)
     &:nth-child(2)
       color: $grey-empty
+
+
+.menu-wrapper
+  position: absolute
+  overflow: hidden
+  overflow-y: scroll
+  top: get-vw-desktop(80px)
+  width: 100%
+  display: flex
+  flex-direction: column
+
+.mre-menu-language, .mre-menu-social, .mre-menu
+  position: unset !important
+
+.mre-menu-language
+  height: auto !important
+  margin-bottom: get-vw-desktop(20px)
