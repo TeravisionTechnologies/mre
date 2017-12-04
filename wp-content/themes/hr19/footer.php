@@ -1,6 +1,7 @@
 <?php
 $referer = wp_get_referer();
-if (strpos($referer, "en") == false){
+
+if ( (strpos($referer, "en")  == false) && strpos($_SERVER['REQUEST_URI'], "en") == false ){
 	$langu = "es";
 } else{
 	$langu = "en";
@@ -84,8 +85,8 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
             </div>
             <div class="col-xs-12 col-md-8 hr-contact-form-div no-padding">
                 <?php
-                    $contactesp = do_shortcode( '[contact-form-7 id="443" title="Contact Form (English)"]');
-                    $contacteng = do_shortcode( '[contact-form-7 id="542" title="Contact Form English"]');
+                    $contactesp = do_shortcode( '[contact-form-7 id="5" title="Home Contact Form"]');
+                    $contacteng = do_shortcode( '[contact-form-7 id="443" title="Contact Form (English)"]');
                     echo ( ($lang == "es_ES" and $langu == "es") ? $contactesp : $contacteng );
                 ?>
             </div>

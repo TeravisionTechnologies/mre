@@ -507,7 +507,7 @@ jQuery(document).ready(function ($) {
         $("#max-list").show();
     });
 
-    $('.wp-pagenavi a').on('click', function(e){
+    /*$('.wp-pagenavi a').on('click', function(e){
         e.preventDefault();
         var link = $(this).attr('href');
         $('#responsed').load(link + ' #responsed', function() {
@@ -521,13 +521,18 @@ jQuery(document).ready(function ($) {
         $('#responses').load(link + ' #responses', function() {
             $('#responses').fadeIn();
         });
-    });
+    });*/
 
     var sum = 0;
     $('.tot').each(function(){
         sum += parseFloat($(this).data('myval'));
     });
     $("#ptotal").html(sum);
+
+    $('#go-back').click(function(){
+        parent.history.back();
+        return false;
+    });
 
 });
 
