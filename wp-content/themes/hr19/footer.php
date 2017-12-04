@@ -1,7 +1,14 @@
 <?php
+$referer = wp_get_referer();
+if (strpos($referer, "en") == false){
+	$langu = "es";
+} else{
+	$langu = "en";
+}
 $footer_query    = get_posts(
 	array(
-		'post_type' => 'header_footer'
+		'post_type' => 'header_footer',
+		'lang' => $langu
 	)
 );
 $partners        = get_post_meta( $footer_query[0]->ID, '_hf_partners', true );
@@ -77,9 +84,9 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
             </div>
             <div class="col-xs-12 col-md-8 hr-contact-form-div no-padding">
                 <?php
-                    $contacteng = do_shortcode( '[contact-form-7 id="443" title="Contact Form (English)"]');
-                    $contactesp = do_shortcode( '[contact-form-7 id="5" title="Home - Contact form"]');
-                    echo ( $lang == "es_ES" ? $contactesp : $contacteng );
+                    $contactesp = do_shortcode( '[contact-form-7 id="443" title="Contact Form (English)"]');
+                    $contacteng = do_shortcode( '[contact-form-7 id="542" title="Contact Form English"]');
+                    echo ( ($lang == "es_ES" and $langu == "es") ? $contactesp : $contacteng );
                 ?>
             </div>
         </div>
