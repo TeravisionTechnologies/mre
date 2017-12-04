@@ -2868,7 +2868,7 @@ body.thanks {
       margin-bottom: 50px; }
 
   #about-main-text .servs h2 {
-    font-size: 24px; }
+    font-size: 24px !important; }
 
   #about-main-text {
     height: auto;
