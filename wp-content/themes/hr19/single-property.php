@@ -36,7 +36,8 @@ if (strpos($referer, "en") == false){
         <div class="container">
             <div class="row">
                 <div class="col-xs-9 col-sm-7 col-md-6">
-                    <div class="breadcrumbs"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    <div class="breadcrumbs">
+                        <i id="go-back" class="fa fa-chevron-left" aria-hidden="true"></i>
                         <?php if (!empty($city)) {
                             echo $city;
                         } ?>,
