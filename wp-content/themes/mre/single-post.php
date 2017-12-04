@@ -73,9 +73,9 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
         <div class="container-mre center-block">
             <?php
             if ($count_comments == 1) {
-                echo '<h2 class="blog-detail-comments-number">' . $count_comments . ( $lang == "es_ES" ? 'Comentario' : 'Comment' ) '</h2>';
+                echo '<h2 class="blog-detail-comments-number">' . $count_comments . ( $lang == "es_ES" ? 'Comentario' : 'Comment' ) . '</h2>';
             } else if ($count_comments > 0) {
-                echo '<h2 class="blog-detail-comments-number">' . $count_comments . ( $lang == "es_ES" ? 'Comentarios' : 'Comments' ) ' </h2>';
+                echo '<h2 class="blog-detail-comments-number">' . $count_comments . ( $lang == "es_ES" ? 'Comentarios' : 'Comments' ) . '</h2>';
             }
             ?>
             <?php

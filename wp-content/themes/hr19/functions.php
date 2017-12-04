@@ -253,7 +253,7 @@ function get_mls() {
 					'_pr_city'             => $property['City'] . ', ' . $property['StateOrProvince'],
 					'_pr_community'        => $property['CountyOrParish'],
 					'_pr_subdiv'           => $property['SubdivisionName'],
-					'_pr_current_price'    => round($property['CurrentPrice']),
+					'_pr_current_price'    => round( $property['CurrentPrice'] ),
 					'_pr_type_of_property' => $property['TypeofProperty'],
 					'_pr_room_count'       => $property['BedsTotal'],
 					'_pr_baths_total'      => number_format( round( $property['BathsTotal'] ) ),
@@ -303,7 +303,7 @@ function get_mls() {
 					'_pr_city'             => $property['City'] . ', ' . $property['StateOrProvince'],
 					'_pr_community'        => $property['CountyOrParish'],
 					'_pr_subdiv'           => $property['SubdivisionName'],
-					'_pr_current_price'    => round($property['CurrentPrice']),
+					'_pr_current_price'    => round( $property['CurrentPrice'] ),
 					'_pr_type_of_property' => $property['TypeofProperty'],
 					'_pr_room_count'       => $rooms,
 					'_pr_baths_total'      => number_format( round( $property['BathsTotal'] ) ),
@@ -402,8 +402,8 @@ add_action( 'pre_get_posts', function ( $q ) {
 // Filtering data
 
 function property_filter_function() {
-	global $wpdb;
-	$owner = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_owner' ) );
+	//global $wpdb;
+	//$owner = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_owner' ) );
 
 
 	if ( ( isset( $_POST['proporderby'] ) && $_POST['proporderby'] == "date" ) && ( isset( $_POST['propsort'] ) && $_POST['propsort'] == "ASC" ) ) {
@@ -420,180 +420,179 @@ function property_filter_function() {
 		$sort    = 'ASC';
 	} ?>
 
-	<?php foreach ( $owner as $ow ) { ?>
-        <div class="col-md-12">
-            <h2 class="hr-heading"><?php echo( $ow == "HR19" ? "Propiedades HR19" : "Otras propiedades · MLS" ); ?></h2>
-        </div>
+	<?php //foreach ( $owner as $ow ) { ?>
+    <div class="col-md-12">
+        <h2 class="hr-heading"><?php echo( $lang == "es_ES" ? 'Propiedades' : 'Properties' ) ?></h2>
+    </div>
 
-		<?php
-		$url  = wp_upload_dir();
-		$args = array(
-			'post_type' => 'property',
-			'showposts' => 9,
-			'paged'     => get_query_var( 'paged' ),
-			'meta_key'		=> $orderby,
-			'orderby'        => 'meta_value_num',
-			//'type' => 'NUMERIC',
-			'order'          => $sort,
-		);
+	<?php
+	$url   = wp_upload_dir();
+	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+	$args  = array(
+		'post_type' => 'property',
+		'showposts' => 9,
+		'paged'     => get_query_var( 'paged' ),
+		'meta_key'  => $orderby,
+		'orderby'   => 'meta_value_num',
+		//'type' => 'NUMERIC',
+		'order'     => $sort,
+	);
 
-		// create $args['meta_query'] array if one of the following fields is filled
-		if ( isset( $_POST['s'] ) && $_POST['s'] ||
-		     isset( $_POST['rooms'] ) && $_POST['rooms'] ||
-		     isset( $_POST['baths'] ) && $_POST['baths'] ||
-		     isset( $_POST['transaction'] ) && $_POST['transaction'] ||
-		     isset( $_POST['proptype'] ) && $_POST['proptype'] ||
-		     isset( $_POST['min'] ) && $_POST['min'] || isset( $_POST['max'] ) && $_POST['max'] ) {
-			$args['meta_query'] = array( 'relation' => 'AND' );
-		}
+	// create $args['meta_query'] array if one of the following fields is filled
+	if ( isset( $_POST['s'] ) && $_POST['s'] ||
+	     isset( $_POST['rooms'] ) && $_POST['rooms'] ||
+	     isset( $_POST['baths'] ) && $_POST['baths'] ||
+	     isset( $_POST['transaction'] ) && $_POST['transaction'] ||
+	     isset( $_POST['proptype'] ) && $_POST['proptype'] ||
+	     isset( $_POST['min'] ) && $_POST['min'] || isset( $_POST['max'] ) && $_POST['max'] ) {
+		$args['meta_query'] = array( 'relation' => 'AND' );
+	}
 
-		if ( isset( $_POST['rooms'] ) && $_POST['rooms'] ) {
-			$args['meta_query'][] = array(
-				'key'     => '_pr_room_count',
-				'value'   => $_POST['rooms'],
-				'compare' => '='
-			);
-		}
-
-		if ( isset( $_POST['baths'] ) && $_POST['baths'] ) {
-			$args['meta_query'][] = array(
-				'key'     => '_pr_baths_total',
-				'value'   => $_POST['baths'],
-				'compare' => '='
-			);
-		}
-
-		if ( isset( $_POST['proptype'] ) && $_POST['proptype'] ) {
-			$args['meta_query'][] = array(
-				'key'     => '_pr_type_of_property',
-				'value'   => $_POST['proptype'],
-				'compare' => 'IN'
-			);
-		}
-
-		if ( isset( $_POST['transaction'] ) && $_POST['transaction'] ) {
-			$args['meta_query'][] = array(
-				'key'     => '_pr_transaction',
-				'value'   => $_POST['transaction'],
-				'compare' => '='
-			);
-		}
-
+	if ( isset( $_POST['rooms'] ) && $_POST['rooms'] ) {
 		$args['meta_query'][] = array(
-			'key'     => '_pr_owner',
-			'value'   => $ow,
+			'key'     => '_pr_room_count',
+			'value'   => $_POST['rooms'],
 			'compare' => '='
 		);
+	}
 
-		if ( isset( $_POST['showowner'] ) && $_POST['showowner'] ) {
-			$args['meta_query'][] = array(
-				'key'     => '_pr_owner',
-				'value'   => $_POST['showowner'],
+	if ( isset( $_POST['baths'] ) && $_POST['baths'] ) {
+		$args['meta_query'][] = array(
+			'key'     => '_pr_baths_total',
+			'value'   => $_POST['baths'],
+			'compare' => '='
+		);
+	}
+
+	if ( isset( $_POST['proptype'] ) && $_POST['proptype'] ) {
+		$args['meta_query'][] = array(
+			'key'     => '_pr_type_of_property',
+			'value'   => $_POST['proptype'],
+			'compare' => 'IN'
+		);
+	}
+
+	if ( isset( $_POST['transaction'] ) && $_POST['transaction'] ) {
+		$args['meta_query'][] = array(
+			'key'     => '_pr_transaction',
+			'value'   => $_POST['transaction'],
+			'compare' => '='
+		);
+	}
+
+	/*$args['meta_query'][] = array(
+		'key'     => '_pr_owner',
+		'value'   => $ow,
+		'compare' => '='
+	);*/
+
+	if ( isset( $_POST['showowner'] ) && $_POST['showowner'] ) {
+		$args['meta_query'][] = array(
+			'key'     => '_pr_owner',
+			'value'   => $_POST['showowner'],
+			'compare' => '='
+		);
+	}
+
+	if ( isset( $_POST['s'] ) && $_POST['s'] ) {
+		$args['meta_query'][] = array(
+			'relation' => 'OR',
+			array(
+				'key'     => '_pr_city',
+				'value'   => $_POST['s'],
 				'compare' => '='
-			);
-        }
+			),
+			array(
+				'key'     => '_pr_address',
+				'value'   => $_POST['s'],
+				'compare' => '='
+			),
+			array(
+				'key'     => '_pr_postalcode',
+				'value'   => $_POST['s'],
+				'compare' => '='
+			)
+		);
+	}
 
-		if ( isset( $_POST['s'] ) && $_POST['s'] ) {
-			$args['meta_query'][] = array(
-				'relation' => 'OR',
-				array(
-					'key'     => '_pr_city',
-					'value'   => $_POST['s'],
-					'compare' => '='
-				),
-				array(
-					'key'     => '_pr_address',
-					'value'   => $_POST['s'],
-					'compare' => '='
-				),
-				array(
-					'key'     => '_pr_postalcode',
-					'value'   => $_POST['s'],
-					'compare' => '='
-				)
-			);
-		}
-
-		// if both minimum price and maximum price are specified we will use BETWEEN comparison
-		if ( isset( $_POST['min'] ) && $_POST['min'] && isset( $_POST['max'] ) && $_POST['max'] ) {
+	// if both minimum price and maximum price are specified we will use BETWEEN comparison
+	if ( isset( $_POST['min'] ) && $_POST['min'] && isset( $_POST['max'] ) && $_POST['max'] ) {
+		$args['meta_query'][] = array(
+			'key'     => '_pr_current_price',
+			'value'   => array( $_POST['min'], $_POST['max'] ),
+			'type'    => 'NUMERIC',
+			'compare' => 'between'
+		);
+	} else {
+		// if only min price is set
+		if ( isset( $_POST['min'] ) && $_POST['min'] ) {
 			$args['meta_query'][] = array(
 				'key'     => '_pr_current_price',
-				'value'   => array( $_POST['min'], $_POST['max'] ),
+				'value'   => $_POST['min'],
 				'type'    => 'NUMERIC',
-				'compare' => 'between'
+				'compare' => '>='
 			);
-		} else {
-			// if only min price is set
-			if ( isset( $_POST['min'] ) && $_POST['min'] ) {
-				$args['meta_query'][] = array(
-					'key'     => '_pr_current_price',
-					'value'   => $_POST['min'],
-					'type'    => 'NUMERIC',
-					'compare' => '>='
-				);
-			}
-
-			// if only max price is set
-			if ( isset( $_POST['max'] ) && $_POST['max'] ) {
-				$args['meta_query'][] = array(
-					'key'     => '_pr_current_price',
-					'value'   => $_POST['max'],
-					'type'    => 'NUMERIC',
-					'compare' => '<='
-				);
-			}
 		}
 
-		$query = new WP_Query( $args );
+		// if only max price is set
+		if ( isset( $_POST['max'] ) && $_POST['max'] ) {
+			$args['meta_query'][] = array(
+				'key'     => '_pr_current_price',
+				'value'   => $_POST['max'],
+				'type'    => 'NUMERIC',
+				'compare' => '<='
+			);
+		}
+	}
 
-		if ( $query->have_posts() ): while ( $query->have_posts() ) : $query->the_post();
-			$address     = get_post_meta( get_the_ID(), '_pr_address', true );
-			$price       = get_post_meta( get_the_ID(), '_pr_current_price', true );
-			$type        = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
-			$rooms       = get_post_meta( get_the_ID(), '_pr_room_count', true );
-			$baths       = get_post_meta( get_the_ID(), '_pr_baths_total', true );
-			$sysid       = get_post_meta( get_the_ID(), '_pr_matrixid', true );
-			$city        = get_post_meta( get_the_ID(), '_pr_city', true );
-			$state       = get_post_meta( get_the_ID(), '_pr_state', true );
-			$agentid     = get_post_meta( get_the_ID(), '_pr_agentid', true );
-			$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
-			$headers     = get_headers( $bgimg, 1 );
-			$fsize       = $headers['Content-Length'];
-			$fsize       = (int) $fsize;
-			$urlimage    = wp_remote_head( $bgimg );
-			$urlimage    = $urlimage['response']['code'];
-			$placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
+	$query = new WP_Query( $args );
 
-			echo '<div class="col-xs-12 col-sm-4 col-md-4">
+	if ( $query->have_posts() ): while ( $query->have_posts() ) : $query->the_post();
+		$address     = get_post_meta( get_the_ID(), '_pr_address', true );
+		$price       = get_post_meta( get_the_ID(), '_pr_current_price', true );
+		$type        = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
+		$rooms       = get_post_meta( get_the_ID(), '_pr_room_count', true );
+		$baths       = get_post_meta( get_the_ID(), '_pr_baths_total', true );
+		$sysid       = get_post_meta( get_the_ID(), '_pr_matrixid', true );
+		$city        = get_post_meta( get_the_ID(), '_pr_city', true );
+		$state       = get_post_meta( get_the_ID(), '_pr_state', true );
+		$agentid     = get_post_meta( get_the_ID(), '_pr_agentid', true );
+		$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
+		$headers     = get_headers( $bgimg, 1 );
+		$fsize       = $headers['Content-Length'];
+		$fsize       = (int) $fsize;
+		$urlimage    = wp_remote_head( $bgimg );
+		$urlimage    = $urlimage['response']['code'];
+		$placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
+
+		echo '<div class="col-xs-12 col-sm-4 col-md-4">
                 <a href="' . get_permalink( $query->post->ID ) . '" class="property">
                     <div class="property-image" data-url="" style="background: url(' . $url['baseurl'] . '/photos/' . $sysid . '/1.jpg"></div>
                     <div class="property-info">
-                        <div class="property-price">$' . number_format_i18n($price) . '</div>
-						<div class="property-highlights">' . $type . ' ' . $rooms . ( $lang == "es_ES" ? ' Habitaciones' : ' Rooms' ) . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' ).'</div>
+                        <div class="property-price">$' . number_format_i18n( $price ) . '</div>
+						<div class="property-highlights">' . $type . ' ' . $rooms . ( $lang == "es_ES" ? ' Habitaciones' : ' Rooms' ) . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' ) . '</div>
 						<div class="property-address">' . $address . '</div>
 						<div class="property-code">MLS: ' . $query->post->post_title . '</div>
 						</div>
 						</a>
 						</div>';
-		endwhile; ?>
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 text-center nn">
-					<?php wp_pagenavi( array( 'query' => $query ) ); ?>
-                </div>
+	endwhile; ?>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center nn">
+				<?php wp_pagenavi( array( 'query' => $query ) ); ?>
             </div>
-		<?php else: ?>
-            <div class="col-md-12">
-                <div class="no-results-info">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">
-                    <h4><?php echo ( $lang == "es_ES" ? 'No existen propiedades disponibles en estos momentos' : 'There are no properties available at this time' ) ?></h4>
-                    <p><?php echo ( $lang == "es_ES" ? '0 resultados' : '0 results' ) ?></p>
-                </div>
+        </div>
+	<?php else: ?>
+        <div class="col-md-12">
+            <div class="no-results-info">
+                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">
+                <h4><?php echo( $lang == "es_ES" ? 'No existen propiedades disponibles en estos momentos' : 'There are no properties available at this time' ) ?></h4>
+                <p><?php echo( $lang == "es_ES" ? '0 resultados' : '0 results' ) ?></p>
             </div>
-		<?php endif;
-		wp_reset_postdata(); ?>
-	<?php }
-
-	die();
+        </div>
+	<?php endif;
+	wp_reset_postdata(); ?>
+	<?php die();
 }
 
 add_action( 'wp_ajax_myfilter', 'property_filter_function' );

@@ -195,7 +195,7 @@
                 </div>
                 <div class="col-md-12">
                     <?php if (!empty($memofiles)) { ?>
-                        <a class="btn-planos" href="<?php echo $memofiles; ?>" download><?php echo ( $lang == "es_ES" ? 'Descargar memoria de calidad' : 'Download quality report' ) ?></a>
+                        <a class="btn-planos" href="<?php echo $memofiles; ?>" download><?php echo ( $lang == "es_ES" ? 'Descargar' : 'Download' ) ?></a>
                     <?php } ?>
                 </div>
             </div>
