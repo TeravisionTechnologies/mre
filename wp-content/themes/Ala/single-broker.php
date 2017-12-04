@@ -41,7 +41,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 detail-content">
-                <div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Detalles del Interior' : 'Details of the Interior' ) ?></div>
+                <div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Detalles del Interior' : 'Interior details' ) ?></div>
                 <p><?php echo $intdetails ?></p>
                 <?php if(!empty($intimages)){ ?>
                     <div class="row gallery-images">
@@ -131,7 +131,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Planos' : 'Blueprints' ) ?></div>
+                    <div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Planos' : 'Floorplans' ) ?></div>
                     <div id="gallery-top-blueprint" class="swiper-container gallery-top-blueprint swiper-detail">
                         <div class="swiper-wrapper">
                             <?php foreach ((array) $plainsimages as $attachment_id => $attachment_url) { ?>
@@ -168,7 +168,7 @@
                     <div class="swiper-button-next swiper-button-white"></div>
                     <div class="swiper-button-prev swiper-button-white"></div>
                     <?php if (!empty($pzip)) { ?>
-                        <a class="btn-planos" href="<?php echo $pzip; ?>" download><?php _e('Descargar planos', 'ala') ?></a>
+                        <a class="btn-planos" href="<?php echo $pzip; ?>" download><?php echo ( $lang == "es_ES" ? 'Descargar' : 'Download' ) ?></a>
                     <?php } ?>
                 </div>
             </div>
@@ -179,7 +179,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Memoria de Calidad' : 'Quality Report' ) ?></div>
+                    <div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Memoria de Calidad' : 'Memories' ) ?></div>
                     <p><?php echo $q[0]; ?></p>
                     <div class="row memory-items">
                         <div class="col-sm-4 col-md-4 text-center">
@@ -251,7 +251,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Lugares Cercanos' : 'Nearby Places' ) ?></div>
+                    <div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Lugares Cercanos' : 'Nearby Attractions' ) ?></div>
                     <?php if ($terms != null) { ?>
                         <div class="row gallery-places">
                             <?php $i = 1; $counter = 0; foreach ($terms as $term) {
