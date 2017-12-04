@@ -1485,7 +1485,7 @@ input:checked + .slider:before {
     text-align: right !important; }
 
 #navbar {
-  min-height: 5.55556vw !important;
+  height: 5.55556vw;
   -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2); }
 
