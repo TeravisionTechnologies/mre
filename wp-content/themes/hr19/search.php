@@ -25,7 +25,7 @@ $lang = get_locale();
                     <li>
                         <div class="input-group">
                             <input type="search" class="form-control search-box" id="s" name="s"
-                                   placeholder="<?php _e( 'Buscar', 'hr' ) ?>" value="<?php echo $s; ?>" required>
+                                   placeholder="<?php echo ( $lang == "es_ES" ? 'Buscar' : 'Search' ) ?>" value="<?php echo $s; ?>" required>
                             <i class="fa fa-search"></i>
                         </div>
                     </li>
@@ -143,11 +143,11 @@ $lang = get_locale();
                         <ul id="rooms-dd" class="dropdown-menu clickdd">
                             <li><a role="button" data-value=""><?php echo ( $lang == "es_ES" ? 'Cualquiera' : 'Any' ) ?></a></li>
                             <li><a role="button" data-value="1"><?php echo ( $lang == "es_ES" ? 'Estudio' : 'Studio' ) ?></a></li>
-                            <li><a role="button" data-value="1">1+ hab.</a></li>
-                            <li><a role="button" data-value="2">2+ hab.</a></li>
-                            <li><a role="button" data-value="3">3+ hab.</a></li>
-                            <li><a role="button" data-value="4">4+ hab.</a></li>
-                            <li><a role="button" data-value="5">5+ hab.</a></li>
+                            <li><a role="button" data-value="1">1+ <?php echo ( $lang == "es_ES" ? 'habs.' : 'rooms' ) ?></a></li>
+                            <li><a role="button" data-value="2">2+ <?php echo ( $lang == "es_ES" ? 'habs.' : 'rooms' ) ?></a></li>
+                            <li><a role="button" data-value="3">3+ <?php echo ( $lang == "es_ES" ? 'habs.' : 'rooms' ) ?></a></li>
+                            <li><a role="button" data-value="4">4+ <?php echo ( $lang == "es_ES" ? 'habs.' : 'rooms' ) ?></a></li>
+                            <li><a role="button" data-value="5">5+ <?php echo ( $lang == "es_ES" ? 'habs.' : 'rooms' ) ?></a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -156,11 +156,11 @@ $lang = get_locale();
                                     class="caret"></span></a>
                         <ul id="baths-dd" class="dropdown-menu clickdd">
                             <li><a role="button" data-value=""><?php echo ( $lang == "es_ES" ? 'Cualquiera' : 'Any' ) ?></a></li>
-                            <li><a role="button" data-value="1">1+ baños</a></li>
-                            <li><a role="button" data-value="2">2+ baños</a></li>
-                            <li><a role="button" data-value="3">3+ baños</a></li>
-                            <li><a role="button" data-value="4">4+ baños</a></li>
-                            <li><a role="button" data-value="5">5+ baños</a></li>
+                            <li><a role="button" data-value="1">1+ <?php echo ( $lang == "es_ES" ? 'baños' : 'baths' ) ?></a></li>
+                            <li><a role="button" data-value="2">2+ <?php echo ( $lang == "es_ES" ? 'baños' : 'baths' ) ?></a></li>
+                            <li><a role="button" data-value="3">3+ <?php echo ( $lang == "es_ES" ? 'baños' : 'baths' ) ?></a></li>
+                            <li><a role="button" data-value="4">4+ <?php echo ( $lang == "es_ES" ? 'baños' : 'baths' ) ?></a></li>
+                            <li><a role="button" data-value="5">5+ <?php echo ( $lang == "es_ES" ? 'baños' : 'baths' ) ?></a></li>
                         </ul>
                     </li>
                     <li>
