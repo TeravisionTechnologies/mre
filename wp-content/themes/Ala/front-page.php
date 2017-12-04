@@ -9,6 +9,7 @@ $home_info = get_post_meta($home_query[0]->ID);
 $ourOffices = get_post_meta( $home_query[0]->ID, '_hf_our_offices', true );
 $officesUs = get_post_meta( $home_query[0]->ID, '_hf_offices_us', true );
 $officesEs = get_post_meta( $home_query[0]->ID, '_hf_offices_es', true );
+$placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
 ?>
 
 	<div class="swiper-container swiper-container-hero">
@@ -96,7 +97,7 @@ $officesEs = get_post_meta( $home_query[0]->ID, '_hf_offices_es', true );
 						?>
 						<div class="grid-sizer col-xs-12 col-sm-4 col-md-4"></div>
 						<div class="col-xs-12 col-sm-4 grid-item country-status <?php echo esc_html($status[0]->slug);?> <?php echo esc_html($loc[0]->slug); ?>">
-							<div class="grid-item-content property-image" style="background-image: url('<?php echo $background_image; ?>')">
+							<div class="grid-item-content property-image" style="background-image: url(<?php echo ( !empty( $background_image ) ? $background_image : $placeholder ) ?>)">
 								<a href="<?php the_permalink(); ?>">
 									<div class="property-overlay">
 										<h2 class="property-title"><?php the_title(); ?></h2>
