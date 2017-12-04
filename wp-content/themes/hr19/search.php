@@ -289,7 +289,8 @@ $lang          = get_locale();
 			'paged'          => get_query_var( 'paged' ),
 			'_meta_or_title' => $search_string,
 			'meta_key'       => '_pr_owner',
-			'order'          => 'DESC',
+			'orderby'        => 'meta_value',
+			'order'          => 'ASC',
 			'meta_query'     => array(
 				'relation' => 'AND',
 				array(
