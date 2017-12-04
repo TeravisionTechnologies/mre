@@ -2440,9 +2440,9 @@ body.thanks {
       width: 445px;
       margin: 0 auto; }
       #mre-footer .mre-footer-elements .mre-footer-logo {
-        height: auto;
+        height: 83px;
         margin: 50px 0 10px 0;
-        width: 100px; }
+        width: 240px; }
       #mre-footer .mre-footer-elements .mre-footer-copyright {
         font-size: 14px;
         line-height: 20px; }
