@@ -1,7 +1,6 @@
 <?php
 get_header();
 the_post();
-$lang = get_locale();
 $address = get_post_meta(get_the_ID(), '_pr_address', true);
 $city = get_post_meta(get_the_ID(), '_pr_city', true);
 $state = get_post_meta(get_the_ID(), '_pr_state', true);
@@ -28,6 +27,10 @@ $bgimg = $url['baseurl'].'/photos/'.$sysid.'/1.jpg';
 $headers  = get_headers($bgimg, 1);
 $bgimg    = $headers['Content-Length'];
 $bgimg = (int)$bgimg;
+$referer = wp_get_referer();
+if (strpos($referer, "en") == false){
+    $lang = "es_ES";
+}
 ?>
     <div class="breadcrumb-info">
         <div class="container">
@@ -81,9 +84,9 @@ $bgimg = (int)$bgimg;
     <div class="property-info-heading">
         <div class="container">
             <div class="col-xs-12 col-sm-3 col-md-3 price borderl">
-                <div><?php _e('Precio:', 'hr') ?></div>
+                <div><?php echo ( $lang == "es_ES" ? 'Precio: ' : 'Price: ' ) ?></div>
                 <div class="price-txt"><?php if (!empty($price)) {
-                        echo '$' . $price;
+                        echo '$' . number_format($price, 0, '.', ',');
                     } ?></div>
                 <div class="sm-text"><?php echo ( $lang == "es_ES" ? 'Estimado de hipoteca' : 'Mortgage estimate' ) ?> $603/<?php echo ( $lang == "es_ES" ? 'mes' : 'month' ) ?></div>
             </div>
@@ -111,7 +114,7 @@ $bgimg = (int)$bgimg;
                         echo '· ' . $bathsh . ( $lang == "es_ES" ? ' Medios baños' : ' Half Baths' );
                     } ?>
                 </div>
-                <div class="sm-text"><?php echo ( $lang == "es_ES" ? ' Número de MLS:' : ' MLS Number' ) ?><?php the_title(); ?></div>
+                <div class="sm-text"><?php echo ( $lang == "es_ES" ? ' Número de MLS: ' : ' MLS Number: ' ) ?><?php the_title(); ?></div>
             </div>
             <div class="col-xs-6 col-sm-3 col-md-4 text-center">
                 <div class="row surface">
@@ -333,7 +336,7 @@ if (have_posts()): ?>
         <div class="container property-list">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="hr-heading"><?php _e('Propiedades similares', 'hr') ?></h2>
+                    <h2 class="hr-heading"><?php echo ( $lang == "es_ES" ? 'Propiedades similares' : 'Similar properties' ) ?></h2>
                 </div>
             </div>
             <div class="row">
