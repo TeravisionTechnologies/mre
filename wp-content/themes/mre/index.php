@@ -153,7 +153,7 @@ $categories      = get_categories(
                  style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/notice.jpg')">
             <div class="recommended-posts-overlay">
                 <div class="container-mre center-block">
-                    <h2 class="recommended-posts-title"><?php echo ( $lang == "es_ES" ? 'Artículos recomendados' : 'Recommended posts' ) ?></h2>
+                    <h2 class="recommended-posts-title"><?php echo ( $lang == "es_ES" ? 'Artículos recomendados' : 'Recommended articles' ) ?></h2>
                     <div class="swiper-container swiper-container-blog-most-viewed">
                         <div class="swiper-wrapper">
 							<?php foreach ( $postRecommended as $post ) { ?>
