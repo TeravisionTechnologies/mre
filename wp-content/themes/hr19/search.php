@@ -282,12 +282,14 @@ $lang          = get_locale();
         </div>
 		<?php
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-		$count = 0;
+		$hr    = true;
 		$query = new WP_Query( array(
 			'post_type'      => 'property',
 			'showposts'      => 9,
 			'paged'          => get_query_var( 'paged' ),
 			'_meta_or_title' => $search_string,
+			'meta_key'       => '_pr_owner',
+			'order'          => 'DESC',
 			'meta_query'     => array(
 				'relation' => 'AND',
 				array(
@@ -374,11 +376,11 @@ $lang          = get_locale();
 								echo $state;
 							} ?>
                         </div>
-                        <div class="property-code">MLS: <?php the_title(); echo $owner ?></div>
+                        <div class="property-code">MLS: <?php the_title(); ?></div>
                     </div>
                 </a>
             </div>
-		<?php $count++; endwhile; ?>
+		<?php endwhile; ?>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 					<?php wp_pagenavi( array( 'query' => $query ) ); ?>
