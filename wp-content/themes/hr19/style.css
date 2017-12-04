@@ -872,7 +872,7 @@ input {
     .hr-rentalone-section .hr-rentalone-overlay .rentalone-button {
       display: block;
       width: 15vw;
-      padding: 0.86806vw 4.30556vw;
+      padding: 0.86806vw 1.38889vw;
       border-radius: 6.94444vw;
       border: solid 2px #fff;
       margin: 3.47222vw auto 0; }
@@ -2410,7 +2410,7 @@ a[href^=tel] {
         width: 300px; }
       .hr-rentalone-section .hr-rentalone-overlay .rentalone-button {
         width: 216px;
-        padding: 12.5px 62px;
+        padding: 12.5px 40px;
         border-radius: 100px;
         border: solid 2px #fff;
         margin: 50px auto 0; }
@@ -3009,7 +3009,7 @@ a[href^=tel] {
       width: 32.55208vw; }
     .hr-rentalone-section .hr-rentalone-overlay .rentalone-button {
       width: 26.04167vw;
-      padding: 1.69271vw 8.46354vw;
+      padding: 1.69271vw 2.60417vw;
       border-radius: 13.02083vw;
       border: solid 2px #fff;
       margin: 5.20833vw auto 0; }
