@@ -10,6 +10,7 @@ $contact         = get_post_meta( $footer_query[0]->ID, '_hf_contact_form', true
 $footer_info     = get_post_meta( $footer_query[0]->ID );
 $social_networks = get_post_meta( $footer_query[0]->ID, '_hf_social_networks', true );
 $lang = get_locale();
+$url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 ?>
 <?php if ( ! is_404() ) { ?>
 <section class="col-xs-12 hr-partners-section text-center">
@@ -34,8 +35,15 @@ $lang = get_locale();
              style="background-image: url('<?php echo $rental[0]["_hf_rental_background"] ?>')">
         <div class="hr-rentalone-overlay">
             <img src="<?php echo $rental[0]["_hf_rental_logo"] ?>" alt="Logo Rental One" class="rentalone-logo"/>
-            <div class="rentalone-button"><a href="<?php echo $rental[0]["_hf_rental_link"] ?>" target="_blank">Ver
-                    más</a></div>
+            <?php
+            if (false !== strpos($url_wp, '/en' )) {
+                echo '<div class="rentalone-button"><a href="'.$rental[0]["_hf_rental_link"].'" target="_blank">View
+                    more</a></div>';
+            } else {
+                echo '<div class="rentalone-button"><a href="'.$rental[0]["_hf_rental_link"].'" target="_blank">Ver
+                    más</a></div>';
+            }
+            ?>
         </div>
     </section>
 <?php } ?>
