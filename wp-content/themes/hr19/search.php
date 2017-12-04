@@ -5,6 +5,9 @@ $propstatus    = get_query_var( 'property_status' );
 $url           = wp_upload_dir();
 $search_string = $s;
 $lang          = get_locale();
+$total=new WP_Query( array('post_type'=> 'property','showposts'=> -1,'_meta_or_title'=> $search_string,'meta_query'=> array('relation'=> 'AND',array('key'=> '_pr_transaction','value'=> $propstatus,'compare'=> '=',),array('relation'=> 'OR',array('key'=> '_pr_city','value'=> $search_string,'compare'=> '=',),array('key'=> '_pr_address','value'=> $search_string,'compare'=> '=',),array('key'=> '_pr_postalcode','value'=> $search_string,'compare'=> '=',)))) ); $count=$total->post_count;
+wp_reset_postdata();
+wp_reset_query();
 ?>
     <form id="property-search-top" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="post" role="form"
           data-toggle="validator">
@@ -237,9 +240,10 @@ $lang          = get_locale();
                 <div class="property-sorting">
                     <div class="col-sm-4 col-md-3">
                         <span class="state-search"><?php echo $s; ?></span>
-                        <span class="results-search"><?php echo( $lang == "es_ES" ? 'Mostrando' : 'Showing' ) ?>
-                            9 <?php echo( $lang == "es_ES" ? 'de' : 'of' ) ?>
-                            <span id="ptotal"></span> <?php echo( $lang == "es_ES" ? 'casas' : 'houses' ) ?></span>
+                        <span class="results-search">
+                            <?php echo( $lang == "es_ES" ? 'Mostrando ' : 'Showing ' ) . '9' . ( $lang == "es_ES" ? ' de' : ' of' ) ?>
+                            <span id="ptotal"><?php echo $count; ?></span> <?php echo( $lang == "es_ES" ? 'casas' : 'houses' ) ?>
+                        </span>
                     </div>
                     <div class="col-sm-8 col-md-9 text-center sort-select">
                         <select class="pull-right" id="proporder" name="proporder">
@@ -278,7 +282,7 @@ $lang          = get_locale();
     </form>
     <div id="responsed" class="row">
         <div class="col-md-12">
-            <h2 class="hr-heading"><?php echo( $lang == "es_ES" ? 'Propiedades HR19' : 'HR19 Properties' ) ?></h2>
+            <h2 class="hr-heading"><?php echo( $lang == "es_ES" ? 'Propiedades' : 'Properties' ) ?></h2>
         </div>
 		<?php
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;

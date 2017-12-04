@@ -322,6 +322,9 @@ jQuery(document).ready(function ($) {
                 filter.find('.btn-search').html('<i class="fa fa-search"></i>');
                 $('#loader').hide();
                 $('#responsed').html(data);
+                filter.find('.navbar-toggle i').removeClass("fa-times");
+                filter.find('.navbar-toggle i').addClass("fa-filter");
+                $('.navbar-toggle').attr('aria-expanded', 'false')
             }
         });
         setTimeout(initialize(), 10000);
@@ -513,21 +516,21 @@ jQuery(document).ready(function ($) {
         $('#responsed').load(link + ' #responsed', function() {
             $('#responsed').fadeIn();
         });
-    });
+    });*/
 
     $('.nn .wp-pagenavi a').on('click', function(e){
         e.preventDefault();
         var link = $(this).attr('href');
-        $('#responses').load(link + ' #responses', function() {
-            $('#responses').fadeIn();
+        $('#responsed').load(link + ' #responsed', function() {
+            $('#responsed').fadeIn();
         });
-    });*/
+    });
 
-    var sum = 0;
+    /*var sum = 0;
     $('.tot').each(function(){
         sum += parseFloat($(this).data('myval'));
     });
-    $("#ptotal").html(sum);
+    $("#ptotal").html(sum);*/
 
     $('#go-back').click(function(){
         parent.history.back();
