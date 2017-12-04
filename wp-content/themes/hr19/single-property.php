@@ -1,6 +1,7 @@
 <?php
 get_header();
 the_post();
+$lang = get_locale();
 $address = get_post_meta(get_the_ID(), '_pr_address', true);
 $city = get_post_meta(get_the_ID(), '_pr_city', true);
 $state = get_post_meta(get_the_ID(), '_pr_state', true);
@@ -48,7 +49,7 @@ $bgimg = (int)$bgimg;
                 </div>
                 <div class="col-xs-3 col-sm-5 col-md-6 text-right">
                     <!--<div class="published">Publicada hace: 59 días</div>-->
-                    <?php if (!empty($status)) { ?><div class="status"><?php _e('Estatus: ', 'hr') ?><span><?php echo $status; ?></span></div><?php } ?>
+                    <?php if (!empty($status)) { ?><div class="status"><?php echo ( $lang == "es_ES" ? 'Estatus: ' : 'Status: ' ) ?><span><?php echo $status; ?></span></div><?php } ?>
                 </div>
             </div>
         </div>
@@ -73,7 +74,7 @@ $bgimg = (int)$bgimg;
             <div class="swiper-button-next"><i class="fa fa-chevron-circle-right"></i></div>
             <div class="swiper-button-prev"><i class="fa fa-chevron-circle-left"></i></div>
             <div class="total"><i class="fa fa-camera"></i>
-                <div class="fraction"></div> <?php _e('fotos', 'hr') ?></div>
+                <div class="fraction"></div> <?php echo ( $lang == "es_ES" ? 'fotos' : 'photos' ) ?></div>
         </div>
     </div>
 
@@ -84,7 +85,7 @@ $bgimg = (int)$bgimg;
                 <div class="price-txt"><?php if (!empty($price)) {
                         echo '$' . $price;
                     } ?></div>
-                <div class="sm-text"><?php _e('Estimado de hipoteca:', 'hr') ?> $603/mes</div>
+                <div class="sm-text"><?php echo ( $lang == "es_ES" ? 'Estimado de hipoteca' : 'Mortgage estimate' ) ?> $603/<?php echo ( $lang == "es_ES" ? 'mes' : 'month' ) ?></div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-5 paddingl30 borderl">
                 <div class="md-text">
@@ -101,28 +102,28 @@ $bgimg = (int)$bgimg;
                         echo $type;
                     } ?>
                     <?php if (!empty($rooms)) {
-                        echo '· ' . $rooms . ' Habitaciones';
+                        echo '· ' . $rooms . ( $lang == "es_ES" ? ' Habitaciones' : ' Rooms' );
                     } ?>
                     <?php if (!empty($bathsf)) {
-                        echo '· ' . $bathsf . ' Baños';
+                        echo '· ' . $bathsf . ( $lang == "es_ES" ? ' Baños' : ' Baths' );
                     } ?>
                     <?php if (!empty($bathsh)) {
-                        echo '· ' . $bathsh . ' Medios baños';
+                        echo '· ' . $bathsh . ( $lang == "es_ES" ? ' Medios baños' : ' Half Baths' );
                     } ?>
                 </div>
-                <div class="sm-text"><?php _e('Número de MLS:', 'hr') ?><?php the_title(); ?></div>
+                <div class="sm-text"><?php echo ( $lang == "es_ES" ? ' Número de MLS:' : ' MLS Number' ) ?><?php the_title(); ?></div>
             </div>
             <div class="col-xs-6 col-sm-3 col-md-4 text-center">
                 <div class="row surface">
                     <?php if (!empty($surf)) { ?>
                         <div class="col-xs-6 col-sm-6 col-md-6">
-                            <div class="sm-text"><?php _e('Superficie:', 'hr') ?></div>
+                            <div class="sm-text"><?php echo ( $lang == "es_ES" ? 'Superficie:' : 'Surface:' ) ?></div>
                             <div class="md-text"><?php echo $surf . ' ft'; ?></div>
                         </div>
                     <?php } ?>
                     <?php if (!empty($sqft)) { ?>
                         <div class="col-xs-6 col-sm-6 col-md-6">
-                            <div class="sm-text"><?php _e('Pies cuadrados:', 'hr') ?></div>
+                            <div class="sm-text"><?php echo ( $lang == "es_ES" ? 'Pies cuadrados:' : 'Square feet:' ) ?></div>
                             <div class="md-text"><?php if (!empty($sqft)) {
                                     echo $sqft . ' ft²';
                                 } else {
@@ -150,7 +151,7 @@ $bgimg = (int)$bgimg;
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" href="#collapse1"
                                        class="aa"><span
-                                                class="number">1</span><?php _e('Descripción de la propiedad', 'hr') ?>
+                                                class="number">1</span><?php echo ( $lang == "es_ES" ? 'Descripción de la propiedad' : 'Property description' ) ?>
                                     </a>
                                     <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
                                       href="#collapse1" aria-expanded="true"></i>
@@ -167,7 +168,7 @@ $bgimg = (int)$bgimg;
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" href="#collapse2"><span
                                                 class="number">2</span>
-                                        <?php _e('Características de la propiedad', 'hr') ?></a>
+                                        <?php echo ( $lang == "es_ES" ? 'Características de la propiedad' : 'Property Characteristics' ) ?></a>
                                     <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
                                        href="#collapse2" aria-expanded="true"></i>
                                 </h4>
@@ -177,20 +178,20 @@ $bgimg = (int)$bgimg;
                                     <div class="row main-features">
                                         <div class="col-xs-4 col-sm-3 col-md-3 feature">
                                             <div><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
-                                                    title="<?php _e('La tarifa de asociación de propietarios (HOA) es una cantidad de dinero que deben pagar mensualmente los propietarios de ciertos tipos de propiedades residenciales para ayudar a mantener y mejorar las propiedades en la asociación.', 'hr') ?>"></i> <?php _e('Cuotas de HOA:', 'hr') ?>
+                                                    title="<?php echo ( $lang == "es_ES" ? 'La tarifa de asociación de propietarios (HOA) es una cantidad de dinero que deben pagar mensualmente los propietarios de ciertos tipos de propiedades residenciales para ayudar a mantener y mejorar las propiedades en la asociación.' : 'The HOA is an amount of money that owners of certain types of residential properties must pay monthly to help maintain and improve properties in the association.' ) ?>"></i> <?php echo ( $lang == "es_ES" ? 'Cuotas de HOA:' : 'HOA Fees' ) ?>
                                             </div>
                                             <div class="info"><?php if (!empty($hoa)) {
-                                                    echo $hoa . '/mes';
+                                                    echo $hoa . ( $lang == "es_ES" ? '/mes' : '/month' );
                                                 } else {
                                                     echo 'N/A';
                                                 } ?></div>
                                         </div>
                                         <div class="col-xs-4 col-sm-2 col-md-2 feature">
-                                            <div><?php _e('Impuestos', 'hr') ?></div>
+                                            <div><?php echo ( $lang == "es_ES" ? 'Impuestos' : 'Taxes' ) ?></div>
                                             <div class="info">$ 42,735</div>
                                         </div>
                                         <div class="col-xs-4 col-sm-3 col-md-2 feature">
-                                            <div><?php _e('Año de construcción:', 'hr') ?></div>
+                                            <div><?php echo ( $lang == "es_ES" ? 'Año de construcción:' : 'Year of construction:' ) ?></div>
                                             <div class="info"><?php if (!empty($yearbuilt)) {
                                                     echo $yearbuilt;
                                                 } else {
@@ -198,7 +199,7 @@ $bgimg = (int)$bgimg;
                                                 } ?></div>
                                         </div>
                                         <div class="col-xs-4 col-sm-2 col-md-2 feature">
-                                            <div><?php _e('Comunidad:', 'hr') ?></div>
+                                            <div><?php echo ( $lang == "es_ES" ? 'Comunidad:' : 'Community:' ) ?></div>
                                             <div class="info"><?php if (!empty($community)) {
                                                     echo $community;
                                                 } else {
@@ -206,7 +207,7 @@ $bgimg = (int)$bgimg;
                                                 } ?></div>
                                         </div>
                                         <div class="col-xs-4 col-sm-2 col-md-3 feature">
-                                            <div><?php _e('Subdivision:', 'hr') ?></div>
+                                            <div><?php echo ( $lang == "es_ES" ? 'Subdivision:' : 'Subdivision:' ) ?></div>
                                             <div class="info"><?php if (!empty($subdiv)) {
                                                     echo $subdiv;
                                                 } else {
@@ -214,7 +215,7 @@ $bgimg = (int)$bgimg;
                                                 } ?></div>
                                         </div>
                                     </div>
-                                    <h6><?php _e('Otras características:', 'hr') ?></h6>
+                                    <h6><?php echo ( $lang == "es_ES" ? 'Otras características:' : 'Other features:' ) ?></h6>
                                     <ul>
                                         <li>Condición: nueva construcción</li>
                                         <li>Construcción: estuco de bloque de hormigón</li>
@@ -252,7 +253,7 @@ $bgimg = (int)$bgimg;
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" href="#collapse3"><span
                                                 class="number">3</span>
-                                        <?php _e('Ubicación de la propiedad', 'hr') ?></a>
+                                        <?php echo ( $lang == "es_ES" ? 'Ubicación de la propiedad' : 'Location of the property' ) ?></a>
                                     <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
                                         href="#collapse3" aria-expanded="true"></i>
                                 </h4>
@@ -362,10 +363,10 @@ if (have_posts()): ?>
                                         echo 'N/A';
                                     } ?>
                                     <?php if (!empty($rooms)) {
-                                        echo '· ' . $rooms . ' Habitaciones';
+                                        echo '· ' . $rooms . ( $lang == "es_ES" ? ' Habitaciones' : ' Rooms' );
                                     } ?>
                                     <?php if (!empty($baths)) {
-                                        echo '· ' . $baths . ' Baños';
+                                        echo '· ' . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' );
                                     } ?>
                                 </div>
                                 <div class="property-address">

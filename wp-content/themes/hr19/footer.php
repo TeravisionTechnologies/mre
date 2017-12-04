@@ -68,7 +68,11 @@ $lang = get_locale();
                 </div>
             </div>
             <div class="col-xs-12 col-md-8 hr-contact-form-div no-padding">
-				<?php echo do_shortcode( '[contact-form-7 id="5" title="Home - Contact form"]' ); ?>
+                <?php
+                    $contacteng = do_shortcode( '[contact-form-7 id="443" title="Contact Form (English)"]');
+                    $contactesp = do_shortcode( '[contact-form-7 id="5" title="Home - Contact form"]');
+                    echo ( $lang == "es_ES" ? $contactesp : $contacteng );
+                ?>
             </div>
         </div>
     </div>
@@ -105,7 +109,7 @@ $lang = get_locale();
 				$i         = 0;
 				$languages = pll_the_languages( array( 'raw' => 1 ) );
 				?>
-                <h2 class="hr-menu-language-text">Seleccione su idioma de preferencia:</h2>
+                <h2 class="hr-menu-language-text"><?php echo ( $lang == "es_ES" ? 'Seleccione su idioma de preferencia:' : 'Select your preferred language:' ) ?></h2>
                 <a href="<?php echo $languages['es']['url'] ?>"><img class="hr-menu-language-flag <?php echo ( $lang == "es_ES" ? 'language-flag-active' : '' ) ?>"
                                                                       src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg"
                                                                       alt="Spanish"></a>

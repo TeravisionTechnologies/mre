@@ -569,7 +569,7 @@ function property_filter_function() {
                     <div class="property-image" data-url="" style="background: url(' . $url['baseurl'] . '/photos/' . $sysid . '/1.jpg"></div>
                     <div class="property-info">
                         <div class="property-price">$' . number_format_i18n($price) . '</div>
-						<div class="property-highlights">' . $type . ' ' . $rooms . ' habitaciones ' . $baths . ' baños</div>
+						<div class="property-highlights">' . $type . ' ' . $rooms . ( $lang == "es_ES" ? ' Habitaciones' : ' Rooms' ) . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' ).'</div>
 						<div class="property-address">' . $address . '</div>
 						<div class="property-code">MLS: ' . $query->post->post_title . '</div>
 						</div>
@@ -585,8 +585,8 @@ function property_filter_function() {
             <div class="col-md-12">
                 <div class="no-results-info">
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">
-                    <h4><?php _e( 'No existen propiedades disponibles en estos momentos', 'hr' ) ?></h4>
-                    <p><?php _e( '0 resultados', 'hr' ) ?></p>
+                    <h4><?php echo ( $lang == "es_ES" ? 'No existen propiedades disponibles en estos momentos' : 'There are no properties available at this time' ) ?></h4>
+                    <p><?php echo ( $lang == "es_ES" ? '0 resultados' : '0 results' ) ?></p>
                 </div>
             </div>
 		<?php endif;

@@ -51,7 +51,7 @@ $partnerRight = get_post_meta( $headerPost[0]->ID, '_hf_partner_right', true );
     </section>
     <section class="col-xs-12 hr-partners-section text-center">
         <div class="container">
-            <p class="hr-partners-title">La nueva forma de <strong>invertir en propiedades</strong></p>
+            <p class="hr-partners-title"><?php echo ( $lang == "es_ES" ? 'La nueva forma de' : 'The new way of' ) ?> <strong><?php echo ( $lang == "es_ES" ? 'invertir en propiedades' : 'invest in properties' ) ?></strong></p>
         </div>
         <div class="hr-partners-images">
             <a href="<?php echo $partnerLeft[0]['_hf_partner_link_left']; ?>" target="_blank"><img
@@ -94,7 +94,11 @@ $partnerRight = get_post_meta( $headerPost[0]->ID, '_hf_partner_right', true );
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-8 al-contact-form-div no-padding">
-					<?php echo do_shortcode( '[contact-form-7 id="4" title="Home - Contact form"]' ); ?>
+					<?php
+                        $contacteng = do_shortcode( '[contact-form-7 id="275" title="Contact Form"]');
+                        $contactesp = do_shortcode( '[contact-form-7 id="4" title="Home - Contact form"]');
+                        echo ( $lang == "es_ES" ? $contactesp : $contacteng );
+                    ?>
                 </div>
             </div>
         </div>

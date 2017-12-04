@@ -145,6 +145,7 @@ jQuery(document).ready(function ($) {
         $("html, body").animate({scrollTop: 0}, 500);
         $(".property-list").toggleClass('property-list-search');
         $('.text-map').html($('.text-map').text() == 'Ocultar mapa' ? 'Ver mapa' : 'Ocultar mapa');
+        $('.text-map').html($('.text-map').text() == 'Hide map' ? 'Show map' : 'Hide map');
     });
 
     // Search form validation

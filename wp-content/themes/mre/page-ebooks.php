@@ -3,6 +3,7 @@
 Template Name: Ebooks
 */
 get_header();
+$lang = get_locale();
 $placeholder  = get_template_directory_uri() . '/assets/no-cover.jpg';
 $headerPost   = get_posts(
 	array(
@@ -77,7 +78,7 @@ $dates        = get_terms(
                                         <div class="ebook-title"><?php the_title(); ?></div>
                                     </div>
                                 </div>
-                                <div class="ebook-link"><?php _e( 'Descargar', 'mre' ) ?></div>
+                                <div class="ebook-link"><?php echo ( $lang == "es_ES" ? 'Descargar' : 'Download' ) ?></div>
                             </a>
                         </div>
                         <div id="<?php echo get_the_ID(); ?>" class="modal fade modal-ebook" role="dialog">
@@ -101,7 +102,7 @@ $dates        = get_terms(
                                                     E-books <?php echo $date->slug ?> <?php echo( ! empty( $period ) ? '// ' . $period : '&nbsp;' ) ?></div>
                                                 <h3><?php the_title(); ?></h3>
 												<?php the_content(); ?>
-                                                <div class="error"><i class="fa fa-asterisk"></i> <?php _e( 'Estos campos son requeridos', 'mre' ) ?></div>
+                                                <div class="error"><i class="fa fa-asterisk"></i>  <?php echo ( $lang == "es_ES" ? 'Estos campos son requeridos' : 'These fields are required' ) ?></div>
                                                 <form id="ebook-form-<?php echo get_the_ID(); ?>" class="ebook-form"
                                                       method="post" action="<?php echo home_url(); ?>" method="post"
                                                       role="form"
@@ -109,19 +110,19 @@ $dates        = get_terms(
                                                     <div class="form-group">
                                                         <input type="text" class="form-control"
                                                                name="eb_name" id="eb_name"
-                                                               placeholder="<?php _e( '* Nombre y Apellido', 'mre' ) ?>"
+                                                               placeholder="<?php echo ( $lang == "es_ES" ? '* Nombre y Apellido' : '* Full name' ) ?>"
                                                                required>
-                                                    </div>
+                                                    </div>                                            
                                                     <div class="form-group">
                                                         <input type="email" class="form-control"
                                                                name="eb_mail" id="eb_mail"
                                                                placeholder="<?php _e( '* Email', 'mre' ) ?>" required
                                                                pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}"
-                                                               data-error="<?php _e( 'Correo inv&aacute;lido', 'mre' ) ?>">
+                                                               data-error=" <?php echo ( $lang == "es_ES" ? 'Correo inv&aacute;lido' : 'Invalid email' ) ?>">
                                                     </div>
                                                     <input type="hidden" name="eb_id" value="<?php echo get_the_ID(); ?>">
                                                     <button type="submit" class="btn ebook-btn"
-                                                            data-number="<?php echo get_the_ID(); ?>"><?php _e( 'Descargar', 'mre' ) ?></button>
+                                                            data-number="<?php echo get_the_ID(); ?>"><?php echo ( $lang == "es_ES" ? 'Descargar' : 'Download' ) ?></button>
                                                 </form>
                                                 <div id="ebookresponse"></div>
                                             </div>
@@ -140,7 +141,7 @@ $dates        = get_terms(
     </section>
     <section class="col-xs-12 hr-partners-section text-center">
         <div class="container">
-            <p class="hr-partners-title">La nueva forma de <strong>invertir en propiedades</strong></p>
+            <p class="hr-partners-title"><?php echo ( $lang == "es_ES" ? 'La nueva forma de' : 'The new way of' ) ?> <strong><?php echo ( $lang == "es_ES" ? 'invertir en propiedades' : 'invest in properties' ) ?></strong></p>
         </div>
         <div class="hr-partners-images">
             <a href="<?php echo $partnerLeft[0]['_hf_partner_link_left']; ?>" target="_blank"><img
@@ -183,7 +184,11 @@ $dates        = get_terms(
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-8 al-contact-form-div no-padding">
-					<?php echo do_shortcode( '[contact-form-7 id="4" title="Home - Contact form"]' ); ?>
+					<?php
+                        $contacteng = do_shortcode( '[contact-form-7 id="275" title="Contact Form"]');
+                        $contactesp = do_shortcode( '[contact-form-7 id="4" title="Home - Contact form"]');
+                        echo ( $lang == "es_ES" ? $contactesp : $contacteng );
+                    ?>
                 </div>
             </div>
         </div>

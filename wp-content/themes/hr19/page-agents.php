@@ -3,6 +3,7 @@
 Template Name: Agents
 */
 get_header();
+$lang = get_locale();
 $url = wp_upload_dir();
 ?>
     <section class="agent-hero" style="<?php if ( $thumbnail_id = get_post_thumbnail_id() ) {
@@ -59,7 +60,7 @@ if ( have_posts() ): while ( have_posts() ):
                 </h2>
 				<?php if ( ! empty( $phone ) ) { ?><a
                     href="tel:<?php echo str_replace( array( ".", " ", "-", "/" ), "", $phone ); ?>"
-                    class="profile-phone">Tfno. <?php echo $phone; ?></a><?php } ?>
+                    class="profile-phone"><?php echo ( $lang == "es_ES" ? 'Tfno.' : 'Phone.' ) ?> <?php echo $phone; ?></a><?php } ?>
 				<?php if ( ! empty( $email ) ) { ?><h3 class="profile-email">Email: <?php echo $email; ?></h3><?php } ?>
             </div>
         </div>
@@ -67,7 +68,7 @@ if ( have_posts() ): while ( have_posts() ):
 			<?php the_content(); ?>
         </div>
         <div class="agent-properties">
-            <h2 class="properties-number" data-target="<?php the_ID(); ?>">Propiedades asignadas
+            <h2 class="properties-number" data-target="<?php the_ID(); ?>"><?php echo ( $lang == "es_ES" ? 'Propiedades asignadas' : 'Assigned properties' ) ?>
                 (<?php echo $agentProperties->post_count; ?>)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
             <div class="properties-list" id="<?php the_ID(); ?>">
 				<?php
@@ -98,13 +99,12 @@ if ( have_posts() ): while ( have_posts() ):
                             </div>
                             <div class="property-info">
                                 <h2 class="info-price">$<?php echo number_format($price, 0, '.', ','); ?></h2>
-                                <!--<h3 class="info-features">Unifamiliar · 2 Habitaciones · 2 Baños</h3>-->
-                                <h3 class="info-features"><?php echo $type . " · " . $rooms . " Habitaciones · " . $baths . " Baños"; ?></h3>
+                                <h3 class="info-features"><?php echo $type . " · " . $rooms . ( $lang == "es_ES" ? ' Habitaciones ·' : ' Rooms' ) . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' ); ?></h3>
                                 <h3 class="info-address"><?php echo $address; ?></h3>
                                 <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
                             </div>
                         </a>
-                    </div>
+                    </div> 
 				<?php } ?>
             </div>
         </div>
@@ -120,7 +120,7 @@ if ( have_posts() ): while ( have_posts() ):
                 </h2>
 				<?php if ( ! empty( $phone ) ) { ?><a
                     href="tel:<?php echo str_replace( array( ".", " ", "-", "/" ), "", $phone ); ?>"
-                    class="profile-phone">Tfno. <?php echo $phone; ?></a><?php } ?>
+                    class="profile-phone"><?php echo ( $lang == "es_ES" ? 'Tfno.' : 'Phone.' ) ?> <?php echo $phone; ?></a><?php } ?>
 				<?php if ( ! empty( $email ) ) { ?><h3 class="profile-email">Email: <?php echo $email; ?></h3><?php } ?>
             </div>
             <div class="agent-profile-photo-right col-xs-3 no-padding">
@@ -135,7 +135,7 @@ if ( have_posts() ): while ( have_posts() ):
 			<?php the_content(); ?>
         </div>
         <div class="agent-properties">
-            <h2 class="properties-number properties-number-right" data-target="<?php the_ID(); ?>">Propiedades asignadas
+            <h2 class="properties-number properties-number-right" data-target="<?php the_ID(); ?>"><?php echo ( $lang == "es_ES" ? 'Propiedades asignadas' : 'Assigned properties' ) ?>
                 (<?php echo $agentProperties->post_count; ?>)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
             <div class="properties-list" id="<?php the_ID(); ?>">
 				<?php
@@ -157,7 +157,7 @@ if ( have_posts() ): while ( have_posts() ):
                                  style="background: url(<?php echo ( $urlimage != 404 ? $bgimg : $placeholder ) ?>);"></div>
                             <div class="property-info">
                                 <h2 class="info-price"><?php echo number_format($price, 0, '.', ','); ?></h2>
-                                <h3 class="info-features"><?php echo $type . " · " . $rooms . " Habitaciones · " . $baths . " Baños"; ?></h3>
+                                <h3 class="info-features"><?php echo $type . " · " . $rooms . ( $lang == "es_ES" ? ' Habitaciones ·' : ' Rooms' ) . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' ); ?></h3>
                                 <h3 class="info-address"><?php echo $address; ?></h3>
                                 <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
                             </div>

@@ -3,6 +3,7 @@
 Template Name: Agents
 */
 get_header();
+$lang = get_locale();
 ?>
   <section class="agent-hero" style="<?php if ($thumbnail_id = get_post_thumbnail_id()) {
     if ($image_src = wp_get_attachment_image_src($thumbnail_id, 'full')) printf('background-image: url(%s)"', $image_src[0]);

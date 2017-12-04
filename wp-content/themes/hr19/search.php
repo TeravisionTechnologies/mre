@@ -4,6 +4,7 @@ $s             = get_query_var( 's' );
 $propstatus    = get_query_var( 'property_status' );
 $url           = wp_upload_dir();
 $search_string = $s;
+$lang = get_locale();
 ?>
 <form id="property-search-top" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="post" role="form"
       data-toggle="validator">
@@ -32,50 +33,50 @@ $search_string = $s;
 						<?php if ( $propstatus == "Sale" ) { ?>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true"
-                               aria-expanded="false"><?php _e( 'Compra', 'hr' ) ?> <span class="caret"></span></a>
+                               aria-expanded="false"><?php echo ( $lang == "es_ES" ? 'Compra' : 'Sale' ) ?> <span class="caret"></span></a>
                             <ul id="transction-dd" class="dropdown-menu clickdd">
-                                <li><a href="#" data-value="Sale"><?php _e( 'Compra', 'hr' ) ?></a></li>
-                                <li><a href="#" data-value="Lease"><?php _e( 'Alquiler', 'hr' ) ?></a></li>
-                                <li><a href="#" data-value="Presale"><?php _e( 'Preventa', 'hr' ) ?></a></li>
+                                <li><a href="#" data-value="Sale"><?php echo ( $lang == "es_ES" ? 'Compra' : 'Sale' ) ?></a></li>
+                                <li><a href="#" data-value="Lease"><?php echo ( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a></li>
+                                <li><a href="#" data-value="Presale"><?php echo ( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?></a></li>
                             </ul>
 						<?php } ?>
 						<?php if ( $propstatus == "Lease" ) { ?>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true"
-                               aria-expanded="false"><?php _e( 'Alquiler', 'hr' ) ?> <span class="caret"></span></a>
+                               aria-expanded="false"><?php echo ( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?> <span class="caret"></span></a>
                             <ul id="transction-dd" class="dropdown-menu clickdd">
-                                <li><a href="#" data-value="Lease"><?php _e( 'Alquiler', 'hr' ) ?></a></li>
-                                <li><a href="#" data-value="Sale"><?php _e( 'Compra', 'hr' ) ?></a></li>
-                                <li><a href="#" data-value="Presale"><?php _e( 'Preventa', 'hr' ) ?></a></li>
+                                <li><a href="#" data-value="Sale"><?php echo ( $lang == "es_ES" ? 'Compra' : 'Sale' ) ?></a></li>
+                                <li><a href="#" data-value="Lease"><?php echo ( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a></li>
+                                <li><a href="#" data-value="Presale"><?php echo ( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?></a></li>
                             </ul>
 						<?php } ?>
 						<?php if ( $propstatus == "Presale" ) { ?>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true"
-                               aria-expanded="false"><?php _e( 'Preventa', 'hr' ) ?> <span class="caret"></span></a>
+                               aria-expanded="false"><?php echo ( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?> <span class="caret"></span></a>
                             <ul id="transction-dd" class="dropdown-menu clickdd">
-                                <li><a href="#" data-value="Presale"><?php _e( 'Preventa', 'hr' ) ?></a></li>
-                                <li><a href="#" data-value="Lease"><?php _e( 'Alquiler', 'hr' ) ?></a></li>
-                                <li><a href="#" data-value="Sale"><?php _e( 'Compra', 'hr' ) ?></a></li>
+                                <li><a href="#" data-value="Sale"><?php echo ( $lang == "es_ES" ? 'Compra' : 'Sale' ) ?></a></li>
+                                <li><a href="#" data-value="Lease"><?php echo ( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a></li>
+                                <li><a href="#" data-value="Presale"><?php echo ( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?></a></li>
                             </ul>
 						<?php } ?>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false"><?php _e( 'Tipo <br>de vivienda', 'hr' ) ?> <span class="caret"></span></a>
+                           aria-expanded="false"><?php echo ( $lang == "es_ES" ? 'Tipo <br>de vivienda' : 'Property <br>type' ) ?> <span class="caret"></span></a>
                         <ul id="property-type-dd" class="dropdown-menu">
                             <li>
                                 <div class="checkbox">
                                     <label><input type="checkbox" value="Single"
-                                                  class=""><?php _e( 'Unifamiliar', 'hr' ) ?></label>
+                                                  class=""><?php echo ( $lang == "es_ES" ? 'Unifamiliar' : 'Single' ) ?></label>
                                 </div>
                                 <div class="checkbox">
                                     <label><input type="checkbox" value="Condo"
-                                                  class=""><?php _e( 'Condominios/Townhouses', 'hr' ) ?></label>
+                                                  class=""><?php echo ( $lang == "es_ES" ? 'Condominios/Townhouses' : 'Condos/Townhouses' ) ?></label>
                                 </div>
                                 <div class="checkbox">
                                     <label><input type="checkbox" value="Mobile"
-                                                  class=""><?php _e( 'Casas móviles', 'hr' ) ?></label>
+                                                  class=""><?php echo ( $lang == "es_ES" ? 'Casas móviles' : 'Mobile homes' ) ?></label>
                                 </div>
                                 <!--<div class="checkbox">
                                     <label><input type="checkbox" value="farm"
@@ -87,14 +88,14 @@ $search_string = $s;
                                 </div>-->
                                 <div class="checkbox">
                                     <label><input type="checkbox" value="Multifamily"
-                                                  class=""><?php _e( 'Multifamiliar', 'hr' ) ?></label>
+                                                  class=""><?php echo ( $lang == "es_ES" ? 'Multifamiliar' : 'Multifamily' ) ?></label>
                                 </div>
                             </li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false"><?php _e( 'Rango <br>de precio', 'hr' ) ?> <span class="caret"></span></a>
+                           aria-expanded="false"><?php echo ( $lang == "es_ES" ? 'Rango <br>de precio' : 'Price <br>range' ) ?> <span class="caret"></span></a>
                         <ul id="price-dd" class="dropdown-menu">
                             <div class="col-md-12">
                                 <div class="row">
@@ -132,16 +133,16 @@ $search_string = $s;
                                 </div>
                             </div>
                             <li><a href="#" data-value="" id="any-price"
-                                   class="text-center"><?php _e( 'Cualquier precio', 'hr' ) ?></a></li>
+                                   class="text-center"><?php echo ( $lang == "es_ES" ? 'Cualquier precio' : 'Any price' ) ?></a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="true"><?php _e( 'Nro. <br>de habitaciones', 'hr' ) ?> <span
+                           aria-expanded="true"><?php echo ( $lang == "es_ES" ? 'Nro. <br>de habitaciones' : 'Number <br>of rooms' ) ?> <span
                                     class="caret"></span></a>
                         <ul id="rooms-dd" class="dropdown-menu clickdd">
-                            <li><a role="button" data-value=""><?php _e( 'Cualquiera', 'hr' ) ?></a></li>
-                            <li><a role="button" data-value="1"><?php _e( 'Estudio', 'hr' ) ?></a></li>
+                            <li><a role="button" data-value=""><?php echo ( $lang == "es_ES" ? 'Cualquiera' : 'Any' ) ?></a></li>
+                            <li><a role="button" data-value="1"><?php echo ( $lang == "es_ES" ? 'Estudio' : 'Studio' ) ?></a></li>
                             <li><a role="button" data-value="1">1+ hab.</a></li>
                             <li><a role="button" data-value="2">2+ hab.</a></li>
                             <li><a role="button" data-value="3">3+ hab.</a></li>
@@ -151,10 +152,10 @@ $search_string = $s;
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false"><?php _e( 'Nro. <br>de baños', 'hr' ) ?> <span
+                           aria-expanded="false"><?php echo ( $lang == "es_ES" ? 'Nro. <br>de baños' : 'Number <br>of baths' ) ?> <span
                                     class="caret"></span></a>
                         <ul id="baths-dd" class="dropdown-menu clickdd">
-                            <li><a role="button" data-value=""><?php _e( 'Cualquiera', 'hr' ) ?></a></li>
+                            <li><a role="button" data-value=""><?php echo ( $lang == "es_ES" ? 'Cualquiera' : 'Any' ) ?></a></li>
                             <li><a role="button" data-value="1">1+ baños</a></li>
                             <li><a role="button" data-value="2">2+ baños</a></li>
                             <li><a role="button" data-value="3">3+ baños</a></li>
@@ -188,31 +189,31 @@ $search_string = $s;
             <div class="property-sorting">
                 <div class="col-sm-4 col-md-3">
                     <span class="state-search"><?php echo $s; ?></span>
-                    <span class="results-search"><?php _e( 'Mostrando', 'hr' ) ?> 9 <?php _e( 'de', 'hr' ) ?>
-						<span id="ptotal"></span> <?php _e( 'casas', 'hr' ) ?></span>
+                    <span class="results-search"><?php echo ( $lang == "es_ES" ? 'Mostrando' : 'Showing' ) ?> 9 <?php echo ( $lang == "es_ES" ? 'de' : 'of' ) ?>
+						<span id="ptotal"></span> <?php echo ( $lang == "es_ES" ? 'casas' : 'houses' ) ?></span>
                 </div>
                 <div class="col-sm-8 col-md-9 text-center sort-select">
                     <select class="pull-right" id="proporder" name="proporder">
-                        <option selected><?php _e( 'Ordenar por  ', 'hr' ) ?></option>
+                        <option selected><?php echo ( $lang == "es_ES" ? 'Ordenar por' : 'Order by' ) ?></option>
                         <option value="0"><?php _e( 'A &#x25B2', 'hr' ) ?></option>
                         <option value="1"><?php _e( 'D &#x25BC;', 'hr' ) ?></option>
-                        <option value="2"><?php _e( 'Precio más bajo', 'hr' ) ?></option>
-                        <option value="3"><?php _e( 'Precio más alto', 'hr' ) ?></option>
+                        <option value="2"><?php echo ( $lang == "es_ES" ? 'Precio más bajo' : 'Lower price' ) ?></option>
+                        <option value="3"><?php echo ( $lang == "es_ES" ? 'Precio más alto' : 'Highest price' ) ?></option>
                     </select>
                     <div class="pull-right choose-search">
                         <div class="radio radio-inline radio-success">
                             <input type="radio" id="showowner1" value="HR19" name="showowner" class="styled">
-                            <label for="inlineRadio1"><?php _e( 'Solo Hr19', 'hr' ) ?></label>
+                            <label for="inlineRadio1"><?php echo ( $lang == "es_ES" ? 'Solo HR19' : 'Only HR19' ) ?></label>
                         </div>
                         <div class="radio radio-inline radio-success">
                             <input type="radio" id="showowner2" value="" name="showowner" class="styled"
                                    checked>
-                            <label for="inlineRadio2"><?php _e( 'Todos', 'hr' ) ?></label>
+                            <label for="inlineRadio2"><?php echo ( $lang == "es_ES" ? 'Todos' : 'All' ) ?></label>
                         </div>
                     </div>
                     <div class="pull-right switch-map">
                         <div>
-                            <div class="pull-right text-map">Ocultar mapa</div>
+                            <div class="pull-right text-map"><?php echo ( $lang == "es_ES" ? 'Ocultar mapa' : 'Hide map' ) ?></div>
                             <label class="switch pull-right">
                                 <input type="checkbox" id="map-switch">
                                 <span class="slider round"></span>
@@ -314,10 +315,10 @@ $search_string = $s;
 								echo 'N/A';
 							} ?>
 							<?php if ( ! empty( $rooms ) ) {
-								echo '· ' . $rooms . ' Habitaciones';
+								echo '· ' . $rooms . ( $lang == "es_ES" ? ' Habitaciones' : ' Rooms' );
 							} ?>
 							<?php if ( ! empty( $baths ) ) {
-								echo '· ' . $baths . ' Baños';
+								echo '· ' . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' );
 							} ?>
                         </div>
                         <div class="property-address">
@@ -344,8 +345,8 @@ $search_string = $s;
             <div class="col-md-12">
                 <div class="no-results-info">
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">
-                    <h4><?php _e('No existen propiedades disponibles en estos momentos', 'hr') ?></h4>
-                    <p><?php _e('0 resultados', 'hr') ?></p>
+                    <h4><?php echo ( $lang == "es_ES" ? 'No existen propiedades disponibles en estos momentos' : 'There are no properties available at this time' ) ?></h4>
+                    <p><?php echo ( $lang == "es_ES" ? '0 resultados' : '0 results' ) ?></p>
                 </div>
             </div>
 		<?php endif; wp_reset_postdata(); ?>

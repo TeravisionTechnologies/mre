@@ -1,6 +1,7 @@
 <?php
     get_header();
     the_post();
+    $lang = get_locale();
     $intdetails = get_post_meta( get_the_ID(), '_br_intdetails', true);
     $intdet = explode( '<!--more-->', $intdetails );
     $intimages = get_post_meta( get_the_ID(), '_br_intimages', true);
@@ -23,7 +24,7 @@
     <h1><?php the_title(); ?></h1>
     <?php if(!empty($location)){ ?><h2><?php echo $location; ?></h2><?php } ?>
     <?php if(!empty($brochure)){ ?>
-        <a class="download-bro" href="<?php echo $brochure; ?>" download><?php _e('Descargar PDF', 'ala') ?></a>
+        <a class="download-bro" href="<?php echo $brochure; ?>" download><?php echo ( $lang == "es_ES" ? 'Descargar PDF' : 'Download PDF' ) ?></a>
     <?php } ?>
 </section>
 
@@ -40,7 +41,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 detail-content">
-                <div class="detail-tlt"><?php _e('Detalles del Interior', 'ala') ?></div>
+                <div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Detalles del Interior' : 'Details of the Interior' ) ?></div>
                 <p><?php echo $intdetails ?></p>
                 <?php if(!empty($intimages)){ ?>
                     <div class="row gallery-images">
@@ -85,7 +86,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="detail-tlt"><?php _e('Comodidades', 'ala') ?></div>
+                    <div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Comodidades' : 'Amenities' ) ?></div>
                     <?php echo '<p>'.$amenities.'</p>';  ?>
                     <?php if(!empty($amenimages)){ ?>
                         <div class="row gallery-images">
@@ -130,7 +131,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="detail-tlt"><?php _e('Planos', 'ala') ?></div>
+                    <div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Planos' : 'Blueprints' ) ?></div>
                     <div id="gallery-top-blueprint" class="swiper-container gallery-top-blueprint swiper-detail">
                         <div class="swiper-wrapper">
                             <?php foreach ((array) $plainsimages as $attachment_id => $attachment_url) { ?>
@@ -178,7 +179,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="detail-tlt"><?php _e('Memoria de Calidad', 'ala') ?></div>
+                    <div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Memoria de Calidad' : 'Quality Report' ) ?></div>
                     <p><?php echo $q[0]; ?></p>
                     <div class="row memory-items">
                         <div class="col-sm-4 col-md-4 text-center">
@@ -194,7 +195,7 @@
                 </div>
                 <div class="col-md-12">
                     <?php if (!empty($memofiles)) { ?>
-                        <a class="btn-planos" href="<?php echo $memofiles; ?>" download><?php _e('Descargar Memoria', 'ala') ?></a>
+                        <a class="btn-planos" href="<?php echo $memofiles; ?>" download><?php echo ( $lang == "es_ES" ? 'Descargar memoria de calidad' : 'Download quality report' ) ?></a>
                     <?php } ?>
                 </div>
             </div>
@@ -205,11 +206,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="detail-tlt"><?php _e('Ubicaci&oacute;n', 'ala') ?></div>
+                    <div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Ubicaci&oacute;n' : 'Location' ) ?></div>
                     <div id="map"></div>
                     <div id="save-widget">
                         <strong><?php the_title() ?></strong>
-                        <p><a href="https://www.google.com/maps/place/<?php echo $lat ?>,<?php echo $lng ?>" target="_blank">Ver en Google Maps</a></p>
+                        <p>
+                            <a href="https://www.google.com/maps/place/<?php echo $lat ?>,<?php echo $lng ?>" target="_blank">
+                                <?php echo ( $lang == "es_ES" ? 'Ver en Google Maps' : 'See in Google Maps' ) ?>
+                            </a>
+                        </p>
                     </div>
                     <script>
                       function initMap() {
@@ -246,7 +251,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="detail-tlt"><?php _e('Lugares Cercanos', 'ala') ?></div>
+                    <div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Lugares Cercanos' : 'Nearby Places' ) ?></div>
                     <?php if ($terms != null) { ?>
                         <div class="row gallery-places">
                             <?php $i = 1; $counter = 0; foreach ($terms as $term) {

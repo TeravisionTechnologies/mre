@@ -72,12 +72,12 @@ $officesEs = get_post_meta( $home_query[0]->ID, '_hf_offices_es', true );
             <div class="col-xs-12 properties-filter-container no-padding">
                 <div class="dropdown">
                     <button class="btn btn-default dropdown-toggle pull-right btn-filter" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <?php _e('Ordenar por...', 'ala') ?>
+                        <?php echo ( $lang == "es_ES" ? 'Ordenar por...' : 'Order by...' ) ?>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu sort-by-button-group" aria-labelledby="dropdownMenu1">
-                        <li><a class="orderby" data-sort-value="name" data-sort-direction="asc"><?php _e('Por nombre', 'ala') ?> <i class="fa fa-chevron-up"></i></a></li>
-                        <li><a class="orderby" data-option-value=".date" data-sort-value=".date" data-sort-direction="asc"><?php _e('Último agregado', 'ala') ?></a></li>
+                        <li><a class="orderby" data-sort-value="name" data-sort-direction="asc"><?php echo ( $lang == "es_ES" ? 'Por nombre' : 'By name' ) ?> <i class="fa fa-chevron-up"></i></a></li>
+                        <li><a class="orderby" data-option-value=".date" data-sort-value=".date" data-sort-direction="asc"><?php echo ( $lang == "es_ES" ? '&Uacute;ltimo agregado' : 'Last added' ) ?></a></li>
                     </ul>
                 </div>
             </div>

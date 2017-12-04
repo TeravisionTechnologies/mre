@@ -40,33 +40,15 @@ $partnerRight = get_post_meta( $headerPost[0]->ID, '_hf_partner_right', true );
     </section>
     <section id="about-secondary-text">
         <div class="vision col-xs-12 col-sm-6">
-            <?php
-            if (false !== strpos($url_wp, '/en' )) {
-                echo '<h2>Vision</h2>';
-            } else {
-                echo '<h2>Visión</h2>';
-            }
-            ?>
+            <h2><?php echo ( $lang == "es_ES" ? 'Visión' : 'Vision' ) ?></h2>
             <p><?php echo $main_text[0]['_au_vision_text']; ?></p>
         </div>
         <div class="mission col-xs-12 col-sm-6">
-            <?php
-            if (false !== strpos($url_wp, '/en' )) {
-                echo '<h2>Mision</h2>';
-            } else {
-                echo '<h2>Misión</h2>';
-            }
-            ?>
+            <h2><?php echo ( $lang == "es_ES" ? 'Misión' : 'Mision' ) ?></h2>
             <p><?php echo $main_text[0]['_au_mission_text']; ?></p>
         </div>
         <div id="about-values" class="col-xs-12 no-padding">
-            <?php
-            if (false !== strpos($url_wp, '/en' )) {
-                echo '<h2 class="values-title">Values</h2>';
-            } else {
-                echo '<h2 class="values-title">Valores</h2>';
-            }
-            ?>
+            <h2 class="values-title"><?php echo ( $lang == "es_ES" ? 'Valores' : 'Values' ) ?></h2>
 			<?php foreach ( $values as $value ) { ?>
                 <div class="col-xs-12 col-sm-6 value-block">
                     <div class="value-image">
@@ -79,37 +61,25 @@ $partnerRight = get_post_meta( $headerPost[0]->ID, '_hf_partner_right', true );
 			<?php } ?>
         </div>
         <div class="our-team">
-            <?php
-            if (false !== strpos($url_wp, '/en' )) {
-                echo '<h2>Our team</h2>';
-            } else {
-                echo '<h2>Nuestro equipo</h2>';
-            }
-            ?>
+            <h2><?php echo ( $lang == "es_ES" ? 'Nuestro equipo' : 'Our team' ) ?></h2>
             <p><?php echo $main_text[0]['_au_team_text']; ?></p>
         </div>
         <div class="our-properties">
-            <?php
-            if (false !== strpos($url_wp, '/en' )) {
-                echo '<h2>Our properties</h2>';
-            } else {
-                echo '<h2>Nuestras propiedades</h2>';
-            }
-            ?>
+            <h2><?php echo ( $lang == "es_ES" ? 'Nuestras propiedades' : 'Our properties' ) ?></h2>
             <p><?php echo $main_text[0]['_au_properties_text']; ?></p>
         </div>
     </section>
     <section id="our-ebooks" class="col-xs-12 text-center"
              style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/imageservices.png)">
         <div class="mask">
-            <h3><?php _e( 'Disfruta de tu tiempo', 'mre' ) ?></h3>
-            <p><?php _e( 'mientras nosotros gestionamos tu propiedad', 'mre' ) ?></p>
-            <a href="<?php echo ( $lang == 'es_ES' ? home_url('nuestros-servicios') : home_url('en/our-services') ) ?>" class="btn"><?php _e( 'Ve nuestros servicios', 'mre' ) ?></a>
+            <h3><?php echo ( $lang == "es_ES" ? 'Disfruta de tu tiempo' : 'Enjoy your time' ) ?></h3>
+            <p><?php echo ( $lang == "es_ES" ? 'mientras nosotros gestionamos tu propiedad' : 'while we manage your property' ) ?></p>
+            <a href="<?php echo ( $lang == 'es_ES' ? home_url('nuestros-servicios') : home_url('en/our-services') ) ?>" class="btn"><?php echo ( $lang == "es_ES" ? 'Ve nuestros servicios' : 'See our services' ) ?></a>
         </div>
     </section>
     <section class="col-xs-12 hr-partners-section text-center">
         <div class="container">
-            <p class="hr-partners-title">La nueva forma de <strong>invertir en propiedades</strong></p>
+            <p class="hr-partners-title"><?php echo ( $lang == "es_ES" ? 'La nueva forma de' : 'The new way of' ) ?> <strong><?php echo ( $lang == "es_ES" ? 'invertir en propiedades' : 'invest in properties' ) ?></strong></p> 
         </div>
         <div class="hr-partners-images">
             <a href="<?php echo $partnerLeft[0]['_hf_partner_link_left']; ?>" target="_blank"><img
@@ -153,11 +123,9 @@ $partnerRight = get_post_meta( $headerPost[0]->ID, '_hf_partner_right', true );
                 </div>
                 <div class="col-xs-12 col-md-8 al-contact-form-div no-padding">
                     <?php
-                    if (false !== strpos($url_wp, '/en' )) {
-                        echo do_shortcode('[contact-form-7 id="275" title="Contact Form (English)"]');
-                    } else {
-                        echo do_shortcode( '[contact-form-7 id="4" title="Home - Contact form"]' );
-                    }
+                        $contacteng = do_shortcode( '[contact-form-7 id="275" title="Contact Form"]');
+                        $contactesp = do_shortcode( '[contact-form-7 id="4" title="Home - Contact form"]');
+                        echo ( $lang == "es_ES" ? $contactesp : $contacteng );
                     ?>
                 </div>
             </div>

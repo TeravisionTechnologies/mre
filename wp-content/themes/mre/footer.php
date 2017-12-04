@@ -45,7 +45,7 @@ wp_footer();
 				$i         = 0;
 				$languages = pll_the_languages( array( 'raw' => 1 ) );
 				?>
-                <h2 class="mre-menu-language-text">Seleccione su idioma de preferencia:</h2>
+                <h2 class="mre-menu-language-text"><?php echo ( $lang == "es_ES" ? 'Seleccione su idioma de preferencia:' : 'Select your preferred language:' ) ?></h2>
                 <a href="<?php echo $languages['es']['url'] ?>"><img class="mre-menu-language-flag <?php echo ( $lang == "es_ES" ? 'language-flag-active' : '' ) ?>"
                                                                      src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg"
                                                                      alt="Spanish"></a>
@@ -91,7 +91,7 @@ wp_footer();
 <div class="thankyou">
     <div class="wrap">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/check.svg" alt="Thank you">
-        <h6><?php _e( '¡Gracias por descargar nuestro ebook!', 'mre' ) ?></h6>
+        <h6><?php echo ( $lang == "es_ES" ? '¡Gracias por descargar nuestro ebook!' : 'Thank you for downloading our ebook!' ) ?></h6>
     </div>
 </div>
 <?php wp_footer(); ?>

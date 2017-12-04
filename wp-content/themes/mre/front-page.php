@@ -64,7 +64,7 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
                 </ul>
                 <?php
                     if (false !== strpos($url_wp, '/en' )) {
-                        echo '<a href="/sobre-nosotros" class="about-us-button">View more</a>';
+                        echo '<a href="/en/about-us" class="about-us-button">View more</a>';
                     } else {
                         echo '<a href="/sobre-nosotros" class="about-us-button">Ver más</a>';
                     }
