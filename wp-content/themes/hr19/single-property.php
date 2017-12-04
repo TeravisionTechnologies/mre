@@ -49,7 +49,7 @@ $bgimg = (int)$bgimg;
                 </div>
                 <div class="col-xs-3 col-sm-5 col-md-6 text-right">
                     <!--<div class="published">Publicada hace: 59 días</div>-->
-                    <?php if (!empty($status)) { ?><div class="status"><?php echo ( $lang == "es_ES" ? 'Estatus' : 'Status' ) ?><span><?php echo $status; ?></span></div><?php } ?>
+                    <?php if (!empty($status)) { ?><div class="status"><?php echo ( $lang == "es_ES" ? 'Estatus: ' : 'Status: ' ) ?><span><?php echo $status; ?></span></div><?php } ?>
                 </div>
             </div>
         </div>

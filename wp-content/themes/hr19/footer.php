@@ -69,7 +69,7 @@ $lang = get_locale();
             </div>
             <div class="col-xs-12 col-md-8 hr-contact-form-div no-padding">
                 <?php
-                    $contacteng = do_shortcode( '[contact-form-7 id="176" title="Contact Form (English)"]');
+                    $contacteng = do_shortcode( '[contact-form-7 id="443" title="Contact Form (English)"]');
                     $contactesp = do_shortcode( '[contact-form-7 id="5" title="Home - Contact form"]');
                     echo ( $lang == "es_ES" ? $contactesp : $contacteng );
                 ?>
