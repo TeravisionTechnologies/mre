@@ -37,17 +37,17 @@ wp_reset_query();
 							<?php if ( $propstatus == "Sale" ) { ?>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                    aria-haspopup="true"
-                                   aria-expanded="false"><?php echo( $lang == "es_ES" ? 'Compra' : 'Sale' ) ?> <span
+                                   aria-expanded="false"><?php echo( $lang == "es_ES" ? 'Compra' : 'Buy' ) ?> <span
                                             class="caret"></span></a>
                                 <ul id="transction-dd" class="dropdown-menu clickdd">
                                     <li><a href="#"
-                                           data-value="Sale"><?php echo( $lang == "es_ES" ? 'Compra' : 'Sale' ) ?></a>
+                                           data-value="Sale"><?php echo( $lang == "es_ES" ? 'Compra' : 'Buy' ) ?></a>
                                     </li>
                                     <li><a href="#"
                                            data-value="Lease"><?php echo( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a>
                                     </li>
                                     <li><a href="#"
-                                           data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?></a>
+                                           data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Pre-sale' ) ?></a>
                                     </li>
                                 </ul>
 							<?php } ?>
@@ -58,13 +58,13 @@ wp_reset_query();
                                             class="caret"></span></a>
                                 <ul id="transction-dd" class="dropdown-menu clickdd">
                                     <li><a href="#"
-                                           data-value="Sale"><?php echo( $lang == "es_ES" ? 'Compra' : 'Sale' ) ?></a>
+                                           data-value="Sale"><?php echo( $lang == "es_ES" ? 'Compra' : 'Buy' ) ?></a>
                                     </li>
                                     <li><a href="#"
                                            data-value="Lease"><?php echo( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a>
                                     </li>
                                     <li><a href="#"
-                                           data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?></a>
+                                           data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Pre-sale' ) ?></a>
                                     </li>
                                 </ul>
 							<?php } ?>
@@ -75,13 +75,13 @@ wp_reset_query();
                                     <span class="caret"></span></a>
                                 <ul id="transction-dd" class="dropdown-menu clickdd">
                                     <li><a href="#"
-                                           data-value="Sale"><?php echo( $lang == "es_ES" ? 'Compra' : 'Sale' ) ?></a>
+                                           data-value="Sale"><?php echo( $lang == "es_ES" ? 'Compra' : 'Buy' ) ?></a>
                                     </li>
                                     <li><a href="#"
                                            data-value="Lease"><?php echo( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a>
                                     </li>
                                     <li><a href="#"
-                                           data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?></a>
+                                           data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Pre-sale' ) ?></a>
                                     </li>
                                 </ul>
 							<?php } ?>

@@ -172,7 +172,7 @@ if (strpos($referer, "en") == false){
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" href="#collapse2"><span
                                                 class="number">2</span>
-                                        <?php echo ( $lang == "es_ES" ? 'Características de la propiedad' : 'Property Characteristics' ) ?></a>
+                                        <?php echo ( $lang == "es_ES" ? 'Características de la propiedad' : 'Property features' ) ?></a>
                                     <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
                                        href="#collapse2" aria-expanded="true"></i>
                                 </h4>
@@ -219,7 +219,7 @@ if (strpos($referer, "en") == false){
                                                 } ?></div>
                                         </div>
                                     </div>
-                                    <h6><?php echo ( $lang == "es_ES" ? 'Otras características:' : 'Other features:' ) ?></h6>
+                                    <h6><?php echo ( $lang == "es_ES" ? 'Otras características:' : 'Additional features:' ) ?></h6>
                                     <ul>
                                         <li>Condición: nueva construcción</li>
                                         <li>Construcción: estuco de bloque de hormigón</li>
@@ -257,7 +257,7 @@ if (strpos($referer, "en") == false){
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" href="#collapse3"><span
                                                 class="number">3</span>
-                                        <?php echo ( $lang == "es_ES" ? 'Ubicación de la propiedad' : 'Location of the property' ) ?></a>
+                                        <?php echo ( $lang == "es_ES" ? 'Ubicación de la propiedad' : 'Property location' ) ?></a>
                                     <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
                                         href="#collapse3" aria-expanded="true"></i>
                                 </h4>
@@ -337,7 +337,7 @@ if (have_posts()): ?>
         <div class="container property-list">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="hr-heading"><?php echo ( $lang == "es_ES" ? 'Propiedades similares' : 'Similar properties' ) ?></h2>
+                    <h2 class="hr-heading"><?php echo ( $lang == "es_ES" ? 'Propiedades similares' : 'Similar homes' ) ?></h2>
                 </div>
             </div>
             <div class="row">

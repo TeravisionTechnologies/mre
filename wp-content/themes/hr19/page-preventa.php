@@ -40,13 +40,13 @@ if(function_exists('pll_current_language')){
                       data-toggle="validator" data-disable="false">
                     <ul class="property-status">
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                            <a href="<?php echo home_url(); ?>"><?php echo ( $lang == "es_ES" ? 'Compra' : 'Sale' ) ?></a>
+                            <a href="<?php echo home_url(); ?>"><?php echo ( $lang == "es_ES" ? 'Compra' : 'Buy' ) ?></a>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                             <a href="<?php echo home_url() . ( $lang == "es_ES" ? '/alquileres' : '/rent' ) ?>"><?php echo ( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                            <a href="<?php echo home_url() . ( $lang == "es_ES" ? '/preventa' : '/presale' ) ?>" class="active"><?php echo ( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?></a>
+                            <a href="<?php echo home_url() . ( $lang == "es_ES" ? '/preventa' : '/presale' ) ?>" class="active"><?php echo ( $lang == "es_ES" ? 'Preventa' : 'Pre-sale' ) ?></a>
                         </li>
                     </ul>
                     <div class="col-xs-12 col-sm-12 col-md-12 search-text no-padding">
