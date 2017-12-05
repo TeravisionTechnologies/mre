@@ -187,12 +187,12 @@ function property_filter_function() {
 	if ( isset( $_POST['project-location'] ) && $_POST['project-location'] ) {
 		$plocation = $_POST['project-location'];
 	}*/
-
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$lang  = get_locale();
 	$args = array(
 		'post_type' => 'broker',
-		'showposts' => 9,
-		'paged'     => get_query_var( 'paged' ),
+		'posts_per_page' => 9,
+		'paged'     => $paged,
 		/*'tax_query' => array(
 			'relation' => 'AND',
 			array(
