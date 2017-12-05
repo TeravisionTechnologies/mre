@@ -394,12 +394,28 @@ jQuery(document).ready(function () {
         goToPage(1);
     });*/
 
+    $('.wp-pagenavi a').on('click', function(e){
+       e.preventDefault();
+       var link = $(this).attr('href');
+       $('#response').load(link + ' #response', function() {
+           $('#response').fadeIn();
+       });
+   });
+
     $(".al-project-list-item").click(function(){
         var selstatus = $(this).attr('data-value');
         $("#project-status").val(selstatus);
     });
 
+    $(".the-country").click(function(){
+        var selocation = $(this).attr('data-value');
+        $("#project-location").val(selocation);
+    });
+
     $(document).on('click', '.al-project-list-item', function (e) {
+        $(this).closest('form').submit();
+    });
+    $(document).on('click', '.the-country', function (e) {
         $(this).closest('form').submit();
     });
 

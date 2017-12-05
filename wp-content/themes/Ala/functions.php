@@ -180,24 +180,32 @@ add_filter( 'admin_footer_text', 'remove_footer_admin' );
 
 function property_filter_function() {
 
-
 	if ( isset( $_POST['project-status'] ) && $_POST['project-status'] ) {
         $pstatus = $_POST['project-status'];
     }
 
+	if ( isset( $_POST['project-location'] ) && $_POST['project-location'] ) {
+		$plocation = $_POST['project-location'];
+	}
+
 	$lang  = get_locale();
 	$query = new WP_Query( array(
-		//'post_type' => 'broker',
+		'post_type' => 'broker',
 		'showposts' => 9,
 		'paged'     => get_query_var( 'paged' ),
 		'tax_query' => array(
+			'relation' => 'AND',
 			array(
 				'taxonomy' => 'property_status',
 				'field'    => 'slug',
 				'terms'    => $pstatus,
 			),
+			array(
+				'taxonomy' => 'property_location',
+				'field'    => 'slug',
+				'terms'    => array( $plocation ),
+			),
 		),
-
 	) );
 	if ( $query->have_posts() ): while ( $query->have_posts() ): $query->the_post();
 		$background_image = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_images_id', true ) );
@@ -234,7 +242,7 @@ function property_filter_function() {
         <div class="col-md-12">
             <div class="no-results-info">
                 <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg"
-                     alt="0">
+                     alt="No Results">
                 <h4><?php echo( $lang == "es_ES" ? 'No existen propiedades disponibles en estos momentos' : 'There are no properties available at this time' ) ?></h4>
                 <p><?php echo( $lang == "es_ES" ? '0 resultados' : '0 results' ) ?></p>
             </div>

@@ -69,7 +69,7 @@ $placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
 						$j = 0;
 						foreach ( $locations as $location ) {
 							$clase = ( $j == 0 ? "filter-left" : "" );
-							echo '<h2 class="properties-country-filter button the-country ' . $clase . '" data-filter=".' . $location->slug . '">' . $location->name . '</h2>';
+							echo '<h2 class="properties-country-filter button the-country ' . $clase . '" data-value="' . $location->slug . '">' . $location->name . '</h2>';
 							$j ++;
 						}
 					} ?>
@@ -99,6 +99,7 @@ $placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
                 </div>
                 <input type="hidden" name="action" value="myfilter">
                 <input id="project-status" type="hidden" name="project-status" value="">
+                <input id="project-location" type="hidden" name="project-location" value="">
     </form>
     <div class="clearfix"></div>
     <div id="response" class="row properties-list">
