@@ -449,6 +449,7 @@ body {
   .al-properties-section .properties-list .property-image {
     background-size: cover;
     position: relative;
+    background-position: center center;
     height: 24.3055555556vw;
     margin-bottom: 3.4722222222vw;
     /*&:nth-child(3n+3)
