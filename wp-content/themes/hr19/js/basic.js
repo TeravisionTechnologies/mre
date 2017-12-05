@@ -60,6 +60,23 @@ jQuery(document).ready(function ($) {
         $(this).css('opacity', 1);
     });
 
+    // Add Swiper Flags
+    var swiperFlag = new Swiper('.swiper-container-flags', {
+      //initialSlide: 1,
+      nested: true,
+    });
+
+    // Adding Swiper functionality to flags
+    $('.flag-image').on('click', function () {
+      var index = $(this).data('pagination');
+      swiperFlag.slideTo(index - 1);
+    });
+
+    $(".flag-image").click(function (e) {
+      $(".flag-image-opacity").removeClass("flag-image-opacity");
+      $(this).addClass("flag-image-opacity");
+    });
+
     //Menu contact us functionality
     $("#menu-item-17").click(function (e) {
         e.preventDefault;

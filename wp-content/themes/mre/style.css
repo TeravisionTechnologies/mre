@@ -659,7 +659,8 @@ a.al-phone-num {
     #mre-footer .mre-footer-elements .mre-footer-logo {
       height: 5.76389vw;
       margin: 3.47222vw 0 0.69444vw 0;
-      width: auto; }
+      width: auto;
+      max-height: 50px; }
     #mre-footer .mre-footer-elements .mre-footer-copyright {
       color: rgba(74, 74, 74, 0.5);
       font-family: Montserrat-Regular, sans-serif;

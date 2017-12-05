@@ -56,37 +56,44 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
     </section>
 <?php } ?>
 <?php if ( ! is_404() ) { ?>
-
-    <section class="col-xs-12" id="al-offices" style="background-image: url('http://test-ala19.pantheonsite.io/wp-content/uploads/2017/09/d-bgcontact-1.png');">
-        <div class="swiper-container swiper-container-flags swiper-container-horizontal">
-            <h4>Puedes <strong>encontrarnos</strong> en</h4>			<div class="flags-indicators">
-                <div id="flag-image-1" class="flag-image flag-image-opacity" data-pagination="1" style="background-image: url(http://test-ala19.pantheonsite.io/wp-content/uploads/2017/10/usa_flag.svg)"></div><div id="flag-image-2" class="flag-image " data-pagination="2" style="background-image: url(http://test-ala19.pantheonsite.io/wp-content/uploads/2017/10/spain_flag.svg)"></div>			</div>
-            <div class="swiper-wrapper">
-                <div class="swiper-slide swiper-slide-active" style="width: 1410px;">
-                    <div class="office-detail">
-                        <h5><span>Miami · Sede principal</span></h5>
-                        <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
-                        <h5>USA</h5>
-                        <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
-                    </div>
-                    <div class="office-detail">
-                        <h5><span>Orlando</span></h5>
-                        <h5>2295 S. Hiawassee Road, Suite 407E</h5>
-                        <h5>USA</h5>
-                        <h5>Teléfonos: +1 407 255.08.71</h5>
-                    </div>
-                </div>
-                <div class="swiper-slide swiper-slide-next" style="width: 1410px;">
-                    <div class="office-detail">
-                        <h5><span>Madrid</span></h5>
-                        <h5>C/ Velázquez 78, 2º Dcha. 28001</h5>
-                        <h5>España</h5>
-                        <h5>Teléfonos: +34 605 816 803</h5>
-                    </div>
-                </div>
-            </div>
+  <section id="mre-offices" class="col-xs-12" style="background-image: url('http://test-mre.pantheonsite.io/wp-content/uploads/2017/10/offices.jpg');">
+    <div class="swiper-container swiper-container-flags swiper-container-horizontal">
+      <h4>Puedes <strong>encontrarnos</strong> en</h4>                  <div class="flags-indicators">
+        <div id="flag-image-1" class="flag-image flag-image-opacity" data-pagination="1" style="background-image: url(http://test-mre.pantheonsite.io/wp-content/uploads/2017/11/usa_flag.svg)"></div><div id="flag-image-2" class="flag-image" data-pagination="2" style="background-image: url(http://test-mre.pantheonsite.io/wp-content/uploads/2017/10/spain_flag.svg)"></div><div id="flag-image-3" class="flag-image" data-pagination="3" style="background-image: url(http://test-mre.pantheonsite.io/wp-content/uploads/2017/11/ven_flag.svg)"></div>                  </div>
+      <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+        <div class="swiper-slide swiper-slide-active" style="width: 1280px;">
+          <div class="office-detail">
+            <h5><span>Miami · Sede principal</span></h5>
+            <h5>55 Merrick Way, Suite 214 Coral Gables</h5>
+            <h5>USA</h5>
+            <h5>Teléfonos: +1 786 376.22.22 / 477.50.91</h5>
+          </div>
+          <div class="office-detail">
+            <h5><span>Orlando</span></h5>
+            <h5>2295 S. Hiawassee Road, Suite 407E</h5>
+            <h5>USA</h5>
+            <h5>Teléfonos: +1 407 255.08.71</h5>
+          </div>
         </div>
-    </section>
+        <div class="swiper-slide swiper-slide-next" style="width: 1280px;">
+          <div class="office-detail">
+            <h5><span>Madrid</span></h5>
+            <h5>C/ Velázquez 78, 2º Dcha. 28001</h5>
+            <h5>España</h5>
+            <h5>Teléfonos: +34 605 816 803</h5>
+          </div>
+        </div>
+        <div class="swiper-slide" style="width: 1280px;">
+          <div class="office-detail">
+            <h5><span>Caracas</span></h5>
+            <h5>Avenida Río Caura, Centro Empresarial Parque Humboldt, Piso 19, Oficinas 19-05 / 19-06</h5>
+            <h5>Venezuela</h5>
+            <h5>Teléfonos: +58 212 975 39 40 / 212 975 41 651</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 <section id="contact-us" class="col-xs-12 hr-contact-div no-padding"
          style="background-image: url('<?php if ( isset( $contact[0]["_hf_contact_background"] ) ) {
 	         echo $contact[0]["_hf_contact_background"];
