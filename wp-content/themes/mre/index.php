@@ -203,7 +203,7 @@ $categories      = get_categories(
             <div class="mask">
                 <h3><?php echo ( $lang == "es_ES" ? 'Disfruta de nuestros e-books' : 'Enjoy our ebooks' ) ?></h3>
                 <p><?php echo ( $lang == "es_ES" ? 'la información que necesitas completamente gratis' : 'the information you need completely free' ) ?></p>
-                <a href="<?php echo ( $lang == 'es_ES' ? home_url('e-books') : home_url('en/our-e-books') ) ?>" class="btn"><?php echo ( $lang == "es_ES" ? 'Ver todos' : 'See all' ) ?></a>
+                <a href="<?php echo ( $lang == 'es_ES' ? home_url('e-books') : home_url('en/our-e-books') ) ?>" class="btn"><?php echo ( $lang == "es_ES" ? 'Ver todos' : 'View all' ) ?></a>
             </div>
         </section>
     </section>

@@ -47,11 +47,11 @@ $categories      = get_categories(
     <section class="container-fluid no-padding">
         <section class="col-xs-12" id="blog-list-categories">
             <div class="container-mre center-block">
-                <h3 class="blog-list-category-title"><?php _e( 'Categoría', 'mre' ) ?></h3>
+                <h3 class="blog-list-category-title"><?php echo ( $lang == "es_ES" ? 'Categoría' : 'Category' ) ?></h3>
                 <h2 class="blog-list-category-text"></h2>
                 <div class="swiper-container swiper-container-blog-categories">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" name="Todas las categorías" data-slug="all">
+                        <div class="swiper-slide" name="<?php echo ( $lang == "es_ES" ? 'Todas las categorías' : 'All categories' ) ?>" data-slug="all">
                             <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"
                                style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/todas.png);">
                                 <div class="swiper-overlay"></div>
@@ -146,9 +146,9 @@ $categories      = get_categories(
                                     </div>
                                 </a>
                             </div>
-                            <nav id="blog-pagination" class="text-center">
                             </nav>
 						<?php endwhile; ?>
+                        <nav id="blog-pagination" class="text-center">
 					<?php else: ?>
                         <div class="col-md-12 no-results text-center">
                             <p><?php echo ( $lang == "es_ES" ? 'No existen publicaciones disponibles en estos momentos' : 'There are no publications available at this time' ) ?></p>
@@ -166,7 +166,7 @@ $categories      = get_categories(
                  style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/notice.jpg')">
             <div class="recommended-posts-overlay">
                 <div class="container-mre center-block">
-                    <h2 class="recommended-posts-title"><?php echo ( $lang == "es_ES" ? 'Artículos recomendados' : 'Recommended posts' ) ?></h2>
+                    <h2 class="recommended-posts-title"><?php echo ( $lang == "es_ES" ? 'Artículos recomendados' : 'Recommended articles' ) ?></h2>
                     <div class="swiper-container swiper-container-blog-most-viewed">
                         <div class="swiper-wrapper">
 							<?php foreach ( $postRecommended as $post ) { ?>
@@ -207,7 +207,7 @@ $categories      = get_categories(
             <div class="mask">
                 <h3><?php echo ( $lang == "es_ES" ? 'Disfruta de nuestros e-books' : 'Enjoy our ebooks' ) ?></h3>
                 <p><?php echo ( $lang == "es_ES" ? 'la información que necesitas completamente gratis' : 'the information you need completely free' ) ?></p>
-                <a href="<?php echo ( $lang == 'es_ES' ? home_url('e-books') : home_url('en/our-e-books') ) ?>" class="btn"><?php echo ( $lang == "es_ES" ? 'Ver todos' : 'See all' ) ?></a>
+                <a href="<?php echo ( $lang == 'es_ES' ? home_url('e-books') : home_url('en/our-e-books') ) ?>" class="btn"><?php echo ( $lang == "es_ES" ? 'Ver todos' : 'View all' ) ?></a>
             </div>
         </section>
     </section>
