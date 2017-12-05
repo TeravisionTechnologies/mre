@@ -9,6 +9,15 @@ get_header();
 $url = $_SERVER['REQUEST_URI'];
 global $wp_query;
 $lang = get_locale();
+if(function_exists('pll_current_language')){
+    $current_language = pll_current_language();
+    $default_language = pll_default_language();
+    if($current_language != $default_language){
+        $language_subdir = $current_language.'/';
+    } else {
+        $language_subdir = '';
+    }
+}
 
 wp_reset_query();
 query_posts( array(
@@ -78,7 +87,7 @@ $categories      = get_categories(
             <img class="blog-list-triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.png">
             <div class="container-mre center-block">
                 <div class="col-xs-12 col-sm-9 blog-search">
-                    <form action="<?php echo home_url() ?>">
+                    <form action="<?php echo esc_url(home_url('/'.$language_subdir)); ?>">
                         <div class="input-group">
                             <i class="fa fa-search" aria-hidden="true"></i>
                             <input type="text" class="form-control" id="search" name="s"

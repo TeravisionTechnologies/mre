@@ -9,7 +9,15 @@ get_header();
 $url = $_SERVER['REQUEST_URI'];
 global $wp_query;
 $lang = get_locale();
-
+if(function_exists('pll_current_language')){
+    $current_language = pll_current_language();
+    $default_language = pll_default_language();
+    if($current_language != $default_language){
+        $language_subdir = $current_language.'/';
+    } else {
+        $language_subdir = '';
+    }
+}
 wp_reset_query();
 
 $postRecommended = get_posts(
@@ -74,7 +82,7 @@ $categories      = get_categories(
             <img class="blog-list-triangle" src="<?php echo get_template_directory_uri(); ?>/assets/triangle.png">
             <div class="container-mre center-block">
                 <div class="col-xs-12 col-sm-9 blog-search">
-                    <form action="<?php echo home_url() ?>">
+                    <form action="<?php echo esc_url(home_url('/'.$language_subdir)); ?>">
                         <div class="input-group">
                             <i class="fa fa-search" aria-hidden="true"></i>
                             <input type="text" class="form-control" id="search" name="s"
@@ -89,10 +97,16 @@ $categories      = get_categories(
                         <select name="orderby" id="orderby" class="form-control blog-filter pull-right">
                             <option selected="selected"><?php echo ( $lang == "es_ES" ? 'Ordenar por...' : 'Order by...' ) ?></option>
 							<?php
-                            $orderby_options = array(
-                                'post_date'  => echo ( $lang == "es_ES" ? 'Ordenar por fecha' : 'Order by date' ),  
-                                'post_title' => echo ( $lang == "es_ES" ? 'Ordenar por t&iacute;tulo' : 'Order by title' ),
-                            );
+                            if ( $lang == "es_ES" ) {
+                                $orderby_options = array(
+                                    'post_date'  => 'Ordenar por fecha',
+                                    'post_title' => 'Ordenar por t&iacute;tulo');
+                            }  else{
+                                $orderby_options = array(
+                                    'post_date'  => 'Order by date',
+                                    'post_title' => 'Order by title');
+                            }
+
 							foreach ( $orderby_options as $value => $label ) {
 								echo "<option " . selected( $_GET['orderby'], $value ) . " value='$value'>$label</option>";
 							}
