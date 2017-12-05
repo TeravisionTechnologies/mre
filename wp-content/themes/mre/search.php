@@ -95,7 +95,7 @@ $categories      = get_categories(
                 <div class="col-xs-12 col-sm-3 blog-select">
                     <form name="filters" class="post-filters" method="get">
                         <select name="orderby" id="orderby" class="form-control blog-filter pull-right">
-                            <option selected="selected"><?php echo ( $lang == "es_ES" ? 'Ordenar por...' : 'Order by...' ) ?></option>
+                            <option selected="selected"><?php echo ( $lang == "es_ES" ? 'Ordenar por...' : 'Sort by...' ) ?></option>
 							<?php
                             if ( $lang == "es_ES" ) {
                                 $orderby_options = array(
@@ -103,8 +103,8 @@ $categories      = get_categories(
                                     'post_title' => 'Ordenar por t&iacute;tulo');
                             }  else{
                                 $orderby_options = array(
-                                    'post_date'  => 'Order by date',
-                                    'post_title' => 'Order by title');
+                                    'post_date'  => 'Sort by date',
+                                    'post_title' => 'Sort by title');
                             }
 
 							foreach ( $orderby_options as $value => $label ) {
