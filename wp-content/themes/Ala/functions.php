@@ -180,20 +180,20 @@ add_filter( 'admin_footer_text', 'remove_footer_admin' );
 
 function property_filter_function() {
 
-	if ( isset( $_POST['project-status'] ) && $_POST['project-status'] ) {
+	/*if ( isset( $_POST['project-status'] ) && $_POST['project-status'] ) {
         $pstatus = $_POST['project-status'];
     }
 
 	if ( isset( $_POST['project-location'] ) && $_POST['project-location'] ) {
 		$plocation = $_POST['project-location'];
-	}
+	}*/
 
 	$lang  = get_locale();
-	$query = new WP_Query( array(
+	$args = array(
 		'post_type' => 'broker',
 		'showposts' => 9,
 		'paged'     => get_query_var( 'paged' ),
-		'tax_query' => array(
+		/*'tax_query' => array(
 			'relation' => 'AND',
 			array(
 				'taxonomy' => 'property_status',
@@ -205,8 +205,32 @@ function property_filter_function() {
 				'field'    => 'slug',
 				'terms'    => array( $plocation ),
 			),
-		),
-	) );
+		),*/
+	);
+
+	if ( isset( $_POST['project-status'] ) && $_POST['project-status'] ||
+	     isset( $_POST['project-status'] ) && $_POST['project-status'] ) {
+		$args['tax_query'] = array( 'relation' => 'AND' );
+	}
+
+	if ( isset( $_POST['project-status'] ) && $_POST['project-status'] ) {
+		$args['tax_query'][] = array(
+			'taxonomy' => 'property_status',
+			'field'    => 'slug',
+			'terms'    => $_POST['project-status'],
+		);
+	}
+
+	if ( isset( $_POST['project-location'] ) && $_POST['project-location'] ) {
+		$args['tax_query'][] = array(
+			'taxonomy' => 'property_location',
+			'field'    => 'slug',
+			'terms'    => $_POST['project-location'],
+		);
+	};
+
+	$query = new WP_Query( $args );
+
 	if ( $query->have_posts() ): while ( $query->have_posts() ): $query->the_post();
 		$background_image = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_images_id', true ) );
 		$placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
