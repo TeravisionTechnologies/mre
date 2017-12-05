@@ -6,7 +6,7 @@ jQuery.validator.addMethod("email2", function(value, element) {
 }, "Invalid email format.");
 
 jQuery(function($) {
-	var errorContainer = $("<div class='error'>Please fill out the required fields</div>").prependTo("#commentform").hide();
+	var errorContainer = $("<div class='error error-es'>Por favor llene los campos requeridos</div><div class='error error-en'>Please fill out the required fields</div>").prependTo("#commentform").hide();
 	var errorLabelContainer = $("<div class='error errorlabels'></div>").prependTo("#commentform").hide();
 	$("#commentform").validate({
 		rules: {

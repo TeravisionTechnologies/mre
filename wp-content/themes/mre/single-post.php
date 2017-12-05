@@ -9,6 +9,8 @@
 
 get_header();
 $lang = get_locale();
+$recomendedbylang = ( $lang == "es_ES" ? 'articulo-recomendado' : 'recommended-article' );
+$submit = ( $lang == "es_ES" ? 'Publicar comentario' : 'Submit' );
 global $post;
 $author_id = $post->post_author;
 if (have_posts()) : the_post(); endif;
@@ -17,15 +19,17 @@ $categories = get_the_category();
 $args_form_comments = array('class_submit' => 'comments-form-button',
     'title_reply' => '',
     'title_reply_before' => '',
-    'label_submit' => 'Publicar comentario',
+    'label_submit' => $submit,
     'class_form' => 'comments-form',
-    'comment_field' => '<textarea id="comment" name="comment" class="form-control" placeholder="Tu comentario..."></textarea></div>');
+    'comment_field' => '<textarea id="comment" name="comment" class="form-control" placeholder="Tu comentario..."></textarea></div>',
+    'comment_notes_before' => ''
+    );
 ?>
 <section class="container-fluid no-padding">
     <!-- this is single -->
     <section class="col-xs-12" id="blog-detail-breadcrumb">
         <div class="container-mre center-block">
-            <a href="<?php echo get_site_url(); ?>/blog"><i
+            <a href="<?php echo get_site_url() . ( $lang == "es_ES" ? '/blog' : '/our-blog' ) ?>"><i
                         class="fa fa-chevron-circle-left blog-detail-breadcrumb-prev" aria-hidden="true"></i></a>
             <?php
             foreach ($categories as $category) {
@@ -46,7 +50,7 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
     <section class="col-xs-12" id="blog-detail-content">
         <div class="container-mre center-block">
             <h1 class="blog-detail-content-title"><?php echo the_title(); ?></h1>
-            <h3 class="blog-detail-content-author">Por: <?php echo the_author_meta('nickname', $author_id); ?><span
+            <h3 class="blog-detail-content-author"><?php echo ( $lang == "es_ES" ? 'Por:' : 'By:' ) ?> <?php echo the_author_meta('nickname', $author_id); ?><span
                         class="blog-detail-content-date"><?php echo get_the_time('j F, Y', $post->ID); ?></span></h3>
             <div class="blog-detail-content-text">
                 <?php the_content(); ?>
@@ -73,9 +77,9 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
         <div class="container-mre center-block">
             <?php
             if ($count_comments == 1) {
-                echo '<h2 class="blog-detail-comments-number">' . $count_comments . ( $lang == "es_ES" ? 'Comentario' : 'Comment' ) . '</h2>';
+                echo '<h2 class="blog-detail-comments-number">' . $count_comments . ( $lang == "es_ES" ? ' Comentario' : ' Comment' ) . '</h2>';
             } else if ($count_comments > 0) {
-                echo '<h2 class="blog-detail-comments-number">' . $count_comments . ( $lang == "es_ES" ? 'Comentarios' : 'Comments' ) . '</h2>';
+                echo '<h2 class="blog-detail-comments-number">' . $count_comments . ( $lang == "es_ES" ? ' Comentarios' : ' Comments' ) . '</h2>';
             }
             ?>
             <?php
@@ -92,16 +96,14 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
             } ?>
         </div>
     </section>
-    <section class="col-xs-12" id="blog-detail-form">
+    <section class="col-xs-12 <?php echo $lang; ?>" id="blog-detail-form">
         <div class="blog-detail-comments-form center-block">
             <h2 class="blog-detail-comments-form-title"><?php echo ( $lang == "es_ES" ? 'Escribe un comentario' : 'Write a comment' ) ?></h2>
             <h3 class="blog-detail-comments-form-subtitle"><?php echo ( $lang == "es_ES" ? 'Su dirección de correo electrónico no será publicada' : 'Your email address will not be published' ) ?></h3>
             <?php comment_form($args_form_comments, $post_id); ?>
         </div>
     </section>
-    <section class="col-xs-12" id="blog-recommended-posts"
-             style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/notice.jpg')">
-        <?php
+    <?php
         $args = array(
             'post_type' => 'post',
             'numberposts' => -1,
@@ -111,12 +113,14 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
                 array(
                     'taxonomy' => 'post_tag',
                     'field' => 'slug',
-                    'terms' => 'articulo-recomendado',
+                    'terms' => $recomendedbylang,
                 )
             )
         );
-        $articles_most_view = get_posts($args);
-        ?>
+        $articles_most_view = get_posts($args); ?>
+    <?php if(!empty( $articles_most_view )) { ?>
+    <section class="col-xs-12" id="blog-recommended-posts"
+             style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/notice.jpg')">
         <div class="recommended-posts-overlay">
             <div class="container-mre center-block">
                 <h2 class="recommended-posts-title"><?php echo ( $lang == "es_ES" ? 'Artículos recomendados' : 'Recommended articles' ) ?></h2>
@@ -165,6 +169,7 @@ $args_form_comments = array('class_submit' => 'comments-form-button',
             </div>
         </div>
     </section>
+    <?php } ?>
 </section>
 
 <?php get_footer(); ?>

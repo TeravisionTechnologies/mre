@@ -9,6 +9,7 @@ get_header();
 $url = $_SERVER['REQUEST_URI'];
 global $wp_query;
 $lang = get_locale();
+$recomendedbylang = ( $lang == "es_ES" ? 'articulo-recomendado' : 'recommended-article' );
 if(function_exists('pll_current_language')){
     $current_language = pll_current_language();
     $default_language = pll_default_language();
@@ -30,7 +31,7 @@ $postRecommended = get_posts(
 			array(
 				'taxonomy' => 'post_tag',
 				'field'    => 'slug',
-				'terms'    => 'articulo-recomendado',
+				'terms'    => $recomendedbylang,
 			)
 		)
 	)
@@ -148,7 +149,7 @@ $categories      = get_categories(
                             </div>
 						<?php endwhile; ?>
 					<?php else: ?>
-                        <div class="col-md-12 no-results text-center">
+                        <div class="col-xs-12 col-sm-12 col-md-12 no-results text-center">
                             <p><?php echo ( $lang == "es_ES" ? 'No existen publicaciones disponibles en estos momentos' : 'There are no publications available at this time' ) ?></p>
                             <p><?php echo ( $lang == "es_ES" ? '0 resultados' : '0 results' ) ?></p>
                         </div>
@@ -161,6 +162,7 @@ $categories      = get_categories(
             </div>
 
         </section>
+        <?php if(!empty($postRecommended )) { ?>
         <section class="col-xs-12" id="blog-recommended-posts"
                  style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/notice.jpg')">
             <div class="recommended-posts-overlay">
@@ -201,6 +203,7 @@ $categories      = get_categories(
                 </div>
             </div>
         </section>
+        <?php } ?>
         <section id="our-ebooks" class="col-xs-12 text-center"
                  style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/ebook-hero.jpg')">
             <div class="mask">

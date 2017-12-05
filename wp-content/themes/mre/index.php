@@ -26,6 +26,8 @@ query_posts( array(
 	'posts_per_page' => - 1
 ) );
 
+$recomendedbylang = ( $lang == "es_ES" ? 'articulo-recomendado' : 'recommended-article' );
+
 $postRecommended = get_posts(
 	array(
 		'post_type'   => 'post',
@@ -36,7 +38,7 @@ $postRecommended = get_posts(
 			array(
 				'taxonomy' => 'post_tag',
 				'field'    => 'slug',
-				'terms'    => 'articulo-recomendado',
+				'terms'    => $recomendedbylang,
 			)
 		)
 	)
@@ -160,6 +162,7 @@ $categories      = get_categories(
             </div>
             
         </section>
+        <?php if(!empty($postRecommended )) { ?>
         <section class="col-xs-12" id="blog-recommended-posts"
                  style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/notice.jpg')">
             <div class="recommended-posts-overlay">
@@ -193,6 +196,7 @@ $categories      = get_categories(
                                     </div>
                                 </div>
 							<?php } ?>
+
                         </div>
                         <i class="fa fa-chevron-circle-left swiper-button-prev" aria-hidden="true"></i>
                         <i class="fa fa-chevron-circle-right swiper-button-next" aria-hidden="true"></i>
@@ -200,6 +204,7 @@ $categories      = get_categories(
                 </div>
             </div>
         </section>
+        <?php } ?>
         <section id="our-ebooks" class="col-xs-12 text-center"
                  style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/ebook-hero.jpg')">
             <div class="mask">

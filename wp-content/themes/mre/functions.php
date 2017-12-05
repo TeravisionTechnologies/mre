@@ -22,8 +22,6 @@ register_nav_menus(
 add_theme_support( 'menus' );
 
 function mre_enqueue_scripts() {
-	//wp_enqueue_style( 'style', get_template_directory_uri() . 'style.css', array(), '1' );
-	//wp_enqueue_script( 'script', get_template_directory_uri() . '/js/basic.css', array(), '1' );
 	wp_enqueue_script( 'ajax-blog_cats', get_template_directory_uri() . '/js/ajax-blog-categories.js', array(), '1' );
 	global $wp_query;
 	wp_localize_script( 'ajax-blog_cats', 'ajaxblog', array(
@@ -147,26 +145,43 @@ add_filter( 'comment_form_fields', 'crunchify_move_comment_form_below' );
 
 // Add placeholder for Name and Email
 function modify_comment_form_fields( $fields ) {
+
+	$lang = get_locale();
+	$name = ( $lang == "es_ES" ? '* Nombre y Apellido' : '* Fullname' );
 	$commenter        = wp_get_current_commenter();
 	$fields['author'] = '<div class="form-group">' .
-	                    '<input id="author" name="author" type="text" class="form-control" placeholder="* Nombre y Apellido" value=""/>'; //' . esc_attr( $commenter['comment_author'] ) . '
+	                    '<input id="author" name="author" type="text" class="form-control" placeholder="'. $name .'" value=""/>'; 
 	$fields['email']  =
-		'<input id="email" name="email" type="email" class="form-control" placeholder="* Email" value=""/>'; //' . esc_attr(  $commenter['comment_author_email'] ) . '
+		'<input id="email" name="email" type="email" class="form-control" placeholder="* Email" value=""/>';
 	$fields['url']    = '';
-
 	return $fields;
+	
 }
 
 add_filter( 'comment_form_default_fields', 'modify_comment_form_fields' );
 
-function wpbeginner_comment_text( $arg ) {
+
+
+function my_update_comment_field( $comment_field ) {
+	$lang = get_locale();
+	$comment = ( $lang == "es_ES" ? 'Tu Comentario...' : 'Your comment...' );
+	$comment_field ='<textarea id="comment" name="comment" class="form-control" placeholder="'. $comment .'"></textarea>';
+	return $comment_field;
+
+}
+add_filter( 'comment_form_field_comment', 'my_update_comment_field' );
+
+
+
+
+/*function wpbeginner_comment_text( $arg ) {
 
 	$arg['comment_notes_before'] = "";
 
 	return $arg;
 }
 
-add_filter( 'comment_form_defaults', 'wpbeginner_comment_text' );
+add_filter( 'comment_form_defaults', 'wpbeginner_comment_text' );*/
 
 add_filter( 'show_admin_bar', '__return_false' );
 
