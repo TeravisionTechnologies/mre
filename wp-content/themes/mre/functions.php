@@ -230,7 +230,6 @@ function trv_ajax_blog_cats() {
 		</a>
 	</div>';
 	endwhile;
-       echo'<nav id="blog-pagination" class="text-center"></nav>';
 	else:
 		echo '<div class="col-md-12 no-results text-center">
                             <p>' . ( $lang == "es_ES" ? 'No existen publicaciones disponibles en estos momentos' : 'There are no publications available at this time' ) . '</p>

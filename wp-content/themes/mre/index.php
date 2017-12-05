@@ -156,7 +156,9 @@ $categories      = get_categories(
 					echo '<div class="col-xs-12 marginb80"></div>';
 				} ?>
                 <nav id="blog-pagination" class="text-center"></nav>
+
             </div>
+            
         </section>
         <section class="col-xs-12" id="blog-recommended-posts"
                  style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/notice.jpg')">

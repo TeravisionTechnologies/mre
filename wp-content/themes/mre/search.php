@@ -146,9 +146,7 @@ $categories      = get_categories(
                                     </div>
                                 </a>
                             </div>
-                            </nav>
 						<?php endwhile; ?>
-                        <nav id="blog-pagination" class="text-center">
 					<?php else: ?>
                         <div class="col-md-12 no-results text-center">
                             <p><?php echo ( $lang == "es_ES" ? 'No existen publicaciones disponibles en estos momentos' : 'There are no publications available at this time' ) ?></p>
@@ -159,8 +157,9 @@ $categories      = get_categories(
 				<?php if ( $wp_query->post_count == 1 ) {
 					echo '<div class="col-xs-12 marginb80"></div>';
 				} ?>
-
+                <nav id="blog-pagination" class="text-center"></nav>
             </div>
+
         </section>
         <section class="col-xs-12" id="blog-recommended-posts"
                  style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/notice.jpg')">
