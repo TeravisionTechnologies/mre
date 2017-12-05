@@ -174,7 +174,7 @@ jQuery(document).ready(function () {
         goToPage(1);
     });*/
 
-    var itemSelector = '.country-status';
+    /*var itemSelector = '.country-status';
 
     var $grid = $('.properties-list').isotope({
         itemSelector: itemSelector,
@@ -223,17 +223,13 @@ jQuery(document).ready(function () {
     // Sort function
     $('.sort-by-button-group').on('click', '.orderby', function () {
 
-        /* Get the element name to sort */
         var sortValue = $(this).attr('data-sort-value');
 
-        /* Get the sorting direction: asc||desc */
         var direction = $(this).attr('data-sort-direction');
 
-        /* convert it to a boolean */
         var isAscending = (direction == 'desc');
         var newDirection = (isAscending) ? 'asc' : 'desc';
 
-        /* pass it to isotope */
         $grid.isotope({sortBy: sortValue, sortAscending: isAscending});
 
         $(this).attr('data-sort-direction', newDirection);
@@ -241,7 +237,7 @@ jQuery(document).ready(function () {
         var span = $(this).find('.fa');
         span.toggleClass('fa-chevron-up fa-chevron-down');
 
-    });
+    });*/
 
     $(function () {
         $('.locations').on('click', '.the-country', function (e) {
@@ -304,7 +300,7 @@ jQuery(document).ready(function () {
     //setTimeout($grid.isotope({filter: '.proyectos-actuales'}), 2000);
 
     //Ascending order
-    var responsiveIsotope = [
+    /*var responsiveIsotope = [
         [480, 4],
         [720, 6]
     ];
@@ -396,6 +392,43 @@ jQuery(document).ready(function () {
         itemsPerPage = defineItemsPerPage();
         setPagination();
         goToPage(1);
+    });*/
+
+    $(".al-project-list-item").click(function(){
+        var selstatus = $(this).attr('data-value');
+        $("#project-status").val(selstatus);
+    });
+
+    $(document).on('click', '.al-project-list-item', function (e) {
+        $(this).closest('form').submit();
+    });
+
+
+    // Filtering data
+    $('#ala-properties').submit(function(){
+        var filter = $('#ala-properties');
+        $.ajax({
+            url:filter.attr('action'),
+            data:filter.serialize(),
+            type:filter.attr('method'),
+            beforeSend:function(xhr){
+                //filter.find('.btn-search').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
+                //$('#loader').show();
+                //$('.navbar-collapse').removeClass('in');
+                //alert('hola');
+            },
+            success:function(data){
+                console.log(data);
+                //filter.find('.btn-search').html('<i class="fa fa-search"></i>');
+                //$('#loader').hide();
+                $('#response').html(data);
+                //alert('hola');
+                //filter.find('.navbar-toggle i').removeClass("fa-times");
+                //filter.find('.navbar-toggle i').addClass("fa-filter");
+                //$('.navbar-toggle').attr('aria-expanded', 'false')
+            }
+        });
+        return false;
     });
 
 });

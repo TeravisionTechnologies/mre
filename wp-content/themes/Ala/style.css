@@ -1259,8 +1259,8 @@ a.download-bro {
   opacity: 0.9 !important; }
 
 .orderby {
-  font-size: 16px;
-  padding: 10px 20px !important; }
+  font-size: 1.1111111111vw;
+  padding: 0.3472222222vw 1.3888888889vw !important; }
 
 .fa-play-circle {
   font-size: 4.8611111111vw;
@@ -1962,6 +1962,10 @@ a.download-bro {
       height: 50px;
       right: 140px;
       top: 40px; }
+
+  .orderby {
+    font-size: 16px;
+    padding: 5px 20px; }
 
   #about-hero-section {
     height: 450px;
