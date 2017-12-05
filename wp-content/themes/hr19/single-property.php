@@ -252,7 +252,7 @@ if (strpos($referer, "en") == false){
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default">
+                        <div class="panel panel-default prlocation">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" href="#collapse3"><span

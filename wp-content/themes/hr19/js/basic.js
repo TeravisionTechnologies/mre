@@ -580,6 +580,9 @@ $(window).on('load', function() {
             scrollTop: finalPosition
         }, 1000);
     }*/
+    if( $('#map-detail').is(':empty') ) {
+        $('.prlocation').css('display', 'none');
+    }
 
 });
 

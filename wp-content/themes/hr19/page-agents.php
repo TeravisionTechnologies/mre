@@ -68,7 +68,7 @@ if ( have_posts() ): while ( have_posts() ):
 			<?php the_content(); ?>
         </div>
         <div class="agent-properties">
-            <h2 class="properties-number" data-target="<?php the_ID(); ?>"><?php echo ( $lang == "es_ES" ? 'Propiedades asignadas' : 'Assigned properties' ) ?>
+            <h2 class="properties-number" data-target="<?php the_ID(); ?>"><?php echo ( $lang == "es_ES" ? 'Propiedades asignadas' : 'Listed properties' ) ?>
                 (<?php echo $agentProperties->post_count; ?>)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
             <div class="properties-list" id="<?php the_ID(); ?>">
 				<?php
@@ -135,7 +135,7 @@ if ( have_posts() ): while ( have_posts() ):
 			<?php the_content(); ?>
         </div>
         <div class="agent-properties">
-            <h2 class="properties-number properties-number-right" data-target="<?php the_ID(); ?>"><?php echo ( $lang == "es_ES" ? 'Propiedades asignadas' : 'Assigned properties' ) ?>
+            <h2 class="properties-number properties-number-right" data-target="<?php the_ID(); ?>"><?php echo ( $lang == "es_ES" ? 'Propiedades asignadas' : 'Listed properties' ) ?>
                 (<?php echo $agentProperties->post_count; ?>)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
             <div class="properties-list" id="<?php the_ID(); ?>">
 				<?php
