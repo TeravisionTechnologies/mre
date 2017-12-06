@@ -162,7 +162,6 @@ $placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
     </div>
     </div>
 
-
     <div class="col-xs-12 al-partners-section text-center">
         <div class="container">
             <p class="al-partners-title"><?php echo $home_info['_hf_partners_text'][0]; ?></p>

@@ -180,20 +180,20 @@ add_filter( 'admin_footer_text', 'remove_footer_admin' );
 
 function property_filter_function() {
 
-	/*if ( isset( $_POST['project-status'] ) && $_POST['project-status'] ) {
+	if ( isset( $_POST['project-status'] ) && $_POST['project-status'] ) {
         $pstatus = $_POST['project-status'];
     }
 
 	if ( isset( $_POST['project-location'] ) && $_POST['project-location'] ) {
 		$plocation = $_POST['project-location'];
-	}*/
+	}
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$lang  = get_locale();
 	$args = array(
 		'post_type' => 'broker',
 		'posts_per_page' => 9,
 		'paged'     => $paged,
-		/*'tax_query' => array(
+		'tax_query' => array(
 			'relation' => 'AND',
 			array(
 				'taxonomy' => 'property_status',
@@ -205,7 +205,7 @@ function property_filter_function() {
 				'field'    => 'slug',
 				'terms'    => array( $plocation ),
 			),
-		),*/
+		),
 	);
 
 	if ( isset( $_POST['project-status'] ) && $_POST['project-status'] ||
