@@ -396,6 +396,9 @@ jQuery(document).ready(function () {
 
     $('.wp-pagenavi a').on('click', function(e){
        e.preventDefault();
+       $('html, body').animate({
+            scrollTop: $("#ala-properties").offset().top
+       }, 500);
        var link = $(this).attr('href');
        $('#response').load(link + ' #response', function() {
            $('#response').fadeIn();

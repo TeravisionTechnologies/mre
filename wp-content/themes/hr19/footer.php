@@ -3,8 +3,10 @@ $referer = wp_get_referer();
 
 if ( (strpos($referer, "en")  == false) && strpos($_SERVER['REQUEST_URI'], "en") == false ){
 	$langu = "es";
+	$menuid = 2;
 } else{
 	$langu = "en";
+	$menuid = 20;
 }
 $footer_query    = get_posts(
 	array(
@@ -19,6 +21,7 @@ $footer_info     = get_post_meta( $footer_query[0]->ID );
 $social_networks = get_post_meta( $footer_query[0]->ID, '_hf_social_networks', true );
 $lang = get_locale();
 $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+var_dump($menuid);
 ?>
 <?php if ( ! is_404() ) { ?>
 <section class="col-xs-12 hr-partners-section text-center">
@@ -155,15 +158,16 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
         <div class="menu-wrapper">
 			<?php wp_nav_menu( array(
 				'theme_location' => 'primary',
+				'menu' => $menuid,
 				'container'      => false,
-				'menu_class'     => "hr-menu c-menu__items"
+				'menu_class'     => "hr-menu c-menu__items",
 			) ); ?>
             <div class="hr-menu-language">
 				<?php
 				$i         = 0;
 				$languages = pll_the_languages( array( 'raw' => 1 ) );
 				?>
-                <h2 class="hr-menu-language-text"><?php echo ( $lang == "es_ES" ? 'Seleccione su idioma de preferencia:' : 'Select your preferred language:' ) ?></h2>
+                <h2 class="hr-menu-language-text"><?php echo ( ( $lang == "es_ES" && $langu == "es" ) ? 'Seleccione su idioma de preferencia:' : 'Select your preferred language:' ) ?></h2>
                 <a href="<?php echo $languages['es']['url'] ?>"><img class="hr-menu-language-flag <?php echo ( $lang == "es_ES" ? 'language-flag-active' : '' ) ?>"
                                                                       src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg"
                                                                       alt="Spanish"></a>

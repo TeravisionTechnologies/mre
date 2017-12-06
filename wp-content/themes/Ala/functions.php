@@ -265,8 +265,6 @@ function property_filter_function() {
 	<?php else: ?>
         <div class="col-md-12">
             <div class="no-results-info">
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg"
-                     alt="No Results">
                 <h4><?php echo( $lang == "es_ES" ? 'No existen propiedades disponibles en estos momentos' : 'There are no properties available at this time' ) ?></h4>
                 <p><?php echo( $lang == "es_ES" ? '0 resultados' : '0 results' ) ?></p>
             </div>
