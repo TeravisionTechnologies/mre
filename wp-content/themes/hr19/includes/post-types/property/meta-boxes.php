@@ -679,11 +679,6 @@ function property_metaboxes() {
 		'type' => 'text',
 	));
 	$cmb_property->add_field(array(
-		'name' => __('Style'),
-		'id' => $prefix . 'Style',
-		'type' => 'text',
-	));
-	$cmb_property->add_field(array(
 		'name' => __('Style of Business'),
 		'id' => $prefix . 'StyleofBusiness',
 		'type' => 'text',
@@ -696,11 +691,6 @@ function property_metaboxes() {
 	$cmb_property->add_field(array(
 		'name' => __('Subdivision Complex Bldg'),
 		'id' => $prefix . 'SubdivisionComplexBldg',
-		'type' => 'text',
-	));
-	$cmb_property->add_field(array(
-		'name' => __('Propietario'),
-		'id' => $prefix . 'owner',
 		'type' => 'text',
 	));
 	$cmb_property->add_field(array(
@@ -731,11 +721,6 @@ function property_metaboxes() {
 	$cmb_property->add_field(array(
 		'name' => __('Type of Business'),
 		'id' => $prefix . 'TypeofBusiness',
-		'type' => 'text',
-	));
-	$cmb_property->add_field(array(
-		'name' => __('Propietario'),
-		'id' => $prefix . 'owner',
 		'type' => 'text',
 	));
 	$cmb_property->add_field(array(
