@@ -370,13 +370,13 @@ jQuery(document).ready(function ($) {
                 var text = '';
 
                 if(status == OverlappingMarkerSpiderfier.markerStatus.SPIDERFIED){
-                    var iconSize = new google.maps.Size(25, 31);
+                    var iconSize = new google.maps.Size(36, 35);
                     marker.setIcon({
-                        url: 'http://icon-park.com/imagefiles/location_map_pin_green-1.png',
+                        url: hr19.root + '/assets/icon-plus-group.svg',
                         size: iconSize,
                         scaledSize: iconSize,
-                        labelOrigin: new google.maps.Point(12, 17),
-                        origin: new google.maps.Point(0, -2),
+                        labelOrigin: new google.maps.Point(17, 25),
+                        origin: new google.maps.Point(0.5, -10),
                     });
                     text = marker.price;
                     color = '#ffffff';
@@ -411,6 +411,7 @@ jQuery(document).ready(function ($) {
                 marker.setLabel({
                     text: text,
                     color: color,
+                    fontWeight: "bold",
                     fontFamily: 'Montserrat-Regular',
                     fontSize: size,
                 });
