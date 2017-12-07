@@ -221,17 +221,20 @@ jQuery(document).ready(function ($) {
         noSuggestionNotice: '<p class="no-results"><span>No pudimos encontrar su búsqueda</span><br>Verifique su ortografía o vuelva a hacer su búsqueda usando una ubicación dentro de los E.E.U.U</p>',
         groupBy: 'category',
         onSearchStart: function () {
-            $('body.search').css('overflow-y', 'hidden');
+            //$('.search .o-wrapper').css('overflow-y', 'hidden');
+            $('body').addClass('has-active-menu');
         },
         onHide: function () {
-            $('body.search').css('overflow-y', 'scroll');
+            //$('.search .o-wrapper').css('overflow-y', 'scroll');
+            $('body').removeClass('has-active-menu');
         },
         onSelect: function (suggestion) {
             var actualValue = $('#s').val();
             if(actualValue != suggestion.value){
                 $(this).closest('form').submit();
             }
-            $('body.search').css('overflow-y', 'scroll');
+            //$('.search .o-wrapper').css('overflow-y', 'scroll');
+            $('body').removeClass('has-active-menu');
         },
         /*onSearchError: function (query, jqXHR, textStatus, errorThrown) {
             $('.property-search').attr('data-disable', 'true');
