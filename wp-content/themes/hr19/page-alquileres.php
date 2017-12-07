@@ -69,7 +69,7 @@ if(function_exists('pll_current_language')){
 <div id="lease-list" class="container property-list pl">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="hr19-heading"><span><?php echo ( $lang == "es_ES" ? 'Propiedades HR19 Miami, FL' : 'HR19 Properties Miami, FL' ) ?>&nbsp;&nbsp;&nbsp;</span></h2>
+            <h2 class="hr19-heading"><span><?php echo ( $lang == "es_ES" ? 'Propiedades HR19' : 'HR19 Properties' ) ?>&nbsp;&nbsp;&nbsp;</span></h2>
         </div>
     </div>
     <div class="row">
