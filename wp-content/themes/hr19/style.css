@@ -2595,6 +2595,12 @@ a[href^=tel] {
   #search-filters {
     margin-top: 79px; }
 
+  #navbar {
+    height: 80px;
+    -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1040; }
+
   .search .autocomplete-suggestions {
     width: auto !important; }
 
