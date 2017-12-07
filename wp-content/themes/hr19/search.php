@@ -399,11 +399,11 @@ wp_reset_query();
                     </div>
                     <div class="col-sm-8 col-md-9 text-center sort-select">
                         <select class="pull-right" id="proporder" name="proporder">
-                            <option <?php echo (!$propOrder) ? 'selected' : ''; ?> ><?php echo($lang == "es_ES" ? 'Ordenar por' : 'Order by') ?></option>
-                            <option <?php echo ($propOrder == 0) ? 'selected' : ''; ?> value="0"><?php _e('A &#x25B2', 'hr') ?></option>
-                            <option <?php echo ($propOrder == 1) ? 'selected' : ''; ?> value="1"><?php _e('D &#x25BC;', 'hr') ?></option>
-                            <option <?php echo ($propOrder == 2) ? 'selected' : ''; ?> value="2"><?php echo($lang == "es_ES" ? 'Precio más bajo' : 'Lower price') ?></option>
-                            <option <?php echo ($propOrder == 3) ? 'selected' : ''; ?> value="3"><?php echo($lang == "es_ES" ? 'Precio más alto' : 'Highest price') ?></option>
+                            <option value="" <?php echo ($propOrder === "") ? 'selected' : ''; ?>> <?php echo($lang == "es_ES" ? 'Ordenar por' : 'Order by') ?></option>
+                            <option <?php echo ($propOrder === "0") ? 'selected' : ''; ?> value="0"><?php _e('A &#x25B2', 'hr') ?></option>
+                            <option <?php echo ($propOrder === "1") ? 'selected' : ''; ?> value="1"><?php _e('D &#x25BC;', 'hr') ?></option>
+                            <option <?php echo ($propOrder === "2") ? 'selected' : ''; ?> value="2"><?php echo($lang == "es_ES" ? 'Precio más bajo' : 'Lower price') ?></option>
+                            <option <?php echo ($propOrder === "3") ? 'selected' : ''; ?> value="3"><?php echo($lang == "es_ES" ? 'Precio más alto' : 'Highest price') ?></option>
                         </select>
                         <div class="pull-right choose-search">
                             <div class="radio radio-inline radio-success">
