@@ -1611,6 +1611,9 @@ input:checked + .slider:before {
   height: auto !important;
   margin-bottom: 1.3888888889vw; }
 
+.autocomplete-suggestions {
+  width: auto !important; }
+
 .agent-hero {
   margin-top: 5.5555555556vw;
   height: 31.25vw;
