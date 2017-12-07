@@ -1611,14 +1611,16 @@ input:checked + .slider:before {
   height: auto !important;
   margin-bottom: 1.3888888889vw; }
 
-.autocomplete-suggestions {
-  width: auto !important; }
-
+/*.autocomplete-suggestions
+ * width: auto !important */
 .no-paddingl {
   padding-left: 0 !important; }
 
 .no-paddingr {
   padding-right: 0 !important; }
+
+.search .autocomplete-suggestions {
+  width: auto !important; }
 
 .agent-hero {
   margin-top: 5.5555555556vw;
@@ -2600,6 +2602,9 @@ a[href^=tel] {
   #search-filters {
     margin-top: 79px; }
 
+  .search .autocomplete-suggestions {
+    width: auto !important; }
+
   .agent-hero {
     margin-top: 80px;
     height: 450px;
@@ -3305,7 +3310,7 @@ a[href^=tel] {
     height: auto !important;
     margin-bottom: 2.6041666667vw; }
 
-  .autocomplete-suggestions {
+  .search .autocomplete-suggestions {
     width: auto !important; }
 
   .property-list select {

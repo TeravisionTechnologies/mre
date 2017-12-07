@@ -220,6 +220,12 @@ jQuery(document).ready(function ($) {
         showNoSuggestionNotice: true,
         noSuggestionNotice: '<p class="no-results"><span>No pudimos encontrar su búsqueda</span><br>Verifique su ortografía o vuelva a hacer su búsqueda usando una ubicación dentro de los E.E.U.U</p>',
         groupBy: 'category',
+        /*onSearchStart: function () {
+            $('body').css('overflow-y', 'hidden');
+        },*/
+        /*onSearchComplete: function () {
+            $('body').css('overflow-y', 'auto');
+        },*/
         onSelect: function (suggestion) {
             var actualValue = $('#s').val();
             if(actualValue != suggestion.value){
