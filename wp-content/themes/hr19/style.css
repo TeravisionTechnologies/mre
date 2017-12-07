@@ -1606,8 +1606,6 @@ input:checked + .slider:before {
   height: auto !important;
   margin-bottom: 1.3888888889vw; }
 
-/*.autocomplete-suggestions
- * width: auto !important */
 .no-paddingl {
   padding-left: 0 !important; }
 
