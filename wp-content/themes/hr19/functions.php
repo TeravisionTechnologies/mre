@@ -209,7 +209,8 @@ function get_mls() {
 			'(STATUS = A)',
 			[
 				'Format' => 'COMPACT-DECODED',
-				'Limit'  => 30,
+				'Limit'  => 10,
+                'Offset' => 40
 			]
 		);
 	} else {
@@ -391,7 +392,10 @@ function get_mls() {
 					'_pr_WaterAccess' => $property['WaterAccess'],
 					'_pr_WaterfrontDescription' => $property['WaterfrontDescription'],
 					'_pr_WaterfrontPropertyYN' => $property['WaterfrontPropertyYN'],
-					'_pr_WaterView' => $property['WaterView']
+					'_pr_WaterView' => $property['WaterView'],
+					'_pr_EquipmentAppliances' => $property['EquipmentAppliances'],
+					'_pr_TaxAmount' => round( $property['TaxAmount'] ),
+					'_pr_TotalMortgage' => round( $property['TotalMortgage'] ),
 				)
 			);
 			$posted_property = wp_insert_post( $post_args );
@@ -562,7 +566,10 @@ function get_mls() {
 					'_pr_WaterAccess' => $property['WaterAccess'],
 					'_pr_WaterfrontDescription' => $property['WaterfrontDescription'],
 					'_pr_WaterfrontPropertyYN' => $property['WaterfrontPropertyYN'],
-					'_pr_WaterView' => $property['WaterView']
+					'_pr_WaterView' => $property['WaterView'],
+					'_pr_EquipmentAppliances' => $property['EquipmentAppliances'],
+					'_pr_TaxAmount' => round( $property['TaxAmount'] ),
+					'_pr_TotalMortgage' => round( $property['TotalMortgage'] ),
 				),
 			);
 			$posted_property = wp_update_post( $post_args );

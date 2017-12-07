@@ -130,6 +130,18 @@ function property_metaboxes() {
 		'type' => 'text',
 	));
 
+	$cmb_property->add_field(array(
+		'name' => __('Tax Amount'),
+		'id' => $prefix . 'TaxAmount',
+		'type' => 'text',
+	));
+
+	$cmb_property->add_field(array(
+		'name' => __('Estimado de Hipoteca'),
+		'id' => $prefix . 'TotalMortgage',
+		'type' => 'text',
+	));
+
 	/*$cmb_property->add_field(array(
 		'name' => __('En Venta'),
 		'id' => $prefix . 'forsale',
@@ -766,6 +778,11 @@ function property_metaboxes() {
 	$cmb_property->add_field(array(
 		'name' => __('Water View'),
 		'id' => $prefix . 'WaterView',
+		'type' => 'text',
+	));
+	$cmb_property->add_field(array(
+		'name' => __('Appliances'),
+		'id' => $prefix . 'EquipmentAppliances',
 		'type' => 'text',
 	));
 
