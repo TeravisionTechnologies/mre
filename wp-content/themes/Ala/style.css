@@ -631,8 +631,7 @@ body {
 .wpcf7-response-output {
   top: -2.7777777778vw;
   left: 2.0833333333vw;
-  position: absolute;
-  margin-left: -10px !important; }
+  position: absolute; }
 
 .al-contact-div {
   padding: 4.1666666667vw 9.375vw;
@@ -890,7 +889,7 @@ textarea {
   font-family: "Montserrat", sans-serif !important;
   top: -57px !important;
   left: 8px !important;
-  font-size: 11px !important;
+  font-size: 11px;
   font-weight: 700 !important;
   padding: 8px !important;
   width: 100%; }
@@ -908,7 +907,7 @@ h2.active {
   text-transform: uppercase;
   top: -57px !important;
   left: 8px !important;
-  font-size: 11px !important;
+  font-size: 11px;
   font-weight: 700 !important;
   padding: 8px !important;
   width: 100%; }
@@ -1904,8 +1903,7 @@ a.download-bro {
 
   .wpcf7-response-output {
     top: -25px;
-    left: 30px;
-    margin-left: -10px !important; }
+    left: 30px; }
 
   .al-contact-div {
     height: auto;
@@ -3367,12 +3365,15 @@ a.download-bro {
   form.sent {
     margin-top: 30px; }
 
-  .div.wpcf7-response-output {
+  form.failed {
+    margin-top: 30px; }
+
+  div.wpcf7-response-output {
     width: calc(100% - 30px);
     font-size: 9px !important; }
 
   div.wpcf7-response-output {
-    margin: 4em 0.5em 1em !important; }
+    margin-top: 32px !important; }
 
   #property-content p {
     font-size: 12px !important;
