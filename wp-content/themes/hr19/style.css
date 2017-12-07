@@ -1378,13 +1378,14 @@ input:checked + .slider:before {
   display: none; }
 
 .gm-style-iw {
+  top: 40px !important;
+  left: 3px !important;
+  width: 283px !important;
   height: 96px !important;
   background-color: #fff;
+  box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
   border-radius: 2px 2px 0 0; }
-.xxx{
-  color:red;
-  font-size: 50px;
-}
+
 .autocomplete-suggestions {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1396,7 +1397,7 @@ input:checked + .slider:before {
   -webkit-box-shadow: 0px 3px 10px rgba(50, 50, 50, 0.28);
   -moz-box-shadow: 0px 3px 10px rgba(50, 50, 50, 0.28);
   box-shadow: 0px 3px 10px rgba(50, 50, 50, 0.28);
-  z-index: 99 !important; }
+  z-index: 1030 !important; }
 
 .autocomplete-suggestion {
   padding: 2px 20px;
@@ -1486,7 +1487,8 @@ input:checked + .slider:before {
 #navbar {
   height: 80px;
   -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1040; }
 
 .wp-pagenavi {
   margin: 40px 0 100px 0; }
@@ -1608,6 +1610,15 @@ input:checked + .slider:before {
 .hr-menu-language {
   height: auto !important;
   margin-bottom: 1.3888888889vw; }
+
+.autocomplete-suggestions {
+  width: auto !important; }
+
+.no-paddingl {
+  padding-left: 0 !important; }
+
+.no-paddingr {
+  padding-right: 0 !important; }
 
 .agent-hero {
   margin-top: 5.5555555556vw;
@@ -3223,7 +3234,7 @@ a[href^=tel] {
     height: 40px;
     font-size: 12px; }
   .property-list .property-sorting .choose-search {
-    padding: 10px 20px;
+    padding: 10px 12px;
     margin: -2px 0 0; }
     .property-list .property-sorting .choose-search .radio label {
       font-size: 12px; }
@@ -3259,7 +3270,7 @@ a[href^=tel] {
     #search-filters .navbar-collapse .navbar-nav .dropdown:nth-child(2) a {
       padding: 22px 10px; }
     #search-filters .navbar-collapse .navbar-nav .input-group .search-box {
-      width: 150px;
+      width: 128px;
       font-size: 12px;
       padding-left: 40px; }
       #search-filters .navbar-collapse .navbar-nav .input-group .search-box i {
@@ -3292,6 +3303,12 @@ a[href^=tel] {
   .hr-menu-language {
     height: auto !important;
     margin-bottom: 2.6041666667vw; }
+
+  .autocomplete-suggestions {
+    width: auto !important; }
+
+  .property-list select {
+    margin-top: 0; }
 
   .agent-hero {
     margin-top: 10.4166666667vw;
