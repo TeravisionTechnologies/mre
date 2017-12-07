@@ -2272,7 +2272,8 @@ a[href^=tel] {
     height: 100%; }
 
   #hr-header .logo-header {
-    top: 0; }
+    top: 0;
+    height: 80px; }
     #hr-header .logo-header .img-div {
       height: 80px; }
       #hr-header .logo-header .img-div img {
@@ -2283,6 +2284,7 @@ a[href^=tel] {
         transform: translate(-50%, -50%); }
   #hr-header .social-header {
     top: 0;
+    height: 80px;
     z-index: 2; }
     #hr-header .social-header .social-icons {
       height: 33.9px;
@@ -2342,7 +2344,8 @@ a[href^=tel] {
   .menu-button {
     top: 0;
     left: 0;
-    padding: 27px 0 15px 0; }
+    padding: 27px 0 15px 0;
+    height: 80px; }
 
   .menu {
     min-width: 100px;
