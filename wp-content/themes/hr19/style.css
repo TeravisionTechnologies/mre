@@ -1378,12 +1378,7 @@ input:checked + .slider:before {
   display: none; }
 
 .gm-style-iw {
-  top: 40px !important;
-  left: 3px !important;
-  width: 283px !important;
-  height: 96px !important;
   background-color: #fff;
-  box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
   border-radius: 2px 2px 0 0; }
 
 .autocomplete-suggestions {
