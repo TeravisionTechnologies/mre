@@ -164,80 +164,6 @@ jQuery(document).ready(function () {
     galleryTop.params.control = galleryThumbs;
     galleryThumbs.params.control = galleryTop;
 
-    // init Isotope
-
-
-    /*$('.filters a').click(function () {
-        var filter = $(this).attr(filterAtribute);
-        currentFilter = filter;
-        setPagination();
-        goToPage(1);
-    });*/
-
-    /*var itemSelector = '.country-status';
-
-    var $grid = $('.properties-list').isotope({
-        itemSelector: itemSelector,
-        //layoutMode: 'fitRows',
-        getSortData: {
-            name: '.property-title',
-            date: function ($elem) {
-                return Date.parse($($elem).find('.date').text());
-            }
-        }
-    });
-
-    var filters = {};
-
-    $('.filters').on('click', '.button', function () {
-        var $this = $(this);
-        var $buttonGroup = $this.parents('.button-group');
-        var filterGroup = $buttonGroup.attr('data-filter-group');
-        filters[filterGroup] = $this.attr('data-filter');
-        var filterValue = concatValues(filters);
-        $grid.isotope({filter: filterValue});
-    });
-
-    // change is-checked class on buttons
-    $('.button-group').each(function (i, buttonGroup) {
-        var $buttonGroup = $(buttonGroup);
-        $buttonGroup.on('click', '.the-status', function () {
-            $buttonGroup.find('.is-checked').removeClass('item-active');
-            $(this).addClass('item-active');
-        });
-        $buttonGroup.on('click', '.the-country', function () {
-            $buttonGroup.find('.is-checked').removeClass('item-active2');
-            $(this).addClass('item-active2');
-        });
-    });
-
-    // flatten object by concatting values
-    function concatValues(obj) {
-        var value = '';
-        for (var prop in obj) {
-            value += obj[prop];
-        }
-        return value;
-    }
-
-    // Sort function
-    $('.sort-by-button-group').on('click', '.orderby', function () {
-
-        var sortValue = $(this).attr('data-sort-value');
-
-        var direction = $(this).attr('data-sort-direction');
-
-        var isAscending = (direction == 'desc');
-        var newDirection = (isAscending) ? 'asc' : 'desc';
-
-        $grid.isotope({sortBy: sortValue, sortAscending: isAscending});
-
-        $(this).attr('data-sort-direction', newDirection);
-
-        var span = $(this).find('.fa');
-        span.toggleClass('fa-chevron-up fa-chevron-down');
-
-    });*/
 
     $(function () {
         $('.locations').on('click', '.the-country', function (e) {
@@ -297,103 +223,6 @@ jQuery(document).ready(function () {
         }, 2000);
     });
 
-    //setTimeout($grid.isotope({filter: '.proyectos-actuales'}), 2000);
-
-    //Ascending order
-    /*var responsiveIsotope = [
-        [480, 4],
-        [720, 6]
-    ];
-
-    var itemsPerPageDefault = 3;
-    var itemsPerPage = defineItemsPerPage();
-    var currentNumberPages = 1;
-    var currentPage = 1;
-    var currentFilter = '*';
-    var filterAtribute = 'data-filter';
-    var pageAtribute = 'data-page';
-    var pagerClass = 'isotope-pager';
-
-    function changeFilter(selector) {
-        $grid.isotope({
-            filter: selector
-        });
-    }
-
-    function goToPage(n) {
-        currentPage = n;
-        var selector = itemSelector;
-        selector += ( currentFilter != '*' ) ? '[' + filterAtribute + '="' + currentFilter + '"]' : '';
-        selector += '[' + pageAtribute + '="' + currentPage + '"]';
-        //changeFilter(selector);
-    }
-
-    function defineItemsPerPage() {
-        var pages = itemsPerPageDefault;
-        for (var i = 0; i < responsiveIsotope.length; i++) {
-            if ($(window).width() <= responsiveIsotope[i][0]) {
-                pages = responsiveIsotope[i][1];
-                break;
-            }
-        }
-        return pages;
-    }
-
-    function setPagination() {
-
-        var SettingsPagesOnItems = function () {
-            var itemsLength = $grid.children(itemSelector).length;
-            var pages = Math.ceil(itemsLength / itemsPerPage);
-            var item = 1;
-            var page = 1;
-            var selector = itemSelector;
-            selector += ( currentFilter != '*' ) ? '[' + filterAtribute + '="' + currentFilter + '"]' : '';
-
-            $grid.children(selector).each(function () {
-                if (item > itemsPerPage) {
-                    page++;
-                    item = 1;
-                }
-                $(this).attr(pageAtribute, page);
-                item++;
-            });
-
-            currentNumberPages = page;
-
-        }();
-
-        var CreatePagers = function () {
-
-            var $isotopePager = ( $('.' + pagerClass).length == 0 ) ? $('<div class="' + pagerClass + '"></div>') : $('.' + pagerClass);
-            $isotopePager.html('');
-
-            for (var i = 0; i < currentNumberPages; i++) {
-                var $pager = $('<a href="javascript:void(0);" class="pager" ' + pageAtribute + '="' + (i + 1) + '"></a>');
-                $pager.html(i + 1);
-
-                $pager.click(function () {
-                    var page = $(this).eq(0).attr(pageAtribute);
-                    goToPage(page);
-                });
-
-                $pager.appendTo($isotopePager);
-            }
-
-            $grid.after($isotopePager);
-
-        }();
-
-    }
-
-    setPagination();
-    //goToPage(1);
-
-    $(window).resize(function () {
-        itemsPerPage = defineItemsPerPage();
-        setPagination();
-        goToPage(1);
-    });*/
-
     if (window.location.href.indexOf("page") > -1) {
         $('html, body').animate({
             scrollTop: $("#ala-properties").offset().top
@@ -405,16 +234,6 @@ jQuery(document).ready(function () {
             scrollTop: $("#ala-properties").offset().top
         }, 500);
     }
-
-
-       // $('.wp-pagenavi a').on('click', function(e){
-      // e.preventDefault();
-
-       /*var link = $(this).attr('href');
-       $('#response').load(link + ' #response', function() {
-           $('#response').fadeIn();
-       });*/
-   //});
 
     $(".al-project-list-item").click(function(){
         var selstatus = $(this).attr('data-value');
@@ -432,8 +251,7 @@ jQuery(document).ready(function () {
     $(document).on('click', '.the-country', function (e) {
         $(this).closest('form').submit();
     });
-
-
+    
     // Filtering data
     $('#ala-properties').submit(function(){
         var filter = $('#ala-properties');
@@ -442,29 +260,15 @@ jQuery(document).ready(function () {
             data:filter.serialize(),
             type:filter.attr('method'),
             beforeSend:function(xhr){
-                //filter.find('.btn-search').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
-                //$('#loader').show();
-                //$('.navbar-collapse').removeClass('in');
-                //alert('hola');
+
             },
             success:function(data){
-                console.log(data);
-                //filter.find('.btn-search').html('<i class="fa fa-search"></i>');
-                //$('#loader').hide();
+
                 $('#response').html(data);
-                //alert('hola');
-                //filter.find('.navbar-toggle i').removeClass("fa-times");
-                //filter.find('.navbar-toggle i').addClass("fa-filter");
-                //$('.navbar-toggle').attr('aria-expanded', 'false')
+
             }
         });
         return false;
     });
 
 });
-
-
-
-
-
-
