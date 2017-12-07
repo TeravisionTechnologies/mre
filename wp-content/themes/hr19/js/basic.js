@@ -212,7 +212,6 @@ jQuery(document).ready(function ($) {
     });
 
     var query = city.concat(add,pc);
-
     // Initialize autocomplete
     $('#s').devbridgeAutocomplete({
         lookup: query,
@@ -222,7 +221,10 @@ jQuery(document).ready(function ($) {
         noSuggestionNotice: '<p class="no-results"><span>No pudimos encontrar su búsqueda</span><br>Verifique su ortografía o vuelva a hacer su búsqueda usando una ubicación dentro de los E.E.U.U</p>',
         groupBy: 'category',
         onSelect: function (suggestion) {
-            $(this).closest('form').submit();
+            var actualValue = $('#s').val();
+            if(actualValue != suggestion.value){
+                $(this).closest('form').submit();
+            }
         },
         /*onSearchError: function (query, jqXHR, textStatus, errorThrown) {
             $('.property-search').attr('data-disable', 'true');
