@@ -394,16 +394,27 @@ jQuery(document).ready(function () {
         goToPage(1);
     });*/
 
-    $('.wp-pagenavi a').on('click', function(e){
-       e.preventDefault();
-       $('html, body').animate({
+    if (window.location.href.indexOf("page") > -1) {
+        $('html, body').animate({
             scrollTop: $("#ala-properties").offset().top
-       }, 500);
-       var link = $(this).attr('href');
+        }, 500);
+    }
+
+    if(document.referrer.indexOf("/page") > 0){
+        $('html, body').animate({
+            scrollTop: $("#ala-properties").offset().top
+        }, 500);
+    }
+
+
+       // $('.wp-pagenavi a').on('click', function(e){
+      // e.preventDefault();
+
+       /*var link = $(this).attr('href');
        $('#response').load(link + ' #response', function() {
            $('#response').fadeIn();
-       });
-   });
+       });*/
+   //});
 
     $(".al-project-list-item").click(function(){
         var selstatus = $(this).attr('data-value');
