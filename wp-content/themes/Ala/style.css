@@ -531,7 +531,8 @@ body {
     position: relative;
     float: left;
     margin-left: -1px;
-    line-height: 1.42857143;
+    font-size: 1.1111111111vw;
+    line-height: 1.5277777778vw;
     text-decoration: none;
     background-color: #ffffff;
     border: 1px solid #ddd;
@@ -2484,6 +2485,15 @@ a.download-bro {
         padding-top: 1.3020833333vw;
         width: 4.8177083333vw; }
 
+  #al-pagination .wp-pagenavi {
+    margin: 5.5989583333vw 0 11.71875vw 0; }
+    #al-pagination .wp-pagenavi span, #al-pagination .wp-pagenavi a {
+      height: 4.9479166667vw;
+      padding-top: 1.0416666667vw;
+      width: 4.8177083333vw;
+      font-size: 2.0833333333vw;
+      line-height: 2.8645833333vw; }
+
   .al-partners-section {
     height: 31.25vw;
     padding: 6.25vw 0 6.1197916667vw 0;
@@ -3167,6 +3177,15 @@ a.download-bro {
         height: 9.7222222222vw;
         padding-top: 2.7777777778vw;
         width: 9.7222222222vw; }
+
+  #al-pagination .wp-pagenavi {
+    margin: 11.1111111111vw 0 22.2222222222vw 0; }
+    #al-pagination .wp-pagenavi span, #al-pagination .wp-pagenavi a {
+      height: 9.7222222222vw;
+      padding-top: 2.2222222222vw;
+      width: 9.7222222222vw;
+      font-size: 4.4444444444vw;
+      line-height: 5.8333333333vw; }
 
   .al-projects {
     height: 22.2222222222vw;
