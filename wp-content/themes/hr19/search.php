@@ -390,14 +390,14 @@ wp_reset_query();
         <div class="container property-list">
             <div class="row">
                 <div class="property-sorting">
-                    <div class="col-sm-4 col-md-3">
+                    <div class="col-sm-4 col-md-3 no-paddingr">
                         <span class="state-search"><?php echo $s; ?></span>
                         <span class="results-search">
                             <?php echo ($lang == "es_ES" ? 'Mostrando ' : 'Showing ') . $totalPostPaged . ($lang == "es_ES" ? ' de' : ' of') ?>
                             <span id="ptotal"><?php echo $count; ?></span> <?php echo($lang == "es_ES" ? 'casas' : 'houses') ?>
                         </span>
                     </div>
-                    <div class="col-sm-8 col-md-9 text-center sort-select">
+                    <div class="col-sm-8 col-md-9 text-center sort-select no-paddingl">
                         <select class="pull-right" id="proporder" name="proporder">
                             <option value="" <?php echo ($propOrder === "") ? 'selected' : ''; ?>> <?php echo($lang == "es_ES" ? 'Ordenar por' : 'Order by') ?></option>
                             <option <?php echo ($propOrder === "0") ? 'selected' : ''; ?> value="0"><?php _e('A &#x25B2', 'hr') ?></option>
