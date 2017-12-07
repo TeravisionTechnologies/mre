@@ -251,7 +251,7 @@ jQuery(document).ready(function () {
     $(document).on('click', '.the-country', function (e) {
         $(this).closest('form').submit();
     });
-    
+
     // Filtering data
     $('#ala-properties').submit(function(){
         var filter = $('#ala-properties');

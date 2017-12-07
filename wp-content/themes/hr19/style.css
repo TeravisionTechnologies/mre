@@ -1385,10 +1385,7 @@ input:checked + .slider:before {
   background-color: #fff;
   box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
   border-radius: 2px 2px 0 0; }
-.xxx{
-  color:red;
-  font-size: 50px;
-}
+
 .autocomplete-suggestions {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -3264,7 +3261,7 @@ a[href^=tel] {
     #search-filters .navbar-collapse .navbar-nav .dropdown:nth-child(2) a {
       padding: 22px 10px; }
     #search-filters .navbar-collapse .navbar-nav .input-group .search-box {
-      width: 150px;
+      width: 128px;
       font-size: 12px;
       padding-left: 40px; }
       #search-filters .navbar-collapse .navbar-nav .input-group .search-box i {
@@ -3297,6 +3294,9 @@ a[href^=tel] {
   .hr-menu-language {
     height: auto !important;
     margin-bottom: 2.6041666667vw; }
+
+  .autocomplete-suggestions {
+    width: auto !important; }
 
   .agent-hero {
     margin-top: 10.4166666667vw;
