@@ -2607,6 +2607,9 @@ a[href^=tel] {
   .search .autocomplete-suggestions {
     width: auto !important; }
 
+  #search-map {
+    margin-top: 80px; }
+
   .agent-hero {
     margin-top: 80px;
     height: 450px;
