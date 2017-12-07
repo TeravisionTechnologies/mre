@@ -3364,7 +3364,10 @@ a.download-bro {
   form.invalid {
     margin-top: 30px; }
 
-  .wpcf7-validation-errors, .wpcf7-mail-sent-ng {
+  form.sent {
+    margin-top: 30px; }
+
+  .div.wpcf7-response-output {
     width: calc(100% - 30px);
     font-size: 9px !important; }
 
