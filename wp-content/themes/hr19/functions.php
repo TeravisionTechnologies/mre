@@ -189,7 +189,7 @@ date_default_timezone_set( 'America/New_York' );
 
 require_once( "vendor/autoload.php" );
 
-function get_mls() {
+//function get_mls() {
 	global $wpdb;
 	$agentids = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_ag_mls' ) );
 	$config   = new \PHRETS\Configuration;
@@ -209,7 +209,8 @@ function get_mls() {
 			'(STATUS = A)',
 			[
 				'Format' => 'COMPACT-DECODED',
-				'Limit'  => 30,
+				'Limit'  => 10,
+                'Offset' => 40
 			]
 		);
 	} else {
@@ -391,7 +392,10 @@ function get_mls() {
 					'_pr_WaterAccess' => $property['WaterAccess'],
 					'_pr_WaterfrontDescription' => $property['WaterfrontDescription'],
 					'_pr_WaterfrontPropertyYN' => $property['WaterfrontPropertyYN'],
-					'_pr_WaterView' => $property['WaterView']
+					'_pr_WaterView' => $property['WaterView'],
+					'_pr_EquipmentAppliances' => $property['EquipmentAppliances'],
+					'_pr_TaxAmount' => round( $property['TaxAmount'] ),
+					'_pr_TotalMortgage' => round( $property['TotalMortgage'] ),
 				)
 			);
 			$posted_property = wp_insert_post( $post_args );
@@ -562,7 +566,10 @@ function get_mls() {
 					'_pr_WaterAccess' => $property['WaterAccess'],
 					'_pr_WaterfrontDescription' => $property['WaterfrontDescription'],
 					'_pr_WaterfrontPropertyYN' => $property['WaterfrontPropertyYN'],
-					'_pr_WaterView' => $property['WaterView']
+					'_pr_WaterView' => $property['WaterView'],
+					'_pr_EquipmentAppliances' => $property['EquipmentAppliances'],
+					'_pr_TaxAmount' => round( $property['TaxAmount'] ),
+					'_pr_TotalMortgage' => round( $property['TotalMortgage'] ),
 				),
 			);
 			$posted_property = wp_update_post( $post_args );
@@ -584,7 +591,7 @@ function get_mls() {
 	}
 
 	$rets->Disconnect();
-}
+//}
 
 /*add_action( 'get_mls_properties', 'get_mls' );
 

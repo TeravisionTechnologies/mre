@@ -1,6 +1,10 @@
 <?php
 get_header();
 the_post();
+$referer = wp_get_referer();
+if (strpos($referer, "en") == false){
+	$lang = "es_ES";
+}
 $address = get_post_meta(get_the_ID(), '_pr_address', true);
 $city = get_post_meta(get_the_ID(), '_pr_city', true);
 $state = get_post_meta(get_the_ID(), '_pr_state', true);
@@ -18,6 +22,49 @@ $hoa = get_post_meta(get_the_ID(), '_pr_hoa', true);
 $yearbuilt = get_post_meta(get_the_ID(), '_pr_yearbuilt', true);
 $status = get_post_meta(get_the_ID(), '_pr_status', true);
 $sysid = get_post_meta(get_the_ID(), '_pr_matrixid', true);
+$taxes = get_post_meta(get_the_ID(), '_pr_TaxAmount', true);
+$mortgage = get_post_meta(get_the_ID(), '_pr_TotalMortgage', true);
+//nuevos campos
+$pets = get_post_meta(get_the_ID(), '_pr_PetsAllowedYN', true);
+$cooling = get_post_meta(get_the_ID(), '_pr_CoolingDescription', true);
+$constructype = get_post_meta(get_the_ID(), '_pr_ConstructionType', true);
+$floordesc = get_post_meta(get_the_ID(), '_pr_FloorDescription', true);
+$heating = get_post_meta(get_the_ID(), '_pr_HeatingDescription', true);
+$restrictions = get_post_meta(get_the_ID(), '_pr_Restrictions', true);
+$includes = get_post_meta(get_the_ID(), '_pr_MaintenanceIncludes', true);
+$internet = get_post_meta(get_the_ID(), '_pr_InternetYN', true);
+$parking = get_post_meta(get_the_ID(), '_pr_ParkingDescription', true);
+$view = get_post_meta(get_the_ID(), '_pr_UnitView', true);
+$balcony = get_post_meta(get_the_ID(), '_pr_BalconyPorchandorPatioYN', true);
+$amenities = get_post_meta(get_the_ID(), '_pr_Amenities', true);
+$security = get_post_meta(get_the_ID(), '_pr_SecurityInformation', true);
+$appliances = get_post_meta(get_the_ID(), '_pr_EquipmentAppliances', true);
+$interior = get_post_meta(get_the_ID(), '_pr_InteriorFeatures', true);
+$cableinfo = get_post_meta(get_the_ID(), '_pr_CableAvailableYN', true);
+$poolinfo = get_post_meta(get_the_ID(), '_pr_PoolYN', true);
+
+if( $pets == "1" ){
+	$petsinfo = 'Pets allowed';
+} else{
+	$petsinfo = 'No Pets allowed';
+}
+if( $internet == "1" ){
+	$interinfo = "Internet";
+}
+if( $balcony == "1" ){
+	$balcon = "Balcony Porchandor Patio";
+}
+if( $cableinfo == "1" ){
+	$cable = 'Cable';
+}
+if( $poolinfo == "1" ){
+	$pool = 'Pool';
+}
+
+var_dump($pets);
+
+//fin nuevos campos
+
 $url = wp_upload_dir();
 $directory = $url['basedir'] . '/photos/' . $sysid . '/';
 $images = glob($directory . "*.jpg");
@@ -27,10 +74,6 @@ $bgimg = $url['baseurl'].'/photos/'.$sysid.'/1.jpg';
 $headers  = get_headers($bgimg, 1);
 $bgimg    = $headers['Content-Length'];
 $bgimg = (int)$bgimg;
-$referer = wp_get_referer();
-if (strpos($referer, "en") == false){
-    $lang = "es_ES";
-}
 ?>
     <div class="breadcrumb-info">
         <div class="container">
@@ -89,7 +132,11 @@ if (strpos($referer, "en") == false){
                 <div class="price-txt"><?php if (!empty($price)) {
                         echo '$' . number_format($price, 0, '.', ',');
                     } ?></div>
-                <div class="sm-text"><?php echo ( $lang == "es_ES" ? 'Estimado de hipoteca' : 'Mortgage estimate' ) ?> $603/<?php echo ( $lang == "es_ES" ? 'mes' : 'month' ) ?></div>
+                <div class="sm-text">
+                    <?php echo ( $lang == "es_ES" ? 'Estimado de hipoteca' : 'Mortgage estimate' ) ?>
+                    <?php echo $mortgage ?>
+                    <?php echo ( $lang == "es_ES" ? '/mes' : '/month' ) ?>
+                </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-5 paddingl30 borderl">
                 <div class="md-text">
@@ -184,22 +231,26 @@ if (strpos($referer, "en") == false){
                                             <div><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
                                                     title="<?php echo ( $lang == "es_ES" ? 'La tarifa de asociación de propietarios (HOA) es una cantidad de dinero que deben pagar mensualmente los propietarios de ciertos tipos de propiedades residenciales para ayudar a mantener y mejorar las propiedades en la asociación.' : 'The HOA is an amount of money that owners of certain types of residential properties must pay monthly to help maintain and improve properties in the association.' ) ?>"></i> <?php echo ( $lang == "es_ES" ? 'Cuotas de HOA:' : 'HOA Fees' ) ?>
                                             </div>
-                                            <div class="info"><?php if (!empty($hoa)) {
-                                                    echo $hoa . ( $lang == "es_ES" ? '/mes' : '/month' );
-                                                } else {
-                                                    echo 'N/A';
-                                                } ?></div>
+                                            <div class="info">
+                                                <?php
+                                                    echo '$' . $hoa . ( $lang == "es_ES" ? '/mes' : '/month' );
+                                                ?>
+                                            </div>
                                         </div>
                                         <div class="col-xs-4 col-sm-2 col-md-2 feature">
                                             <div><?php echo ( $lang == "es_ES" ? 'Impuestos' : 'Taxes' ) ?></div>
-                                            <div class="info">$ 42,735</div>
+                                            <div class="info"><?php if (!empty($taxes)) {
+		                                            echo '$' . number_format($taxes, 0, '.', ',');
+	                                            } else {
+                                                    echo '0';
+                                                } ?></div>
                                         </div>
                                         <div class="col-xs-4 col-sm-3 col-md-2 feature">
                                             <div><?php echo ( $lang == "es_ES" ? 'Año de construcción:' : 'Year of construction:' ) ?></div>
                                             <div class="info"><?php if (!empty($yearbuilt)) {
                                                     echo $yearbuilt;
                                                 } else {
-                                                    echo 'N/A';
+                                                    echo '--';
                                                 } ?></div>
                                         </div>
                                         <div class="col-xs-4 col-sm-2 col-md-2 feature">
@@ -207,7 +258,7 @@ if (strpos($referer, "en") == false){
                                             <div class="info"><?php if (!empty($community)) {
                                                     echo $community;
                                                 } else {
-                                                    echo 'N/A';
+                                                    echo '--';
                                                 } ?></div>
                                         </div>
                                         <div class="col-xs-4 col-sm-2 col-md-3 feature">
@@ -215,39 +266,105 @@ if (strpos($referer, "en") == false){
                                             <div class="info"><?php if (!empty($subdiv)) {
                                                     echo $subdiv;
                                                 } else {
-                                                    echo 'N/A';
+                                                    echo '--';
                                                 } ?></div>
                                         </div>
                                     </div>
                                     <h6><?php echo ( $lang == "es_ES" ? 'Otras características:' : 'Additional features:' ) ?></h6>
                                     <ul>
-                                        <li>Condición: nueva construcción</li>
-                                        <li>Construcción: estuco de bloque de hormigón</li>
-                                        <li>Energía: tormenta de windows</li>
-                                        <li>Exterior: luces al aire libre</li>
-                                        <li>General: se permiten mascotas</li>
-                                        <li>Calor / Frío: aire acondicionado central, calefacción central, agua
-                                            caliente,
-                                            calefacción eléctrica
-                                        </li>
-                                        <li>Incluye: cocina y horno a gas, horno microondas, lavavajillas, frigorífico,
-                                            lavadora, secadora de ropa
-                                        </li>
-                                        <li>Interior: despensa, isla de cocina, sistema de intercomunicación, closet(s)
-                                            donde se puede caminar
-                                        </li>
-                                        <li>Estacionamiento: unido, de visitas, puerta automática de garaje</li>
-                                        <li>Recreación: piscina, piscina climatizada, piscina enterrada, área de piscina
-                                            vallada, barbacoa
-                                        </li>
-                                        <li>Habitaciones: habitación familiar, comedor formal, dormitorio principal
-                                            arriba,
-                                            gran salón, vestíbulo, servicio de mucama o suite de invitados
-                                        </li>
-                                        <li>Servicios: sistema de alcantarillado séptico, abastecimiento de agua
-                                            público,
-                                            cable de tv disponible
-                                        </li>
+                                        <?php if( !empty( $constructype ) ) { ?>
+                                            <li>
+                                                <?php echo ( $lang == "es_ES" ? 'Construcción:' : 'Construction:' ) ?>
+                                                <?php echo $constructype.', ' ?>
+                                                <?php echo $floordesc ?>
+                                            </li>
+                                        <?php } ?>
+
+                                        <?php if( !empty( $interior ) ) { ?>
+                                            <li>Interior:
+                                                <?php echo $interior ?>
+                                            </li>
+                                        <?php } ?>
+
+                                        <?php if( !empty( $view ) or  !empty( $balcon ) ) { ?>
+                                            <li>
+                                                Exterior:
+                                                <?php echo $view ?>
+                                                <?php echo $balcon ?>
+                                            </li>
+                                        <?php } ?>
+
+                                        <?php if( !empty( $petsinfo ) ) { ?>
+                                            <li>
+                                                General: <?php echo $petsinfo ?>
+                                            </li>
+                                        <?php } ?>
+
+                                        <?php if( !empty( $cooling ) or !empty( $heating ) ) { ?>
+                                            <li>
+                                                <?php echo ( $lang == "es_ES" ? 'Calor / Frío:' : 'Heating / Cooling:' ) ?>
+                                                <?php echo $cooling.' ' ?>
+                                                <?php echo $heating ?>
+                                            </li>
+                                        <?php } ?>
+
+                                        <?php if( !empty( $amenities ) ) { ?>
+                                            <li>
+                                                <?php echo ( $lang == "es_ES" ? 'Comodidades:' : 'Amenities:' ) ?>
+                                                <?php echo $amenities ?>
+                                            </li>
+                                        <?php } ?>
+
+                                        <?php if( !empty( $appliances ) ) { ?>
+                                            <li>
+                                                <?php echo ( $lang == "es_ES" ? 'Incluye:' : 'Appliances:' ) ?>
+                                                <?php echo $appliances ?>
+                                            </li>
+                                        <?php } ?>
+
+                                        <?php if( !empty( $parking ) ) { ?>
+                                            <li>
+                                                <?php echo ( $lang == "es_ES" ? 'Estacionamiento:' : 'Parking:' ) ?>
+                                                <?php echo $parking ?>
+                                            </li>
+                                        <?php } ?>
+
+                                        <?php if( !empty( $pool ) ) { ?>
+                                            <li>
+                                                <?php echo ( $lang == "es_ES" ? 'Recreación:' : 'Recreation:' ) ?>
+                                                <?php echo $pool ?>
+                                            </li>
+                                        <?php } ?>
+
+                                        <?php if( !empty( $interinfo ) or  !empty( $cable ) ) { ?>
+                                            <li>
+                                                <?php echo ( $lang == "es_ES" ? 'Servicios:' : 'Services:' ) ?>
+                                                <?php echo $interinfo ?>
+                                                <?php echo $cable ?>
+                                            </li>
+                                        <?php } ?>
+
+                                        <?php if( !empty( $security ) ) { ?>
+                                            <li>
+                                                <?php echo ( $lang == "es_ES" ? 'Seguridad:' : 'Security:' ) ?>
+                                                <?php echo $security ?>
+                                            </li>
+                                        <?php } ?>
+
+                                        <?php if( !empty( $includes ) or  !empty( $restrictions ) ) { ?>
+                                            <li>
+                                                <?php echo ( $lang == "es_ES" ? 'Asociación de Propietarios:' : 'Homeowners Association:' ) ?>
+
+                                                <?php if( !empty($includes)){
+                                                     echo ( $lang == "es_ES" ? 'El mantenimiento incluye : ' : 'Maintenance includes : ' ) .  $includes;
+                                                } ?>
+
+                                                <?php if( !empty($restrictions)){
+	                                                echo ( $lang == "es_ES" ? 'Restricciones: ' : 'Restrictions: ' ) .  $restrictions;
+                                                } ?>
+
+                                            </li>
+                                        <?php } ?>
                                     </ul>
                                 </div>
                             </div>

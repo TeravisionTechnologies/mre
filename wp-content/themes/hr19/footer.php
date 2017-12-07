@@ -21,7 +21,6 @@ $footer_info     = get_post_meta( $footer_query[0]->ID );
 $social_networks = get_post_meta( $footer_query[0]->ID, '_hf_social_networks', true );
 $lang = get_locale();
 $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-var_dump($menuid);
 ?>
 <?php if ( ! is_404() ) { ?>
 <section class="col-xs-12 hr-partners-section text-center">
