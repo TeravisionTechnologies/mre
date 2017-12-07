@@ -370,14 +370,17 @@ jQuery(document).ready(function ($) {
                 var text = '';
 
                 if(status == OverlappingMarkerSpiderfier.markerStatus.SPIDERFIED){
-                    var iconSize = new google.maps.Size(30, 41);
+                    var iconSize = new google.maps.Size(36, 35);
                     marker.setIcon({
-                        url: 'http://www.clker.com/cliparts/8/6/U/z/k/o/google-maps-marker-for-residencelamontagne-hi.png',
+                        url: hr19.root + '/assets/icon-plus-group.svg',
                         size: iconSize,
                         scaledSize: iconSize,
+                        labelOrigin: new google.maps.Point(17, 25),
+                        origin: new google.maps.Point(0.5, -10),
                     });
                     text = marker.price;
-                    size = "6px";
+                    color = '#ffffff';
+                    size = "7px";
                 }
 
                 if(status == OverlappingMarkerSpiderfier.markerStatus.SPIDERFIABLE){
@@ -390,6 +393,7 @@ jQuery(document).ready(function ($) {
 
                     text = "More...";
                     size = "10px";
+                    color = '#ffffff';
                 }
 
                 if(status == OverlappingMarkerSpiderfier.markerStatus.UNSPIDERFIABLE){
@@ -401,11 +405,13 @@ jQuery(document).ready(function ($) {
                     });
                     text = marker.price;
                     size = "10px";
+                    color = '#ffffff';
                 }
 
                 marker.setLabel({
                     text: text,
-                    color: '#ffffff',
+                    color: color,
+                    fontWeight: "bold",
                     fontFamily: 'Montserrat-Regular',
                     fontSize: size,
                 });
