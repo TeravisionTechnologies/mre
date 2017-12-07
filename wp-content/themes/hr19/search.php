@@ -1,15 +1,111 @@
 <?php
 get_header();
-$s             = get_query_var( 's' );
-$propstatus    = get_query_var( 'property_status' );
-$url           = wp_upload_dir();
+$s = get_query_var('s');
+$propstatus = get_query_var('property_status');
+$roomsFilter = get_query_var('rooms');
+$propTypeFilter = get_query_var('proptype');
+$bathsFilter = get_query_var('baths');
+$max = get_query_var('max');
+$min = get_query_var('min');
+$max = ( strpos($max,',') > 0)? str_replace(',','', $max): $max;
+$min = ( strpos($min,',') > 0)? str_replace(',','', $min): $min;
+$sort = get_query_var('propsort');
+$orderBy = get_query_var('proporderby');
+$propOrder = get_query_var('proporder');
+$showowner = get_query_var('showowner');
+$url = wp_upload_dir();
 $search_string = $s;
-$lang          = get_locale();
-$total=new WP_Query( array('post_type'=> 'property','showposts'=> -1,'_meta_or_title'=> $search_string,'meta_query'=> array('relation'=> 'AND',array('key'=> '_pr_transaction','value'=> $propstatus,'compare'=> '=',),array('relation'=> 'OR',array('key'=> '_pr_city','value'=> $search_string,'compare'=> '=',),array('key'=> '_pr_address','value'=> $search_string,'compare'=> '=',),array('key'=> '_pr_postalcode','value'=> $search_string,'compare'=> '=',)))) ); $count=$total->post_count;
+$lang = get_locale();
+$propTypeArray = explode(',', $propTypeFilter);
+$args['meta_query'] = array('relation' => 'AND');
+if ((isset($orderBy) && $orderBy == "date") && (isset($sort) && $sort == "ASC")) {
+	$orderBy = 'date';
+	$sort = 'ASC';
+} elseif ((isset($orderBy) && $orderBy == "date") && (isset($sort) && $sort == "DESC")) {
+	$orderBy = 'date';
+	$sort = 'DESC';
+} elseif ((isset($orderBy) && $orderBy == "_pr_current_price") && (isset($sort) && $sort == "ASC")) {
+	$orderBy = '_pr_current_price';
+	$sort = 'DESC';
+} else {
+	$orderBy = '_pr_current_price';
+	$sort = 'ASC';
+}
+if (isset($roomsFilter) && $roomsFilter) {
+	$args['meta_query'][] = array(
+		'key' => '_pr_room_count',
+		'value' => $roomsFilter,
+		'compare' => '='
+	);
+}
+if (isset($propTypeFilter) && $propTypeFilter) {
+	$args['meta_query'][] = array(
+		'key' => '_pr_type_of_property',
+		'value' => $propTypeFilter,
+		'compare' => 'IN'
+	);
+}
+if (isset($bathsFilter) && $bathsFilter) {
+	$args['meta_query'][] = array(
+		'key' => '_pr_baths_total',
+		'value' => $bathsFilter,
+		'compare' => '='
+	);
+}
+if (isset($showowner) && $showowner) {
+	$args['meta_query'][] = array(
+		'key' => '_pr_owner',
+		'value' => $showowner,
+		'compare' => '='
+	);
+}
+
+// if both minimum price and maximum price are specified we will use BETWEEN comparison
+if (isset($min) && $min && isset($max) && $max) {
+	$args['meta_query'][] = array(
+		'key' => '_pr_current_price',
+		'value' => array($min, $max),
+		'type' => 'NUMERIC',
+		'compare' => 'between'
+	);
+} else {
+	// if only min price is set
+	if (isset($min) && $min) {
+		$args['meta_query'][] = array(
+			'key' => '_pr_current_price',
+			'value' => $min,
+			'type' => 'NUMERIC',
+			'compare' => '>='
+		);
+	}
+
+	// if only max price is set
+	if (isset($max) && $max) {
+		$args['meta_query'][] = array(
+			'key' => '_pr_current_price',
+			'value' => $max,
+			'type' => 'NUMERIC',
+			'compare' => '<='
+		);
+	}
+}
+$args['meta_query'][] = array('relation' => 'OR',
+	array('key' => '_pr_city', 'value' => $search_string, 'compare' => '=',),
+	array('key' => '_pr_address', 'value' => $search_string, 'compare' => '=',),
+	array('key' => '_pr_postalcode', 'value' => $search_string, 'compare' => '=',)
+);
+$total = new WP_Query(array(
+		'post_type' => 'property',
+		'showposts' => -1,
+		'_meta_or_title' => $search_string,
+		'meta_query' => $args
+	)
+);
+$count = $total->post_count;
 wp_reset_postdata();
 wp_reset_query();
 ?>
-    <form id="property-search-top" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="post" role="form"
+    <form id="property-search-top" action="<?php echo site_url() ?>" method="get" role="form"
           data-toggle="validator">
 
         <nav id="search-filters" class="navbar navbar-default navbar-fixed-top">
@@ -24,64 +120,66 @@ wp_reset_query();
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <input type="hidden" name="post_type[]" value="property">
+                    <input type="hidden" id="firstTimeLoad" name="firstTimeLoad" value="1">
+                    <input type="hidden" name="property_status" value="<?php echo $propstatus; ?>">
                     <ul class="nav navbar-nav">
                         <li>
                             <div class="input-group">
                                 <input type="search" class="form-control search-box" id="s" name="s"
-                                       placeholder="<?php echo( $lang == "es_ES" ? 'Buscar' : 'Search' ) ?>"
+                                       placeholder="<?php echo($lang == "es_ES" ? 'Buscar' : 'Search') ?>"
                                        value="<?php echo $s; ?>" required>
                                 <i class="fa fa-search"></i>
                             </div>
                         </li>
                         <li class="dropdown">
-							<?php if ( $propstatus == "Sale" ) { ?>
+							<?php if ($propstatus == "Sale") { ?>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                    aria-haspopup="true"
-                                   aria-expanded="false"><?php echo( $lang == "es_ES" ? 'Compra' : 'Buy' ) ?> <span
+                                   aria-expanded="false"><?php echo($lang == "es_ES" ? 'Compra' : 'Buy') ?> <span
                                             class="caret"></span></a>
                                 <ul id="transction-dd" class="dropdown-menu clickdd">
                                     <li><a href="#"
-                                           data-value="Sale"><?php echo( $lang == "es_ES" ? 'Compra' : 'Buy' ) ?></a>
+                                           data-value="Sale"><?php echo($lang == "es_ES" ? 'Compra' : 'Buy') ?></a>
                                     </li>
                                     <li><a href="#"
-                                           data-value="Lease"><?php echo( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a>
+                                           data-value="Lease"><?php echo($lang == "es_ES" ? 'Alquiler' : 'Rent') ?></a>
                                     </li>
                                     <li><a href="#"
-                                           data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Pre-sale' ) ?></a>
+                                           data-value="Presale"><?php echo($lang == "es_ES" ? 'Preventa' : 'Pre-sale') ?></a>
                                     </li>
                                 </ul>
 							<?php } ?>
-							<?php if ( $propstatus == "Lease" ) { ?>
+							<?php if ($propstatus == "Lease") { ?>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                    aria-haspopup="true"
-                                   aria-expanded="false"><?php echo( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?> <span
+                                   aria-expanded="false"><?php echo($lang == "es_ES" ? 'Alquiler' : 'Rent') ?> <span
                                             class="caret"></span></a>
                                 <ul id="transction-dd" class="dropdown-menu clickdd">
                                     <li><a href="#"
-                                           data-value="Sale"><?php echo( $lang == "es_ES" ? 'Compra' : 'Buy' ) ?></a>
+                                           data-value="Sale"><?php echo($lang == "es_ES" ? 'Compra' : 'Buy') ?></a>
                                     </li>
                                     <li><a href="#"
-                                           data-value="Lease"><?php echo( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a>
+                                           data-value="Lease"><?php echo($lang == "es_ES" ? 'Alquiler' : 'Rent') ?></a>
                                     </li>
                                     <li><a href="#"
-                                           data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Pre-sale' ) ?></a>
+                                           data-value="Presale"><?php echo($lang == "es_ES" ? 'Preventa' : 'Pre-sale') ?></a>
                                     </li>
                                 </ul>
 							<?php } ?>
-							<?php if ( $propstatus == "Presale" ) { ?>
+							<?php if ($propstatus == "Presale") { ?>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                    aria-haspopup="true"
-                                   aria-expanded="false"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?>
+                                   aria-expanded="false"><?php echo($lang == "es_ES" ? 'Preventa' : 'Presale') ?>
                                     <span class="caret"></span></a>
                                 <ul id="transction-dd" class="dropdown-menu clickdd">
                                     <li><a href="#"
-                                           data-value="Sale"><?php echo( $lang == "es_ES" ? 'Compra' : 'Buy' ) ?></a>
+                                           data-value="Sale"><?php echo($lang == "es_ES" ? 'Compra' : 'Buy') ?></a>
                                     </li>
                                     <li><a href="#"
-                                           data-value="Lease"><?php echo( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a>
+                                           data-value="Lease"><?php echo($lang == "es_ES" ? 'Alquiler' : 'Rent') ?></a>
                                     </li>
                                     <li><a href="#"
-                                           data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Pre-sale' ) ?></a>
+                                           data-value="Presale"><?php echo($lang == "es_ES" ? 'Preventa' : 'Pre-sale') ?></a>
                                     </li>
                                 </ul>
 							<?php } ?>
@@ -89,23 +187,26 @@ wp_reset_query();
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true"
-                               aria-expanded="false"><?php echo( $lang == "es_ES" ? 'Tipo <br>de vivienda' : 'Property <br>type' ) ?>
+                               aria-expanded="false"><?php echo($lang == "es_ES" ? 'Tipo <br>de vivienda' : 'Property <br>type') ?>
                                 <span class="caret"></span></a>
                             <ul id="property-type-dd" class="dropdown-menu">
                                 <li>
                                     <div class="checkbox">
-                                        <label><input type="checkbox" value="Single"
-                                                      class=""><?php echo( $lang == "es_ES" ? 'Unifamiliar' : 'Single' ) ?>
+                                        <label><input type="checkbox"
+                                                      value="Single" <?php echo (in_array('Single', $propTypeArray)) ? 'checked' : ''; ?>
+                                                      class=""><?php echo($lang == "es_ES" ? 'Unifamiliar' : 'Single') ?>
                                         </label>
                                     </div>
                                     <div class="checkbox">
-                                        <label><input type="checkbox" value="Condo"
-                                                      class=""><?php echo( $lang == "es_ES" ? 'Condominios/Townhouses' : 'Condos/Townhouses' ) ?>
+                                        <label><input type="checkbox"
+                                                      value="Condo" <?php echo (in_array('Condo', $propTypeArray)) ? 'checked' : ''; ?>
+                                                      class=""><?php echo($lang == "es_ES" ? 'Condominios/Townhouses' : 'Condos/Townhouses') ?>
                                         </label>
                                     </div>
                                     <div class="checkbox">
-                                        <label><input type="checkbox" value="Mobile"
-                                                      class=""><?php echo( $lang == "es_ES" ? 'Casas móviles' : 'Mobile homes' ) ?>
+                                        <label><input type="checkbox"
+                                                      value="Mobile" <?php echo (in_array('Mobile', $propTypeArray)) ? 'checked' : ''; ?>
+                                                      class=""><?php echo($lang == "es_ES" ? 'Casas móviles' : 'Mobile homes') ?>
                                         </label>
                                     </div>
                                     <!--<div class="checkbox">
@@ -117,8 +218,9 @@ wp_reset_query();
                                     </label>
                                 </div>-->
                                     <div class="checkbox">
-                                        <label><input type="checkbox" value="Multifamily"
-                                                      class=""><?php echo( $lang == "es_ES" ? 'Multifamiliar' : 'Multifamily' ) ?>
+                                        <label><input type="checkbox"
+                                                      value="Multifamily" <?php echo (in_array('Multifamily', $propTypeArray)) ? 'checked' : ''; ?>
+                                                      class=""><?php echo($lang == "es_ES" ? 'Multifamiliar' : 'Multifamily') ?>
                                         </label>
                                     </div>
                                 </li>
@@ -127,7 +229,7 @@ wp_reset_query();
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true"
-                               aria-expanded="false"><?php echo( $lang == "es_ES" ? 'Rango <br>de precio' : 'Price <br>range' ) ?>
+                               aria-expanded="false"><?php echo($lang == "es_ES" ? 'Rango <br>de precio' : 'Price <br>range') ?>
                                 <span class="caret"></span></a>
                             <ul id="price-dd" class="dropdown-menu">
                                 <div class="col-md-12">
@@ -135,12 +237,12 @@ wp_reset_query();
                                         <div class="input-group col-xs-6 col-sm-6 col-md-6 pull-left">
                                             <span class="input-group-addon" name="min">$</span>
                                             <input type="text" id="min" name="min" class="form-control"
-                                                   placeholder="No min">
+                                                   placeholder="No min" value="<?php echo $min; ?>">
                                         </div>
                                         <div class="input-group col-xs-6 col-sm-6 col-md-6 pull-left">
                                             <span class="input-group-addon" name="max">$</span>
                                             <input type="text" id="max" name="max" class="form-control"
-                                                   placeholder="No max">
+                                                   placeholder="No max" value="<?php echo $max; ?>">
                                         </div>
                                     </div>
                                     <div class="row prices">
@@ -166,52 +268,85 @@ wp_reset_query();
                                     </div>
                                 </div>
                                 <li><a href="#" data-value="" id="any-price"
-                                       class="text-center"><?php echo( $lang == "es_ES" ? 'Cualquier precio' : 'Any price' ) ?></a>
+                                       class="text-center"><?php echo($lang == "es_ES" ? 'Cualquier precio' : 'Any price') ?></a>
                                 </li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true"
-                               aria-expanded="true"><?php echo( $lang == "es_ES" ? 'Nro. <br>de habitaciones' : 'Number <br>of rooms' ) ?>
-                                <span
-                                        class="caret"></span></a>
+							<?php if (!$roomsFilter) {
+								?>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true"
+                                   aria-expanded="true"><?php echo($lang == "es_ES" ? 'Nro. <br>de habitaciones' : 'Number <br>of rooms') ?>
+                                    <span
+                                            class="caret"></span></a>
+							<?php } else {
+								if ($roomsFilter > 1) {
+									$roomInputText = $roomsFilter . '+ ' . ($lang == "es_ES" ? 'habs.' : 'rooms.');
+								} elseif ($roomsFilter == 1) {
+									$roomInputText = $lang == "es_ES" ? 'Estudio' : 'Studio';
+								} else {
+									$roomInputText = $lang == "es_ES" ? 'Cualquiera' : 'Any';
+								}
+								?>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true"
+                                   aria-expanded="true"><?php echo $roomInputText; ?>
+                                    <span
+                                            class="caret"></span></a>
+							<?php } ?>
+
                             <ul id="rooms-dd" class="dropdown-menu clickdd">
                                 <li><a role="button"
-                                       data-value=""><?php echo( $lang == "es_ES" ? 'Cualquiera' : 'Any' ) ?></a></li>
+                                       data-value=""><?php echo($lang == "es_ES" ? 'Cualquiera' : 'Any') ?></a></li>
                                 <li><a role="button"
-                                       data-value="1"><?php echo( $lang == "es_ES" ? 'Estudio' : 'Studio' ) ?></a></li>
+                                       data-value="1"><?php echo($lang == "es_ES" ? 'Estudio' : 'Studio') ?></a></li>
                                 <li><a role="button"
-                                       data-value="1">1+ <?php echo( $lang == "es_ES" ? 'habs.' : 'rooms' ) ?></a></li>
+                                       data-value="1">1+ <?php echo($lang == "es_ES" ? 'habs.' : 'rooms') ?></a></li>
                                 <li><a role="button"
-                                       data-value="2">2+ <?php echo( $lang == "es_ES" ? 'habs.' : 'rooms' ) ?></a></li>
+                                       data-value="2">2+ <?php echo($lang == "es_ES" ? 'habs.' : 'rooms') ?></a></li>
                                 <li><a role="button"
-                                       data-value="3">3+ <?php echo( $lang == "es_ES" ? 'habs.' : 'rooms' ) ?></a></li>
+                                       data-value="3">3+ <?php echo($lang == "es_ES" ? 'habs.' : 'rooms') ?></a></li>
                                 <li><a role="button"
-                                       data-value="4">4+ <?php echo( $lang == "es_ES" ? 'habs.' : 'rooms' ) ?></a></li>
+                                       data-value="4">4+ <?php echo($lang == "es_ES" ? 'habs.' : 'rooms') ?></a></li>
                                 <li><a role="button"
-                                       data-value="5">5+ <?php echo( $lang == "es_ES" ? 'habs.' : 'rooms' ) ?></a></li>
+                                       data-value="5">5+ <?php echo($lang == "es_ES" ? 'habs.' : 'rooms') ?></a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true"
-                               aria-expanded="false"><?php echo( $lang == "es_ES" ? 'Nro. <br>de baños' : 'Number <br>of baths' ) ?>
-                                <span
-                                        class="caret"></span></a>
+							<?php if (!$bathsFilter) {
+								?>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true"
+                                   aria-expanded="true"><?php echo($lang == "es_ES" ? 'Nro. <br>de habitaciones' : 'Number <br>of rooms') ?>
+                                    <span
+                                            class="caret"></span></a>
+							<?php } else {
+								if ($bathsFilter >= 1) {
+									$bathsInputText = $bathsFilter . '+ ' . ($lang == "es_ES" ? 'baños.' : 'baths.');
+								} else {
+									$bathsInputText = $lang == "es_ES" ? 'Cualquiera' : 'Any';
+								}
+								?>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true"
+                                   aria-expanded="true"><?php echo $bathsInputText; ?>
+                                    <span
+                                            class="caret"></span></a>
+							<?php } ?>
                             <ul id="baths-dd" class="dropdown-menu clickdd">
                                 <li><a role="button"
-                                       data-value=""><?php echo( $lang == "es_ES" ? 'Cualquiera' : 'Any' ) ?></a></li>
+                                       data-value=""><?php echo($lang == "es_ES" ? 'Cualquiera' : 'Any') ?></a></li>
                                 <li><a role="button"
-                                       data-value="1">1+ <?php echo( $lang == "es_ES" ? 'baños' : 'baths' ) ?></a></li>
+                                       data-value="1">1+ <?php echo($lang == "es_ES" ? 'baños' : 'baths') ?></a></li>
                                 <li><a role="button"
-                                       data-value="2">2+ <?php echo( $lang == "es_ES" ? 'baños' : 'baths' ) ?></a></li>
+                                       data-value="2">2+ <?php echo($lang == "es_ES" ? 'baños' : 'baths') ?></a></li>
                                 <li><a role="button"
-                                       data-value="3">3+ <?php echo( $lang == "es_ES" ? 'baños' : 'baths' ) ?></a></li>
+                                       data-value="3">3+ <?php echo($lang == "es_ES" ? 'baños' : 'baths') ?></a></li>
                                 <li><a role="button"
-                                       data-value="4">4+ <?php echo( $lang == "es_ES" ? 'baños' : 'baths' ) ?></a></li>
+                                       data-value="4">4+ <?php echo($lang == "es_ES" ? 'baños' : 'baths') ?></a></li>
                                 <li><a role="button"
-                                       data-value="5">5+ <?php echo( $lang == "es_ES" ? 'baños' : 'baths' ) ?></a></li>
+                                       data-value="5">5+ <?php echo($lang == "es_ES" ? 'baños' : 'baths') ?></a></li>
                             </ul>
                         </li>
                         <li>
@@ -219,13 +354,15 @@ wp_reset_query();
                         </li>
                     </ul>
                     <input type="hidden" name="action" value="myfilter">
-                    <input type="hidden" id="transaction" name="transaction" value="<?php echo $propstatus; ?>">
+                    <input type="hidden" id="transaction" name="property_status" value="<?php echo $propstatus; ?>">
+                    <input type="hidden" id="showowner" name="showowner" value="<?php echo $showowner; ?>">
                     <input type="hidden" id="price" name="price" value="">
-                    <input type="hidden" id="rooms" name="rooms" value="">
-                    <input type="hidden" id="baths" name="baths" value="">
-                    <input type="hidden" id="proptype" name="proptype" value="">
-                    <input type="hidden" id="proporderby" name="proporderby" value="">
-                    <input type="hidden" id="propsort" name="propsort" value="">
+                    <input type="hidden" id="rooms" name="rooms" value="<?php echo $roomsFilter; ?>">
+                    <input type="hidden" id="baths" name="baths" value="<?php echo $bathsFilter; ?>">
+                    <input type="hidden" id="proptype" name="proptype" value="<?php echo $propTypeFilter; ?>">
+                    <input type="hidden" id="proporderby" name="proporderby" value="<?php echo $orderBy; ?>">
+                    <input type="hidden" id="propsort" name="propsort" value="<?php echo $sort; ?>">
+                    <input type="hidden" id="proporder2" name="proporder2" value="<?php echo $propOrder; ?>">
                 </div>
             </div>
         </nav>
@@ -235,38 +372,54 @@ wp_reset_query();
             <div id="loader"><i class="fa fa-spinner fa-pulse fa-fw"></i></div>
         </div>
 
+		<?php
+		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+		$hr = true;
+		$query = new WP_Query(array(
+			'post_type' => 'property',
+			'showposts' => 9,
+			'paged' => get_query_var('paged'),
+			'_meta_or_title' => $search_string,
+			'meta_key' => ($orderBy != 'date')? $orderBy:'',
+			'orderby' => ($orderBy == 'date')? $orderBy : 'meta_value_num',
+			'order' => $sort,
+			'meta_query' => $args
+		));
+		$totalPostPaged = $query->post_count;
+		?>
         <div class="container property-list">
             <div class="row">
                 <div class="property-sorting">
                     <div class="col-sm-4 col-md-3">
                         <span class="state-search"><?php echo $s; ?></span>
                         <span class="results-search">
-                            <?php echo( $lang == "es_ES" ? 'Mostrando ' : 'Showing ' ) . '9' . ( $lang == "es_ES" ? ' de' : ' of' ) ?>
-                            <span id="ptotal"><?php echo $count; ?></span> <?php echo( $lang == "es_ES" ? 'casas' : 'houses' ) ?>
+                            <?php echo ($lang == "es_ES" ? 'Mostrando ' : 'Showing ') . $totalPostPaged . ($lang == "es_ES" ? ' de' : ' of') ?>
+                            <span id="ptotal"><?php echo $count; ?></span> <?php echo($lang == "es_ES" ? 'casas' : 'houses') ?>
                         </span>
                     </div>
                     <div class="col-sm-8 col-md-9 text-center sort-select">
                         <select class="pull-right" id="proporder" name="proporder">
-                            <option selected><?php echo( $lang == "es_ES" ? 'Ordenar por' : 'Order by' ) ?></option>
-                            <option value="0"><?php _e( 'A &#x25B2', 'hr' ) ?></option>
-                            <option value="1"><?php _e( 'D &#x25BC;', 'hr' ) ?></option>
-                            <option value="2"><?php echo( $lang == "es_ES" ? 'Precio más bajo' : 'Lower price' ) ?></option>
-                            <option value="3"><?php echo( $lang == "es_ES" ? 'Precio más alto' : 'Highest price' ) ?></option>
+                            <option <?php echo (!$propOrder) ? 'selected' : ''; ?> ><?php echo($lang == "es_ES" ? 'Ordenar por' : 'Order by') ?></option>
+                            <option <?php echo ($propOrder == 0) ? 'selected' : ''; ?> value="0"><?php _e('A &#x25B2', 'hr') ?></option>
+                            <option <?php echo ($propOrder == 1) ? 'selected' : ''; ?> value="1"><?php _e('D &#x25BC;', 'hr') ?></option>
+                            <option <?php echo ($propOrder == 2) ? 'selected' : ''; ?> value="2"><?php echo($lang == "es_ES" ? 'Precio más bajo' : 'Lower price') ?></option>
+                            <option <?php echo ($propOrder == 3) ? 'selected' : ''; ?> value="3"><?php echo($lang == "es_ES" ? 'Precio más alto' : 'Highest price') ?></option>
                         </select>
                         <div class="pull-right choose-search">
                             <div class="radio radio-inline radio-success">
-                                <input type="radio" id="showowner1" value="HR19" name="showowner" class="styled">
-                                <label for="inlineRadio1"><?php echo( $lang == "es_ES" ? 'Solo HR19' : 'Only HR19' ) ?></label>
+                                <input type="radio" id="showowner1" value="HR19" name="showowner"
+                                       class="styled" <?php echo ($showowner) ? 'checked' : ''; ?>>
+                                <label for="inlineRadio1"><?php echo($lang == "es_ES" ? 'Solo HR19' : 'Only HR19') ?></label>
                             </div>
                             <div class="radio radio-inline radio-success">
                                 <input type="radio" id="showowner2" value="" name="showowner" class="styled"
-                                       checked>
-                                <label for="inlineRadio2"><?php echo( $lang == "es_ES" ? 'Todos' : 'All' ) ?></label>
+									<?php echo (!$showowner) ? 'checked' : ''; ?>>
+                                <label for="inlineRadio2"><?php echo($lang == "es_ES" ? 'Todos' : 'All') ?></label>
                             </div>
                         </div>
                         <div class="pull-right switch-map">
                             <div>
-                                <div class="pull-right text-map"><?php echo( $lang == "es_ES" ? 'Ocultar mapa' : 'Hide map' ) ?></div>
+                                <div class="pull-right text-map"><?php echo($lang == "es_ES" ? 'Ocultar mapa' : 'Hide map') ?></div>
                                 <label class="switch pull-right">
                                     <input type="checkbox" id="map-switch">
                                     <span class="slider round"></span>
@@ -282,100 +435,64 @@ wp_reset_query();
     </form>
     <div id="responsed" class="row">
         <div class="col-md-12">
-            <h2 class="hr-heading"><?php echo( $lang == "es_ES" ? 'Propiedades' : 'Properties' ) ?></h2>
+            <h2 class="hr-heading"><?php echo($lang == "es_ES" ? 'Propiedades' : 'Properties') ?></h2>
         </div>
 		<?php
-		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-		$hr    = true;
-		$query = new WP_Query( array(
-			'post_type'      => 'property',
-			'showposts'      => 9,
-			'paged'          => get_query_var( 'paged' ),
-			'_meta_or_title' => $search_string,
-			'meta_key'       => '_pr_owner',
-			'orderby'        => 'meta_value',
-			'order'          => 'ASC',
-			'meta_query'     => array(
-				'relation' => 'AND',
-				array(
-					'key'     => '_pr_transaction',
-					'value'   => $propstatus,
-					'compare' => '=',
-				),
-				array(
-					'relation' => 'OR',
-					array(
-						'key'     => '_pr_city',
-						'value'   => $search_string,
-						'compare' => '=',
-					),
-					array(
-						'key'     => '_pr_address',
-						'value'   => $search_string,
-						'compare' => '=',
-					),
-					array(
-						'key'     => '_pr_postalcode',
-						'value'   => $search_string,
-						'compare' => '=',
-					)
-				)
-			)
-		) );
-		if ( $query->have_posts() ): while ( $query->have_posts() ) : $query->the_post();
-			$address     = get_post_meta( get_the_ID(), '_pr_address', true );
-			$price       = get_post_meta( get_the_ID(), '_pr_current_price', true );
-			$type        = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
-			$rooms       = get_post_meta( get_the_ID(), '_pr_room_count', true );
-			$baths       = get_post_meta( get_the_ID(), '_pr_baths_total', true );
-			$sysid       = get_post_meta( get_the_ID(), '_pr_matrixid', true );
-			$city        = get_post_meta( get_the_ID(), '_pr_city', true );
-			$state       = get_post_meta( get_the_ID(), '_pr_state', true );
-			$agentid     = get_post_meta( get_the_ID(), '_pr_agentid', true );
-			$owner       = get_post_meta( get_the_ID(), '_pr_owner', true );
-			$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
-			$headers     = get_headers( $bgimg, 1 );
-			$fsize       = $headers['Content-Length'];
-			$fsize       = (int) $fsize;
-			$urlimage    = wp_remote_head( $bgimg );
-			$urlimage    = $urlimage['response']['code'];
+
+		if ($query->have_posts()): while ($query->have_posts()) : $query->the_post();
+			$address = get_post_meta(get_the_ID(), '_pr_address', true);
+			$price = get_post_meta(get_the_ID(), '_pr_current_price', true);
+			$type = get_post_meta(get_the_ID(), '_pr_type_of_property', true);
+			$rooms = get_post_meta(get_the_ID(), '_pr_room_count', true);
+			$baths = get_post_meta(get_the_ID(), '_pr_baths_total', true);
+			$sysid = get_post_meta(get_the_ID(), '_pr_matrixid', true);
+			$city = get_post_meta(get_the_ID(), '_pr_city', true);
+			$state = get_post_meta(get_the_ID(), '_pr_state', true);
+			$agentid = get_post_meta(get_the_ID(), '_pr_agentid', true);
+			$owner = get_post_meta(get_the_ID(), '_pr_owner', true);
+			$bgimg = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
+			$headers = get_headers($bgimg, 1);
+			$fsize       = (isset($headers['Content-Length']))? $headers['Content-Length']: null;
+			$fsize = (int)$fsize;
+			$urlimage = wp_remote_head($bgimg);
+			$urlimage = $urlimage['response']['code'];
 			$placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
 			?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <a href="<?php the_permalink(); ?>" class="property">
                     <div class="property-image" style="background: url(
-					<?php if ( $urlimage == 404 or $fsize < 100 ) {
+					<?php if ($urlimage == 404 or $fsize < 100) {
 						echo $placeholder;
 					} else {
 						echo $bgimg;
-					} ?>);" data-url="<?php if ( $urlimage == 404 or $fsize < 100 ) {
+					} ?>);" data-url="<?php if ($urlimage == 404 or $fsize < 100) {
 						echo $placeholder;
 					} else {
 						echo $bgimg;
 					} ?>">
                     </div>
                     <div class="property-info">
-                        <div class="property-price"><?php if ( ! empty( $price ) ) {
-								echo '$' . number_format( $price, 0, '.', ',' );
+                        <div class="property-price"><?php if (!empty($price)) {
+								echo '$' . number_format($price, 0, '.', ',');
 							} ?>
                         </div>
                         <div class="property-highlights">
-							<?php if ( ! empty( $type ) ) {
+							<?php if (!empty($type)) {
 								echo $type;
 							} else {
 								echo 'N/A';
 							} ?>
-							<?php if ( ! empty( $rooms ) ) {
-								echo '· ' . $rooms . ( $lang == "es_ES" ? ' Habitaciones' : ' Rooms' );
+							<?php if (!empty($rooms)) {
+								echo '· ' . $rooms . ($lang == "es_ES" ? ' Habitaciones' : ' Rooms');
 							} ?>
-							<?php if ( ! empty( $baths ) ) {
-								echo '· ' . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' );
+							<?php if (!empty($baths)) {
+								echo '· ' . $baths . ($lang == "es_ES" ? ' Baños' : ' Baths');
 							} ?>
                         </div>
                         <div class="property-address">
-							<?php if ( ! empty( $address ) ) {
+							<?php if (!empty($address)) {
 								echo $address;
-							} else if ( ! empty( $city ) and ! empty( $state ) ) {
+							} else if (!empty($city) and !empty($state)) {
 								echo $city . ', ' . $state;
 							} else {
 								echo $state;
@@ -388,7 +505,7 @@ wp_reset_query();
 		<?php endwhile; ?>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-					<?php wp_pagenavi( array( 'query' => $query ) ); ?>
+					<?php wp_pagenavi(array('query' => $query)); ?>
                 </div>
             </div>
             <!--<div class="tot" data-myval="<?php //echo $count = $query->found_posts; ?>"></div>-->
@@ -396,8 +513,8 @@ wp_reset_query();
             <div class="col-md-12">
                 <div class="no-results-info">
                     <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/no-properties.svg" alt="0">
-                    <h4><?php echo( $lang == "es_ES" ? 'No existen propiedades disponibles en estos momentos' : 'There are no properties available at this time' ) ?></h4>
-                    <p><?php echo( $lang == "es_ES" ? '0 resultados' : '0 results' ) ?></p>
+                    <h4><?php echo($lang == "es_ES" ? 'No existen propiedades disponibles en estos momentos' : 'There are no properties available at this time') ?></h4>
+                    <p><?php echo($lang == "es_ES" ? '0 resultados' : '0 results') ?></p>
                 </div>
             </div>
 		<?php endif;

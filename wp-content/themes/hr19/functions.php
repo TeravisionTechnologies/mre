@@ -616,6 +616,15 @@ function pr_register_query_vars( $vars ) {
 	$vars[] = 'price';
 	$vars[] = 'beds';
 	$vars[] = 'baths';
+	$vars[] = 'min';
+	$vars[] = 'max';
+	$vars[] = 'price';
+	$vars[] = 'showowner';
+	$vars[] = 'rooms';
+	$vars[] = 'proptype';
+	$vars[] = 'proporderby';
+	$vars[] = 'proporder';
+	$vars[] = 'propsort';
 	$vars[] = 'property_status';
 
 	return $vars;

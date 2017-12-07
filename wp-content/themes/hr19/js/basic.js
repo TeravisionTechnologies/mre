@@ -172,11 +172,6 @@ jQuery(document).ready(function ($) {
             $("#s").attr("placeholder", "Introduzca una ubicación o #MLS");
         }
     });
-    $('#property-search-top').validator().on('submit', function (e) {
-        if (e.isDefaultPrevented()) {
-            $('#s').addClass('placeholder-error');
-        }
-    });
 
     //Menu mobile change icon
     $('.navbar-toggle').click(function () {
@@ -288,27 +283,30 @@ jQuery(document).ready(function ($) {
         }
     });
     $("#proporder").change(function () {
+        var firstTimeInput = $('#firstTimeLoad');
         switch (+this.value) {
             case 0:
                 $("#proporderby").val("date");
                 $("#propsort").val("ASC");
-                $("#proporder").closest('form').submit();
                 break;
             case 1:
                 $("#proporderby").val("date");
                 $("#propsort").val("DESC");
-                $("#proporder").closest('form').submit();
                 break;
             case 2:
                 $("#proporderby").val("_pr_current_price");
                 $("#propsort").val("DESC");
-                $("#proporder").closest('form').submit();
                 break;
             case 3:
                 $("#proporderby").val("_pr_current_price");
                 $("#propsort").val("ASC");
-                $("#proporder").closest('form').submit();
                 break;
+        }
+        if(firstTimeInput.val() == 1) {
+            firstTimeInput.val(0);
+        }
+        else {
+            $("#proporder").closest('form').submit();
         }
 
     }).change();
@@ -323,30 +321,6 @@ jQuery(document).ready(function ($) {
         $("#max").val(selmax);
     });
 
-    // Filtering data
-    $('#property-search-top').submit(function(){
-        var filter = $('#property-search-top');
-        $.ajax({
-            url:filter.attr('action'),
-            data:filter.serialize(),
-            type:filter.attr('method'),
-            beforeSend:function(xhr){
-                filter.find('.btn-search').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
-                $('#loader').show();
-                $('.navbar-collapse').removeClass('in');
-            },
-            success:function(data){
-                filter.find('.btn-search').html('<i class="fa fa-search"></i>');
-                $('#loader').hide();
-                $('#responsed').html(data);
-                filter.find('.navbar-toggle i').removeClass("fa-times");
-                filter.find('.navbar-toggle i').addClass("fa-filter");
-                $('.navbar-toggle').attr('aria-expanded', 'false')
-            }
-        });
-        setTimeout(initialize(), 10000);
-        return false;
-    });
 
     //Search Google Maps
     var propertiesArray = [];
