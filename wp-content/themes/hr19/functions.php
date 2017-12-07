@@ -189,7 +189,7 @@ date_default_timezone_set( 'America/New_York' );
 
 require_once( "vendor/autoload.php" );
 
-//function get_mls() {
+function get_mls() {
 	global $wpdb;
 	$agentids = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_ag_mls' ) );
 	$config   = new \PHRETS\Configuration;
@@ -591,7 +591,7 @@ require_once( "vendor/autoload.php" );
 	}
 
 	$rets->Disconnect();
-//}
+}
 
 /*add_action( 'get_mls_properties', 'get_mls' );
 
