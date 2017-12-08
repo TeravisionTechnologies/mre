@@ -25,7 +25,7 @@ if(!count($args)){
     $statusFilter = ($lang == "es_ES" ? 'proyectos-actuales' : 'new-projects');
     $args = array(
         'post_type' => 'broker',
-        'showposts' => 3,
+        'showposts' => 9,
         'paged' => $paged,
         'tax_query' => array(
             array(

@@ -334,7 +334,7 @@ function processQuery($filters)
     if ($pstatus != '' or $plocation != '') {
         $args = array(
             'post_type' => 'broker',
-            'showposts' => 3,
+            'showposts' => 9,
             'paged' => $paged,
 			'orderby' => $orderBy,
 			'order' => $sort,
