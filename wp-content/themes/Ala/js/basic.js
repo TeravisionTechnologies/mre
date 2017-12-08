@@ -217,7 +217,7 @@ jQuery(document).ready(function () {
         }, 2000);
     });
 
-    if (window.location.href.indexOf("page") > -1) {
+    if (window.location.href.indexOf("page") > -1 || window.location.href.indexOf("section") > -1) {
         $('html, body').animate({
             scrollTop: $("#ala-properties").offset().top
         }, 500);
@@ -251,5 +251,4 @@ jQuery(document).ready(function () {
         $("#orderByName").val($(this).val());
         $(this).closest('form').submit();
     });
-
 });

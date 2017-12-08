@@ -68,6 +68,7 @@ $referer = wp_get_referer();
 if ( (strpos($referer, "en")  == true) or strpos($_SERVER['REQUEST_URI'], "en") == true ){
 	$langu = "en";
 }
+$lang = get_locale();
 ?>
 <body <?php body_class() ?>>
 <div id="o-wrapper" class="o-wrapper">
@@ -84,7 +85,7 @@ if ( (strpos($referer, "en")  == true) or strpos($_SERVER['REQUEST_URI'], "en") 
                     </div>
                     <div class="logo-header">
                         <div class="img-div pull-right text-center">
-                            <a href="<?php echo ( $langu == "en" ? home_url().'/en' : home_url() ) ?>"><img src="<?php echo $theMeta['_hf_header_logo'][0]; ?>"
+                            <a href="<?php echo ( home_url() ) ?>"><img src="<?php echo $theMeta['_hf_header_logo'][0]; ?>"
                                                                      alt="HR19 Logo"></a>
                         </div>
                     </div>

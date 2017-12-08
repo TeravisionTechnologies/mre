@@ -660,7 +660,11 @@ $(window).on('load', function() {
     if( $('#map-detail').is(':empty') ) {
         $('.prlocation').css('display', 'none');
     }
-
+    if ( window.location.href.indexOf("firstTimeLoad") > -1) {
+        $('html, body').animate({
+            scrollTop: $(".property-list").offset().top
+        }, 500);
+    }
 });
 
 // Show/Hide Filter button on scroll
