@@ -12,10 +12,12 @@ if(function_exists('pll_current_language')){
 $lang = get_locale();
 $statusFilter = get_query_var('status');
 $section = get_query_var('section');
+$orderByFilter = get_query_var('orderBy');
 $locationFilter = get_query_var('location');
 $filter = [
     'project-status' => $statusFilter,
     'project-location' => $locationFilter,
+	'order-by' => $orderByFilter
 ];
 $args = processQuery($filter);
 $paged = (get_query_var('page')) ? get_query_var('page') : 1;
@@ -35,7 +37,6 @@ if(!count($args)){
     );
 }
 
-var_dump($args);
 $home_query = get_posts(
     array(
         'post_type' => 'header_footer'
@@ -113,21 +114,44 @@ $placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle pull-right btn-filter" type="button"
                                 id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <?php echo($lang == "es_ES" ? 'Ordenar por...' : 'Sort by...') ?>
+							<?php
+							switch ($orderByFilter) {
+								case 'name_asc' :
+									$orderByNameFilter = ($lang == "es_ES" ? 'Por nombre &#x25B2;' : 'By name &#x25B2');
+									break;
+								case 'name_desc' :
+									$orderByNameFilter = ($lang == "es_ES" ? 'Por nombre &#x25BC;' : 'By name &#x25BC;');
+									break;
+								case 'date_asc' :
+									$orderByNameFilter = ($lang == "es_ES" ? '&Uacute;ltimo agregado &#x25B2;' : 'Last added &#x25B2;');
+									break;
+								case 'date_desc' :
+									$orderByNameFilter = ($lang == "es_ES" ? '&Uacute;ltimo agregado &#x25BC;' : 'Last added &#x25BC;');
+									break;
+								default :
+									$orderByNameFilter = ($lang == "es_ES" ? 'Ordenar por...' : 'Sort by...');
+									break;
+
+							} ?>
+							<?php echo($orderByNameFilter) ?>
                             <span class="caret"></span>
                         </button>
-                        <ul class="dropdown-menu sort-by-button-group" aria-labelledby="dropdownMenu1">
+                        <ul class="dropdown-menu sort-by-button-group" id="sortList" aria-labelledby="dropdownMenu1">
                             <li>
-                                <a class="orderby"><?php echo($lang == "es_ES" ? 'Por nombre &#x25B2;' : 'By name &#x25B2') ?></a>
+                                <a class="orderby"
+                                   data-value="name_asc"><?php echo($lang == "es_ES" ? 'Por nombre &#x25B2;' : 'By name &#x25B2') ?></a>
                             </li>
                             <li>
-                                <a class="orderby"><?php echo($lang == "es_ES" ? 'Por nombre &#x25BC;' : 'By name &#x25BC;') ?></a>
+                                <a class="orderby"
+                                   data-value="name_desc"><?php echo($lang == "es_ES" ? 'Por nombre &#x25BC;' : 'By name &#x25BC;') ?></a>
                             </li>
                             <li>
-                                <a class="orderby"><?php echo($lang == "es_ES" ? '&Uacute;ltimo agregado &#x25B2;' : 'Last added &#x25B2;') ?></a>
+                                <a class="orderby"
+                                   data-value="date_asc"><?php echo($lang == "es_ES" ? '&Uacute;ltimo agregado &#x25B2;' : 'Last added &#x25B2;') ?></a>
                             </li>
                             <li>
-                                <a class="orderby"><?php echo($lang == "es_ES" ? '&Uacute;ltimo agregado &#x25BC;' : 'Last added &#x25BC;') ?></a>
+                                <a class="orderby"
+                                   data-value="date_desc"><?php echo($lang == "es_ES" ? '&Uacute;ltimo agregado &#x25BC;' : 'Last added &#x25BC;') ?></a>
                             </li>
                         </ul>
                     </div>
@@ -136,6 +160,7 @@ $placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
                 <input id="project-status" type="hidden" name="status" value="<?php echo $statusFilter;?>">
                 <input id="project-location" type="hidden" name="location" value="<?php echo $locationFilter;?>">
                 <input type="hidden" id="section" name="section" value="<?php echo $section;?>">
+                <input type="hidden" id="orderBy" name="orderBy">
     </form>
     <div class="clearfix"></div>
     <div id="response" class="row properties-list">

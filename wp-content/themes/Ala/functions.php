@@ -25,6 +25,7 @@ function mre_register_query_vars( $vars ) {
     $vars[] = 'location';
     $vars[] = 'status';
     $vars[] = 'section';
+    $vars[] = 'orderBy';
 
     return $vars;
 }
@@ -299,6 +300,29 @@ function processQuery($filters)
     $args = array();
     $pstatus = '';
     $plocation = '';
+	$orderBy = '';
+	$sort = '';
+	if (isset($filters['order-by']) && $filters['order-by']) {
+		$orderBy = $filters['order-by'];
+		switch ($orderBy) {
+			case 'name_asc' :
+				$orderBy = 'title';
+				$sort = 'ASC';
+				break;
+			case 'name_desc' :
+				$orderBy = 'title';
+				$sort = 'DESC';
+				break;
+			case 'date_asc' :
+				$orderBy = 'date';
+				$sort = 'ASC';
+				break;
+			case 'date_desc' :
+				$orderBy = 'date';
+				$sort = 'DESC';
+				break;
+		}
+	}
     if (isset($filters['project-status']) && $filters['project-status']) {
         $pstatus = $filters['project-status'];
     }
@@ -312,6 +336,8 @@ function processQuery($filters)
             'post_type' => 'broker',
             'showposts' => 3,
             'paged' => $paged,
+			'orderby' => $orderBy,
+			'order' => $sort,
             'tax_query' => array(
                 'relation' => 'AND',
                 array(

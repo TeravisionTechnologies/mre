@@ -245,24 +245,11 @@ jQuery(document).ready(function () {
         $("#section").val(0);
         $(this).closest('form').submit();
     });
-
-    // Filtering data
-    $('#ala-properties').submit(function(){
-        var filter = $('#ala-properties');
-        $.ajax({
-            url:filter.attr('action'),
-            data:filter.serialize(),
-            type:filter.attr('method'),
-            beforeSend:function(xhr){
-
-            },
-            success:function(data){
-
-                $('#response').html(data);
-
-            }
-        });
-        return false;
+    $(document).on('click', '.orderby', function (e) {
+        var orderBy = $(this).attr('data-value');
+        $("#orderBy").val(orderBy);
+        $("#orderByName").val($(this).val());
+        $(this).closest('form').submit();
     });
 
 });
