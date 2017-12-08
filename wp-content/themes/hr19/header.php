@@ -64,6 +64,12 @@ $headerPost = get_posts(
 );
 $theMeta = get_post_meta($headerPost[0]->ID);
 $social_networks = get_post_meta($headerPost[0]->ID, '_hf_social_networks', true);
+$referer = wp_get_referer();
+if ( (strpos($referer, "en")  == true) or strpos($_SERVER['REQUEST_URI'], "en") == true ){
+	$langu = "en";
+}
+//var_dump($referer);
+//var_dump($langu);
 ?>
 <body <?php body_class() ?>>
 <div id="o-wrapper" class="o-wrapper">
@@ -80,7 +86,7 @@ $social_networks = get_post_meta($headerPost[0]->ID, '_hf_social_networks', true
                     </div>
                     <div class="logo-header">
                         <div class="img-div pull-right text-center">
-                            <a href="<?php echo home_url(); ?>"><img src="<?php echo $theMeta['_hf_header_logo'][0]; ?>"
+                            <a href="<?php echo ( $langu == "en" ? home_url().'/en' : home_url() ) ?>"><img src="<?php echo $theMeta['_hf_header_logo'][0]; ?>"
                                                                      alt="HR19 Logo"></a>
                         </div>
                     </div>

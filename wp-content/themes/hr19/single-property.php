@@ -61,8 +61,6 @@ if( $poolinfo == "1" ){
 	$pool = 'Pool';
 }
 
-var_dump($pets);
-
 //fin nuevos campos
 
 $url = wp_upload_dir();
