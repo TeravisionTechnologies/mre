@@ -1,6 +1,5 @@
 <?php
 $referer = wp_get_referer();
-
 if ( (strpos($referer, "en")  == true) or strpos($_SERVER['REQUEST_URI'], "en") == true ){
 	$langu = "en";
 }

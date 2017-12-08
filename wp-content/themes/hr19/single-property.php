@@ -61,8 +61,6 @@ if( $poolinfo == "1" ){
 	$pool = 'Pool';
 }
 
-//fin nuevos campos
-
 $url = wp_upload_dir();
 $directory = $url['basedir'] . '/photos/' . $sysid . '/';
 $images = glob($directory . "*.jpg");

@@ -48,7 +48,6 @@ function hr_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'hr_scripts' );
 
-
 // Register custom navigation walker
 require_once( 'wp_bootstrap_navwalker.php' );
 
