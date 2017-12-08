@@ -212,7 +212,7 @@ function get_mls() {
 			[
 				'Format' => 'COMPACT-DECODED',
 				'Limit'  => 10,
-                'Offset' => 40
+                'Offset' => 0
 			]
 		);
 	} else {
@@ -240,7 +240,6 @@ function get_mls() {
 		} else {
 			$owner = "Other";
 		}
-
 
 		$propid = get_page_by_title( $property['MLSNumber'], 'OBJECT', 'property' ); //Check if already exists
 
@@ -321,7 +320,7 @@ function get_mls() {
 					'_pr_FurnAnnualRent' => $property['FurnAnnualRent'],
 					'_pr_HeatingDescription' => $property['HeatingDescription'],
 					'_pr_InteriorFeatures' => $property['InteriorFeatures'],
-					'_pr_InternetRemarks' => $property['ListAgentMLSID'],
+					'_pr_InternetRemarks' => $property['InternetRemarks'],
 					'_pr_InternetYN' => $property['InternetYN'],
 					'_pr_LeaseTermInfo' => $property['LeaseTermInfo'],
 					'_pr_LegalDescription' => $property['LegalDescription'],
@@ -402,7 +401,7 @@ function get_mls() {
 			);
 			$posted_property = wp_insert_post( $post_args );
 
-			/*$sysid  = $property['Matrix_Unique_ID'];
+			$sysid  = $property['Matrix_Unique_ID'];
 			$n      = 1;
 			$url    = wp_upload_dir();
 			$upload = $url['basedir'];
@@ -414,7 +413,7 @@ function get_mls() {
 			foreach ( $objects as $object ) {
 				file_put_contents( $dir . '/' . $n . '.jpg', $object->getContent() );
 				$n ++;
-			}*/
+			}
 
 		} else {
 
@@ -495,7 +494,7 @@ function get_mls() {
 					'_pr_FurnAnnualRent' => $property['FurnAnnualRent'],
 					'_pr_HeatingDescription' => $property['HeatingDescription'],
 					'_pr_InteriorFeatures' => $property['InteriorFeatures'],
-					'_pr_InternetRemarks' => $property['ListAgentMLSID'],
+					'_pr_InternetRemarks' => $property['InternetRemarks'],
 					'_pr_InternetYN' => $property['InternetYN'],
 					'_pr_LeaseTermInfo' => $property['LeaseTermInfo'],
 					'_pr_LegalDescription' => $property['LegalDescription'],
@@ -576,7 +575,7 @@ function get_mls() {
 			);
 			$posted_property = wp_update_post( $post_args );
 
-			/*$sysid  = $property['Matrix_Unique_ID'];
+			$sysid  = $property['Matrix_Unique_ID'];
 			$n      = 1;
 			$url    = wp_upload_dir();
 			$upload = $url['basedir'];
@@ -588,7 +587,7 @@ function get_mls() {
 			foreach ( $objects as $object ) {
 				file_put_contents( $dir . '/' . $n . '.jpg', $object->getContent() );
 				$n ++;
-			}*/
+			}
 		}
 	}
 

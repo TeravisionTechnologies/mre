@@ -42,6 +42,21 @@ $appliances = get_post_meta(get_the_ID(), '_pr_EquipmentAppliances', true);
 $interior = get_post_meta(get_the_ID(), '_pr_InteriorFeatures', true);
 $cableinfo = get_post_meta(get_the_ID(), '_pr_CableAvailableYN', true);
 $poolinfo = get_post_meta(get_the_ID(), '_pr_PoolYN', true);
+$avaldate = get_post_meta(get_the_ID(), '_pr_AvailableDate', true);
+$avaldate = substr( $avaldate,0, 10 );
+$boatdock = get_post_meta(get_the_ID(), '_pr_BoatDockAccommodates', true);
+//$buildincludes = get_post_meta(get_the_ID(), '_pr_BuildingIncludes', true);   // idk, is always empty
+//$buildnamenumber = get_post_meta(get_the_ID(), '_pr_BuildingNameNumber', true); // idk, is always empty
+$dom = get_post_meta(get_the_ID(), '_pr_Dom', true);
+$expdate = get_post_meta(get_the_ID(), '_pr_ExpirationDate', true);
+$expdate = substr( $expdate,0, 10 );
+$intremarks = get_post_meta(get_the_ID(), '_pr_InternetRemarks', true);
+$listingtype = get_post_meta(get_the_ID(), '_pr_ListingType', true);
+$locationprop = get_post_meta(get_the_ID(), '_pr_LocationofProperty', true);
+$parcelnumber = get_post_meta(get_the_ID(), '_pr_ParcelNumber', true);
+$postalcode = get_post_meta(get_the_ID(), '_pr_postalcode', true);
+$unitnumb = get_post_meta(get_the_ID(), '_pr_UnitNumber', true);
+$unitview = get_post_meta(get_the_ID(), '_pr_UnitView', true);
 
 if( $pets == "1" ){
 	$petsinfo = 'Pets allowed';
@@ -268,6 +283,43 @@ $bgimg = (int)$bgimg;
                                     </div>
                                     <h6><?php echo ( $lang == "es_ES" ? 'Otras características:' : 'Additional features:' ) ?></h6>
                                     <ul>
+
+	                                    <?php if( !empty( $intremarks ) ) { ?>
+                                            <li><?php echo ( $lang == "es_ES" ? 'Observaciones:' : 'Remarks:' ) ?>
+			                                    <?php echo $intremarks ?>
+                                            </li>
+	                                    <?php } ?>
+
+	                                    <?php if( !empty( $locationprop ) ) { ?>
+                                            <li><?php echo ( $lang == "es_ES" ? 'Ubicación de la propiedad:' : 'Locationof Property:' ) ?>
+			                                    <?php echo $locationprop ?>
+                                            </li>
+	                                    <?php } ?>
+
+	                                    <?php if( !empty( $listingtype ) ) { ?>
+                                            <li><?php echo ( $lang == "es_ES" ? 'Tipo de Lista:' : 'Listing Type:' ) ?>
+			                                    <?php echo $listingtype ?>
+                                            </li>
+	                                    <?php } ?>
+
+	                                    <?php if( !empty( $avaldate ) ) { ?>
+                                            <li><?php echo ( $lang == "es_ES" ? 'Fecha disponible:' : 'Available date:' ) ?>
+			                                    <?php echo $avaldate ?>
+                                            </li>
+	                                    <?php } ?>
+
+	                                    <?php if( !empty( $expdate ) ) { ?>
+                                            <li><?php echo ( $lang == "es_ES" ? 'Fecha de expiración:' : 'Expiration Date:' ) ?>
+			                                    <?php echo $expdate ?>
+                                            </li>
+	                                    <?php } ?>
+
+	                                    <?php if( !empty( $dom ) ) { ?>
+                                            <li><?php echo ( $lang == "es_ES" ? 'Días en el mercado:' : 'Days on Market:' ) ?>
+			                                    <?php echo $dom ?>
+                                            </li>
+	                                    <?php } ?>
+
                                         <?php if( !empty( $constructype ) ) { ?>
                                             <li>
                                                 <?php echo ( $lang == "es_ES" ? 'Construcción:' : 'Construction:' ) ?>
@@ -325,6 +377,13 @@ $bgimg = (int)$bgimg;
                                             </li>
                                         <?php } ?>
 
+	                                    <?php if( !empty( $boatdock ) ) { ?>
+                                            <li>
+			                                    <?php echo ( $lang == "es_ES" ? 'Muelle de botes:' : 'Boat Dock:' ) ?>
+			                                    <?php echo $boatdock ?>
+                                            </li>
+	                                    <?php } ?>
+
                                         <?php if( !empty( $pool ) ) { ?>
                                             <li>
                                                 <?php echo ( $lang == "es_ES" ? 'Recreación:' : 'Recreation:' ) ?>
@@ -361,6 +420,29 @@ $bgimg = (int)$bgimg;
 
                                             </li>
                                         <?php } ?>
+
+	                                    <?php if( !empty( $parcelnumber ) or  !empty( $postalcode ) or  !empty( $unitnumb ) or  !empty( $unitview ) ) { ?>
+                                            <li>
+			                                    <?php echo ( $lang == "es_ES" ? 'Otra información de la propiedad:' : 'Other Property Info:' ) ?>
+
+			                                    <?php if( !empty($parcelnumber)){
+				                                    echo ( $lang == "es_ES" ? 'Número de parcela : ' : 'Parcel Number : ' ) .  $parcelnumber;
+			                                    } ?>
+
+			                                    <?php if( !empty($postalcode)){
+				                                    echo ( $lang == "es_ES" ? 'Ciudad / Codigo Postal: ' : 'City / Postal Code : ' ) .  $postalcode;
+			                                    } ?>
+
+			                                    <?php if( !empty($unitnumb)){
+				                                    echo ( $lang == "es_ES" ? 'Nro de unidad: ' : 'Unit number : ' ) .  $unitnumb;
+			                                    } ?>
+
+			                                    <?php if( !empty($unitview)){
+				                                    echo ( $lang == "es_ES" ? 'Vista desde la unidad: ' : 'Unit view : ' ) .  $unitview;
+			                                    } ?>
+
+                                            </li>
+	                                    <?php } ?>
                                     </ul>
                                 </div>
                             </div>
