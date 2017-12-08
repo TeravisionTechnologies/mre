@@ -665,6 +665,18 @@ $(window).on('load', function() {
             scrollTop: $(".property-list").offset().top
         }, 500);
     }
+    if (window.location.href.indexOf("page") > -1 || window.location.href.indexOf("section") > -1) {
+        $('html, body').animate({
+            scrollTop: $(".property-list").offset().top
+        }, 500);
+    }
+
+    if(document.referrer.indexOf("/page") > 0){
+        $('html, body').animate({
+            scrollTop: $(".property-list").offset().top
+        }, 500);
+    }
+
 });
 
 // Show/Hide Filter button on scroll

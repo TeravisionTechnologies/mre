@@ -131,7 +131,7 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 </section>
 <footer class="col-xs-12 hr-footer-section text-center">
     <div class="container">
-        <?php if(!is_front_page()) { ?>
+        <?php if(!is_front_page() && !is_search() ) { ?>
             <a href="<?php echo ( $langu == "en" ? home_url().'/en' : home_url() ) ?>"><img src="<?php echo $footer_info['_hf_logo'][0]; ?>"
                                                  alt="Logo HR19 Footer"></a>
         <?php } else{ ?>
