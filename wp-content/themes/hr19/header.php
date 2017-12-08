@@ -84,8 +84,13 @@ if ( (strpos($referer, "en")  == true) or strpos($_SERVER['REQUEST_URI'], "en") 
                     </div>
                     <div class="logo-header">
                         <div class="img-div pull-right text-center">
-                            <a href="<?php echo ( $langu == "en" ? home_url().'/en' : home_url() ) ?>"><img src="<?php echo $theMeta['_hf_header_logo'][0]; ?>"
-                                                                     alt="HR19 Logo"></a>
+	                        <?php if(!is_front_page()) { ?>
+                                <a href="<?php echo ( $langu == "en" ? home_url().'/en' : home_url() ) ?>"><img src="<?php echo $theMeta['_hf_header_logo'][0]; ?>"
+                                                                                                                alt="HR19 Logo"></a>
+	                        <?php } else{ ?>
+                                <a href="<?php echo home_url(); ?>"><img src="<?php echo $theMeta['_hf_header_logo'][0]; ?>"
+                                                                                                                alt="HR19 Logo"></a>
+	                        <?php } ?>
                         </div>
                     </div>
                     <div class="social-header pull-right">
