@@ -62,19 +62,19 @@ jQuery(document).ready(function ($) {
 
     // Add Swiper Flags
     var swiperFlag = new Swiper('.swiper-container-flags', {
-      //initialSlide: 1,
-      nested: true,
+        //initialSlide: 1,
+        nested: true,
     });
 
     // Adding Swiper functionality to flags
     $('.flag-image').on('click', function () {
-      var index = $(this).data('pagination');
-      swiperFlag.slideTo(index - 1);
+        var index = $(this).data('pagination');
+        swiperFlag.slideTo(index - 1);
     });
 
     $(".flag-image").click(function (e) {
-      $(".flag-image-opacity").removeClass("flag-image-opacity");
-      $(this).addClass("flag-image-opacity");
+        $(".flag-image-opacity").removeClass("flag-image-opacity");
+        $(this).addClass("flag-image-opacity");
     });
 
     //Menu contact us functionality
@@ -172,11 +172,6 @@ jQuery(document).ready(function ($) {
             $("#s").attr("placeholder", "Introduzca una ubicación o #MLS");
         }
     });
-    $('#property-search-top').validator().on('submit', function (e) {
-        if (e.isDefaultPrevented()) {
-            $('#s').addClass('placeholder-error');
-        }
-    });
 
     //Menu mobile change icon
     $('.navbar-toggle').click(function () {
@@ -217,7 +212,6 @@ jQuery(document).ready(function ($) {
     });
 
     var query = city.concat(add,pc);
-
     // Initialize autocomplete
     $('#s').devbridgeAutocomplete({
         lookup: query,
@@ -226,8 +220,21 @@ jQuery(document).ready(function ($) {
         showNoSuggestionNotice: true,
         noSuggestionNotice: '<p class="no-results"><span>No pudimos encontrar su búsqueda</span><br>Verifique su ortografía o vuelva a hacer su búsqueda usando una ubicación dentro de los E.E.U.U</p>',
         groupBy: 'category',
+        onSearchStart: function () {
+            //$('.search .o-wrapper').css('overflow-y', 'hidden');
+            $('body').addClass('has-active-menu');
+        },
+        onHide: function () {
+            //$('.search .o-wrapper').css('overflow-y', 'scroll');
+            $('body').removeClass('has-active-menu');
+        },
         onSelect: function (suggestion) {
-            $(this).closest('form').submit();
+            var actualValue = $('#s').val();
+            if(actualValue != suggestion.value){
+                $(this).closest('form').submit();
+            }
+            //$('.search .o-wrapper').css('overflow-y', 'scroll');
+            $('body').removeClass('has-active-menu');
         },
         /*onSearchError: function (query, jqXHR, textStatus, errorThrown) {
             $('.property-search').attr('data-disable', 'true');
@@ -288,27 +295,30 @@ jQuery(document).ready(function ($) {
         }
     });
     $("#proporder").change(function () {
+        var firstTimeInput = $('#firstTimeLoad');
         switch (+this.value) {
             case 0:
                 $("#proporderby").val("date");
                 $("#propsort").val("ASC");
-                $("#proporder").closest('form').submit();
                 break;
             case 1:
                 $("#proporderby").val("date");
                 $("#propsort").val("DESC");
-                $("#proporder").closest('form').submit();
                 break;
             case 2:
                 $("#proporderby").val("_pr_current_price");
                 $("#propsort").val("DESC");
-                $("#proporder").closest('form').submit();
                 break;
             case 3:
                 $("#proporderby").val("_pr_current_price");
                 $("#propsort").val("ASC");
-                $("#proporder").closest('form').submit();
                 break;
+        }
+        if(firstTimeInput.val() == 1) {
+            firstTimeInput.val(0);
+        }
+        else {
+            $("#proporder").closest('form').submit();
         }
 
     }).change();
@@ -323,30 +333,6 @@ jQuery(document).ready(function ($) {
         $("#max").val(selmax);
     });
 
-    // Filtering data
-    $('#property-search-top').submit(function(){
-        var filter = $('#property-search-top');
-        $.ajax({
-            url:filter.attr('action'),
-            data:filter.serialize(),
-            type:filter.attr('method'),
-            beforeSend:function(xhr){
-                filter.find('.btn-search').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
-                $('#loader').show();
-                $('.navbar-collapse').removeClass('in');
-            },
-            success:function(data){
-                filter.find('.btn-search').html('<i class="fa fa-search"></i>');
-                $('#loader').hide();
-                $('#responsed').html(data);
-                filter.find('.navbar-toggle i').removeClass("fa-times");
-                filter.find('.navbar-toggle i').addClass("fa-filter");
-                $('.navbar-toggle').attr('aria-expanded', 'false')
-            }
-        });
-        setTimeout(initialize(), 10000);
-        return false;
-    });
 
     //Search Google Maps
     var propertiesArray = [];
@@ -375,6 +361,7 @@ jQuery(document).ready(function ($) {
     var bounds = new google.maps.LatLngBounds();
     var infowindows = [];
     var activeMarker = '';
+    var allData = [];
 
     function initialize() {
         map = new google.maps.Map(
@@ -385,21 +372,72 @@ jQuery(document).ready(function ($) {
                 mapTypeControl: false,
                 fullscreenControl: false
             });
+
         geocoder = new google.maps.Geocoder();
+        oms = new OverlappingMarkerSpiderfier(map, { markersWontMove: true, markersWontHide: true });
 
         for (i = 0; i < locations.length; i++) {
             geocodeAddress(locations, i);
+            oms.addListener('format', function(marker, status) {
+                var text = '';
+
+                if(status == OverlappingMarkerSpiderfier.markerStatus.SPIDERFIED){
+                    var iconSize = new google.maps.Size(36, 35);
+                    marker.setIcon({
+                        url: hr19.root + '/assets/icon-plus-group.svg',
+                        size: iconSize,
+                        scaledSize: iconSize,
+                        labelOrigin: new google.maps.Point(17, 25),
+                        origin: new google.maps.Point(0.5, -10),
+                    });
+                    text = marker.price;
+                    color = '#ffffff';
+                    size = "7px";
+                }
+
+                if(status == OverlappingMarkerSpiderfier.markerStatus.SPIDERFIABLE){
+                    var iconSize = new google.maps.Size(70, 70);
+                    marker.setIcon({
+                        url: hr19.root + '/assets/pointgreen.svg',
+                        size: iconSize,
+                        scaledSize: iconSize,
+                    });
+
+                    text = "More...";
+                    size = "10px";
+                    color = '#ffffff';
+                }
+
+                if(status == OverlappingMarkerSpiderfier.markerStatus.UNSPIDERFIABLE){
+                    var iconSize = new google.maps.Size(70, 70);
+                    marker.setIcon({
+                        url: hr19.root + '/assets/pointgreen.svg',
+                        size: iconSize,
+                        scaledSize: iconSize,
+                    });
+                    text = marker.price;
+                    size = "10px";
+                    color = '#ffffff';
+                }
+
+                marker.setLabel({
+                    text: text,
+                    color: color,
+                    fontWeight: "bold",
+                    fontFamily: 'Montserrat-Regular',
+                    fontSize: size,
+                });
+            });
+
         }
-        google.maps.event.addListener(map, 'click', function () {
-            if (infowindows.length > 0) {
-                var text = activeMarker.price;
-                activeMarker.setLabel({text: text, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px'});
-                closeInfoWindows();
-            }
-        });
+
+        iw = new google.maps.InfoWindow();
+        function iwClose() { iw.close(); }
+        google.maps.event.addListener(map, 'click', iwClose);
     }
 
     google.maps.event.addDomListener(window, "load", initialize);
+
 
     function geocodeAddress(locations, i) {
         var priceUnformatted = locations[i].price;
@@ -413,6 +451,8 @@ jQuery(document).ready(function ($) {
         else {
             price = '$' + priceUnformatted;
         }
+
+        var cont = 0;
         var address = locations[i].address;
         var highlights = locations[i].highlights;
         var mls = locations[i].mls;
@@ -423,6 +463,41 @@ jQuery(document).ready(function ($) {
 
             function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
+
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        optimized: false,
+                        position: results[0].geometry.location,
+                        address: address,
+                        price: price,
+                        highlights: highlights,
+                        mls: mls,
+                        image: image,
+                    });
+
+
+                    var html = "<a href=property/" + mls + "><div class='info-container'>" +
+                        "<div class='info-image' style='background-image: url(" + image + ")'></div>" +
+                        "<div class='info-data'>" +
+                        "<h2 class='info-data-price'>" + price + "</h2>" +
+                        "<h3 class='info-data-highlights'>" + highlights + "</h3>" +
+                        "<h3 class='info-data-address'>" + address + "</h3>" +
+                        "<h3 class='info-data-mls'>MLS: " + mls + "</h3>" +
+                        "</div>" +
+                        "</div></a>"
+                    ;
+
+                    google.maps.event.addListener(marker, 'click', iwClose);
+                    oms.addMarker(marker, function(e) {
+                        iw.setContent(html);
+                        iw.open(map, marker);
+                    });
+
+                    //infoWindow(marker, map, price, address, highlights, mls, image);
+                    /*bounds.extend(marker.getPosition());
+                    map.fitBounds(bounds);*/
+
+                    /*
                     var marker = new google.maps.Marker({
                         icon: hr19.root + '/assets/pointgreen.svg',
                         map: map,
@@ -460,17 +535,19 @@ jQuery(document).ready(function ($) {
                             this.setIcon(hr19.root + '/assets/pointgreen.svg');
                         }
                     });
-
                     infoWindow(marker, map, price, address, highlights, mls, image);
                     bounds.extend(marker.getPosition());
                     map.fitBounds(bounds);
+                    */
+
                 }
                 /*else {
                     alert("geocode of " + address + " failed:" + status);
                 }*/
             });
     }
-
+    function iwClose() { iw.close(); }
+    /*
     function infoWindow(marker, map, price, address, highlights, mls, image) {
         google.maps.event.addListener(marker, 'click', function () {
             var html = "<a href=property/" + mls + "><div class='info-container'>" +
@@ -507,7 +584,6 @@ jQuery(document).ready(function ($) {
             });
         });
     }
-
     function closeInfoWindows() {
         for (var i = 0; i < infowindows.length; i++) {
             infowindows[i].close();
@@ -516,6 +592,7 @@ jQuery(document).ready(function ($) {
         activeMarker.setIcon(hr19.root + '/assets/pointgreen.svg');
         activeMarker = '';
     }
+    */
 
     // Price range function
     $("#min").focus(function() {
@@ -597,6 +674,3 @@ if (screen.width() < 768) {
         }
     });
 }
-
-
-

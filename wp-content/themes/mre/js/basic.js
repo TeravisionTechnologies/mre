@@ -89,6 +89,7 @@ jQuery(document).ready(function () {
         centeredSlides: true,
         loop: true,
         runCallbacksOnInit: false,
+        observer: true,
         breakpoints: {
             767: {
                 slidesPerView: 1,
@@ -117,12 +118,10 @@ jQuery(document).ready(function () {
     $('.swiper-button-next, .swiper-button-prev').click(function () {
     });
 
-    $(window).resize(function(){
-        swiper_blog_categories.update()
-    });
-
     window.addEventListener("resize", function () {
-        swiper_blog_categories.update();
+        setTimeout(function () {
+            swiper_blog_categories.update();
+        }, 500);
     }, false);
 
     // Swiper Blog Post Most Viewed
@@ -131,8 +130,7 @@ jQuery(document).ready(function () {
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         spaceBetween: 35,
-        loop: false,
-        initialSlide: 1,
+        centeredSlides: false,
         breakpoints: {
             1023: {
                 slidesPerView: 2,

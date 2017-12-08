@@ -54,7 +54,10 @@ require_once( 'wp_bootstrap_navwalker.php' );
 
 register_nav_menus( array(
 	'primary'    => __( 'Primary Menu', 'hr19' ),
-	'extra-menu' => __( 'Extra Menu' )
+) );
+
+register_nav_menus( array(
+	'primaryeng'    => __( 'Primary Menu ENG', 'hr19' ),
 ) );
 
 // Login customization
@@ -616,6 +619,15 @@ function pr_register_query_vars( $vars ) {
 	$vars[] = 'price';
 	$vars[] = 'beds';
 	$vars[] = 'baths';
+	$vars[] = 'min';
+	$vars[] = 'max';
+	$vars[] = 'price';
+	$vars[] = 'showowner';
+	$vars[] = 'rooms';
+	$vars[] = 'proptype';
+	$vars[] = 'proporderby';
+	$vars[] = 'proporder';
+	$vars[] = 'propsort';
 	$vars[] = 'property_status';
 
 	return $vars;

@@ -38,12 +38,11 @@
         </div>
     </div>
 
-    <?php if(!empty($intdetails)){ ?>
     <div class="container">
         <div class="row">
             <div class="col-md-12 detail-content">
-                <div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Detalles del Interior' : 'Interior details' ) ?></div>
-                <p><?php echo $intdetails ?></p>
+	            <?php if( !empty( $intdetails ) or !empty( $intimages ) ) { ?><div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Detalles del Interior' : 'Interior details' ) ?></div><?php } ?>
+                <p><?php if( !empty( $intdetails )) { echo $intdetails; } ?></p>
                 <?php if(!empty($intimages)){ ?>
                     <div class="row gallery-images">
                         <?php $counter = 0; foreach ( (array) $intimages as $attachment_id => $attachment_url ) { ?>
@@ -81,14 +80,12 @@
             </div>
         </div>
     </div>
-    <?php } ?>
 
-    <?php if(!empty($amenities)){ ?>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Comodidades' : 'Amenities' ) ?></div>
-                    <?php echo '<p>'.$amenities.'</p>';  ?>
+                    <?php if( !empty( $amenities ) or !empty( $amenimages ) ) { ?><div class="detail-tlt"><?php echo ( $lang == "es_ES" ? 'Comodidades' : 'Amenities' ) ?></div><?php } ?>
+                    <p><?php if( !empty( $amenities )) { echo $amenities; } ?></p>
                     <?php if(!empty($amenimages)){ ?>
                         <div class="row gallery-images">
                             <?php $counter = 0; foreach ( (array) $amenimages as $attachment_id => $attachment_url ) { ?>
@@ -126,7 +123,6 @@
                 </div>
             </div>
         </div>
-    <?php } ?>
 
     <?php if(!empty($plainsimages)){ ?>
         <div class="container">

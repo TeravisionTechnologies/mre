@@ -1,12 +1,8 @@
 <?php
 $referer = wp_get_referer();
 
-if ( (strpos($referer, "en")  == false) && strpos($_SERVER['REQUEST_URI'], "en") == false ){
-	$langu = "es";
-	$menuid = 2;
-} else{
+if ( (strpos($referer, "en")  == true) or strpos($_SERVER['REQUEST_URI'], "en") == true ){
 	$langu = "en";
-	$menuid = 20;
 }
 $footer_query    = get_posts(
 	array(
@@ -14,6 +10,7 @@ $footer_query    = get_posts(
 		'lang' => $langu
 	)
 );
+
 $partners        = get_post_meta( $footer_query[0]->ID, '_hf_partners', true );
 $rental          = get_post_meta( $footer_query[0]->ID, '_hf_rental', true );
 $contact         = get_post_meta( $footer_query[0]->ID, '_hf_contact_form', true );
@@ -127,7 +124,7 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
                 <?php
                     $contactesp = do_shortcode( '[contact-form-7 id="5" title="Home Contact Form"]');
                     $contacteng = do_shortcode( '[contact-form-7 id="443" title="Contact Form (English)"]');
-                    echo ( ($lang == "es_ES" and $langu == "es") ? $contactesp : $contacteng );
+                    echo ( ($lang == "en_US" or $langu == "en") ? $contacteng : $contactesp );
                 ?>
             </div>
         </div>
@@ -135,7 +132,7 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 </section>
 <footer class="col-xs-12 hr-footer-section text-center">
     <div class="container">
-        <a href="<?php echo home_url(); ?>"><img src="<?php echo $footer_info['_hf_logo'][0]; ?>"
+        <a href="<?php echo ( $langu == "en" ? home_url().'/en' : home_url() ) ?>"><img src="<?php echo $footer_info['_hf_logo'][0]; ?>"
                                                  alt="Logo HR19 Footer"></a>
         <p class="hr-footer-text"><?php echo $footer_info['_hf_copy'][0]; ?></p>
         <a href="#" class="hr-footer-link">Disclaimers</a>
@@ -155,12 +152,23 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
     </div>
     <div class="menu">
         <div class="menu-wrapper">
-			<?php wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'menu' => $menuid,
-				'container'      => false,
-				'menu_class'     => "hr-menu c-menu__items",
-			) ); ?>
+			<?php if( $lang == "en_US" or $langu == "en" ) {
+				wp_nav_menu( array(
+					'menu'           => 'Menu_Ingles',
+					'theme_location' => 'primary',
+					'container'      => false,
+					'menu_class'     => "hr-menu c-menu__items",
+				) );
+			} else{
+				wp_nav_menu( array(
+					'menu'           => 'Menu_Espanol',
+					'theme_location' => 'primaryeng',
+					'container'      => false,
+					'menu_class'     => "hr-menu c-menu__items",
+				) );
+            }
+            ?>
+
             <div class="hr-menu-language">
 				<?php
 				$i         = 0;

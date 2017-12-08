@@ -246,5 +246,23 @@ jQuery(document).ready(function () {
         $(this).closest('form').submit();
     });
 
+    // Filtering data
+    $('#ala-properties').submit(function(){
+        var filter = $('#ala-properties');
+        $.ajax({
+            url:filter.attr('action'),
+            data:filter.serialize(),
+            type:filter.attr('method'),
+            beforeSend:function(xhr){
+
+            },
+            success:function(data){
+
+                $('#response').html(data);
+
+            }
+        });
+        return false;
+    });
 
 });
