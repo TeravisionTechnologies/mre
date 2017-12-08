@@ -131,8 +131,13 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 </section>
 <footer class="col-xs-12 hr-footer-section text-center">
     <div class="container">
-        <a href="<?php echo ( $langu == "en" ? home_url().'/en' : home_url() ) ?>"><img src="<?php echo $footer_info['_hf_logo'][0]; ?>"
+        <?php if(!is_front_page()) { ?>
+            <a href="<?php echo ( $langu == "en" ? home_url().'/en' : home_url() ) ?>"><img src="<?php echo $footer_info['_hf_logo'][0]; ?>"
                                                  alt="Logo HR19 Footer"></a>
+        <?php } else{ ?>
+            <a href="<?php echo home_url(); ?>"><img src="<?php echo $footer_info['_hf_logo'][0]; ?>"
+                                                                                            alt="Logo HR19 Footer"></a>
+        <?php } ?>
         <p class="hr-footer-text"><?php echo $footer_info['_hf_copy'][0]; ?></p>
         <a href="#" class="hr-footer-link">Disclaimers</a>
     </div>
@@ -173,7 +178,7 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 				$i         = 0;
 				$languages = pll_the_languages( array( 'raw' => 1 ) );
 				?>
-                <h2 class="hr-menu-language-text"><?php echo ( ( $lang == "es_ES" && $langu == "es" ) ? 'Seleccione su idioma de preferencia:' : 'Select your preferred language:' ) ?></h2>
+                <h2 class="hr-menu-language-text"><?php echo ( ( $lang == "en_US" or $langu == "en" ) ? 'Select your preferred language:' : 'Seleccione su idioma de preferencia:' ) ?></h2>
                 <a href="<?php echo $languages['es']['url'] ?>"><img class="hr-menu-language-flag <?php echo ( $lang == "es_ES" ? 'language-flag-active' : '' ) ?>"
                                                                       src="<?php echo get_template_directory_uri(); ?>/assets/spain_flag.svg"
                                                                       alt="Spanish"></a>
