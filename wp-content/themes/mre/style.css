@@ -2355,10 +2355,6 @@ body.thanks {
             line-height: 25px;
             margin: 0; }
 
-  .wpcf7-response-output {
-    top: -25px;
-    left: 30px; }
-
   .al-contact-text {
     font-size: 36px;
     margin-top: 60px;
@@ -3761,7 +3757,8 @@ body.thanks {
     font-size: 1.8229166667vw;
     height: 5.2083333333vw;
     margin-top: 8.203125vw;
-    width: 22.265625vw; }
+    width: 22.265625vw;
+    background-position: 110% 50%; }
   #blog-list .blog-post {
     height: 41.9270833333vw;
     margin-top: 2.6041666667vw;
@@ -4037,12 +4034,14 @@ body.thanks {
     margin: 0 auto 0 auto;
     font-size: 1.5625vw;
     line-height: 2.8645833333vw;
-    letter-spacing: -0.2px;
-    padding-bottom: 18.8802083333vw; }
+    letter-spacing: -0.2px; }
     #about-main-text h2 {
       margin: 6.640625vw 0 1.3020833333vw 0;
       font-size: 2.6041666667vw;
       line-height: 3.125vw; }
+
+  #services-icon {
+    padding-bottom: 15.625vw; }
 
   #about-secondary-text {
     height: auto;
