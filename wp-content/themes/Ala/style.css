@@ -762,10 +762,11 @@ body {
     text-decoration: underline; }
   .al-footer-container .footer-top {
     cursor: pointer;
-    position: absolute;
-    right: 9.7222222222vw;
-    top: 2.7777777778vw;
-    z-index: 100; }
+    position: fixed;
+    right: 3.4722222222vw;
+    bottom: 2.0833333333vw;
+    z-index: 100;
+    display: none; }
 
 .marginb80 {
   margin-bottom: 80px; }
@@ -1996,8 +1997,8 @@ a.download-bro {
       cursor: pointer;
       width: 50px;
       height: 50px;
-      right: 140px;
-      top: 40px; }
+      right: 50px;
+      bottom: 30px; }
 
   .orderby {
     font-size: 16px;
@@ -2633,8 +2634,6 @@ a.download-bro {
       font-size: 1.5625vw;
       line-height: 2.34375vw; }
     .al-footer-container .footer-top {
-      right: 7.1614583333vw;
-      top: 3.90625vw;
       width: 7.1614583333vw;
       height: 7.1614583333vw; }
 
@@ -3354,8 +3353,6 @@ a.download-bro {
       font-size: 2.7777777778vw;
       line-height: 3.6111111111vw; }
     .al-footer-container .footer-top {
-      right: 6.9444444444vw;
-      top: 4.1666666667vw;
       width: 11.1111111111vw;
       height: 11.1111111111vw; }
 
