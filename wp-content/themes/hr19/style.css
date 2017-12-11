@@ -4201,11 +4201,10 @@ a[href^=tel] {
       #mre-offices .swiper-wrapper .swiper-slide {
         margin: 0 auto;
         height: 50vw;
-        width: 100%;
+        width: 100% !important;
         display: block; }
         #mre-offices .swiper-wrapper .swiper-slide .office-detail {
-          width: 76.3888888889vw;
-          margin: 2.7777777778vw 14.4444444444vw 1.3888888889vw 14.4444444444vw; }
+          width: 76.3888888889vw; }
           #mre-offices .swiper-wrapper .swiper-slide .office-detail h5 {
             font-size: 3.3333333333vw;
             line-height: 5.5555555556vw;
