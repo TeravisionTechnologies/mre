@@ -285,7 +285,14 @@ jQuery(document).ready(function () {
 
 });
 
-
+$(document).scroll(function() {
+    var y = $(this).scrollTop();
+    if (y > 800) {
+        $('.mre-footer-go-top').fadeIn();
+    } else {
+        $('.mre-footer-go-top').fadeOut();
+    }
+});
 
 
 
