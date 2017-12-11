@@ -148,21 +148,20 @@ jQuery(document).ready(function ($) {
         $('[data-toggle="tooltip"]').tooltip()
     });
 
-    //Int property detail map
-    /*$('#collapse3').on('hidden.bs.collapse', function () {
-        initMap();
-    });
-    $('#collapse3').on('shown.bs.collapse', function () {
-        initMap();
-    });*/
-
     // Show-Hide search map
     $('#map-switch').click(function () {
         $("#search-map").slideToggle();
         $("html, body").animate({scrollTop: 0}, 500);
         $(".property-list").toggleClass('property-list-search');
-        $('.text-map').html($('.text-map').text() == 'Ocultar mapa' ? 'Ver mapa' : 'Ocultar mapa');
-        $('.text-map').html($('.text-map').text() == 'Hide map' ? 'Show map' : 'Hide map');
+        if ($('.text-map').text() == 'Ocultar mapa') {
+            $('.text-map').html('Ver mapa');
+        } else if ($('.text-map').text() == 'Ver mapa') {
+            $('.text-map').html('Ocultar mapa');
+        } else if ($('.text-map').text() == 'Hide map') {
+            $('.text-map').html('Show map');
+        } else{
+            $('.text-map').html('Hide map');
+        }
     });
 
     // Search form validation
@@ -211,7 +210,7 @@ jQuery(document).ready(function ($) {
         return {value: q, data: {category: 'Código Postal'}};
     });
 
-    var query = city.concat(add,pc);
+    var query = city.concat(add, pc);
     // Initialize autocomplete
     $('#s').devbridgeAutocomplete({
         lookup: query,
@@ -221,25 +220,18 @@ jQuery(document).ready(function ($) {
         noSuggestionNotice: '<p class="no-results"><span>No pudimos encontrar su búsqueda</span><br>Verifique su ortografía o vuelva a hacer su búsqueda usando una ubicación dentro de los E.E.U.U</p>',
         groupBy: 'category',
         onSearchStart: function () {
-            //$('.search .o-wrapper').css('overflow-y', 'hidden');
             $('body').addClass('has-active-menu');
         },
         onHide: function () {
-            //$('.search .o-wrapper').css('overflow-y', 'scroll');
             $('body').removeClass('has-active-menu');
         },
         onSelect: function (suggestion) {
             var actualValue = $('#s').val();
-            if(actualValue != suggestion.value){
+            if (actualValue != suggestion.value) {
                 $(this).closest('form').submit();
             }
-            //$('.search .o-wrapper').css('overflow-y', 'scroll');
             $('body').removeClass('has-active-menu');
         },
-        /*onSearchError: function (query, jqXHR, textStatus, errorThrown) {
-            $('.property-search').attr('data-disable', 'true');
-            alert('error');
-        }*/
     });
 
     // Stop propagation (close) propety types dropdown
@@ -265,31 +257,31 @@ jQuery(document).ready(function ($) {
         $('#max').val('');
         $(this).closest('form').submit();
     });
-    $('input[type=radio][name=showowner]').change(function() {
+    $('input[type=radio][name=showowner]').change(function () {
         $(this).closest('form').submit();
     });
 
     // Set input hidden values by selected option clicked
-    $("#baths-dd li a").click(function(){
+    $("#baths-dd li a").click(function () {
         var selbath = $(this).attr('data-value');
         $("#baths").val(selbath);
     });
-    $("#rooms-dd li a").click(function(){
+    $("#rooms-dd li a").click(function () {
         var selroom = $(this).attr('data-value');
         $("#rooms").val(selroom);
     });
-    $("#transction-dd li a").click(function(){
+    $("#transction-dd li a").click(function () {
         var seltransc = $(this).attr('data-value');
         $("#transaction").val(seltransc);
     });
-    $('#property-type-dd input[type=checkbox]').change(function() {
+    $('#property-type-dd input[type=checkbox]').change(function () {
         if ($('input[type=checkbox]:checked')) {
-            var vals = $('input[type=checkbox]:checked').map(function() {
+            var vals = $('input[type=checkbox]:checked').map(function () {
                 return $(this).val();
             }).get().join(',');
             $('#proptype').val(vals);
             $(this).closest('form').submit();
-        } else{
+        } else {
             $('#proptype').val("");
             $(this).closest('form').submit();
         }
@@ -314,7 +306,7 @@ jQuery(document).ready(function ($) {
                 $("#propsort").val("ASC");
                 break;
         }
-        if(firstTimeInput.val() == 1) {
+        if (firstTimeInput.val() == 1) {
             firstTimeInput.val(0);
         }
         else {
@@ -324,11 +316,11 @@ jQuery(document).ready(function ($) {
     }).change();
 
     // Set min-max values
-    $("#min-list li a").click(function(){
+    $("#min-list li a").click(function () {
         var selmin = $(this).attr('data-value');
         $("#min").val(selmin);
     });
-    $("#max-list li a").click(function(){
+    $("#max-list li a").click(function () {
         var selmax = $(this).attr('data-value');
         $("#max").val(selmax);
     });
@@ -374,14 +366,14 @@ jQuery(document).ready(function ($) {
             });
 
         geocoder = new google.maps.Geocoder();
-        oms = new OverlappingMarkerSpiderfier(map, { markersWontMove: true, markersWontHide: true });
+        oms = new OverlappingMarkerSpiderfier(map, {markersWontMove: true, markersWontHide: true});
 
         for (i = 0; i < locations.length; i++) {
             geocodeAddress(locations, i);
-            oms.addListener('format', function(marker, status) {
+            oms.addListener('format', function (marker, status) {
                 var text = '';
 
-                if(status == OverlappingMarkerSpiderfier.markerStatus.SPIDERFIED){
+                if (status == OverlappingMarkerSpiderfier.markerStatus.SPIDERFIED) {
                     var iconSize = new google.maps.Size(36, 35);
                     marker.setIcon({
                         url: hr19.root + '/assets/icon-plus-group.svg',
@@ -395,7 +387,7 @@ jQuery(document).ready(function ($) {
                     size = "7px";
                 }
 
-                if(status == OverlappingMarkerSpiderfier.markerStatus.SPIDERFIABLE){
+                if (status == OverlappingMarkerSpiderfier.markerStatus.SPIDERFIABLE) {
                     var iconSize = new google.maps.Size(70, 70);
                     marker.setIcon({
                         url: hr19.root + '/assets/pointgreen.svg',
@@ -408,7 +400,7 @@ jQuery(document).ready(function ($) {
                     color = '#ffffff';
                 }
 
-                if(status == OverlappingMarkerSpiderfier.markerStatus.UNSPIDERFIABLE){
+                if (status == OverlappingMarkerSpiderfier.markerStatus.UNSPIDERFIABLE) {
                     var iconSize = new google.maps.Size(70, 70);
                     marker.setIcon({
                         url: hr19.root + '/assets/pointgreen.svg',
@@ -432,7 +424,11 @@ jQuery(document).ready(function ($) {
         }
 
         iw = new google.maps.InfoWindow();
-        function iwClose() { iw.close(); }
+
+        function iwClose() {
+            iw.close();
+        }
+
         google.maps.event.addListener(map, 'click', iwClose);
     }
 
@@ -488,7 +484,7 @@ jQuery(document).ready(function ($) {
                     ;
 
                     google.maps.event.addListener(marker, 'click', iwClose);
-                    oms.addMarker(marker, function(e) {
+                    oms.addMarker(marker, function (e) {
                         iw.setContent(html);
                         iw.open(map, marker);
                     });
@@ -546,7 +542,11 @@ jQuery(document).ready(function ($) {
                 }*/
             });
     }
-    function iwClose() { iw.close(); }
+
+    function iwClose() {
+        iw.close();
+    }
+
     /*
     function infoWindow(marker, map, price, address, highlights, mls, image) {
         google.maps.event.addListener(marker, 'click', function () {
@@ -595,11 +595,11 @@ jQuery(document).ready(function ($) {
     */
 
     // Price range function
-    $("#min").focus(function() {
+    $("#min").focus(function () {
         $("#min-list").show();
         $("#max-list").hide();
     });
-    $("#max").focus(function() {
+    $("#max").focus(function () {
         $("#min-list").hide();
         $("#max-list").show();
     });
@@ -612,10 +612,10 @@ jQuery(document).ready(function ($) {
         });
     });*/
 
-    $('.nn .wp-pagenavi a').on('click', function(e){
+    $('.nn .wp-pagenavi a').on('click', function (e) {
         e.preventDefault();
         var link = $(this).attr('href');
-        $('#responsed').load(link + ' #responsed', function() {
+        $('#responsed').load(link + ' #responsed', function () {
             $('#responsed').fadeIn();
         });
     });
@@ -626,7 +626,7 @@ jQuery(document).ready(function ($) {
     });
     $("#ptotal").html(sum);*/
 
-    $('#go-back').click(function(){
+    $('#go-back').click(function () {
         parent.history.back();
         return false;
     });
@@ -635,15 +635,15 @@ jQuery(document).ready(function ($) {
 
 
 // Property sale/lease/presale scroll animation
-$(window).on('load', function() {
-    if($('#presale-list').length){
+$(window).on('load', function () {
+    if ($('#presale-list').length) {
         var position = $("#presale-list").offset().top;
         var finalPosition = position - 80;
         $('html, body').animate({
             scrollTop: finalPosition
         }, 1000);
     }
-    if($('#lease-list').length){
+    if ($('#lease-list').length) {
         var position = $("#lease-list").offset().top;
         var finalPosition = position - 80;
         $('html, body').animate({
@@ -657,10 +657,10 @@ $(window).on('load', function() {
             scrollTop: finalPosition
         }, 1000);
     }*/
-    if( $('#map-detail').is(':empty') ) {
+    if ($('#map-detail').is(':empty')) {
         $('.prlocation').css('display', 'none');
     }
-    if ( window.location.href.indexOf("firstTimeLoad") > -1) {
+    if (window.location.href.indexOf("firstTimeLoad") > -1) {
         $('html, body').animate({
             scrollTop: $(".property-list").offset().top
         }, 500);
@@ -670,8 +670,7 @@ $(window).on('load', function() {
             scrollTop: $(".property-list").offset().top
         }, 500);
     }
-
-    if(document.referrer.indexOf("/page") > 0){
+    if (document.referrer.indexOf("/page") > 0) {
         $('html, body').animate({
             scrollTop: $(".property-list").offset().top
         }, 500);
@@ -682,8 +681,8 @@ $(window).on('load', function() {
 // Show/Hide Filter button on scroll
 var screen = $(window);
 if (screen.width() < 768) {
-    $(window).scroll(function() {
-        if ($(this).scrollTop()>0) {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 0) {
             $('#search-filters').fadeOut();
         } else {
             $('#search-filters').fadeIn();

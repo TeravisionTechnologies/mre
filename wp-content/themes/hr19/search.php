@@ -1,5 +1,14 @@
 <?php
 get_header();
+if(function_exists('pll_current_language')){
+	$current_language = pll_current_language();
+	$default_language = pll_default_language();
+	if($current_language != $default_language){
+		$language_subdir = $current_language.'/';
+	} else {
+		$language_subdir = '';
+	}
+}
 $s = get_query_var('s');
 $propstatus = get_query_var('property_status');
 $roomsFilter = get_query_var('rooms');
@@ -60,6 +69,14 @@ if (isset($showowner) && $showowner) {
 	);
 }
 
+if (isset($propstatus) && $propstatus) {
+	$args['meta_query'][] = array(
+		'key' => '_pr_transaction',
+		'value' => $propstatus,
+		'compare' => '='
+	);
+}
+
 // if both minimum price and maximum price are specified we will use BETWEEN comparison
 if (isset($min) && $min && isset($max) && $max) {
 	$args['meta_query'][] = array(
@@ -105,7 +122,7 @@ $count = $total->post_count;
 wp_reset_postdata();
 wp_reset_query();
 ?>
-    <form id="property-search-top" action="<?php echo site_url() ?>" method="get" role="form"
+    <form id="property-search-top" action="<?php echo esc_url(home_url('/'.$language_subdir)); ?>" method="get" role="form"
           data-toggle="validator">
 
         <nav id="search-filters" class="navbar navbar-default navbar-fixed-top">
@@ -508,7 +525,6 @@ wp_reset_query();
 					<?php wp_pagenavi(array('query' => $query)); ?>
                 </div>
             </div>
-            <!--<div class="tot" data-myval="<?php //echo $count = $query->found_posts; ?>"></div>-->
 		<?php else: ?>
             <div class="col-md-12">
                 <div class="no-results-info">
