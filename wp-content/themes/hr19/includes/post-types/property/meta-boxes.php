@@ -71,61 +71,70 @@ function property_metaboxes() {
 		'name' => __('Type of Property'),
 		'id' => $prefix . 'type_of_property',
 		'type' => 'text',
-		'desc' => 'The type of property'
+		'desc' => 'The type of property',
 	));
 
 	$cmb_property->add_field(array(
 		'name' => __('Rooms'),
 		'id' => $prefix . 'room_count',
 		'type' => 'text',
+		'desc' => 'Total number of rooms, e.g 6'
 	));
 
 	$cmb_property->add_field(array(
 		'name' => __('Baths'),
 		'id' => $prefix . 'baths_total',
 		'type' => 'text',
+		'desc' => 'Total number of baths (full and halfs), e.g 3'
 	));
 
 	$cmb_property->add_field(array(
 		'name' => __('Baths Full'),
 		'id' => $prefix . 'baths_full',
 		'type' => 'text',
+		'desc' => 'Total number of full baths, e.g 2'
 	));
 
 	$cmb_property->add_field(array(
 		'name' => __('Baths Half'),
 		'id' => $prefix . 'baths_half',
 		'type' => 'text',
+		'desc' => 'Total number of half baths, e.g 1'
 	));
 
 	$cmb_property->add_field(array(
 		'name' => __('Square FT'),
 		'id' => $prefix . 'sqft',
 		'type' => 'text',
+		'desc' => 'Total Square FT, e.g 718'
 	));
 
 	$cmb_property->add_field(array(
 		'name' => __('Surface'),
 		'id' => $prefix . 'surf',
 		'type' => 'text',
+		'desc' => 'Total area, e.g 3477'
 	));
 
 	$cmb_property->add_field(array(
 		'name' => __('HOA Fees'),
 		'id' => $prefix . 'hoa',
 		'type' => 'text',
+		'desc' => 'Total HOA amount fee  e.g 20'
 	));
 
 	$cmb_property->add_field(array(
 		'name' => __('Year Built'),
 		'id' => $prefix . 'yearbuilt',
 		'type' => 'text',
+		'desc' => 'Construction year of the property e.g 2016'
 	));
 
 	$cmb_property->add_field(array(
 		'name' => __('Agent ID'),
 		'id' => $prefix . 'agentid',
 		'type' => 'text',
+		'desc' => 'The agent/broker Realtor (to match listed properties) ID e.g 3196633'
 	));
 
 	$cmb_property->add_field(array(
@@ -138,24 +147,28 @@ function property_metaboxes() {
 		'name' => __('Estatus'),
 		'id' => $prefix . 'status',
 		'type' => 'text',
+		'desc' => 'The status of the property (Active / Pending)'
 	));
 
 	$cmb_property->add_field(array(
 		'name' => __('Tipo de Transacci&oacute;n'),
 		'id' => $prefix . 'transaction',
 		'type' => 'text',
+		'desc' => 'Type of transaction (Sale / Rent / Presale)'
 	));
 
 	$cmb_property->add_field(array(
 		'name' => __('Tax Amount'),
 		'id' => $prefix . 'TaxAmount',
 		'type' => 'text',
+		'desc' => 'Total amount of taxes, e.g 130'
 	));
 
 	$cmb_property->add_field(array(
 		'name' => __('Estimado de Hipoteca'),
 		'id' => $prefix . 'TotalMortgage',
 		'type' => 'text',
+		'desc' => 'Total mortgage, e.g 140'
 	));
 
 	/*$cmb_property->add_field(array(
@@ -186,6 +199,7 @@ function property_metaboxes() {
 		'name' => __('Propietario'),
 		'id' => $prefix . 'owner',
 		'type' => 'text',
+		'desc' => 'Possible values: HR19 / Other (Other MLS properties)'
 	));
 
 	//new fields
@@ -218,7 +232,9 @@ function property_metaboxes() {
 		'name' => __('Amenities'),
 		'id' => $prefix . 'Amenities',
 		'type' => 'text',
-	));	$cmb_property->add_field(array(
+		'desc' => 'List of amenities, e.g Elevator,Pool,Trash Chute'
+	));
+	$cmb_property->add_field(array(
 		'name' => __('Application Fee'),
 		'id' => $prefix . 'ApplicationFee',
 		'type' => 'text',
@@ -252,6 +268,7 @@ function property_metaboxes() {
 		'name' => __('Balcony Porchandor Patio YN'),
 		'id' => $prefix . 'BalconyPorchandorPatioYN',
 		'type' => 'text',
+		'desc' => '1: Yes / 0: No'
 	));
 	$cmb_property->add_field(array(
 		'name' => __('Bedroom Description'),
@@ -292,6 +309,7 @@ function property_metaboxes() {
 		'name' => __('Cable Available YN'),
 		'id' => $prefix . 'CableAvailableYN',
 		'type' => 'text',
+		'desc' => '1: Yes / 0: No'
 	));
 	$cmb_property->add_field(array(
 		'name' => __('Ceiling Height'),
@@ -385,6 +403,7 @@ function property_metaboxes() {
 		'name' => __('Exp Incl Electric YN'),
 		'id' => $prefix . 'ExpInclElectricYN',
 		'type' => 'text',
+		'desc' => '1: Yes / 0: No'
 	));
 	$cmb_property->add_field(array(
 		'name' => __('Expiration Date'),
@@ -435,6 +454,7 @@ function property_metaboxes() {
 		'name' => __('Internet YN'),
 		'id' => $prefix . 'InternetYN',
 		'type' => 'text',
+		'desc' => '1: Yes / 0: No'
 	));
 	$cmb_property->add_field(array(
 		'name' => __('Lease Term Info'),
@@ -615,11 +635,13 @@ function property_metaboxes() {
 		'name' => __('Pets Allowed YN'),
 		'id' => $prefix . 'PetsAllowedYN',
 		'type' => 'text',
+		'desc' => '1: Yes / 0: No'
 	));
 	$cmb_property->add_field(array(
 		'name' => __('Pool YN'),
 		'id' => $prefix . 'PoolYN',
 		'type' => 'text',
+		'desc' => '1: Yes / 0: No'
 	));
 	$cmb_property->add_field(array(
 		'name' => __('Property Type Information'),
@@ -660,6 +682,7 @@ function property_metaboxes() {
 		'name' => __('Security Information'),
 		'id' => $prefix . 'SecurityInformation',
 		'type' => 'text',
+		'desc' => 'Security informacion e.g Doorman,Garage Secured,Intercom In Lobby'
 	));
 	$cmb_property->add_field(array(
 		'name' => __('Selling Agent Direct Work Phone'),
@@ -790,6 +813,7 @@ function property_metaboxes() {
 		'name' => __('Waterfront Property YN'),
 		'id' => $prefix . 'WaterfrontPropertyYN',
 		'type' => 'text',
+		'desc' => '1: Yes / 0: No'
 	));
 	$cmb_property->add_field(array(
 		'name' => __('Water View'),
