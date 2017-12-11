@@ -69,8 +69,8 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
                 <?php
                 $countries = get_terms('country', array(
                     'hide_empty' => 1,
-                    'orderby' => 'count',
-                    'order' => 'DESC'
+                    'orderby' => 'description',
+                    'order' => 'ASC'
                 ));
                 if (!empty($countries) && !is_wp_error($countries)) {
                     $j = 1;
@@ -86,8 +86,8 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
                 <?php
                 $countries = get_terms('country', array(
                     'hide_empty' => 1,
-                    'orderby' => 'count',
-                    'order' => 'DESC'
+                    'orderby' => 'description',
+                    'order' => 'ASC'
                 ));
                 if (!empty($countries) && !is_wp_error($countries)) {
                     foreach ($countries as $country) { ?>
