@@ -138,6 +138,7 @@ $bgimg = (int)$bgimg;
 
     <div class="property-info-heading">
         <div class="container">
+            <div class="row">
             <div class="col-xs-12 col-sm-3 col-md-3 price borderl">
                 <div><?php echo ( $lang == "es_ES" ? 'Precio: ' : 'Price: ' ) ?></div>
                 <div class="price-txt"><?php if (!empty($price)) {
@@ -149,7 +150,7 @@ $bgimg = (int)$bgimg;
                     <?php echo ( $lang == "es_ES" ? '/mes' : '/month' ) ?>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-5 paddingl30 borderl">
+            <div class="col-xs-6 col-sm-6 col-md-6 paddingl30 borderl">
                 <div class="md-text">
                     <?php if (!empty($address)) {
                         echo '<div class="addr">'.$address.'</div>';
@@ -175,7 +176,7 @@ $bgimg = (int)$bgimg;
                 </div>
                 <div class="sm-text"><?php echo ( $lang == "es_ES" ? ' Número de MLS: ' : ' MLS Number: ' ) ?><?php the_title(); ?></div>
             </div>
-            <div class="col-xs-6 col-sm-3 col-md-4 text-center">
+            <div class="col-xs-6 col-sm-3 col-md-3 text-center">
                 <div class="row surface">
                     <?php if (!empty($surf)) { ?>
                         <div class="col-xs-6 col-sm-6 col-md-6">
@@ -184,7 +185,7 @@ $bgimg = (int)$bgimg;
                         </div>
                     <?php } ?>
                     <?php if (!empty($sqft)) { ?>
-                        <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="<?php ( empty($surf) ? 'col-xs-12 col-sm-12 col-md-12' : 'col-xs-6 col-sm-6 col-md-6' ) ?>">
                             <div class="sm-text"><?php echo ( $lang == "es_ES" ? 'Pies cuadrados:' : 'Square feet:' ) ?></div>
                             <div class="md-text"><?php if (!empty($sqft)) {
                                     echo $sqft . ' ft²';
@@ -195,6 +196,7 @@ $bgimg = (int)$bgimg;
                     <?php } ?>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 

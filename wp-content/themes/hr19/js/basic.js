@@ -690,11 +690,13 @@ if (screen.width() < 768) {
     });
 }
 
+var $win = $(window);
+
 $(document).scroll(function() {
     var y = $(this).scrollTop();
     if (y > 800) {
-        $('.footer-top').fadeIn();
+        $('.footer-top').fadeIn(2000);
     } else {
-        $('.footer-top').fadeOut();
+        $('.footer-top').fadeOut(2000);
     }
 });

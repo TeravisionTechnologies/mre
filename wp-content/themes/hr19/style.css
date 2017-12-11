@@ -1850,7 +1850,6 @@ a[href^=tel] {
       font-size: 0.9722222222vw; }
 
 .borderl {
-  text-align: center;
   border-right: solid 1px rgba(74, 74, 74, 0.3); }
 
 .paddingl30 {
@@ -1866,27 +1865,27 @@ a[href^=tel] {
   letter-spacing: -0.1px;
   padding: 1.3888888889vw 0;
   background: #fff;
-  z-index: 999999 !important; }
-  .property-info-heading div[class*='col'] {
-    padding: 0; }
+  z-index: 999999 !important;
+  /*div[class*='col']
+   * padding: 0 */ }
   .property-info-heading .sm-text {
     font-size: 0.9722222222vw; }
   .property-info-heading .price-txt {
-    font-size: 20px;
+    font-size: 1.3888888889vw;
     font-family: "Montserrat-bold";
-    line-height: 24px; }
+    line-height: 1.6666666667vw; }
   .property-info-heading .md-text {
     font-size: 1.1111111111vw;
     font-family: "Montserrat-bold";
-    line-height: 16px;
-    margin-bottom: 3px; }
+    line-height: 1.1111111111vw;
+    margin-bottom: 0.2083333333vw; }
     .property-info-heading .md-text .addr {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      padding-right: 15px; }
+      padding-right: 1.0416666667vw; }
   .property-info-heading .surface {
-    padding: 13px 0; }
+    padding: 0.9027777778vw 0; }
 
 .property-features .oh-wrap {
   margin-top: 20px;
@@ -3462,18 +3461,22 @@ a[href^=tel] {
 
   .property-info-heading {
     font-size: 1.3020833333vw;
-    height: 10.4166666667vw; }
+    height: 10.4166666667vw;
+    padding: 2.34375vw 0; }
     .property-info-heading .price-txt {
       font-size: 2.34375vw;
       line-height: 2.34375vw; }
     .property-info-heading .sm-text {
-      font-size: 1.3020833333vw; }
+      font-size: 1.0416666667vw; }
     .property-info-heading .md-text {
       font-size: 1.8229166667vw;
       line-height: 1.8229166667vw; }
-    .property-info-heading .surface .md-text {
-      font-size: 2.0833333333vw;
-      line-height: 2.0833333333vw; }
+    .property-info-heading .surface {
+      padding: 1.6927083333vw 0;
+      padding-bottom: 0; }
+      .property-info-heading .surface .md-text {
+        font-size: 1.8229166667vw;
+        line-height: 1.8229166667vw; }
 
   .property-features .open-house {
     font-size: 1.5625vw; }
@@ -4347,7 +4350,8 @@ a[href^=tel] {
       border: none;
       border-bottom: solid 1px rgba(74, 74, 74, 0.3);
       padding-bottom: 2.7777777778vw !important;
-      margin-bottom: 2.7777777778vw; }
+      margin-bottom: 2.7777777778vw;
+      text-align: center; }
     .property-info-heading .price-txt {
       font-size: 3.8888888889vw;
       line-height: 3.8888888889vw; }
@@ -4363,8 +4367,8 @@ a[href^=tel] {
     .property-info-heading .surface {
       padding: 3.3333333333vw 0; }
       .property-info-heading .surface .md-text {
-        font-size: 3.8888888889vw;
-        line-height: 3.8888888889vw; }
+        font-size: 3.3333333333vw;
+        line-height: 3.3333333333vw; }
 
   .property-features .oh-wrap {
     text-align: center; }
@@ -4416,7 +4420,7 @@ a[href^=tel] {
       display: none; }
 
   .paddingl30 {
-    padding-left: 0px !important; }
+    padding-left: 4.1666666667vw !important; }
 
   #about-hero-section {
     height: 111.1111111111vw;
