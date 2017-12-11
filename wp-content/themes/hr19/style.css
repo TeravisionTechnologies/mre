@@ -1086,12 +1086,13 @@ h2.active {
     width: 3.4722222222vw;
     height: 3.4722222222vw;
     cursor: pointer;
-    position: absolute;
-    right: 9.7222222222vw;
-    top: 2.7777777778vw;
+    position: fixed;
+    right: 3.4722222222vw;
+    bottom: 2.0833333333vw;
     z-index: 100;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
     border-radius: 50%;
+    display: none;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
@@ -2592,8 +2593,8 @@ a[href^=tel] {
     .hr-footer-section .footer-top {
       width: 50px;
       height: 50px;
-      right: 140px;
-      top: 40px; }
+      right: 50px;
+      bottom: 30px; }
 
   #search-filters {
     margin-top: 79px; }
@@ -3206,9 +3207,7 @@ a[href^=tel] {
       line-height: 2.34375vw; }
     .hr-footer-section .footer-top {
       width: 5.2083333333vw;
-      height: 5.2083333333vw;
-      right: 7.1614583333vw;
-      top: 2.6041666667vw; }
+      height: 5.2083333333vw; }
 
   .property-status a {
     font-size: 12px;
@@ -4003,9 +4002,7 @@ a[href^=tel] {
       line-height: 3.8888888889vw; }
     .hr-footer-section .footer-top {
       width: 7.7777777778vw;
-      height: 7.7777777778vw;
-      right: 6.9444444444vw;
-      top: 3.8888888889vw; }
+      height: 7.7777777778vw; }
 
   .property-search-wrapper {
     bottom: 8.3333333333vw; }
