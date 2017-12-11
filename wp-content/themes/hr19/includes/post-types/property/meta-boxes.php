@@ -18,37 +18,43 @@ function property_metaboxes() {
 		'name' => __('State'),
 		'id' => $prefix . 'state',
 		'type' => 'text',
+		'desc' => 'The state where the property is located, e.g FL'
 	));
 
 	$cmb_property->add_field(array(
 		'name' => __('City'),
 		'id' => $prefix . 'city',
 		'type' => 'text',
+		'desc' => 'The city where the property is located, e.g Miami, FL'
 	));
 
 	$cmb_property->add_field(array(
 		'name' => __('Community'),
 		'id' => $prefix . 'community',
 		'type' => 'text',
+		'desc' => 'The community where the property is located, e.g Palm Beach County'
 	));
 
 	$cmb_property->add_field(array(
 		'name' => __('Subdivision'),
 		'id' => $prefix . 'subdiv',
 		'type' => 'text',
+		'desc' => 'The subdivision where the property is located, e.g Jupiter Inlet Colony'
 	));
 
 	$cmb_property->add_field(array(
 		'name' => __('Address'),
 		'id' => $prefix . 'address',
 		'type' => 'text',
+		'desc' => 'The full address where the property is located, e.g 8950 SW 74 CT 2230 Miami, FL'
 	));
 
 	$cmb_property->add_field(
 		array(
 			'name' => __('Property Price'),
 			'id' => $prefix . 'current_price',
-			'type' => 'text_money'
+			'type' => 'text_money',
+			'desc' => 'The current price of the property, e.g 1000000'
 		)
 	);
 
@@ -56,6 +62,7 @@ function property_metaboxes() {
 		'name' => __('Type of Property'),
 		'id' => $prefix . 'type_of_property',
 		'type' => 'text',
+		'desc' => 'The type of property'
 	));
 
 	$cmb_property->add_field(array(

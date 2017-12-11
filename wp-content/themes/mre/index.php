@@ -106,12 +106,12 @@ $categories      = get_categories(
 							<?php 
                             if ( $lang == "es_ES" ) { 
     							$orderby_options = array(
-    								'post_date'  => 'Ordenar por fecha',  
-    								'post_title' => 'Ordenar por t&iacute;tulo'); 
+    								'date'  => 'Ordenar por fecha',  
+    								'title' => 'Ordenar por t&iacute;tulo'); 
                             }  else{
                                 $orderby_options = array(
-                                'post_date'  => 'Sort by date',  
-                                'post_title' => 'Sort by title');
+                                'date'  => 'Sort by date',  
+                                'title' => 'Sort by title');
                             }
 
 							foreach ( $orderby_options as $value => $label ) {

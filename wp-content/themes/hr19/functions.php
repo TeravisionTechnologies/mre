@@ -110,6 +110,7 @@ $postTypeDir = array(
 	__DIR__ . '/includes/post-types/agent/',
 	__DIR__ . '/includes/post-types/property/',
 	__DIR__ . '/includes/post-types/about-us/',
+	__DIR__ . '/includes/post-types/office/',
 );
 
 // File names inside post-types dirs
@@ -144,6 +145,8 @@ function call_create_post_types() {
 	create_post_type_property();
 	// Post Type for About Us
 	create_post_type_about_us();
+	// Post Type for Offices
+    create_post_type_offices();
 }
 
 /* Remove text area field from header and footer */
