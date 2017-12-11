@@ -252,7 +252,7 @@ $bgimg = (int)$bgimg;
                                             </div>
                                             <div class="info">
                                                 <?php
-                                                    echo '$' . $hoa . ( $lang == "es_ES" ? '/mes' : '/month' );
+                                                    echo $csymbol . $hoa . ( $lang == "es_ES" ? '/mes' : '/month' );
                                                 ?>
                                             </div>
                                         </div>
