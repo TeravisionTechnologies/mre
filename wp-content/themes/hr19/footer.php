@@ -2,6 +2,9 @@
 $referer = wp_get_referer();
 if ( (strpos($referer, "en")  == true) or strpos($_SERVER['REQUEST_URI'], "en") == true ){
 	$langu = "en";
+	$home = pll_home_url('en');
+} else{
+	$home = pll_home_url('es');
 }
 $footer_query    = get_posts(
 	array(
@@ -155,13 +158,7 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 </section>
 <footer class="col-xs-12 hr-footer-section text-center">
     <div class="container">
-        <?php if(!is_front_page() && !is_search() ) { ?>
-            <a href="<?php echo ( $langu == "en" ? home_url().'/en' : home_url() ) ?>"><img src="<?php echo $footer_info['_hf_logo'][0]; ?>"
-                                                 alt="Logo HR19 Footer"></a>
-        <?php } else{ ?>
-            <a href="<?php echo home_url(); ?>"><img src="<?php echo $footer_info['_hf_logo'][0]; ?>"
-                                                                                            alt="Logo HR19 Footer"></a>
-        <?php } ?>
+        <a href="<?php echo $home; ?>"><img src="<?php echo $footer_info['_hf_logo'][0]; ?>" alt="Logo HR19 Footer"></a>
         <p class="hr-footer-text"><?php echo $footer_info['_hf_copy'][0]; ?></p>
         <a href="#" class="hr-footer-link">Disclaimers</a>
     </div>
