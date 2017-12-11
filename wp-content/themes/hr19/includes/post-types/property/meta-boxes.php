@@ -53,8 +53,17 @@ function property_metaboxes() {
 		array(
 			'name' => __('Property Price'),
 			'id' => $prefix . 'current_price',
-			'type' => 'text_money',
+			'type' => 'text',
 			'desc' => 'The current price of the property, e.g 1000000'
+		)
+	);
+
+	$cmb_property->add_field(
+		array(
+			'name' => __('Currency Symbol'),
+			'id' => $prefix . 'currency_symbol',
+			'type' => 'text',
+			'desc' => 'The currency symbol, leave empty for USD Dollars (default), e.g €, £, ¥'
 		)
 	);
 
@@ -792,5 +801,12 @@ function property_metaboxes() {
 		'id' => $prefix . 'EquipmentAppliances',
 		'type' => 'text',
 	));
+
+	$cmb_property->add_field( array(
+		'name' => __('Property gallery'),
+		'desc' => 'Upload the property photos',
+		'id'   => $prefix . 'photos',
+		'type' => 'file_list',
+	) );
 
 }

@@ -104,6 +104,7 @@ if(function_exists('pll_current_language')){
             $sysid = get_post_meta(get_the_ID(), '_pr_matrixid', true);
             $city = get_post_meta(get_the_ID(), '_pr_city', true);
             $state = get_post_meta(get_the_ID(), '_pr_state', true);
+	        $gallery = get_post_meta(get_the_ID(), '_pr_photos', true);
             $bgimg = $url['baseurl'].'/photos/'.$sysid.'/1.jpg';
 	        $headers  = get_headers($bgimg, 1);
 	        $fsize    = $headers['Content-Length'];
@@ -111,6 +112,12 @@ if(function_exists('pll_current_language')){
 	        $urlimage = wp_remote_head( $bgimg );
 	        $urlimage = $urlimage['response']['code'];
 	        $placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
+	        $csymbol =  get_post_meta(get_the_ID(), '_pr_currency_symbol', true);
+	        if( !empty( $csymbol ) ){
+	            $csymbol = $csymbol;
+            } else{
+	            $csymbol = "$";
+            }
             ?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <a href="<?php the_permalink(); ?>" class="property">
@@ -123,9 +130,13 @@ if(function_exists('pll_current_language')){
                          );">
                     </div>
                     <div class="property-info">
-                        <div class="property-price"><?php setlocale(LC_MONETARY,"en_US"); if (!empty($price)) {
-                                echo '$' . number_format($price, 0, '.', ',');
-                            } ?></div>
+                        <div class="property-price">
+                            <?php
+                                if (!empty($price)) {
+                                    echo $csymbol . number_format($price, 0, '.', ',');
+                                }
+                            ?>
+                        </div>
                         <div class="property-highlights">
                             <?php if (!empty($type)) {
                                 echo $type;

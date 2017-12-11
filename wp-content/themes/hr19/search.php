@@ -474,6 +474,12 @@ wp_reset_query();
 			$urlimage = wp_remote_head($bgimg);
 			$urlimage = $urlimage['response']['code'];
 			$placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
+			$csymbol =  get_post_meta(get_the_ID(), '_pr_currency_symbol', true);
+			if( !empty( $csymbol ) ){
+				$csymbol = $csymbol;
+			} else{
+				$csymbol = "$";
+			}
 			?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <a href="<?php the_permalink(); ?>" class="property">
@@ -490,7 +496,7 @@ wp_reset_query();
                     </div>
                     <div class="property-info">
                         <div class="property-price"><?php if (!empty($price)) {
-								echo '$' . number_format($price, 0, '.', ',');
+								echo $csymbol . number_format($price, 0, '.', ',');
 							} ?>
                         </div>
                         <div class="property-highlights">

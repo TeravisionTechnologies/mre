@@ -57,6 +57,12 @@ $parcelnumber = get_post_meta(get_the_ID(), '_pr_ParcelNumber', true);
 $postalcode = get_post_meta(get_the_ID(), '_pr_postalcode', true);
 $unitnumb = get_post_meta(get_the_ID(), '_pr_UnitNumber', true);
 $unitview = get_post_meta(get_the_ID(), '_pr_UnitView', true);
+$csymbol =  get_post_meta(get_the_ID(), '_pr_currency_symbol', true);
+if( !empty( $csymbol ) ){
+	$csymbol = $csymbol;
+} else{
+	$csymbol = "$";
+}
 
 if( $pets == "1" ){
 	$petsinfo = 'Pets allowed';
@@ -142,7 +148,7 @@ $bgimg = (int)$bgimg;
             <div class="col-xs-12 col-sm-3 col-md-3 price borderl">
                 <div><?php echo ( $lang == "es_ES" ? 'Precio: ' : 'Price: ' ) ?></div>
                 <div class="price-txt"><?php if (!empty($price)) {
-                        echo '$' . number_format($price, 0, '.', ',');
+                        echo $csymbol . number_format($price, 0, '.', ',');
                     } ?></div>
                 <div class="sm-text">
                     <?php echo ( $lang == "es_ES" ? 'Estimado de hipoteca' : 'Mortgage estimate' ) ?>
@@ -253,7 +259,7 @@ $bgimg = (int)$bgimg;
                                         <div class="col-xs-4 col-sm-2 col-md-2 feature">
                                             <div><?php echo ( $lang == "es_ES" ? 'Impuestos' : 'Taxes' ) ?></div>
                                             <div class="info"><?php if (!empty($taxes)) {
-		                                            echo '$' . number_format($taxes, 0, '.', ',');
+		                                            echo $csymbol . number_format($taxes, 0, '.', ',');
 	                                            } else {
                                                     echo '0';
                                                 } ?></div>
@@ -547,15 +553,24 @@ if (have_posts()): ?>
                     $sysid = get_post_meta(get_the_ID(), '_pr_matrixid', true);
                     $city = get_post_meta(get_the_ID(), '_pr_city', true);
                     $state = get_post_meta(get_the_ID(), '_pr_state', true);
+	                $csymbol =  get_post_meta(get_the_ID(), '_pr_currency_symbol', true);
+	                if( !empty( $csymbol ) ){
+		                $csymbol = $csymbol;
+	                } else{
+		                $csymbol = "$";
+	                }
                     ?>
                     <div class="col-xs-12 col-sm-4 col-md-4">
                         <a href="<?php the_permalink(); ?>" class="property">
                             <div class="property-image"
                                  style="background: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg);"></div>
                             <div class="property-info">
-                                <div class="property-price"><?php if (!empty($price)) {
-                                        echo '$' . $price;
-                                    } ?>
+                                <div class="property-price">
+	                                <?php
+	                                if (!empty($price)) {
+		                                echo $csymbol . number_format($price, 0, '.', ',');
+	                                }
+	                                ?>
                                 </div>
                                 <div class="property-highlights">
                                     <?php if (!empty($type)) {

@@ -86,6 +86,12 @@ if ( have_posts() ): while ( have_posts() ):
 					$urlimage = wp_remote_head( $bgimg );
 					$urlimage = $urlimage['response']['code'];
 					$placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
+					$csymbol =  get_post_meta( $property->ID, '_pr_currency_symbol', true);
+					if( !empty( $csymbol ) ){
+						$csymbol = $csymbol;
+					} else{
+						$csymbol = "$";
+					}
 					?>
                     <div class="col-xs-12 col-sm-4 no-padding property">
                         <a href="<?php echo get_permalink( $property->ID ); ?>">
@@ -98,8 +104,18 @@ if ( have_posts() ): while ( have_posts() ):
                                     );">
                             </div>
                             <div class="property-info">
-                                <h2 class="info-price">$<?php echo number_format($price, 0, '.', ','); ?></h2>
-                                <h3 class="info-features"><?php echo $type . " · " . $rooms . ( $lang == "es_ES" ? ' Habitaciones ·' : ' Rooms' ) . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' ); ?></h3>
+                                <h2 class="info-price"><?php echo $csymbol . number_format($price, 0, '.', ','); ?></h2>
+                                <h3 class="info-features"><?php if (!empty($type)) {
+		                                echo $type;
+	                                } else {
+		                                echo '';
+	                                } ?>
+	                                <?php if (!empty($rooms)) {
+		                                echo '· ' . $rooms .  ( $lang == "es_ES" ? ' Habitaciones' : ' Rooms' );
+	                                } ?>
+	                                <?php if (!empty($baths)) {
+		                                echo '· ' . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' );
+	                                } ?></h3>
                                 <h3 class="info-address"><?php echo $address; ?></h3>
                                 <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
                             </div>
