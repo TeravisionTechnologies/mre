@@ -15,12 +15,6 @@ $headerPost   = get_posts(
 		'numberposts' => 1
 	)
 );
-$headerPost   = get_posts(
-	array(
-		'post_type'   => 'header_footer',
-		'numberposts' => 1
-	)
-);
 $theMeta      = get_post_meta( $headerPost[0]->ID );
 $hero         = get_post_meta( $about_query[0]->ID, '_au_hero', true );
 $main_text    = get_post_meta( $about_query[0]->ID, '_au_main', true );
@@ -28,6 +22,7 @@ $values       = get_post_meta( $about_query[0]->ID, '_au_values', true );
 $contact      = get_post_meta( $headerPost[0]->ID, '_hf_contact_form', true );
 $partnerLeft  = get_post_meta( $headerPost[0]->ID, '_hf_partner_left', true );
 $partnerRight = get_post_meta( $headerPost[0]->ID, '_hf_partner_right', true );
+$bgservices   = get_post_meta( $headerPost[0]->ID, '_hf_srvsbg', true );
 ?>
 
     <section id="about-hero-section" style="background-image: url(<?php echo $hero[0]['_au_hero_background']; ?>)">
@@ -70,7 +65,8 @@ $partnerRight = get_post_meta( $headerPost[0]->ID, '_hf_partner_right', true );
         </div>
     </section>
     <section id="our-ebooks" class="col-xs-12 text-center"
-             style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/imageservices.png)">
+             style="background-image: url(
+             <?php if( !empty( $bgservices )){ echo $bgservices; } ?>)">
         <div class="mask">
             <h3><?php echo ( $lang == "es_ES" ? 'Disfruta de tu tiempo' : 'Enjoy your time' ) ?></h3>
             <p><?php echo ( $lang == "es_ES" ? 'mientras nosotros gestionamos tu propiedad' : 'while we manage your property' ) ?></p>

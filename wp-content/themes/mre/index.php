@@ -18,7 +18,13 @@ if(function_exists('pll_current_language')){
         $language_subdir = '';
     }
 }
-
+$headerPost   = get_posts(
+	array(
+		'post_type'   => 'header_footer',
+		'numberposts' => 1
+	)
+);
+$bgebook   = get_post_meta( $headerPost[0]->ID, '_hf_ebookbg', true );
 wp_reset_query();
 query_posts( array(
 	'post_type'      => 'post',
@@ -206,7 +212,8 @@ $categories      = get_categories(
         </section>
         <?php } ?>
         <section id="our-ebooks" class="col-xs-12 text-center"
-                 style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/ebook-hero.jpg')">
+                 style="background-image: url(
+                 <?php if( !empty( $bgebook )){ echo $bgebook; } ?>)">
             <div class="mask">
                 <h3><?php echo ( $lang == "es_ES" ? 'Disfruta de nuestros e-books' : 'Enjoy our ebooks' ) ?></h3>
                 <p><?php echo ( $lang == "es_ES" ? 'la información que necesitas completamente gratis' : 'the information you need completely free' ) ?></p>

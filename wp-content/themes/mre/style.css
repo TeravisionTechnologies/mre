@@ -1290,12 +1290,6 @@ a.al-phone-num {
     font-size: 30px;
     color: #0976d1; }
 
-.page-template-page-about-us #our-ebooks {
-  height: 20.8333333333vw; }
-  .page-template-page-about-us #our-ebooks .mask {
-    padding: 2.7777777778vw 0;
-    background: none; }
-
 #blog-detail-breadcrumb {
   padding: 3.4722222222vw 0 1.3888888889vw 0;
   margin-top: 5.5555555556vw; }
@@ -2704,12 +2698,6 @@ body.thanks {
         border: solid 2px #ffffff;
         padding: 14px 115px; }
 
-  .page-template-page-about-us #our-ebooks {
-    height: 300px; }
-    .page-template-page-about-us #our-ebooks .mask {
-      padding: 40px 0;
-      background: none; }
-
   #blog-detail-breadcrumb {
     padding: 50px 0 20px 0;
     margin-top: 80px; }
@@ -3867,20 +3855,6 @@ body.thanks {
         border-radius: 1.0416666667vw;
         padding: 1.3020833333vw 10.4166666667vw; }
 
-  .page-template-page-about-us #our-ebooks {
-    height: 28.6458333333vw; }
-    .page-template-page-about-us #our-ebooks .mask {
-      padding: 2.7777777778vw 0;
-      background: none; }
-      .page-template-page-about-us #our-ebooks .mask h3 {
-        font-size: 3.125vw; }
-      .page-template-page-about-us #our-ebooks .mask p {
-        font-size: 3.125vw; }
-      .page-template-page-about-us #our-ebooks .mask a {
-        width: 33.59375vw;
-        padding: 1.6927083333vw;
-        font-size: 2.0833333333vw; }
-
   #blog-detail-breadcrumb {
     padding: 5.2083333333vw 0 2.6041666667vw 0;
     margin-top: 10.4166666667vw; }
@@ -4954,20 +4928,6 @@ body.thanks {
         font-size: 3.8888888889vw;
         border-radius: 2.2222222222vw;
         padding: 2.7777777778vw 15.5555555556vw; }
-
-  .page-template-page-about-us #our-ebooks {
-    height: 38.8888888889vw; }
-    .page-template-page-about-us #our-ebooks .mask {
-      padding: 2.2222222222vw 0;
-      background: none; }
-      .page-template-page-about-us #our-ebooks .mask h3 {
-        font-size: 3.8888888889vw; }
-      .page-template-page-about-us #our-ebooks .mask p {
-        font-size: 3.8888888889vw; }
-      .page-template-page-about-us #our-ebooks .mask a {
-        width: 53.8888888889vw;
-        padding: 2.2222222222vw;
-        font-size: 3.8888888889vw; }
 
   #blog-detail-breadcrumb {
     padding: 8.3333333333vw 0 5.5555555556vw 0;
