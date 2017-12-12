@@ -246,8 +246,9 @@ jQuery(document).ready(function () {
 
     $('.ebook-form').validator().on('submit', function (e) {
         var filepath = $(this).attr('data-filepath');
+        var errormsj = $('.error').attr('data-error');
         if (e.isDefaultPrevented()) {
-            $('.error').html("<i class='fa fa-asterisk'></i> Estos campos son requeridos");
+            $('.error').html("<i class='fa fa-asterisk'></i>" + errormsj);
             $('.error').fadeIn();
             var error = $('#eb_mail').attr('data-error');
             if( $('#eb_name', this).val().length > 0 ) {

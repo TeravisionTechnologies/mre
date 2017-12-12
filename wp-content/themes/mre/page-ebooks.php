@@ -102,7 +102,8 @@ $dates        = get_terms(
                                                     E-books <?php echo $date->slug ?> <?php echo( ! empty( $period ) ? '// ' . $period : '&nbsp;' ) ?></div>
                                                 <h3><?php the_title(); ?></h3>
 												<?php the_content(); ?>
-                                                <div class="error"><i class="fa fa-asterisk"></i>  <?php echo ( $lang == "es_ES" ? 'Estos campos son requeridos' : 'These fields are required' ) ?></div>
+                                                <div class="error" data-error="<?php echo ( $lang == "es_ES" ? 'Estos campos son requeridos' : 'These fields are required' ) ?>"><i class="fa fa-asterisk"></i>  
+                                                    <?php echo ( $lang == "es_ES" ? 'Estos campos son requeridos' : 'These fields are required' ) ?></div>
                                                 <form id="ebook-form-<?php echo get_the_ID(); ?>" class="ebook-form"
                                                       method="post" action="<?php echo home_url(); ?>" method="post"
                                                       role="form"
