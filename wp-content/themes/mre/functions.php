@@ -150,12 +150,12 @@ function modify_comment_form_fields( $fields ) {
 	$name = ( $lang == "es_ES" ? '* Nombre y Apellido' : '* Fullname' );
 	$commenter        = wp_get_current_commenter();
 	$fields['author'] = '<div class="form-group">' .
-	                    '<input id="author" name="author" type="text" class="form-control" placeholder="'. $name .'" value=""/>'; 
+	                    '<input id="author" name="author" type="text" class="form-control" placeholder="'. $name .'" value=""/>';
 	$fields['email']  =
 		'<input id="email" name="email" type="email" class="form-control" placeholder="* Email" value=""/>';
 	$fields['url']    = '';
 	return $fields;
-	
+
 }
 
 add_filter( 'comment_form_default_fields', 'modify_comment_form_fields' );
