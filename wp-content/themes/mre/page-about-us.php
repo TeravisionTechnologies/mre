@@ -74,7 +74,7 @@ $partnerRight = get_post_meta( $headerPost[0]->ID, '_hf_partner_right', true );
         <div class="mask">
             <h3><?php echo ( $lang == "es_ES" ? 'Disfruta de tu tiempo' : 'Enjoy your time' ) ?></h3>
             <p><?php echo ( $lang == "es_ES" ? 'mientras nosotros gestionamos tu propiedad' : 'while we manage your property' ) ?></p>
-            <a href="<?php echo ( $lang == 'es_ES' ? home_url('nuestros-servicios') : home_url('en/our-services') ) ?>" class="btn"><?php echo ( $lang == "es_ES" ? 'Ve nuestros servicios' : 'See our services' ) ?></a>
+            <a href="<?php echo ( $lang == 'es_ES' ? home_url('nuestros-servicios') : home_url('en/our-services') ) ?>" class="btn"><?php echo ( $lang == "es_ES" ? 'Ver nuestros servicios' : 'View our services' ) ?></a>
         </div>
     </section>
     <section class="col-xs-12 hr-partners-section text-center">
