@@ -5240,6 +5240,11 @@ body.thanks {
     #services-icon .srv-icon img {
       height: 11.1111111111vw; }
 
+  .page-template-page-services h2 {
+    display: block !important; }
+    .page-template-page-services h2:after {
+      display: none; }
+
   #ebook-hero-section {
     height: 111.1111111111vw;
     margin-top: 16.6666666667vw; }
