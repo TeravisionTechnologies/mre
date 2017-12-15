@@ -64,12 +64,6 @@ $headerPost = get_posts(
 );
 $theMeta = get_post_meta($headerPost[0]->ID);
 $social_networks = get_post_meta($headerPost[0]->ID, '_hf_social_networks', true);
-$referer = wp_get_referer();
-if ( (strpos($referer, "en")  == true) or strpos($_SERVER['REQUEST_URI'], "en") == true ){
-	$home = pll_home_url('en');
-} else {
-	$home = pll_home_url('es');
-}
 ?>
 <body <?php body_class() ?>>
 <div id="o-wrapper" class="o-wrapper">
@@ -86,7 +80,7 @@ if ( (strpos($referer, "en")  == true) or strpos($_SERVER['REQUEST_URI'], "en") 
                     </div>
                     <div class="logo-header">
                         <div class="img-div pull-right text-center">
-                            <a href="<?php echo $home; ?>"><img src="<?php echo $theMeta['_hf_header_logo'][0]; ?>" alt="HR19 Logo"></a>
+                            <a href="<?php echo home_url(); ?>"><img src="<?php echo $theMeta['_hf_header_logo'][0]; ?>" alt="HR19 Logo"></a>
                         </div>
                     </div>
                     <div class="social-header pull-right">

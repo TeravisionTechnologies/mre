@@ -1,15 +1,7 @@
 <?php
-$referer = wp_get_referer();
-if ( (strpos($referer, "en")  == true) or strpos($_SERVER['REQUEST_URI'], "en") == true ){
-	$langu = "en";
-	$home = pll_home_url('en');
-} else{
-	$home = pll_home_url('es');
-}
 $footer_query    = get_posts(
 	array(
 		'post_type' => 'header_footer',
-		'lang' => $langu
 	)
 );
 
@@ -20,7 +12,6 @@ $footer_info     = get_post_meta( $footer_query[0]->ID );
 $social_networks = get_post_meta( $footer_query[0]->ID, '_hf_social_networks', true );
 $ourOffices      = get_post_meta( $footer_query[0]->ID, '_hf_our_offices', true);
 $lang = get_locale();
-$url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 ?>
 <?php if ( ! is_404() ) { ?>
 <section class="col-xs-12 hr-partners-section text-center">
@@ -45,15 +36,7 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
              style="background-image: url('<?php echo $rental[0]["_hf_rental_background"] ?>')">
         <div class="hr-rentalone-overlay">
             <img src="<?php echo $rental[0]["_hf_rental_logo"] ?>" alt="Logo Rental One" class="rentalone-logo"/>
-            <?php
-            if (false !== strpos($url_wp, '/en' )) {
-                echo '<div class="rentalone-button"><a href="'.$rental[0]["_hf_rental_link"].'" target="_blank">View
-                    more</a></div>';
-            } else {
-                echo '<div class="rentalone-button"><a href="'.$rental[0]["_hf_rental_link"].'" target="_blank">Ver
-                    más</a></div>';
-            }
-            ?>
+            <div class="rentalone-button"><a href="<?php echo $rental[0]["_hf_rental_link"]?>" target="_blank"><?php echo ( ($lang == "en_US" ) ? 'View more' : 'Ver más' ); ?></a></div>
         </div>
     </section>
 <?php } ?>
@@ -150,7 +133,7 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
                 <?php
                     $contactesp = do_shortcode( '[contact-form-7 id="5" title="Home Contact Form"]');
                     $contacteng = do_shortcode( '[contact-form-7 id="443" title="Contact Form (English)"]');
-                    echo ( ($lang == "en_US" or $langu == "en") ? $contacteng : $contactesp );
+                    echo ( ($lang == "en_US" ) ? $contacteng : $contactesp );
                 ?>
             </div>
         </div>
@@ -158,7 +141,7 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 </section>
 <footer class="col-xs-12 hr-footer-section text-center">
     <div class="container">
-        <a href="<?php echo $home; ?>"><img src="<?php echo $footer_info['_hf_logo'][0]; ?>" alt="Logo HR19 Footer"></a>
+        <a href="<?php echo home_url(); ?>"><img src="<?php echo $footer_info['_hf_logo'][0]; ?>" alt="Logo HR19 Footer"></a>
         <p class="hr-footer-text"><?php echo $footer_info['_hf_copy'][0]; ?></p>
         <a href="#" class="hr-footer-link">Disclaimers</a>
     </div>
@@ -177,7 +160,7 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
     </div>
     <div class="menu">
         <div class="menu-wrapper">
-			<?php if( $lang == "en_US" or $langu == "en" ) {
+			<?php if( $lang == "en_US" ) {
 				wp_nav_menu( array(
 					'menu'           => 'Menu_Ingles',
 					'theme_location' => 'primary',
@@ -199,7 +182,7 @@ $url_wp = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 				$i         = 0;
 				$languages = pll_the_languages( array( 'raw' => 1 ) );
 				?>
-                <h2 class="hr-menu-language-text"><?php echo ( ( $lang == "en_US" or $langu == "en" ) ? 'Select your preferred language:' : 'Seleccione su idioma de preferencia:' ) ?></h2>
+                <h2 class="hr-menu-language-text"><?php echo ( ( $lang == "en_US" ) ? 'Select your preferred language:' : 'Seleccione su idioma de preferencia:' ) ?></h2>
                 <a href="<?php echo $languages['en']['url'] ?>"><img class="hr-menu-language-flag <?php echo ( $lang == "en_US" ? 'language-flag-active' : '' ) ?>"
                                                                       src="<?php echo get_template_directory_uri(); ?>/assets/usa_flag.svg"
                                                                       alt="English"></a>

@@ -1,10 +1,7 @@
 <?php
 get_header();
 the_post();
-$referer = wp_get_referer();
-if (strpos($referer, "en") == false){
-	$lang = "es_ES";
-}
+$lang = get_locale();
 $address = get_post_meta(get_the_ID(), '_pr_address', true);
 $city = get_post_meta(get_the_ID(), '_pr_city', true);
 $state = get_post_meta(get_the_ID(), '_pr_state', true);
@@ -107,7 +104,7 @@ $bgimg = (int)$bgimg;
                         <?php if (!empty($address)) {
                             echo $address;
                         } else {
-                            echo 'N/A';
+                            echo '--';
                         } ?>
                     </div>
                 </div>
