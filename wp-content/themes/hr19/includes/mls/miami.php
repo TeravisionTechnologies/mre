@@ -390,7 +390,7 @@ function get_mls() {
 					'_pr_TotalMortgage'               => round( $property['TotalMortgage'] ),
 				),
 			);
-			$posted_property = wp_insert_post( $post_args );
+			$posted_property = wp_update_post( $post_args );
 			//PLL()->sync_post->copy_post( $propid->ID, 'en', true );
 
 			/*$posted_propertyEsp = wp_insert_post( $post_args );
