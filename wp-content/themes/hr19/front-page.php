@@ -15,7 +15,7 @@ if(function_exists('pll_current_language')){
 	if($current_language != $default_language){
 		$language_subdir = $current_language.'/';
 	} else {
-		$language_subdir = '/es';
+		$language_subdir = '';
 	}
 }
 ?>
@@ -118,12 +118,17 @@ if(function_exists('pll_current_language')){
             } else{
 	            $csymbol = "$";
             }
+            if( !empty( $gallery ) ){
+	            $first_pic = reset($gallery);
+            }
             ?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <a href="<?php the_permalink(); ?>" class="property">
                     <div class="property-image" style="background: url(
-                         <?php if($urlimage == 404 or $fsize < 100){
+                         <?php if( ( $urlimage == 404 or $fsize < 100 ) && ( empty( $gallery ) ) ){
                              echo $placeholder;
+                         } elseif ( !empty($gallery) ){
+	                         echo $first_pic;
                          } else {
 	                         echo $bgimg;
                          } ?>

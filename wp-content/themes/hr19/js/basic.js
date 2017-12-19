@@ -5,7 +5,8 @@ jQuery(document).ready(function ($) {
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         pagination: '.fraction',
-        paginationType: 'fraction'
+        paginationType: 'fraction',
+        loop: 'true'
     });
 
     // Sticky info property
@@ -690,13 +691,11 @@ if (screen.width() < 768) {
     });
 }
 
-var $win = $(window);
-
 $(document).scroll(function() {
     var y = $(this).scrollTop();
     if (y > 800) {
-        $('.footer-top').fadeIn(2000);
+        $('.footer-top').fadeIn();
     } else {
-        $('.footer-top').fadeOut(2000);
+        $('.footer-top').fadeOut();
     }
 });

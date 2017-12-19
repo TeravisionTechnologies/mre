@@ -6,7 +6,7 @@ if(function_exists('pll_current_language')){
 	if($current_language != $default_language){
 		$language_subdir = $current_language.'/';
 	} else {
-		$language_subdir = '/es';
+		$language_subdir = '';
 	}
 }
 $s = get_query_var('s');

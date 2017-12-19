@@ -207,3 +207,13 @@ function remove_footer_admin() {
 	echo '<span id="footer-thankyou">Desarrollado para HR19</span>';
 }
 add_filter( 'admin_footer_text', 'remove_footer_admin' );
+
+# ENABLE PAGINATION IN SEARCH PAGE
+function my_post_count_queries( $query ) {
+	if ( ! is_admin() && $query->is_main_query() ) {
+		if ( is_search() ) {
+			$query->set( 'posts_per_page', 1 );
+		}
+	}
+}
+add_action( 'pre_get_posts', 'my_post_count_queries' );
