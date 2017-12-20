@@ -39,16 +39,7 @@ $appliances = get_post_meta(get_the_ID(), '_pr_EquipmentAppliances', true);
 $interior = get_post_meta(get_the_ID(), '_pr_InteriorFeatures', true);
 $cableinfo = get_post_meta(get_the_ID(), '_pr_CableAvailableYN', true);
 $poolinfo = get_post_meta(get_the_ID(), '_pr_PoolYN', true);
-$avaldate = get_post_meta(get_the_ID(), '_pr_AvailableDate', true);
-$avaldate = substr( $avaldate,0, 10 );
 $boatdock = get_post_meta(get_the_ID(), '_pr_BoatDockAccommodates', true);
-//$buildincludes = get_post_meta(get_the_ID(), '_pr_BuildingIncludes', true);   // idk, is always empty
-//$buildnamenumber = get_post_meta(get_the_ID(), '_pr_BuildingNameNumber', true); // idk, is always empty
-$dom = get_post_meta(get_the_ID(), '_pr_Dom', true);
-$expdate = get_post_meta(get_the_ID(), '_pr_ExpirationDate', true);
-$expdate = substr( $expdate,0, 10 );
-$intremarks = get_post_meta(get_the_ID(), '_pr_InternetRemarks', true);
-$listingtype = get_post_meta(get_the_ID(), '_pr_ListingType', true);
 $locationprop = get_post_meta(get_the_ID(), '_pr_LocationofProperty', true);
 $parcelnumber = get_post_meta(get_the_ID(), '_pr_ParcelNumber', true);
 $postalcode = get_post_meta(get_the_ID(), '_pr_postalcode', true);
@@ -289,39 +280,9 @@ $bgimg = (int)$bgimg;
                                     <h6><?php echo ( $lang == "es_ES" ? 'Otras características:' : 'Additional features:' ) ?></h6>
                                     <ul>
 
-	                                    <?php if( !empty( $intremarks ) ) { ?>
-                                            <li><?php echo ( $lang == "es_ES" ? 'Observaciones:' : 'Remarks:' ) ?>
-			                                    <?php echo $intremarks ?>
-                                            </li>
-	                                    <?php } ?>
-
 	                                    <?php if( !empty( $locationprop ) ) { ?>
-                                            <li><?php echo ( $lang == "es_ES" ? 'Ubicación de la propiedad:' : 'Locationof Property:' ) ?>
+                                            <li><?php echo ( $lang == "es_ES" ? 'Ubicación de la propiedad:' : 'Location of Property:' ) ?>
 			                                    <?php echo $locationprop ?>
-                                            </li>
-	                                    <?php } ?>
-
-	                                    <?php if( !empty( $listingtype ) ) { ?>
-                                            <li><?php echo ( $lang == "es_ES" ? 'Tipo de Lista:' : 'Listing Type:' ) ?>
-			                                    <?php echo $listingtype ?>
-                                            </li>
-	                                    <?php } ?>
-
-	                                    <?php if( !empty( $avaldate ) ) { ?>
-                                            <li><?php echo ( $lang == "es_ES" ? 'Fecha disponible:' : 'Available date:' ) ?>
-			                                    <?php echo $avaldate ?>
-                                            </li>
-	                                    <?php } ?>
-
-	                                    <?php if( !empty( $expdate ) ) { ?>
-                                            <li><?php echo ( $lang == "es_ES" ? 'Fecha de expiración:' : 'Expiration Date:' ) ?>
-			                                    <?php echo $expdate ?>
-                                            </li>
-	                                    <?php } ?>
-
-	                                    <?php if( !empty( $dom ) ) { ?>
-                                            <li><?php echo ( $lang == "es_ES" ? 'Días en el mercado:' : 'Days on Market:' ) ?>
-			                                    <?php echo $dom ?>
                                             </li>
 	                                    <?php } ?>
 
