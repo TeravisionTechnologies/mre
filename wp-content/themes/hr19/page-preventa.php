@@ -103,6 +103,7 @@ if(function_exists('pll_current_language')){
             $sysid = get_post_meta(get_the_ID(), '_pr_matrixid', true);
             $city = get_post_meta(get_the_ID(), '_pr_city', true);
             $state = get_post_meta(get_the_ID(), '_pr_state', true);
+	        $gallery = get_post_meta(get_the_ID(), '_pr_photos', true);
 	        $bgimg = $url['baseurl'].'/photos/'.$sysid.'/1.jpg';
 	        $headers  = get_headers($bgimg, 1);
 	        $fsize    = $headers['Content-Length'];
@@ -116,12 +117,43 @@ if(function_exists('pll_current_language')){
 	        } else{
 		        $csymbol = "$";
 	        }
+	        if( !empty( $gallery ) ){
+		        $first_pic = reset($gallery);
+	        }
+	        if ( $rooms == "1" ){
+		        if (  $lang == "es_ES" ) {
+			        $rm = " Habitaci&oacute;n";
+		        } else{
+			        $rm = " Room";
+		        }
+	        } else{
+		        if (  $lang == "es_ES" ) {
+			        $rm = " Habitaciones";
+		        } else{
+			        $rm = " Rooms";
+		        }
+	        }
+	        if ( $baths == "1" ){
+		        if (  $lang == "es_ES" ) {
+			        $bth = " Baño";
+		        } else{
+			        $bth = " Bath";
+		        }
+	        } else{
+		        if (  $lang == "es_ES" ) {
+			        $bth = " Baños";
+		        } else{
+			        $bth = " Baths";
+		        }
+	        }
             ?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <a href="<?php the_permalink(); ?>" class="property">
                     <div class="property-image" style="background: url(
-	                <?php if($urlimage == 404 or $fsize < 100){
+	                <?php if( ( $urlimage == 404 or $fsize < 100 ) && ( empty( $gallery ) ) ){
 		                echo $placeholder;
+	                } elseif ( !empty($gallery) ){
+		                echo $first_pic;
 	                } else {
 		                echo $bgimg;
 	                } ?>
@@ -132,17 +164,17 @@ if(function_exists('pll_current_language')){
                                 echo $csymbol . number_format($price, 0, '.', ',');
                             } ?></div>
                         <div class="property-highlights">
-                            <?php if (!empty($type)) {
-                                echo $type;
-                            } else {
-                                echo 'N/A';
-                            } ?>
-                            <?php if (!empty($rooms)) {
-                                echo '· ' . $rooms . ( $lang == "es_ES" ? ' Habitaciones' : ' Rooms' );
-                            } ?>
-                            <?php if (!empty($baths)) {
-                                echo '· ' . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' );
-                            } ?>
+		                    <?php if (!empty($type)) {
+			                    echo $type;
+		                    } else {
+			                    echo 'N/A';
+		                    } ?>
+		                    <?php if (!empty($rooms)) {
+			                    echo '· ' . $rooms . $rm;
+		                    } ?>
+		                    <?php if (!empty($baths)) {
+			                    echo '· ' . $baths . $bth;
+		                    } ?>
                         </div>
                         <div class="property-address">
                             <?php if (!empty($address)) {

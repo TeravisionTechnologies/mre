@@ -466,6 +466,7 @@ wp_reset_query();
 			$city = get_post_meta(get_the_ID(), '_pr_city', true);
 			$state = get_post_meta(get_the_ID(), '_pr_state', true);
 			$agentid = get_post_meta(get_the_ID(), '_pr_agentid', true);
+			$gallery = get_post_meta(get_the_ID(), '_pr_photos', true);
 			$owner = get_post_meta(get_the_ID(), '_pr_owner', true);
 			$bgimg = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
 			$headers = get_headers($bgimg, 1);
@@ -479,6 +480,35 @@ wp_reset_query();
 				$csymbol = $csymbol;
 			} else{
 				$csymbol = "$";
+			}
+			if( !empty( $gallery ) ){
+				$first_pic = reset($gallery);
+			}
+			if ( $rooms == "1" ){
+				if (  $lang == "es_ES" ) {
+					$rm = " Habitaci&oacute;n";
+				} else{
+					$rm = " Room";
+				}
+			} else{
+				if (  $lang == "es_ES" ) {
+					$rm = " Habitaciones";
+				} else{
+					$rm = " Rooms";
+				}
+			}
+			if ( $baths == "1" ){
+				if (  $lang == "es_ES" ) {
+					$bth = " Baño";
+				} else{
+					$bth = " Bath";
+				}
+			} else{
+				if (  $lang == "es_ES" ) {
+					$bth = " Baños";
+				} else{
+					$bth = " Baths";
+				}
 			}
 			?>
             <div class="col-xs-12 col-sm-4 col-md-4">
@@ -500,17 +530,17 @@ wp_reset_query();
 							} ?>
                         </div>
                         <div class="property-highlights">
-							<?php if (!empty($type)) {
-								echo $type;
-							} else {
-								echo 'N/A';
-							} ?>
-							<?php if (!empty($rooms)) {
-								echo '· ' . $rooms . ($lang == "es_ES" ? ' Habitaciones' : ' Rooms');
-							} ?>
-							<?php if (!empty($baths)) {
-								echo '· ' . $baths . ($lang == "es_ES" ? ' Baños' : ' Baths');
-							} ?>
+		                    <?php if (!empty($type)) {
+			                    echo $type;
+		                    } else {
+			                    echo 'N/A';
+		                    } ?>
+		                    <?php if (!empty($rooms)) {
+			                    echo '· ' . $rooms . $rm;
+		                    } ?>
+		                    <?php if (!empty($baths)) {
+			                    echo '· ' . $baths . $bth;
+		                    } ?>
                         </div>
                         <div class="property-address">
 							<?php if (!empty($address)) {

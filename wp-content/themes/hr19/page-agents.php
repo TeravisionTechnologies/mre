@@ -87,17 +87,49 @@ if ( have_posts() ): while ( have_posts() ):
 					$urlimage = $urlimage['response']['code'];
 					$placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
 					$csymbol =  get_post_meta( $property->ID, '_pr_currency_symbol', true);
+					$gallery = get_post_meta(get_the_ID(), '_pr_photos', true);
 					if( !empty( $csymbol ) ){
 						$csymbol = $csymbol;
 					} else{
 						$csymbol = "$";
 					}
+					if( !empty( $gallery ) ){
+						$first_pic = reset($gallery);
+					}
+					if ( $rooms == "1" ){
+						if (  $lang == "es_ES" ) {
+							$rm = " Habitaci&oacute;n";
+						} else{
+							$rm = " Room";
+						}
+					} else{
+						if (  $lang == "es_ES" ) {
+							$rm = " Habitaciones";
+						} else{
+							$rm = " Rooms";
+						}
+					}
+					if ( $baths == "1" ){
+						if (  $lang == "es_ES" ) {
+							$bth = " Baño";
+						} else{
+							$bth = " Bath";
+						}
+					} else{
+						if (  $lang == "es_ES" ) {
+							$bth = " Baños";
+						} else{
+							$bth = " Baths";
+						}
+					}
 					?>
                     <div class="col-xs-12 col-sm-4 no-padding property">
                         <a href="<?php echo get_permalink( $property->ID ); ?>">
                             <div class="property-image" style="background: url(
-	                        <?php if($urlimage == 404 or $fsize < 100){
+	                        <?php if( ( $urlimage == 404 or $fsize < 100 ) && ( empty( $gallery ) ) ){
 		                        echo $placeholder;
+	                        } elseif ( !empty($gallery) ){
+		                        echo $first_pic;
 	                        } else {
 		                        echo $bgimg;
 	                        } ?>
@@ -111,10 +143,10 @@ if ( have_posts() ): while ( have_posts() ):
 		                                echo '';
 	                                } ?>
 	                                <?php if (!empty($rooms)) {
-		                                echo '· ' . $rooms .  ( $lang == "es_ES" ? ' Habitaciones' : ' Rooms' );
+		                                echo '· ' . $rooms .  $rm;
 	                                } ?>
 	                                <?php if (!empty($baths)) {
-		                                echo '· ' . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' );
+		                                echo '· ' . $baths . $bth;
 	                                } ?></h3>
                                 <h3 class="info-address"><?php echo $address; ?></h3>
                                 <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
@@ -166,11 +198,55 @@ if ( have_posts() ): while ( have_posts() ):
 					$urlimage = wp_remote_head( $bgimg );
 					$urlimage = $urlimage['response']['code'];
 					$placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
+					$csymbol =  get_post_meta( $property->ID, '_pr_currency_symbol', true);
+					$gallery = get_post_meta(get_the_ID(), '_pr_photos', true);
+					if( !empty( $csymbol ) ){
+						$csymbol = $csymbol;
+					} else{
+						$csymbol = "$";
+					}
+					if( !empty( $gallery ) ){
+						$first_pic = reset($gallery);
+					}
+					if ( $rooms == "1" ){
+						if (  $lang == "es_ES" ) {
+							$rm = " Habitaci&oacute;n";
+						} else{
+							$rm = " Room";
+						}
+					} else{
+						if (  $lang == "es_ES" ) {
+							$rm = " Habitaciones";
+						} else{
+							$rm = " Rooms";
+						}
+					}
+					if ( $baths == "1" ){
+						if (  $lang == "es_ES" ) {
+							$bth = " Baño";
+						} else{
+							$bth = " Bath";
+						}
+					} else{
+						if (  $lang == "es_ES" ) {
+							$bth = " Baños";
+						} else{
+							$bth = " Baths";
+						}
+					}
 					?>
                     <div class="col-xs-12 col-sm-4 no-padding property">
                         <a href="<?php echo get_permalink( $property->ID ); ?>">
-                            <div class="property-image"
-                                 style="background: url(<?php echo ( $urlimage != 404 ? $bgimg : $placeholder ) ?>);"></div>
+                            <div class="property-image" style="background: url(
+	                        <?php if( ( $urlimage == 404 or $fsize < 100 ) && ( empty( $gallery ) ) ){
+		                        echo $placeholder;
+	                        } elseif ( !empty($gallery) ){
+		                        echo $first_pic;
+	                        } else {
+		                        echo $bgimg;
+	                        } ?>
+                                    );">
+                            </div>
                             <div class="property-info">
                                 <h2 class="info-price"><?php echo number_format($price, 0, '.', ','); ?></h2>
                                 <h3 class="info-features"><?php echo $type . " · " . $rooms . ( $lang == "es_ES" ? ' Habitaciones ·' : ' Rooms' ) . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' ); ?></h3>

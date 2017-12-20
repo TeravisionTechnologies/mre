@@ -69,6 +69,46 @@ if( $cableinfo == "1" ){
 if( $poolinfo == "1" ){
 	$pool = 'Pool';
 }
+if ( $rooms == "1" ){
+	if (  $lang == "es_ES" ) {
+		$rm = " Habitaci&oacute;n";
+	} else{
+		$rm = " Room";
+	}
+} else{
+	if (  $lang == "es_ES" ) {
+		$rm = " Habitaciones";
+	} else{
+		$rm = " Rooms";
+	}
+}
+if ( $baths == "1" ){
+	if (  $lang == "es_ES" ) {
+		$bth = " Baño";
+	} else{
+		$bth = " Bath";
+	}
+} else{
+	if (  $lang == "es_ES" ) {
+		$bth = " Baños";
+	} else{
+		$bth = " Baths";
+	}
+}
+if ( $bathsh == "1" ){
+	if (  $lang == "es_ES" ) {
+		$bathm = " Medio baño";
+	} else{
+		$bathm = " Half bath";
+	}
+} else{
+	if (  $lang == "es_ES" ) {
+		$bathm = " Medios baños";
+	} else{
+		$bathm = " Half baths";
+	}
+}
+
 
 $url = wp_upload_dir();
 $directory = $url['basedir'] . '/photos/' . $sysid . '/';
@@ -159,13 +199,13 @@ $bgimg = (int)$bgimg;
                         echo $type;
                     } ?>
                     <?php if (!empty($rooms)) {
-                        echo '· ' . $rooms . ( $lang == "es_ES" ? ' Habitaciones' : ' Rooms' );
+                        echo '· ' . $rooms . $rm;
                     } ?>
                     <?php if (!empty($bathsf)) {
-                        echo '· ' . $bathsf . ( $lang == "es_ES" ? ' Baños' : ' Baths' );
+                        echo '· ' . $bathsf . $bth;
                     } ?>
                     <?php if (!empty($bathsh)) {
-                        echo '· ' . $bathsh . ( $lang == "es_ES" ? ' Medios baños' : ' Half Baths' );
+                        echo '· ' . $bathsh . $bathm;
                     } ?>
                 </div>
                 <div class="sm-text"><?php echo ( $lang == "es_ES" ? ' Número de MLS: ' : ' MLS Number: ' ) ?><?php the_title(); ?></div>
@@ -512,16 +552,60 @@ if (have_posts()): ?>
                     $city = get_post_meta(get_the_ID(), '_pr_city', true);
                     $state = get_post_meta(get_the_ID(), '_pr_state', true);
 	                $csymbol =  get_post_meta(get_the_ID(), '_pr_currency_symbol', true);
+	                $gallery = get_post_meta(get_the_ID(), '_pr_photos', true);
+	                $bgimg = $url['baseurl'].'/photos/'.$sysid.'/1.jpg';
+	                $headers  = get_headers($bgimg, 1);
+	                $fsize    = $headers['Content-Length'];
+	                $fsize = (int)$fsize;
+	                $urlimage = wp_remote_head( $bgimg );
+	                $urlimage = $urlimage['response']['code'];
+	                $placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
 	                if( !empty( $csymbol ) ){
 		                $csymbol = $csymbol;
 	                } else{
 		                $csymbol = "$";
 	                }
+	                if( !empty( $gallery ) ){
+		                $first_pic = reset($gallery);
+	                }
+	                if ( $rooms == "1" ){
+		                if (  $lang == "es_ES" ) {
+			                $rm = " Habitaci&oacute;n";
+		                } else{
+			                $rm = " Room";
+		                }
+	                } else{
+		                if (  $lang == "es_ES" ) {
+			                $rm = " Habitaciones";
+		                } else{
+			                $rm = " Rooms";
+		                }
+	                }
+	                if ( $baths == "1" ){
+		                if (  $lang == "es_ES" ) {
+			                $bth = " Baño";
+		                } else{
+			                $bth = " Bath";
+		                }
+	                } else{
+		                if (  $lang == "es_ES" ) {
+			                $bth = " Baños";
+		                } else{
+			                $bth = " Baths";
+		                }
+	                }
                     ?>
                     <div class="col-xs-12 col-sm-4 col-md-4">
                         <a href="<?php the_permalink(); ?>" class="property">
-                            <div class="property-image"
-                                 style="background: url(<?php echo $url['baseurl']; ?>/photos/<?php echo $sysid ?>/1.jpg);"></div>
+                            <div class="property-image" style="background: url(
+	                        <?php if( ( $urlimage == 404 or $fsize < 100 ) && ( empty( $gallery ) ) ){
+		                        echo $placeholder;
+	                        } elseif ( !empty($gallery) ){
+		                        echo $first_pic;
+	                        } else {
+		                        echo $bgimg;
+	                        } ?>);">
+                            </div>
                             <div class="property-info">
                                 <div class="property-price">
 	                                <?php
@@ -537,10 +621,10 @@ if (have_posts()): ?>
                                         echo 'N/A';
                                     } ?>
                                     <?php if (!empty($rooms)) {
-                                        echo '· ' . $rooms . ( $lang == "es_ES" ? ' Habitaciones' : ' Rooms' );
+                                        echo '· ' . $rooms . $rm;
                                     } ?>
                                     <?php if (!empty($baths)) {
-                                        echo '· ' . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' );
+                                        echo '· ' . $baths . $bth;
                                     } ?>
                                 </div>
                                 <div class="property-address">

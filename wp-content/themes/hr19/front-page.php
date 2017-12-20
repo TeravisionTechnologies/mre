@@ -121,6 +121,32 @@ if(function_exists('pll_current_language')){
             if( !empty( $gallery ) ){
 	            $first_pic = reset($gallery);
             }
+            if ( $rooms == "1" ){
+		        if (  $lang == "es_ES" ) {
+			        $rm = " Habitaci&oacute;n";
+		        } else{
+			        $rm = " Room";
+		        }
+	        } else{
+		        if (  $lang == "es_ES" ) {
+			        $rm = " Habitaciones";
+		        } else{
+			        $rm = " Rooms";
+		        }
+	        }
+	        if ( $baths == "1" ){
+		        if (  $lang == "es_ES" ) {
+			        $bth = " Baño";
+		        } else{
+			        $bth = " Bath";
+		        }
+	        } else{
+		        if (  $lang == "es_ES" ) {
+			        $bth = " Baños";
+		        } else{
+			        $bth = " Baths";
+		        }
+	        }
             ?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <a href="<?php the_permalink(); ?>" class="property">
@@ -149,10 +175,10 @@ if(function_exists('pll_current_language')){
                                 echo 'N/A';
                             } ?>
                             <?php if (!empty($rooms)) {
-                                echo '· ' . $rooms .  ( $lang == "es_ES" ? ' Habitaciones' : ' Rooms' );
+                                echo '· ' . $rooms . $rm;
                             } ?>
                             <?php if (!empty($baths)) {
-                                echo '· ' . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' );
+                                echo '· ' . $baths . $bth;
                             } ?>
                         </div>
                         <div class="property-address">

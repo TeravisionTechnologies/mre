@@ -19,7 +19,7 @@ function get_mls() {
 		$results = $rets->Search(
 			'Property',
 			'Listing',
-			'(STATUS = A)',
+			'(STATUS = A), ( (CoListAgentMLSID = 3196679) | (AgentLicenseNum = 3196679) | (CoAgentLicenseNum = 3196679) | (CoSellingAgentMLSID = 3196679) | (ListAgentMLSID =  3196679) | (SellingAgentMLSID = 3196679) )',
 			[
 				'Format' => 'COMPACT-DECODED',
 				'Limit'  => 5,
@@ -46,6 +46,26 @@ function get_mls() {
 			$rooms = '0';
 		} else {
 			$rooms = $property['BedsTotal'];
+		}
+		if ( in_array( $property['ListAgentMLSID'], $agentids ) ) {
+			$owner = "HR19";
+		} else {
+			$owner = "Other";
+		}
+		if ( in_array( $property['CoListAgentMLSID'], $agentids ) ) {
+			$owner = "HR19";
+		} else {
+			$owner = "Other";
+		}
+		if ( in_array( $property['CoAgentLicenseNum'], $agentids ) ) {
+			$owner = "HR19";
+		} else {
+			$owner = "Other";
+		}
+		if ( in_array( $property['CoSellingAgentMLSID'], $agentids ) ) {
+			$owner = "HR19";
+		} else {
+			$owner = "Other";
 		}
 		if ( in_array( $property['ListAgentMLSID'], $agentids ) ) {
 			$owner = "HR19";
