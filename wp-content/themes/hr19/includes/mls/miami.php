@@ -19,11 +19,11 @@ function get_mls() {
 		$results = $rets->Search(
 			'Property',
 			'Listing',
-			'(STATUS = A), ( (CoListAgentMLSID = 3196679) | (AgentLicenseNum = 3196679) | (CoAgentLicenseNum = 3196679) | (CoSellingAgentMLSID = 3196679) | (ListAgentMLSID =  3196679) | (SellingAgentMLSID = 3196679) )',
+			'(STATUS = A), ((CoListAgentMLSID = 3196679) | (CoListAgentMLSID = 3124638) | (AgentLicenseNum = 3196679) | (AgentLicenseNum = 3124638))',
 			[
 				'Format' => 'COMPACT-DECODED',
-				'Limit'  => 5,
-				'Offset' => 0
+				//'Limit'  => 5,
+				//'Offset' => 0
 			]
 		);
 	} else {
@@ -47,30 +47,16 @@ function get_mls() {
 		} else {
 			$rooms = $property['BedsTotal'];
 		}
-		if ( in_array( $property['ListAgentMLSID'], $agentids ) ) {
+		if ( in_array( $property['CoListAgentMLSID'], $agentids ) || in_array( $property['AgentLicenseNum'], $agentids ) ) {
 			$owner = "HR19";
 		} else {
 			$owner = "Other";
 		}
-		if ( in_array( $property['CoListAgentMLSID'], $agentids ) ) {
-			$owner = "HR19";
-		} else {
-			$owner = "Other";
-		}
-		if ( in_array( $property['CoAgentLicenseNum'], $agentids ) ) {
-			$owner = "HR19";
-		} else {
-			$owner = "Other";
-		}
-		if ( in_array( $property['CoSellingAgentMLSID'], $agentids ) ) {
-			$owner = "HR19";
-		} else {
-			$owner = "Other";
-		}
-		if ( in_array( $property['ListAgentMLSID'], $agentids ) ) {
-			$owner = "HR19";
-		} else {
-			$owner = "Other";
+
+		if ( $property['CoListAgentMLSID'] == "" ){
+			$brokerId = $property['AgentLicenseNum'];
+		} else{
+			$brokerId = $property['CoListAgentMLSID'];
 		}
 
 		$propid = get_page_by_title( $property['MLSNumber'], 'OBJECT', 'property' ); //Check if already exists
@@ -82,7 +68,7 @@ function get_mls() {
 				'post_status'  => 'publish',
 				'post_type'    => 'property',
 				'meta_input'   => array(
-					'_pr_address'                     => $property['AddressInternetDisplay'] . ' ' . $property['City'] . ', ' . $property['StateOrProvince'],
+					'_pr_address'                     => $property['StreetNumber'] . ' ' . $property['StreetName'] . ' ' . $property['UnitNumber'] . ' ' . $property['City'] . ' ' . $property['StateOrProvince'],
 					'_pr_state'                       => $property['StateOrProvince'],
 					'_pr_city'                        => $property['City'] . ', ' . $property['StateOrProvince'],
 					'_pr_community'                   => $property['CountyOrParish'],
@@ -97,7 +83,7 @@ function get_mls() {
 					'_pr_surf'                        => number_format( round( $property['TotalAcreage'] ) ),
 					'_pr_hoa'                         => number_format( round( $property['AssociationFee'] ) ),
 					'_pr_yearbuilt'                   => number_format( round( $property['YearBuilt'] ) ),
-					'_pr_agentid'                     => $property['ListAgentMLSID'],
+					'_pr_agentid'                     => $brokerId,
 					'_pr_matrixid'                    => $property['Matrix_Unique_ID'],
 					'_pr_status'                      => $property['Status'],
 					'_pr_forsale'                     => $property['ForSaleYN'],
@@ -261,7 +247,7 @@ function get_mls() {
 				'post_status'  => 'publish',
 				'post_type'    => 'property',
 				'meta_input'   => array(
-					'_pr_address'                     => $property['AddressInternetDisplay'] . ' ' . $property['City'] . ', ' . $property['StateOrProvince'],
+					'_pr_address'                     => $property['StreetNumber'] . ' ' . $property['StreetName'] . ' ' . $property['UnitNumber'] . ' ' . $property['City'] . ' ' . $property['StateOrProvince'],
 					'_pr_state'                       => $property['StateOrProvince'],
 					'_pr_city'                        => $property['City'] . ', ' . $property['StateOrProvince'],
 					'_pr_community'                   => $property['CountyOrParish'],
@@ -276,7 +262,7 @@ function get_mls() {
 					'_pr_surf'                        => number_format( round( $property['TotalAcreage'] ) ),
 					'_pr_hoa'                         => number_format( round( $property['AssociationFee'] ) ),
 					'_pr_yearbuilt'                   => number_format( round( $property['YearBuilt'] ) ),
-					'_pr_agentid'                     => $property['ListAgentMLSID'],
+					'_pr_agentid'                     => $brokerId,
 					'_pr_matrixid'                    => $property['Matrix_Unique_ID'],
 					'_pr_status'                      => $property['Status'],
 					'_pr_forsale'                     => $property['ForSaleYN'],
