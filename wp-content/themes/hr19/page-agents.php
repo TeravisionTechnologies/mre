@@ -195,6 +195,9 @@ if ( have_posts() ): while ( have_posts() ):
 					$baths   = get_post_meta( $property->ID, '_pr_baths_total', true );
 					$sysid   = get_post_meta( $property->ID, '_pr_matrixid', true );
 					$bgimg = $url['baseurl'].'/photos/'.$sysid.'/1.jpg';
+					$headers  = get_headers($bgimg, 1);
+					$fsize    = $headers['Content-Length'];
+					$fsize = (int)$fsize;
 					$urlimage = wp_remote_head( $bgimg );
 					$urlimage = $urlimage['response']['code'];
 					$placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
@@ -249,7 +252,17 @@ if ( have_posts() ): while ( have_posts() ):
                             </div>
                             <div class="property-info">
                                 <h2 class="info-price"><?php echo number_format($price, 0, '.', ','); ?></h2>
-                                <h3 class="info-features"><?php echo $type . " · " . $rooms . ( $lang == "es_ES" ? ' Habitaciones ·' : ' Rooms' ) . $baths . ( $lang == "es_ES" ? ' Baños' : ' Baths' ); ?></h3>
+                                <h3 class="info-features"><?php if (!empty($type)) {
+			                            echo $type;
+		                            } else {
+			                            echo '';
+		                            } ?>
+		                            <?php if (!empty($rooms)) {
+			                            echo '· ' . $rooms .  $rm;
+		                            } ?>
+		                            <?php if (!empty($baths)) {
+			                            echo '· ' . $baths . $bth;
+		                            } ?></h3>
                                 <h3 class="info-address"><?php echo $address; ?></h3>
                                 <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
                             </div>
