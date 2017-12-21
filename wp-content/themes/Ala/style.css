@@ -434,9 +434,12 @@ body {
 .al-properties-section .filter-left {
   border-right: 2px solid #7f8182;
   margin: 4.5833333333vw 0 4.1666666667vw 1.0416666667vw;
-  padding-right: 0;
   width: 9.0277777778vw;
-  padding-left: 0; }
+  padding-right: 1.0416666667vw;
+  text-align: right; }
+.al-properties-section .filter-right {
+  text-align: left;
+  padding-left: 1.0416666667vw; }
 .al-properties-section .btn-filter {
   border: solid 2px rgba(74, 74, 74, 0.4);
   font-family: Archivo, sans-serif;
@@ -1807,9 +1810,12 @@ a.download-bro {
     border-right: 2px solid #7f8182;
     margin: 66px 0 60px 15px;
     opacity: 0.5;
-    padding-right: 0;
     width: 130px;
-    padding-left: 0; }
+    padding-right: 15px;
+    text-align: right; }
+  .al-properties-section .filter-right {
+    text-align: left;
+    padding-left: 15px; }
   .al-properties-section .btn-filter {
     border: solid 2px rgba(74, 74, 74, 0.4);
     font-size: 16px;
@@ -2425,9 +2431,12 @@ a.download-bro {
     border-right: 2px solid #7f8182;
     margin: 7.421875vw 0 6.7708333333vw 1.953125vw;
     opacity: 0.5;
-    padding-right: 0;
     width: 14.3229166667vw;
-    padding-left: 0; }
+    padding-right: 1.953125vw;
+    text-align: right; }
+  .al-properties-section .filter-right {
+    text-align: left;
+    padding-left: 1.953125vw; }
   .al-properties-section .btn-filter {
     border: solid 2px rgba(74, 74, 74, 0.4);
     font-size: 1.953125vw;
@@ -3118,9 +3127,12 @@ a.download-bro {
     border-right: 2px solid #7f8182;
     margin: 8.8888888889vw 0 9.4444444444vw 4.1666666667vw;
     opacity: 0.5;
-    padding-right: 0;
     width: 27.7777777778vw;
-    padding-left: 0; }
+    padding-right: 4.1666666667vw;
+    text-align: right; }
+  .al-properties-section .filter-right {
+    text-align: left;
+    padding-left: 4.1666666667vw; }
   .al-properties-section .btn-filter {
     border: solid 2px rgba(74, 74, 74, 0.4);
     font-size: 3.3333333333vw;
@@ -3205,7 +3217,7 @@ a.download-bro {
           width: 5.5555555556vw;
           height: 2.2222222222vw;
           opacity: 0;
-          bottom: -1.9444444444vw;
+          bottom: -1.6666666667vw;
           left: 50%;
           transform: translateX(-50%); }
 
@@ -3456,6 +3468,10 @@ a.download-bro {
       display: none !important;
       width: 123px !important;
       height: 38px; }
+
+  .orderby {
+    font-size: 3.3333333333vw;
+    padding: 1.3888888889vw 3.3333333333vw !important; }
 
   #about-hero-section {
     height: 111.1111111111vw;

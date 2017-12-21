@@ -104,7 +104,7 @@ $placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
                         $j = 0;
                         foreach ($locations as $location) {
                             $clase = ($location->slug == $locationFilter) ? "active" : "";
-                            $clase.= ($j == 0 ? " filter-left" : "");
+                            $clase.= ($j == 0 ? " filter-left" : "filter-right");
                             echo '<h2 class="properties-country-filter button the-country ' . $clase . '" data-value="' . $location->slug . '">' . $location->name . '</h2>';
                             $j++;
                         }
