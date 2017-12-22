@@ -53,6 +53,12 @@ function get_mls() {
 			$owner = "Other";
 		}
 
+		if ( $property['SqFtLivArea'] == "" ){
+			$sqft = $property['SqFtTotal'];
+		} else{
+			$sqft = $property['SqFtLivArea'];
+		}
+
 		if ( $property['CoListAgentMLSID'] == "" ){
 			$brokerId = $property['AgentLicenseNum'];
 		} else{
@@ -79,7 +85,7 @@ function get_mls() {
 					'_pr_baths_total'                 => number_format( round( $property['BathsTotal'] ) ),
 					'_pr_baths_full'                  => number_format( round( $property['BathsFull'] ) ),
 					'_pr_baths_half'                  => number_format( round( $property['BathsHalf'] ) ),
-					'_pr_sqft'                        => number_format( round( $property['SqFtTotal'] ) ),
+					'_pr_sqft'                        => $sqft,
 					'_pr_surf'                        => number_format( round( $property['TotalAcreage'] ) ),
 					'_pr_hoa'                         => number_format( round( $property['AssociationFee'] ) ),
 					'_pr_yearbuilt'                   => number_format( round( $property['YearBuilt'] ) ),
@@ -258,7 +264,7 @@ function get_mls() {
 					'_pr_baths_total'                 => number_format( round( $property['BathsTotal'] ) ),
 					'_pr_baths_full'                  => number_format( round( $property['BathsFull'] ) ),
 					'_pr_baths_half'                  => number_format( round( $property['BathsHalf'] ) ),
-					'_pr_sqft'                        => number_format( round( $property['SqFtTotal'] ) ),
+					'_pr_sqft'                        => $sqft,
 					'_pr_surf'                        => number_format( round( $property['TotalAcreage'] ) ),
 					'_pr_hoa'                         => number_format( round( $property['AssociationFee'] ) ),
 					'_pr_yearbuilt'                   => number_format( round( $property['YearBuilt'] ) ),
