@@ -128,9 +128,6 @@ $bgimg = (int)$bgimg;
                         <i id="go-back" class="fa fa-chevron-left" aria-hidden="true"></i>
                         <?php if (!empty($city)) {
                             echo $city;
-                        } ?>,
-                        <?php if (!empty($state)) {
-                            echo $state;
                         } ?> >
                         <?php if (!empty($address)) {
                             echo $address;
@@ -173,7 +170,7 @@ $bgimg = (int)$bgimg;
     <div class="property-info-heading">
         <div class="container">
             <div class="row">
-            <div class="col-xs-12 col-sm-3 col-md-3 price borderl">
+            <div class="col-xs-12 col-sm-3 col-md-offset-1 col-md-3 price borderl">
                 <div><?php echo ( $lang == "es_ES" ? 'Precio: ' : 'Price: ' ) ?></div>
                 <div class="price-txt"><?php if (!empty($price)) {
                         echo $csymbol . number_format($price, 0, '.', ',');
@@ -184,7 +181,7 @@ $bgimg = (int)$bgimg;
                     <?php echo ( $lang == "es_ES" ? '/mes' : '/month' ) ?>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 paddingl30 borderl">
+            <div class="col-xs-6 col-sm-6 col-md-4 paddingl30 borderl">
                 <div class="md-text">
                     <?php if (!empty($address)) {
                         echo '<div class="addr">'.$address.'</div>';
@@ -210,24 +207,17 @@ $bgimg = (int)$bgimg;
                 </div>
                 <div class="sm-text"><?php echo ( $lang == "es_ES" ? ' Número de MLS: ' : ' MLS Number: ' ) ?><?php the_title(); ?></div>
             </div>
-            <div class="col-xs-6 col-sm-3 col-md-3 text-center">
+            <div class="col-xs-6 col-sm-3 col-md-3">
                 <div class="row surface">
-                    <?php if (!empty($surf)) { ?>
-                        <div class="col-xs-6 col-sm-6 col-md-6">
-                            <div class="sm-text"><?php echo ( $lang == "es_ES" ? 'Superficie:' : 'Surface:' ) ?></div>
-                            <div class="md-text"><?php echo $surf . ' ft'; ?></div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 paddingl30">
+                        <div class="sm-text"><?php echo ( $lang == "es_ES" ? 'Superficie:' : 'Surface:' ) ?></div>
+                        <div class="md-text"><?php if (!empty($surf)) { echo $surf ; } else { echo '--'; } ?> </div>
+                    </div>
+                    <div class="<?php ( empty($surf) ? 'col-xs-12 col-sm-12 col-md-12' : 'col-xs-6 col-sm-6 col-md-6' ) ?>">
+                        <div class="sm-text"><?php echo ( $lang == "es_ES" ? 'Pies cuadrados:' : 'Square feet:' ) ?></div>
+                        <div class="md-text"><?php if (!empty($sqft)) { echo $sqft . ' ft²'; } else { echo '--'; } ?>
                         </div>
-                    <?php } ?>
-                    <?php if (!empty($sqft)) { ?>
-                        <div class="<?php ( empty($surf) ? 'col-xs-12 col-sm-12 col-md-12' : 'col-xs-6 col-sm-6 col-md-6' ) ?>">
-                            <div class="sm-text"><?php echo ( $lang == "es_ES" ? 'Pies cuadrados:' : 'Square feet:' ) ?></div>
-                            <div class="md-text"><?php if (!empty($sqft)) {
-                                    echo $sqft . ' ft²';
-                                } else {
-                                    echo 'N/A';
-                                } ?> </div>
-                        </div>
-                    <?php } ?>
+                    </div>
                 </div>
             </div>
         </div>

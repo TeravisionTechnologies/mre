@@ -335,7 +335,7 @@ wp_reset_query();
 								?>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                    aria-haspopup="true"
-                                   aria-expanded="true"><?php echo($lang == "es_ES" ? 'Nro. <br>de habitaciones' : 'Number <br>of rooms') ?>
+                                   aria-expanded="true"><?php echo($lang == "es_ES" ? 'Nro. <br>de baños' : 'Number <br>of baths') ?>
                                     <span
                                             class="caret"></span></a>
 							<?php } else {
