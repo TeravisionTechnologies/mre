@@ -87,6 +87,11 @@ if(function_exists('pll_current_language')){
                     'compare' => '=',
                 ),
 	            array(
+		            'key' => '_pr_city',
+		            'value' => 'Miami, FL',
+		            'compare' => '=',
+	            ),
+	            array(
 		            'key' => '_pr_owner',
 		            'value' => 'HR19',
 		            'compare' => '=',

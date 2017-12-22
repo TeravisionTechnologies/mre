@@ -201,8 +201,8 @@ $bgimg = (int)$bgimg;
                     <?php if (!empty($rooms)) {
                         echo '· ' . $rooms . $rm;
                     } ?>
-                    <?php if (!empty($bathsf)) {
-                        echo '· ' . $bathsf . $bth;
+                    <?php if (!empty($baths)) {
+                        echo '· ' . $baths . $bth;
                     } ?>
                     <?php if (!empty($bathsh)) {
                         echo '· ' . $bathsh . $bathm;
@@ -336,7 +336,7 @@ $bgimg = (int)$bgimg;
 
                                         <?php if( !empty( $interior ) ) { ?>
                                             <li>Interior:
-                                                <?php echo $interior ?>
+                                                <?php echo preg_replace('/(?<!\d),|,(?!\d{3})/', ', ', $interior); ?>
                                             </li>
                                         <?php } ?>
 
@@ -365,21 +365,21 @@ $bgimg = (int)$bgimg;
                                         <?php if( !empty( $amenities ) ) { ?>
                                             <li>
                                                 <?php echo ( $lang == "es_ES" ? 'Comodidades:' : 'Amenities:' ) ?>
-                                                <?php echo $amenities ?>
+                                                <?php echo preg_replace('/(?<!\d),|,(?!\d{3})/', ', ', $amenities); ?>
                                             </li>
                                         <?php } ?>
 
                                         <?php if( !empty( $appliances ) ) { ?>
                                             <li>
                                                 <?php echo ( $lang == "es_ES" ? 'Incluye:' : 'Appliances:' ) ?>
-                                                <?php echo $appliances ?>
+                                                <?php echo preg_replace('/(?<!\d),|,(?!\d{3})/', ', ', $appliances); ?>
                                             </li>
                                         <?php } ?>
 
                                         <?php if( !empty( $parking ) ) { ?>
                                             <li>
                                                 <?php echo ( $lang == "es_ES" ? 'Estacionamiento:' : 'Parking:' ) ?>
-                                                <?php echo $parking ?>
+                                                <?php echo preg_replace('/(?<!\d),|,(?!\d{3})/', ', ', $parking); ?>
                                             </li>
                                         <?php } ?>
 
@@ -408,7 +408,7 @@ $bgimg = (int)$bgimg;
                                         <?php if( !empty( $security ) ) { ?>
                                             <li>
                                                 <?php echo ( $lang == "es_ES" ? 'Seguridad:' : 'Security:' ) ?>
-                                                <?php echo $security ?>
+                                                <?php echo preg_replace('/(?<!\d),|,(?!\d{3})/', ', ', $security); ?>
                                             </li>
                                         <?php } ?>
 
