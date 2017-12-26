@@ -55,6 +55,9 @@ require_once( 'vendor/autoload.php' );
 # MLS MIAMI
 require_once( 'includes/mls/miami.php' );
 
+# MLS ORLANDO
+require_once( 'includes/mls/orlando.php' );
+
 # MENUS ESP/ENG
 register_nav_menus( array(
 	'primary'    => __( 'Primary Menu', 'hr19' ),
