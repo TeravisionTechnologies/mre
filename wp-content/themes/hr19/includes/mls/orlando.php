@@ -6,11 +6,11 @@ function get_mls_orlando() {
 	global $wpdb;
 	$agentids = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_ag_mls' ) );
 	$config   = new \PHRETS\Configuration;
-	$config->setLoginUrl('http://rets.mfrmls.com/contact/rets/login')
-	       ->setUsername('RETS1456')
-	       ->setPassword('N!5AY%p7R2')
+	$config->setLoginUrl( 'http://rets.mfrmls.com/contact/rets/login' )
+	       ->setUsername( 'RETS1456' )
+	       ->setPassword( 'N!5AY%p7R2' )
 	       ->setRetsVersion( '1.7.2' )
-	       ->setOption('use_post_method', 1);
+	       ->setOption( 'use_post_method', 1 );
 
 	$rets = new \PHRETS\Session( $config );
 
@@ -20,11 +20,11 @@ function get_mls_orlando() {
 		$results = $rets->Search(
 			'Property',
 			'Listing',
-			'(STATUS = ACT)',
+			'(STATUS = ACT), (StreetCity = ORLANDO)',
 			[
 				'Format' => 'COMPACT-DECODED',
-				'Limit'  => 5,
-				//'Offset' => 0
+				'Limit'  => 10,
+				//'Offset' => 10
 			]
 		);
 	} else {
@@ -38,7 +38,7 @@ function get_mls_orlando() {
 		$transaction = "";
 		$rooms       = "";
 		$owner       = "";
-		if ( $property['ForLeaseYN'] == "0" || $property['ForLeaseYN'] == "") {
+		if ( $property['ForLeaseYN'] == "0" || $property['ForLeaseYN'] == "" ) {
 			$transaction = 'Sale';
 		} else {
 			$transaction = 'Lease';
@@ -54,14 +54,30 @@ function get_mls_orlando() {
 			$owner = "Other";
 		}
 
-		if( $property['PoolYN'] !== "None" || $property['PoolYN'] !== "" ){
+		if ( $property['PoolYN'] !== "None" || $property['PoolYN'] !== "" ) {
 			$poolinfo = 1;
 		}
 
-		if ( $property['CoListAgentMLSID'] == "" ){
+		if ( $property['CoListAgentMLSID'] == "" ) {
 			$brokerId = $property['AgentLicenseNum'];
-		} else{
+		} else {
 			$brokerId = $property['CoListAgentMLSID'];
+		}
+
+		if ( $property['PropertyStyle'] == "Single Family" || $property['PropertyStyle'] == "Single Family Home" || $property['PropertyStyle'] == "Single Family Use" ) {
+			$proptype = "Single";
+		} elseif ( $property['PropertyStyle'] == "Multi-Family" ) {
+			$proptype = "Multifamily";
+		} elseif ( $property['PropertyStyle'] == "Townhouse" ) {
+			$proptype = "Condo";
+		} elseif ( $property['PropertyStyle'] == "Mobile Home/Rv Park" || $property['PropertyStyle'] == "Mobile Home Use" ) {
+			$proptype = "Mobile";
+		} elseif ( $property['PropertyStyle'] == "Crop Producing Farm" || $property['PropertyStyle'] == "Dude Ranch" || $property['PropertyStyle'] == "Farmland" || $property['PropertyStyle'] == "Fish Farm" || $property['PropertyStyle'] == "Sod Farm" || $property['PropertyStyle'] == "Tree Farm" || $property['PropertyStyle'] == "Working Ranch" ){
+			$proptype = "Farm";
+		} elseif ( $property['PropertyStyle'] == "Acreage/Ranch/Grove" || $property['PropertyStyle'] == "Agricultural" || $property['PropertyStyle'] == "Groves" || $property['PropertyStyle'] == "Ranchland" || $property['PropertyStyle'] == "Timberland" ){
+			$proptype = "Land";
+		} else{
+			$proptype = $property['PropertyStyle'];
 		}
 
 		$propid = get_page_by_title( $property['MLSNumber'], 'OBJECT', 'property' ); //Check if already exists
@@ -79,7 +95,7 @@ function get_mls_orlando() {
 					'_pr_community'                   => $property['CountyOrParish'],
 					'_pr_subdiv'                      => $property['LegalSubdivisionName '],
 					'_pr_current_price'               => round( $property['CurrentPrice'] ),
-					'_pr_type_of_property'            => $property['PropertyStyle'], // REVISAR!!!!!
+					'_pr_type_of_property'            => $proptype,
 					'_pr_room_count'                  => $property['BedsTotal'],
 					'_pr_baths_total'                 => number_format( round( $property['BathsTotal'] ) ),
 					'_pr_baths_full'                  => number_format( round( $property['BathsFull'] ) ),
@@ -258,7 +274,7 @@ function get_mls_orlando() {
 					'_pr_community'                   => $property['CountyOrParish'],
 					'_pr_subdiv'                      => $property['LegalSubdivisionName '],
 					'_pr_current_price'               => round( $property['CurrentPrice'] ),
-					'_pr_type_of_property'            => $property['PropertyStyle'], // REVISAR!!!!!
+					'_pr_type_of_property'            => $proptype,
 					'_pr_room_count'                  => $property['BedsTotal'],
 					'_pr_baths_total'                 => number_format( round( $property['BathsTotal'] ) ),
 					'_pr_baths_full'                  => number_format( round( $property['BathsFull'] ) ),

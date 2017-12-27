@@ -762,6 +762,9 @@ input[type="radio"].styled:checked + label
       font-family: 'Montserrat-Bold', sans-serif
     .property-highlights
       font-size: 13px
+      text-overflow: ellipsis
+      white-space: nowrap
+      overflow: hidden
     .property-address
       margin-bottom: 5px
       text-overflow: ellipsis
@@ -1609,3 +1612,8 @@ input:checked + .slider:before
 .search
   .autocomplete-suggestions
     width: auto !important
+
+.single-property-highlights
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
