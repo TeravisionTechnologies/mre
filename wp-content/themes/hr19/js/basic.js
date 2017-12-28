@@ -359,8 +359,6 @@ jQuery(document).ready(function ($) {
     function initialize() {
         map = new google.maps.Map(
             document.getElementById("search-map"), {
-                center: new google.maps.LatLng(25.743954, -80.186812),
-                zoom: 13,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 mapTypeControl: false,
                 fullscreenControl: false
@@ -421,7 +419,6 @@ jQuery(document).ready(function ($) {
                     fontSize: size,
                 });
             });
-
         }
 
         iw = new google.maps.InfoWindow();
@@ -434,7 +431,6 @@ jQuery(document).ready(function ($) {
     }
 
     google.maps.event.addDomListener(window, "load", initialize);
-
 
     function geocodeAddress(locations, i) {
         var priceUnformatted = locations[i].price;
@@ -472,6 +468,7 @@ jQuery(document).ready(function ($) {
                         image: image,
                     });
 
+                    bounds.extend(marker.position);
 
                     var html = "<a href=property/" + mls + "><div class='info-container'>" +
                         "<div class='info-image' style='background-image: url(" + image + ")'></div>" +
@@ -490,110 +487,15 @@ jQuery(document).ready(function ($) {
                         iw.open(map, marker);
                     });
 
-                    //infoWindow(marker, map, price, address, highlights, mls, image);
-                    /*bounds.extend(marker.getPosition());
-                    map.fitBounds(bounds);*/
-
-                    /*
-                    var marker = new google.maps.Marker({
-                        icon: hr19.root + '/assets/pointgreen.svg',
-                        map: map,
-                        optimized: false,
-                        position: results[0].geometry.location,
-                        address: address,
-                        price: price,
-                        highlights: highlights,
-                        mls: mls,
-                        label: {text: price, color: 'white', fontFamily: 'Montserrat-Regular', fontSize: '12px'},
-                        image: image,
-
-                    });
-                    marker.addListener('mouseover', function () {
-                        if (infowindows == 0) {
-                            this.setLabel({
-                                text: price,
-                                color: '#498306',
-                                fontFamily: 'Montserrat-Regular',
-                                fontSize: '12px'
-                            });
-                            this.setZIndex(100);
-                            this.setIcon(hr19.root + '/assets/pointwhite.svg');
-                        }
-                    });
-                    marker.addListener('mouseout', function () {
-                        if (infowindows == 0) {
-                            this.setLabel({
-                                text: price,
-                                color: 'white',
-                                fontFamily: 'Montserrat-Regular',
-                                fontSize: '12px'
-                            });
-                            this.setZIndex(0);
-                            this.setIcon(hr19.root + '/assets/pointgreen.svg');
-                        }
-                    });
-                    infoWindow(marker, map, price, address, highlights, mls, image);
-                    bounds.extend(marker.getPosition());
                     map.fitBounds(bounds);
-                    */
-
                 }
-                /*else {
-                    alert("geocode of " + address + " failed:" + status);
-                }*/
+
             });
     }
 
     function iwClose() {
         iw.close();
     }
-
-    /*
-    function infoWindow(marker, map, price, address, highlights, mls, image) {
-        google.maps.event.addListener(marker, 'click', function () {
-            var html = "<a href=property/" + mls + "><div class='info-container'>" +
-                "<div class='info-image' style='background-image: url(" + image + ")'></div>" +
-                "<div class='info-data'>" +
-                "<h2 class='info-data-price'>" + price + "</h2>" +
-                "<h3 class='info-data-highlights'>" + highlights + "</h3>" +
-                "<h3 class='info-data-address'>" + address + "</h3>" +
-                "<h3 class='info-data-mls'>MLS: " + mls + "</h3>" +
-                "</div>" +
-                "</div></a>"
-            ;
-            iw = new google.maps.InfoWindow({
-                content: html,
-                maxWidth: 283
-            });
-            if (infowindows.length > 0) {
-                closeInfoWindows();
-            }
-            else {
-                iw.open(map, marker);
-                infowindows.push(iw);
-                activeMarker = this;
-                console.log(activeMarker);
-            }
-            google.maps.event.addListener(iw, 'domready', function () {
-                var iwOuter = $('.gm-style-iw');
-                var iwBackground = iwOuter.prev();
-                iwBackground.children(':nth-child(2)').css({'display': 'none'});
-                iwBackground.children(':nth-child(4)').css({'display': 'none'});
-                var arrow_div = $(".gm-style-iw").prev();
-                $("div:eq(0)", arrow_div).css('display', 'none');
-                $("div:eq(2)", arrow_div).css('display', 'none');
-            });
-        });
-    }
-    function closeInfoWindows() {
-        for (var i = 0; i < infowindows.length; i++) {
-            infowindows[i].close();
-        }
-        infowindows = [];
-        activeMarker.setIcon(hr19.root + '/assets/pointgreen.svg');
-        activeMarker = '';
-    }
-    */
 
     // Price range function
     $("#min").focus(function () {
@@ -605,14 +507,6 @@ jQuery(document).ready(function ($) {
         $("#max-list").show();
     });
 
-    /*$('.wp-pagenavi a').on('click', function(e){
-        e.preventDefault();
-        var link = $(this).attr('href');
-        $('#responsed').load(link + ' #responsed', function() {
-            $('#responsed').fadeIn();
-        });
-    });*/
-
     $('.nn .wp-pagenavi a').on('click', function (e) {
         e.preventDefault();
         var link = $(this).attr('href');
@@ -620,12 +514,6 @@ jQuery(document).ready(function ($) {
             $('#responsed').fadeIn();
         });
     });
-
-    /*var sum = 0;
-    $('.tot').each(function(){
-        sum += parseFloat($(this).data('myval'));
-    });
-    $("#ptotal").html(sum);*/
 
     $('#go-back').click(function () {
         parent.history.back();
