@@ -4,7 +4,7 @@ if ( function_exists( 'pll_current_language' ) ) {
 	$current_language = pll_current_language();
 	$default_language = pll_default_language();
 	if ( $current_language != $default_language ) {
-		$language_subdir = $current_language.'/';
+		$language_subdir = $current_language . '/';
 	} else {
 		$language_subdir = '';
 	}
@@ -119,7 +119,7 @@ $total                = new WP_Query( array(
 		'meta_query'     => $args
 	)
 );
-$count                = $total->post_count;
+$count = $total->post_count;
 wp_reset_postdata();
 wp_reset_query();
 ?>
@@ -164,7 +164,7 @@ wp_reset_query();
                                            data-value="Lease"><?php echo( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a>
                                     </li>
                                     <li><a href="#"
-                                           data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Pre-sale' ) ?></a>
+                                           data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?></a>
                                     </li>
                                 </ul>
 							<?php } ?>
@@ -181,7 +181,7 @@ wp_reset_query();
                                            data-value="Lease"><?php echo( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a>
                                     </li>
                                     <li><a href="#"
-                                           data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Pre-sale' ) ?></a>
+                                           data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?></a>
                                     </li>
                                 </ul>
 							<?php } ?>
@@ -198,7 +198,7 @@ wp_reset_query();
                                            data-value="Lease"><?php echo( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a>
                                     </li>
                                     <li><a href="#"
-                                           data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Pre-sale' ) ?></a>
+                                           data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?></a>
                                     </li>
                                 </ul>
 							<?php } ?>
@@ -218,12 +218,6 @@ wp_reset_query();
                                     </div>
                                     <div class="checkbox">
                                         <label><input type="checkbox"
-                                                      value="Multifamily" <?php echo ( in_array( 'Multifamily', $propTypeArray ) ) ? 'checked' : ''; ?>
-                                                      class=""><?php echo( $lang == "es_ES" ? 'Multifamiliar' : 'Multifamily' ) ?>
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox"
                                                       value="Condo" <?php echo ( in_array( 'Condo', $propTypeArray ) ) ? 'checked' : ''; ?>
                                                       class=""><?php echo( $lang == "es_ES" ? 'Condominios/Townhouses' : 'Condos/Townhouses' ) ?>
                                         </label>
@@ -235,12 +229,18 @@ wp_reset_query();
                                         </label>
                                     </div>
                                     <div class="checkbox">
-                                        <label><input type="checkbox" value="Farm" <?php echo ( in_array( 'Farm', $propTypeArray ) ) ? 'checked' : ''; ?>
-                                                      class=""><?php echo( $lang == "es_ES" ? 'Granjas/Ranchos' : 'Farm/Ranch' ) ?></label>
+                                        <label><input type="checkbox" value="farm"
+                                                      class=""><?php _e( 'Granjas/Ranchos', 'hr' ) ?></label>
                                     </div>
                                     <div class="checkbox">
-                                        <label><input type="checkbox" value="Land" <?php echo ( in_array( 'Land', $propTypeArray ) ) ? 'checked' : ''; ?>
-                                                      class=""><?php echo( $lang == "es_ES" ? 'Terreno' : 'Land' ) ?>
+                                        <label><input type="checkbox" value="land"
+                                                      class=""><?php _e( 'Terreno', 'hr' ) ?>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox"
+                                                      value="Multifamily" <?php echo ( in_array( 'Multifamily', $propTypeArray ) ) ? 'checked' : ''; ?>
+                                                      class=""><?php echo( $lang == "es_ES" ? 'Multifamiliar' : 'Multifamily' ) ?>
                                         </label>
                                     </div>
                                 </li>
@@ -521,13 +521,15 @@ wp_reset_query();
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <a href="<?php the_permalink(); ?>" class="property">
                     <div class="property-image" style="background: url(
-	                <?php if( ( $urlimage == 404 or $fsize < 100 ) && ( empty( $gallery ) ) ){
-		                echo $placeholder;
-	                } elseif ( !empty($gallery) ){
-		                echo $first_pic;
-	                } else {
-		                echo $bgimg;
-	                } ?>);">
+					<?php if ( $urlimage == 404 or $fsize < 100 ) {
+						echo $placeholder;
+					} else {
+						echo $bgimg;
+					} ?>);" data-url="<?php if ( $urlimage == 404 or $fsize < 100 ) {
+						echo $placeholder;
+					} else {
+						echo $bgimg;
+					} ?>">
                     </div>
                     <div class="property-info">
                         <div class="property-price"><?php if ( ! empty( $price ) ) {
@@ -575,7 +577,7 @@ wp_reset_query();
                 </div>
             </div>
 		<?php endif;
-		wp_reset_postdata(); ?>
+		wp_reset_postdata(); wp_reset_query(); ?>
     </div>
     </div>
 

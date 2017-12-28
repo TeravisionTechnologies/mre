@@ -55,9 +55,6 @@ require_once( 'vendor/autoload.php' );
 # MLS MIAMI
 require_once( 'includes/mls/miami.php' );
 
-# MLS ORLANDO
-require_once( 'includes/mls/orlando.php' );
-
 # MENUS ESP/ENG
 register_nav_menus( array(
 	'primary'    => __( 'Primary Menu', 'hr19' ),
@@ -220,3 +217,22 @@ function my_post_count_queries( $query ) {
 	}
 }
 add_action( 'pre_get_posts', 'my_post_count_queries' );
+
+/*function remove_page_from_query_string($query_string) {
+	if (is_admin()) return $query_string;
+	if ($query_string['name'] == 'page' && isset($query_string['page'])) {
+		unset($query_string['name']);
+		// 'page' in the query_string looks like '/2', so i'm spliting it out
+		list($delim, $page_index) = preg_split('/', $query_string['page']);
+		$query_string['paged'] = $page_index;
+	}
+	return $query_string;
+}
+add_filter('request', 'remove_page_from_query_string');*/
+
+/*function posts_on_homepage( $query ) {
+	if ( $query->is_search() && $query->is_main_query() ) {
+		$query->set( 'posts_per_page', '1' );
+	}
+}
+add_action( 'pre_get_posts', 'posts_on_homepage' );*/

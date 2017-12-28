@@ -20,7 +20,7 @@ function get_mls_orlando() {
 		$results = $rets->Search(
 			'Property',
 			'Listing',
-			'(STATUS = ACT), (StreetCity = ORLANDO)',
+			'(STATUS = ACT)',
 			[
 				'Format' => 'COMPACT-DECODED',
 				'Limit'  => 10,
@@ -64,6 +64,12 @@ function get_mls_orlando() {
 			$brokerId = $property['CoListAgentMLSID'];
 		}
 
+		if ( $property['StateOrProvince'] == "Florida" ) {
+			$state = "FL";
+		} else {
+			$state = $property['StateOrProvince'];
+		}
+
 		if ( $property['PropertyStyle'] == "Single Family" || $property['PropertyStyle'] == "Single Family Home" || $property['PropertyStyle'] == "Single Family Use" ) {
 			$proptype = "Single";
 		} elseif ( $property['PropertyStyle'] == "Multi-Family" ) {
@@ -89,9 +95,9 @@ function get_mls_orlando() {
 				'post_status'  => 'publish',
 				'post_type'    => 'property',
 				'meta_input'   => array(
-					'_pr_address'                     => $property['StreetNumber'] . ' ' . $property['StreetName'] . ' ' . $property['UnitNumber'] . ' ' . $property['StreetCity'] . ' ' . $property['StateOrProvince'],
-					'_pr_state'                       => $property['StateOrProvince'],
-					'_pr_city'                        => $property['StreetCity'] . ', ' . $property['StateOrProvince'],
+					'_pr_address'                     => $property['StreetNumber'] . ' ' . $property['StreetName'] . ' ' . $property['UnitNumber'] . ' ' . ucfirst(strtolower($property['StreetCity'])) . ' ' . $state,
+					'_pr_state'                       => $state,
+					'_pr_city'                        => ucfirst(strtolower($property['StreetCity'])) . ', ' . $state,
 					'_pr_community'                   => $property['CountyOrParish'],
 					'_pr_subdiv'                      => $property['LegalSubdivisionName '],
 					'_pr_current_price'               => round( $property['CurrentPrice'] ),
@@ -109,7 +115,7 @@ function get_mls_orlando() {
 					'_pr_status'                      => $property['Status'],
 					//'_pr_forsale'                     => $property['ForSaleYN'], // REVISAR!!
 					'_pr_forlease'                    => $property['ForLeaseYN'], // REVISAR!!
-					'_pr_postalcode'                  => $property['PostalCode'] . ', ' . $property['StreetCity'] . ', ' . $property['StateOrProvince'],
+					'_pr_postalcode'                  => $property['PostalCode'] . ', ' . ucfirst(strtolower($property['StreetCity'])) . ', ' . $state,
 					'_pr_transaction'                 => $transaction,
 					'_pr_owner'                       => $owner,
 					'_pr_ActiveOpenHouseCount'        => $property['ActiveOpenHouseCount'], // REVISAR!!!!!
@@ -268,9 +274,9 @@ function get_mls_orlando() {
 				'post_status'  => 'publish',
 				'post_type'    => 'property',
 				'meta_input'   => array(
-					'_pr_address'                     => $property['StreetNumber'] . ' ' . $property['StreetName'] . ' ' . $property['UnitNumber'] . ' ' . $property['StreetCity'] . ' ' . $property['StateOrProvince'],
-					'_pr_state'                       => $property['StateOrProvince'],
-					'_pr_city'                        => $property['StreetCity'] . ', ' . $property['StateOrProvince'],
+					'_pr_address'                     => $property['StreetNumber'] . ' ' . $property['StreetName'] . ' ' . $property['UnitNumber'] . ' ' . ucfirst(strtolower($property['StreetCity'])) . ' ' . $state,
+					'_pr_state'                       => $state,
+					'_pr_city'                        => ucfirst(strtolower($property['StreetCity'])) . ', ' . $state,
 					'_pr_community'                   => $property['CountyOrParish'],
 					'_pr_subdiv'                      => $property['LegalSubdivisionName '],
 					'_pr_current_price'               => round( $property['CurrentPrice'] ),
@@ -288,7 +294,7 @@ function get_mls_orlando() {
 					'_pr_status'                      => $property['Status'],
 					//'_pr_forsale'                     => $property['ForSaleYN'], // REVISAR!!
 					'_pr_forlease'                    => $property['ForLeaseYN'], // REVISAR!!
-					'_pr_postalcode'                  => $property['PostalCode'] . ', ' . $property['StreetCity'] . ', ' . $property['StateOrProvince'],
+					'_pr_postalcode'                  => $property['PostalCode'] . ', ' . ucfirst(strtolower($property['StreetCity'])) . ', ' . $state,
 					'_pr_transaction'                 => $transaction,
 					'_pr_owner'                       => $owner,
 					'_pr_ActiveOpenHouseCount'        => $property['ActiveOpenHouseCount'], // REVISAR!!!!!
