@@ -357,12 +357,24 @@ jQuery(document).ready(function ($) {
     var allData = [];
 
     function initialize() {
-        map = new google.maps.Map(
-            document.getElementById("search-map"), {
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                mapTypeControl: false,
-                fullscreenControl: false
-            });
+
+        if (locations.length == 0) {
+            map = new google.maps.Map(
+                document.getElementById("search-map"), {
+                    center: new google.maps.LatLng(28.335347, -81.775476),
+                    zoom: 7,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    mapTypeControl: false,
+                    fullscreenControl: false
+                });
+        } else{
+            map = new google.maps.Map(
+                document.getElementById("search-map"), {
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    mapTypeControl: false,
+                    fullscreenControl: false
+                });
+        }
 
         geocoder = new google.maps.Geocoder();
         oms = new OverlappingMarkerSpiderfier(map, {markersWontMove: true, markersWontHide: true});
