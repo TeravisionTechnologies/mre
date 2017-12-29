@@ -15,13 +15,27 @@ load_theme_textdomain( 'hr', get_template_directory() . '/languages' );
 function hr_scripts() {
 
 	#Getting cities, address and postal codes for the suggestion plugin.
-    global $wpdb;
-	$cities     = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_city' ) );
-	$address    = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_address' ) );
-	$postalcode = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_postalcode' ) );
+	global $wpdb;
+	$lang           = get_locale();
+	$cities         = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_city' ) );
+	$address        = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_address' ) );
+	$postalcode     = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_postalcode' ) );
 	$jsonaddress    = wp_json_encode( $cities );
 	$jsoncities     = wp_json_encode( $address );
 	$jsonpostalcode = wp_json_encode( $postalcode );
+	if ( $lang == "es_ES" ) {
+		$msj        = '<p class="no-results"><span>No pudimos encontrar su búsqueda</span><br>Verifique su ortografía o vuelva a hacer su búsqueda usando una ubicación dentro de los E.E.U.U</p>';
+		$acaddress  = "Dirección";
+		$accity     = "Ciudad";
+		$acpc       = "Código Postal";
+		$acrequired = "Introduzca una ubicación o #MLS";
+	} else {
+		$msj        = '<p class="no-results"><span>We could not find your search</span><br>Verify your spelling or re-search using a location within the US</p>';
+		$acaddress  = "Address";
+		$accity     = "City";
+		$acpc       = "Postal Code";
+		$acrequired = "Please enter a location or #MLS";
+	}
 
 	#Enqueue
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
@@ -44,6 +58,11 @@ function hr_scripts() {
 		'cities'      => $jsoncities,
 		'addresses'   => $jsonaddress,
 		'postalcodes' => $jsonpostalcode,
+		'msj'         => $msj,
+		'acaddress'   => $acaddress,
+		'accity'      => $accity,
+		'acpc'        => $acpc,
+		'acrequired'  => $acrequired,
 	) );
 }
 
@@ -55,12 +74,15 @@ require_once( 'vendor/autoload.php' );
 # MLS MIAMI
 require_once( 'includes/mls/miami.php' );
 
+# MLS ORLANDO
+require_once( 'includes/mls/orlando.php' );
+
 # MENUS ESP/ENG
 register_nav_menus( array(
-	'primary'    => __( 'Primary Menu', 'hr19' ),
+	'primary' => __( 'Primary Menu', 'hr19' ),
 ) );
 register_nav_menus( array(
-	'primaryeng'    => __( 'Primary Menu ENG', 'hr19' ),
+	'primaryeng' => __( 'Primary Menu ENG', 'hr19' ),
 ) );
 
 # GETTING CPT, META, TAX
@@ -71,7 +93,7 @@ $postTypeDir = array(
 	__DIR__ . '/includes/post-types/about-us/',
 	__DIR__ . '/includes/post-types/office/',
 );
-$files = array(
+$files       = array(
 	'meta-boxes.php',
 	'post-type.php',
 	'taxonomy.php'
@@ -95,8 +117,9 @@ function call_create_post_types() {
 	#About Us
 	create_post_type_about_us();
 	#Offices
-    create_post_type_offices();
+	create_post_type_offices();
 }
+
 add_action( 'init', 'call_create_post_types' );
 
 # METABOXES
@@ -110,6 +133,7 @@ function call_metaboxes() {
 	#About Us
 	about_us_metaboxes();
 }
+
 add_action( 'cmb2_admin_init', 'call_metaboxes' );
 
 # REGISTERING CUSTOM QUERY VARS FOR PROPERTY SEARCH
@@ -129,8 +153,10 @@ function pr_register_query_vars( $vars ) {
 	$vars[] = 'proporder';
 	$vars[] = 'propsort';
 	$vars[] = 'property_status';
+
 	return $vars;
 }
+
 add_filter( 'query_vars', 'pr_register_query_vars' );
 
 # MODIFY DEFAULT WP SEARCH FUNCTION
@@ -147,6 +173,7 @@ add_action( 'pre_get_posts', function ( $q ) {
 				$wpdb->prepare( "{$wpdb->posts}.post_title like '%%%s%%'", $title ),
 				mb_substr( $sql['where'], 5, mb_strlen( $sql['where'] ) )
 			);
+
 			return $sql;
 		} );
 	}
@@ -158,13 +185,16 @@ function remove_page_editor() {
 	remove_post_type_support( 'banner', 'editor' );
 	remove_post_type_support( 'about_us', 'editor' );
 }
+
 add_action( 'init', 'remove_page_editor' );
 
 # SVG HOOK
 function cc_mime_types( $mimes ) {
 	$mimes['svg'] = 'image/svg+xml';
+
 	return $mimes;
 }
+
 add_filter( 'upload_mimes', 'cc_mime_types' );
 
 # LOGIN CUSTOMIZATION
@@ -200,12 +230,14 @@ function custom_login_logo() {
         #backtoblog a{ color:#033c5a!important;font-weight:bold; }
     </style>';
 }
+
 add_action( 'login_head', 'custom_login_logo' );
 
 # ADMIN FOOTER CUSTOMATIZATION
 function remove_footer_admin() {
 	echo '<span id="footer-thankyou">Desarrollado para HR19</span>';
 }
+
 add_filter( 'admin_footer_text', 'remove_footer_admin' );
 
 # ENABLE PAGINATION IN SEARCH PAGE
@@ -216,6 +248,7 @@ function my_post_count_queries( $query ) {
 		}
 	}
 }
+
 add_action( 'pre_get_posts', 'my_post_count_queries' );
 
 /*function remove_page_from_query_string($query_string) {

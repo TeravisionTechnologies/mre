@@ -169,7 +169,7 @@ jQuery(document).ready(function ($) {
     $('#property-search').validator().on('submit', function (e) {
         if (e.isDefaultPrevented()) {
             $('#s').addClass('placeholder-error');
-            $("#s").attr("placeholder", "Introduzca una ubicación o #MLS");
+            $("#s").attr("placeholder", hr19.acrequired);
         }
     });
 
@@ -202,13 +202,13 @@ jQuery(document).ready(function ($) {
     var postalcodes = JSON.parse(hr19.postalcodes);
 
     var city = $.map(cities, function (q) {
-        return {value: q, data: {category: 'Dirección'}};
+        return {value: q, data: {category: hr19.acaddress}};
     });
     var add = $.map(addresses, function (q) {
-        return {value: q, data: {category: 'Ciudad'}};
+        return {value: q, data: {category: hr19.accity}};
     });
     var pc = $.map(postalcodes, function (q) {
-        return {value: q, data: {category: 'Código Postal'}};
+        return {value: q, data: {category: hr19.acpc}};
     });
 
     var query = city.concat(add, pc);
@@ -218,7 +218,7 @@ jQuery(document).ready(function ($) {
         minChars: 1,
         autoSelectFirst: true,
         showNoSuggestionNotice: true,
-        noSuggestionNotice: '<p class="no-results"><span>No pudimos encontrar su búsqueda</span><br>Verifique su ortografía o vuelva a hacer su búsqueda usando una ubicación dentro de los E.E.U.U</p>',
+        noSuggestionNotice: hr19.msj,
         groupBy: 'category',
         onSearchStart: function () {
             $('body').addClass('has-active-menu');

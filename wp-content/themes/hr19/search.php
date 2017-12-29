@@ -229,11 +229,11 @@ wp_reset_query();
                                         </label>
                                     </div>
                                     <div class="checkbox">
-                                        <label><input type="checkbox" value="farm"
+                                        <label><input type="checkbox" value="Farm" <?php echo ( in_array( 'Farm', $propTypeArray ) ) ? 'checked' : ''; ?>
                                                       class=""><?php _e( 'Granjas/Ranchos', 'hr' ) ?></label>
                                     </div>
                                     <div class="checkbox">
-                                        <label><input type="checkbox" value="land"
+                                        <label><input type="checkbox" value="Land" <?php echo ( in_array( 'Land', $propTypeArray ) ) ? 'checked' : ''; ?>
                                                       class=""><?php _e( 'Terreno', 'hr' ) ?>
                                         </label>
                                     </div>
@@ -301,9 +301,9 @@ wp_reset_query();
                                     <span
                                             class="caret"></span></a>
 							<?php } else {
-								if ( $roomsFilter > 1 ) {
+								if ( $roomsFilter >= 1 ) {
 									$roomInputText = $roomsFilter . '+ ' . ( $lang == "es_ES" ? 'habs.' : 'rooms.' );
-								} elseif ( $roomsFilter == 1 ) {
+								} elseif ( $roomsFilter == "studio" ) {
 									$roomInputText = $lang == "es_ES" ? 'Estudio' : 'Studio';
 								} else {
 									$roomInputText = $lang == "es_ES" ? 'Cualquiera' : 'Any';
@@ -320,7 +320,7 @@ wp_reset_query();
                                 <li><a role="button"
                                        data-value=""><?php echo( $lang == "es_ES" ? 'Cualquiera' : 'Any' ) ?></a></li>
                                 <li><a role="button"
-                                       data-value="1"><?php echo( $lang == "es_ES" ? 'Estudio' : 'Studio' ) ?></a></li>
+                                       data-value="studio"><?php echo( $lang == "es_ES" ? 'Estudio' : 'Studio' ) ?></a></li>
                                 <li><a role="button"
                                        data-value="1">1+ <?php echo( $lang == "es_ES" ? 'habs.' : 'rooms' ) ?></a></li>
                                 <li><a role="button"

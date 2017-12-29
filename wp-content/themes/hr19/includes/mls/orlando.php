@@ -20,10 +20,10 @@ function get_mls_orlando() {
 		$results = $rets->Search(
 			'Property',
 			'Listing',
-			'(STATUS = ACT)',
+			'(STATUS = ACT), (StreetCity = ORLANDO)',
 			[
 				'Format' => 'COMPACT-DECODED',
-				'Limit'  => 10,
+				'Limit'  => 20,
 				//'Offset' => 10
 			]
 		);
@@ -102,7 +102,7 @@ function get_mls_orlando() {
 					'_pr_subdiv'                      => $property['LegalSubdivisionName '],
 					'_pr_current_price'               => round( $property['CurrentPrice'] ),
 					'_pr_type_of_property'            => $proptype,
-					'_pr_room_count'                  => $property['BedsTotal'],
+					'_pr_room_count'                  => $rooms,
 					'_pr_baths_total'                 => number_format( round( $property['BathsTotal'] ) ),
 					'_pr_baths_full'                  => number_format( round( $property['BathsFull'] ) ),
 					'_pr_baths_half'                  => number_format( round( $property['BathsHalf'] ) ),
@@ -281,7 +281,7 @@ function get_mls_orlando() {
 					'_pr_subdiv'                      => $property['LegalSubdivisionName '],
 					'_pr_current_price'               => round( $property['CurrentPrice'] ),
 					'_pr_type_of_property'            => $proptype,
-					'_pr_room_count'                  => $property['BedsTotal'],
+					'_pr_room_count'                  => $rooms,
 					'_pr_baths_total'                 => number_format( round( $property['BathsTotal'] ) ),
 					'_pr_baths_full'                  => number_format( round( $property['BathsFull'] ) ),
 					'_pr_baths_half'                  => number_format( round( $property['BathsHalf'] ) ),
