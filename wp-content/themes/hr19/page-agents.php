@@ -4,7 +4,7 @@ Template Name: Agents
 */
 get_header();
 $lang = get_locale();
-$url = wp_upload_dir();
+$url  = wp_upload_dir();
 ?>
     <section class="agent-hero" style="<?php if ( $thumbnail_id = get_post_thumbnail_id() ) {
 		if ( $image_src = wp_get_attachment_image_src( $thumbnail_id, 'full' ) ) {
@@ -15,7 +15,7 @@ $url = wp_upload_dir();
         <div class="mask"></div>
     </section>
 <?php
-$agents = array( 'post_type' => 'agent' );
+$agents = array( 'post_type' => 'agent', 'posts_per_page' => - 1 );
 query_posts( $agents );
 $postOrder = 0;
 if ( have_posts() ): while ( have_posts() ):
@@ -36,6 +36,11 @@ if ( have_posts() ): while ( have_posts() ):
 				'key'     => '_pr_agentid',
 				'value'   => $agentID,
 				'compare' => '=',
+			),
+			array(
+				'key'     => '_pr_agentid',
+				'value'   => array( '' ),
+				'compare' => 'NOT IN'
 			)
 		)
 	);
@@ -60,7 +65,7 @@ if ( have_posts() ): while ( have_posts() ):
                 </h2>
 				<?php if ( ! empty( $phone ) ) { ?><a
                     href="tel:<?php echo str_replace( array( ".", " ", "-", "/" ), "", $phone ); ?>"
-                    class="profile-phone"><?php echo ( $lang == "es_ES" ? 'Tfno.' : 'Phone.' ) ?> <?php echo $phone; ?></a><?php } ?>
+                    class="profile-phone"><?php echo( $lang == "es_ES" ? 'Tfno.' : 'Phone.' ) ?><?php echo $phone; ?></a><?php } ?>
 				<?php if ( ! empty( $email ) ) { ?><h3 class="profile-email">Email: <?php echo $email; ?></h3><?php } ?>
             </div>
         </div>
@@ -68,57 +73,58 @@ if ( have_posts() ): while ( have_posts() ):
 			<?php the_content(); ?>
         </div>
         <div class="agent-properties">
-            <h2 class="properties-number" data-target="<?php the_ID(); ?>"><?php echo ( $lang == "es_ES" ? 'Propiedades asignadas' : 'Listed properties' ) ?>
+            <h2 class="properties-number"
+                data-target="<?php the_ID(); ?>"><?php echo( $lang == "es_ES" ? 'Propiedades asignadas' : 'Listed properties' ) ?>
                 (<?php echo $agentProperties->post_count; ?>)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
             <div class="properties-list" id="<?php the_ID(); ?>">
 				<?php
 				foreach ( $properties as $property ) {
-					$address = get_post_meta( $property->ID, '_pr_address', true );
-					$price   = get_post_meta( $property->ID, '_pr_current_price', true );
-					$type    = get_post_meta( $property->ID, '_pr_type_of_property', true );
-					$rooms   = get_post_meta( $property->ID, '_pr_room_count', true );
-					$baths   = get_post_meta( $property->ID, '_pr_baths_total', true );
-					$sysid   = get_post_meta( $property->ID, '_pr_matrixid', true );
-					$bgimg = $url['baseurl'].'/photos/'.$sysid.'/1.jpg';
-					$headers  = get_headers($bgimg, 1);
-					$fsize    = $headers['Content-Length'];
-					$fsize = (int)$fsize;
-					$urlimage = wp_remote_head( $bgimg );
-					$urlimage = $urlimage['response']['code'];
-					$placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
-					$csymbol =  get_post_meta( $property->ID, '_pr_currency_symbol', true);
-					$gallery = get_post_meta($property->ID, '_pr_photos', true);
-					if( !empty( $csymbol ) ){
+					$address     = get_post_meta( $property->ID, '_pr_address', true );
+					$price       = get_post_meta( $property->ID, '_pr_current_price', true );
+					$type        = get_post_meta( $property->ID, '_pr_type_of_property', true );
+					$rooms       = get_post_meta( $property->ID, '_pr_room_count', true );
+					$baths       = get_post_meta( $property->ID, '_pr_baths_total', true );
+					$sysid       = get_post_meta( $property->ID, '_pr_matrixid', true );
+					$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
+					$headers     = get_headers( $bgimg, 1 );
+					$fsize       = $headers['Content-Length'];
+					$fsize       = (int) $fsize;
+					$urlimage    = wp_remote_head( $bgimg );
+					$urlimage    = $urlimage['response']['code'];
+					$placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
+					$csymbol     = get_post_meta( $property->ID, '_pr_currency_symbol', true );
+					$gallery     = get_post_meta( $property->ID, '_pr_photos', true );
+					if ( ! empty( $csymbol ) ) {
 						$csymbol = $csymbol;
-					} else{
+					} else {
 						$csymbol = "$";
 					}
-					if( !empty( $gallery ) ){
-						$first_pic = reset($gallery);
+					if ( ! empty( $gallery ) ) {
+						$first_pic = reset( $gallery );
 					}
-					if ( $rooms == "1" ){
-						if (  $lang == "es_ES" ) {
+					if ( $rooms == "1" ) {
+						if ( $lang == "es_ES" ) {
 							$rm = " Habitaci&oacute;n";
-						} else{
+						} else {
 							$rm = " Room";
 						}
-					} else{
-						if (  $lang == "es_ES" ) {
+					} else {
+						if ( $lang == "es_ES" ) {
 							$rm = " Habitaciones";
-						} else{
+						} else {
 							$rm = " Rooms";
 						}
 					}
-					if ( $baths == "1" ){
-						if (  $lang == "es_ES" ) {
+					if ( $baths == "1" ) {
+						if ( $lang == "es_ES" ) {
 							$bth = " Baño";
-						} else{
+						} else {
 							$bth = " Bath";
 						}
-					} else{
-						if (  $lang == "es_ES" ) {
+					} else {
+						if ( $lang == "es_ES" ) {
 							$bth = " Baños";
-						} else{
+						} else {
 							$bth = " Baths";
 						}
 					}
@@ -126,33 +132,33 @@ if ( have_posts() ): while ( have_posts() ):
                     <div class="col-xs-12 col-sm-4 no-padding property">
                         <a href="<?php echo get_permalink( $property->ID ); ?>">
                             <div class="property-image" style="background: url(
-	                        <?php if( ( $urlimage == 404 or $fsize < 100 ) && ( empty( $gallery ) ) ){
-		                        echo $placeholder;
-	                        } elseif ( !empty($gallery) ){
-		                        echo $first_pic;
-	                        } else {
-		                        echo $bgimg;
-	                        } ?>
+							<?php if ( ( $urlimage == 404 or $fsize < 100 ) && ( empty( $gallery ) ) ) {
+								echo $placeholder;
+							} elseif ( ! empty( $gallery ) ) {
+								echo $first_pic;
+							} else {
+								echo $bgimg;
+							} ?>
                                     );">
                             </div>
                             <div class="property-info">
-                                <h2 class="info-price"><?php echo $csymbol . number_format($price, 0, '.', ','); ?></h2>
-                                <h3 class="info-features"><?php if (!empty($type)) {
-		                                echo $type;
-	                                } else {
-		                                echo '';
-	                                } ?>
-	                                <?php if (!empty($rooms)) {
-		                                echo '· ' . $rooms .  $rm;
-	                                } ?>
-	                                <?php if (!empty($baths)) {
-		                                echo '· ' . $baths . $bth;
-	                                } ?></h3>
+                                <h2 class="info-price"><?php echo $csymbol . number_format( $price, 0, '.', ',' ); ?></h2>
+                                <h3 class="info-features"><?php if ( ! empty( $type ) ) {
+										echo $type;
+									} else {
+										echo '';
+									} ?>
+									<?php if ( ! empty( $rooms ) ) {
+										echo '· ' . $rooms . $rm;
+									} ?>
+									<?php if ( ! empty( $baths ) ) {
+										echo '· ' . $baths . $bth;
+									} ?></h3>
                                 <h3 class="info-address"><?php echo $address; ?></h3>
                                 <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
                             </div>
                         </a>
-                    </div> 
+                    </div>
 				<?php } ?>
             </div>
         </div>
@@ -168,7 +174,7 @@ if ( have_posts() ): while ( have_posts() ):
                 </h2>
 				<?php if ( ! empty( $phone ) ) { ?><a
                     href="tel:<?php echo str_replace( array( ".", " ", "-", "/" ), "", $phone ); ?>"
-                    class="profile-phone"><?php echo ( $lang == "es_ES" ? 'Tfno.' : 'Phone.' ) ?> <?php echo $phone; ?></a><?php } ?>
+                    class="profile-phone"><?php echo( $lang == "es_ES" ? 'Tfno.' : 'Phone.' ) ?><?php echo $phone; ?></a><?php } ?>
 				<?php if ( ! empty( $email ) ) { ?><h3 class="profile-email">Email: <?php echo $email; ?></h3><?php } ?>
             </div>
             <div class="agent-profile-photo-right col-xs-3 no-padding">
@@ -183,57 +189,58 @@ if ( have_posts() ): while ( have_posts() ):
 			<?php the_content(); ?>
         </div>
         <div class="agent-properties">
-            <h2 class="properties-number properties-number-right" data-target="<?php the_ID(); ?>"><?php echo ( $lang == "es_ES" ? 'Propiedades asignadas' : 'Listed properties' ) ?>
+            <h2 class="properties-number properties-number-right"
+                data-target="<?php the_ID(); ?>"><?php echo( $lang == "es_ES" ? 'Propiedades asignadas' : 'Listed properties' ) ?>
                 (<?php echo $agentProperties->post_count; ?>)<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
             <div class="properties-list" id="<?php the_ID(); ?>">
 				<?php
 				foreach ( $properties as $property ) {
-					$address = get_post_meta( $property->ID, '_pr_address', true );
-					$price   = get_post_meta( $property->ID, '_pr_current_price', true );
-					$type    = get_post_meta( $property->ID, '_pr_type_of_property', true );
-					$rooms   = get_post_meta( $property->ID, '_pr_room_count', true );
-					$baths   = get_post_meta( $property->ID, '_pr_baths_total', true );
-					$sysid   = get_post_meta( $property->ID, '_pr_matrixid', true );
-					$bgimg = $url['baseurl'].'/photos/'.$sysid.'/1.jpg';
-					$headers  = get_headers($bgimg, 1);
-					$fsize    = $headers['Content-Length'];
-					$fsize = (int)$fsize;
-					$urlimage = wp_remote_head( $bgimg );
-					$urlimage = $urlimage['response']['code'];
-					$placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
-					$csymbol =  get_post_meta( $property->ID, '_pr_currency_symbol', true);
-					$gallery = get_post_meta($property->ID, '_pr_photos', true);
-					if( !empty( $csymbol ) ){
+					$address     = get_post_meta( $property->ID, '_pr_address', true );
+					$price       = get_post_meta( $property->ID, '_pr_current_price', true );
+					$type        = get_post_meta( $property->ID, '_pr_type_of_property', true );
+					$rooms       = get_post_meta( $property->ID, '_pr_room_count', true );
+					$baths       = get_post_meta( $property->ID, '_pr_baths_total', true );
+					$sysid       = get_post_meta( $property->ID, '_pr_matrixid', true );
+					$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
+					$headers     = get_headers( $bgimg, 1 );
+					$fsize       = $headers['Content-Length'];
+					$fsize       = (int) $fsize;
+					$urlimage    = wp_remote_head( $bgimg );
+					$urlimage    = $urlimage['response']['code'];
+					$placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
+					$csymbol     = get_post_meta( $property->ID, '_pr_currency_symbol', true );
+					$gallery     = get_post_meta( $property->ID, '_pr_photos', true );
+					if ( ! empty( $csymbol ) ) {
 						$csymbol = $csymbol;
-					} else{
+					} else {
 						$csymbol = "$";
 					}
-					if( !empty( $gallery ) ){
-						$first_pic = reset($gallery);
+					if ( ! empty( $gallery ) ) {
+						$first_pic = reset( $gallery );
 					}
-					if ( $rooms == "1" ){
-						if (  $lang == "es_ES" ) {
+					if ( $rooms == "1" ) {
+						if ( $lang == "es_ES" ) {
 							$rm = " Habitaci&oacute;n";
-						} else{
+						} else {
 							$rm = " Room";
 						}
-					} else{
-						if (  $lang == "es_ES" ) {
+					} else {
+						if ( $lang == "es_ES" ) {
 							$rm = " Habitaciones";
-						} else{
+						} else {
 							$rm = " Rooms";
 						}
 					}
-					if ( $baths == "1" ){
-						if (  $lang == "es_ES" ) {
+					if ( $baths == "1" ) {
+						if ( $lang == "es_ES" ) {
 							$bth = " Baño";
-						} else{
+						} else {
 							$bth = " Bath";
 						}
-					} else{
-						if (  $lang == "es_ES" ) {
+					} else {
+						if ( $lang == "es_ES" ) {
 							$bth = " Baños";
-						} else{
+						} else {
 							$bth = " Baths";
 						}
 					}
@@ -241,28 +248,28 @@ if ( have_posts() ): while ( have_posts() ):
                     <div class="col-xs-12 col-sm-4 no-padding property">
                         <a href="<?php echo get_permalink( $property->ID ); ?>">
                             <div class="property-image" style="background: url(
-	                        <?php if( ( $urlimage == 404 or $fsize < 100 ) && ( empty( $gallery ) ) ){
-		                        echo $placeholder;
-	                        } elseif ( !empty($gallery) ){
-		                        echo $first_pic;
-	                        } else {
-		                        echo $bgimg;
-	                        } ?>
+							<?php if ( ( $urlimage == 404 or $fsize < 100 ) && ( empty( $gallery ) ) ) {
+								echo $placeholder;
+							} elseif ( ! empty( $gallery ) ) {
+								echo $first_pic;
+							} else {
+								echo $bgimg;
+							} ?>
                                     );">
                             </div>
                             <div class="property-info">
-                                <h2 class="info-price"><?php echo $csymbol . number_format($price, 0, '.', ','); ?></h2>
-                                <h3 class="info-features"><?php if (!empty($type)) {
-			                            echo $type;
-		                            } else {
-			                            echo '';
-		                            } ?>
-		                            <?php if (!empty($rooms)) {
-			                            echo '· ' . $rooms .  $rm;
-		                            } ?>
-		                            <?php if (!empty($baths)) {
-			                            echo '· ' . $baths . $bth;
-		                            } ?></h3>
+                                <h2 class="info-price"><?php echo $csymbol . number_format( $price, 0, '.', ',' ); ?></h2>
+                                <h3 class="info-features"><?php if ( ! empty( $type ) ) {
+										echo $type;
+									} else {
+										echo '';
+									} ?>
+									<?php if ( ! empty( $rooms ) ) {
+										echo '· ' . $rooms . $rm;
+									} ?>
+									<?php if ( ! empty( $baths ) ) {
+										echo '· ' . $baths . $bth;
+									} ?></h3>
                                 <h3 class="info-address"><?php echo $address; ?></h3>
                                 <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
                             </div>
