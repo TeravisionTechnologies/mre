@@ -19,11 +19,11 @@ function get_mls() {
 		$results = $rets->Search(
 			'Property',
 			'Listing',
-			'(STATUS = A), ((CoListAgentMLSID = 3196679) | (CoListAgentMLSID = 3124638) | (AgentLicenseNum = 3196679) | (AgentLicenseNum = 3124638))',
+			'(STATUS = A)',
 			[
 				'Format' => 'COMPACT-DECODED',
-				//'Limit'  => 5,
-				//'Offset' => 0
+				'Limit'  => 10,
+				'Offset' => 0
 			]
 		);
 	} else {
@@ -76,7 +76,7 @@ function get_mls() {
 				'meta_input'   => array(
 					'_pr_address'                     => $property['StreetNumber'] . ' ' . $property['StreetName'] . ' ' . $property['UnitNumber'] . ' ' . $property['City'] . ' ' . $property['StateOrProvince'],
 					'_pr_state'                       => $property['StateOrProvince'],
-					'_pr_city'                        => $property['City'] . ', ' . $property['StateOrProvince'],
+					'_pr_city'                        => $property['City'],
 					'_pr_community'                   => $property['CountyOrParish'],
 					'_pr_subdiv'                      => $property['SubdivisionName'],
 					'_pr_current_price'               => round( $property['CurrentPrice'] ),
@@ -255,7 +255,7 @@ function get_mls() {
 				'meta_input'   => array(
 					'_pr_address'                     => $property['StreetNumber'] . ' ' . $property['StreetName'] . ' ' . $property['UnitNumber'] . ' ' . $property['City'] . ' ' . $property['StateOrProvince'],
 					'_pr_state'                       => $property['StateOrProvince'],
-					'_pr_city'                        => $property['City'] . ', ' . $property['StateOrProvince'],
+					'_pr_city'                        => $property['City'],
 					'_pr_community'                   => $property['CountyOrParish'],
 					'_pr_subdiv'                      => $property['SubdivisionName'],
 					'_pr_current_price'               => round( $property['CurrentPrice'] ),

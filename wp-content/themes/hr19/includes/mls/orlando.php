@@ -97,7 +97,7 @@ function get_mls_orlando() {
 				'meta_input'   => array(
 					'_pr_address'                     => $property['StreetNumber'] . ' ' . $property['StreetName'] . ' ' . $property['UnitNumber'] . ' ' . ucfirst(strtolower($property['StreetCity'])) . ' ' . $state,
 					'_pr_state'                       => $state,
-					'_pr_city'                        => ucfirst(strtolower($property['StreetCity'])) . ', ' . $state,
+					'_pr_city'                        => ucfirst(strtolower($property['StreetCity'])),
 					'_pr_community'                   => $property['CountyOrParish'],
 					'_pr_subdiv'                      => $property['LegalSubdivisionName '],
 					'_pr_current_price'               => round( $property['CurrentPrice'] ),
@@ -276,7 +276,7 @@ function get_mls_orlando() {
 				'meta_input'   => array(
 					'_pr_address'                     => $property['StreetNumber'] . ' ' . $property['StreetName'] . ' ' . $property['UnitNumber'] . ' ' . ucfirst(strtolower($property['StreetCity'])) . ' ' . $state,
 					'_pr_state'                       => $state,
-					'_pr_city'                        => ucfirst(strtolower($property['StreetCity'])) . ', ' . $state,
+					'_pr_city'                        => ucfirst(strtolower($property['StreetCity'])),
 					'_pr_community'                   => $property['CountyOrParish'],
 					'_pr_subdiv'                      => $property['LegalSubdivisionName '],
 					'_pr_current_price'               => round( $property['CurrentPrice'] ),
