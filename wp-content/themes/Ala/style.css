@@ -1268,8 +1268,8 @@ a.download-bro {
   color: #7f8182;
   font-family: "Montserrat", sans-serif; }
   .btn-filter .caret {
-    right: 16px;
-    top: 21px;
+    right: 1.1111111111vw;
+    top: 1.4583333333vw;
     position: absolute; }
 
 .swiper-button-next {
