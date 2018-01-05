@@ -113,7 +113,7 @@ $placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
                 <div class="col-xs-12 properties-filter-container no-padding">
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle pull-right btn-filter" type="button"
-                                id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
 							<?php
 							switch ($orderByFilter) {
 								case 'name_asc' :
@@ -138,19 +138,19 @@ $placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
                         </button>
                         <ul class="dropdown-menu sort-by-button-group" id="sortList" aria-labelledby="dropdownMenu1">
                             <li>
-                                <a class="orderby"
+                                <a href="#" class="orderby"
                                    data-value="name_asc"><?php echo($lang == "es_ES" ? 'Por nombre &#x25B2;' : 'By name &#x25B2') ?></a>
                             </li>
                             <li>
-                                <a class="orderby"
+                                <a href="#" class="orderby"
                                    data-value="name_desc"><?php echo($lang == "es_ES" ? 'Por nombre &#x25BC;' : 'By name &#x25BC;') ?></a>
                             </li>
                             <li>
-                                <a class="orderby"
+                                <a href="#" class="orderby"
                                    data-value="date_asc"><?php echo($lang == "es_ES" ? '&Uacute;ltimo agregado &#x25B2;' : 'Last added &#x25B2;') ?></a>
                             </li>
                             <li>
-                                <a class="orderby"
+                                <a href="#" class="orderby"
                                    data-value="date_desc"><?php echo($lang == "es_ES" ? '&Uacute;ltimo agregado &#x25BC;' : 'Last added &#x25BC;') ?></a>
                             </li>
                         </ul>
