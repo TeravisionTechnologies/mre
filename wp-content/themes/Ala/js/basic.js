@@ -207,7 +207,27 @@ jQuery(document).ready(function () {
         }, 2000);
     });
 
+    $("#menu-item-165").click(function (e) {
+        e.preventDefault;
+        slideLeft.close();
+        var position = $("#al-projects").offset().top;
+        var finalPosition = position - 80;
+        $('html, body').animate({
+            scrollTop: finalPosition
+        }, 2000);
+    });
+
     $("#menu-item-19").click(function (e) {
+        e.preventDefault;
+        slideLeft.close();
+        var position = $("#contact-us").offset().top;
+        var finalPosition = position - 80;
+        $('html, body').animate({
+            scrollTop: finalPosition
+        }, 2000);
+    });
+
+    $("#menu-item-183").click(function (e) {
         e.preventDefault;
         slideLeft.close();
         var position = $("#contact-us").offset().top;
