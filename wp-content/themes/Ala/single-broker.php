@@ -213,6 +213,9 @@
                             </a>
                         </p>
                     </div>
+                    <script async defer
+                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH6eKdzSWQ0bic1EiZCzkbhqMqEzYd3eQ&callback=initMap">
+                    </script>
                     <script>
                       function initMap() {
                         var uluru = {lat: <?php echo $lat ?>, lng: <?php echo $lng ?>};
