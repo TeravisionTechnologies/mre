@@ -118,11 +118,11 @@ jQuery(document).ready(function () {
     $('.swiper-button-next, .swiper-button-prev').click(function () {
     });
 
-    window.addEventListener("resize", function () {
+    /*window.addEventListener("resize", function () {
         setTimeout(function () {
             swiper_blog_categories.update();
         }, 500);
-    }, false);
+    }, false);*/
 
     // Swiper Blog Post Most Viewed
     var swiper_blog_most_viewed = new Swiper('.swiper-container-blog-most-viewed', {
