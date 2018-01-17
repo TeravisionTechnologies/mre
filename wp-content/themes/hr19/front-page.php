@@ -36,13 +36,13 @@ if(function_exists('pll_current_language')){
                       data-toggle="validator" data-disable="false">
                     <ul class="property-status">
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                            <a href="<?php echo home_url(); ?>" class="active"><?php echo ( $lang == "es_ES" ? 'Compra' : 'Buy' ) ?></a>
+                            <a href="<?php echo home_url() . ( $lang == "es_ES" ? '/compra' : '/buy' ); ?>"><?php echo ( $lang == "es_ES" ? 'Compra' : 'Buy' ) ?></a>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                            <a href="<?php echo home_url() . ( $lang == "es_ES" ? '/alquileres' : '/rent' ) ?>"><?php echo ( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a>
+                            <a href="<?php echo home_url() . ( $lang == "es_ES" ? '/alquileres' : '/rent' ) ?>" class="active"><?php echo ( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a>
                         </li>
                         <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
-                            <a href="<?php echo home_url() . ( $lang == "es_ES" ? '/preventa' : '/presale' ) ?>"><?php echo ( $lang == "es_ES" ? 'Preventa' : 'Pre-sale' ) ?></a>
+                            <a href="<?php echo home_url() . ( $lang == "es_ES" ? '/preventa' : '/presale' ) ?>"><?php echo ( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?></a>
                         </li>
                     </ul>
                     <div class="col-xs-12 col-sm-12 col-md-12 search-text no-padding">
@@ -50,7 +50,7 @@ if(function_exists('pll_current_language')){
                             <input type="text" id="s" name="s" class="col-xs-10 col-sm-10 col-md-10"
                                    placeholder="<?php echo ( $lang == "es_ES" ? 'Dirección, ciudad, barrio o código postal' : 'Address, city, neighborhood or zip code' ) ?>"
                                    autocomplete="off" required>
-                            <input type="hidden" id="property_status" name="property_status" value="Sale">
+                            <input type="hidden" id="property_status" name="property_status" value="Lease">
                             <input type="hidden" name="post_type[]" value="property">
                             <button id="btn-search-home" type="submit" class="btn col-xs-2 col-sm-2 col-md-2"><i
                                         class="fa fa-search"></i></button>
@@ -79,7 +79,7 @@ if(function_exists('pll_current_language')){
                 'relation' => 'AND',
                 array(
                     'key' => '_pr_transaction',
-                    'value' => 'Sale',
+                    'value' => 'Lease',
                     'compare' => '=',
                 ),
 	            array(

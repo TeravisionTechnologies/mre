@@ -505,6 +505,8 @@ jQuery(document).ready(function ($) {
             });
     }
 
+    window.setTimeout(initialize(), 5000)
+
     function iwClose() {
         iw.close();
     }
@@ -551,13 +553,13 @@ $(window).on('load', function () {
             scrollTop: finalPosition
         }, 1000);
     }
-    /*if($('#presale-list').length){
-        var position = $("#presale-list").offset().top;
+    if($('#buy-list').length){
+        var position = $("#buy-list").offset().top;
         var finalPosition = position - 80;
         $('html, body').animate({
             scrollTop: finalPosition
         }, 1000);
-    }*/
+    }
     if ($('#map-detail').is(':empty')) {
         $('.prlocation').css('display', 'none');
     }
