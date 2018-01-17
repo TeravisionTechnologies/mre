@@ -88,6 +88,15 @@ jQuery(document).ready(function ($) {
             scrollTop: finalPosition
         }, 2000);
     });
+    $("menu-item-343").click(function (e) {
+        e.preventDefault;
+        slideLeft.close();
+        var position = $("#contact-us").offset().top;
+        var finalPosition = position - 80;
+        $('html, body').animate({
+            scrollTop: finalPosition
+        }, 2000);
+    });
 
     //Menu rentalone us functionality
     $("#menu-item-51").click(function (e) {
@@ -247,9 +256,9 @@ jQuery(document).ready(function ($) {
     $(document).on('click', '.clickdd li a', function (e) {
         $(this).closest('form').submit();
     });
-    $(document).on('click', '#min-list li a', function (e) {
+    /*$(document).on('click', '#min-list li a', function (e) {
         $(this).closest('form').submit();
-    });
+    });*/
     $(document).on('click', '#max-list li a', function (e) {
         $(this).closest('form').submit();
     });
@@ -563,20 +572,24 @@ $(window).on('load', function () {
     if ($('#map-detail').is(':empty')) {
         $('.prlocation').css('display', 'none');
     }
-    if (window.location.href.indexOf("firstTimeLoad") > -1) {
-        $('html, body').animate({
-            scrollTop: $(".property-list").offset().top
-        }, 500);
-    }
-    if (window.location.href.indexOf("page") > -1 || window.location.href.indexOf("section") > -1) {
-        $('html, body').animate({
-            scrollTop: $(".property-list").offset().top
-        }, 500);
-    }
-    if (document.referrer.indexOf("/page") > 0) {
-        $('html, body').animate({
-            scrollTop: $(".property-list").offset().top
-        }, 500);
+
+    var screen = $(window);
+    if (screen.width() > 767) {
+        if (window.location.href.indexOf("firstTimeLoad") > -1) {
+            $('html, body').animate({
+                scrollTop: $(".property-list").offset().top - 170
+            }, 500);
+        }
+        if (window.location.href.indexOf("page") > -1 || window.location.href.indexOf("section") > -1) {
+            $('html, body').animate({
+                scrollTop: $(".property-list").offset().top - 170
+            }, 500);
+        }
+        if (document.referrer.indexOf("/page") > 0) {
+            $('html, body').animate({
+                scrollTop: $(".property-list").offset().top - 170
+            }, 500);
+        }
     }
 
 });

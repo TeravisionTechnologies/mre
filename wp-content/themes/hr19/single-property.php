@@ -126,7 +126,7 @@ $bgimg           = (int) $bgimg;
             <div class="row">
                 <div class="col-xs-9 col-sm-7 col-md-6">
                     <div class="breadcrumbs">
-                        <i id="go-back" class="fa fa-chevron-left" aria-hidden="true"></i>
+                        <a href="<?php echo $_SERVER['HTTP_REFERER'] ?>"><i id="go-back" class="fa fa-chevron-left" aria-hidden="true"></i></a>
 						<?php if ( ! empty( $city ) ) {
 							echo $city;
 						} ?> >

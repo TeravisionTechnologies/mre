@@ -1800,9 +1800,11 @@ a[href^=tel] {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap; }
-    .breadcrumb-info .breadcrumbs .fa-chevron-left {
-      margin-right: 5px;
-      cursor: pointer; }
+    .breadcrumb-info .breadcrumbs a {
+      color: #fff; }
+      .breadcrumb-info .breadcrumbs a .fa-chevron-left {
+        margin-right: 5px;
+        cursor: pointer; }
   .breadcrumb-info .published, .breadcrumb-info .status {
     display: inline-block;
     font-size: 13px; }

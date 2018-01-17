@@ -108,9 +108,9 @@ if ( isset( $min ) && $min && isset( $max ) && $max ) {
 }
 $args['meta_query'][] = array(
 	'relation' => 'OR',
-	array( 'key' => '_pr_city', 'value' => $search_string, 'compare' => '=', ),
-	array( 'key' => '_pr_address', 'value' => $search_string, 'compare' => '=', ),
-	array( 'key' => '_pr_postalcode', 'value' => $search_string, 'compare' => '=', )
+	array( 'key' => '_pr_city', 'value' => $search_string, 'compare' => 'LIKE', ),
+	array( 'key' => '_pr_address', 'value' => $search_string, 'compare' => 'LIKE', ),
+	array( 'key' => '_pr_postalcode', 'value' => $search_string, 'compare' => 'LIKE', )
 );
 $total                = new WP_Query( array(
 		'post_type'      => 'property',
