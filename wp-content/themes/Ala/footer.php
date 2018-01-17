@@ -55,7 +55,7 @@ $lang = get_locale();
                                                          alt="Logo Ala19 Footer"
                                                          class="img-responsive center-block"></a>
                 <p class="al-text-white"><?php echo $footer_info['_hf_copy'][0]; ?></p>
-                <a href="#" class="al-text-white">Disclaimers</a>
+                <a class="al-text-white">Disclaimers</a>
             </div>
         </div>
         <img src="<?php echo get_template_directory_uri(); ?>/assets/top.svg" class="footer-top" alt="Go to top">

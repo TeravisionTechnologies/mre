@@ -143,7 +143,7 @@ $lang = get_locale();
     <div class="container">
         <a href="<?php echo home_url(); ?>"><img src="<?php echo $footer_info['_hf_logo'][0]; ?>" alt="Logo HR19 Footer"></a>
         <p class="hr-footer-text"><?php echo $footer_info['_hf_copy'][0]; ?></p>
-        <a href="#" class="hr-footer-link">Disclaimers</a>
+        <a class="hr-footer-link">Disclaimers</a>
     </div>
     <img src="<?php echo get_template_directory_uri(); ?>/assets/top.svg" class="footer-top" alt="Go to top">
 </footer>
