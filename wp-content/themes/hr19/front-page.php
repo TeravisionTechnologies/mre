@@ -50,7 +50,7 @@ if(function_exists('pll_current_language')){
                             <input type="text" id="s" name="s" class="col-xs-10 col-sm-10 col-md-10"
                                    placeholder="<?php echo ( $lang == "es_ES" ? 'Dirección, ciudad, barrio o código postal' : 'Address, city, neighborhood or zip code' ) ?>"
                                    autocomplete="off" required>
-                            <input type="hidden" id="property_status" name="property_status" value="Lease">
+                            <!--<input type="hidden" id="property_status" name="property_status" value="Lease">-->
                             <input type="hidden" name="post_type[]" value="property">
                             <button id="btn-search-home" type="submit" class="btn col-xs-2 col-sm-2 col-md-2"><i
                                         class="fa fa-search"></i></button>

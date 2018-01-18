@@ -202,6 +202,23 @@ wp_reset_query();
                                     </li>
                                 </ul>
 							<?php } ?>
+	                        <?php if ( $propstatus == "" ) { ?>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true"
+                                   aria-expanded="false"><?php echo( $lang == "es_ES" ? 'Todas' : 'All' ) ?>
+                                    <span class="caret"></span></a>
+                                <ul id="transction-dd" class="dropdown-menu clickdd">
+                                    <li><a href="#"
+                                           data-value="Sale"><?php echo( $lang == "es_ES" ? 'Compra' : 'Buy' ) ?></a>
+                                    </li>
+                                    <li><a href="#"
+                                           data-value="Lease"><?php echo( $lang == "es_ES" ? 'Alquiler' : 'Rent' ) ?></a>
+                                    </li>
+                                    <li><a href="#"
+                                           data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?></a>
+                                    </li>
+                                </ul>
+	                        <?php } ?>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -374,7 +391,7 @@ wp_reset_query();
                         </li>
                     </ul>
                     <input type="hidden" name="action" value="myfilter">
-                    <input type="hidden" id="transaction" name="property_status" value="<?php echo $propstatus; ?>">
+                    <input type="hidden" id="transaction" name="property_status" value="<?php //echo $propstatus; ?>">
                     <input type="hidden" id="showowner" name="showowner" value="<?php echo $showowner; ?>">
                     <input type="hidden" id="price" name="price" value="">
                     <input type="hidden" id="rooms" name="rooms" value="<?php echo $roomsFilter; ?>">
