@@ -4133,13 +4133,13 @@ a[href^=tel] {
         font-size: 12px; }
       #search-filters .navbar-collapse .navbar-nav li:not(:last-child) {
         border-bottom: solid 2px rgba(74, 74, 74, 0.2); }
-      #search-filters .navbar-collapse .navbar-nav .input-group {
+      #search-filters .navbar-collapse .navbar-nav .input-groupsearch-wrap {
         width: 100%; }
-        #search-filters .navbar-collapse .navbar-nav .input-group .search-box {
+        #search-filters .navbar-collapse .navbar-nav .input-groupsearch-wrap .search-box {
           font-size: 12px;
           height: 40px;
           padding-left: 54px; }
-        #search-filters .navbar-collapse .navbar-nav .input-group i {
+        #search-filters .navbar-collapse .navbar-nav .input-groupsearch-wrap i {
           left: 30px; }
       #search-filters .navbar-collapse .navbar-nav .dropdown-menu li .checkbox {
         padding: 5px 10px 5px 40px; }

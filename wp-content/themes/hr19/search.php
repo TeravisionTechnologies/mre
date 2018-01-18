@@ -143,7 +143,7 @@ wp_reset_query();
                     <input type="hidden" name="property_status" value="<?php echo $propstatus; ?>">
                     <ul class="nav navbar-nav">
                         <li>
-                            <div class="input-group">
+                            <div class="input-group search-wrap">
                                 <input type="search" class="form-control search-box" id="s" name="s"
                                        placeholder="<?php echo( $lang == "es_ES" ? 'Buscar' : 'Search' ) ?>"
                                        value="<?php echo $s; ?>" required>

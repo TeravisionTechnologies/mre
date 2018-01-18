@@ -88,7 +88,7 @@ jQuery(document).ready(function ($) {
             scrollTop: finalPosition
         }, 2000);
     });
-    $("menu-item-343").click(function (e) {
+    $("#menu-item-343").click(function (e) {
         e.preventDefault;
         slideLeft.close();
         var position = $("#contact-us").offset().top;
@@ -99,7 +99,7 @@ jQuery(document).ready(function ($) {
     });
 
     //Menu rentalone us functionality
-    $("#menu-item-51").click(function (e) {
+    /*$("#menu-item-51").click(function (e) {
         e.preventDefault;
         slideLeft.close();
         var position = $("#rentalone").offset().top;
@@ -107,7 +107,7 @@ jQuery(document).ready(function ($) {
         $('html, body').animate({
             scrollTop: finalPosition
         }, 2000);
-    });
+    });*/
 
     //Agents profiles background color
     $(".agent-profile:even").css("background", "#d6d6d6");
@@ -598,7 +598,7 @@ $(window).on('load', function () {
 var screen = $(window);
 if (screen.width() < 768) {
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 0) {
+        if ($(this).scrollTop() > 100) {
             $('#search-filters').fadeOut();
         } else {
             $('#search-filters').fadeIn();
