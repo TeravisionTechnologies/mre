@@ -235,6 +235,15 @@ jQuery(document).ready(function () {
             scrollTop: finalPosition
         }, 2000);
     });
+    $("#menu-item-155").click(function (e) {
+        e.preventDefault;
+        slideLeft.close();
+        var position = $("#contact-us").offset().top;
+        var finalPosition = position - 80;
+        $('html, body').animate({
+            scrollTop: finalPosition
+        }, 2000);
+    });
 
     // Download ebook
     function downloadFile(filePath){
