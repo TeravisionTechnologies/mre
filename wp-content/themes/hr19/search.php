@@ -391,7 +391,7 @@ wp_reset_query();
                         </li>
                     </ul>
                     <input type="hidden" name="action" value="myfilter">
-                    <input type="hidden" id="transaction" name="property_status" value="<?php //echo $propstatus; ?>">
+                    <input type="hidden" id="transaction" name="property_status" value="<?php echo $propstatus; ?>">
                     <input type="hidden" id="showowner" name="showowner" value="<?php echo $showowner; ?>">
                     <input type="hidden" id="price" name="price" value="">
                     <input type="hidden" id="rooms" name="rooms" value="<?php echo $roomsFilter; ?>">
