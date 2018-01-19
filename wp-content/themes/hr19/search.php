@@ -274,12 +274,12 @@ wp_reset_query();
                                         <div class="input-group col-xs-6 col-sm-6 col-md-6 pull-left">
                                             <span class="input-group-addon" name="min">$</span>
                                             <input type="text" id="min" name="min" class="form-control"
-                                                   placeholder="No min" value="<?php echo $min; ?>">
+                                                   placeholder="No min" value="<?php echo $min; ?>" autocomplete="off">
                                         </div>
                                         <div class="input-group col-xs-6 col-sm-6 col-md-6 pull-left">
                                             <span class="input-group-addon" name="max">$</span>
                                             <input type="text" id="max" name="max" class="form-control"
-                                                   placeholder="No max" value="<?php echo $max; ?>">
+                                                   placeholder="No max" value="<?php echo $max; ?>" autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="row prices">

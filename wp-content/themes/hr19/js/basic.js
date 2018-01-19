@@ -256,9 +256,9 @@ jQuery(document).ready(function ($) {
     $(document).on('click', '.clickdd li a', function (e) {
         $(this).closest('form').submit();
     });
-    /*$(document).on('click', '#min-list li a', function (e) {
-        $(this).closest('form').submit();
-    });*/
+    $(document).on('click', '#min-list li a', function (e) {
+        $('#min').focus();
+    });
     $(document).on('click', '#max-list li a', function (e) {
         $(this).closest('form').submit();
     });
@@ -598,7 +598,7 @@ $(window).on('load', function () {
 var screen = $(window);
 if (screen.width() < 768) {
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
+        if ($(this).scrollTop() > 400) {
             $('#search-filters').fadeOut();
         } else {
             $('#search-filters').fadeIn();
