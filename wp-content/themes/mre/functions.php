@@ -5,6 +5,14 @@
  *  Date: 3/8/17
  *  Time: 8:19 AM
  **/
+# THEME SUPPORTS
+add_theme_support( 'post-thumbnails' );
+add_theme_support( 'automatic-feed-links' );
+add_theme_support( 'title-tag' );
+add_theme_support( 'menus' );
+remove_post_type_support( 'post', 'comments' );
+remove_post_type_support( 'page', 'comments' );
+
 
 // Loads css or js files
 add_action( 'wp_enqueue_scripts', 'mre_enqueue_scripts' );
@@ -19,10 +27,10 @@ register_nav_menus(
 	)
 );
 
-add_theme_support( 'menus' );
+
 
 function mre_enqueue_scripts() {
-	wp_enqueue_script( 'ajax-blog_cats', get_template_directory_uri() . '/js/ajax-blog-categories.js', array(), '1' );
+	//wp_enqueue_script( 'ajax-blog_cats', get_template_directory_uri() . '/js/ajax-blog-categories.js', array(), '1' );
 	global $wp_query;
 	wp_localize_script( 'ajax-blog_cats', 'ajaxblog', array(
 		'ajaxurl'    => admin_url( 'admin-ajax.php' ),
@@ -302,5 +310,125 @@ function remove_footer_admin() {
 }
 
 add_filter( 'admin_footer_text', 'remove_footer_admin' );
+
+
+function mre_register_query_vars( $vars ) {
+
+	$vars[] = 'orderBy';
+	$vars[] = 's';
+
+	return $vars;
+}
+
+add_filter( 'query_vars', 'mre_register_query_vars' );
+
+
+function processQuery($filters)
+{
+	$args = array();
+	//$pstatus = '';
+	//$plocation = '';
+	$orderBy = '';
+	$sort = '';
+	if (isset($filters['order-by']) && $filters['order-by']) {
+		$orderBy = $filters['order-by'];
+		switch ($orderBy) {
+			case 'name_asc' :
+				$orderBy = 'title';
+				$sort = 'ASC';
+				break;
+			case 'name_desc' :
+				$orderBy = 'title';
+				$sort = 'DESC';
+				break;
+			case 'date_asc' :
+				$orderBy = 'date';
+				$sort = 'ASC';
+				break;
+			case 'date_desc' :
+				$orderBy = 'date';
+				$sort = 'DESC';
+				break;
+		}
+	}
+	/*if (isset($filters['project-status']) && $filters['project-status']) {
+		$pstatus = $filters['project-status'];
+	}
+
+	if (isset($filters['project-location']) && $filters['project-location']) {
+		$plocation = $filters['project-location'];
+	}*/
+	$s               = get_query_var( 's' );
+
+	$search_string   = $s;
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	//if ($pstatus != '' or $plocation != '') {
+		$args = array(
+			'post_type' => 'post',
+			'showposts' => 4,
+			'paged' => $paged,
+			'orderby' => $orderBy,
+			'order' => $sort,
+			'_meta_or_title' => $search_string,
+			/*'tax_query' => array(
+				'relation' => 'AND',
+				array(
+					'taxonomy' => 'property_status',
+					'field' => 'slug',
+					'terms' => $pstatus,
+				),
+				array(
+					'taxonomy' => 'property_location',
+					'field' => 'slug',
+					'terms' => array($plocation),
+				),
+			),*/
+		);
+
+		/*if (isset($filters['project-status']) && $filters['project-status'] ||
+		    isset($filters['project-status']) && $filters['project-status']) {
+			$args['tax_query'] = array('relation' => 'AND');
+		}
+
+		if (isset($filters['project-status']) && $filters['project-status']) {
+			$args['tax_query'][] = array(
+				'taxonomy' => 'property_status',
+				'field' => 'slug',
+				'terms' => $filters['project-status'],
+			);
+		}
+
+		if (isset($filters['project-location']) && $filters['project-location']) {
+			$args['tax_query'][] = array(
+				'taxonomy' => 'property_location',
+				'field' => 'slug',
+				'terms' => $filters['project-location'],
+			);
+		};*/
+	//}
+
+	return $args;
+}
+
+# MODIFY DEFAULT WP SEARCH FUNCTION
+add_action( 'pre_get_posts', function ( $q ) {
+	if ( $title = $q->get( '_meta_or_title' ) ) {
+		add_filter( 'get_meta_sql', function ( $sql ) use ( $title ) {
+			global $wpdb;
+			static $nr = 0;
+			if ( 0 != $nr ++ ) {
+				return $sql;
+			}
+			$sql['where'] = sprintf(
+				" AND ( %s OR %s ) ",
+				$wpdb->prepare( "{$wpdb->posts}.post_title like '%%%s%%'", $title ),
+				mb_substr( $sql['where'], 5, mb_strlen( $sql['where'] ) )
+			);
+
+			return $sql;
+		} );
+	}
+} );
+
 
 ?>

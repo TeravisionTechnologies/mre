@@ -3,7 +3,7 @@ jQuery(document).ready(function () {
     $(".loading-posts").hide();
 
     // Blog Pagination
-    var pages = Math.ceil($(".blog-post-container").children().length / 4);
+    /*var pages = Math.ceil($(".blog-post-container").children().length / 4);
     $('#blog-pagination').pagination({
         items: pages,
         currentPage: 1,
@@ -45,7 +45,7 @@ jQuery(document).ready(function () {
                 }
             }
         }
-    });
+    });*/
 
     // Hero Swiper
     var swiperHero = new Swiper('.swiper-container-hero', {
@@ -291,7 +291,14 @@ jQuery(document).ready(function () {
                 }
             });
         }
-    })
+    });
+
+    $(document).on('click', '.orderby', function (e) {
+        var orderBy = $(this).attr('data-value');
+        $("#orderBy").val(orderBy);
+        $("#orderByName").val($(this).val());
+        $(this).closest('form').submit();
+    });
 
 });
 
