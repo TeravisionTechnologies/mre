@@ -75,6 +75,7 @@ function wpsp_orderby_posts_form() {
       <option value=\"3\"{$params['3']}>". '&Uacute;ltimo agregado &#x25B2;' . "</option>
       <option value=\"4\"{$params['4']}>". '&Uacute;ltimo agregado &#x25BC;' . "</option>
     </select>
+    <input type=\"hidden\" name=\"s\" value=". get_query_var( 's' ) .">
   </form>";
 }
 
@@ -89,6 +90,7 @@ function wpsp_orderby_posts_form2() {
       <option value=\"3\"{$params['3']}>". 'Last added &#x25B2;' . "</option>
       <option value=\"4\"{$params['4']}>". 'Last added &#x25BC;' . "</option>
     </select>
+    <input type=\"hidden\" name=\"s\" value=". get_query_var( 's' ) .">
   </form>";
 }
 

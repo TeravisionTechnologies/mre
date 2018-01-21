@@ -411,7 +411,7 @@ function processQuery($filters)
 }
 
 # MODIFY DEFAULT WP SEARCH FUNCTION
-add_action( 'pre_get_posts', function ( $q ) {
+/*add_action( 'pre_get_posts', function ( $q ) {
 	if ( $title = $q->get( '_meta_or_title' ) ) {
 		add_filter( 'get_meta_sql', function ( $sql ) use ( $title ) {
 			global $wpdb;
@@ -428,7 +428,7 @@ add_action( 'pre_get_posts', function ( $q ) {
 			return $sql;
 		} );
 	}
-} );
+} );*/
 
 
 ?>
