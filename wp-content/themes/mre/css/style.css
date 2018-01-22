@@ -937,6 +937,41 @@ a.al-phone-num {
 .es_ES .error-en {
   display: none !important; }
 
+#al-pagination .wp-pagenavi {
+  margin: 4.1666666667vw 0 0 0 !important;
+  display: inline-block;
+  padding-left: 0;
+  margin: 1.3888888889vw 0;
+  border-radius: 0.2777777778vw; }
+  #al-pagination .wp-pagenavi span, #al-pagination .wp-pagenavi a {
+    background: #ffffff;
+    color: #000000;
+    height: 2.9166666667vw;
+    width: 2.8472222222vw;
+    padding: 0.6944444444vw 0.8333333333vw;
+    position: relative;
+    float: left;
+    margin-left: -1px;
+    font-size: 1.1111111111vw;
+    line-height: 1.5277777778vw;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out; }
+    #al-pagination .wp-pagenavi span:hover, #al-pagination .wp-pagenavi a:hover {
+      color: #ffffff;
+      background: #0976d1; }
+  #al-pagination .wp-pagenavi .current {
+    color: #ffffff;
+    background: #0976d1; }
+  #al-pagination .wp-pagenavi .nextpostslink {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px; }
+
 #blog-list-categories {
   background: #303030;
   height: 23.8194444444vw;
@@ -3666,6 +3701,15 @@ body.thanks {
     height: auto !important;
     margin-bottom: 2.6041666667vw; }
 
+  #al-pagination .wp-pagenavi {
+    margin: 5.5989583333vw 0 11.71875vw 0; }
+    #al-pagination .wp-pagenavi span, #al-pagination .wp-pagenavi a {
+      height: 4.9479166667vw;
+      padding-top: 1.0416666667vw;
+      width: 4.8177083333vw;
+      font-size: 2.0833333333vw;
+      line-height: 2.8645833333vw; }
+
   #blog-list-categories {
     height: 29.9479166667vw;
     margin-top: 10.4166666667vw; }
@@ -4747,6 +4791,15 @@ body.thanks {
   .mre-menu-language {
     height: auto !important;
     margin-bottom: 5.5555555556vw; }
+
+  #al-pagination .wp-pagenavi {
+    margin: 11.1111111111vw 0 22.2222222222vw 0 !important; }
+    #al-pagination .wp-pagenavi span, #al-pagination .wp-pagenavi a {
+      height: 9.7222222222vw;
+      padding-top: 2.2222222222vw;
+      width: 9.7222222222vw;
+      font-size: 4.4444444444vw;
+      line-height: 5.8333333333vw; }
 
   #blog-list-categories {
     height: 70.5555555556vw;

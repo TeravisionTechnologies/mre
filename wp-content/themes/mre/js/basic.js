@@ -108,6 +108,8 @@ jQuery(document).ready(function () {
             var paged = $("#paged").val();
             var filter = $("#orderby").find(":selected").val();
             var order = $("#order").val();
+            var href = $('.swiper-slide-active a').attr('href');
+            $(location).attr('href', href);
             //ajax_blog_cats(active_slide_cat, container, loader, paged, filter, order);
         },
         onClick: function (sw, e) {

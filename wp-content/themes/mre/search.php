@@ -160,8 +160,12 @@ wp_reset_postdata();
                                     <?php wp_pagenavi(); ?>
                                 </div>
                             </div>
-                        <?php endif;
-                        wp_reset_postdata(); ?>
+                        <?php else: ?>
+                            <div class="col-xs-12 col-sm-12 col-md-12 no-results text-center">
+                                <p><?php echo ( $lang == "es_ES" ? 'No existen publicaciones disponibles en estos momentos' : 'There are no publications available at this time' ) ?></p>
+                                <p><?php echo ( $lang == "es_ES" ? '0 resultados' : '0 results' ) ?></p>
+                            </div>
+                        <?php endif; ?>
                     </div>
                     <?php if ( $wp_query->post_count == 1 ) {
                         echo '<div class="col-xs-12 marginb80"></div>';

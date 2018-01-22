@@ -897,3 +897,38 @@ a.al-phone-num
   .error-en
     display: none !important
 
+#al-pagination
+  .wp-pagenavi
+    margin: get-vw-desktop(60px) 0 0 0 !important
+    display: inline-block
+    padding-left: 0
+    margin: get-vw-desktop(20px) 0
+    border-radius: get-vw-desktop(4px)
+    span, a
+      background: $white
+      color: $black
+      height: get-vw-desktop(42px)
+      width: get-vw-desktop(41px)
+      padding: get-vw-desktop(10px) get-vw-desktop(12px)
+      position: relative
+      float: left
+      margin-left: -1px
+      font-size: get-vw-desktop(16px)
+      line-height: get-vw-desktop(22px)
+      text-decoration: none
+      background-color: $white
+      border: 1px solid #ddd
+      cursor: pointer
+      -webkit-transition: .3s ease-in-out
+      -moz-transition: .3s ease-in-out
+      -o-transition: .3s ease-in-out
+      transition: .3s ease-in-out
+      &:hover
+        color: $white
+        background: $light-blue
+    .current
+      color: $white
+      background: $light-blue
+    .nextpostslink
+      border-top-right-radius: 4px
+      border-bottom-right-radius: 4px
