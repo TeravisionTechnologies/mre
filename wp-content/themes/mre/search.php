@@ -86,7 +86,7 @@ wp_reset_postdata();
                             $meta_image    = get_wp_term_image( $category->term_id );
                             ?>
                             <div class="swiper-slide" name="<?php echo $name; ?>" data-slug="<?php echo $slug; ?>">
-                                <a style="background-image: url(<?php echo $meta_image; ?>)">
+                                <a href="<?php echo $category_link ?>" style="background-image: url(<?php echo $meta_image; ?>)">
                                     <div class="swiper-overlay"></div>
                                 </a>
                             </div>

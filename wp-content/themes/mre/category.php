@@ -8,6 +8,7 @@
 get_header();
 $category = get_the_category();
 $category_id = $category[0]->slug;
+
 $url = $_SERVER['REQUEST_URI'];
 global $wp_query;
 $lang = get_locale();
@@ -61,6 +62,8 @@ $categories      = get_categories(
         'hide_empty' => 1
     )
 );
+//var_dump($categories);
+
 wp_reset_query();
 wp_reset_postdata();
 
@@ -81,18 +84,19 @@ wp_reset_postdata();
                  </a>
              </div>
              <?php
-             foreach ( $categories as $category ) {
+             $i = 1;
+             foreach ( $categories as $key => $category ) {
                 $name          = $category->name;
                 $slug          = $category->slug;
                 $category_link = get_category_link( $category->cat_ID );
                 $meta_image    = get_wp_term_image( $category->term_id );
                 ?>
-                <div id="<?php echo $slug ?>" class="swiper-slide" name="<?php echo $name; ?>" data-slug="<?php echo $slug; ?>">
+                <div id="<?php echo $slug ?>" class="swiper-slide" data-index="<?php echo $i; ?>" name="<?php echo $name; ?>" data-slug="<?php echo $slug; ?>">
                     <a href="<?php echo $category_link ?>" style="background-image: url(<?php echo $meta_image; ?>)">
                         <div class="swiper-overlay"></div>
                     </a>
                 </div>
-                <?php } ?>
+                <?php $i++; } ?>
             </div>
             <i class="fa fa-chevron-circle-left swiper-button-prev"
             aria-hidden="true"></i>
@@ -235,20 +239,18 @@ style="background-image: url(
 
     jQuery(document).ready(function ($) {
 
-    var category = "<?php echo '.'.$category_id; ?>";
+    var category = "<?php echo $category_id; ?>";
 
-    var catslide = $("#paises").attr("data-swiper-slide-index");
 
-    alert(catslide);
     // Swiper Blog Categories
     var swiper_blog_categories = new Swiper('.swiper-container-blog-categories', {
         slidesPerView: 5,
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         centeredSlides: true,
-        //loop: true,
+        loop: true,
         runCallbacksOnInit: false,
-        initialSlide: 2,
+        initialSlide: 6,
         observer: true,
         breakpoints: {
             767: {
@@ -277,6 +279,19 @@ style="background-image: url(
     $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
     $('.swiper-button-next, .swiper-button-prev').click(function () {
     });
+
+    //var c = '#'+category;
+
+    //console.log(c);
+
+    /*var catslide = $("#arquitectura").attr("data-index");
+
+    console.log(catslide);
+    swiper_blog_categories.slideTo($("#arquitectura").attr("data-index")); 
+    swiper_blog_categories.params.loop =  true; 
+    //And reinit
+    swiper_blog_categories.update(); 
+    //alert(catslide);*/
 
 
 });

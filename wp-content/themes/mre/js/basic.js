@@ -83,7 +83,7 @@ jQuery(document).ready(function () {
 
 
     // Swiper Blog Categories
-    /*var swiper_blog_categories = new Swiper('.swiper-container-blog-categories', {
+    var swiper_blog_categories = new Swiper('.swiper-container-blog-categories', {
         slidesPerView: 5,
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
@@ -117,7 +117,7 @@ jQuery(document).ready(function () {
     $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
     $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
     $('.swiper-button-next, .swiper-button-prev').click(function () {
-    });*/
+    });
 
     /*window.addEventListener("resize", function () {
         setTimeout(function () {
