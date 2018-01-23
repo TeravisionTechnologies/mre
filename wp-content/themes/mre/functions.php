@@ -316,6 +316,7 @@ function mre_register_query_vars( $vars ) {
 
 	$vars[] = 'orderBy';
 	$vars[] = 's';
+	$vars[] = 'category_name';
 
 	return $vars;
 }

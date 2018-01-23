@@ -111,6 +111,7 @@ wp_reset_postdata();
                                    placeholder="<?php echo( $lang == "es_ES" ? 'Buscar...' : 'Search...' ) ?>">
                         </div>
                         <input type="hidden" name="post_type[]" value="post">
+
                     </form>
                 </div>
                 <div class="col-xs-12 col-sm-3 blog-select">

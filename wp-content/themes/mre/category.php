@@ -41,19 +41,19 @@ query_posts( array(
 $recomendedbylang = ( $lang == "es_ES" ? 'articulo-recomendado' : 'recommended-article' );
 
 $postRecommended = get_posts(
-	array(
-		'post_type'   => 'post',
-		'numberposts' => - 1,
-		'post_status' => 'publish',
-		'order'       => 'ASC',
-		'tax_query'   => array(
-			array(
-				'taxonomy' => 'post_tag',
-				'field'    => 'slug',
-				'terms'    => $recomendedbylang,
-			)
-		)
-	)
+    array(
+        'post_type'   => 'post',
+        'numberposts' => - 1,
+        'post_status' => 'publish',
+        'order'       => 'ASC',
+        'tax_query'   => array(
+            array(
+                'taxonomy' => 'post_tag',
+                'field'    => 'slug',
+                'terms'    => $recomendedbylang,
+            )
+        )
+    )
 );
 $categories      = get_categories(
 	array(
@@ -129,6 +129,7 @@ wp_reset_postdata();
                                placeholder="<?php echo( $lang == "es_ES" ? 'Buscar...' : 'Search...' ) ?>">
                     </div>
                     <input type="hidden" name="post_type[]" value="post">
+                    <input type="hidden" name="category_name" value="<?php echo $category_id ?>">
                 </form>
             </div>
             <div class="col-xs-12 col-sm-3 blog-select">
@@ -174,10 +175,12 @@ wp_reset_postdata();
                     </div>
 				<?php endwhile; ?>
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-							<?php wp_pagenavi(); ?>
-                        </div>
-                    </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                    <nav id="al-pagination">
+                                        <?php wp_pagenavi(); ?>
+                                    </nav>
+                                </div>
+                            </div>
 				<?php else: ?>
                     <div class="col-xs-12 col-sm-12 col-md-12 no-results text-center">
                         <p><?php echo ( $lang == "es_ES" ? 'No existen publicaciones disponibles en estos momentos' : 'There are no publications available at this time' ) ?></p>

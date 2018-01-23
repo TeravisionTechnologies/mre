@@ -29,6 +29,7 @@ wp_reset_query();
 query_posts( array(
     'post_type'      => 'post',
     'post_status'    => 'publish',
+    'category_name' => 'arquitectura',
     'posts_per_page' => - 1,
     'orderby'        => 'date',
     'order'          => 'DESC',
@@ -111,6 +112,7 @@ wp_reset_postdata();
                                    placeholder="<?php echo( $lang == "es_ES" ? 'Buscar...' : 'Search...' ) ?>">
                         </div>
                         <input type="hidden" name="post_type[]" value="post">
+                        <input type="hidden" name="category_name" value="<?php echo $_GET["category_name"]; ?>">
                     </form>
                 </div>
                 <div class="col-xs-12 col-sm-3 blog-select">
@@ -157,7 +159,9 @@ wp_reset_postdata();
                         <?php endwhile; ?>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                                    <?php wp_pagenavi(); ?>
+                                    <nav id="al-pagination">
+                                        <?php wp_pagenavi(); ?>
+                                    </nav>
                                 </div>
                             </div>
                         <?php else: ?>
