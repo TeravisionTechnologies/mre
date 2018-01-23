@@ -60,6 +60,15 @@ $categories      = get_categories(
         'hide_empty' => 1
     )
 );
+$i = 1;
+foreach ( $categories as $key => $category ) {
+    $name          = $category->name;
+    $slug          = $category->slug;
+    $category_link = get_category_link( $category->cat_ID );
+    ?>
+    <div class="hidden" id="<?php echo $slug ?>" data-index="<?php echo $i; ?>" name="<?php echo $name; ?>" data-slug="<?php echo $slug; ?>"></div>
+    <?php $i ++;
+}
 wp_reset_query();
 wp_reset_postdata();
 
@@ -69,7 +78,7 @@ wp_reset_postdata();
             <div class="container-mre center-block">
                 <h3 class="blog-list-category-title"><?php echo( $lang == "es_ES" ? 'Categoría' : 'Category' ) ?></h3>
                 <h2 class="blog-list-category-text"></h2>
-                <div class="swiper-container swiper-container-blog-categories">
+                <div class="swiper-container swiper-container-blog-categories" id="sbc2">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide"
                              name="<?php echo( $lang == "es_ES" ? 'Todas las categorías' : 'All categories' ) ?>"
@@ -235,3 +244,54 @@ wp_reset_postdata();
         </section>
     </section>
 <?php get_footer(); ?>
+
+<script type="text/javascript">
+
+    jQuery(document).ready(function ($) {
+
+        var category = "<?php echo $_GET["category_name"]; ?>";
+        var catslide = $("#"+category).attr("data-index")*1;
+
+        // Swiper Blog Categories
+        var swiper_blog_categories = new Swiper('#sbc2', {
+            slidesPerView: 5,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            centeredSlides: true,
+            loop: true,
+            runCallbacksOnInit: false,
+            initialSlide: catslide,
+            observer: true,
+            breakpoints: {
+                767: {
+                    slidesPerView: 1,
+                    spaceBetween: 5
+                },
+            },
+            onSlideChangeEnd: function (swiper) {
+
+                $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
+                $('.swiper-slide').find('div').addClass('swiper-overlay');
+                $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
+                var active_slide_cat = $('.swiper-container-blog-categories').find('.swiper-slide-active').attr('data-slug');
+                var container = $(".blog-post-container");
+                var loader = $(".loading-posts");
+                var paged = $("#paged").val();
+                var filter = $("#orderby").find(":selected").val();
+                var order = $("#order").val();
+                var href = $('.swiper-slide-active a').attr('href');
+                $(location).attr('href', href);
+                //ajax_blog_cats(active_slide_cat, container, loader, paged, filter, order);
+            },
+            onClick: function (sw, e) {
+
+            }
+        });
+        $('.blog-list-category-text').html($('.swiper-container-blog-categories').find('.swiper-slide-active').attr('name'));
+        $('.swiper-slide-active').find('.swiper-overlay').removeClass('swiper-overlay');
+        $('.swiper-button-next, .swiper-button-prev').click(function () {
+        });
+
+    });
+
+</script>
