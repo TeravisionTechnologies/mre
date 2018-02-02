@@ -1617,3 +1617,33 @@ input:checked + .slider:before
   text-overflow: ellipsis
   white-space: nowrap
   overflow: hidden
+
+.country-selector
+  list-style: none
+  padding-left: 0
+  margin: get-vw-desktop(20px) 0 get-vw-desktop(60px) 0
+  display: inline-block
+  li
+    display: inline-block
+    height: get-vw-desktop(24px)
+    float: left
+    line-height: normal
+    a
+      color: $grey
+      font-size: get-vw-desktop(18px)
+      transition: all ease .7s
+      -moz-transition: all ease .7s
+      -ms-transition: all ease .7s
+      -o-transition: all ease .7s
+      -webkit-transition: all ease .7s
+      opacity: 0.6
+      &:hover
+        text-decoration: none
+        opacity: 1
+    .active
+      opacity: 1
+  .divider
+    border-left: solid 1px $grey
+    height: get-vw-desktop(24px)
+    margin: 0 get-vw-desktop(15px)
+    opacity: 0.4

@@ -1624,6 +1624,36 @@ input:checked + .slider:before {
   white-space: nowrap;
   overflow: hidden; }
 
+.country-selector {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.3888888889vw 0 4.1666666667vw 0;
+  display: inline-block; }
+  .country-selector li {
+    display: inline-block;
+    height: 1.6666666667vw;
+    float: left;
+    line-height: normal; }
+    .country-selector li a {
+      color: #4a4a4a;
+      font-size: 1.25vw;
+      transition: all ease 0.7s;
+      -moz-transition: all ease 0.7s;
+      -ms-transition: all ease 0.7s;
+      -o-transition: all ease 0.7s;
+      -webkit-transition: all ease 0.7s;
+      opacity: 0.6; }
+      .country-selector li a:hover {
+        text-decoration: none;
+        opacity: 1; }
+    .country-selector li .active {
+      opacity: 1; }
+  .country-selector .divider {
+    border-left: solid 1px #4a4a4a;
+    height: 1.6666666667vw;
+    margin: 0 1.0416666667vw;
+    opacity: 0.4; }
+
 .agent-hero {
   margin-top: 5.5555555556vw;
   height: 31.25vw;
@@ -3357,6 +3387,16 @@ a[href^=tel] {
             line-height: 3.2552083333vw;
             margin: 0; }
 
+  .country-selector {
+    margin: 2.6041666667vw 0 7.8125vw 0; }
+    .country-selector li {
+      height: 2.6041666667vw; }
+      .country-selector li a {
+        font-size: 1.953125vw; }
+    .country-selector .divider {
+      height: 2.6041666667vw;
+      margin: 0 1.953125vw; }
+
   .agent-hero {
     margin-top: 10.4166666667vw;
     height: 58.59375vw;
@@ -4219,6 +4259,16 @@ a[href^=tel] {
             font-size: 3.3333333333vw;
             line-height: 5.5555555556vw;
             margin: 0; }
+
+  .country-selector {
+    margin: 2.7777777778vw 0 13.8888888889vw 0; }
+    .country-selector li {
+      height: 5.5555555556vw; }
+      .country-selector li a {
+        font-size: 4.1666666667vw; }
+    .country-selector .divider {
+      height: 5.5555555556vw;
+      margin: 0 4.1666666667vw; }
 
   .agent-hero {
     margin-top: 16.6666666667vw;
