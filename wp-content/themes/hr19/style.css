@@ -4838,6 +4838,16 @@ a[href^=tel] {
     margin-bottom: 20px; }
 
   .property-list-search {
-    margin-top: 17.1875vw; } }
+    margin-top: 17.1875vw; }
+
+  .country-selector {
+    margin: 1.5625vw 0 7.8125vw 0; }
+    .country-selector li {
+      height: 4.6875vw; }
+      .country-selector li a {
+        font-size: 2.8125vw; }
+    .country-selector .divider {
+      height: 3.90625vw;
+      margin: 0 2.34375vw; } }
 
 /*# sourceMappingURL=style.css.map */
