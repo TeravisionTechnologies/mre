@@ -226,5 +226,27 @@ function broker_metaboxes() {
         ),
         'preview_size' => 'large', // Image size to use when previewing in the admin.
     ));
+
+    $cmb->add_field(
+        array(
+            'name' => __('button_es'),
+            'id' => $prefix . 'button_es_id',
+            'type' => 'text',
+            'repeatable' => false,
+            'desc' => 'Example: Descargar PDF'
+        )
+    );
+
+    $cmb->add_field(
+        array(
+            'name' => __('button_en'),
+            'id' => $prefix . 'button_en_id',
+            'type' => 'text',
+            'repeatable' => false,
+            'desc' => 'Example: Download PDF'
+        )
+    );
+
+
     
 }
