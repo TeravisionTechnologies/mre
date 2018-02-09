@@ -146,6 +146,26 @@ function broker_metaboxes() {
             'add_upload_file_text' => 'Add File' // Change upload button text. Default: "Add or Upload File"
         )
     ));
+
+    $cmb->add_field(
+        array(
+            'name' => __('Plans Button Es'),
+            'id' => $prefix . 'pbtn_es_id',
+            'type' => 'text',
+            'repeatable' => false,
+            'desc' => 'Example: Descargar Planes'
+        )
+    );
+
+    $cmb->add_field(
+        array(
+            'name' => __('Plans Button En'),
+            'id' => $prefix . 'pbtn_en_id',
+            'type' => 'text',
+            'repeatable' => false,
+            'desc' => 'Example: Download Plans'
+        )
+    );
     
     // Quality Memory
     $cmb->add_field(
@@ -171,6 +191,26 @@ function broker_metaboxes() {
             'add_upload_file_text' => 'Add File' // Change upload button text. Default: "Add or Upload File"
         )
     ));
+
+    $cmb->add_field(
+        array(
+            'name' => __('Memory Button Es'),
+            'id' => $prefix . 'mbtn_es_id',
+            'type' => 'text',
+            'repeatable' => false,
+            'desc' => 'Example: Descargar Memoria'
+        )
+    );
+
+    $cmb->add_field(
+        array(
+            'name' => __('Memory Button En'),
+            'id' => $prefix . 'mbtn_en_id',
+            'type' => 'text',
+            'repeatable' => false,
+            'desc' => 'Example: Download Memory'
+        )
+    );
 
     // Longitude
     $cmb->add_field(
@@ -229,8 +269,8 @@ function broker_metaboxes() {
 
     $cmb->add_field(
         array(
-            'name' => __('button_es'),
-            'id' => $prefix . 'button_es_id',
+            'name' => __('Brochure Button Es'),
+            'id' => $prefix . 'brochure_es_id',
             'type' => 'text',
             'repeatable' => false,
             'desc' => 'Example: Descargar PDF'
@@ -239,8 +279,8 @@ function broker_metaboxes() {
 
     $cmb->add_field(
         array(
-            'name' => __('button_en'),
-            'id' => $prefix . 'button_en_id',
+            'name' => __('Brochure Button En'),
+            'id' => $prefix . 'brochure_en_id',
             'type' => 'text',
             'repeatable' => false,
             'desc' => 'Example: Download PDF'
