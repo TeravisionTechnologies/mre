@@ -35,9 +35,9 @@ $partnerRight = get_post_meta( $headerPost[0]->ID, '_hf_partner_right', true );
         </div>
     </section>
     <section id="about-main-text">
-		<?php echo $main_text[0]['_sv_main_text']; ?>
+		<?php echo wpautop($main_text[0]['_sv_main_text']); ?>
         <div class="servs">
-			<?php echo $main_text[0]['_sv_services_text']; ?>
+			<?php echo wpautop($main_text[0]['_sv_services_text']); ?>
         </div>
         <div id="services-icon" class="row">
 			<?php foreach ( $services as $service ) { ?>

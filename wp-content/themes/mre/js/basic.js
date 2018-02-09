@@ -271,7 +271,7 @@ jQuery(document).ready(function () {
             $('.error').fadeOut();
             $.ajax({
                 type: 'post',
-                url: 'http://test-mre.pantheonsite.io/ebook-submit/',
+                url: 'http://grupomre.com/ebook-submit/',
                 data: $(this).serialize(),
                 beforeSend:function(xhr){
                     $('.ebook-btn').attr({disabled: 'disabled'});

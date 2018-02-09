@@ -153,7 +153,7 @@ function pr_register_query_vars( $vars ) {
 	$vars[] = 'proporder';
 	$vars[] = 'propsort';
 	$vars[] = 'property_status';
-
+	$vars[] = 'country';
 	return $vars;
 }
 
@@ -250,3 +250,9 @@ function my_post_count_queries( $query ) {
 }
 
 add_action( 'pre_get_posts', 'my_post_count_queries' );
+
+
+function has_query_var( $var ) {
+	global $wp_query;
+	return isset( $wp_query->query_vars[ $var ] );
+}

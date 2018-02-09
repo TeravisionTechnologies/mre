@@ -20,6 +20,6 @@ get_header();
         </div>
     </section>
     <section id="about-main-text">
-		<?php echo $main_text[0]['_au_main_text']; ?>
+		<?php echo wpautop( $main_text[0]['_au_main_text'] ); ?>
     </section>
 <?php get_footer(); ?>
