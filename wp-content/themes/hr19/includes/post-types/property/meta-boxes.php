@@ -14,6 +14,19 @@ function property_metaboxes() {
 		)
 	);
 
+	$cmb_property->add_field( array(
+		'name'             => 'Country',
+		'desc'             => 'Select a country',
+		'id'               => $prefix . 'country',
+		'type'             => 'select',
+		'show_option_none' => true,
+		'default'          => 'custom',
+		'options'          => array(
+			'usa' => __( 'USA', 'hr' ),
+			'spain'   => __( 'Spain', 'hr' ),
+		),
+	) );
+
 	$cmb_property->add_field(array(
 		'name' => __('State'),
 		'id' => $prefix . 'state',

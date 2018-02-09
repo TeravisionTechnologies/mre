@@ -270,6 +270,18 @@ jQuery(document).ready(function ($) {
     $('input[type=radio][name=showowner]').change(function () {
         $(this).closest('form').submit();
     });
+    $(document).on('click', '#usa', function (e) {
+        e.preventDefault();
+        var selcountry = $(this).attr('data-value');
+        $("#country").val(selcountry);
+        $(this).closest('form').submit();
+    });
+    $(document).on('click', '#spain', function (e) {
+        e.preventDefault();
+        var selcountry = $(this).attr('data-value');
+        $("#country").val(selcountry);
+        $(this).closest('form').submit();
+    });
 
     // Set input hidden values by selected option clicked
     $("#baths-dd li a").click(function () {

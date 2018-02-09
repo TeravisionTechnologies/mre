@@ -75,7 +75,7 @@ if(function_exists('pll_current_language')){
     <div class="row">
         <div class="col-md-12 text-center">
             <ul class="country-selector">
-                <li><a href="#" class="active">EEUU</a></li>
+                <li><a href="#" class="active"><?php echo ( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
                 <li class="divider"></li>
                 <li><a href="#"><?php echo ( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
             </ul>
