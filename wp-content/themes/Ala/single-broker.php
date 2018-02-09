@@ -19,13 +19,15 @@
     $terms = get_the_terms(get_the_ID(), 'nearby_places');
     $memofiles = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_memofiles_id', true ));
     $placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
+    $button_es = get_post_meta( get_the_ID(), '_br_button_es_id', true);
+    $button_en = get_post_meta( get_the_ID(), '_br_button_en_id', true);
 ?>
 
 <section class="prop-header text-center" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.5) 100%), url(<?php echo ( !empty( $background_image ) ? $background_image : $placeholder ) ?>)">
     <h1><?php the_title(); ?></h1>
     <?php if(!empty($location)){ ?><h2><?php echo $location; ?></h2><?php } ?>
     <?php if(!empty($brochure)){ ?>
-        <a class="download-bro" href="<?php echo $brochure; ?>" download><?php echo ( $lang == "es_ES" ? 'Descargar PDF' : 'Download PDF' ) ?></a>
+        <a class="download-bro" href="<?php echo $brochure; ?>" download><?php echo ( $lang == "es_ES" ? $button_es : $button_en ) ?></a>
     <?php } ?>
 </section>
 
