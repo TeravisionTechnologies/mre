@@ -22,7 +22,26 @@ $filter = [
 $args = processQuery($filter);
 $paged = (get_query_var('page')) ? get_query_var('page') : 1;
 if(!count($args)){
-    $statusFilter = ($lang == "es_ES" ? 'proyectos-actuales' : 'new-projects');
+
+    $terms = get_terms('property_status', array(
+        'orderby' => 'description',
+        'hide_empty' => 0
+    ));
+
+
+    foreach ($terms as $term) {
+
+        if ($term->description == 1) {
+
+            $status = $term->slug;
+            break;
+        }
+
+    }
+
+    $statusFilter = $status;
+
+
     $args = array(
         'post_type' => 'broker',
         'showposts' => 9,
