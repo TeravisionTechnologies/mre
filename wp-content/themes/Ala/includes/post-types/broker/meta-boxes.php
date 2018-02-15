@@ -1,9 +1,12 @@
 <?php
 
-function broker_metaboxes() {
+
+
+function broker_metaboxes( ) {
 
     // Start with an underscore to hide fields from custom fields list
     $prefix = '_br_';
+    $lang = ICL_LANGUAGE_CODE;
 
     // Initiate the metabox
     $cmb = new_cmb2_box(
@@ -79,7 +82,6 @@ function broker_metaboxes() {
                 'repeatable' => false
             )
     );
-    
 
     /*$cmb->add_group_field($group_field, array(
         'name' => __('Detail Name'),
@@ -132,6 +134,9 @@ function broker_metaboxes() {
             )
     );
 
+
+
+
     // Downloadable Plains
     $cmb->add_field(array(
         'name' => 'Plans (compressed file)',
@@ -149,24 +154,26 @@ function broker_metaboxes() {
 
     $cmb->add_field(
         array(
-            'name' => __('Plans Button Es'),
+            'name' => __('Plans Button'),
             'id' => $prefix . 'pbtn_es_id',
             'type' => 'text',
             'repeatable' => false,
-            'desc' => 'Example: Descargar Planes'
+            'desc' => 'Ejemplo: Descargar Planes'
         )
     );
 
+
     $cmb->add_field(
         array(
-            'name' => __('Plans Button En'),
+            'name' => __('Plans Button'),
             'id' => $prefix . 'pbtn_en_id',
             'type' => 'text',
             'repeatable' => false,
             'desc' => 'Example: Download Plans'
         )
     );
-    
+
+
     // Quality Memory
     $cmb->add_field(
             array(
@@ -194,17 +201,17 @@ function broker_metaboxes() {
 
     $cmb->add_field(
         array(
-            'name' => __('Memory Button Es'),
+            'name' => __('Memory Button'),
             'id' => $prefix . 'mbtn_es_id',
             'type' => 'text',
             'repeatable' => false,
-            'desc' => 'Example: Descargar Memoria'
+            'desc' => 'Ejemplo: Descargar Memoria'
         )
     );
 
     $cmb->add_field(
         array(
-            'name' => __('Memory Button En'),
+            'name' => __('Memory Button'),
             'id' => $prefix . 'mbtn_en_id',
             'type' => 'text',
             'repeatable' => false,
@@ -269,17 +276,17 @@ function broker_metaboxes() {
 
     $cmb->add_field(
         array(
-            'name' => __('Brochure Button Es'),
+            'name' => __('Brochure Button'),
             'id' => $prefix . 'brochure_es_id',
             'type' => 'text',
             'repeatable' => false,
-            'desc' => 'Example: Descargar PDF'
+            'desc' => 'Ejemplo: Descargar PDF'
         )
     );
 
     $cmb->add_field(
         array(
-            'name' => __('Brochure Button En'),
+            'name' => __('Brochure Button'),
             'id' => $prefix . 'brochure_en_id',
             'type' => 'text',
             'repeatable' => false,

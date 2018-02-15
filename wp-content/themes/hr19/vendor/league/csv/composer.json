@@ -18,36 +18,32 @@
         "issues": "https://github.com/thephpleague/csv/issues"
     },
     "require": {
-        "php" : ">=7.0.10",
+        "php" : ">=5.5.0",
         "ext-mbstring" : "*"
     },
     "require-dev": {
-        "ext-curl" : "*",
-        "friendsofphp/php-cs-fixer": "^2.0",
-        "phpunit/phpunit" : "^6.0"
+        "phpunit/phpunit" : "^4.0",
+        "friendsofphp/php-cs-fixer": "^1.9"
     },
     "autoload": {
         "psr-4": {
             "League\\Csv\\": "src"
-        },
-        "files": ["src/functions_include.php"]
+        }
     },
     "autoload-dev": {
         "psr-4": {
-            "LeagueTest\\Csv\\": "tests"
+            "League\\Csv\\Test\\": "test",
+            "lib\\": "examples\\lib"
         }
     },
     "scripts": {
-        "test": "phpunit --coverage-text; php-cs-fixer fix -v --diff --dry-run --allow-risky=yes;",
+        "test": "phpunit --coverage-text; php-cs-fixer fix -v --diff --dry-run;",
         "phpunit": "phpunit --coverage-text",
-        "phpcs": "php-cs-fixer fix -v --diff --dry-run --allow-risky=yes;"
-    },
-    "suggest": {
-        "ext-iconv" : "Needed to ease transcoding CSV using iconv stream filters"
+        "phpcs": "php-cs-fixer fix -v --diff --dry-run;"
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "9.x-dev"
+            "dev-master": "8.2-dev"
         }
     }
 }
