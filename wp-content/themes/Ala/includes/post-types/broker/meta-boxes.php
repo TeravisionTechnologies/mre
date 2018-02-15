@@ -139,7 +139,7 @@ function broker_metaboxes( ) {
 
     // Downloadable Plains
     $cmb->add_field(array(
-        'name' => 'Plans (compressed file)',
+        'name' => 'Plains (compressed file)',
         'desc' => 'Upload a .zip file',
         'id' => $prefix . 'pzip',
         'type' => 'file',
@@ -159,6 +159,7 @@ function broker_metaboxes( ) {
             'type' => 'text',
             'repeatable' => false,
             'desc' => 'Ejemplo: Descargar Planes'
+
         )
     );
 
