@@ -1,6 +1,8 @@
 <?php
 
-function broker_metaboxes() {
+
+
+function broker_metaboxes( ) {
 
 	// Start with an underscore to hide fields from custom fields list
 	$prefix = '_br_';

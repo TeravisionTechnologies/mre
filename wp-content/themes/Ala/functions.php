@@ -35,7 +35,10 @@ function mre_enqueue_scripts()
 {
     // wp_enqueue_style( 'style', get_template_directory_uri() . 'style.css', array(), '1' );
     //wp_enqueue_script( 'script', get_template_directory_uri() . '/js/basic.css', array(), '1' );
+    wp_enqueue_script( 'script' , get_template_directory_uri() . '/js/button-dynamic.js', array('jquery'),null,true );
 }
+
+add_action( 'admin_enqueue_scripts', 'mre_enqueue_scripts' );
 
 // Directories that contain post-types
 $postTypeDir = array(
