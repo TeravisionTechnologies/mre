@@ -167,7 +167,7 @@ function property_metaboxes() {
 		'name' => __('Tipo de Transacci&oacute;n'),
 		'id' => $prefix . 'transaction',
 		'type' => 'text',
-		'desc' => 'Type of transaction (Sale / Rent / Presale)'
+		'desc' => 'Type of transaction (Sale / Lease / Presale)'
 	));
 
 	$cmb_property->add_field(array(

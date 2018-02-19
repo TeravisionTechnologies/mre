@@ -1,19 +1,25 @@
 <?php
 get_header();
 global $wpdb;
-if(has_query_var(country)){
+
+if (has_query_var(country) ){
 
 }
 
 $lang       = get_locale();
 $url        = wp_upload_dir();
+
+
+
 $home_query = get_posts(
 	array(
 		'post_type' => 'header_footer'
 	)
 );
-$hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
+
+$hero = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
 if ( function_exists( 'pll_current_language' ) ) {
+
 	$current_language = pll_current_language();
 	$default_language = pll_default_language();
 	if ( $current_language != $default_language ) {
@@ -68,6 +74,8 @@ if ( function_exists( 'pll_current_language' ) ) {
         </div>
     </section>
     <div class="clearfix"></div>
+	<?php $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1; ?>
+
     <div class="container property-list">
         <div class="row">
             <div class="col-md-12">
@@ -78,43 +86,83 @@ if ( function_exists( 'pll_current_language' ) ) {
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-                <form <?php echo esc_url( home_url( '/' . $language_subdir ) ); ?>>
+                <form  action="<?php echo esc_url( admin_url('admin-post.php') ) ?>" method="post" role="form" >
                     <ul class="country-selector">
-                        <li><a href="#" id="usa" class="active" data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
-                        <li class="divider"></li>
-                        <li><a href="#" id="spain" data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
+						
+						<?php if ( isset($_GET['country_value']) && $_GET['country_value'] == 'spain'  ) : ?>
+
+							<li><a href="#" id="usa" data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
+							<li class="divider"></li>
+							<li><a href="#" id="spain" class="active" data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
+						
+						<?php elseif( isset($_GET['country_value']) && $_GET['country_value'] == 'usa' ) :  ?>
+
+							<li><a href="#" id="usa" class="active" data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
+							<li class="divider"></li>
+							<li><a href="#" id="spain"  data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
+
+						<?php else: ?>
+
+							<li><a href="#" id="usa" class="active" data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
+							<li class="divider"></li>
+							<li><a href="#" id="spain"  data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
+
+
+						<?php endif; ?>
+				
+                        
                     </ul>
-                    <input id="country" type="hidden" value="<?php echo $country; ?>">
+                    <input id="country" type="hidden" name="country" value="<?php echo $country; ?>">
+					<input type="hidden" name="transaction" value="Lease">
+					<input type="hidden" name="paged" value="<?php echo $paged ?>">
+					<input type="hidden" name="subdir" value="/" >
+					<input type="hidden" name="action" value="contactForm">
                 </form>
             </div>
         </div>
         <div id="presponse" class="row">
 			<?php
-			$paged          = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-			$propertieslist = array(
-				'post_type'      => 'property',
-				'posts_per_page' => 9,
-				'paged'          => $paged,
-				'meta_query'     => array(
-					'relation' => 'AND',
-					array(
-						'key'     => '_pr_transaction',
-						'value'   => 'Lease',
-						'compare' => '=',
-					),
-					array(
-						'key'     => '_pr_owner',
-						'value'   => 'HR19',
-						'compare' => '=',
-					),
-					array(
-						'key'     => '_pr_country',
-						'value'   => $country,
-						'compare' => '=',
+			
+			$propertieslist = '';
+			
+			 
+			if ( isset( $_GET['query_country'] ) ) { 
+
+				$propertieslist = $_GET['query_country'];
+
+			}else {
+				
+				$propertieslist = array(
+					'post_type'      => 'property',
+					'posts_per_page' => 6,
+					'paged'          => $paged,
+					'meta_query'     => array(
+						'relation' => 'AND',
+						array(
+							'key'     => '_pr_transaction',
+							'value'   => 'Lease',
+							'compare' => '=',
+						),
+						array(
+							'key'     => '_pr_owner',
+							'value'   => 'HR19',
+							'compare' => '=',
+						),
+						array(
+							'key'     => '_pr_country',
+							'value'   => 'usa',
+							'compare' => '=',
+						)
 					)
-				)
-			);
+				);
+
+			}
+
+			
+			
+
 			query_posts( $propertieslist );
+	
 			if ( have_posts() ): while ( have_posts() ): the_post();
 				$address     = get_post_meta( get_the_ID(), '_pr_address', true );
 				$price       = get_post_meta( get_the_ID(), '_pr_current_price', true );
@@ -168,6 +216,8 @@ if ( function_exists( 'pll_current_language' ) ) {
 					}
 				}
 				?>
+
+
                 <div class="col-xs-12 col-sm-4 col-md-4">
                     <a href="<?php the_permalink(); ?>" class="property">
                         <div class="property-image" style="background: url(
