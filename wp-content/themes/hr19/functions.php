@@ -17,9 +17,9 @@ function hr_scripts() {
 	#Getting cities, address and postal codes for the suggestion plugin.
 	global $wpdb;
 	$lang           = get_locale();
-	$cities         = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_city' ) );
-	$address        = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_address' ) );
-	$postalcode     = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_postalcode' ) );
+	$cities         = array_filter( $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s AND meta_key IS NOT NULL ORDER BY meta_value ASC", '_pr_city' ) ) );
+	$address        = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s AND meta_key IS NOT NULL ORDER BY meta_value ASC", '_pr_address' ) );
+	$postalcode     = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s AND meta_key IS NOT NULL ORDER BY meta_value ASC", '_pr_postalcode' ) );
 	$jsonaddress    = wp_json_encode( $cities );
 	$jsoncities     = wp_json_encode( $address );
 	$jsonpostalcode = wp_json_encode( $postalcode );

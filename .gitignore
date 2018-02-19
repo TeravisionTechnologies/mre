@@ -9,3 +9,8 @@ wp-config.php
 wp-content/uploads
 wp-content/themes/newTheme/style.css.map
 wp-content/themes/newTheme/css/.sass-cache
+/wp-content/themes/Ala/nbproject/private/
+wp-content/themes/mre/css/style.css.map
+wp-content/themes/mre/css/style.css
+*.orig
+*.sassc
