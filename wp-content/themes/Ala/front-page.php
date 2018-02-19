@@ -28,19 +28,14 @@ if(!count($args)){
         'hide_empty' => 0
     ));
 
-
     foreach ($terms as $term) {
-
         if ($term->description == 1) {
-
             $status = $term->slug;
             break;
         }
-
     }
 
     $statusFilter = $status;
-
 
     $args = array(
         'post_type' => 'broker',
