@@ -948,8 +948,10 @@ body {
   margin: 40px 0; }
 
 a.download-bro {
-  width: 216px;
-  height: 50px;
+  width: 250px;
+  height: auto;
+  max-height: 108px;
+  overflow: hidden;
   border: solid 2px #ffffff;
   font-size: 18px;
   font-weight: bold;
@@ -960,9 +962,8 @@ a.download-bro {
   left: 0;
   right: 0;
   margin: auto;
-  top: 180px;
   padding: 14px 5px;
-  bottom: 0;
+  bottom: 150px;
   transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
   -ms-transition: all ease 0.3s;
@@ -2701,6 +2702,9 @@ a.download-bro {
   #ala-header .swiper-container-hero {
     padding-top: 80px !important; }
 
+  a.download-bro {
+    bottom: 100px; }
+
   #about-hero-section {
     height: 52.0833333333vw;
     margin-top: 10.4166666667vw; }
@@ -3407,9 +3411,9 @@ a.download-bro {
       font-size: 13px !important; }
     .prop-header a.download-bro {
       font-size: 13px !important;
-      height: 40px !important;
-      width: 140px !important;
-      padding: 11px 5px !important; }
+      width: 200px !important;
+      padding: 11px 5px !important;
+      bottom: 80px; }
 
   .detail-tlt {
     font-size: 14px !important;
