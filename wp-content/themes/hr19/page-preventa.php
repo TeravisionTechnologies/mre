@@ -78,23 +78,30 @@ if(function_exists('pll_current_language')){
             <form  action="<?php echo esc_url( admin_url('admin-post.php') ) ?>" method="post" role="form" >
                 <ul class="country-selector">  
                     <?php if ( isset($_GET['country_value']) && $_GET['country_value'] == 'spain'  ) : ?>
+                   
                         <li><a href="#" id="usa" data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
                         <li class="divider"></li>
                         <li><a href="#" id="spain" class="active" data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
+                    
                     <?php elseif( isset($_GET['country_value']) && $_GET['country_value'] == 'usa' ) :  ?>
+
                         <li><a href="#" id="usa" class="active" data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
                         <li class="divider"></li>
                         <li><a href="#" id="spain"  data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
+                    
                     <?php else: ?>
+                    
                         <li><a href="#" id="usa" class="active" data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
                         <li class="divider"></li>
                         <li><a href="#" id="spain"  data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
+                    
                     <?php endif; ?>
+                  
                 </ul>
                 <input id="country" type="hidden" name="country" value="<?php echo $country; ?>">
                 <input type="hidden" name="transaction" value="Presale">
                 <input type="hidden" name="paged" value="<?php echo $paged ?>">
-                <input type="hidden" name="subdir" value="<?php $lang == "es_ES" ? '/preventa' : '/presale' ?>" >
+                <input type="hidden" name="subdir" value="<?php  echo ($lang == "es_ES" ? '/preventa' : '/presale') ?>" >
                 <input type="hidden" name="action" value="contactForm">
             </form>
         </div>

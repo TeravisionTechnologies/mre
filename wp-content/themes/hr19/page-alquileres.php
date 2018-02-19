@@ -95,7 +95,7 @@ if(function_exists('pll_current_language')){
                 <input type="hidden" name="transaction" value="Lease">
                 <input type="hidden" name="paged" value="<?php echo $paged ?>">
                 <input type="hidden" name="subdir" value="/alquileres" >
-                <input type="hidden" name="subdir" value="<?php $lang == "es_ES" ? '/alquileres' : '/rent' ?>" >
+                <input type="hidden" name="subdir" value="<?php echo ($lang == "es_ES" ? '/alquileres' : '/rent') ?>" >
                 <input type="hidden" name="action" value="contactForm">
             </form>
         </div>
