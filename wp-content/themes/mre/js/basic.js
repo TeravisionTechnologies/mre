@@ -303,6 +303,14 @@ jQuery(document).ready(function () {
         $(this).closest('form').submit();
     });*/
 
+    $("#sl-lgg").val( window.location.href );
+
+    $(document).on('change', '#sl-lgg', function (e) {
+       
+        window.location.href = $('#sl-lgg').val();
+    
+    });
+
 });
 
 $(document).scroll(function() {
@@ -313,6 +321,7 @@ $(document).scroll(function() {
         $('.mre-footer-go-top').fadeOut();
     }
 });
+
 
 
 
