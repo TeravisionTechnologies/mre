@@ -271,6 +271,15 @@ jQuery(document).ready(function () {
         $("#orderByName").val($(this).val());
         $(this).closest('form').submit();
     });
+
+
+
+
+    $("#sl-lgg").val( window.location.href );
+
+ 
+
+
 });
 
 $(document).scroll(function() {
@@ -280,5 +289,15 @@ $(document).scroll(function() {
     } else {
         $('.footer-top').fadeOut();
     }
+});
+
+$(document).on('change', '#sl-lgg', function (e) {
+    
+    console.log($('#sl-lgg').val());
+    
+    window.location.href = $('#sl-lgg').val();
+
+    $("#sl-lgg").val($('#sl-lgg').val());
+
 });
 
