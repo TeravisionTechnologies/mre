@@ -117,6 +117,8 @@ $social_networks = get_post_meta($headerPost[0]->ID, '_hf_social_networks', true
                             <?php
                                 $i         = 0;
                                 $languages = pll_the_languages( array( 'raw' => 1 ) );
+                                var_dump( $languages['es']['url'] );
+                                var_dump( $languages['en']['url'] );
                             ?>
                             <select class="select-lenguage" id="sl-lgg">
                                 <option value="<?php echo $languages['es']['url'] ?>">ES</option>

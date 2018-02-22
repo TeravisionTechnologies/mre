@@ -134,7 +134,7 @@ if ( function_exists( 'pll_current_language' ) ) {
 				
 				$propertieslist = array(
 					'post_type'      => 'property',
-					'posts_per_page' => 9,
+					'posts_per_page' => 1,
 					'paged'          => $paged,
 					'meta_query'     => array(
 						'relation' => 'AND',
