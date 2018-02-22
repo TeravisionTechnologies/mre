@@ -272,13 +272,7 @@ jQuery(document).ready(function () {
         $(this).closest('form').submit();
     });
 
-
-
-
     $("#sl-lgg").val( window.location.href );
-
- 
-
 
 });
 
@@ -292,12 +286,8 @@ $(document).scroll(function() {
 });
 
 $(document).on('change', '#sl-lgg', function (e) {
-    
-    console.log($('#sl-lgg').val());
-    
+       
     window.location.href = $('#sl-lgg').val();
-
-    $("#sl-lgg").val($('#sl-lgg').val());
 
 });
 

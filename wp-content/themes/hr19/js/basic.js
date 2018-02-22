@@ -1,5 +1,7 @@
 jQuery(document).ready(function ($) {
-
+  
+ 
+    
     // Swiper Property
     var swiper = new Swiper('.swiper-property', {
         nextButton: '.swiper-button-next',
@@ -555,6 +557,9 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
+
+    
+
 });
 
 
@@ -604,6 +609,8 @@ $(window).on('load', function () {
         }
     }
 
+    
+
 });
 
 // Show/Hide Filter button on scroll
@@ -626,3 +633,14 @@ $(document).scroll(function() {
         $('.footer-top').fadeOut();
     }
 });
+
+$(document).ready(function () {
+    $("#sl-lgg").val( window.location.href );
+    $(document).on('change', '#sl-lgg', function (e) {
+    
+        window.location.href = $('#sl-lgg').val();
+    
+    });
+
+});
+

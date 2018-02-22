@@ -113,6 +113,17 @@ $social_networks = get_post_meta($headerPost[0]->ID, '_hf_social_networks', true
                                 <?php } ?>
                             </ul>
                         <?php } ?>
+                        <div class="pull-right">
+                            <?php
+                                $i         = 0;
+                                $languages = pll_the_languages( array( 'raw' => 1 ) );
+                            ?>
+                            <select class="select-lenguage" id="sl-lgg">
+                                <option value="<?php echo $languages['es']['url'] ?>">ES</option>
+                                <option value="<?php echo $languages['en']['url'] ?>">EN</option>
+                            </select>
+
+                        </div>
                     </div>
                 </div>
             </div>
