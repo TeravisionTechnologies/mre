@@ -303,21 +303,6 @@ jQuery(document).ready(function () {
         $(this).closest('form').submit();
     });*/
 
-    var href_split = window.location.href.split('?');
-
-    if ( href_split[0] ){
-
-        $("#sl-lgg").val( href_split[0] );
-    }else{
-        $("#sl-lgg").val( window.location.href );
-    }
-
-    $(document).on('change', '#sl-lgg', function (e) {
-       
-        window.location.href = $('#sl-lgg').val();
-    
-    });
-
 });
 
 $(document).scroll(function() {
@@ -329,6 +314,13 @@ $(document).scroll(function() {
     }
 });
 
+ //Objetivo: Devolver la ruta correspondiente para el cambio de idiomas en el header
+    
+ $(document).on('change', '#sl-lgg', function (e) {
+       
+    window.location.href = $('#sl-lgg').val();
+
+});
 
 
 

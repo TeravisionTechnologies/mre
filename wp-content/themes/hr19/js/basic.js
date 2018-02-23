@@ -557,9 +557,7 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
-
     
-
 });
 
 
@@ -634,23 +632,13 @@ $(document).scroll(function() {
     }
 });
 
-$(document).ready(function () {
+//Objetivo: Devolver la ruta correspondiente para el cambio de idiomas en el header
 
-    var href_split = window.location.href.split('?');
-
-    if ( href_split[0] ){
-
-        $("#sl-lgg").val( href_split[0] );
-    }else{
-        $("#sl-lgg").val( window.location.href );
-    }
-
+$(document).on('change', '#sl-lgg', function (e) {
     
-    $(document).on('change', '#sl-lgg', function (e) {
+    window.location.href = $('#sl-lgg').val();
     
-        window.location.href = $('#sl-lgg').val();
-        
-    });
-
 });
 
+
+ 
