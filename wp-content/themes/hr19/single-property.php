@@ -2,10 +2,10 @@
 
 get_header();
 the_post();
-$lang        = get_locale();
-$transaction = get_post_meta( get_the_ID(), '_pr_transaction', true );
+$transaction      = get_post_meta( get_the_ID(), '_pr_transaction', true );
+$presale_template = get_post_meta( get_the_ID(), '_pr_use_template', true );
 
-if ( $transaction == "Presale" ) {
+if ( $transaction == "Presale" || $presale_template == "on" ) {
 	get_template_part( 'partials/presale' );
 } else {
 	get_template_part( 'partials/default' );

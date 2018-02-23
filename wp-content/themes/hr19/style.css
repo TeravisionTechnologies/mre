@@ -3944,6 +3944,65 @@ a.download-bro {
       .property-features .panel .panel-body .main-features .feature .info {
         font-size: 1.5625vw; }
 
+  .prop-header {
+    height: 500px !important; }
+    .prop-header h1 {
+      font-size: 24px !important; }
+    .prop-header h2 {
+      font-size: 18px !important; }
+
+  #property-content p {
+    font-size: 14px !important;
+    line-height: 24px !important;
+    padding: 0 50px !important; }
+
+  .detail-tlt {
+    font-size: 20px !important;
+    height: 60px !important;
+    padding: 0 !important;
+    line-height: 60px !important; }
+
+  .detail-content ol {
+    padding: 0 50px !important;
+    font-size: 14px !important; }
+
+  .memory-items ol {
+    padding: 0 10px !important;
+    font-size: 14px !important; }
+
+  .amenimg {
+    height: 196px !important; }
+
+  #map {
+    height: 429px !important; }
+
+  #gallery-top-blueprint {
+    height: 274px !important; }
+
+  #gallery-thumbs-blueprint {
+    height: 160px !important; }
+
+  .btn-planos {
+    font-size: 16px;
+    width: auto; }
+
+  .places-mask {
+    display: block !important;
+    top: initial !important;
+    line-height: 40px !important;
+    font-size: 11px !important;
+    height: 40px !important;
+    bottom: 0 !important; }
+
+  #gallery-top-blueprint .swiper-slide .bp-title span {
+    font-size: 14px !important; }
+
+  #ala-header .swiper-container-hero {
+    padding-top: 80px !important; }
+
+  a.download-bro {
+    bottom: 100px; }
+
   #about-hero-section {
     height: 52.0833333333vw;
     margin-top: 10.4166666667vw; }
@@ -4876,6 +4935,93 @@ a.download-bro {
 
   .paddingl30 {
     padding-left: 4.1666666667vw !important; }
+
+  #property-content p {
+    font-size: 12px !important;
+    padding: 10px !important;
+    line-height: 25px !important;
+    margin: 0 !important; }
+
+  .memory-items ol {
+    padding: 0 30px !important;
+    font-size: 12px !important; }
+
+  .detail-content ol {
+    padding: 0 15px !important;
+    font-size: 12px !important;
+    column-count: 1 !important;
+    line-height: 25px !important; }
+
+  .prop-header {
+    height: 400px !important;
+    margin-bottom: 15px !important; }
+    .prop-header h1 {
+      font-size: 18px !important; }
+    .prop-header h2 {
+      font-size: 13px !important; }
+    .prop-header a.download-bro {
+      font-size: 13px !important;
+      width: 200px !important;
+      padding: 11px 5px !important;
+      bottom: 80px; }
+
+  .detail-tlt {
+    font-size: 14px !important;
+    height: 50px !important;
+    padding: 0 !important;
+    line-height: 50px !important;
+    letter-spacing: 3px !important; }
+
+  .amenimg {
+    height: 300px !important; }
+
+  .memory-items {
+    padding: 0 !important; }
+
+  #map {
+    height: 343px !important; }
+
+  #gallery-top-blueprint {
+    height: 180px !important; }
+
+  #gallery-thumbs-blueprint {
+    height: 160px !important; }
+
+  .places-mask {
+    display: block !important;
+    top: initial !important;
+    line-height: 60px !important;
+    font-size: 16px !important;
+    height: 60px !important;
+    bottom: 0 !important; }
+
+  .swiper-button-next {
+    width: 28px !important;
+    height: 28px !important;
+    top: 34%; }
+
+  .swiper-button-prev {
+    width: 28px !important;
+    height: 28px !important;
+    top: 34%; }
+
+  .btn-planos {
+    font-size: 14px !important;
+    padding: 2.7777777778vw 5.5555555556vw; }
+
+  #gallery-top-blueprint .swiper-slide .bp-title span {
+    font-size: 12px !important; }
+
+  #save-widget {
+    text-align: right; }
+    #save-widget strong {
+      display: none !important;
+      width: 123px !important;
+      height: 38px; }
+
+  .orderby {
+    font-size: 3.3333333333vw;
+    padding: 1.3888888889vw 3.3333333333vw !important; }
 
   #about-hero-section {
     height: 111.1111111111vw;

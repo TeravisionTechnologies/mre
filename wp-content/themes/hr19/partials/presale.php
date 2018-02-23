@@ -1,4 +1,5 @@
 <?php
+$lang             = get_locale();
 $intdetails       = get_post_meta( get_the_ID(), '_pr_intdetails', true );
 $intdet           = explode( '<!--more-->', $intdetails );
 $intimages        = get_post_meta( get_the_ID(), '_pr_intimages', true );
