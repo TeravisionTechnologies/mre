@@ -1,10 +1,30 @@
 <?php
 get_header();
 global $wpdb;
+/*
+$transaccion = 'Lease';
 
-if (has_query_var(country) ){
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
+$country = get_query_var( 'country_test' );
+*/
+$obj = new stdClass();
+if ( get_query_var( 'country_test' ) ){
+	
+	$obj->country = $country;
+	$obj->transaction = 'Lease';
+	$obj->paged = $paged;
+	
+}else{
+
+	$obj->country = 'usa';
+	$obj->transaction = 'Lease';
+	$obj->paged = $paged;
 
 }
+
+$query = test_query($obj);
+
 
 $lang       = get_locale();
 $url        = wp_upload_dir();
@@ -45,7 +65,7 @@ if ( function_exists( 'pll_current_language' ) ) {
                     <form id="property-search" class="property-search"
                           action="<?php echo esc_url( home_url( '/' . $language_subdir ) ); ?>" method="get" role="form"
                           data-toggle="validator" data-disable="false">
-                        <ul class="property-status">
+                        <ul class="property-status" >
                             <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                                 <a href="<?php echo home_url() . ( $lang == "es_ES" ? '/compra' : '/buy' ); ?>"><?php echo( $lang == "es_ES" ? 'Compra' : 'Buy' ) ?></a>
                             </li>
@@ -74,7 +94,7 @@ if ( function_exists( 'pll_current_language' ) ) {
         </div>
     </section>
     <div class="clearfix"></div>
-	<?php $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1; ?>
+	
 
     <div class="container property-list">
         <div class="row">
@@ -86,16 +106,17 @@ if ( function_exists( 'pll_current_language' ) ) {
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-                <form  action="<?php echo esc_url( admin_url('admin-post.php') ) ?>" method="post" role="form" >
+                <form id="property_lenguage" action="<?php echo esc_url( home_url( '/' . $language_subdir ) ); ?>"
+				 method="get" role="form" data-toggle="validator" data-disable="false">
                     <ul class="country-selector">
 						
-						<?php if ( isset($_GET['country_value']) && $_GET['country_value'] == 'spain'  ) : ?>
+						<?php if ( $country == 'spain'  ) : ?>
 
 							<li><a href="#" id="usa" data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
 							<li class="divider"></li>
 							<li><a href="#" id="spain" class="active" data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
 						
-						<?php elseif( isset($_GET['country_value']) && $_GET['country_value'] == 'usa' ) :  ?>
+						<?php elseif( $country == 'usa' ) :  ?>
 
 							<li><a href="#" id="usa" class="active" data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
 							<li class="divider"></li>
@@ -103,38 +124,39 @@ if ( function_exists( 'pll_current_language' ) ) {
 
 						<?php else: ?>
 
-							<li><a href="#" id="usa" class="active" data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
+							<li><a href="" id="usa" class="active" data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
 							<li class="divider"></li>
-							<li><a href="#" id="spain"  data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
+							<li><a href="" id="spain"  data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
 
 
 						<?php endif; ?>
 				
                         
                     </ul>
-                    <input id="country" type="hidden" name="country" value="<?php echo $country; ?>">
-					<input type="hidden" name="transaction" value="Lease">
-					<input type="hidden" name="paged" value="<?php echo $paged ?>">
-					<input type="hidden" name="subdir" value="/" >
-					<input type="hidden" name="action" value="contactForm">
+                    <input id="country" type="hidden" name="country_test" value="<?php echo $country; ?>">
+
+					
+
                 </form>
             </div>
         </div>
         <div id="presponse" class="row">
 			<?php
 			
-			$propertieslist = '';
+			/*$propertieslist = '';
 			
 			 
 			if ( isset( $_GET['query_country'] ) ) { 
 
-				$propertieslist = $_GET['query_country'];
+				$query = $_GET['query_country'];
+
+			
 
 			}else {
-				
-				$propertieslist = array(
+
+				/*$propertieslist = array(
 					'post_type'      => 'property',
-					'posts_per_page' => 1,
+					'posts_per_page' => 6,
 					'paged'          => $paged,
 					'meta_query'     => array(
 						'relation' => 'AND',
@@ -154,16 +176,38 @@ if ( function_exists( 'pll_current_language' ) ) {
 							'compare' => '=',
 						)
 					)
-				);
+				);*/
+/*
+				$query = new WP_Query( array(
+					'post_type'      => 'property',
+					'posts_per_page' => 6,
+					'paged'          => $paged,
+					'meta_query'     => array(
+						'relation' => 'AND',
+						array(
+							'key'     => '_pr_transaction',
+							'value'   => 'Lease',
+							'compare' => '=',
+						),
+						array(
+							'key'     => '_pr_owner',
+							'value'   => 'HR19',
+							'compare' => '=',
+						),
+						array(
+							'key'     => '_pr_country',
+							'value'   => 'usa',
+							'compare' => '=',
+						)
+					)
+				) );
 
-			}
+			}*/
 
-			
-			
-
-			query_posts( $propertieslist );
+			//query_posts( $propertieslist );
 	
-			if ( have_posts() ): while ( have_posts() ): the_post();
+			//if ( have_posts() ): while ( have_posts() ): the_post();
+			if ( $query->have_posts() ): while ( $query->have_posts() ) : $query->the_post();
 				$address     = get_post_meta( get_the_ID(), '_pr_address', true );
 				$price       = get_post_meta( get_the_ID(), '_pr_current_price', true );
 				$type        = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
@@ -267,7 +311,7 @@ if ( function_exists( 'pll_current_language' ) ) {
 			<?php endwhile; ?>
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-						<?php wp_pagenavi(); ?>
+						<?php wp_pagenavi( [ 'query' => $query ] ); ?>
                     </div>
                 </div>
 			<?php else: ?>
@@ -282,5 +326,7 @@ if ( function_exists( 'pll_current_language' ) ) {
 			wp_reset_postdata(); ?>
         </div>
     </div>
+
+
 
 <?php get_footer(); ?>

@@ -153,7 +153,7 @@ function pr_register_query_vars( $vars ) {
 	$vars[] = 'proporder';
 	$vars[] = 'propsort';
 	$vars[] = 'property_status';
-	$vars[] = 'country';
+	$vars[] = 'country_test';
 
 	return $vars;
 }
@@ -269,8 +269,8 @@ function query_propierties() {
 
 	$propertieslist = array(
 		'post_type'      => 'property',
-		'posts_per_page' => 1,
-		'paged'          => $paged,
+		'posts_per_page' => 6,
+		'paged'          => $_POST['paged'],
 		'meta_query'     => array(
 			'relation' => 'AND',
 			array(
@@ -290,8 +290,33 @@ function query_propierties() {
 			)
 		)
 	);
-	
-	wp_redirect( add_query_arg( array('query_country' => $propertieslist,
+
+	$query = new WP_Query( array(
+		'post_type'      => 'property',
+		'posts_per_page' => 6,
+		'paged'          => $paged,
+		'meta_query'     => array(
+			'relation' => 'AND',
+			array(
+				'key'     => '_pr_transaction',
+				'value'   => $trasaction,
+				'compare' => '=',
+			),
+			array(
+				'key'     => '_pr_owner',
+				'value'   => 'HR19',
+				'compare' => '=',
+			),
+			array(
+				'key'     => '_pr_country',
+				'value'   => $country,
+				'compare' => '=',
+			)
+		)
+	) );
+
+	//dd( json_encode( json_encode($query->posts) ) );
+	wp_redirect( add_query_arg( array('query_country' => $query->posts,
 									  'country_value' => $country ),
 									   get_home_url(). $subdir ) );
 	exit;
@@ -300,6 +325,34 @@ function query_propierties() {
 add_action('admin_post_nopriv_contactForm','query_propierties');
 add_action('admin_post_contactForm','query_propierties');
 	
+function test_query($obj){
+
+	$query = new WP_Query( array(
+		'post_type'      => 'property',
+		'posts_per_page' => 6,
+		'paged'          => $obj->paged,
+		'meta_query'     => array(
+			'relation' => 'AND',
+			array(
+				'key'     => '_pr_transaction',
+				'value'   => $obj->transaction,
+				'compare' => '=',
+			),
+			array(
+				'key'     => '_pr_owner',
+				'value'   => 'HR19',
+				'compare' => '=',
+			),
+			array(
+				'key'     => '_pr_country',
+				'value'   => $obj->country,
+				'compare' => '=',
+			)
+		)
+	) );
+
+	return $query;
+}
 
 	
 
