@@ -153,7 +153,7 @@ function pr_register_query_vars( $vars ) {
 	$vars[] = 'proporder';
 	$vars[] = 'propsort';
 	$vars[] = 'property_status';
-	$vars[] = 'country_test';
+	$vars[] = 'country_page';
 
 	return $vars;
 }
@@ -258,78 +258,12 @@ function has_query_var( $var ) {
 	return isset( $wp_query->query_vars[ $var ] );
 }
 
-function query_propierties() { 
-
-	$propertieslist = null;
 	
-	$country = $_POST['country'];
-	$trasaction = $_POST['transaction'];
-	$paged = $_POST['paged'];
-	$subdir = $_POST['subdir'];
-
-	$propertieslist = array(
-		'post_type'      => 'property',
-		'posts_per_page' => 6,
-		'paged'          => $_POST['paged'],
-		'meta_query'     => array(
-			'relation' => 'AND',
-			array(
-				'key'     => '_pr_transaction',
-				'value'   => $trasaction,
-				'compare' => '=',
-			),
-			array(
-				'key'     => '_pr_owner',
-				'value'   => 'HR19',
-				'compare' => '=',
-			),
-			array(
-				'key'     => '_pr_country',
-				'value'   => $country,
-				'compare' => '=',
-			)
-		)
-	);
+function query_country($obj){
 
 	$query = new WP_Query( array(
 		'post_type'      => 'property',
-		'posts_per_page' => 6,
-		'paged'          => $paged,
-		'meta_query'     => array(
-			'relation' => 'AND',
-			array(
-				'key'     => '_pr_transaction',
-				'value'   => $trasaction,
-				'compare' => '=',
-			),
-			array(
-				'key'     => '_pr_owner',
-				'value'   => 'HR19',
-				'compare' => '=',
-			),
-			array(
-				'key'     => '_pr_country',
-				'value'   => $country,
-				'compare' => '=',
-			)
-		)
-	) );
-
-	//dd( json_encode( json_encode($query->posts) ) );
-	wp_redirect( add_query_arg( array('query_country' => $query->posts,
-									  'country_value' => $country ),
-									   get_home_url(). $subdir ) );
-	exit;
-}
-
-add_action('admin_post_nopriv_contactForm','query_propierties');
-add_action('admin_post_contactForm','query_propierties');
-	
-function test_query($obj){
-
-	$query = new WP_Query( array(
-		'post_type'      => 'property',
-		'posts_per_page' => 6,
+		'posts_per_page' => 3,
 		'paged'          => $obj->paged,
 		'meta_query'     => array(
 			'relation' => 'AND',

@@ -1,30 +1,27 @@
 <?php
 get_header();
 global $wpdb;
-/*
+
 $transaccion = 'Lease';
 
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
-$country = get_query_var( 'country_test' );
-*/
+$country = get_query_var( 'country_page' );
+
 $obj = new stdClass();
-if ( get_query_var( 'country_test' ) ){
+$obj->transaction = 'Lease';
+$obj->paged = $paged;
+if ( get_query_var( 'country_page' ) ){
 	
 	$obj->country = $country;
-	$obj->transaction = 'Lease';
-	$obj->paged = $paged;
 	
 }else{
 
 	$obj->country = 'usa';
-	$obj->transaction = 'Lease';
-	$obj->paged = $paged;
-
+	
 }
 
-$query = test_query($obj);
-
+$query = query_country($obj);
 
 $lang       = get_locale();
 $url        = wp_upload_dir();
@@ -50,7 +47,7 @@ if ( function_exists( 'pll_current_language' ) ) {
 }
 ?>
     <section class="col-xs-12 hr-hero-section text-center no-padding"
-             style="background-image: url('<?php echo $hero[0]["_hf_hero_background"] ?>');">
+             style="background-image: url('<?php isset($hero[0]["_hf_hero_text"]) ? $hero[0]["_hf_hero_text"] : null; ?>');">
         <div class="hero-overlay">
 			<?php
 			if ( isset( $hero[0]["_hf_hero_text"] ) ) {
@@ -133,7 +130,7 @@ if ( function_exists( 'pll_current_language' ) ) {
 				
                         
                     </ul>
-                    <input id="country" type="hidden" name="country_test" value="<?php echo $country; ?>">
+                    <input id="country" type="hidden" name="country_page" value="<?php echo $country; ?>">
 
 					
 
@@ -142,71 +139,7 @@ if ( function_exists( 'pll_current_language' ) ) {
         </div>
         <div id="presponse" class="row">
 			<?php
-			
-			/*$propertieslist = '';
-			
-			 
-			if ( isset( $_GET['query_country'] ) ) { 
 
-				$query = $_GET['query_country'];
-
-			
-
-			}else {
-
-				/*$propertieslist = array(
-					'post_type'      => 'property',
-					'posts_per_page' => 6,
-					'paged'          => $paged,
-					'meta_query'     => array(
-						'relation' => 'AND',
-						array(
-							'key'     => '_pr_transaction',
-							'value'   => 'Lease',
-							'compare' => '=',
-						),
-						array(
-							'key'     => '_pr_owner',
-							'value'   => 'HR19',
-							'compare' => '=',
-						),
-						array(
-							'key'     => '_pr_country',
-							'value'   => 'usa',
-							'compare' => '=',
-						)
-					)
-				);*/
-/*
-				$query = new WP_Query( array(
-					'post_type'      => 'property',
-					'posts_per_page' => 6,
-					'paged'          => $paged,
-					'meta_query'     => array(
-						'relation' => 'AND',
-						array(
-							'key'     => '_pr_transaction',
-							'value'   => 'Lease',
-							'compare' => '=',
-						),
-						array(
-							'key'     => '_pr_owner',
-							'value'   => 'HR19',
-							'compare' => '=',
-						),
-						array(
-							'key'     => '_pr_country',
-							'value'   => 'usa',
-							'compare' => '=',
-						)
-					)
-				) );
-
-			}*/
-
-			//query_posts( $propertieslist );
-	
-			//if ( have_posts() ): while ( have_posts() ): the_post();
 			if ( $query->have_posts() ): while ( $query->have_posts() ) : $query->the_post();
 				$address     = get_post_meta( get_the_ID(), '_pr_address', true );
 				$price       = get_post_meta( get_the_ID(), '_pr_current_price', true );
@@ -221,8 +154,9 @@ if ( function_exists( 'pll_current_language' ) ) {
 				$headers     = get_headers( $bgimg, 1 );
 				$fsize       = $headers['Content-Length'];
 				$fsize       = (int) $fsize;
-				$urlimage    = wp_remote_head( $bgimg );
-				$urlimage    = $urlimage['response']['code'];
+				//$urlimage    = wp_remote_head( $bgimg );
+
+				//$urlimage    = $urlimage['response']['code'];
 				$placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
 				$csymbol     = get_post_meta( get_the_ID(), '_pr_currency_symbol', true );
 				if ( ! empty( $csymbol ) ) {
@@ -265,7 +199,7 @@ if ( function_exists( 'pll_current_language' ) ) {
                 <div class="col-xs-12 col-sm-4 col-md-4">
                     <a href="<?php the_permalink(); ?>" class="property">
                         <div class="property-image" style="background: url(
-						<?php if ( ( $urlimage == 404 or $fsize < 100 ) && ( empty( $gallery ) ) ) {
+						<?php if ( ( /*$urlimage == 404 or*/ $fsize < 100 ) && ( empty( $gallery ) ) ) {
 							echo $placeholder;
 						} elseif ( ! empty( $gallery ) ) {
 							echo $first_pic;
