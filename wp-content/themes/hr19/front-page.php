@@ -103,7 +103,7 @@ if ( function_exists( 'pll_current_language' ) ) {
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-                <form id="property_lenguage" action="<?php echo home_url() . ( $lang == "es_ES" ? '/' : '/home'); ?>"
+                <form id="property_lenguage" action="<?php echo home_url() . ( $lang == "es_ES" ? '/alquileres' : '/rent'); ?>"
 				 method="get" role="form" data-toggle="validator" data-disable="false">
                     <ul class="country-selector">
 						
