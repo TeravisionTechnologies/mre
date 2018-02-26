@@ -20,8 +20,8 @@ if ( get_query_var( 'country_page' ) ){
     
 }else{
 
-    $obj->country = 'usa';
-
+	$obj->country = 'usa';
+	
 }
 
 $query = query_country($obj);
@@ -146,8 +146,8 @@ if(function_exists('pll_current_language')){
 				$headers  = get_headers($bgimg, 1);
 				$fsize    = $headers['Content-Length'];
 				$fsize = (int)$fsize;
-				//$urlimage = wp_remote_head( $bgimg );
-				//$urlimage = $urlimage['response']['code'];
+				$urlimage = wp_remote_head( $bgimg );
+				$urlimage = $urlimage['response']['code'];
 				$placeholder = get_template_directory_uri().'/assets/no-photo.jpg';
 				$csymbol =  get_post_meta(get_the_ID(), '_pr_currency_symbol', true);
 				if( !empty( $csymbol ) ){
@@ -188,7 +188,7 @@ if(function_exists('pll_current_language')){
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<a href="<?php the_permalink(); ?>" class="property">
 						<div class="property-image" style="background: url(
-						<?php if( ( /*$urlimage == 404 or*/ $fsize < 100 ) && ( empty( $gallery ) ) ){
+						<?php if( ( $urlimage == 404 or $fsize < 100 ) && ( empty( $gallery ) ) ){
 							echo $placeholder;
 						} elseif ( !empty($gallery) ){
 							echo $first_pic;
