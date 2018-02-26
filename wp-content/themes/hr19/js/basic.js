@@ -1,7 +1,5 @@
 jQuery(document).ready(function ($) {
-  
- 
-    
+
     // Swiper Property
     var swiper = new Swiper('.swiper-property', {
         nextButton: '.swiper-button-next',

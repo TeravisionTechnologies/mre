@@ -62,7 +62,7 @@ $headerPost = get_posts(
         'numberposts' => 1
     )
 );
-$theMeta = get_post_meta($headerPost[0]->ID);
+$theMeta = get_post_meta( isset($headerPost[0]->ID) ? $headerPost[0]->ID : null );
 $social_networks = get_post_meta($headerPost[0]->ID, '_hf_social_networks', true);
 $lang = get_locale();
 ?>
