@@ -12,6 +12,7 @@ $footer_info     = get_post_meta( $footer_query[0]->ID );
 $social_networks = get_post_meta( $footer_query[0]->ID, '_hf_social_networks', true );
 $ourOffices      = get_post_meta( $footer_query[0]->ID, '_hf_our_offices', true);
 $lang = get_locale();
+var_dump($partners);
 ?>
 <?php if ( ! is_404() ) { ?>
 <section class="col-xs-12 hr-partners-section text-center">
@@ -22,10 +23,10 @@ $lang = get_locale();
     </div>
     <div class="hr-partners-images">
         <a href="<?php echo isset($partners[0]['_hf_partner_link_left']) ? $partners[0]['_hf_partner_link_left'] : null ?>" target="_blank"><img
-                    src="<?php echo isset($partners[0]['_hf_partner_logo_left']); ?>" alt="Logo ALA19"
+                    src="<?php echo $partners[0]['_hf_partner_logo_left']; ?>" alt="Logo ALA19"
                     class="partners-images-one"/></a>
         <a href="<?php echo isset($partners[0]['_hf_partner_link_right']); ?>" target="_blank"><img
-                    src="<?php echo isset($partners[0]['_hf_partner_logo_right']); ?>" alt="Logo MRE RealEstate"
+                    src="<?php echo $partners[0]['_hf_partner_logo_right']; ?>" alt="Logo MRE RealEstate"
                     class="partners-images-two"/></a>
     </div>
 </section>

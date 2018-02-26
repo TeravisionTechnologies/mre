@@ -277,8 +277,8 @@ body {
     height: 2.3541666667vw;
     position: absolute;
     list-style: none;
-    right: 3.4930555556vw;
-    top: 1.6180555556vw; }
+    right: 10.7847222222vw;
+    top: 1.8263888889vw; }
     #mre-header .social-header .social-icons .social-icon {
       position: relative;
       height: 100%;
@@ -352,6 +352,16 @@ body {
   width: 6.5277777778vw;
   height: 2.9166666667vw;
   cursor: pointer; }
+
+.select-lenguage {
+  position: absolute;
+  top: 26%;
+  right: 4.8819444444vw;
+  height: 55%;
+  font-size: 18px;
+  color: #808183;
+  border: 0px;
+  outline: 0px; }
 
 #mre-about-us {
   position: relative;
@@ -2226,8 +2236,8 @@ body.thanks {
     z-index: 2; }
     #mre-header .social-header .social-icons {
       height: 33.9px;
-      right: 50.3px;
-      top: 23.3px; }
+      right: 155.3px;
+      top: 26.3px; }
       #mre-header .social-header .social-icons .social-icon {
         height: 100%;
         width: 33.9px;
