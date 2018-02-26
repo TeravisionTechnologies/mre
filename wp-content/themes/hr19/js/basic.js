@@ -169,7 +169,7 @@ jQuery(document).ready(function ($) {
             $('.text-map').html('Ocultar mapa');
         } else if ($('.text-map').text() == 'Hide map') {
             $('.text-map').html('Show map');
-        } else{
+        } else {
             $('.text-map').html('Hide map');
         }
     });
@@ -356,7 +356,6 @@ jQuery(document).ready(function ($) {
         propertyData.address = $(this).find('.property-address').html();
         propertyData.address = propertyData.address.replace(/[\t\n,]/g, '');
         propertyData.price = $(this).find('.property-price').html();
-        propertyData.price = propertyData.price.replace(/[$,]/g, '');
         propertyData.highlights = $(this).find('.property-highlights').html();
         propertyData.highlights = propertyData.highlights.replace(/[\t\n,]/g, '');
         propertyData.mls = $(this).find('.property-code').html();
@@ -376,19 +375,28 @@ jQuery(document).ready(function ($) {
     var infowindows = [];
     var activeMarker = '';
     var allData = [];
+    var place = '';
 
     function initialize() {
 
+        geocoder = new google.maps.Geocoder();
+
+        //Get city searched
         if (locations.length == 0) {
-            map = new google.maps.Map(
-                document.getElementById("search-map"), {
-                    center: new google.maps.LatLng(28.335347, -81.775476),
-                    zoom: 7,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    mapTypeControl: false,
-                    fullscreenControl: false
-                });
-        } else{
+            geocoder.geocode({'address': hr19.place}, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var place = {"lat": results[0].geometry.location.lat(), "long": results[0].geometry.location.lng()};
+                    map = new google.maps.Map(
+                        document.getElementById("search-map"), {
+                            center: new google.maps.LatLng(place.lat, place.long),
+                            zoom: 7,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP,
+                            mapTypeControl: false,
+                            fullscreenControl: false
+                        });
+                }
+            });
+        } else {
             map = new google.maps.Map(
                 document.getElementById("search-map"), {
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -397,9 +405,7 @@ jQuery(document).ready(function ($) {
                 });
         }
 
-        geocoder = new google.maps.Geocoder();
         oms = new OverlappingMarkerSpiderfier(map, {markersWontMove: true, markersWontHide: true});
-
         for (i = 0; i < locations.length; i++) {
             geocodeAddress(locations, i);
             oms.addListener('format', function (marker, status) {
@@ -469,13 +475,13 @@ jQuery(document).ready(function ($) {
         var priceUnformatted = locations[i].price;
         var price = '';
         if (priceUnformatted > 999 && priceUnformatted < 1000000) {
-            price = '$' + (priceUnformatted / 1000) + 'K';
+            price = (priceUnformatted / 1000) + 'K';
         }
         else if (priceUnformatted >= 1000000) {
-            price = '$' + (priceUnformatted / 1000000) + 'm';
+            price = (priceUnformatted / 1000000) + 'm';
         }
         else {
-            price = '$' + priceUnformatted;
+            price = priceUnformatted;
         }
 
         var cont = 0;
@@ -555,7 +561,7 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
-    
+
 });
 
 
@@ -575,7 +581,7 @@ $(window).on('load', function () {
             scrollTop: finalPosition
         }, 1000);
     }
-    if($('#buy-list').length){
+    if ($('#buy-list').length) {
         var position = $("#buy-list").offset().top;
         var finalPosition = position - 80;
         $('html, body').animate({
@@ -702,7 +708,7 @@ if (screen.width() < 768) {
     });
 }
 
-$(document).scroll(function() {
+$(document).scroll(function () {
     var y = $(this).scrollTop();
     if (y > 800) {
         $('.footer-top').fadeIn();
@@ -714,9 +720,9 @@ $(document).scroll(function() {
 //Objetivo: Devolver la ruta correspondiente para el cambio de idiomas en el header
 
 $(document).on('change', '#sl-lgg', function (e) {
-    
+
     window.location.href = $('#sl-lgg').val();
-    
+
 });
 
 

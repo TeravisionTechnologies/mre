@@ -146,7 +146,7 @@ wp_reset_query();
                             <div class="input-group search-wrap">
                                 <input type="search" class="form-control search-box" id="s" name="s"
                                        placeholder="<?php echo( $lang == "es_ES" ? 'Buscar' : 'Search' ) ?>"
-                                       value="<?php echo $s; ?>" required>
+                                       value="<?php echo $s; ?>" data-value="<?php echo $s; ?>" required>
                                 <i class="fa fa-search"></i>
                             </div>
                         </li>

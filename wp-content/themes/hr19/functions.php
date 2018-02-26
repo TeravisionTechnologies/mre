@@ -23,6 +23,7 @@ function hr_scripts() {
 	$jsonaddress    = wp_json_encode( $cities );
 	$jsoncities     = wp_json_encode( $address );
 	$jsonpostalcode = wp_json_encode( $postalcode );
+	$place          = get_query_var( 's' );
 	if ( $lang == "es_ES" ) {
 		$msj        = '<p class="no-results"><span>No pudimos encontrar su búsqueda</span><br>Verifique su ortografía o vuelva a hacer su búsqueda usando una ubicación dentro de los E.E.U.U</p>';
 		$acaddress  = "Dirección";
@@ -63,6 +64,7 @@ function hr_scripts() {
 		'accity'      => $accity,
 		'acpc'        => $acpc,
 		'acrequired'  => $acrequired,
+		'place'       => $place
 	) );
 }
 
@@ -255,11 +257,12 @@ add_action( 'pre_get_posts', 'my_post_count_queries' );
 
 function has_query_var( $var ) {
 	global $wp_query;
+
 	return isset( $wp_query->query_vars[ $var ] );
 }
 
-	
-function query_country($obj){
+
+function query_country( $obj ) {
 
 	$query = new WP_Query( array(
 		'post_type'      => 'property',
