@@ -263,7 +263,7 @@ function query_country($obj){
 
 	$query = new WP_Query( array(
 		'post_type'      => 'property',
-		'posts_per_page' => 3,
+		'posts_per_page' => 9,
 		'paged'          => $obj->paged,
 		'meta_query'     => array(
 			'relation' => 'AND',
