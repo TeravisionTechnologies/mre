@@ -605,7 +605,88 @@ $(window).on('load', function () {
         }
     }
 
-    
+    //Slider Amenities
+    var slideComodidades;
+    $('.gallery-comodidades').click(function () {
+        slideComodidades = $(this).attr('data-number');
+        $("#myModal").on('show.bs.modal', function () {
+            setTimeout(function () {
+                var galleryTop = new Swiper('.gallery-top', {
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                    spaceBetween: 10,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                });
+                var galleryThumbs = new Swiper('.gallery-thumbs', {
+                    spaceBetween: 10,
+                    slidesPerView: 4,
+                    touchRatio: 0.2,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                    slideToClickedSlide: true
+                });
+                galleryTop.params.control = galleryThumbs;
+                galleryThumbs.params.control = galleryTop;
+                galleryThumbs.slideTo(slideComodidades, 0);
+            }, 500);
+        });
+    });
+
+    var slideDetalles;
+    $('.gallery-detalles').click(function () {
+        slideDetalles = $(this).attr('data-number');
+        $("#myModalDetails").on('show.bs.modal', function () {
+            setTimeout(function () {
+                var galleryTop = new Swiper('.gallery-top-details', {
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                    spaceBetween: 10,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                });
+                var galleryThumbs = new Swiper('.gallery-thumbs-details', {
+                    spaceBetween: 10,
+                    slidesPerView: 4,
+                    touchRatio: 0.2,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                    slideToClickedSlide: true
+                });
+                galleryTop.params.control = galleryThumbs;
+                galleryThumbs.params.control = galleryTop;
+                galleryThumbs.slideTo(slideDetalles, 0);
+            }, 500);
+        });
+    });
+
+    var galleryTop = new Swiper('.gallery-top-blueprint', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 10,
+        loop: true,
+        loopedSlides: 5, //looped slides should be the same
+        initialSlide: 1
+    });
+    var galleryThumbs = new Swiper('.gallery-thumbs-blueprint', {
+        spaceBetween: 98,
+        slidesPerView: 3,
+        touchRatio: 0.2,
+        loop: true,
+        loopedSlides: 5, //looped slides should be the same
+        slideToClickedSlide: true,
+        initialSlide: 1,
+        centeredSlides: true,
+        breakpoints: {
+            // when window width is <= 767px
+            767: {
+                slidesPerView: 2,
+                spaceBetween: 14
+            }
+        }
+    });
+    galleryTop.params.control = galleryThumbs;
+    galleryThumbs.params.control = galleryTop;
 
 });
 

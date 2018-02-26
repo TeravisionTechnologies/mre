@@ -2,6 +2,7 @@
 get_header();
 the_post();
 $lang             = get_locale();
+
 $intdetails       = get_post_meta( get_the_ID(), '_br_intdetails', true );
 $intdet           = explode( '<!--more-->', $intdetails );
 $intimages        = get_post_meta( get_the_ID(), '_br_intimages', true );
