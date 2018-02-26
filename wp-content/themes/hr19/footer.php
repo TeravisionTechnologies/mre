@@ -12,7 +12,6 @@ $footer_info     = get_post_meta( $footer_query[0]->ID );
 $social_networks = get_post_meta( $footer_query[0]->ID, '_hf_social_networks', true );
 $ourOffices      = get_post_meta( $footer_query[0]->ID, '_hf_our_offices', true);
 $lang = get_locale();
-var_dump($partners);
 ?>
 <?php if ( ! is_404() ) { ?>
 <section class="col-xs-12 hr-partners-section text-center">
