@@ -555,6 +555,7 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
+    
 });
 
 
@@ -709,3 +710,14 @@ $(document).scroll(function() {
         $('.footer-top').fadeOut();
     }
 });
+
+//Objetivo: Devolver la ruta correspondiente para el cambio de idiomas en el header
+
+$(document).on('change', '#sl-lgg', function (e) {
+    
+    window.location.href = $('#sl-lgg').val();
+    
+});
+
+
+ 

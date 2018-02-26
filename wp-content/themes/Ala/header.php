@@ -56,6 +56,7 @@
     );
     $theMeta = get_post_meta($headerPost[0]->ID);
     $social_networks = get_post_meta( $headerPost[0]->ID, '_hf_social_networks', true );
+    $lang = get_locale();
 ?>
 <body id="body" <?php body_class() ?>>
 <div id="o-wrapper" class="o-wrapper">
@@ -93,7 +94,22 @@
                         <li class="social-icon"><a href="<?php echo $social_networks[0]['_hf_youtube'] ?>" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
                         <?php } ?>
                     </ul>
+                    
                     <?php } ?>
+
+                    <div class="pull-right">
+                        <?php
+                            $i         = 0;
+                            $languages = pll_the_languages( array( 'raw' => 1 ) );
+                        
+                        ?>
+                        <select class="select-lenguage" id="sl-lgg">
+                            <option value="<?php echo $languages['es']['url'] ?>" <?php echo ( $lang == "es_ES" ? 'selected' : null ) ?>  >ES</option>
+                            <option value="<?php echo $languages['en']['url'] ?>" <?php echo ( $lang == "en_US" ? 'selected' : null ) ?> >EN</option>
+                        </select>
+
+                    </div>
                 </div>
+
             </div>
         </nav>

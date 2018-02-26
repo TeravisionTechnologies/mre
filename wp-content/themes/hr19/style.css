@@ -106,11 +106,11 @@ body {
   background-color: #fff;
   z-index: 2; }
   #hr-header .social-header .social-icons {
-    height: 2.3541666667vw;
+    height: 2.1458333333vw;
     position: absolute;
     list-style: none;
-    right: 3.4930555556vw;
-    top: 1.6180555556vw; }
+    right: 10.7847222222vw;
+    top: 1.8263888889vw; }
     #hr-header .social-header .social-icons .social-icon {
       position: relative;
       height: 100%;
@@ -467,6 +467,16 @@ body.has-active-menu {
 .c-button-close {
   right: 0 !important;
   left: unset !important; }
+
+.select-lenguage {
+  position: absolute;
+  top: 26%;
+  right: 4.8819444444vw;
+  height: 55%;
+  font-size: 18px;
+  color: #033c5a;
+  border: 0px;
+  outline: 0px; }
 
 .hr-hero-section {
   margin-top: 5.5555555556vw;
@@ -2723,8 +2733,8 @@ a.download-bro {
     z-index: 2; }
     #hr-header .social-header .social-icons {
       height: 33.9px;
-      right: 50.3px;
-      top: 23.3px; }
+      right: 155.3px;
+      top: 26.3px; }
       #hr-header .social-header .social-icons .social-icon {
         height: 100%;
         width: 33.9px;

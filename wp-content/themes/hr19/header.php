@@ -62,8 +62,9 @@ $headerPost = get_posts(
         'numberposts' => 1
     )
 );
-$theMeta = get_post_meta($headerPost[0]->ID);
+$theMeta = get_post_meta( isset($headerPost[0]->ID) ? $headerPost[0]->ID : null );
 $social_networks = get_post_meta($headerPost[0]->ID, '_hf_social_networks', true);
+$lang = get_locale();
 ?>
 <body <?php body_class() ?>>
 <div id="o-wrapper" class="o-wrapper">
@@ -113,6 +114,19 @@ $social_networks = get_post_meta($headerPost[0]->ID, '_hf_social_networks', true
                                 <?php } ?>
                             </ul>
                         <?php } ?>
+
+               
+                        <div class="pull-right">
+                            <?php
+                                $i         = 0;
+                                $languages = pll_the_languages( array( 'raw' => 1 ) );
+                            ?>
+                            <select class="select-lenguage" id="sl-lgg">
+                                <option value="<?php echo $languages['es']['url'] ?>" <?php echo ( $lang == "es_ES" ? 'selected' : null ) ?>  >ES</option>
+                                <option value="<?php echo $languages['en']['url'] ?>" <?php echo ( $lang == "en_US" ? 'selected' : null ) ?> >EN</option>
+                            </select>
+
+                        </div>
                     </div>
                 </div>
             </div>

@@ -153,7 +153,7 @@ function pr_register_query_vars( $vars ) {
 	$vars[] = 'proporder';
 	$vars[] = 'propsort';
 	$vars[] = 'property_status';
-	$vars[] = 'country';
+	$vars[] = 'country_page';
 
 	return $vars;
 }
@@ -258,24 +258,18 @@ function has_query_var( $var ) {
 	return isset( $wp_query->query_vars[ $var ] );
 }
 
-function query_propierties() { 
-
-	$propertieslist = null;
 	
-	$country = $_POST['country'];
-	$trasaction = $_POST['transaction'];
-	$paged = $_POST['paged'];
-	$subdir = $_POST['subdir'];
+function query_country($obj){
 
-	$propertieslist = array(
+	$query = new WP_Query( array(
 		'post_type'      => 'property',
-		'posts_per_page' => 6,
-		'paged'          => $paged,
+		'posts_per_page' => 9,
+		'paged'          => $obj->paged,
 		'meta_query'     => array(
 			'relation' => 'AND',
 			array(
 				'key'     => '_pr_transaction',
-				'value'   => $trasaction,
+				'value'   => $obj->transaction,
 				'compare' => '=',
 			),
 			array(
@@ -285,21 +279,14 @@ function query_propierties() {
 			),
 			array(
 				'key'     => '_pr_country',
-				'value'   => $country,
+				'value'   => $obj->country,
 				'compare' => '=',
 			)
 		)
-	);
-	
-	wp_redirect( add_query_arg( array('query_country' => $propertieslist,
-									  'country_value' => $country ),
-									   get_home_url(). $subdir ) );
-	exit;
-}
+	) );
 
-add_action('admin_post_nopriv_contactForm','query_propierties');
-add_action('admin_post_contactForm','query_propierties');
-	
+	return $query;
+}
 
 	
 
