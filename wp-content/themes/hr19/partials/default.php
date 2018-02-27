@@ -121,10 +121,11 @@ $bgimg           = (int) $bgimg;
     <div class="breadcrumb-info">
         <div class="container">
             <div class="row">
-                <div class="col-xs-9 col-sm-7 col-md-6">
+                <div class="col-xs-2 col-sm-6 col-md-6">
                     <div class="breadcrumbs">
                         <a href="<?php echo $_SERVER['HTTP_REFERER'] ?>"><i id="go-back" class="fa fa-chevron-left"
                                                                             aria-hidden="true"></i></a>
+                        <span class="hidden-xs">
 						<?php if ( ! empty( $city ) ) {
 							echo $city;
 						} ?> >
@@ -133,10 +134,20 @@ $bgimg           = (int) $bgimg;
 						} else {
 							echo '--';
 						} ?>
+                        </span>
                     </div>
                 </div>
-                <div class="col-xs-3 col-sm-5 col-md-6 text-right">
-                    <!--<div class="published">Publicada hace: 59 días</div>-->
+                <div class="col-xs-10 col-sm-6 col-md-6 text-right">
+                    <div class="published">
+	                    <?php
+	                    $horas = "00:00:00";
+	                    $broker = "HR19";
+	                    if( $lang == "es_ES" ){
+		                    echo '<p>Listado actualizado hace <strong>'. $horas .' hr</strong> <span class="divider">|</span> Por <strong>' .$broker.' </strong><span class="divider">|</span></p>';
+	                    } else{
+		                    echo '<p>Listing updated '. $horas .' hours ago</p>';
+	                    } ?>
+                    </div>
 					<?php if ( ! empty( $status ) ) { ?>
                         <div class="status"><?php echo( $lang == "es_ES" ? 'Estatus: ' : 'Status: ' ) ?>
                         <span><?php echo $status; ?></span></div><?php } ?>
@@ -611,6 +622,9 @@ if ( have_posts() ): ?>
 							} else {
 								echo $bgimg;
 							} ?>);">
+                                <div class="by-broker">
+                                    <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?> <span>Marlene Goldman INC</span></p>
+                                </div>
                             </div>
                             <div class="property-info">
                                 <div class="property-price">

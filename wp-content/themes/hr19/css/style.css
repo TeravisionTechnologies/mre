@@ -785,7 +785,8 @@ input[type="radio"].styled:checked + label:after {
     height: 250px;
     background-repeat: no-repeat !important;
     background-size: 150% 150% !important;
-    background-position: center center !important; }
+    background-position: center center !important;
+    position: relative; }
   .property .property-info {
     padding: 15px 20px 10px;
     background-color: #f7f7f7; }
@@ -806,8 +807,7 @@ input[type="radio"].styled:checked + label:after {
       margin-bottom: 5px;
       text-overflow: ellipsis;
       white-space: nowrap;
-      overflow: hidden;
-      height: 18px; }
+      overflow: hidden; }
     .property .property-info .property-address, .property .property-info .property-code {
       opacity: 0.8;
       font-size: 13px; }
@@ -1665,6 +1665,49 @@ input:checked + .slider:before {
     margin: 0 1.0416666667vw;
     opacity: 0.4; }
 
+.updated-info p {
+  font-size: 0.9027777778vw;
+  color: #4a4a4a;
+  letter-spacing: -0.0069444444vw;
+  margin-bottom: 1.0416666667vw; }
+
+.search .updated-info {
+  margin: 20px 0 15px 0; }
+  .search .updated-info p {
+    position: relative;
+    font-size: 0.9027777778vw;
+    color: #4a4a4a;
+    letter-spacing: -0.0069444444vw;
+    margin: 0;
+    text-align: right; }
+  .search .updated-info span {
+    background-color: #fff;
+    padding-left: 10px;
+    display: inline; }
+    .search .updated-info span:before {
+      content: "";
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+      right: 0;
+      height: 0.5em;
+      z-index: -1;
+      border-top: solid 2px rgba(74, 74, 74, 0.1); }
+
+.by-broker {
+  background: #033c5a;
+  opacity: 0.8;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  font-size: 0.8333333333vw; }
+  .by-broker p {
+    margin: 0.6944444444vw 1.5277777778vw; }
+    .by-broker p span {
+      font-family: Montserrat-Medium; }
+
 .agent-hero {
   margin-top: 5.5555555556vw;
   height: 31.25vw;
@@ -1833,15 +1876,15 @@ a[href^=tel] {
 
 .breadcrumb-info {
   margin-top: 5.5555555556vw;
-  height: 46px;
+  height: 3.1944444444vw;
   background: #033c5a;
-  color: #fff;
-  padding: 13px 0; }
+  color: #fff; }
   .breadcrumb-info .breadcrumbs {
-    font-size: 13px;
+    font-size: 0.9027777778vw;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap; }
+    white-space: nowrap;
+    line-height: 3.1944444444vw; }
     .breadcrumb-info .breadcrumbs a {
       color: #fff; }
       .breadcrumb-info .breadcrumbs a .fa-chevron-left {
@@ -1849,10 +1892,7 @@ a[href^=tel] {
         cursor: pointer; }
   .breadcrumb-info .published, .breadcrumb-info .status {
     display: inline-block;
-    font-size: 13px; }
-  .breadcrumb-info .published {
-    opacity: 0.5;
-    margin-right: 5px; }
+    font-size: 0.9027777778vw; }
   .breadcrumb-info .status span {
     color: #21ac03; }
 
@@ -2054,6 +2094,17 @@ a[href^=tel] {
 #map-detail {
   height: 34.0277777778vw;
   width: 100%; }
+
+.published {
+  line-height: 3.1944444444vw; }
+  .published p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9027777778vw;
+    margin: 0; }
+    .published p strong {
+      color: #fff; }
+  .published .divider {
+    margin: 0 6px; }
 
 #about-hero-section {
   height: 31.25vw;
@@ -3804,6 +3855,39 @@ a.download-bro {
       height: 2.6041666667vw;
       margin: 0 1.953125vw; }
 
+  .updated-info p {
+    font-size: 1.3020833333vw;
+    letter-spacing: -0.0130208333vw;
+    margin-bottom: 1.953125vw; }
+
+  .search .updated-info {
+    margin: 20px 0 15px 0; }
+    .search .updated-info p {
+      position: relative;
+      font-size: 1.3020833333vw;
+      color: #4a4a4a;
+      letter-spacing: -0.0130208333vw;
+      margin: 0;
+      text-align: right; }
+    .search .updated-info span {
+      background-color: #fff;
+      padding-left: 10px;
+      display: inline; }
+      .search .updated-info span:before {
+        content: "";
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        right: 0;
+        height: 0.5em;
+        z-index: -1;
+        border-top: solid 2px rgba(74, 74, 74, 0.1); }
+
+  .by-broker {
+    font-size: 1.171875vw; }
+    .by-broker p {
+      margin: 1.3020833333vw 2.8645833333vw; }
+
   .agent-hero {
     margin-top: 10.4166666667vw;
     height: 58.59375vw;
@@ -3914,6 +3998,7 @@ a.download-bro {
               line-height: 1.3020833333vw; }
 
   .breadcrumb-info {
+    height: 5.2083333333vw;
     margin-top: 10.4166666667vw; }
 
   .property-info-heading {
@@ -4014,6 +4099,23 @@ a.download-bro {
 
   a.download-bro {
     bottom: 100px; }
+
+  .breadcrumb-info .status {
+    font-size: 1.3020833333vw; }
+  .breadcrumb-info .breadcrumbs {
+    font-size: 1.3020833333vw;
+    line-height: 5.2083333333vw; }
+
+  .published {
+    line-height: 5.2083333333vw; }
+    .published p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 1.3020833333vw;
+      margin: 0; }
+      .published p strong {
+        color: #fff; }
+    .published .divider {
+      margin: 0 6px; }
 
   #about-hero-section {
     height: 52.0833333333vw;
@@ -4727,7 +4829,7 @@ a.download-bro {
             margin: 0; }
 
   .country-selector {
-    margin: 2.7777777778vw 0 13.8888888889vw 0; }
+    margin: 2.7777777778vw 0 5.5555555556vw 0; }
     .country-selector li {
       height: 5.5555555556vw; }
       .country-selector li a {
@@ -4735,6 +4837,34 @@ a.download-bro {
     .country-selector .divider {
       height: 5.5555555556vw;
       margin: 0 4.1666666667vw; }
+
+  .updated-info p {
+    font-size: 2.7777777778vw;
+    letter-spacing: -0.0277777778vw;
+    margin-bottom: 4.1666666667vw;
+    text-align: center !important; }
+
+  .search .hr-heading {
+    margin-top: 15px; }
+  .search .updated-info {
+    margin: 20px 0 5px 0; }
+    .search .updated-info p {
+      position: relative;
+      font-size: 2.7777777778vw;
+      letter-spacing: -0.0277777778vw;
+      margin: 0;
+      text-align: center; }
+    .search .updated-info span {
+      background-color: #fff;
+      padding-left: 0;
+      display: inline; }
+      .search .updated-info span:before {
+        display: none; }
+
+  .by-broker {
+    font-size: 2.5vw; }
+    .by-broker p {
+      margin: 2.7777777778vw 4.1666666667vw; }
 
   .agent-hero {
     margin-top: 16.6666666667vw;
@@ -4859,7 +4989,8 @@ a.download-bro {
     font-size: 1.6666666667vw;
     padding: 3.3333333333vw 0; }
     .breadcrumb-info .breadcrumbs, .breadcrumb-info .status {
-      font-size: 1.6666666667vw; }
+      font-size: 1.6666666667vw;
+      line-height: 1.9444444444vw; }
     .breadcrumb-info .col-xs-5 {
       padding-right: 0 !important; }
     .breadcrumb-info .status {
@@ -4935,11 +5066,17 @@ a.download-bro {
   .property-carousel {
     height: 30vh; }
     .property-carousel .swiper-button-prev {
-      left: 30px; }
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      margin: auto; }
       .property-carousel .swiper-button-prev .fa {
         font-size: 5.5555555556vw; }
     .property-carousel .swiper-button-next {
-      right: 30px; }
+      right: 30px;
+      top: 0;
+      bottom: 0;
+      margin: auto; }
       .property-carousel .swiper-button-next .fa {
         font-size: 5.5555555556vw; }
     .property-carousel .total {
@@ -5034,6 +5171,14 @@ a.download-bro {
   .orderby {
     font-size: 3.3333333333vw;
     padding: 1.3888888889vw 3.3333333333vw !important; }
+
+  .published {
+    line-height: 1.9444444444vw; }
+    .published p {
+      font-size: 1.9444444444vw;
+      margin: 0; }
+    .published .divider {
+      margin: 0 4px; }
 
   #about-hero-section {
     height: 111.1111111111vw;

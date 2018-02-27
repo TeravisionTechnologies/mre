@@ -762,6 +762,7 @@ input[type="radio"].styled:checked + label
     background-repeat: no-repeat !important
     background-size: 150% 150% !important
     background-position: center center !important
+    position: relative
   .property-info
     padding: 15px 20px 10px
     background-color: $greylighter
@@ -1660,3 +1661,48 @@ input:checked + .slider:before
     height: get-vw-desktop(24px)
     margin: 0 get-vw-desktop(15px)
     opacity: 0.4
+
+.updated-info
+  p
+    font-size: get-vw-desktop(13px)
+    color: $grey
+    letter-spacing: get-vw-desktop(-0.1px)
+    margin-bottom: get-vw-desktop(15px)
+
+.search
+  .updated-info
+    margin: 20px 0 15px 0
+    p
+      position: relative
+      font-size: get-vw-desktop(13px)
+      color: $grey
+      letter-spacing: get-vw-desktop(-0.1px)
+      margin: 0
+      text-align: right
+    span
+      background-color: $white
+      padding-left: 10px
+      display: inline
+      &:before
+        content: ""
+        position: absolute
+        bottom: 3px
+        left: 0
+        right: 0
+        height: 0.5em
+        z-index: -1
+        border-top: solid 2px rgba(74, 74, 74, 0.1)
+
+.by-broker
+  background: $mainblue
+  opacity: 0.8
+  color: $white
+  position: absolute
+  width: 100%
+  left: 0
+  bottom: 0
+  font-size: get-vw-desktop(12px)
+  p
+    margin: get-vw-desktop(10px) get-vw-desktop(22px)
+    span
+      font-family: Montserrat-Medium

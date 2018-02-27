@@ -140,6 +140,9 @@ if ( have_posts() ): while ( have_posts() ):
 								echo $bgimg;
 							} ?>
                                     );">
+                                <div class="by-broker">
+                                    <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?> <span>HR19Realty Inc</span></p>
+                                </div>
                             </div>
                             <div class="property-info">
                                 <h2 class="info-price"><?php echo $csymbol . number_format( $price, 0, '.', ',' ); ?></h2>
@@ -256,6 +259,9 @@ if ( have_posts() ): while ( have_posts() ):
 								echo $bgimg;
 							} ?>
                                     );">
+                                <div class="by-broker">
+                                    <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?> <span>HR19Realty Inc</span></p>
+                                </div>
                             </div>
                             <div class="property-info">
                                 <h2 class="info-price"><?php echo $csymbol . number_format( $price, 0, '.', ',' ); ?></h2>

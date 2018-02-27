@@ -468,8 +468,14 @@ wp_reset_query();
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-12">
-                        <hr>
+                    <div class="col-sm-12 col-md-12 updated-info">
+	                    <?php
+	                    $horas = "00:00:00";
+	                    if( $lang == "es_ES" ){
+		                    echo '<p><span>Listado actualizado hace <strong>'. $horas .'</strong> horas</span></p>';
+	                    } else{
+		                    echo '<p><span>Listing updated '. $horas .' hours ago</span></p>';
+	                    } ?>
                     </div>
                 </div>
             </div>
@@ -547,6 +553,9 @@ wp_reset_query();
 					} else {
 						echo $bgimg;
 					} ?>">
+                        <div class="by-broker">
+                            <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?> <span>Marlene Goldman INC</span></p>
+                        </div>
                     </div>
                     <div class="property-info">
                         <div class="property-price"><?php if ( ! empty( $price ) ) {

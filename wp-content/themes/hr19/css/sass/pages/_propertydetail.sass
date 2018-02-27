@@ -1,14 +1,14 @@
 .breadcrumb-info
   margin-top: get-vw-desktop(80px)
-  height: 46px
+  height: get-vw-desktop(46px)
   background: $mainblue
   color: $white
-  padding: 13px 0
   .breadcrumbs
-    font-size: 13px
+    font-size: get-vw-desktop(13px)
     overflow: hidden
     text-overflow: ellipsis
     white-space: nowrap
+    line-height: get-vw-desktop(46px)
     a
       color: $white
       .fa-chevron-left
@@ -16,10 +16,7 @@
         cursor: pointer
   .published, .status
     display: inline-block
-    font-size: 13px
-  .published
-    opacity: 0.5
-    margin-right: 5px
+    font-size: get-vw-desktop(13px)
   .status
     span
       color: $green-active
@@ -225,3 +222,13 @@
   height: get-vw-desktop(490px)
   width: 100%
 
+.published
+  line-height: get-vw-desktop(46px)
+  p
+    color: rgba(255, 255, 255, 0.5)
+    font-size: get-vw-desktop(13px)
+    margin: 0
+    strong
+      color: $white
+  .divider
+    margin: 0 6px

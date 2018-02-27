@@ -1,42 +1,27 @@
 <?php
 get_header();
 global $wpdb;
-
 $transaccion = 'Lease';
-
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-
 $country = get_query_var( 'country_page' );
-
-$obj = new stdClass();
+$obj              = new stdClass();
 $obj->transaction = 'Lease';
-$obj->paged = $paged;
-if ( get_query_var( 'country_page' ) ){
-	
+$obj->paged       = $paged;
+if ( get_query_var( 'country_page' ) ) {
 	$obj->country = $country;
-	
-}else{
-
+} else {
 	$obj->country = 'usa';
-	
 }
-
-$query = query_country($obj);
-
-$lang       = get_locale();
-$url        = wp_upload_dir();
-
-
-
+$query = query_country( $obj );
+$lang = get_locale();
+$url  = wp_upload_dir();
 $home_query = get_posts(
 	array(
 		'post_type' => 'header_footer'
 	)
 );
-
 $hero = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
 if ( function_exists( 'pll_current_language' ) ) {
-
 	$current_language = pll_current_language();
 	$default_language = pll_default_language();
 	if ( $current_language != $default_language ) {
@@ -47,10 +32,10 @@ if ( function_exists( 'pll_current_language' ) ) {
 }
 ?>
     <section class="col-xs-12 hr-hero-section text-center no-padding"
-             style="background-image: url('<?php echo !empty($hero[0]["_hf_hero_background"]) ? $hero[0]["_hf_hero_background"] : null; ?>');">
+             style="background-image: url('<?php echo ! empty( $hero[0]["_hf_hero_background"] ) ? $hero[0]["_hf_hero_background"] : null; ?>');">
         <div class="hero-overlay">
 			<?php
-			if ( !empty( $hero[0]["_hf_hero_text"] ) ) {
+			if ( ! empty( $hero[0]["_hf_hero_text"] ) ) {
 				echo $hero[0]["_hf_hero_text"];
 			}
 			?>
@@ -62,7 +47,7 @@ if ( function_exists( 'pll_current_language' ) ) {
                     <form id="property-search" class="property-search"
                           action="<?php echo esc_url( home_url( '/' . $language_subdir ) ); ?>" method="get" role="form"
                           data-toggle="validator" data-disable="false">
-                        <ul class="property-status" >
+                        <ul class="property-status">
                             <li class="col-xs-4 col-sm-4 col-md-4 no-padding">
                                 <a href="<?php echo home_url() . ( $lang == "es_ES" ? '/compra' : '/buy' ); ?>"><?php echo( $lang == "es_ES" ? 'Compra' : 'Buy' ) ?></a>
                             </li>
@@ -91,7 +76,6 @@ if ( function_exists( 'pll_current_language' ) ) {
         </div>
     </section>
     <div class="clearfix"></div>
-	
 
     <div class="container property-list">
         <div class="row">
@@ -103,43 +87,47 @@ if ( function_exists( 'pll_current_language' ) ) {
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-                <form id="property_lenguage" action="<?php echo home_url() . ( $lang == "es_ES" ? '/alquileres' : '/rent'); ?>"
-				 method="get" role="form" data-toggle="validator" data-disable="false">
+                <form id="property_lenguage"
+                      action="<?php echo home_url() . ( $lang == "es_ES" ? '/alquileres' : '/rent' ); ?>"
+                      method="get" role="form" data-toggle="validator" data-disable="false">
                     <ul class="country-selector">
-						
-						<?php if ( $country == 'spain'  ) : ?>
-
-							<li><a href="#" id="usa" data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
-							<li class="divider"></li>
-							<li><a href="#" id="spain" class="active" data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
-						
-						<?php elseif( $country == 'usa' ) :  ?>
-
-							<li><a href="#" id="usa" class="active" data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
-							<li class="divider"></li>
-							<li><a href="#" id="spain"  data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
-
+						<?php if ( $country == 'spain' ) : ?>
+                            <li><a href="#" id="usa"
+                                   data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" id="spain" class="active"
+                                   data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
+						<?php elseif ( $country == 'usa' ) : ?>
+                            <li><a href="#" id="usa" class="active"
+                                   data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" id="spain"
+                                   data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
 						<?php else: ?>
-
-							<li><a href="" id="usa" class="active" data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
-							<li class="divider"></li>
-							<li><a href="" id="spain"  data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
-
-
+                            <li><a href="" id="usa" class="active"
+                                   data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
+                            <li class="divider"></li>
+                            <li><a href="" id="spain"
+                                   data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
 						<?php endif; ?>
-				
-                        
                     </ul>
                     <input id="country" type="hidden" name="country_page" value="<?php echo $country; ?>">
-
-					
-
                 </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-right updated-info">
+                <?php
+                $horas = "00:00:00";
+                if( $lang == "es_ES" ){
+                    echo '<p>Listado actualizado hace <strong>'. $horas .'</strong> horas</p>';
+                } else{
+                    echo '<p>Listing updated '. $horas .' hours ago</p>';
+                } ?>
             </div>
         </div>
         <div id="presponse" class="row">
 			<?php
-
 			if ( $query->have_posts() ): while ( $query->have_posts() ) : $query->the_post();
 				$address     = get_post_meta( get_the_ID(), '_pr_address', true );
 				$price       = get_post_meta( get_the_ID(), '_pr_current_price', true );
@@ -193,8 +181,6 @@ if ( function_exists( 'pll_current_language' ) ) {
 					}
 				}
 				?>
-
-
                 <div class="col-xs-12 col-sm-4 col-md-4">
                     <a href="<?php the_permalink(); ?>" class="property">
                         <div class="property-image" style="background: url(
@@ -206,6 +192,9 @@ if ( function_exists( 'pll_current_language' ) ) {
 							echo $bgimg;
 						} ?>
                                 );">
+                            <div class="by-broker">
+                                <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?> <span>HR19Realty Inc</span></p>
+                            </div>
                         </div>
                         <div class="property-info">
                             <div class="property-price">
@@ -213,8 +202,8 @@ if ( function_exists( 'pll_current_language' ) ) {
 								if ( ! empty( $price ) ) {
 									echo $csymbol . number_format( $price, 0, '.', ',' );
 								} else {
-								    echo "--";
-                                }
+									echo "--";
+								}
 								?>
                             </div>
                             <div class="property-highlights">
@@ -231,15 +220,15 @@ if ( function_exists( 'pll_current_language' ) ) {
 								} ?>
                             </div>
                             <div class="property-address">
-		                        <?php if (!empty($address)) {
-			                        echo $address;
-		                        } else if (!empty($city) and !empty($state)) {
-			                        echo $city . ', ' . $state;
-		                        } else if (!empty( $state )) {
-			                        echo $state;
-		                        } else{
-			                        echo "--";
-		                        }?>
+								<?php if ( ! empty( $address ) ) {
+									echo $address;
+								} else if ( ! empty( $city ) and ! empty( $state ) ) {
+									echo $city . ', ' . $state;
+								} else if ( ! empty( $state ) ) {
+									echo $state;
+								} else {
+									echo "--";
+								} ?>
                             </div>
                             <div class="property-code">MLS: <?php the_title(); ?></div>
                         </div>
@@ -263,7 +252,4 @@ if ( function_exists( 'pll_current_language' ) ) {
 			wp_reset_postdata(); ?>
         </div>
     </div>
-
-
-
 <?php get_footer(); ?>
