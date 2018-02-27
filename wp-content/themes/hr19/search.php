@@ -438,7 +438,7 @@ wp_reset_query();
                         <select class="pull-right" id="proporder" name="proporder">
                             <option value="" <?php echo ( $propOrder === "" ) ? 'selected' : ''; ?>> <?php echo( $lang == "es_ES" ? 'Ordenar por' : 'Order by' ) ?></option>
                             <option <?php echo ( $propOrder === "0" ) ? 'selected' : ''; ?>
-                                    value="0"><?php _e( 'A &#x25B2', 'hr' ) ?></option>
+                                    value="0"><?php _e( 'A &#x25B2;', 'hr' ) ?></option>
                             <option <?php echo ( $propOrder === "1" ) ? 'selected' : ''; ?>
                                     value="1"><?php _e( 'D &#x25BC;', 'hr' ) ?></option>
                             <option <?php echo ( $propOrder === "2" ) ? 'selected' : ''; ?>

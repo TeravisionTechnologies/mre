@@ -1743,8 +1743,9 @@ input:checked + .slider:before {
       line-height: 1.9444444444vw;
       color: #4a4a4a;
       padding-bottom: 1.3888888889vw;
-      border-bottom: solid 2px rgba(143, 143, 143, 0.4);
       margin: 0; }
+      .hr-agents-section .agent-bio p:last-child {
+        border-bottom: solid 2px rgba(143, 143, 143, 0.4); }
   .hr-agents-section .agent-properties {
     height: auto;
     padding: 1.3888888889vw 23.3333333333vw 0 23.3333333333vw; }

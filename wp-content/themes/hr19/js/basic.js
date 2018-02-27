@@ -1,5 +1,11 @@
 jQuery(document).ready(function ($) {
 
+    //Objetivo: Devolver la ruta correspondiente para el cambio de idiomas en el header
+
+    $(document).on('change', '#sl-lgg', function () {
+        window.location.href = $('#sl-lgg').val();
+    });
+
     // Swiper Property
     var swiper = new Swiper('.swiper-property', {
         nextButton: '.swiper-button-next',
@@ -717,13 +723,6 @@ $(document).scroll(function () {
     }
 });
 
-//Objetivo: Devolver la ruta correspondiente para el cambio de idiomas en el header
-
-$(document).on('change', '#sl-lgg', function (e) {
-
-    window.location.href = $('#sl-lgg').val();
-
-});
 
 
  

@@ -47,10 +47,10 @@ if ( function_exists( 'pll_current_language' ) ) {
 }
 ?>
     <section class="col-xs-12 hr-hero-section text-center no-padding"
-             style="background-image: url('<?php isset($hero[0]["_hf_hero_text"]) ? $hero[0]["_hf_hero_text"] : null; ?>');">
+             style="background-image: url('<?php echo !empty($hero[0]["_hf_hero_background"]) ? $hero[0]["_hf_hero_background"] : null; ?>');">
         <div class="hero-overlay">
 			<?php
-			if ( isset( $hero[0]["_hf_hero_text"] ) ) {
+			if ( !empty( $hero[0]["_hf_hero_text"] ) ) {
 				echo $hero[0]["_hf_hero_text"];
 			}
 			?>
@@ -212,14 +212,16 @@ if ( function_exists( 'pll_current_language' ) ) {
 								<?php
 								if ( ! empty( $price ) ) {
 									echo $csymbol . number_format( $price, 0, '.', ',' );
-								}
+								} else {
+								    echo "--";
+                                }
 								?>
                             </div>
                             <div class="property-highlights">
 								<?php if ( ! empty( $type ) ) {
 									echo $type;
 								} else {
-									echo 'N/A';
+									echo '--';
 								} ?>
 								<?php if ( ! empty( $rooms ) ) {
 									echo '· ' . $rooms . $rm;
@@ -229,13 +231,15 @@ if ( function_exists( 'pll_current_language' ) ) {
 								} ?>
                             </div>
                             <div class="property-address">
-								<?php if ( ! empty( $address ) ) {
-									echo $address;
-								} else if ( ! empty( $city ) and ! empty( $state ) ) {
-									echo $city . ', ' . $state;
-								} else {
-									echo $state;
-								} ?>
+		                        <?php if (!empty($address)) {
+			                        echo $address;
+		                        } else if (!empty($city) and !empty($state)) {
+			                        echo $city . ', ' . $state;
+		                        } else if (!empty( $state )) {
+			                        echo $state;
+		                        } else{
+			                        echo "--";
+		                        }?>
                             </div>
                             <div class="property-code">MLS: <?php the_title(); ?></div>
                         </div>
