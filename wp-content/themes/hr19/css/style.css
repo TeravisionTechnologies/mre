@@ -5364,6 +5364,9 @@ a.download-bro {
   .navbar-fixed-top {
     position: absolute; }
 
+  .breadcrumb-info {
+    margin-top: 12.5vw; }
+
   .menu {
     min-width: 15.625vw;
     width: 100%;
