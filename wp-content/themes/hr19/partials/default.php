@@ -679,4 +679,6 @@ if ( have_posts() ): ?>
             </div>
         </div>
     </div>
+<?php else: ?>
+    <div class="margint50"></div>
 <?php endif; ?>

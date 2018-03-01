@@ -2111,6 +2111,9 @@ a[href^=tel] {
   line-height: 1.1111111111vw;
   color: #8f8f8f; }
 
+.margint50 {
+  margin-top: 3.1944444444vw; }
+
 #about-hero-section {
   height: 31.25vw;
   background-size: cover;
