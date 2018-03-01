@@ -2106,6 +2106,11 @@ a[href^=tel] {
   .published .divider {
     margin: 0 6px; }
 
+.disclaimer-text {
+  font-size: 0.7638888889vw;
+  line-height: 1.3888888889vw;
+  color: #4a4a4a; }
+
 #about-hero-section {
   height: 31.25vw;
   background-size: cover;
@@ -4117,6 +4122,10 @@ a.download-bro {
     .published .divider {
       margin: 0 6px; }
 
+  .disclaimer-text {
+    font-size: 1.2369791667vw;
+    line-height: 2.0833333333vw; }
+
   #about-hero-section {
     height: 52.0833333333vw;
     margin-top: 10.4166666667vw; }
@@ -5179,6 +5188,11 @@ a.download-bro {
       margin: 0; }
     .published .divider {
       margin: 0 4px; }
+
+  .disclaimer-text {
+    font-size: 2.5vw;
+    line-height: 4.4444444444vw;
+    padding: 0 15px; }
 
   #about-hero-section {
     height: 111.1111111111vw;

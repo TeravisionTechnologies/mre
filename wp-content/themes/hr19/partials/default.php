@@ -117,6 +117,12 @@ $bgimg           = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
 $headers         = get_headers( $bgimg, 1 );
 $bgimg           = $headers['Content-Length'];
 $bgimg           = (int) $bgimg;
+$footer_query    = get_posts(
+	array(
+		'post_type' => 'header_footer',
+	)
+);
+$disclaimer      = get_post_meta( $footer_query[0]->ID, '_hf_disc', true );
 ?>
     <div class="breadcrumb-info">
         <div class="container">
@@ -129,24 +135,24 @@ $bgimg           = (int) $bgimg;
 						<?php if ( ! empty( $city ) ) {
 							echo $city;
 						} ?> >
-						<?php if ( ! empty( $address ) ) {
-							echo $address;
-						} else {
-							echo '--';
-						} ?>
+							<?php if ( ! empty( $address ) ) {
+								echo $address;
+							} else {
+								echo '--';
+							} ?>
                         </span>
                     </div>
                 </div>
                 <div class="col-xs-10 col-sm-6 col-md-6 text-right">
                     <div class="published">
-	                    <?php
-	                    $horas = "00:00:00";
-	                    $broker = "HR19";
-	                    if( $lang == "es_ES" ){
-		                    echo '<p>Listado actualizado hace <strong>'. $horas .' hr</strong> <span class="divider">|</span> Por <strong>' .$broker.' </strong><span class="divider">|</span></p>';
-	                    } else{
-		                    echo '<p>Listing updated '. $horas .' hours ago</p>';
-	                    } ?>
+						<?php
+						$horas  = "00:00:00";
+						$broker = "HR19";
+						if ( $lang == "es_ES" ) {
+							echo '<p>Listado actualizado hace <strong>' . $horas . ' hr</strong> <span class="divider">|</span> Por <strong>' . $broker . ' </strong><span class="divider">|</span></p>';
+						} else {
+							echo '<p>Listing updated ' . $horas . ' hours ago</p>';
+						} ?>
                     </div>
 					<?php if ( ! empty( $status ) ) { ?>
                         <div class="status"><?php echo( $lang == "es_ES" ? 'Estatus: ' : 'Status: ' ) ?>
@@ -522,6 +528,13 @@ $bgimg           = (int) $bgimg;
                     </div>
                 </div>
             </div>
+			<?php if ( ! empty( $disclaimer ) ) { ?>
+                <div class="row">
+                    <div class="col-xs-offset-0 col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 text-center no-padding">
+                        <p class="disclaimer-text"><?php echo $disclaimer ?></p>
+                    </div>
+                </div>
+			<?php } ?>
         </div>
     </div>
 
@@ -623,7 +636,8 @@ if ( have_posts() ): ?>
 								echo $bgimg;
 							} ?>);">
                                 <div class="by-broker">
-                                    <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?> <span>Marlene Goldman INC</span></p>
+                                    <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?> <span>Marlene Goldman INC</span>
+                                    </p>
                                 </div>
                             </div>
                             <div class="property-info">
