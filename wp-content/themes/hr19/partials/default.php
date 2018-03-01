@@ -530,7 +530,7 @@ $disclaimer      = get_post_meta( $footer_query[0]->ID, '_hf_disc', true );
             </div>
 			<?php if ( ! empty( $disclaimer ) ) { ?>
                 <div class="row">
-                    <div class="col-xs-offset-0 col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 text-center no-padding">
+                    <div class="col-xs-offset-0 col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 text-center">
                         <p class="disclaimer-text"><?php echo $disclaimer ?></p>
                     </div>
                 </div>

@@ -2107,9 +2107,9 @@ a[href^=tel] {
     margin: 0 6px; }
 
 .disclaimer-text {
-  font-size: 0.7638888889vw;
-  line-height: 1.3888888889vw;
-  color: #4a4a4a; }
+  font-size: 0.6944444444vw;
+  line-height: 1.1111111111vw;
+  color: #8f8f8f; }
 
 #about-hero-section {
   height: 31.25vw;
@@ -4123,8 +4123,8 @@ a.download-bro {
       margin: 0 6px; }
 
   .disclaimer-text {
-    font-size: 1.2369791667vw;
-    line-height: 2.0833333333vw; }
+    font-size: 1.171875vw;
+    line-height: 1.8229166667vw; }
 
   #about-hero-section {
     height: 52.0833333333vw;
@@ -5191,8 +5191,7 @@ a.download-bro {
 
   .disclaimer-text {
     font-size: 2.5vw;
-    line-height: 4.4444444444vw;
-    padding: 0 15px; }
+    line-height: 4.4444444444vw; }
 
   #about-hero-section {
     height: 111.1111111111vw;
