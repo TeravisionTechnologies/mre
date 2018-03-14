@@ -140,6 +140,7 @@ if ( function_exists( 'pll_current_language' ) ) {
 			$city        = get_post_meta( get_the_ID(), '_pr_city', true );
 			$state       = get_post_meta( get_the_ID(), '_pr_state', true );
 			$gallery     = get_post_meta( get_the_ID(), '_pr_photos', true );
+			$transac     = get_post_meta( get_the_ID(), '_pr_transaction', true );
 			$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
 			$headers     = get_headers( $bgimg, 1 );
 			$fsize       = $headers['Content-Length'];
@@ -228,7 +229,7 @@ if ( function_exists( 'pll_current_language' ) ) {
 								echo "--";
 							} ?>
                         </div>
-                        <div class="property-code">MLS: <?php the_title(); ?></div>
+                        <div class="property-code"><?php echo ( $transac == "Presale" ? "" : "MLS: " ) ?> <?php the_title(); ?></div>
                     </div>
                 </a>
             </div>

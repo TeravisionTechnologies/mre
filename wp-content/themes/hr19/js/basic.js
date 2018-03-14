@@ -681,7 +681,7 @@ $(window).on('load', function () {
         initialSlide: 1
     });
     var galleryThumbs = new Swiper('.gallery-thumbs-blueprint', {
-        spaceBetween: 98,
+        spaceBetween: 80,
         slidesPerView: 3,
         touchRatio: 0.2,
         loop: true,
@@ -693,7 +693,12 @@ $(window).on('load', function () {
             // when window width is <= 767px
             767: {
                 slidesPerView: 2,
-                spaceBetween: 14
+                spaceBetween: 14,
+                centeredSlides: false,
+            },
+            1023: {
+                slidesPerView: 3,
+                spaceBetween: 60
             }
         }
     });

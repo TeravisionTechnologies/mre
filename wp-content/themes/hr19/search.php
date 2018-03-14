@@ -498,6 +498,7 @@ wp_reset_query();
 			$agentid     = get_post_meta( get_the_ID(), '_pr_agentid', true );
 			$gallery     = get_post_meta( get_the_ID(), '_pr_photos', true );
 			$owner       = get_post_meta( get_the_ID(), '_pr_owner', true );
+			$transac     = get_post_meta( get_the_ID(), '_pr_transaction', true );
 			$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
 			$headers     = get_headers( $bgimg, 1 );
 			$fsize       = ( isset( $headers['Content-Length'] ) ) ? $headers['Content-Length'] : null;
@@ -559,8 +560,10 @@ wp_reset_query();
                     </div>
                     <div class="property-info">
                         <div class="property-price"><?php if ( ! empty( $price ) ) {
-								echo $csymbol . number_format( $price, 0, '.', ',' );
-							} ?>
+		                        echo $csymbol . number_format( $price, 0, '.', ',' );
+	                        } else {
+		                        echo "--";
+	                        } ?>
                         </div>
                         <div class="property-highlights">
 							<?php if ( ! empty( $type ) ) {
@@ -584,7 +587,7 @@ wp_reset_query();
 								echo $state;
 							} ?>
                         </div>
-                        <div class="property-code">MLS: <?php the_title(); ?></div>
+                        <div class="property-code"><?php echo ( $transac == "Presale" ? "" : "MLS: " ) ?> <?php the_title(); ?></div>
                     </div>
                 </a>
             </div>

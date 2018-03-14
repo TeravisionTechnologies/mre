@@ -51,8 +51,16 @@
   height: 500px !important
   h1
     font-size: 24px !important
+    height: 25px
+    top: -120px
   h2
     font-size: 18px !important
+    top: -45px
+
+.hero-buttons
+  a.download-bro
+    font-size: 16px
+    min-width: 230px
 
 #property-content
   p
@@ -77,28 +85,33 @@
     font-size: 14px !important
 
 .amenimg
-  height: 196px !important
+  height: get-vw-tablet(170px) !important
 
 #map
   height: 429px !important
 
 #gallery-top-blueprint
-  height: 274px !important
+  height: 297px !important
 
 #gallery-thumbs-blueprint
-  height: 160px !important
+  height: get-vw-tablet(140px) !important
+
+.swiper-button-prev, .swiper-button-next
+  font-size: 22px
 
 .btn-planos
   font-size: 16px
   width: auto
 
-.places-mask
-  display: block !important
-  top: initial !important
-  line-height: 40px !important
-  font-size: 11px !important
-  height: 40px !important
-  bottom: 0 !important
+.places-wrapper
+  .places-mask
+    display: block !important
+    top: initial !important
+    line-height: 40px !important
+    font-size: 11px !important
+    height: 40px !important
+    bottom: 0 !important
+    background-color: $mainblue
 
 #gallery-top-blueprint
   .swiper-slide
