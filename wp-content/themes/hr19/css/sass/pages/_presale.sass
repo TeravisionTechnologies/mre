@@ -114,7 +114,6 @@ body
   font-size: 36px
   letter-spacing: -0.2px
   text-align: center
-  text-transform: uppercase
   color: $white
 
 .prop-header h2
@@ -436,3 +435,8 @@ body
     .panel-body
       p
         margin-bottom: 20px
+
+.number
+  &:after
+    counter-increment: panel-counter
+    content: counter(panel-counter) " "

@@ -63,7 +63,8 @@
   src: url("fonts/Montserrat-ThinItalic.ttf") format("truetype"); }
 body {
   font-family: Montserrat-Regular, sans-serif;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  counter-reset: panel-counter; }
 
 .o-wrapper {
   overflow-x: hidden; }
@@ -2490,7 +2491,6 @@ body {
   font-size: 36px;
   letter-spacing: -0.2px;
   text-align: center;
-  text-transform: uppercase;
   color: #fff; }
 
 .prop-header h2 {
@@ -2794,6 +2794,10 @@ body {
 
 .presale-features .panel .panel-body p {
   margin-bottom: 20px; }
+
+.number:after {
+  counter-increment: panel-counter;
+  content: counter(panel-counter) " "; }
 
 @media only screen and (min-width: 1440px) {
   .container-hr {
