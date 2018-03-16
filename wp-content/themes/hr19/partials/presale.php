@@ -148,7 +148,7 @@ $placeholder      = get_template_directory_uri() . '/assets/no-photo.jpg';
 											<?php echo( $lang == "es_ES" ? 'Comodidades' : 'Amenities' ) ?>
                                         </a>
                                         <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
-                                           href="#collapse2" aria-expanded="true"></i>
+                                           href="#collapse3" aria-expanded="true"></i>
                                     </h4>
                                 </div>
                                 <div id="collapse3" class="panel-collapse collapse in">
@@ -212,7 +212,7 @@ $placeholder      = get_template_directory_uri() . '/assets/no-photo.jpg';
                                                     class="number"></span><?php echo( $lang == "es_ES" ? 'Planos' : 'Floorplans' ) ?>
                                         </a>
                                         <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
-                                           href="#collapse1" aria-expanded="true"></i>
+                                           href="#collapse4" aria-expanded="true"></i>
                                     </h4>
                                 </div>
                                 <div id="collapse4" class="panel-collapse collapse in">
@@ -288,7 +288,7 @@ $placeholder      = get_template_directory_uri() . '/assets/no-photo.jpg';
                                                 class="number"></span><?php echo( $lang == "es_ES" ? 'Memoria de Calidad' : 'Memories' ) ?>
                                     </a>
                                     <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
-                                       href="#collapse1" aria-expanded="true"></i>
+                                       href="#collapse5" aria-expanded="true"></i>
                                 </h4>
                             </div>
                             <div id="collapse5" class="panel-collapse collapse in">
@@ -325,7 +325,7 @@ $placeholder      = get_template_directory_uri() . '/assets/no-photo.jpg';
 											<?php echo( $lang == "es_ES" ? 'Ubicación de la propiedad' : 'Property location' ) ?>
                                         </a>
                                         <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
-                                           href="#collapse3" aria-expanded="true"></i>
+                                           href="#collapse6" aria-expanded="true"></i>
                                     </h4>
                                 </div>
                                 <div id="collapse6" class="panel-collapse collapse in">
@@ -356,15 +356,15 @@ $placeholder      = get_template_directory_uri() . '/assets/no-photo.jpg';
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" href="#collapse6"><span
+                                            <a data-toggle="collapse" href="#collapse7"><span
                                                         class="number"></span>
 												<?php echo( $lang == "es_ES" ? 'Lugares cercanos' : 'Nearby Attractions' ) ?>
                                             </a>
                                             <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
-                                               href="#collapse3" aria-expanded="true"></i>
+                                               href="#collapse7" aria-expanded="true"></i>
                                         </h4>
                                     </div>
-                                    <div id="collapse6" class="panel-collapse collapse in">
+                                    <div id="collapse7" class="panel-collapse collapse in">
                                         <div class="panel-body">
 											<?php if ( $terms != null ) { ?>
                                                 <div class="row gallery-places">
