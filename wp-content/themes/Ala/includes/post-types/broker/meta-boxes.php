@@ -249,4 +249,22 @@ function broker_metaboxes( ) {
 		)
 	);
 
+	$cmb->add_field( array(
+		'name'       => 'Property Video',
+		'desc'       => 'Enter a Youtube or Vimeo video URL',
+		'id'         => $prefix . 'video_embed',
+		'type'       => 'oembed',
+		'repeatable' => true
+	) );
+
+	$cmb->add_field(
+		array(
+			'name'       => __( 'Videos button text' ),
+			'id'         => $prefix . 'video_es_id',
+			'type'       => 'text',
+			'repeatable' => false,
+			'desc'       => 'Example:  Ver videos / Watch videos'
+		)
+	);
+
 }
