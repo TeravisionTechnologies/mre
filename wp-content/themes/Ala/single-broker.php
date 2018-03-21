@@ -2,7 +2,6 @@
 get_header();
 the_post();
 $lang             = get_locale();
-
 $intdetails       = get_post_meta( get_the_ID(), '_br_intdetails', true );
 $intdet           = explode( '<!--more-->', $intdetails );
 $intimages        = get_post_meta( get_the_ID(), '_br_intimages', true );
@@ -17,21 +16,28 @@ $lng              = get_post_meta( get_the_ID(), '_br_lng', true );
 $lat              = get_post_meta( get_the_ID(), '_br_lat', true );
 $brochure         = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_brochure_id', true ) );
 $bbtn_es          = get_post_meta( get_the_ID(), '_br_brochure_es_id', true );
-$pzip    = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_pzip_id', true ) );
-$pbtn_es = get_post_meta( get_the_ID(), '_br_pbtn_es_id', true );
-$terms     = get_the_terms( get_the_ID(), 'nearby_places' );
-$memofiles = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_memofiles_id', true ) );
-$mbtn_es   = get_post_meta( get_the_ID(), '_br_mbtn_es_id', true );
-$placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
+$pzip             = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_pzip_id', true ) );
+$pbtn_es          = get_post_meta( get_the_ID(), '_br_pbtn_es_id', true );
+$terms            = get_the_terms( get_the_ID(), 'nearby_places' );
+$memofiles        = wp_get_attachment_url( get_post_meta( get_the_ID(), '_br_memofiles_id', true ) );
+$mbtn_es          = get_post_meta( get_the_ID(), '_br_mbtn_es_id', true );
+$placeholder      = get_template_directory_uri() . '/assets/no-photo.jpg';
+$video_text       = get_post_meta( get_the_ID(), '_br_video_es_id', true );
+$video            = get_post_meta( get_the_ID(), '_br_video_embed', true );
 ?>
 
     <section class="prop-header text-center"
              style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.5) 100%), url(<?php echo( ! empty( $background_image ) ? $background_image : $placeholder ) ?>)">
         <h1><?php the_title(); ?></h1>
 		<?php if ( ! empty( $location ) ) { ?><h2><?php echo $location; ?></h2><?php } ?>
-		<?php if ( ! empty( $brochure ) ) { ?>
-            <a class="download-bro" href="<?php echo $brochure; ?>" download><?php echo $bbtn_es ?></a>
-		<?php } ?>
+        <div class="hero-buttons">
+			<?php if ( ! empty( $brochure ) ) { ?>
+                <a class="download-bro" href="<?php echo $brochure; ?>" download><?php echo $bbtn_es ?></a>
+			<?php } ?>
+			<?php if ( ! empty( $video ) ) { ?>
+                <a class="download-bro" href="#" data-toggle="modal" data-target="#watchVideo"><?php echo $video_text ?></a>
+			<?php } ?>
+        </div>
     </section>
 
     <section id="property-content">
@@ -322,4 +328,5 @@ $placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
 
     </section>
 
-<?php get_footer();
+<?php get_template_part('partials/modal-video');
+get_footer();

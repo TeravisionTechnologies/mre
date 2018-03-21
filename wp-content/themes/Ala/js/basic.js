@@ -159,6 +159,10 @@ jQuery(document).ready(function () {
     galleryThumbs.params.control = galleryTop;
 
 
+    //video Carousel
+    $("ul.demo2").ytplaylist({addThumbs:true, autoPlay: false, holderId: 'ytvideo2'});
+
+
     $(function () {
         $('.locations').on('click', '.the-country', function (e) {
             e.preventDefault();

@@ -27,34 +27,46 @@ body
 .memory-items
   img
     margin: 40px 0
-
-a.download-bro
-  width: 250px
-  height: auto
-  max-height: 108px
-  overflow: hidden
-  border: solid 2px $white
-  font-size: 18px
-  font-weight: bold
-  line-height: 1.11
-  text-align: center
-  color: $white
+.hero-buttons
   position: absolute
   left: 0
   right: 0
   margin: auto
-  //top: 180px
-  padding: 14px 5px
-  bottom: 150px
-  transition: all ease .3s
-  -moz-transition: all ease .3s
-  -ms-transition: all ease .3s
-  -o-transition: all ease .3s
-  -webkit-transition: all ease .3s
-  &:hover
-    text-decoration: none !important
-    color: white !important
-    background-color: rgba(240, 240, 240, 0.2)
+  bottom: 170px
+  width: 600px
+  a.download-bro
+    height: auto
+    max-height: 108px
+    overflow: hidden
+    border: solid 2px $white
+    font-size: 18px
+    font-weight: bold
+    line-height: 1.11
+    text-align: center
+    color: $white
+    padding: 14px 5px
+    transition: all ease .3s
+    -moz-transition: all ease .3s
+    -ms-transition: all ease .3s
+    -o-transition: all ease .3s
+    -webkit-transition: all ease .3s
+    display: inline-block
+    min-width: 243px
+    outline: none
+    &:first-child
+      margin-right: 20px
+    &:hover
+      text-decoration: none !important
+      color: white !important
+      background-color: rgba(240, 240, 240, 0.2)
+    &:focus
+      text-decoration: none !important
+      color: white !important
+      background-color: rgba(240, 240, 240, 0.2)
+    &:active
+      text-decoration: none !important
+      color: white !important
+      background-color: rgba(240, 240, 240, 0.2)
 
 #property-content
   ul, ol
@@ -87,7 +99,7 @@ a.download-bro
   float: left
 
 .prop-header
-  margin-top: 76px
+  margin-top: get-vw-desktop(80px)
   height: 600px
   position: relative
   margin-bottom: 40px
@@ -410,3 +422,64 @@ a.download-bro
   bottom: 0
   position: absolute
   margin: auto
+
+.modal-content-video
+  background-color: transparent
+  box-shadow: none
+  .modal-header
+    border: none
+  .close
+    opacity: 1
+    position: absolute
+    right: -60px
+    top: 50px
+    color: $white-3
+    transition: all ease .3s
+    -moz-transition: all ease .3s
+    -ms-transition: all ease .3s
+    -o-transition: all ease .3s
+    -webkit-transition: all ease .3s
+    .fa
+      font-size: 30px
+      text-shadow: none
+    &:hover
+      color: $white
+
+#ytvideo,
+#ytvideo2
+  float: left
+  margin-right: 10px
+  width: 720px
+  object
+    width: 100%
+    height: 400px
+    embed
+      width: 100%
+      height: 400px
+
+.yt_holder
+  float: left
+  margin-bottom: 15px
+  width: 100%
+
+#watchVideo
+  ul
+    float: left
+    margin: 0
+    padding: 0
+    width: 124px
+    margin-left: 12px
+    li
+      list-style-type: none
+      display: block
+      float: left
+      width: auto
+      margin-bottom: 5px
+      padding: 2px
+      a
+        text-decoration: none
+        display: block
+        color: $black
+      img
+        width: 120px
+        float: left
