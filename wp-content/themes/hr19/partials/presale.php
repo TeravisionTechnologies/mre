@@ -20,6 +20,8 @@ $terms            = get_the_terms( get_the_ID(), 'nearby_places' );
 $memofiles        = wp_get_attachment_url( get_post_meta( get_the_ID(), '_pr_memofiles_id', true ) );
 $mbtn_es          = get_post_meta( get_the_ID(), '_pr_mbtn_es_id', true );
 $placeholder      = get_template_directory_uri() . '/assets/no-photo.jpg';
+$video_text       = get_post_meta( get_the_ID(), '_pr_video_es_id', true );
+$video            = get_post_meta( get_the_ID(), '_pr_video_embed', true );
 ?>
     <div class="breadcrumb-info">
         <div class="container">
@@ -48,7 +50,9 @@ $placeholder      = get_template_directory_uri() . '/assets/no-photo.jpg';
 			<?php if ( ! empty( $brochure ) ) { ?>
                 <a class="download-bro" href="<?php echo $brochure; ?>" download><?php echo $bbtn_es ?></a>
 			<?php } ?>
-            <a class="download-bro" href="#">Ver videos</a>
+	        <?php if ( ! empty( $video ) ) { ?>
+                <a class="download-bro" href="#" data-toggle="modal" data-target="#watchVideo"><?php echo $video_text ?></a>
+	        <?php } ?>
         </div>
     </section>
 
@@ -544,3 +548,5 @@ if ( have_posts() ): ?>
 <?php else: ?>
     <div class="margint50"></div>
 <?php endif; ?>
+
+<?php get_template_part('partials/modal-video'); ?>

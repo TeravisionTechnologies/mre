@@ -1,9 +1,9 @@
 <?php
 get_header();
 global $wpdb;
-$transaccion = 'Lease';
-$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-$country = get_query_var( 'country_page' );
+$transaccion      = 'Lease';
+$paged            = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$country          = get_query_var( 'country_page' );
 $obj              = new stdClass();
 $obj->transaction = 'Lease';
 $obj->paged       = $paged;
@@ -12,15 +12,15 @@ if ( get_query_var( 'country_page' ) ) {
 } else {
 	$obj->country = 'usa';
 }
-$query = query_country( $obj );
-$lang = get_locale();
-$url  = wp_upload_dir();
+$query      = query_country( $obj );
+$lang       = get_locale();
+$url        = wp_upload_dir();
 $home_query = get_posts(
 	array(
 		'post_type' => 'header_footer'
 	)
 );
-$hero = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
+$hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
 if ( function_exists( 'pll_current_language' ) ) {
 	$current_language = pll_current_language();
 	$default_language = pll_default_language();
@@ -83,9 +83,17 @@ if ( function_exists( 'pll_current_language' ) ) {
                 <h2 class="hr19-heading">
                     <span><?php echo( $lang == "es_ES" ? 'Propiedades HR19' : 'HR19 Properties' ) ?>
                         &nbsp;&nbsp;&nbsp;</span></h2>
+                <div class="pull-right margint7">
+                    <select>
+                        <option>Pais</option>
+                    </select>
+                    <select>
+                        <option>Ciudad</option>
+                    </select>
+                </div>
             </div>
         </div>
-        <div class="row">
+        <!--<div class="row">
             <div class="col-md-12 text-center">
                 <form id="property_lenguage"
                       action="<?php echo home_url() . ( $lang == "es_ES" ? '/alquileres' : '/rent' ); ?>"
@@ -114,16 +122,16 @@ if ( function_exists( 'pll_current_language' ) ) {
                     <input id="country" type="hidden" name="country_page" value="<?php echo $country; ?>">
                 </form>
             </div>
-        </div>
+        </div>-->
         <div class="row">
             <div class="col-md-12 text-right updated-info">
-                <?php
-                $horas = "00:00:00";
-                if( $lang == "es_ES" ){
-                    echo '<p>Listado actualizado hace <strong>'. $horas .'</strong> horas</p>';
-                } else{
-                    echo '<p>Listing updated '. $horas .' hours ago</p>';
-                } ?>
+				<?php
+				$horas = "00:00:00";
+				if ( $lang == "es_ES" ) {
+					echo '<p><span>Listado actualizado hace <strong>' . $horas . ' horas</strong></span></p>';
+				} else {
+					echo '<p>Listing updated ' . $horas . ' hours ago</p>';
+				} ?>
             </div>
         </div>
         <div id="presponse" class="row">

@@ -6,6 +6,9 @@ jQuery(document).ready(function ($) {
         window.location.href = $('#sl-lgg').val();
     });
 
+    //video Carousel
+    $("ul.demo2").ytplaylist({addThumbs: true, autoPlay: false, holderId: 'ytvideo2'});
+
     // Swiper Property
     var swiper = new Swiper('.swiper-property', {
         nextButton: '.swiper-button-next',

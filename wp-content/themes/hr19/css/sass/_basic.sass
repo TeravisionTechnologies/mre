@@ -576,11 +576,12 @@ body.has-active-menu
     margin-bottom: 40px
     position: relative
     background-color: $white
-    span
+    float: left
+    /*span
       background-color: $white
       position: relative
-      z-index: 10
-    &:after
+      z-index: 10*/
+    /*&:after
       content: ""
       position: absolute
       bottom: 0
@@ -589,7 +590,7 @@ body.has-active-menu
       border-top: 2px solid rgba(143, 143, 143, 0.4)
       top: 0
       margin: auto
-      width: 100%
+      width: 100%*/
   .hr-heading
     font-size: 16px
     font-weight: bold
@@ -1668,7 +1669,27 @@ input:checked + .slider:before
     font-size: get-vw-desktop(13px)
     color: $grey
     letter-spacing: get-vw-desktop(-0.1px)
-    margin-bottom: get-vw-desktop(15px)
+    margin-bottom: get-vw-desktop(30px)
+    position: relative
+    background-color: $white
+    height: 30px
+    span
+      position: relative
+      background-color: $white
+      float: right
+      z-index: 10
+      padding-top: 5px
+      padding-left: 10px
+    &:before
+      content: ""
+      position: absolute
+      bottom: 0
+      right: 0
+      height: 2px
+      border-top: 2px solid rgba(143, 143, 143, 0.4)
+      top: 0
+      margin: auto
+      width: 100%
 
 .search
   .updated-info
@@ -1707,3 +1728,10 @@ input:checked + .slider:before
     margin: get-vw-desktop(10px) get-vw-desktop(22px)
     span
       font-family: Montserrat-Medium
+
+.margint7
+  margin-top: 7px
+  select
+    width: 216px
+    &:first-child
+      margin-right: 20px

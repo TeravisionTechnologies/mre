@@ -83,12 +83,19 @@ if ( function_exists( 'pll_current_language' ) ) {
     <div id="buy-list" class="container property-list">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="hr19-heading">
-                    <span><?php echo( $lang == "es_ES" ? 'Propiedades HR19' : 'HR19 Properties' ) ?>
+                <h2 class="hr19-heading"><span><?php echo( $lang == "es_ES" ? 'Propiedades HR19' : 'HR19 Properties' ) ?>
                         &nbsp;&nbsp;&nbsp;</span></h2>
+                <div class="pull-right margint7">
+                    <select>
+                        <option>Pais</option>
+                    </select>
+                    <select>
+                        <option>Ciudad</option>
+                    </select>
+                </div>
             </div>
         </div>
-        <div class="row">
+        <!--<div class="row">
             <div class="col-md-12 text-center">
                 <form id="property_lenguage" action="<?php echo home_url( $lang == "es_ES" ? '/compra' : '/buy' ); ?>"
                       method="get" role="form" data-toggle="validator" data-disable="false">
@@ -116,13 +123,13 @@ if ( function_exists( 'pll_current_language' ) ) {
                     <input id="country" type="hidden" name="country_page" value="<?php echo $country; ?>">
                 </form>
             </div>
-        </div>
+        </div>-->
         <div class="row">
             <div class="col-md-12 text-right updated-info">
 				<?php
 				$horas = "00:00:00";
 				if ( $lang == "es_ES" ) {
-					echo '<p>Listado actualizado hace <strong>' . $horas . '</strong> horas</p>';
+					echo '<p><span>Listado actualizado hace <strong>' . $horas . ' horas</strong></span></p>';
 				} else {
 					echo '<p>Listing updated ' . $horas . ' hours ago</p>';
 				} ?>

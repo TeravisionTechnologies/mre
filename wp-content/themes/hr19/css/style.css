@@ -610,21 +610,22 @@ body.has-active-menu {
     letter-spacing: -0.1px;
     margin-bottom: 40px;
     position: relative;
-    background-color: #fff; }
-    .property-list .hr19-heading span {
-      background-color: #fff;
-      position: relative;
-      z-index: 10; }
-    .property-list .hr19-heading:after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      height: 2px;
-      border-top: 2px solid rgba(143, 143, 143, 0.4);
-      top: 0;
-      margin: auto;
-      width: 100%; }
+    background-color: #fff;
+    float: left;
+    /*span
+     * background-color: $white
+     * position: relative
+     * z-index: 10 */
+    /*&:after
+     * content: ""
+     * position: absolute
+     * bottom: 0
+     * right: 0
+     * height: 2px
+     * border-top: 2px solid rgba(143, 143, 143, 0.4)
+     * top: 0
+     * margin: auto
+     * width: 100% */ }
   .property-list .hr-heading {
     font-size: 16px;
     font-weight: bold;
@@ -1670,7 +1671,27 @@ input:checked + .slider:before {
   font-size: 0.9027777778vw;
   color: #4a4a4a;
   letter-spacing: -0.0069444444vw;
-  margin-bottom: 1.0416666667vw; }
+  margin-bottom: 2.0833333333vw;
+  position: relative;
+  background-color: #fff;
+  height: 30px; }
+  .updated-info p span {
+    position: relative;
+    background-color: #fff;
+    float: right;
+    z-index: 10;
+    padding-top: 5px;
+    padding-left: 10px; }
+  .updated-info p:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2px;
+    border-top: 2px solid rgba(143, 143, 143, 0.4);
+    top: 0;
+    margin: auto;
+    width: 100%; }
 
 .search .updated-info {
   margin: 20px 0 15px 0; }
@@ -1708,6 +1729,13 @@ input:checked + .slider:before {
     margin: 0.6944444444vw 1.5277777778vw; }
     .by-broker p span {
       font-family: Montserrat-Medium; }
+
+.margint7 {
+  margin-top: 7px; }
+  .margint7 select {
+    width: 216px; }
+    .margint7 select:first-child {
+      margin-right: 20px; }
 
 .agent-hero {
   margin-top: 5.5555555556vw;
@@ -2798,6 +2826,68 @@ body {
 .number:after {
   counter-increment: panel-counter;
   content: counter(panel-counter) " "; }
+
+#ytvideo,
+#ytvideo2 {
+  float: left;
+  margin-right: 10px;
+  width: 720px; }
+  #ytvideo object,
+  #ytvideo2 object {
+    width: 100%;
+    height: 400px; }
+    #ytvideo object embed,
+    #ytvideo2 object embed {
+      width: 100%;
+      height: 400px; }
+
+.yt_holder {
+  float: left;
+  margin-bottom: 15px;
+  width: 100%; }
+
+#watchVideo ul {
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 124px;
+  margin-left: 12px; }
+  #watchVideo ul li {
+    list-style-type: none;
+    display: block;
+    float: left;
+    width: auto;
+    margin-bottom: 5px;
+    padding: 2px; }
+    #watchVideo ul li a {
+      text-decoration: none;
+      display: block;
+      color: #000; }
+    #watchVideo ul li img {
+      width: 120px;
+      float: left; }
+
+.modal-content-video {
+  background-color: transparent;
+  box-shadow: none; }
+  .modal-content-video .modal-header {
+    border: none; }
+  .modal-content-video .close {
+    opacity: 1;
+    position: absolute;
+    right: -60px;
+    top: 50px;
+    color: #fff;
+    transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s; }
+    .modal-content-video .close .fa {
+      font-size: 30px;
+      text-shadow: none; }
+    .modal-content-video .close:hover {
+      color: #fff; }
 
 @media only screen and (min-width: 1440px) {
   .container-hr {
@@ -4167,6 +4257,20 @@ body {
     font-size: 1.171875vw;
     line-height: 1.8229166667vw; }
 
+  #ytvideo,
+  #ytvideo2 {
+    width: 100%;
+    margin-right: 0; }
+
+  #watchVideo ul {
+    margin: 0;
+    width: 100%; }
+    #watchVideo ul li {
+      width: 33%; }
+      #watchVideo ul li a img {
+        width: 100%;
+        padding: 0 15px; }
+
   #about-hero-section {
     height: 52.0833333333vw;
     margin-top: 10.4166666667vw; }
@@ -5248,6 +5352,30 @@ body {
       .hero-buttons a.download-bro:first-child {
         margin-bottom: 15px;
         margin-right: 0; }
+
+  #ytvideo,
+  #ytvideo2 {
+    width: 100%;
+    margin-right: 0; }
+    #ytvideo object,
+    #ytvideo2 object {
+      height: 200px; }
+      #ytvideo object embed,
+      #ytvideo2 object embed {
+        height: 200px; }
+
+  #watchVideo ul {
+    margin: 0;
+    width: 100%; }
+    #watchVideo ul li {
+      width: 33%; }
+      #watchVideo ul li a img {
+        width: 100%;
+        padding: 0 5px; }
+
+  .modal-content-video .close {
+    right: 0;
+    top: 8px; }
 
   #about-hero-section {
     height: 111.1111111111vw;
