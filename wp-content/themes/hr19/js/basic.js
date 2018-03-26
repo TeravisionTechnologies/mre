@@ -292,6 +292,24 @@ jQuery(document).ready(function ($) {
         $(this).closest('form').submit();
     });
 
+    $(function() {
+        $("#country-select").change(function(){
+            var element = $(this).find('option:selected');
+            var country = element.attr("data-value");
+            $("#country").val(country);
+            $(this).closest('form').submit();
+        });
+    });
+
+    $(function() {
+        $("#city-select").change(function(){
+            var element = $(this).find('option:selected');
+            var city = element.attr("data-value");
+            $("#city").val(city);
+            $(this).closest('form').submit();
+        });
+    });
+
     // Set input hidden values by selected option clicked
     $("#baths-dd li a").click(function () {
         var selbath = $(this).attr('data-value');

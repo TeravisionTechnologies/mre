@@ -7,13 +7,15 @@ get_header();
 $transaccion = 'Presale';
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $country = get_query_var( 'country_page' );
+$city             = get_query_var( 'city_page' );
 $obj              = new stdClass();
 $obj->transaction = 'Presale';
 $obj->paged       = $paged;
 if ( get_query_var( 'country_page' ) ) {
 	$obj->country = $country;
-} else {
-	$obj->country = 'usa';
+}
+if ( get_query_var( 'city_page' ) ) {
+	$obj->city = $city;
 }
 $query = query_country( $obj );
 $lang       = get_locale();
@@ -23,7 +25,36 @@ $home_query = get_posts(
 		'post_type' => 'header_footer'
 	)
 );
-$hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
+$usaadded   = array();
+$usacities  = new WP_Query( array(
+	'post_type'      => 'property',
+	'posts_per_page' => - 1,
+	'meta_query'     => array(
+		'relation' => 'AND',
+		array(
+			'key'     => '_pr_transaction',
+			'value'   => 'Presale',
+			'compare' => '=',
+		),
+		array(
+			'key'     => '_pr_owner',
+			'value'   => 'HR19',
+			'compare' => '=',
+		),
+		array(
+			'key'     => '_pr_country',
+			'value'   => $country,
+			'compare' => '=',
+		),
+		array(
+			'key'     => '_pr_city',
+			'value'   => array( '' ),
+			'compare' => 'NOT IN'
+		)
+	)
+) );
+wp_reset_query();
+wp_reset_postdata();
 $hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
 if ( function_exists( 'pll_current_language' ) ) {
 	$current_language = pll_current_language();
@@ -84,15 +115,43 @@ if ( function_exists( 'pll_current_language' ) ) {
 <div id="presale-list" class="container property-list">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="hr19-heading"><span><?php echo( $lang == "es_ES" ? 'Propiedades HR19' : 'HR19 Properties' ) ?>
-                    &nbsp;&nbsp;&nbsp;</span></h2>
+            <h2 class="hr19-heading">
+                    <span><?php echo( $lang == "es_ES" ? 'Propiedades HR19' : 'HR19 Properties' ) ?>
+                        &nbsp;&nbsp;&nbsp;</span></h2>
             <div class="pull-right margint7">
-                <select>
-                    <option>Pais</option>
-                </select>
-                <select>
-                    <option>Ciudad</option>
-                </select>
+                <form id="property_lenguage"
+                      action="<?php home_url( $lang == "es_ES" ? '/preventa' : '/presale' ); ?>"
+                      method="get" role="form" data-toggle="validator" data-disable="false">
+                    <select id="country-select">
+                        <option><?php echo( $lang == "es_ES" ? 'Pa&iacute;s' : 'Country' ) ?></option>
+                        <option value="usa"
+                                data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></option>
+                        <option value="spain"
+                                data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></option>
+                    </select>
+                    <input id="country" type="hidden" name="country_page" value="<?php echo $country; ?>">
+                </form>
+                <form id="property_lenguage"
+                      action="<?php home_url( $lang == "es_ES" ? '/preventa' : '/presale' ); ?>"
+                      method="get" role="form" data-toggle="validator" data-disable="false">
+                    <select id="city-select" <?php echo( !empty($country) ? '' : 'disabled' ) ?> >
+                        <option><?php echo( $lang == "es_ES" ? 'Ciudad' : 'City' ) ?></option>
+						<?php if ( $usacities->have_posts() ): while ( $usacities->have_posts() ) : $usacities->the_post();
+							$city = get_post_meta( get_the_ID(), '_pr_city', true );
+							if ( in_array( $city, $usaadded ) ) {
+								continue;
+							}
+							$usaadded[] = $city
+							?>
+                            <option value="<?php echo $city ?>"
+                                    data-value="<?php echo $city ?>"><?php echo $city ?></option>
+						<?php endwhile; ?>
+						<?php endif;
+						wp_reset_postdata(); wp_reset_query();?>
+                    </select>
+                    <input id="country" type="hidden" name="country_page" value="<?php echo $country; ?>">
+                    <input id="city" type="hidden" name="city_page" value="<?php echo $city; ?>">
+                </form>
             </div>
         </div>
     </div>
@@ -132,7 +191,7 @@ if ( function_exists( 'pll_current_language' ) ) {
 		    if ( $lang == "es_ES" ) {
 			    echo '<p><span>Listado actualizado hace <strong>' . $horas . ' horas</strong></span></p>';
 		    } else {
-			    echo '<p>Listing updated ' . $horas . ' hours ago</p>';
+			    echo '<p><span>Listing updated ' . $horas . ' hours ago</strong></span></p>';
 		    } ?>
         </div>
     </div>

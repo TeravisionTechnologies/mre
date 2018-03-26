@@ -4,13 +4,15 @@ global $wpdb;
 $transaccion      = 'Lease';
 $paged            = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $country          = get_query_var( 'country_page' );
+$city             = get_query_var( 'city_page' );
 $obj              = new stdClass();
 $obj->transaction = 'Lease';
 $obj->paged       = $paged;
 if ( get_query_var( 'country_page' ) ) {
 	$obj->country = $country;
-} else {
-	$obj->country = 'usa';
+}
+if ( get_query_var( 'city_page' ) ) {
+	$obj->city = $city;
 }
 $query      = query_country( $obj );
 $lang       = get_locale();
@@ -84,45 +86,41 @@ if ( function_exists( 'pll_current_language' ) ) {
                     <span><?php echo( $lang == "es_ES" ? 'Propiedades HR19' : 'HR19 Properties' ) ?>
                         &nbsp;&nbsp;&nbsp;</span></h2>
                 <div class="pull-right margint7">
-                    <select>
-                        <option>Pais</option>
-                    </select>
-                    <select>
-                        <option>Ciudad</option>
-                    </select>
+                    <form id="property_lenguage"
+                          action="<?php echo home_url() . ( $lang == "es_ES" ? '/alquileres' : '/rent' ); ?>"
+                          method="get" role="form" data-toggle="validator" data-disable="false">
+                        <select id="country-select">
+                            <option><?php echo( $lang == "es_ES" ? 'Pa&iacute;s' : 'Country' ) ?></option>
+                            <option value="usa"
+                                    data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></option>
+                            <option value="spain"
+                                    data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></option>
+                        </select>
+                        <input id="country" type="hidden" name="country_page" value="<?php echo $country; ?>">
+                    </form>
+                    <!--<form id="property_lenguage"
+                          action="<?php //echo home_url() . ( $lang == "es_ES" ? '/alquileres' : '/rent' ); ?>"
+                          method="get" role="form" data-toggle="validator" data-disable="false">-->
+                        <select id="city-select" disabled>
+                            <option><?php echo( $lang == "es_ES" ? 'Ciudad' : 'City' ) ?></option>
+							<?php /*if ( $usacities->have_posts() ): while ( $usacities->have_posts() ) : $usacities->the_post();
+								$city = get_post_meta( get_the_ID(), '_pr_city', true );
+								if( in_array($city, $usaadded) ) {
+									continue;
+								}
+								$usaadded[] = $city
+								?>
+                                <option value="<?php echo $city ?>"
+                                        data-value="<?php echo $city ?>"><?php echo $city ?></option>
+							<?php endwhile; ?>
+							<?php endif;
+							wp_reset_postdata(); */?>
+                        </select>
+                        <!--<input id="city" type="hidden" name="city_page" value="<?php //echo $city; ?>">-->
+                    </form>
                 </div>
             </div>
         </div>
-        <!--<div class="row">
-            <div class="col-md-12 text-center">
-                <form id="property_lenguage"
-                      action="<?php echo home_url() . ( $lang == "es_ES" ? '/alquileres' : '/rent' ); ?>"
-                      method="get" role="form" data-toggle="validator" data-disable="false">
-                    <ul class="country-selector">
-						<?php if ( $country == 'spain' ) : ?>
-                            <li><a href="#" id="usa"
-                                   data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
-                            <li class="divider"></li>
-                            <li><a href="#" id="spain" class="active"
-                                   data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
-						<?php elseif ( $country == 'usa' ) : ?>
-                            <li><a href="#" id="usa" class="active"
-                                   data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
-                            <li class="divider"></li>
-                            <li><a href="#" id="spain"
-                                   data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
-						<?php else: ?>
-                            <li><a href="" id="usa" class="active"
-                                   data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></a></li>
-                            <li class="divider"></li>
-                            <li><a href="" id="spain"
-                                   data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></a></li>
-						<?php endif; ?>
-                    </ul>
-                    <input id="country" type="hidden" name="country_page" value="<?php echo $country; ?>">
-                </form>
-            </div>
-        </div>-->
         <div class="row">
             <div class="col-md-12 text-right updated-info">
 				<?php
@@ -130,7 +128,7 @@ if ( function_exists( 'pll_current_language' ) ) {
 				if ( $lang == "es_ES" ) {
 					echo '<p><span>Listado actualizado hace <strong>' . $horas . ' horas</strong></span></p>';
 				} else {
-					echo '<p>Listing updated ' . $horas . ' hours ago</p>';
+					echo '<p><span>Listing updated ' . $horas . ' hours ago</strong></span></p>';
 				} ?>
             </div>
         </div>

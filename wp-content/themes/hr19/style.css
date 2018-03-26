@@ -1732,6 +1732,8 @@ input:checked + .slider:before {
 
 .margint7 {
   margin-top: 7px; }
+  .margint7 form {
+    display: inline-block; }
   .margint7 select {
     width: 216px; }
     .margint7 select:first-child {
