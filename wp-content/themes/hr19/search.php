@@ -119,7 +119,7 @@ $total                = new WP_Query( array(
 		'meta_query'     => $args
 	)
 );
-$count = $total->post_count;
+$count                = $total->post_count;
 wp_reset_postdata();
 wp_reset_query();
 ?>
@@ -202,7 +202,7 @@ wp_reset_query();
                                     </li>
                                 </ul>
 							<?php } ?>
-	                        <?php if ( $propstatus == "" ) { ?>
+							<?php if ( $propstatus == "" ) { ?>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                    aria-haspopup="true"
                                    aria-expanded="false"><?php echo( $lang == "es_ES" ? 'Todas' : 'All' ) ?>
@@ -218,7 +218,7 @@ wp_reset_query();
                                            data-value="Presale"><?php echo( $lang == "es_ES" ? 'Preventa' : 'Presale' ) ?></a>
                                     </li>
                                 </ul>
-	                        <?php } ?>
+							<?php } ?>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -246,11 +246,13 @@ wp_reset_query();
                                         </label>
                                     </div>
                                     <div class="checkbox">
-                                        <label><input type="checkbox" value="Farm" <?php echo ( in_array( 'Farm', $propTypeArray ) ) ? 'checked' : ''; ?>
+                                        <label><input type="checkbox"
+                                                      value="Farm" <?php echo ( in_array( 'Farm', $propTypeArray ) ) ? 'checked' : ''; ?>
                                                       class=""><?php _e( 'Granjas/Ranchos', 'hr' ) ?></label>
                                     </div>
                                     <div class="checkbox">
-                                        <label><input type="checkbox" value="Land" <?php echo ( in_array( 'Land', $propTypeArray ) ) ? 'checked' : ''; ?>
+                                        <label><input type="checkbox"
+                                                      value="Land" <?php echo ( in_array( 'Land', $propTypeArray ) ) ? 'checked' : ''; ?>
                                                       class=""><?php _e( 'Terreno', 'hr' ) ?>
                                         </label>
                                     </div>
@@ -337,7 +339,8 @@ wp_reset_query();
                                 <li><a role="button"
                                        data-value=""><?php echo( $lang == "es_ES" ? 'Cualquiera' : 'Any' ) ?></a></li>
                                 <li><a role="button"
-                                       data-value="studio"><?php echo( $lang == "es_ES" ? 'Estudio' : 'Studio' ) ?></a></li>
+                                       data-value="studio"><?php echo( $lang == "es_ES" ? 'Estudio' : 'Studio' ) ?></a>
+                                </li>
                                 <li><a role="button"
                                        data-value="1">1+ <?php echo( $lang == "es_ES" ? 'habs.' : 'rooms' ) ?></a></li>
                                 <li><a role="button"
@@ -447,16 +450,28 @@ wp_reset_query();
                                     value="3"><?php echo( $lang == "es_ES" ? 'Precio más alto' : 'Highest price' ) ?></option>
                         </select>
                         <div class="pull-right choose-search">
-                            <div class="radio radio-inline radio-success">
-                                <input type="radio" id="showowner1" value="HR19" name="showowner"
-                                       class="styled" <?php echo ( $showowner ) ? 'checked' : ''; ?>>
-                                <label for="inlineRadio1"><?php echo( $lang == "es_ES" ? 'Solo HR19' : 'Only HR19' ) ?></label>
-                            </div>
-                            <div class="radio radio-inline radio-success">
-                                <input type="radio" id="showowner2" value="" name="showowner" class="styled"
-									<?php echo ( ! $showowner ) ? 'checked' : ''; ?>>
-                                <label for="inlineRadio2"><?php echo( $lang == "es_ES" ? 'Todos' : 'All' ) ?></label>
-                            </div>
+							<?php if ( $propstatus == "Presale" ) { ?>
+                                <div class="radio radio-inline radio-success">
+                                    <input type="radio" id="showowner1" value="HR19" name="showowner"
+                                           class="styled" checked disabled>
+                                    <label for="inlineRadio1"><?php echo( $lang == "es_ES" ? 'Solo HR19' : 'Only HR19' ) ?></label>
+                                </div>
+                                <div class="radio radio-inline radio-success">
+                                    <input type="radio" id="showowner2" value="" name="showowner" class="styled" disabled>
+                                    <label for="inlineRadio2"><?php echo( $lang == "es_ES" ? 'Todos' : 'All' ) ?></label>
+                                </div>
+							<?php } else { ?>
+                                <div class="radio radio-inline radio-success">
+                                    <input type="radio" id="showowner1" value="HR19" name="showowner"
+                                           class="styled" <?php echo ( $showowner ) ? 'checked' : ''; ?>>
+                                    <label for="inlineRadio1"><?php echo( $lang == "es_ES" ? 'Solo HR19' : 'Only HR19' ) ?></label>
+                                </div>
+                                <div class="radio radio-inline radio-success">
+                                    <input type="radio" id="showowner2" value="" name="showowner" class="styled"
+										<?php echo ( ! $showowner ) ? 'checked' : ''; ?>>
+                                    <label for="inlineRadio2"><?php echo( $lang == "es_ES" ? 'Todos' : 'All' ) ?></label>
+                                </div>
+							<?php } ?>
                         </div>
                         <div class="pull-right switch-map">
                             <div>
@@ -469,13 +484,13 @@ wp_reset_query();
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 updated-info">
-	                    <?php
-	                    $horas = "00:00:00";
-	                    if( $lang == "es_ES" ){
-		                    echo '<p><span>Listado actualizado hace <strong>'. $horas .'</strong> horas</span></p>';
-	                    } else{
-		                    echo '<p><span>Listing updated '. $horas .' hours ago</span></p>';
-	                    } ?>
+						<?php
+						$horas = "00:00:00";
+						if ( $lang == "es_ES" ) {
+							echo '<p><span>Listado actualizado hace <strong>' . $horas . '</strong> horas</span></p>';
+						} else {
+							echo '<p><span>Listing updated ' . $horas . ' hours ago</span></p>';
+						} ?>
                     </div>
                 </div>
             </div>
@@ -560,10 +575,10 @@ wp_reset_query();
                     </div>
                     <div class="property-info">
                         <div class="property-price"><?php if ( ! empty( $price ) ) {
-		                        echo $csymbol . number_format( $price, 0, '.', ',' );
-	                        } else {
-		                        echo "--";
-	                        } ?>
+								echo $csymbol . number_format( $price, 0, '.', ',' );
+							} else {
+								echo "--";
+							} ?>
                         </div>
                         <div class="property-highlights">
 							<?php if ( ! empty( $type ) ) {
@@ -587,7 +602,7 @@ wp_reset_query();
 								echo $state;
 							} ?>
                         </div>
-                        <div class="property-code"><?php echo ( $transac == "Presale" ? "" : "MLS: " ) ?> <?php the_title(); ?></div>
+                        <div class="property-code"><?php echo( $transac == "Presale" ? "" : "MLS: " ) ?><?php the_title(); ?></div>
                     </div>
                 </a>
             </div>
@@ -606,7 +621,8 @@ wp_reset_query();
                 </div>
             </div>
 		<?php endif;
-		wp_reset_postdata(); wp_reset_query(); ?>
+		wp_reset_postdata();
+		wp_reset_query(); ?>
     </div>
     </div>
 
