@@ -274,7 +274,7 @@ $disclaimer      = get_post_meta( $footer_query[0]->ID, '_hf_disc', true );
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" href="#collapse1"
                                        class="aa"><span
-                                                class="number">1</span><?php echo( $lang == "es_ES" ? 'Descripción de la propiedad' : 'Property description' ) ?>
+                                                class="number"></span><?php echo( $lang == "es_ES" ? 'Descripción de la propiedad' : 'Property description' ) ?>
                                     </a>
                                     <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
                                        href="#collapse1" aria-expanded="true"></i>
@@ -290,7 +290,7 @@ $disclaimer      = get_post_meta( $footer_query[0]->ID, '_hf_disc', true );
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" href="#collapse2"><span
-                                                class="number">2</span>
+                                                class="number"></span>
 										<?php echo( $lang == "es_ES" ? 'Características de la propiedad' : 'Property features' ) ?>
                                     </a>
                                     <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
@@ -483,7 +483,7 @@ $disclaimer      = get_post_meta( $footer_query[0]->ID, '_hf_disc', true );
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" href="#collapse3"><span
-                                                class="number">3</span>
+                                                class="number"></span>
 										<?php echo( $lang == "es_ES" ? 'Ubicación de la propiedad' : 'Property location' ) ?>
                                     </a>
                                     <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
