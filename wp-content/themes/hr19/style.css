@@ -3985,7 +3985,7 @@ body {
   .updated-info p {
     font-size: 1.3020833333vw;
     letter-spacing: -0.0130208333vw;
-    margin-bottom: 1.953125vw; }
+    margin-bottom: 2.6041666667vw; }
 
   .search .updated-info {
     margin: 20px 0 15px 0; }
@@ -4014,6 +4014,18 @@ body {
     font-size: 1.171875vw; }
     .by-broker p {
       margin: 1.3020833333vw 2.8645833333vw; }
+
+  .property-code {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; }
+
+  .property-list .margint7 select {
+    font-size: 12px;
+    width: 142px; }
+  .property-list .margint7 form select {
+    font-size: 12px;
+    width: 142px; }
 
   .agent-hero {
     margin-top: 10.4166666667vw;
@@ -4822,6 +4834,8 @@ body {
       padding: 14px 14px 14px 20px; }
     .property-list .hr19-heading {
       font-size: 14px; }
+    .property-list .property-sorting .no-paddingl {
+      padding-left: 15px !important; }
     .property-list .property-sorting .state-search {
       font-size: 14px;
       text-align: center; }
@@ -4995,10 +5009,17 @@ body {
       margin: 0 4.1666666667vw; }
 
   .updated-info p {
-    font-size: 2.7777777778vw;
+    font-size: 11px;
     letter-spacing: -0.0277777778vw;
-    margin-bottom: 4.1666666667vw;
+    margin-bottom: 0;
+    margin-top: 15px;
     text-align: center !important; }
+    .updated-info p span {
+      float: unset;
+      padding-left: 0;
+      background-color: transparent; }
+    .updated-info p:before {
+      display: none; }
 
   .search .hr-heading {
     margin-top: 15px; }
@@ -5006,7 +5027,7 @@ body {
     margin: 20px 0 5px 0; }
     .search .updated-info p {
       position: relative;
-      font-size: 2.7777777778vw;
+      font-size: 11px;
       letter-spacing: -0.0277777778vw;
       margin: 0;
       text-align: center; }
@@ -5021,6 +5042,24 @@ body {
     font-size: 2.5vw; }
     .by-broker p {
       margin: 2.7777777778vw 4.1666666667vw; }
+
+  .margint7 {
+    float: unset !important;
+    text-align: center; }
+
+  .property-list .hr19-heading {
+    float: unset !important;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 20px; }
+  .property-list form {
+    display: block;
+    margin: 0 auto !important;
+    text-align: center; }
+    .property-list form select {
+      margin-bottom: 15px; }
+      .property-list form select:first-child {
+        margin-right: 0 !important; }
 
   .agent-hero {
     margin-top: 16.6666666667vw;

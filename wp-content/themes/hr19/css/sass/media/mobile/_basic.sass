@@ -392,6 +392,8 @@ a.hr-phone-num
   .hr19-heading
     font-size: 14px
   .property-sorting
+    .no-paddingl
+      padding-left: 15px !important
     .state-search
       font-size: 14px
       text-align: center
@@ -579,10 +581,17 @@ form.invalid
 
 .updated-info
   p
-    font-size: get-vw-mobile(10px)
+    font-size: 11px
     letter-spacing: get-vw-mobile(-0.1px)
-    margin-bottom: get-vw-mobile(15px)
+    margin-bottom: 0
+    margin-top: 15px
     text-align: center !important
+    span
+      float: unset
+      padding-left: 0
+      background-color: transparent
+    &:before
+      display: none
 
 .search
   .hr-heading
@@ -591,7 +600,7 @@ form.invalid
     margin: 20px 0 5px 0
     p
       position: relative
-      font-size: get-vw-mobile(10px)
+      font-size: 11px
       letter-spacing: get-vw-mobile(-0.1px)
       margin: 0
       text-align: center
@@ -606,3 +615,21 @@ form.invalid
   font-size: get-vw-mobile(9px)
   p
     margin: get-vw-mobile(10px) get-vw-mobile(15px)
+
+.margint7
+  float: unset !important
+  text-align: center
+.property-list
+  .hr19-heading
+    float: unset !important
+    text-align: center
+    margin-top: 5px
+    margin-bottom: 20px
+  form
+    display: block
+    margin: 0 auto !important
+    text-align: center
+    select
+      margin-bottom: 15px
+      &:first-child
+        margin-right: 0 !important
