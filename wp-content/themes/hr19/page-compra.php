@@ -125,9 +125,9 @@ if ( function_exists( 'pll_current_language' ) ) {
                         <select id="country-select">
                             <option><?php echo( $lang == "es_ES" ? 'Pa&iacute;s' : 'Country' ) ?></option>
                             <option value="usa"
-                                    data-value="usa"><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></option>
+                                    data-value="usa" <?php echo( $country == "usa" ? 'selected' : '' ); ?> ><?php echo( $lang == "es_ES" ? 'EEUU' : 'USA' ) ?></option>
                             <option value="spain"
-                                    data-value="spain"><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></option>
+                                    data-value="spain" <?php echo( $country == "spain" ? 'selected' : '' ); ?>><?php echo( $lang == "es_ES" ? 'España' : 'Spain' ) ?></option>
                         </select>
                         <input id="country" type="hidden" name="country_page" value="<?php echo $country; ?>">
                     </form>
@@ -135,7 +135,11 @@ if ( function_exists( 'pll_current_language' ) ) {
                           action="<?php echo home_url( $lang == "es_ES" ? '/compra' : '/buy' ); ?>"
                           method="get" role="form" data-toggle="validator" data-disable="false">
                         <select id="city-select" <?php echo( !empty($country) ? '' : 'disabled' ) ?> >
-                            <option><?php echo( $lang == "es_ES" ? 'Ciudad' : 'City' ) ?></option>
+	                        <?php if ( ! empty( $city ) ) { ?>
+                                <option selected><?php echo $city; ?></option>
+	                        <?php } else { ?>
+                                <option><?php echo( $lang == "es_ES" ? 'Ciudad' : 'City' ) ?></option>
+	                        <?php } ?>
 						    <?php if ( $usacities->have_posts() ): while ( $usacities->have_posts() ) : $usacities->the_post();
 							    $city = get_post_meta( get_the_ID(), '_pr_city', true );
 							    if ( in_array( $city, $usaadded ) ) {

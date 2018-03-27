@@ -132,8 +132,13 @@ if ( function_exists( 'pll_current_language' ) ) {
                     <form id="property_lenguage"
                           action="<?php echo home_url() . ( $lang == "es_ES" ? '/alquileres' : '/rent' ); ?>"
                           method="get" role="form" data-toggle="validator" data-disable="false">
-                        <select id="city-select" <?php echo( !empty($country) ? '' : 'disabled' ) ?>>
-                            <option><?php echo( $lang == "es_ES" ? 'Ciudad' : 'City' ) ?></option>
+                        <select id="city-select" <?php echo( ! empty( $country ) ? '' : 'disabled' ) ?>>
+							<?php if ( ! empty( $city ) ) { ?>
+                                <option selected><?php echo $city; ?></option>
+							<?php } else { ?>
+                                <option><?php echo( $lang == "es_ES" ? 'Ciudad' : 'City' ) ?></option>
+							<?php } ?>
+
 							<?php if ( $usacities->have_posts() ): while ( $usacities->have_posts() ) : $usacities->the_post();
 								$city = get_post_meta( get_the_ID(), '_pr_city', true );
 								if ( in_array( $city, $usaadded ) ) {
