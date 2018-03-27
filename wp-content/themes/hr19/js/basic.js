@@ -72,8 +72,7 @@ jQuery(document).ready(function ($) {
 
     // Add Swiper Flags
     var swiperFlag = new Swiper('.swiper-container-flags', {
-        //initialSlide: 1,
-        nested: true,
+        nested: true
     });
 
     // Adding Swiper functionality to flags
@@ -559,7 +558,7 @@ jQuery(document).ready(function ($) {
             });
     }
 
-    window.setTimeout(initialize(), 5000)
+    window.setTimeout(initialize(), 5000);
 
     function iwClose() {
         iw.close();
@@ -715,7 +714,7 @@ $(window).on('load', function () {
             767: {
                 slidesPerView: 2,
                 spaceBetween: 14,
-                centeredSlides: false,
+                centeredSlides: false
             },
             1023: {
                 slidesPerView: 3,

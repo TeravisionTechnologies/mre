@@ -34,9 +34,13 @@ $video            = get_post_meta( get_the_ID(), '_br_video_embed', true );
 			<?php if ( ! empty( $brochure ) ) { ?>
                 <a class="download-bro" href="<?php echo $brochure; ?>" download><?php echo $bbtn_es ?></a>
 			<?php } ?>
-			<?php if ( ! empty( $video ) ) { ?>
-                <a class="download-bro" href="#" data-toggle="modal" data-target="#watchVideo"><?php echo $video_text ?></a>
-			<?php } ?>
+	        <?php if ( ! empty( $video ) ) { ?>
+		        <?php if(!empty($video_text)){ ?>
+                    <a class="download-bro" href="#" data-toggle="modal" data-target="#watchVideo"><?php echo $video_text ?></a>
+		        <?php } else{ ?>
+                    <a class="download-bro" href="#" data-toggle="modal" data-target="#watchVideo"><?php echo( $lang == "es_ES" ? 'Ver Video' : 'Watch Video' ) ?></a>
+		        <?php } ?>
+	        <?php } ?>
         </div>
     </section>
 
