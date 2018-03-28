@@ -1109,7 +1109,7 @@ function property_metaboxes() {
 
 	$cmb_property->add_field( array(
 		'name'       => 'Property Video',
-		'desc'       => 'Enter a Youtube or Vimeo video URL',
+		'desc'       => 'Enter a Youtube video URL, must be the complete URL in the address bar, e.g: https://www.youtube.com/watch?v=TGuWG8WPlyo',
 		'id'         => $prefix . 'video_embed',
 		'type'       => 'oembed',
 		'repeatable' => true

@@ -127,7 +127,7 @@ $disclaimer      = get_post_meta( $footer_query[0]->ID, '_hf_disc', true );
     <div class="breadcrumb-info">
         <div class="container">
             <div class="row">
-                <div class="col-xs-2 col-sm-6 col-md-6">
+                <div class="col-xs-2 col-sm-4 col-md-4">
                     <div class="breadcrumbs">
                         <a href="<?php echo $_SERVER['HTTP_REFERER'] ?>"><i id="go-back" class="fa fa-chevron-left"
                                                                             aria-hidden="true"></i></a>
@@ -143,20 +143,26 @@ $disclaimer      = get_post_meta( $footer_query[0]->ID, '_hf_disc', true );
                         </span>
                     </div>
                 </div>
-                <div class="col-xs-10 col-sm-6 col-md-6 text-right">
+                <div class="col-xs-10 col-sm-8 col-md-8 text-right">
                     <div class="published">
 						<?php
 						$horas  = "00:00:00";
-						$broker = "HR19";
+						$broker = "HR19sfffsfsfsfsfsdfsdfdf";
 						if ( $lang == "es_ES" ) {
-							echo '<p>Listado actualizado hace <strong>' . $horas . ' hr</strong> <span class="divider">|</span> Por <strong>' . $broker . ' </strong><span class="divider">|</span></p>';
+							echo '<p>Listado actualizado hace <strong>' . $horas . ' hrs</strong> <span class="divider">|</span> Por <strong>' . $broker . ' </strong><span class="divider">|</span></p>';
 						} else {
-							echo '<p>Listing updated ' . $horas . ' hours ago</p>';
+							echo '<p>Listing updated <strong>' . $horas . ' hrs ago</strong> <span class="divider">|</span> By <strong>' . $broker . ' </strong><span class="divider">|</span></p>';
 						} ?>
                     </div>
 					<?php if ( ! empty( $status ) ) { ?>
                         <div class="status"><?php echo( $lang == "es_ES" ? 'Estatus: ' : 'Status: ' ) ?>
-                        <span><?php echo $status; ?></span></div><?php } ?>
+                            <span>
+
+                                <?php echo $status; ?>
+
+                            </span>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>

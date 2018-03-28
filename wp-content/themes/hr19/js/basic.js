@@ -6,8 +6,11 @@ jQuery(document).ready(function ($) {
         window.location.href = $('#sl-lgg').val();
     });
 
-    //video Carousel
-    $("ul.demo2").ytplaylist({addThumbs: true, autoPlay: false, holderId: 'ytvideo2'});
+    $(function ($) {
+        $('.panel-collapse').on('show.bs.collapse hidden.bs.collapse', function () {
+            $(this).prev().find('i').toggleClass('fa-plus fa-minus');
+        })
+    });
 
     // Swiper Property
     var swiper = new Swiper('.swiper-property', {
@@ -25,6 +28,7 @@ jQuery(document).ready(function ($) {
     // Footer Go to top functionality
     $(".footer-top").click(function () {
         $("html, body").animate({scrollTop: 0}, 2000);
+        $("html, body").focus();
     });
 
     //Menu functionality
@@ -140,26 +144,6 @@ jQuery(document).ready(function ($) {
             $('.menu-wrapper').height(height - navheight);
         }, 500);
     }, false);
-
-    //Panel plus-minus change
-    $('.panel-title a').click(function () {
-        if ($(this).attr('aria-expanded') === "true") {
-            $(this).next("i").removeClass("fa-minus");
-            $(this).next("i").addClass("fa-plus");
-        } else {
-            $(this).next("i").removeClass("fa-plus");
-            $(this).next("i").addClass("fa-minus");
-        }
-    });
-    $('.panel-title i').click(function () {
-        if ($(this).attr('aria-expanded') === "true") {
-            $(this).removeClass("fa-minus");
-            $(this).addClass("fa-plus");
-        } else {
-            $(this).removeClass("fa-plus");
-            $(this).addClass("fa-minus");
-        }
-    });
 
     //HOA tooltip
     $(function () {
@@ -587,6 +571,8 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
+    //video Carousel
+    $("ul.demo2").ytplaylist({addThumbs: true, autoPlay: false, holderId: 'ytvideo2'});
 
 });
 

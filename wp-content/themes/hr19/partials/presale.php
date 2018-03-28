@@ -22,7 +22,7 @@ $mbtn_es          = get_post_meta( get_the_ID(), '_pr_mbtn_es_id', true );
 $placeholder      = get_template_directory_uri() . '/assets/no-photo.jpg';
 $video_text       = get_post_meta( get_the_ID(), '_pr_video_es_id', true );
 $video            = get_post_meta( get_the_ID(), '_pr_video_embed', true );
-?>
+var_dump($video); ?>
     <div class="breadcrumb-info">
         <div class="container">
             <div class="row">

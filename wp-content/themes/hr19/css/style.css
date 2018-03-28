@@ -4250,17 +4250,17 @@ body {
   a.download-bro {
     bottom: 100px; }
 
-  .breadcrumb-info .status {
-    font-size: 1.3020833333vw; }
+  .breadcrumb-info .status, .breadcrumb-info .published {
+    font-size: 1.171875vw; }
   .breadcrumb-info .breadcrumbs {
-    font-size: 1.3020833333vw;
+    font-size: 1.171875vw;
     line-height: 5.2083333333vw; }
 
   .published {
     line-height: 5.2083333333vw; }
     .published p {
       color: rgba(255, 255, 255, 0.5);
-      font-size: 1.3020833333vw;
+      font-size: 1.171875vw;
       margin: 0; }
       .published p strong {
         color: #fff; }

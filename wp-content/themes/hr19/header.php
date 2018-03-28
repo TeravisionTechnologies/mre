@@ -115,17 +115,15 @@ $lang = get_locale();
                             </ul>
                         <?php } ?>
 
-               
                         <div class="pull-right">
                             <?php
                                 $i         = 0;
                                 $languages = pll_the_languages( array( 'raw' => 1 ) );
                             ?>
                             <select class="select-lenguage" id="sl-lgg">
-                                <option value="<?php echo $languages['es']['url'] ?>" <?php echo ( $lang == "es_ES" ? 'selected' : null ) ?>  >ES</option>
+                                <option value="<?php echo $languages['es']['url'] ?>" <?php echo ( $lang == "es_ES" ? 'selected' : null ) ?> >ES</option>
                                 <option value="<?php echo $languages['en']['url'] ?>" <?php echo ( $lang == "en_US" ? 'selected' : null ) ?> >EN</option>
                             </select>
-
                         </div>
                     </div>
                 </div>
