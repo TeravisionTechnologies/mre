@@ -16,6 +16,10 @@ jQuery(document).ready(function () {
         $("html, body").animate({scrollTop: 0}, 2000);
     });
 
+    $('#watchVideo').on('hidden.bs.modal', function () {
+        location.reload();
+    });
+
     // Add Swiper Flags
     var swiperFlag = new Swiper('.swiper-container-flags', {
         initialSlide: 0,

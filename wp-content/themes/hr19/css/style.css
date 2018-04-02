@@ -4251,16 +4251,16 @@ body {
     bottom: 100px; }
 
   .breadcrumb-info .status, .breadcrumb-info .published {
-    font-size: 1.171875vw; }
+    font-size: 1.0416666667vw; }
   .breadcrumb-info .breadcrumbs {
-    font-size: 1.171875vw;
+    font-size: 1.0416666667vw;
     line-height: 5.2083333333vw; }
 
   .published {
     line-height: 5.2083333333vw; }
     .published p {
       color: rgba(255, 255, 255, 0.5);
-      font-size: 1.171875vw;
+      font-size: 1.0416666667vw;
       margin: 0; }
       .published p strong {
         color: #fff; }
@@ -5375,7 +5375,7 @@ body {
   .published {
     line-height: 1.9444444444vw; }
     .published p {
-      font-size: 1.9444444444vw;
+      font-size: 1.6666666667vw;
       margin: 0; }
     .published .divider {
       margin: 0 4px; }

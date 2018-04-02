@@ -12,6 +12,13 @@ jQuery(document).ready(function ($) {
         })
     });
 
+    //video Carousel
+    $("ul.demo2").ytplaylist({addThumbs: true, autoPlay: false, holderId: 'ytvideo2'});
+
+    $('#watchVideo').on('hidden.bs.modal', function () {
+        location.reload();
+    });
+
     // Swiper Property
     var swiper = new Swiper('.swiper-property', {
         nextButton: '.swiper-button-next',
@@ -571,8 +578,7 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
-    //video Carousel
-    $("ul.demo2").ytplaylist({addThumbs: true, autoPlay: false, holderId: 'ytvideo2'});
+
 
 });
 
@@ -733,7 +739,6 @@ $(document).scroll(function () {
         $('.footer-top').fadeOut();
     }
 });
-
 
 
  

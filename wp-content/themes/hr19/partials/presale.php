@@ -22,7 +22,7 @@ $mbtn_es          = get_post_meta( get_the_ID(), '_pr_mbtn_es_id', true );
 $placeholder      = get_template_directory_uri() . '/assets/no-photo.jpg';
 $video_text       = get_post_meta( get_the_ID(), '_pr_video_es_id', true );
 $video            = get_post_meta( get_the_ID(), '_pr_video_embed', true );
-var_dump($video); ?>
+//var_dump( $video ); ?>
     <div class="breadcrumb-info">
         <div class="container">
             <div class="row">
@@ -50,13 +50,15 @@ var_dump($video); ?>
 			<?php if ( ! empty( $brochure ) ) { ?>
                 <a class="download-bro" href="<?php echo $brochure; ?>" download><?php echo $bbtn_es ?></a>
 			<?php } ?>
-	        <?php if ( ! empty( $video ) ) { ?>
-                <?php if(!empty($video_text)){ ?>
-                    <a class="download-bro" href="#" data-toggle="modal" data-target="#watchVideo"><?php echo $video_text ?></a>
-		        <?php } else{ ?>
-                    <a class="download-bro" href="#" data-toggle="modal" data-target="#watchVideo"><?php echo( $lang == "es_ES" ? 'Ver Video' : 'Watch Video' ) ?></a>
-		        <?php } ?>
-	        <?php } ?>
+			<?php if ( ! empty( $video ) ) { ?>
+				<?php if ( ! empty( $video_text ) ) { ?>
+                    <a class="download-bro" href="#" data-toggle="modal"
+                       data-target="#watchVideo"><?php echo $video_text ?></a>
+				<?php } else { ?>
+                    <a class="download-bro" href="#" data-toggle="modal"
+                       data-target="#watchVideo"><?php echo( $lang == "es_ES" ? 'Ver Video' : 'Watch Video' ) ?></a>
+				<?php } ?>
+			<?php } ?>
         </div>
     </section>
 
@@ -65,23 +67,25 @@ var_dump($video); ?>
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel-group" id="accordion">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapse1"
-                                       class="aa"><span
-                                                class="number"></span><?php echo( $lang == "es_ES" ? 'Descripción de la propiedad' : 'Property description' ) ?>
-                                    </a>
-                                    <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
-                                       href="#collapse1" aria-expanded="true"></i>
-                                </h4>
-                            </div>
-                            <div id="collapse1" class="panel-collapse collapse in">
-                                <div class="panel-body">
-									<?php the_content(); ?>
+						<?php if ( ! empty( get_the_content() ) ) { ?>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" href="#collapse1"
+                                           class="aa"><span
+                                                    class="number"></span><?php echo( $lang == "es_ES" ? 'Descripción de la propiedad' : 'Property description' ) ?>
+                                        </a>
+                                        <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
+                                           href="#collapse1" aria-expanded="true"></i>
+                                    </h4>
+                                </div>
+                                <div id="collapse1" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+										<?php the_content(); ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+						<?php } ?>
 						<?php if ( ! empty( $intdetails ) ) { ?>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -553,4 +557,4 @@ if ( have_posts() ): ?>
     <div class="margint50"></div>
 <?php endif; ?>
 
-<?php get_template_part('partials/modal-video'); ?>
+<?php get_template_part( 'partials/modal-video' ); ?>

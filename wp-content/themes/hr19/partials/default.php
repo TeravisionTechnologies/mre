@@ -154,15 +154,13 @@ $disclaimer      = get_post_meta( $footer_query[0]->ID, '_hf_disc', true );
 							echo '<p>Listing updated <strong>' . $horas . ' hrs ago</strong> <span class="divider">|</span> By <strong>' . $broker . ' </strong><span class="divider">|</span></p>';
 						} ?>
                     </div>
-					<?php if ( ! empty( $status ) ) { ?>
-                        <div class="status"><?php echo( $lang == "es_ES" ? 'Estatus: ' : 'Status: ' ) ?>
-                            <span>
-
-                                <?php echo $status; ?>
-
-                            </span>
-                        </div>
-                    <?php } ?>
+                    <div class="status"><?php echo( $lang == "es_ES" ? 'Estatus: ' : 'Status: ' ) ?>
+						<?php if ( ! empty( $status ) ) { ?>
+                            <span><?php echo $status; ?></span>
+						<?php } else { ?>
+                            <span><?php echo( $lang == "es_ES" ? 'Activa' : 'Active' ) ?></span>
+						<?php } ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -275,23 +273,25 @@ $disclaimer      = get_post_meta( $footer_query[0]->ID, '_hf_disc', true );
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel-group" id="accordion">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapse1"
-                                       class="aa"><span
-                                                class="number"></span><?php echo( $lang == "es_ES" ? 'Descripción de la propiedad' : 'Property description' ) ?>
-                                    </a>
-                                    <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
-                                       href="#collapse1" aria-expanded="true"></i>
-                                </h4>
-                            </div>
-                            <div id="collapse1" class="panel-collapse collapse in">
-                                <div class="panel-body">
-									<?php the_content(); ?>
+						<?php if ( ! empty( get_the_content() ) ) { ?>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" href="#collapse1"
+                                           class="aa"><span
+                                                    class="number"></span><?php echo( $lang == "es_ES" ? 'Descripción de la propiedad' : 'Property description' ) ?>
+                                        </a>
+                                        <i class="fa fa-minus" aria-hidden="true" data-toggle="collapse"
+                                           href="#collapse1" aria-expanded="true"></i>
+                                    </h4>
+                                </div>
+                                <div id="collapse1" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+										<?php the_content(); ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+						<?php } ?>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
@@ -642,7 +642,8 @@ if ( have_posts() ): ?>
 								echo $bgimg;
 							} ?>);">
                                 <div class="by-broker">
-                                    <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?> <span>Marlene Goldman INC</span>
+                                    <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?>
+                                        <span>Marlene Goldman INC</span>
                                     </p>
                                 </div>
                             </div>
