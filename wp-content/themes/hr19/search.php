@@ -140,7 +140,7 @@ wp_reset_query();
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <input type="hidden" name="post_type[]" value="property">
                     <input type="hidden" id="firstTimeLoad" name="firstTimeLoad" value="1">
-                    <input type="hidden" name="property_status" value="<?php echo $propstatus; ?>">
+                    <!--<input type="hidden" name="property_status" value="<?php //echo $propstatus; ?>">-->
                     <ul class="nav navbar-nav">
                         <li>
                             <div class="input-group search-wrap">
@@ -419,7 +419,7 @@ wp_reset_query();
 			'post_type'      => 'property',
 			'showposts'      => 9,
 			'paged'          => get_query_var( 'paged' ),
-			'_meta_or_title' => $search_string,
+			'_meta_or_title' => get_query_var( 's' ),
 			'meta_key'       => ( $orderBy != 'date' ) ? $orderBy : '',
 			'orderby'        => ( $orderBy == 'date' ) ? $orderBy : 'meta_value_num',
 			'order'          => $sort,
@@ -483,14 +483,14 @@ wp_reset_query();
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-12 updated-info">
-						<?php
-						$horas = "00:00:00";
-						if ( $lang == "es_ES" ) {
-							echo '<p><span>Listado actualizado hace <strong>' . $horas . '</strong> horas</span></p>';
-						} else {
-							echo '<p><span>Listing updated ' . $horas . ' hours ago</span></p>';
-						} ?>
+                    <div class="col-md-12 text-right updated-info">
+		                <?php
+		                $horas = "00:00:00";
+		                if ( $lang == "es_ES" ) {
+			                echo '<p><span>Listado actualizado hace <strong>' . $horas . ' horas</strong></span></p>';
+		                } else {
+			                echo '<p><span>Listing updated ' . $horas . ' hours ago</strong></span></p>';
+		                } ?>
                     </div>
                 </div>
             </div>

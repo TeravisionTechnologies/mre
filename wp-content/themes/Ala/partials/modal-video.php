@@ -15,9 +15,12 @@ $video = get_post_meta( get_the_ID(), '_br_video_embed', true );
                         <div class="yt_holder">
                             <div id="ytvideo2"></div>
                             <ul class="demo2">
-								<?php foreach ( $video as $url ) { ?>
-                                    <li><a href="<?php echo $url ?>"></a></li>
-								<?php } ?>
+	                            <?php foreach ( $video as $url ) {
+		                            $parts = parse_url( $url );
+		                            if ( $parts['path'] == "/watch" ) { ?>
+                                        <li><a href="<?php echo $url ?>"></a></li>
+		                            <?php } ?>
+	                            <?php } ?>
                             </ul>
                         </div>
                     </div>

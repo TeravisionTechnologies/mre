@@ -24,6 +24,14 @@ $mbtn_es          = get_post_meta( get_the_ID(), '_br_mbtn_es_id', true );
 $placeholder      = get_template_directory_uri() . '/assets/no-photo.jpg';
 $video_text       = get_post_meta( get_the_ID(), '_br_video_es_id', true );
 $video            = get_post_meta( get_the_ID(), '_br_video_embed', true );
+foreach ( $video as $url ) {
+	$i = 0;
+	$parts = parse_url($url);
+	if($parts['path'] == "/watch"){
+		$i++;
+		$sum += $i;
+	}
+}
 ?>
 
     <section class="prop-header text-center"
@@ -34,7 +42,7 @@ $video            = get_post_meta( get_the_ID(), '_br_video_embed', true );
 			<?php if ( ! empty( $brochure ) ) { ?>
                 <a class="download-bro" href="<?php echo $brochure; ?>" download><?php echo $bbtn_es ?></a>
 			<?php } ?>
-	        <?php if ( ! empty( $video ) ) { ?>
+	        <?php if ( ! empty( $video ) && ! empty( $sum ) ) { ?>
 		        <?php if(!empty($video_text)){ ?>
                     <a class="download-bro" href="#" data-toggle="modal" data-target="#watchVideo"><?php echo $video_text ?></a>
 		        <?php } else{ ?>

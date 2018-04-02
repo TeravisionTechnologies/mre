@@ -310,6 +310,7 @@ jQuery(document).ready(function ($) {
         $("#rooms").val(selroom);
     });
     $("#transction-dd li a").click(function () {
+        $("#transaction").val('');
         var seltransc = $(this).attr('data-value');
         $("#transaction").val(seltransc);
     });
