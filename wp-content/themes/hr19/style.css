@@ -1668,7 +1668,7 @@ input:checked + .slider:before {
     opacity: 0.4; }
 
 .updated-info p {
-  font-size: 0.9027777778vw;
+  font-size: 13px;
   color: #4a4a4a;
   letter-spacing: -0.0069444444vw;
   margin-bottom: 2.0833333333vw;
