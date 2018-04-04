@@ -44,9 +44,9 @@ foreach ( $video as $url ) {
 			<?php } ?>
 	        <?php if ( ! empty( $video ) && ! empty( $sum ) ) { ?>
 		        <?php if(!empty($video_text)){ ?>
-                    <a class="download-bro" href="#" data-toggle="modal" data-target="#watchVideo"><?php echo $video_text ?></a>
+                    <a class="download-bro vid" href="#" data-toggle="modal" data-target="#watchVideo"><?php echo $video_text ?></a>
 		        <?php } else{ ?>
-                    <a class="download-bro" href="#" data-toggle="modal" data-target="#watchVideo"><?php echo( $lang == "es_ES" ? 'Ver Video' : 'Watch Video' ) ?></a>
+                    <a class="download-bro vid" href="#" data-toggle="modal" data-target="#watchVideo"><?php echo( $lang == "es_ES" ? 'Ver Video' : 'Watch Video' ) ?></a>
 		        <?php } ?>
 	        <?php } ?>
         </div>

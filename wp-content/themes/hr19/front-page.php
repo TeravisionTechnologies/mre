@@ -23,6 +23,8 @@ $home_query = get_posts(
 	)
 );
 $hero       = get_post_meta( $home_query[0]->ID, '_hf_hero', true );
+wp_reset_postdata();
+wp_reset_query();
 if ( function_exists( 'pll_current_language' ) ) {
 	$current_language = pll_current_language();
 	$default_language = pll_default_language();
@@ -32,6 +34,28 @@ if ( function_exists( 'pll_current_language' ) ) {
 		$language_subdir = '';
 	}
 }
+
+wp_reset_postdata();
+wp_reset_query();
+
+$argslatest     = array(
+	'post_type'   => 'property',
+	'posts_per_page' => 1,
+	'meta_query'  => array(
+		array(
+			'key'     => '_pr_owner',
+			'value'   => 'Other',
+			'compare' => '=',
+		),
+	),
+);
+$latestproperty = new WP_Query( $argslatest );
+while ( $latestproperty->have_posts() ) {
+	$latestproperty->the_post();
+	$date =  esc_html( human_time_diff(  get_post_time('U'), current_time('timestamp') ) ) . ' ago';
+}
+wp_reset_postdata();
+wp_reset_query();
 ?>
     <section class="col-xs-12 hr-hero-section text-center no-padding"
              style="background-image: url('<?php echo ! empty( $hero[0]["_hf_hero_background"] ) ? $hero[0]["_hf_hero_background"] : null; ?>');">
@@ -101,9 +125,9 @@ if ( function_exists( 'pll_current_language' ) ) {
                     <!--<form id="property_lenguage"
                           action="<?php //echo home_url() . ( $lang == "es_ES" ? '/alquileres' : '/rent' ); ?>"
                           method="get" role="form" data-toggle="validator" data-disable="false">-->
-                        <select id="city-select" disabled>
-                            <option><?php echo( $lang == "es_ES" ? 'Ciudad' : 'City' ) ?></option>
-							<?php /*if ( $usacities->have_posts() ): while ( $usacities->have_posts() ) : $usacities->the_post();
+                    <select id="city-select" disabled>
+                        <option><?php echo( $lang == "es_ES" ? 'Ciudad' : 'City' ) ?></option>
+						<?php /*if ( $usacities->have_posts() ): while ( $usacities->have_posts() ) : $usacities->the_post();
 								$city = get_post_meta( get_the_ID(), '_pr_city', true );
 								if( in_array($city, $usaadded) ) {
 									continue;
@@ -114,16 +138,17 @@ if ( function_exists( 'pll_current_language' ) ) {
                                         data-value="<?php echo $city ?>"><?php echo $city ?></option>
 							<?php endwhile; ?>
 							<?php endif;
-							wp_reset_postdata(); */?>
-                        </select>
-                        <!--<input id="city" type="hidden" name="city_page" value="<?php //echo $city; ?>">-->
+							wp_reset_postdata(); */ ?>
+                    </select>
+                    <!--<input id="city" type="hidden" name="city_page" value="<?php //echo $city; ?>">-->
                     </form>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12 text-right updated-info">
-				<?php
+	            <?php echo $date ?>
+	            <?php
 				$horas = "00:00:00";
 				if ( $lang == "es_ES" ) {
 					echo '<p><span>Listado actualizado hace <strong>' . $horas . ' horas</strong></span></p>';
@@ -143,6 +168,7 @@ if ( function_exists( 'pll_current_language' ) ) {
 				$sysid       = get_post_meta( get_the_ID(), '_pr_matrixid', true );
 				$city        = get_post_meta( get_the_ID(), '_pr_city', true );
 				$state       = get_post_meta( get_the_ID(), '_pr_state', true );
+				$broker      = get_post_meta( get_the_ID(), '_pr_brokerby', true );
 				$gallery     = get_post_meta( get_the_ID(), '_pr_photos', true );
 				$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
 				$headers     = get_headers( $bgimg, 1 );
@@ -198,9 +224,12 @@ if ( function_exists( 'pll_current_language' ) ) {
 							echo $bgimg;
 						} ?>
                                 );">
-                            <div class="by-broker">
-                                <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?> <span>HR19Realty Inc</span></p>
-                            </div>
+							<?php if ( ! empty( $broker ) ) { ?>
+                                <div class="by-broker">
+                                    <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?>
+                                        <span><?php echo $broker ?></span></p>
+                                </div>
+							<?php } ?>
                         </div>
                         <div class="property-info">
                             <div class="property-price">

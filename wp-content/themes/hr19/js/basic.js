@@ -12,8 +12,10 @@ jQuery(document).ready(function ($) {
         })
     });
 
-    //video Carousel
-    $("ul.demo2").ytplaylist({addThumbs: true, autoPlay: false, holderId: 'ytvideo2'});
+    //Video Carousel
+    if ($(".vid").length) {
+        $("ul.demo2").ytplaylist({addThumbs: true, autoPlay: false, holderId: 'ytvideo2'});
+    }
 
     $('#watchVideo').on('hidden.bs.modal', function () {
         location.reload();

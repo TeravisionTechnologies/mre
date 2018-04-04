@@ -210,6 +210,7 @@ if ( function_exists( 'pll_current_language' ) ) {
 			$sysid       = get_post_meta( get_the_ID(), '_pr_matrixid', true );
 			$city        = get_post_meta( get_the_ID(), '_pr_city', true );
 			$state       = get_post_meta( get_the_ID(), '_pr_state', true );
+			$broker      = get_post_meta( get_the_ID(), '_pr_brokerby', true );
 			$gallery     = get_post_meta( get_the_ID(), '_pr_photos', true );
 			$transac     = get_post_meta( get_the_ID(), '_pr_transaction', true );
 			$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
@@ -266,9 +267,12 @@ if ( function_exists( 'pll_current_language' ) ) {
 						echo $bgimg;
 					} ?>
                             );">
-                        <div class="by-broker">
-                            <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?> <span>HR19Realty Inc</span></p>
-                        </div>
+	                    <?php if ( ! empty( $broker ) ) { ?>
+                            <div class="by-broker">
+                                <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?>
+                                    <span><?php echo $broker ?></span></p>
+                            </div>
+	                    <?php } ?>
                     </div>
                     <div class="property-info">
                         <div class="property-price"><?php if ( ! empty( $price ) ) {

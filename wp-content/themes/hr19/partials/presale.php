@@ -23,12 +23,12 @@ $placeholder      = get_template_directory_uri() . '/assets/no-photo.jpg';
 $video_text       = get_post_meta( get_the_ID(), '_pr_video_es_id', true );
 $video            = get_post_meta( get_the_ID(), '_pr_video_embed', true );
 foreach ( $video as $url ) {
-    $i = 0;
-	$parts = parse_url($url);
-	if($parts['path'] == "/watch"){
-		$i++;
+	$i     = 0;
+	$parts = parse_url( $url );
+	if ( $parts['path'] == "/watch" ) {
+		$i ++;
 		$sum += $i;
-    }
+	}
 }
 ?>
     <div class="breadcrumb-info">
@@ -60,10 +60,10 @@ foreach ( $video as $url ) {
 			<?php } ?>
 			<?php if ( ! empty( $video ) && ! empty( $sum ) ) { ?>
 				<?php if ( ! empty( $video_text ) ) { ?>
-                    <a class="download-bro" href="#" data-toggle="modal"
+                    <a class="download-bro vid" href="#" data-toggle="modal"
                        data-target="#watchVideo"><?php echo $video_text ?></a>
 				<?php } else { ?>
-                    <a class="download-bro" href="#" data-toggle="modal"
+                    <a class="download-bro vid" href="#" data-toggle="modal"
                        data-target="#watchVideo"><?php echo( $lang == "es_ES" ? 'Ver Video' : 'Watch Video' ) ?></a>
 				<?php } ?>
 			<?php } ?>
@@ -351,23 +351,25 @@ foreach ( $video as $url ) {
                                 <div id="collapse6" class="panel-collapse collapse in">
                                     <div class="panel-body">
                                         <div id="map-detail"></div>
-                                        <script>
-                                            function initMap() {
-                                                var uluru = {lat: <?php echo $lat ?>, lng: <?php echo $lng ?>};
-                                                var map = new google.maps.Map(document.getElementById('map-detail'), {
-                                                    zoom: 10,
-                                                    center: uluru
-                                                });
+										<?php if ( ! empty( $lat ) && ! empty( $lng ) ) { ?>
+                                            <script>
+                                                function initMap() {
+                                                    var uluru = {lat: <?php echo $lat ?>, lng: <?php echo $lng ?>};
+                                                    var map = new google.maps.Map(document.getElementById('map-detail'), {
+                                                        zoom: 10,
+                                                        center: uluru
+                                                    });
 
-                                                var marker = new google.maps.Marker({
-                                                    position: uluru,
-                                                    map: map,
-                                                    animation: google.maps.Animation.BOUNCE
-                                                });
-                                            }
+                                                    var marker = new google.maps.Marker({
+                                                        position: uluru,
+                                                        map: map,
+                                                        animation: google.maps.Animation.BOUNCE
+                                                    });
+                                                }
 
-                                            google.maps.event.addDomListener(window, 'load', initMap);
-                                        </script>
+                                                google.maps.event.addDomListener(window, 'load', initMap);
+                                            </script>
+										<?php } ?>
                                     </div>
                                 </div>
                             </div>

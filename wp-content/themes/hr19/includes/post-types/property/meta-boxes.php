@@ -28,6 +28,13 @@ function property_metaboxes() {
 	) );
 
 	$cmb_property->add_field( array(
+		'name' => __( 'Brokered by' ),
+		'id'   => $prefix . 'brokerby',
+		'type' => 'text',
+		'desc' => 'The broker office name, e.g: Century 21 World Connection'
+	) );
+
+	$cmb_property->add_field( array(
 		'name'             => __( 'Transaction' ),
 		'id'               => $prefix . 'transaction',
 		'type'             => 'select',

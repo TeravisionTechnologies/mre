@@ -510,6 +510,7 @@ wp_reset_query();
 			$sysid       = get_post_meta( get_the_ID(), '_pr_matrixid', true );
 			$city        = get_post_meta( get_the_ID(), '_pr_city', true );
 			$state       = get_post_meta( get_the_ID(), '_pr_state', true );
+			$broker      = get_post_meta( get_the_ID(), '_pr_brokerby', true );
 			$agentid     = get_post_meta( get_the_ID(), '_pr_agentid', true );
 			$gallery     = get_post_meta( get_the_ID(), '_pr_photos', true );
 			$owner       = get_post_meta( get_the_ID(), '_pr_owner', true );
@@ -569,9 +570,12 @@ wp_reset_query();
 					} else {
 						echo $bgimg;
 					} ?>">
-                        <div class="by-broker">
-                            <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?> <span>Marlene Goldman INC</span></p>
-                        </div>
+	                    <?php if ( ! empty( $broker ) ) { ?>
+                            <div class="by-broker">
+                                <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?>
+                                    <span><?php echo $broker ?></span></p>
+                            </div>
+	                    <?php } ?>
                     </div>
                     <div class="property-info">
                         <div class="property-price"><?php if ( ! empty( $price ) ) {

@@ -86,6 +86,7 @@ if ( have_posts() ): while ( have_posts() ):
 					$baths       = get_post_meta( $property->ID, '_pr_baths_total', true );
 					$sysid       = get_post_meta( $property->ID, '_pr_matrixid', true );
 					$transac     = get_post_meta( get_the_ID(), '_pr_transaction', true );
+					$broker      = get_post_meta( get_the_ID(), '_pr_brokerby', true );
 					$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
 					$headers     = get_headers( $bgimg, 1 );
 					$fsize       = $headers['Content-Length'];
@@ -142,7 +143,8 @@ if ( have_posts() ): while ( have_posts() ):
 							} ?>
                                     );">
                                 <div class="by-broker">
-                                    <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?> <span>HR19Realty Inc</span></p>
+                                    <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?>
+                                        <span><?php echo $broker ?></span></p>
                                 </div>
                             </div>
                             <div class="property-info">
@@ -206,6 +208,7 @@ if ( have_posts() ): while ( have_posts() ):
 					$baths       = get_post_meta( $property->ID, '_pr_baths_total', true );
 					$sysid       = get_post_meta( $property->ID, '_pr_matrixid', true );
 					$transac     = get_post_meta( get_the_ID(), '_pr_transaction', true );
+					$broker      = get_post_meta( get_the_ID(), '_pr_brokerby', true );
 					$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
 					$headers     = get_headers( $bgimg, 1 );
 					$fsize       = $headers['Content-Length'];
@@ -262,7 +265,8 @@ if ( have_posts() ): while ( have_posts() ):
 							} ?>
                                     );">
                                 <div class="by-broker">
-                                    <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?> <span>HR19Realty Inc</span></p>
+                                    <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?>
+                                        <span><?php echo $broker ?></span></p>
                                 </div>
                             </div>
                             <div class="property-info">

@@ -20,6 +20,7 @@ $status    = get_post_meta( get_the_ID(), '_pr_status', true );
 $sysid     = get_post_meta( get_the_ID(), '_pr_matrixid', true );
 $taxes     = get_post_meta( get_the_ID(), '_pr_TaxAmount', true );
 $mortgage  = get_post_meta( get_the_ID(), '_pr_TotalMortgage', true );
+$broker      = get_post_meta( get_the_ID(), '_pr_brokerby', true );
 //Nuevos campos
 $pets         = get_post_meta( get_the_ID(), '_pr_PetsAllowedYN', true );
 $cooling      = get_post_meta( get_the_ID(), '_pr_CoolingDescription', true );
@@ -123,6 +124,13 @@ $footer_query    = get_posts(
 	)
 );
 $disclaimer      = get_post_meta( $footer_query[0]->ID, '_hf_disc', true );
+/*$current_time = current_time('timestamp');
+$last = get_the_date('U');
+var_dump($last);
+var_dump($current_time);
+$lastmodified = get_the_date('U');
+//$lastmodified = strtotime($lastmodified);*/
+echo esc_html( human_time_diff(  get_post_time('U'), current_time('timestamp') ) ) . ' ago';
 ?>
     <div class="breadcrumb-info">
         <div class="container">
@@ -147,7 +155,6 @@ $disclaimer      = get_post_meta( $footer_query[0]->ID, '_hf_disc', true );
                     <div class="published">
 						<?php
 						$horas  = "00:00:00";
-						$broker = "HR19sfffsfsfsfsfsdfsdfdf";
 						if ( $lang == "es_ES" ) {
 							echo '<p>Listado actualizado hace <strong>' . $horas . ' hrs</strong> <span class="divider">|</span> Por <strong>' . $broker . ' </strong><span class="divider">|</span></p>';
 						} else {

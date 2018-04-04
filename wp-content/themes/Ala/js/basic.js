@@ -162,9 +162,10 @@ jQuery(document).ready(function () {
     galleryTop.params.control = galleryThumbs;
     galleryThumbs.params.control = galleryTop;
 
-
-    //video Carousel
-    $("ul.demo2").ytplaylist({addThumbs:true, autoPlay: false, holderId: 'ytvideo2'});
+    //Video Carousel
+    if ($(".vid").length) {
+        $("ul.demo2").ytplaylist({addThumbs: true, autoPlay: false, holderId: 'ytvideo2'});
+    }
 
 
     $(function () {
