@@ -26,7 +26,7 @@ $url                = wp_upload_dir();
 $search_string      = $s;
 $lang               = get_locale();
 $propTypeArray      = explode( ',', $propTypeFilter );
-$args['meta_query'] = array( 'relation' => 'AND' );
+
 if ( ( isset( $orderBy ) && $orderBy == "date" ) && ( isset( $sort ) && $sort == "ASC" ) ) {
 	$orderBy = 'date';
 	$sort    = 'ASC';
@@ -40,6 +40,7 @@ if ( ( isset( $orderBy ) && $orderBy == "date" ) && ( isset( $sort ) && $sort ==
 	$orderBy = '_pr_current_price';
 	$sort    = 'ASC';
 }
+$args['meta_query'] = array( 'relation' => 'AND' );
 if ( isset( $roomsFilter ) && $roomsFilter ) {
 	$args['meta_query'][] = array(
 		'key'     => '_pr_room_count',
@@ -169,7 +170,7 @@ wp_reset_query();
                             <div class="input-group search-wrap">
                                 <input type="search" class="form-control search-box" id="s" name="s"
                                        placeholder="<?php echo( $lang == "es_ES" ? 'Buscar' : 'Search' ) ?>"
-                                       value="<?php echo $s; ?>" data-value="<?php echo $s; ?>" required>
+                                       value="<?php echo $s; ?>" data-value="<?php echo $s; ?>">
                                 <i class="fa fa-search"></i>
                             </div>
                         </li>
@@ -416,7 +417,7 @@ wp_reset_query();
                             <button class="btn btn-search"><i class="fa fa-search"></i></button>
                         </li>
                     </ul>
-                    <input type="hidden" name="action" value="myfilter">
+                    <!--<input type="hidden" name="action" value="myfilter">-->
                     <input type="hidden" id="transaction" name="property_status" value="<?php echo $propstatus; ?>">
                     <input type="hidden" id="showowner" name="showowner" value="<?php echo $showowner; ?>">
                     <input type="hidden" id="price" name="price" value="">
@@ -442,7 +443,7 @@ wp_reset_query();
 			'post_type'      => 'property',
 			'showposts'      => 9,
 			'paged'          => get_query_var( 'paged' ),
-			'_meta_or_title' => get_query_var( 's' ),
+			//'_meta_or_title' => $search_string,
 			'meta_key'       => ( $orderBy != 'date' ) ? $orderBy : '',
 			'orderby'        => ( $orderBy == 'date' ) ? $orderBy : 'meta_value_num',
 			'order'          => $sort,

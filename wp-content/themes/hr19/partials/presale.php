@@ -467,6 +467,7 @@ if ( have_posts() ): ?>
 					$state       = get_post_meta( get_the_ID(), '_pr_state', true );
 					$csymbol     = get_post_meta( get_the_ID(), '_pr_currency_symbol', true );
 					$gallery     = get_post_meta( get_the_ID(), '_pr_photos', true );
+					$mls         = get_post_meta( get_the_ID(), '_pr_is_mls', true );
 					$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
 					$headers     = get_headers( $bgimg, 1 );
 					$fsize       = $headers['Content-Length'];
@@ -519,10 +520,12 @@ if ( have_posts() ): ?>
 							} else {
 								echo $bgimg;
 							} ?>);">
-                                <div class="by-broker">
-                                    <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?> <span>Marlene Goldman INC</span>
-                                    </p>
-                                </div>
+	                            <?php if ( ! empty( $broker ) ) { ?>
+                                    <div class="by-broker">
+                                        <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?>
+                                            <span><?php echo $broker ?></span></p>
+                                    </div>
+	                            <?php } ?>
                             </div>
                             <div class="property-info">
                                 <div class="property-price">
@@ -554,7 +557,7 @@ if ( have_posts() ): ?>
 										echo $state;
 									} ?>
                                 </div>
-                                <div class="property-code">MLS: <?php the_title(); ?></div>
+                                <div class="property-code"><?php echo( $mls == "1" ? "MLS: " : " " ) ?><?php the_title(); ?></div>
                             </div>
                         </a>
                     </div>
