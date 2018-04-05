@@ -1,5 +1,26 @@
 jQuery(document).ready(function ($) {
 
+    //Objetivo: Devolver la ruta correspondiente para el cambio de idiomas en el header
+
+    $(document).on('change', '#sl-lgg', function () {
+        window.location.href = $('#sl-lgg').val();
+    });
+
+    $(function ($) {
+        $('.panel-collapse').on('show.bs.collapse hidden.bs.collapse', function () {
+            $(this).prev().find('i').toggleClass('fa-plus fa-minus');
+        })
+    });
+
+    //Video Carousel
+    if ($(".vid").length) {
+        $("ul.demo2").ytplaylist({addThumbs: true, autoPlay: false, holderId: 'ytvideo2'});
+    }
+
+    $('#watchVideo').on('hidden.bs.modal', function () {
+        location.reload();
+    });
+
     // Swiper Property
     var swiper = new Swiper('.swiper-property', {
         nextButton: '.swiper-button-next',
@@ -16,6 +37,7 @@ jQuery(document).ready(function ($) {
     // Footer Go to top functionality
     $(".footer-top").click(function () {
         $("html, body").animate({scrollTop: 0}, 2000);
+        $("html, body").focus();
     });
 
     //Menu functionality
@@ -63,8 +85,7 @@ jQuery(document).ready(function ($) {
 
     // Add Swiper Flags
     var swiperFlag = new Swiper('.swiper-container-flags', {
-        //initialSlide: 1,
-        nested: true,
+        nested: true
     });
 
     // Adding Swiper functionality to flags
@@ -133,26 +154,6 @@ jQuery(document).ready(function ($) {
         }, 500);
     }, false);
 
-    //Panel plus-minus change
-    $('.panel-title a').click(function () {
-        if ($(this).attr('aria-expanded') === "true") {
-            $(this).next("i").removeClass("fa-minus");
-            $(this).next("i").addClass("fa-plus");
-        } else {
-            $(this).next("i").removeClass("fa-plus");
-            $(this).next("i").addClass("fa-minus");
-        }
-    });
-    $('.panel-title i').click(function () {
-        if ($(this).attr('aria-expanded') === "true") {
-            $(this).removeClass("fa-minus");
-            $(this).addClass("fa-plus");
-        } else {
-            $(this).removeClass("fa-plus");
-            $(this).addClass("fa-minus");
-        }
-    });
-
     //HOA tooltip
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
@@ -169,7 +170,7 @@ jQuery(document).ready(function ($) {
             $('.text-map').html('Ocultar mapa');
         } else if ($('.text-map').text() == 'Hide map') {
             $('.text-map').html('Show map');
-        } else{
+        } else {
             $('.text-map').html('Hide map');
         }
     });
@@ -270,6 +271,36 @@ jQuery(document).ready(function ($) {
     $('input[type=radio][name=showowner]').change(function () {
         $(this).closest('form').submit();
     });
+    $(document).on('click', '#usa', function (e) {
+        e.preventDefault();
+        var selcountry = $(this).attr('data-value');
+        $("#country").val(selcountry);
+        $(this).closest('form').submit();
+    });
+    $(document).on('click', '#spain', function (e) {
+        e.preventDefault();
+        var selcountry = $(this).attr('data-value');
+        $("#country").val(selcountry);
+        $(this).closest('form').submit();
+    });
+
+    $(function() {
+        $("#country-select").change(function(){
+            var element = $(this).find('option:selected');
+            var country = element.attr("data-value");
+            $("#country").val(country);
+            $(this).closest('form').submit();
+        });
+    });
+
+    $(function() {
+        $("#city-select").change(function(){
+            var element = $(this).find('option:selected');
+            var city = element.attr("data-value");
+            $("#city").val(city);
+            $(this).closest('form').submit();
+        });
+    });
 
     // Set input hidden values by selected option clicked
     $("#baths-dd li a").click(function () {
@@ -281,6 +312,7 @@ jQuery(document).ready(function ($) {
         $("#rooms").val(selroom);
     });
     $("#transction-dd li a").click(function () {
+        $("#transaction").val('');
         var seltransc = $(this).attr('data-value');
         $("#transaction").val(seltransc);
     });
@@ -344,7 +376,6 @@ jQuery(document).ready(function ($) {
         propertyData.address = $(this).find('.property-address').html();
         propertyData.address = propertyData.address.replace(/[\t\n,]/g, '');
         propertyData.price = $(this).find('.property-price').html();
-        propertyData.price = propertyData.price.replace(/[$,]/g, '');
         propertyData.highlights = $(this).find('.property-highlights').html();
         propertyData.highlights = propertyData.highlights.replace(/[\t\n,]/g, '');
         propertyData.mls = $(this).find('.property-code').html();
@@ -364,19 +395,28 @@ jQuery(document).ready(function ($) {
     var infowindows = [];
     var activeMarker = '';
     var allData = [];
+    var place = '';
 
     function initialize() {
 
+        geocoder = new google.maps.Geocoder();
+
+        //Get city searched
         if (locations.length == 0) {
-            map = new google.maps.Map(
-                document.getElementById("search-map"), {
-                    center: new google.maps.LatLng(28.335347, -81.775476),
-                    zoom: 7,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    mapTypeControl: false,
-                    fullscreenControl: false
-                });
-        } else{
+            geocoder.geocode({'address': hr19.place}, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var place = {"lat": results[0].geometry.location.lat(), "long": results[0].geometry.location.lng()};
+                    map = new google.maps.Map(
+                        document.getElementById("search-map"), {
+                            center: new google.maps.LatLng(place.lat, place.long),
+                            zoom: 7,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP,
+                            mapTypeControl: false,
+                            fullscreenControl: false
+                        });
+                }
+            });
+        } else {
             map = new google.maps.Map(
                 document.getElementById("search-map"), {
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -385,9 +425,7 @@ jQuery(document).ready(function ($) {
                 });
         }
 
-        geocoder = new google.maps.Geocoder();
         oms = new OverlappingMarkerSpiderfier(map, {markersWontMove: true, markersWontHide: true});
-
         for (i = 0; i < locations.length; i++) {
             geocodeAddress(locations, i);
             oms.addListener('format', function (marker, status) {
@@ -457,13 +495,13 @@ jQuery(document).ready(function ($) {
         var priceUnformatted = locations[i].price;
         var price = '';
         if (priceUnformatted > 999 && priceUnformatted < 1000000) {
-            price = '$' + (priceUnformatted / 1000) + 'K';
+            price = (priceUnformatted / 1000) + 'K';
         }
         else if (priceUnformatted >= 1000000) {
-            price = '$' + (priceUnformatted / 1000000) + 'm';
+            price = (priceUnformatted / 1000000) + 'm';
         }
         else {
-            price = '$' + priceUnformatted;
+            price = priceUnformatted;
         }
 
         var cont = 0;
@@ -514,7 +552,7 @@ jQuery(document).ready(function ($) {
             });
     }
 
-    window.setTimeout(initialize(), 5000)
+    window.setTimeout(initialize(), 5000);
 
     function iwClose() {
         iw.close();
@@ -543,6 +581,8 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
+
+
 });
 
 
@@ -562,7 +602,7 @@ $(window).on('load', function () {
             scrollTop: finalPosition
         }, 1000);
     }
-    if($('#buy-list').length){
+    if ($('#buy-list').length) {
         var position = $("#buy-list").offset().top;
         var finalPosition = position - 80;
         $('html, body').animate({
@@ -592,6 +632,94 @@ $(window).on('load', function () {
         }
     }
 
+    //Slider Amenities
+    var slideComodidades;
+    $('.gallery-comodidades').click(function () {
+        slideComodidades = $(this).attr('data-number');
+        $("#myModal").on('show.bs.modal', function () {
+            setTimeout(function () {
+                var galleryTop = new Swiper('.gallery-top', {
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                    spaceBetween: 10,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                });
+                var galleryThumbs = new Swiper('.gallery-thumbs', {
+                    spaceBetween: 10,
+                    slidesPerView: 4,
+                    touchRatio: 0.2,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                    slideToClickedSlide: true
+                });
+                galleryTop.params.control = galleryThumbs;
+                galleryThumbs.params.control = galleryTop;
+                galleryThumbs.slideTo(slideComodidades, 0);
+            }, 500);
+        });
+    });
+
+    var slideDetalles;
+    $('.gallery-detalles').click(function () {
+        slideDetalles = $(this).attr('data-number');
+        $("#myModalDetails").on('show.bs.modal', function () {
+            setTimeout(function () {
+                var galleryTop = new Swiper('.gallery-top-details', {
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                    spaceBetween: 10,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                });
+                var galleryThumbs = new Swiper('.gallery-thumbs-details', {
+                    spaceBetween: 10,
+                    slidesPerView: 4,
+                    touchRatio: 0.2,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                    slideToClickedSlide: true
+                });
+                galleryTop.params.control = galleryThumbs;
+                galleryThumbs.params.control = galleryTop;
+                galleryThumbs.slideTo(slideDetalles, 0);
+            }, 500);
+        });
+    });
+
+    var galleryTop = new Swiper('.gallery-top-blueprint', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 10,
+        loop: true,
+        loopedSlides: 5, //looped slides should be the same
+        initialSlide: 1
+    });
+    var galleryThumbs = new Swiper('.gallery-thumbs-blueprint', {
+        spaceBetween: 80,
+        slidesPerView: 3,
+        touchRatio: 0.2,
+        loop: true,
+        loopedSlides: 5, //looped slides should be the same
+        slideToClickedSlide: true,
+        initialSlide: 1,
+        centeredSlides: true,
+        breakpoints: {
+            // when window width is <= 767px
+            767: {
+                slidesPerView: 2,
+                spaceBetween: 14,
+                centeredSlides: false
+            },
+            1023: {
+                slidesPerView: 3,
+                spaceBetween: 60
+            }
+        }
+    });
+    galleryTop.params.control = galleryThumbs;
+    galleryThumbs.params.control = galleryTop;
+
 });
 
 // Show/Hide Filter button on scroll
@@ -606,7 +734,7 @@ if (screen.width() < 768) {
     });
 }
 
-$(document).scroll(function() {
+$(document).scroll(function () {
     var y = $(this).scrollTop();
     if (y > 800) {
         $('.footer-top').fadeIn();
@@ -614,3 +742,6 @@ $(document).scroll(function() {
         $('.footer-top').fadeOut();
     }
 });
+
+
+ 

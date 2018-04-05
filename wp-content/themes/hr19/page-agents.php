@@ -85,6 +85,8 @@ if ( have_posts() ): while ( have_posts() ):
 					$rooms       = get_post_meta( $property->ID, '_pr_room_count', true );
 					$baths       = get_post_meta( $property->ID, '_pr_baths_total', true );
 					$sysid       = get_post_meta( $property->ID, '_pr_matrixid', true );
+					$transac     = get_post_meta( get_the_ID(), '_pr_transaction', true );
+					$broker      = get_post_meta( get_the_ID(), '_pr_brokerby', true );
 					$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
 					$headers     = get_headers( $bgimg, 1 );
 					$fsize       = $headers['Content-Length'];
@@ -140,6 +142,10 @@ if ( have_posts() ): while ( have_posts() ):
 								echo $bgimg;
 							} ?>
                                     );">
+                                <div class="by-broker">
+                                    <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?>
+                                        <span><?php echo $broker ?></span></p>
+                                </div>
                             </div>
                             <div class="property-info">
                                 <h2 class="info-price"><?php echo $csymbol . number_format( $price, 0, '.', ',' ); ?></h2>
@@ -155,7 +161,7 @@ if ( have_posts() ): while ( have_posts() ):
 										echo '· ' . $baths . $bth;
 									} ?></h3>
                                 <h3 class="info-address"><?php echo $address; ?></h3>
-                                <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
+                                <h3 class="info-mls"><?php echo ( $transac == "Presale" ? "" : "MLS: " ) ?> <?php echo $property->post_title; ?></h3>
                             </div>
                         </a>
                     </div>
@@ -201,6 +207,8 @@ if ( have_posts() ): while ( have_posts() ):
 					$rooms       = get_post_meta( $property->ID, '_pr_room_count', true );
 					$baths       = get_post_meta( $property->ID, '_pr_baths_total', true );
 					$sysid       = get_post_meta( $property->ID, '_pr_matrixid', true );
+					$transac     = get_post_meta( get_the_ID(), '_pr_transaction', true );
+					$broker      = get_post_meta( get_the_ID(), '_pr_brokerby', true );
 					$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
 					$headers     = get_headers( $bgimg, 1 );
 					$fsize       = $headers['Content-Length'];
@@ -256,6 +264,10 @@ if ( have_posts() ): while ( have_posts() ):
 								echo $bgimg;
 							} ?>
                                     );">
+                                <div class="by-broker">
+                                    <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?>
+                                        <span><?php echo $broker ?></span></p>
+                                </div>
                             </div>
                             <div class="property-info">
                                 <h2 class="info-price"><?php echo $csymbol . number_format( $price, 0, '.', ',' ); ?></h2>
@@ -271,7 +283,7 @@ if ( have_posts() ): while ( have_posts() ):
 										echo '· ' . $baths . $bth;
 									} ?></h3>
                                 <h3 class="info-address"><?php echo $address; ?></h3>
-                                <h3 class="info-mls">MLS: <?php echo $property->post_title; ?></h3>
+                                <h3 class="info-mls"><?php echo ( $transac == "Presale" ? "" : "MLS: " ) ?> <?php echo $property->post_title; ?></h3>
                             </div>
                         </a>
                     </div>

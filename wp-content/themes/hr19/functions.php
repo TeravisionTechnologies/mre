@@ -17,12 +17,13 @@ function hr_scripts() {
 	#Getting cities, address and postal codes for the suggestion plugin.
 	global $wpdb;
 	$lang           = get_locale();
-	$cities         = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_city' ) );
-	$address        = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_address' ) );
-	$postalcode     = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_value ASC", '_pr_postalcode' ) );
+	$cities         = array_filter( $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s AND meta_key IS NOT NULL ORDER BY meta_value ASC", '_pr_city' ) ) );
+	$address        = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s AND meta_key IS NOT NULL ORDER BY meta_value ASC", '_pr_address' ) );
+	$postalcode     = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s AND meta_key IS NOT NULL ORDER BY meta_value ASC", '_pr_postalcode' ) );
 	$jsonaddress    = wp_json_encode( $cities );
 	$jsoncities     = wp_json_encode( $address );
 	$jsonpostalcode = wp_json_encode( $postalcode );
+	$place          = get_query_var( 's' );
 	if ( $lang == "es_ES" ) {
 		$msj        = '<p class="no-results"><span>No pudimos encontrar su búsqueda</span><br>Verifique su ortografía o vuelva a hacer su búsqueda usando una ubicación dentro de los E.E.U.U</p>';
 		$acaddress  = "Dirección";
@@ -52,6 +53,7 @@ function hr_scripts() {
 	wp_enqueue_script( 'sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array(), '1.0.4', true );
 	wp_enqueue_script( 'validator', get_template_directory_uri() . '/js/validator.min.js', array(), '0.11.9', true );
 	wp_enqueue_script( 'autocomplete', get_template_directory_uri() . '/js/jquery.autocomplete.js', array(), '0.11.1', true );
+	wp_enqueue_script( 'youtubeplaylist', get_template_directory_uri() . '/js/jquery.youtubeplaylist.js', array(), '0.11.1', true );
 	wp_enqueue_script( 'my-script', get_template_directory_uri() . '/js/basic.js', array(), '1.0', true );
 	wp_localize_script( 'my-script', 'hr19', array(
 		'root'        => get_template_directory_uri(),
@@ -63,6 +65,7 @@ function hr_scripts() {
 		'accity'      => $accity,
 		'acpc'        => $acpc,
 		'acrequired'  => $acrequired,
+		'place'       => $place
 	) );
 }
 
@@ -153,6 +156,8 @@ function pr_register_query_vars( $vars ) {
 	$vars[] = 'proporder';
 	$vars[] = 'propsort';
 	$vars[] = 'property_status';
+	$vars[] = 'country_page';
+	$vars[] = 'city_page';
 
 	return $vars;
 }
@@ -250,3 +255,49 @@ function my_post_count_queries( $query ) {
 }
 
 add_action( 'pre_get_posts', 'my_post_count_queries' );
+
+function has_query_var( $var ) {
+	global $wp_query;
+
+	return isset( $wp_query->query_vars[ $var ] );
+}
+
+function query_country( $obj ) {
+
+	$args['meta_query'][] = array(
+		'key'     => '_pr_transaction',
+		'value'   => $obj->transaction,
+		'compare' => '='
+	);
+
+	$args['meta_query'][] = array(
+		'key'     => '_pr_owner',
+		'value'   => 'HR19',
+		'compare' => '=',
+	);
+
+	if ( isset( $obj->country ) ) {
+		$args['meta_query'][] = array(
+			'key'     => '_pr_country',
+			'value'   => $obj->country,
+			'compare' => '=',
+		);
+	}
+
+	if ( isset( $obj->city ) ) {
+		$args['meta_query'][] = array(
+			'key'     => '_pr_city',
+			'value'   => $obj->city,
+			'compare' => '='
+		);
+	}
+
+	$query = new WP_Query( array(
+		'post_type'      => 'property',
+		'posts_per_page' => 9,
+		'paged'          => $obj->paged,
+		'meta_query'     => $args
+	) );
+
+	return $query;
+}

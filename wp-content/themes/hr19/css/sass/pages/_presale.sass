@@ -1,0 +1,503 @@
+body
+  background: $white !important
+
+.push
+  -webkit-transform: translateX(300px)
+  -ms-transform: translateX(300px)
+  transform: translateX(300px)
+  transition: all 700ms
+
+.push2
+  -webkit-transform: translateX(0px)
+  -ms-transform: translateX(0px)
+  transform: translateX(0px)
+  transition: all 700ms
+
+#property-content
+  p
+    font-size: 16px
+    line-height: 1.5
+    color: $grey
+    margin: 0 0 22px !important
+    padding: 0 100px
+
+.memory-items
+  padding: 0 100px
+
+.memory-items
+  img
+    margin: 40px 0
+
+.hero-buttons
+  position: absolute
+  left: 0
+  right: 0
+  margin: auto
+  bottom: 180px
+  width: 600px
+  a.download-bro
+    height: auto
+    max-height: 108px
+    overflow: hidden
+    border: solid 2px $white
+    font-size: 18px
+    font-weight: bold
+    line-height: 1.11
+    text-align: center
+    color: $white
+    padding: 14px 5px
+    transition: all ease .3s
+    -moz-transition: all ease .3s
+    -ms-transition: all ease .3s
+    -o-transition: all ease .3s
+    -webkit-transition: all ease .3s
+    border-radius: 30px
+    display: inline-block
+    min-width: 250px
+    &:first-child
+      margin-right: 20px
+    &:hover
+      text-decoration: none !important
+      color: white !important
+      background-color: rgba(240, 240, 240, 0.2)
+
+#property-content
+  ul, ol
+    font-size: 16px
+    line-height: 1.5
+    color: #8f8f8f
+    margin: 0 0 22px !important
+    text-align: left
+
+.detail-content ol
+  padding: 0 120px
+  -moz-column-count: 2
+  -moz-column-gap: 20px
+  -webkit-column-count: 2
+  -webkit-column-gap: 20px
+  column-count: 2
+  column-gap: 20px
+  counter-reset: colnum
+
+.detail-content ol li
+  overflow: hidden
+  -webkit-column-break-inside: avoid
+  page-break-inside: avoid
+  break-inside: avoid
+  counter-increment: colnum
+
+.detail-content ol li:before
+  content: counter(colnum) ".  "
+  white-space: pre
+  float: left
+
+.prop-header
+  height: 600px
+  position: relative
+  margin-bottom: 40px
+  background-repeat: no-repeat !important
+  background-position: center center !important
+  -ms-background-size: cover !important
+  -o-background-size: cover !important
+  -moz-background-size: cover !important
+  -webkit-background-size: cover !important
+  background-size: cover !important
+
+.prop-header h1
+  position: absolute
+  left: 0
+  right: 0
+  top: -35px
+  bottom: 0
+  height: 40px
+  margin: auto
+  font-size: 36px
+  letter-spacing: -0.2px
+  text-align: center
+  color: $white
+
+.prop-header h2
+  font-size: 20px
+  letter-spacing: -0.1px
+  text-align: center
+  color: $white
+  position: absolute
+  left: 0
+  right: 0
+  top: 35px
+  bottom: 0
+  height: 22px
+  margin: auto
+
+.detail-tlt
+  height: 80px
+  background-color: $black
+  text-transform: uppercase
+  font-size: 24px
+  letter-spacing: 8px
+  text-align: center
+  color: $white
+  padding: 24px 15px
+  margin: 50px 0
+
+.amenimg
+  overflow: hidden
+  height: get-vw-desktop(280px)
+  margin-bottom: 30px
+  display: block
+  background-repeat: no-repeat !important
+  background-position: center center !important
+  -ms-background-size: cover !important
+  -o-background-size: cover !important
+  -moz-background-size: cover !important
+  -webkit-background-size: cover !important
+  background-size: cover !important
+  transition: all ease .3s
+  -moz-transition: all ease .3s
+  -ms-transition: all ease .3s
+  -o-transition: all ease .3s
+  -webkit-transition: all ease .3s
+  &:hover
+    opacity: 0.8
+
+#map
+  height: 486px
+  width: 100%
+  margin-top: -50px
+
+.gallery-images
+  margin-top: 50px
+
+.places-wrapper
+  position: relative
+  &:hover
+    opacity: 1 !important
+    .places-mask
+      display: block
+  .places-mask
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(3, 60, 90, 0.7)
+    color: $white
+    text-align: center
+    line-height: get-vw-desktop(280px)
+    display: none
+    font-size: 20px
+    font-weight: bold
+.gallery-places
+  margin-bottom: 50px
+
+.swiper-container
+  margin-left: auto
+  margin-right: auto
+
+.swiper-detail
+  width: 100%
+  height: 400px !important
+
+#collapse4
+  position: relative
+
+#gallery-top-blueprint
+  .swiper-slide
+    background-size: cover !important
+    background-position: center center !important
+    background-repeat: no-repeat !important
+
+#gallery-thumbs-blueprint
+  .swiper-slide
+    background-size: 100% 100% !important
+    background-position: center center !important
+    background-repeat: no-repeat !important
+    opacity: 0.5
+
+#gallery-thumbs-blueprint
+  .swiper-slide-active
+    border: solid 1px $grey !important
+    opacity: 1 !important
+
+#amenities-gallery
+  .swiper-slide
+    background-size: cover !important
+    background-position: center center !important
+    background-repeat: no-repeat !important
+
+#interior-gallery
+  .swiper-slide
+    background-size: cover !important
+    background-position: center center !important
+    background-repeat: no-repeat !important
+
+#amenities-gallery
+  .swiper-button-white
+    filter: brightness(200%) !important
+
+#interior-gallery
+  .swiper-button-white
+    filter: brightness(200%) !important
+
+.gallery-top
+  height: 80%
+  width: 100%
+
+.gallery-top-blueprint
+  //width: 80% !important
+  height: 545px !important
+  margin-bottom: 30px
+
+.gallery-thumbs-blueprint
+  height: get-vw-desktop(190px) !important
+
+.modal-detail .swiper-detail-thumbs
+  padding-top: 10px !important
+
+.border-thumb
+  padding: 0 0 50px
+  margin-top: 0px
+
+.swiper-detail-thumbs
+  height: 120px
+
+.blueprint-img
+  border: solid 1px $grey
+
+.gallery-thumbs
+  .swiper-slide
+    width: 25%
+    height: 100%
+    opacity: 0.4
+
+.gallery-thumbs .swiper-slide-active
+  opacity: 1
+
+.modal-detail
+  .modal-body
+    padding: 0
+
+.modal-detail
+  .modal-content
+    border-radius: 0
+    background-color: transparent
+
+.modal-detail
+  .close
+    opacity: 1
+    padding: 20px 5px
+
+.modal-detail
+  .close
+    .fa
+      color: $white
+
+.modal-backdrop
+  .in
+    opacity: 0.9 !important
+
+.btn-planos
+  font-family: Montserrat-Bold
+  width: auto
+  border: solid 2px $grey
+  border-radius: 0
+  font-size: 18px
+  line-height: 20px
+  text-align: center
+  color: $grey
+  padding: get-vw-desktop(15px) get-vw-desktop(40px)
+  margin: 0 auto
+  display: inline-block
+  border-radius: 30px
+  transition: all ease .3s
+  -moz-transition: all ease .3s
+  -ms-transition: all ease .3s
+  -o-transition: all ease .3s
+  -webkit-transition: all ease .3s
+  &:hover
+    text-decoration: none
+    color: $grey
+    background: #EDEDED
+  &:active
+    text-decoration: none
+    color: $grey
+    background: #EDEDED
+  &:focus
+    text-decoration: none
+    color: $grey
+    background: #EDEDED
+
+#save-widget
+  box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px
+  background-color: $white
+  padding: 10px
+  height: 45px
+  font-size: 13px
+  right: 5px !important
+  top: 5px !important
+  width: 217px
+  left: initial !important
+  &:nth-child(3)
+    display: none !important
+  p
+    padding: 0 !important
+    font-size: 14px !important
+    a
+      color: #fff !important
+      background: #000 !important
+      font-size: 11px !important
+      font-weight: 600 !important
+      padding: 2px 6px !important
+
+.item-active2
+  opacity: 0.5
+
+.sort-by-button-group
+  right: -1px !important
+  left: initial !important
+  top: 45px !important
+  width: 260px
+
+.btn-filter
+  height: 46px
+  border: solid 1px $grey-1
+  background: none
+  border-radius: 0
+  width: 260px
+  text-align: left
+  font-size: 16px
+  color: #7f8182
+  font-family: 'Montserrat', sans-serif
+  .caret
+    right: get-vw-desktop(16px)
+    top: get-vw-desktop(21px)
+    position: absolute
+
+.swiper-button-next
+  width: 60px
+  height: 60px
+  top: 44%
+  font-size: 35px
+  text-align: right
+  color: $grey-1
+  transition: all ease .5s
+  -moz-transition: all ease .5s
+  -ms-transition: all ease .5s
+  -o-transition: all ease .5s
+  -webkit-transition: all ease .5s
+  &:hover
+    color: $grey
+
+.swiper-button-prev
+  width: 60px
+  height: 60px
+  top: 44%
+  font-size: 35px
+  color: $grey-1
+  transition: all ease .5s
+  -moz-transition: all ease .5s
+  -ms-transition: all ease .5s
+  -o-transition: all ease .5s
+  -webkit-transition: all ease .5s
+  &:hover
+    color: $grey
+
+#gallery-top-blueprint
+  .swiper-slide
+    margin-top: 40px !important
+    .bp-title
+      margin-top: -40px
+      span
+        font-size: 20px
+        color: $grey
+
+.modal-backdrop.in
+  filter: alpha(opacity=90) !important
+  opacity: 0.9 !important
+
+.orderby
+  font-size: get-vw-desktop(16px)
+  padding: get-vw-desktop(5px) get-vw-desktop(20px) !important
+
+.fa-play-circle
+  font-size: get-vw-desktop(70px)
+  width: get-vw-desktop(70px)
+  height: get-vw-desktop(70px)
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  position: absolute
+  margin: auto
+
+.presale-features
+  .panel
+    .panel-body
+      p
+        margin-bottom: 20px
+
+.number
+  &:after
+    counter-increment: panel-counter
+    content: counter(panel-counter) " "
+
+#ytvideo,
+#ytvideo2
+  float: left
+  margin-right: 10px
+  width: 720px
+  object
+    width: 100%
+    height: 400px
+    embed
+      width: 100%
+      height: 400px
+
+.yt_holder
+  float: left
+  margin-bottom: 15px
+  width: 100%
+
+#watchVideo
+  ul
+    float: left
+    margin: 0
+    padding: 0
+    width: 124px
+    margin-left: 12px
+    li
+      list-style-type: none
+      display: block
+      float: left
+      width: auto
+      margin-bottom: 5px
+      padding: 2px
+      a
+        text-decoration: none
+        display: block
+        color: $black
+      img
+        width: 120px
+        float: left
+
+.modal-content-video
+  background-color: transparent
+  box-shadow: none
+  .modal-header
+    border: none
+  .close
+    opacity: 1
+    position: absolute
+    right: -60px
+    top: 50px
+    color: $white
+    transition: all ease .3s
+    -moz-transition: all ease .3s
+    -ms-transition: all ease .3s
+    -o-transition: all ease .3s
+    -webkit-transition: all ease .3s
+    .fa
+      font-size: 30px
+      text-shadow: none
+    &:hover
+      color: $white

@@ -78,11 +78,11 @@ function get_mls_orlando() {
 			$proptype = "Condo";
 		} elseif ( $property['PropertyStyle'] == "Mobile Home/Rv Park" || $property['PropertyStyle'] == "Mobile Home Use" ) {
 			$proptype = "Mobile";
-		} elseif ( $property['PropertyStyle'] == "Crop Producing Farm" || $property['PropertyStyle'] == "Dude Ranch" || $property['PropertyStyle'] == "Farmland" || $property['PropertyStyle'] == "Fish Farm" || $property['PropertyStyle'] == "Sod Farm" || $property['PropertyStyle'] == "Tree Farm" || $property['PropertyStyle'] == "Working Ranch" ){
+		} elseif ( $property['PropertyStyle'] == "Crop Producing Farm" || $property['PropertyStyle'] == "Dude Ranch" || $property['PropertyStyle'] == "Farmland" || $property['PropertyStyle'] == "Fish Farm" || $property['PropertyStyle'] == "Sod Farm" || $property['PropertyStyle'] == "Tree Farm" || $property['PropertyStyle'] == "Working Ranch" ) {
 			$proptype = "Farm";
-		} elseif ( $property['PropertyStyle'] == "Acreage/Ranch/Grove" || $property['PropertyStyle'] == "Agricultural" || $property['PropertyStyle'] == "Groves" || $property['PropertyStyle'] == "Ranchland" || $property['PropertyStyle'] == "Timberland" ){
+		} elseif ( $property['PropertyStyle'] == "Acreage/Ranch/Grove" || $property['PropertyStyle'] == "Agricultural" || $property['PropertyStyle'] == "Groves" || $property['PropertyStyle'] == "Ranchland" || $property['PropertyStyle'] == "Timberland" ) {
 			$proptype = "Land";
-		} else{
+		} else {
 			$proptype = $property['PropertyStyle'];
 		}
 
@@ -95,11 +95,13 @@ function get_mls_orlando() {
 				'post_status'  => 'publish',
 				'post_type'    => 'property',
 				'meta_input'   => array(
-					'_pr_address'                     => $property['StreetNumber'] . ' ' . $property['StreetName'] . ' ' . $property['UnitNumber'] . ' ' . ucfirst(strtolower($property['StreetCity'])) . ' ' . $state,
+					'_pr_address'                     => $property['StreetNumber'] . ' ' . $property['StreetName'] . ' ' . $property['UnitNumber'] . ' ' . ucfirst( strtolower( $property['StreetCity'] ) ) . ' ' . $state,
 					'_pr_state'                       => $state,
-					'_pr_city'                        => ucfirst(strtolower($property['StreetCity'])),
+					'_pr_city'                        => ucfirst( strtolower( $property['StreetCity'] ) ),
+					'_pr_country'                     => "usa",
 					'_pr_community'                   => $property['CountyOrParish'],
-					'_pr_subdiv'                      => $property['LegalSubdivisionName '],
+					'_pr_subdiv'                      => $property['LegalSubdivisionName'],
+					'_pr_brokerby'                    => $property['ListOfficeName'],
 					'_pr_current_price'               => round( $property['CurrentPrice'] ),
 					'_pr_type_of_property'            => $proptype,
 					'_pr_room_count'                  => $rooms,
@@ -115,7 +117,7 @@ function get_mls_orlando() {
 					'_pr_status'                      => $property['Status'],
 					//'_pr_forsale'                     => $property['ForSaleYN'], // REVISAR!!
 					'_pr_forlease'                    => $property['ForLeaseYN'], // REVISAR!!
-					'_pr_postalcode'                  => $property['PostalCode'] . ', ' . ucfirst(strtolower($property['StreetCity'])) . ', ' . $state,
+					'_pr_postalcode'                  => $property['PostalCode'] . ', ' . ucfirst( strtolower( $property['StreetCity'] ) ) . ', ' . $state,
 					'_pr_transaction'                 => $transaction,
 					'_pr_owner'                       => $owner,
 					'_pr_ActiveOpenHouseCount'        => $property['ActiveOpenHouseCount'], // REVISAR!!!!!
@@ -274,11 +276,13 @@ function get_mls_orlando() {
 				'post_status'  => 'publish',
 				'post_type'    => 'property',
 				'meta_input'   => array(
-					'_pr_address'                     => $property['StreetNumber'] . ' ' . $property['StreetName'] . ' ' . $property['UnitNumber'] . ' ' . ucfirst(strtolower($property['StreetCity'])) . ' ' . $state,
+					'_pr_address'                     => $property['StreetNumber'] . ' ' . $property['StreetName'] . ' ' . $property['UnitNumber'] . ' ' . ucfirst( strtolower( $property['StreetCity'] ) ) . ' ' . $state,
 					'_pr_state'                       => $state,
-					'_pr_city'                        => ucfirst(strtolower($property['StreetCity'])),
+					'_pr_city'                        => ucfirst( strtolower( $property['StreetCity'] ) ),
+					'_pr_country'                     => "usa",
 					'_pr_community'                   => $property['CountyOrParish'],
 					'_pr_subdiv'                      => $property['LegalSubdivisionName '],
+					'_pr_brokerby'                    => $property['ListOfficeName'],
 					'_pr_current_price'               => round( $property['CurrentPrice'] ),
 					'_pr_type_of_property'            => $proptype,
 					'_pr_room_count'                  => $rooms,
@@ -294,7 +298,7 @@ function get_mls_orlando() {
 					'_pr_status'                      => $property['Status'],
 					//'_pr_forsale'                     => $property['ForSaleYN'], // REVISAR!!
 					'_pr_forlease'                    => $property['ForLeaseYN'], // REVISAR!!
-					'_pr_postalcode'                  => $property['PostalCode'] . ', ' . ucfirst(strtolower($property['StreetCity'])) . ', ' . $state,
+					'_pr_postalcode'                  => $property['PostalCode'] . ', ' . ucfirst( strtolower( $property['StreetCity'] ) ) . ', ' . $state,
 					'_pr_transaction'                 => $transaction,
 					'_pr_owner'                       => $owner,
 					'_pr_ActiveOpenHouseCount'        => $property['ActiveOpenHouseCount'], // REVISAR!!!!!

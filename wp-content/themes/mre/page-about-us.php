@@ -31,7 +31,7 @@ $bgservices   = get_post_meta( $headerPost[0]->ID, '_hf_srvsbg', true );
         </div>
     </section>
     <section id="about-main-text">
-		<?php echo $main_text[0]['_au_main_text']; ?>
+		<?php echo wpautop($main_text[0]['_au_main_text']); ?>
     </section>
     <section id="about-secondary-text">
         <div class="vision col-xs-12 col-sm-6">

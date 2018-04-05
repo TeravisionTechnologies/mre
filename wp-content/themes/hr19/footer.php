@@ -21,10 +21,10 @@ $lang = get_locale();
 			} ?></p>
     </div>
     <div class="hr-partners-images">
-        <a href="<?php echo $partners[0]['_hf_partner_link_left']; ?>" target="_blank"><img
+        <a href="<?php echo isset($partners[0]['_hf_partner_link_left']) ? $partners[0]['_hf_partner_link_left'] : null ?>" target="_blank"><img
                     src="<?php echo $partners[0]['_hf_partner_logo_left']; ?>" alt="Logo ALA19"
                     class="partners-images-one"/></a>
-        <a href="<?php echo $partners[0]['_hf_partner_link_right']; ?>" target="_blank"><img
+        <a href="<?php echo isset($partners[0]['_hf_partner_link_right']); ?>" target="_blank"><img
                     src="<?php echo $partners[0]['_hf_partner_logo_right']; ?>" alt="Logo MRE RealEstate"
                     class="partners-images-two"/></a>
     </div>
@@ -117,7 +117,7 @@ $lang = get_locale();
             <div class="col-xs-12 col-md-4 no-padding">
                 <div class="hr-phone-box text-center center-block">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/smartphone.svg" alt="Llamanos HR19">
-                    <p><?php if ( isset( $contact[0]['_hf_contact_text'] ) ) {
+                    <p><?php if ( !empty( $contact[0]['_hf_contact_text'] ) ) {
 							echo $contact[0]['_hf_contact_text'];
 						} ?></p>
                     <a href="tel:<?php echo str_replace( array(
@@ -126,7 +126,11 @@ $lang = get_locale();
 						"-",
 						"/"
 					), "", $contact[0]['_hf_contact_phone'] ); ?>"
-                       class="hr-phone-num"><?php echo $contact[0]['_hf_contact_phone']; ?></a>
+                       class="hr-phone-num">
+                        <?php if(!empty($contact[0]['_hf_contact_phone'])){
+                            echo $contact[0]['_hf_contact_phone'];
+                        } ?>
+                    </a>
                 </div>
             </div>
             <div class="col-xs-12 col-md-8 hr-contact-form-div no-padding">

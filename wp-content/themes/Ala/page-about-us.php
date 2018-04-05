@@ -17,6 +17,7 @@ $home_query = get_posts(
     )
 );
 $home_info = get_post_meta($home_query[0]->ID);
+
 ?>
     <section id="about-hero-section" style="background-image: url(<?php echo $hero[0]['_au_hero_background']; ?>)">
         <div class="about-hero-overlay">
@@ -24,7 +25,7 @@ $home_info = get_post_meta($home_query[0]->ID);
         </div>
     </section>
     <section id="about-main-text">
-		<?php echo $main_text[0]['_au_main_text']; ?>
+		<?php echo wpautop($main_text[0]['_au_main_text']); ?>
     </section>
     <div class="col-xs-12 al-partners-section text-center">
         <div class="container">

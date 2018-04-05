@@ -468,3 +468,64 @@ a.hr-phone-num
           line-height: get-vw-tablet(25px)
           margin: 0
 // END Offices
+
+
+.country-selector
+  margin: get-vw-tablet(20px) 0 get-vw-tablet(60px) 0
+  li
+    height: get-vw-tablet(20px)
+    a
+      font-size: get-vw-tablet(15px)
+  .divider
+    height: get-vw-tablet(20px)
+    margin: 0 get-vw-tablet(15px)
+
+.updated-info
+  p
+    font-size: get-vw-tablet(10px)
+    letter-spacing: get-vw-tablet(-0.1px)
+    margin-bottom: get-vw-tablet(20px)
+
+.search
+  .updated-info
+    margin: 20px 0 15px 0
+    p
+      position: relative
+      font-size: get-vw-tablet(10px)
+      color: $grey
+      letter-spacing: get-vw-tablet(-0.1px)
+      margin: 0
+      text-align: right
+    span
+      background-color: $white
+      padding-left: 10px
+      display: inline
+      &:before
+        content: ""
+        position: absolute
+        bottom: 3px
+        left: 0
+        right: 0
+        height: 0.5em
+        z-index: -1
+        border-top: solid 2px rgba(74, 74, 74, 0.1)
+
+.by-broker
+  font-size: get-vw-tablet(9px)
+  p
+    margin: get-vw-tablet(10px) get-vw-tablet(22px)
+
+.property-code
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+
+.property-list
+  .margint7
+    select
+      font-size: 12px
+      width: 142px
+    form
+      select
+        font-size: 12px
+        width: 142px

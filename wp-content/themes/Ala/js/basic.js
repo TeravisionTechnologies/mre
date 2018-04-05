@@ -16,6 +16,10 @@ jQuery(document).ready(function () {
         $("html, body").animate({scrollTop: 0}, 2000);
     });
 
+    $('#watchVideo').on('hidden.bs.modal', function () {
+        location.reload();
+    });
+
     // Add Swiper Flags
     var swiperFlag = new Swiper('.swiper-container-flags', {
         initialSlide: 0,
@@ -158,6 +162,11 @@ jQuery(document).ready(function () {
     galleryTop.params.control = galleryThumbs;
     galleryThumbs.params.control = galleryTop;
 
+    //Video Carousel
+    if ($(".vid").length) {
+        $("ul.demo2").ytplaylist({addThumbs: true, autoPlay: false, holderId: 'ytvideo2'});
+    }
+
 
     $(function () {
         $('.locations').on('click', '.the-country', function (e) {
@@ -271,6 +280,7 @@ jQuery(document).ready(function () {
         $("#orderByName").val($(this).val());
         $(this).closest('form').submit();
     });
+
 });
 
 $(document).scroll(function() {
@@ -281,4 +291,13 @@ $(document).scroll(function() {
         $('.footer-top').fadeOut();
     }
 });
+
+//Objetivo: Devolver la ruta correspondiente para el cambio de idiomas en el header
+    
+$(document).on('change', '#sl-lgg', function (e) {
+       
+    window.location.href = $('#sl-lgg').val();
+
+});
+
 

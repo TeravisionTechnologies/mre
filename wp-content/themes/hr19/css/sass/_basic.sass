@@ -2,6 +2,7 @@
 body
   font-family: Montserrat-Regular, sans-serif
   overflow-x: hidden
+  counter-reset: panel-counter
 
 .o-wrapper
   overflow-x: hidden
@@ -47,11 +48,11 @@ body
     background-color: $white
     z-index: 2
     .social-icons
-      height: get-vw-desktop(33.9px)
+      height: get-vw-desktop(30.9px)
       position: absolute
       list-style: none
-      right: get-vw-desktop(50.3px)
-      top: get-vw-desktop(23.3px)
+      right: get-vw-desktop(155.3px)
+      top: get-vw-desktop(26.3px)
       .social-icon
         position: relative
         height: 100%
@@ -413,6 +414,19 @@ body.has-active-menu
 .c-button-close
   right: 0 !important
   left: unset !important
+
+ 
+.select-lenguage
+  position: absolute
+  top: 26%
+  right: get-vw-desktop(70.3px)
+  height: 55%
+  font-size: 18px
+  color: $mainblue
+  border: 0px
+  outline: 0px
+
+
 // END Header
 
 // Hero
@@ -562,11 +576,12 @@ body.has-active-menu
     margin-bottom: 40px
     position: relative
     background-color: $white
-    span
+    float: left
+    /*span
       background-color: $white
       position: relative
-      z-index: 10
-    &:after
+      z-index: 10*/
+    /*&:after
       content: ""
       position: absolute
       bottom: 0
@@ -575,7 +590,7 @@ body.has-active-menu
       border-top: 2px solid rgba(143, 143, 143, 0.4)
       top: 0
       margin: auto
-      width: 100%
+      width: 100%*/
   .hr-heading
     font-size: 16px
     font-weight: bold
@@ -749,6 +764,7 @@ input[type="radio"].styled:checked + label
     background-repeat: no-repeat !important
     background-size: 150% 150% !important
     background-position: center center !important
+    position: relative
   .property-info
     padding: 15px 20px 10px
     background-color: $greylighter
@@ -1617,3 +1633,107 @@ input:checked + .slider:before
   text-overflow: ellipsis
   white-space: nowrap
   overflow: hidden
+
+.country-selector
+  list-style: none
+  padding-left: 0
+  margin: get-vw-desktop(20px) 0 get-vw-desktop(60px) 0
+  display: inline-block
+  li
+    display: inline-block
+    height: get-vw-desktop(24px)
+    float: left
+    line-height: normal
+    a
+      color: $grey
+      font-size: get-vw-desktop(18px)
+      transition: all ease .7s
+      -moz-transition: all ease .7s
+      -ms-transition: all ease .7s
+      -o-transition: all ease .7s
+      -webkit-transition: all ease .7s
+      opacity: 0.6
+      &:hover
+        text-decoration: none
+        opacity: 1
+    .active
+      opacity: 1
+  .divider
+    border-left: solid 1px $grey
+    height: get-vw-desktop(24px)
+    margin: 0 get-vw-desktop(15px)
+    opacity: 0.4
+
+.updated-info
+  p
+    font-size: 13px
+    color: $grey
+    letter-spacing: get-vw-desktop(-0.1px)
+    margin-bottom: get-vw-desktop(30px)
+    position: relative
+    background-color: $white
+    height: 30px
+    span
+      position: relative
+      background-color: $white
+      float: right
+      z-index: 10
+      padding-top: 5px
+      padding-left: 10px
+    &:before
+      content: ""
+      position: absolute
+      bottom: 0
+      right: 0
+      height: 2px
+      border-top: 2px solid rgba(143, 143, 143, 0.4)
+      top: 0
+      margin: auto
+      width: 100%
+
+.search
+  .updated-info
+    margin: 20px 0 15px 0
+    p
+      position: relative
+      font-size: get-vw-desktop(13px)
+      color: $grey
+      letter-spacing: get-vw-desktop(-0.1px)
+      margin: 0
+      text-align: right
+    span
+      background-color: $white
+      padding-left: 10px
+      display: inline
+      &:before
+        content: ""
+        position: absolute
+        bottom: 3px
+        left: 0
+        right: 0
+        height: 0.5em
+        z-index: -1
+        border-top: solid 2px rgba(74, 74, 74, 0.1)
+
+.by-broker
+  background: $mainblue
+  opacity: 0.8
+  color: $white
+  position: absolute
+  width: 100%
+  left: 0
+  bottom: 0
+  font-size: get-vw-desktop(12px)
+  p
+    margin: get-vw-desktop(10px) get-vw-desktop(22px)
+    span
+      font-family: Montserrat-Medium
+
+.margint7
+  margin-top: 7px
+  form
+    display: inline-block
+  select
+    width: 216px
+    &:first-child
+      margin-right: 20px

@@ -271,7 +271,7 @@ jQuery(document).ready(function () {
             $('.error').fadeOut();
             $.ajax({
                 type: 'post',
-                url: 'http://test-mre.pantheonsite.io/ebook-submit/',
+                url: 'http://grupomre.com/ebook-submit/',
                 data: $(this).serialize(),
                 beforeSend:function(xhr){
                     $('.ebook-btn').attr({disabled: 'disabled'});
@@ -312,6 +312,14 @@ $(document).scroll(function() {
     } else {
         $('.mre-footer-go-top').fadeOut();
     }
+});
+
+ //Objetivo: Devolver la ruta correspondiente para el cambio de idiomas en el header
+    
+ $(document).on('change', '#sl-lgg', function (e) {
+       
+    window.location.href = $('#sl-lgg').val();
+
 });
 
 
