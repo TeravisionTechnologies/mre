@@ -53,15 +53,15 @@ function get_mls() {
 			$owner = "Other";
 		}
 
-		if ( $property['SqFtLivArea'] == "" ){
+		if ( $property['SqFtLivArea'] == "" ) {
 			$sqft = $property['SqFtTotal'];
-		} else{
+		} else {
 			$sqft = $property['SqFtLivArea'];
 		}
 
-		if ( $property['CoListAgentMLSID'] == "" ){
+		if ( $property['CoListAgentMLSID'] == "" ) {
 			$brokerId = $property['AgentLicenseNum'];
-		} else{
+		} else {
 			$brokerId = $property['CoListAgentMLSID'];
 		}
 
@@ -222,6 +222,7 @@ function get_mls() {
 					'_pr_EquipmentAppliances'         => $property['EquipmentAppliances'],
 					'_pr_TaxAmount'                   => round( $property['TaxAmount'] ),
 					'_pr_TotalMortgage'               => round( $property['TotalMortgage'] ),
+					'_pr_is_mls'                      => "1",
 				)
 			);
 			$posted_propertyEsp = wp_insert_post( $post_args );
@@ -402,6 +403,7 @@ function get_mls() {
 					'_pr_EquipmentAppliances'         => $property['EquipmentAppliances'],
 					'_pr_TaxAmount'                   => round( $property['TaxAmount'] ),
 					'_pr_TotalMortgage'               => round( $property['TotalMortgage'] ),
+					'_pr_is_mls'                      => "1",
 				),
 			);
 			$posted_property = wp_update_post( $post_args );

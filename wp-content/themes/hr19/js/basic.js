@@ -632,42 +632,14 @@ $(window).on('load', function () {
         }
     }
 
-    //Slider Amenities
-    var slideComodidades;
-    $('.gallery-comodidades').click(function () {
-        slideComodidades = $(this).attr('data-number');
-        $("#myModal").on('show.bs.modal', function () {
-            setTimeout(function () {
-                var galleryTop = new Swiper('.gallery-top', {
-                    nextButton: '.swiper-button-next',
-                    prevButton: '.swiper-button-prev',
-                    spaceBetween: 10,
-                    loop: true,
-                    loopedSlides: 5, //looped slides should be the same
-                });
-                var galleryThumbs = new Swiper('.gallery-thumbs', {
-                    spaceBetween: 10,
-                    slidesPerView: 4,
-                    touchRatio: 0.2,
-                    loop: true,
-                    loopedSlides: 5, //looped slides should be the same
-                    slideToClickedSlide: true
-                });
-                galleryTop.params.control = galleryThumbs;
-                galleryThumbs.params.control = galleryTop;
-                galleryThumbs.slideTo(slideComodidades, 0);
-            }, 500);
-        });
-    });
-
     var slideDetalles;
     $('.gallery-detalles').click(function () {
         slideDetalles = $(this).attr('data-number');
         $("#myModalDetails").on('show.bs.modal', function () {
             setTimeout(function () {
                 var galleryTop = new Swiper('.gallery-top-details', {
-                    nextButton: '.swiper-button-next',
-                    prevButton: '.swiper-button-prev',
+                    nextButton: '.swiper-button-next1',
+                    prevButton: '.swiper-button-prev2',
                     spaceBetween: 10,
                     loop: true,
                     loopedSlides: 5, //looped slides should be the same
@@ -682,12 +654,49 @@ $(window).on('load', function () {
                 });
                 galleryTop.params.control = galleryThumbs;
                 galleryThumbs.params.control = galleryTop;
-                galleryThumbs.slideTo(slideDetalles, 0);
+                galleryTop.slideTo(slideDetalles, 0);
             }, 500);
         });
     });
 
-    var galleryTop = new Swiper('.gallery-top-blueprint', {
+    $('#myModalDetails').on('hidden.bs.modal', function () {
+        location.reload();
+    });
+
+    //Slider Amenities
+    var slideComodidades;
+    $('.gallery-comodidades').click(function () {
+        slideComodidades = $(this).attr('data-number2');
+        $("#myModal").on('show.bs.modal', function () {
+            setTimeout(function () {
+                var galleryTop2 = new Swiper('.gallery-top', {
+                    nextButton: '.swiper-button-next3',
+                    prevButton: '.swiper-button-prev4',
+                    spaceBetween: 10,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                });
+                var galleryThumbs2 = new Swiper('.gallery-thumbs', {
+                    spaceBetween: 10,
+                    slidesPerView: 4,
+                    touchRatio: 0.2,
+                    loop: true,
+                    loopedSlides: 5, //looped slides should be the same
+                    slideToClickedSlide: true
+                });
+                galleryTop2.params.control = galleryThumbs2;
+                galleryThumbs2.params.control = galleryTop2;
+                galleryTop2.slideTo(slideComodidades, 0);
+            }, 500);
+        });
+    });
+
+    $('#myModal').on('hidden.bs.modal', function () {
+        location.reload();
+    });
+
+
+    var galleryTopPlanos = new Swiper('.gallery-top-blueprint', {
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         spaceBetween: 10,
@@ -695,7 +704,7 @@ $(window).on('load', function () {
         loopedSlides: 5, //looped slides should be the same
         initialSlide: 1
     });
-    var galleryThumbs = new Swiper('.gallery-thumbs-blueprint', {
+    var galleryThumbsPlanos = new Swiper('.gallery-thumbs-blueprint', {
         spaceBetween: 80,
         slidesPerView: 3,
         touchRatio: 0.2,
@@ -717,8 +726,8 @@ $(window).on('load', function () {
             }
         }
     });
-    galleryTop.params.control = galleryThumbs;
-    galleryThumbs.params.control = galleryTop;
+    galleryTopPlanos.params.control = galleryThumbsPlanos;
+    galleryThumbsPlanos.params.control = galleryTopPlanos;
 
 });
 

@@ -871,6 +871,10 @@ function property_metaboxes() {
 		'id'   => $prefix . 'photos',
 		'type' => 'file_list',
 	) );
+	$cmb_property->add_field( array(
+		'id'   => $prefix . 'is_mls',
+		'type' => 'hidden',
+	) );
 
 	/****** Presale template field ******/
 

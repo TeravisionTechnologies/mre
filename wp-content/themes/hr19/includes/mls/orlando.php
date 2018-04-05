@@ -244,6 +244,7 @@ function get_mls_orlando() {
 					'_pr_EquipmentAppliances'         => $property['AppliancesIncluded'],
 					'_pr_TaxAmount'                   => round( $property['Taxes'] ),
 					//'_pr_TotalMortgage'               => round( $property['TotalMortgage'] ),
+					'_pr_is_mls'                      => "1",
 				)
 			);
 			$posted_propertyEsp = wp_insert_post( $post_args );
@@ -425,6 +426,7 @@ function get_mls_orlando() {
 					'_pr_EquipmentAppliances'         => $property['AppliancesIncluded'],
 					'_pr_TaxAmount'                   => round( $property['Taxes'] ),
 					//'_pr_TotalMortgage'               => round( $property['TotalMortgage'] ),
+					'_pr_is_mls'                      => "1",
 				),
 			);
 			$posted_property = wp_update_post( $post_args );

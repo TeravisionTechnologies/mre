@@ -87,6 +87,7 @@ if ( have_posts() ): while ( have_posts() ):
 					$sysid       = get_post_meta( $property->ID, '_pr_matrixid', true );
 					$transac     = get_post_meta( get_the_ID(), '_pr_transaction', true );
 					$broker      = get_post_meta( get_the_ID(), '_pr_brokerby', true );
+					$mls         = get_post_meta( get_the_ID(), '_pr_is_mls', true );
 					$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
 					$headers     = get_headers( $bgimg, 1 );
 					$fsize       = $headers['Content-Length'];
@@ -161,7 +162,7 @@ if ( have_posts() ): while ( have_posts() ):
 										echo '· ' . $baths . $bth;
 									} ?></h3>
                                 <h3 class="info-address"><?php echo $address; ?></h3>
-                                <h3 class="info-mls"><?php echo ( $transac == "Presale" ? "" : "MLS: " ) ?> <?php echo $property->post_title; ?></h3>
+                                <h3 class="info-mls"><?php echo( $mls == "1" ? "MLS: " : " " ) ?> <?php echo $property->post_title; ?></h3>
                             </div>
                         </a>
                     </div>
@@ -209,6 +210,7 @@ if ( have_posts() ): while ( have_posts() ):
 					$sysid       = get_post_meta( $property->ID, '_pr_matrixid', true );
 					$transac     = get_post_meta( get_the_ID(), '_pr_transaction', true );
 					$broker      = get_post_meta( get_the_ID(), '_pr_brokerby', true );
+					$mls         = get_post_meta( get_the_ID(), '_pr_is_mls', true );
 					$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
 					$headers     = get_headers( $bgimg, 1 );
 					$fsize       = $headers['Content-Length'];
@@ -283,7 +285,7 @@ if ( have_posts() ): while ( have_posts() ):
 										echo '· ' . $baths . $bth;
 									} ?></h3>
                                 <h3 class="info-address"><?php echo $address; ?></h3>
-                                <h3 class="info-mls"><?php echo ( $transac == "Presale" ? "" : "MLS: " ) ?> <?php echo $property->post_title; ?></h3>
+                                <h3 class="info-mls"><?php echo( $mls == "1" ? "MLS: " : " " ) ?> <?php echo $property->post_title; ?></h3>
                             </div>
                         </a>
                     </div>

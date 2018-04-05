@@ -39,9 +39,9 @@ wp_reset_postdata();
 wp_reset_query();
 
 $argslatest     = array(
-	'post_type'   => 'property',
+	'post_type'      => 'property',
 	'posts_per_page' => 1,
-	'meta_query'  => array(
+	'meta_query'     => array(
 		array(
 			'key'     => '_pr_owner',
 			'value'   => 'Other',
@@ -52,7 +52,11 @@ $argslatest     = array(
 $latestproperty = new WP_Query( $argslatest );
 while ( $latestproperty->have_posts() ) {
 	$latestproperty->the_post();
-	$date =  esc_html( human_time_diff(  get_post_time('U'), current_time('timestamp') ) ) . ' ago';
+	if ( $lang == "es_ES" ) {
+		$date = esc_html( 'hace ' . human_time_diff( get_post_modified_time( 'U' ), current_time( 'timestamp' ) ) );
+	} else {
+		$date = esc_html( human_time_diff( get_post_modified_time( 'U' ), current_time( 'timestamp' ) ) ) . ' ago';
+	}
 }
 wp_reset_postdata();
 wp_reset_query();
@@ -147,13 +151,12 @@ wp_reset_query();
         </div>
         <div class="row">
             <div class="col-md-12 text-right updated-info">
-	            <?php echo $date ?>
-	            <?php
+				<?php
 				$horas = "00:00:00";
 				if ( $lang == "es_ES" ) {
-					echo '<p><span>Listado actualizado hace <strong>' . $horas . ' horas</strong></span></p>';
+					echo '<p><span>Listado actualizado <strong>' . $date . '</strong></span></p>';
 				} else {
-					echo '<p><span>Listing updated ' . $horas . ' hours ago</strong></span></p>';
+					echo '<p><span>Listing updated <strong>' . $date . ' </strong></span></p>';
 				} ?>
             </div>
         </div>
@@ -170,6 +173,7 @@ wp_reset_query();
 				$state       = get_post_meta( get_the_ID(), '_pr_state', true );
 				$broker      = get_post_meta( get_the_ID(), '_pr_brokerby', true );
 				$gallery     = get_post_meta( get_the_ID(), '_pr_photos', true );
+				$mls         = get_post_meta( get_the_ID(), '_pr_is_mls', true );
 				$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
 				$headers     = get_headers( $bgimg, 1 );
 				$fsize       = $headers['Content-Length'];
@@ -265,7 +269,7 @@ wp_reset_query();
 									echo "--";
 								} ?>
                             </div>
-                            <div class="property-code">MLS: <?php the_title(); ?></div>
+                            <div class="property-code"><?php echo( $mls == "1" ? "MLS: " : " " ) ?><?php the_title(); ?></div>
                         </div>
                     </a>
                 </div>

@@ -140,8 +140,8 @@ foreach ( $video as $url ) {
                                                                          style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')"></div>
 																<?php } ?>
                                                             </div>
-                                                            <div class="swiper-button-next swiper-button-white"></div>
-                                                            <div class="swiper-button-prev swiper-button-white"></div>
+                                                            <div class="swiper-button-next swiper-button-next1 swiper-button-white"></div>
+                                                            <div class="swiper-button-prev swiper-button-prev2 swiper-button-white"></div>
                                                         </div>
                                                         <div class="swiper-container gallery-thumbs-details swiper-detail-thumbs">
                                                             <div class="swiper-wrapper">
@@ -178,15 +178,15 @@ foreach ( $video as $url ) {
 											} ?></p>
 										<?php if ( ! empty( $amenimages ) ) { ?>
                                             <div class="row gallery-images">
-												<?php $counter = 0;
+												<?php $counter2 = 0;
 												foreach ( (array) $amenimages as $attachment_id => $attachment_url ) { ?>
                                                     <div class="col-sm-4 col-md-4">
                                                         <a href="#" class="amenimg gallery-comodidades"
-                                                           data-number="<?php echo $counter; ?>" data-toggle="modal"
+                                                           data-number2="<?php echo $counter2; ?>" data-toggle="modal"
                                                            data-target="#myModal"
                                                            style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')"></a>
                                                     </div>
-													<?php $counter ++;
+													<?php $counter2 ++;
 												} ?>
                                             </div>
 										<?php } ?>
@@ -204,8 +204,8 @@ foreach ( $video as $url ) {
                                                                          style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')"></div>
 																<?php } ?>
                                                             </div>
-                                                            <div class="swiper-button-next swiper-button-white"></div>
-                                                            <div class="swiper-button-prev swiper-button-white"></div>
+                                                            <div class="swiper-button-next swiper-button-white swiper-button-next3"></div>
+                                                            <div class="swiper-button-prev swiper-button-white swiper-button-prev4"></div>
                                                         </div>
                                                         <div class="swiper-container gallery-thumbs swiper-detail-thumbs">
                                                             <div class="swiper-wrapper">

@@ -124,13 +124,31 @@ $footer_query    = get_posts(
 	)
 );
 $disclaimer      = get_post_meta( $footer_query[0]->ID, '_hf_disc', true );
-/*$current_time = current_time('timestamp');
-$last = get_the_date('U');
-var_dump($last);
-var_dump($current_time);
-$lastmodified = get_the_date('U');
-//$lastmodified = strtotime($lastmodified);*/
-echo esc_html( human_time_diff(  get_post_time('U'), current_time('timestamp') ) ) . ' ago';
+wp_reset_postdata();
+wp_reset_query();
+
+$argslatest     = array(
+	'post_type'   => 'property',
+	'posts_per_page' => 1,
+	'meta_query'  => array(
+		array(
+			'key'     => '_pr_owner',
+			'value'   => 'Other',
+			'compare' => '=',
+		),
+	),
+);
+$latestproperty = new WP_Query( $argslatest );
+while ( $latestproperty->have_posts() ) {
+	$latestproperty->the_post();
+	if($lang == "es_ES"){
+		$date =  esc_html( 'hace '. human_time_diff(  get_post_time('U'), current_time('timestamp') ) );
+	} else{
+		$date =  esc_html( human_time_diff(  get_post_time('U'), current_time('timestamp') ) ) . ' ago';
+	}
+}
+wp_reset_postdata();
+wp_reset_query();
 ?>
     <div class="breadcrumb-info">
         <div class="container">
@@ -156,9 +174,9 @@ echo esc_html( human_time_diff(  get_post_time('U'), current_time('timestamp') )
 						<?php
 						$horas  = "00:00:00";
 						if ( $lang == "es_ES" ) {
-							echo '<p>Listado actualizado hace <strong>' . $horas . ' hrs</strong> <span class="divider">|</span> Por <strong>' . $broker . ' </strong><span class="divider">|</span></p>';
+							echo '<p>Listado actualizado <strong>' . $date . '</strong> <span class="divider">|</span> Por <strong>' . $broker . ' </strong><span class="divider">|</span></p>';
 						} else {
-							echo '<p>Listing updated <strong>' . $horas . ' hrs ago</strong> <span class="divider">|</span> By <strong>' . $broker . ' </strong><span class="divider">|</span></p>';
+							echo '<p>Listing updated <strong>' . $date . '</strong> <span class="divider">|</span> By <strong>' . $broker . ' </strong><span class="divider">|</span></p>';
 						} ?>
                     </div>
                     <div class="status"><?php echo( $lang == "es_ES" ? 'Estatus: ' : 'Status: ' ) ?>

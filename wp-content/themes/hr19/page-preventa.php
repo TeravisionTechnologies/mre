@@ -50,6 +50,11 @@ $usacities  = new WP_Query( array(
 			'key'     => '_pr_city',
 			'value'   => array( '' ),
 			'compare' => 'NOT IN'
+		),
+		array(
+			'key'     => '_pr_city',
+			'value'   => array( $city ),
+			'compare' => 'NOT IN'
 		)
 	)
 ) );
@@ -65,6 +70,31 @@ if ( function_exists( 'pll_current_language' ) ) {
 		$language_subdir = '';
 	}
 }
+wp_reset_postdata();
+wp_reset_query();
+
+$argslatest     = array(
+	'post_type'   => 'property',
+	'posts_per_page' => 1,
+	'meta_query'  => array(
+		array(
+			'key'     => '_pr_owner',
+			'value'   => 'Other',
+			'compare' => '=',
+		),
+	),
+);
+$latestproperty = new WP_Query( $argslatest );
+while ( $latestproperty->have_posts() ) {
+	$latestproperty->the_post();
+	if($lang == "es_ES"){
+		$date =  esc_html( 'hace '. human_time_diff(  get_post_modified_time('U'), current_time('timestamp') ) );
+	} else{
+		$date =  esc_html( human_time_diff(  get_post_modified_time('U'), current_time('timestamp') ) ) . ' ago';
+	}
+}
+wp_reset_postdata();
+wp_reset_query();
 ?>
 <section class="col-xs-12 hr-hero-section text-center no-padding"
          style="background-image: url('<?php echo ! empty( $hero[0]["_hf_hero_background"] ) ? $hero[0]["_hf_hero_background"] : null; ?>');">
@@ -136,6 +166,7 @@ if ( function_exists( 'pll_current_language' ) ) {
                       method="get" role="form" data-toggle="validator" data-disable="false">
                     <select id="city-select" <?php echo( !empty($country) ? '' : 'disabled' ) ?> >
 	                    <?php if ( ! empty( $city ) ) { ?>
+                            <option><?php echo( $lang == "es_ES" ? 'Ciudad' : 'City' ) ?></option>
                             <option selected><?php echo $city; ?></option>
 	                    <?php } else { ?>
                             <option><?php echo( $lang == "es_ES" ? 'Ciudad' : 'City' ) ?></option>
@@ -193,9 +224,9 @@ if ( function_exists( 'pll_current_language' ) ) {
 		    <?php
 		    $horas = "00:00:00";
 		    if ( $lang == "es_ES" ) {
-			    echo '<p><span>Listado actualizado hace <strong>' . $horas . ' horas</strong></span></p>';
+			    echo '<p><span>Listado actualizado <strong>' . $date . '</strong></span></p>';
 		    } else {
-			    echo '<p><span>Listing updated ' . $horas . ' hours ago</strong></span></p>';
+			    echo '<p><span>Listing updated <strong>' . $date . ' </strong></span></p>';
 		    } ?>
         </div>
     </div>
@@ -213,6 +244,7 @@ if ( function_exists( 'pll_current_language' ) ) {
 			$broker      = get_post_meta( get_the_ID(), '_pr_brokerby', true );
 			$gallery     = get_post_meta( get_the_ID(), '_pr_photos', true );
 			$transac     = get_post_meta( get_the_ID(), '_pr_transaction', true );
+			$mls         = get_post_meta( get_the_ID(), '_pr_is_mls', true );
 			$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
 			$headers     = get_headers( $bgimg, 1 );
 			$fsize       = $headers['Content-Length'];

@@ -122,6 +122,29 @@ $total                = new WP_Query( array(
 $count                = $total->post_count;
 wp_reset_postdata();
 wp_reset_query();
+
+$argslatest     = array(
+	'post_type'   => 'property',
+	'posts_per_page' => 1,
+	'meta_query'  => array(
+		array(
+			'key'     => '_pr_owner',
+			'value'   => 'Other',
+			'compare' => '=',
+		),
+	),
+);
+$latestproperty = new WP_Query( $argslatest );
+while ( $latestproperty->have_posts() ) {
+	$latestproperty->the_post();
+	if($lang == "es_ES"){
+		$date =  esc_html( 'hace '. human_time_diff(  get_post_time('U'), current_time('timestamp') ) );
+	} else{
+		$date =  esc_html( human_time_diff(  get_post_time('U'), current_time('timestamp') ) ) . ' ago';
+	}
+}
+wp_reset_postdata();
+wp_reset_query();
 ?>
     <form id="property-search-top" action="<?php echo esc_url( home_url( '/' . $language_subdir ) ); ?>" method="get"
           role="form"
@@ -487,9 +510,9 @@ wp_reset_query();
 		                <?php
 		                $horas = "00:00:00";
 		                if ( $lang == "es_ES" ) {
-			                echo '<p><span>Listado actualizado hace <strong>' . $horas . ' horas</strong></span></p>';
+			                echo '<p><span>Listado actualizado <strong>' . $date . '</strong></span></p>';
 		                } else {
-			                echo '<p><span>Listing updated ' . $horas . ' hours ago</strong></span></p>';
+			                echo '<p><span>Listing updated <strong>' . $date . ' </strong></span></p>';
 		                } ?>
                     </div>
                 </div>
