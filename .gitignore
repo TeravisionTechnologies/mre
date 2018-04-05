@@ -9,3 +9,4 @@ wp-config.php
 wp-content/uploads
 wp-content/themes/newTheme/style.css.map
 wp-content/themes/newTheme/css/.sass-cache
+*.sassc
