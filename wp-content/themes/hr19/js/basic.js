@@ -391,6 +391,7 @@ jQuery(document).ready(function ($) {
 
     var geocoder;
     var map;
+    var oms;
     var bounds = new google.maps.LatLngBounds();
     var infowindows = [];
     var activeMarker = '';
@@ -417,15 +418,18 @@ jQuery(document).ready(function ($) {
                 }
             });
         } else {
-            map = new google.maps.Map(
+            if ($("#search-map").length) {
+               map = new google.maps.Map(
                 document.getElementById("search-map"), {
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
                     mapTypeControl: false,
                     fullscreenControl: false
                 });
+            }
         }
 
-        oms = new OverlappingMarkerSpiderfier(map, {markersWontMove: true, markersWontHide: true});
+        if(map){
+            oms = new OverlappingMarkerSpiderfier(map, {markersWontMove: true, markersWontHide: true});
         for (i = 0; i < locations.length; i++) {
             geocodeAddress(locations, i);
             oms.addListener('format', function (marker, status) {
@@ -479,7 +483,6 @@ jQuery(document).ready(function ($) {
                 });
             });
         }
-
         iw = new google.maps.InfoWindow();
 
         function iwClose() {
@@ -487,6 +490,10 @@ jQuery(document).ready(function ($) {
         }
 
         google.maps.event.addListener(map, 'click', iwClose);
+            
+        }
+
+       
     }
 
     google.maps.event.addDomListener(window, "load", initialize);
@@ -632,41 +639,11 @@ $(window).on('load', function () {
         }
     }
 
-    var slideDetalles;
-    $('.gallery-detalles').click(function () {
-        slideDetalles = $(this).attr('data-number');
-        $("#myModalDetails").on('show.bs.modal', function () {
-            setTimeout(function () {
-                var galleryTop = new Swiper('.gallery-top-details', {
-                    nextButton: '.swiper-button-next1',
-                    prevButton: '.swiper-button-prev2',
-                    spaceBetween: 10,
-                    loop: true,
-                    loopedSlides: 5, //looped slides should be the same
-                });
-                var galleryThumbs = new Swiper('.gallery-thumbs-details', {
-                    spaceBetween: 10,
-                    slidesPerView: 4,
-                    touchRatio: 0.2,
-                    loop: true,
-                    loopedSlides: 5, //looped slides should be the same
-                    slideToClickedSlide: true
-                });
-                galleryTop.params.control = galleryThumbs;
-                galleryThumbs.params.control = galleryTop;
-                galleryTop.slideTo(slideDetalles, 0);
-            }, 500);
-        });
-    });
-
-    $('#myModalDetails').on('hidden.bs.modal', function () {
-        location.reload();
-    });
-
     //Slider Amenities
     var slideComodidades;
+    var numItems = $('.gallery-detalles').length;
     $('.gallery-comodidades').click(function () {
-        slideComodidades = $(this).attr('data-number2');
+        slideComodidades = $(this).attr('data-number');
         $("#myModal").on('show.bs.modal', function () {
             setTimeout(function () {
                 var galleryTop2 = new Swiper('.gallery-top', {
@@ -674,14 +651,14 @@ $(window).on('load', function () {
                     prevButton: '.swiper-button-prev4',
                     spaceBetween: 10,
                     loop: true,
-                    loopedSlides: 5, //looped slides should be the same
+                    loopedSlides: numItems, //looped slides should be the same
                 });
                 var galleryThumbs2 = new Swiper('.gallery-thumbs', {
                     spaceBetween: 10,
                     slidesPerView: 4,
                     touchRatio: 0.2,
                     loop: true,
-                    loopedSlides: 5, //looped slides should be the same
+                    loopedSlides: numItems, //looped slides should be the same
                     slideToClickedSlide: true
                 });
                 galleryTop2.params.control = galleryThumbs2;
@@ -695,10 +672,43 @@ $(window).on('load', function () {
         location.reload();
     });
 
+    var slideDetalles;
+    var numItems2 = $('.gallery-comodidades').length;
+    $('.gallery-detalles').click(function () {
+        slideDetalles = $(this).attr('data-number');
+        $("#myModalDetails").on('show.bs.modal', function () {
+            setTimeout(function () {
+                var galleryTop = new Swiper('.gallery-top-details', {
+                    nextButton: '.swiper-button-next1',
+                    prevButton: '.swiper-button-prev2',
+                    spaceBetween: 10,
+                    loop: true,
+                    loopedSlides: numItems2, //looped slides should be the same
+                });
+                var galleryThumbs = new Swiper('.gallery-thumbs-details', {
+                    spaceBetween: 10,
+                    slidesPerView: 4,
+                    touchRatio: 0.2,
+                    loop: true,
+                    loopedSlides: numItems2, //looped slides should be the same
+                    slideToClickedSlide: true
+                });
+                galleryTop.params.control = galleryThumbs;
+                galleryThumbs.params.control = galleryTop;
+                galleryTop.slideTo(slideDetalles, 0);
+            }, 500);
+        });
+    });
+
+    $('#myModalDetails').on('hidden.bs.modal', function () {
+        location.reload();
+    });
+
+
 
     var galleryTopPlanos = new Swiper('.gallery-top-blueprint', {
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
+        nextButton: '.swiper-button-nextp',
+        prevButton: '.swiper-button-prevp',
         spaceBetween: 10,
         loop: true,
         loopedSlides: 5, //looped slides should be the same

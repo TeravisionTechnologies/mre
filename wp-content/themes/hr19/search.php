@@ -507,15 +507,17 @@ wp_reset_query();
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 text-right updated-info">
-		                <?php
-		                $horas = "00:00:00";
-		                if ( $lang == "es_ES" ) {
-			                echo '<p><span>Listado actualizado <strong>' . $date . '</strong></span></p>';
-		                } else {
-			                echo '<p><span>Listing updated <strong>' . $date . ' </strong></span></p>';
-		                } ?>
-                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-right updated-info">
+		            <?php
+		            $horas = "00:00:00";
+		            if ( $lang == "es_ES" ) {
+			            echo '<p><span>Listado actualizado <strong>' . $date . '</strong></span></p>';
+		            } else {
+			            echo '<p><span>Listing updated <strong>' . $date . ' </strong></span></p>';
+		            } ?>
                 </div>
             </div>
     </form>

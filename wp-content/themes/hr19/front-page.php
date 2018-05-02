@@ -43,8 +43,8 @@ $argslatest     = array(
 	'posts_per_page' => 1,
 	'meta_query'     => array(
 		array(
-			'key'     => '_pr_owner',
-			'value'   => 'Other',
+			'key'     => '_pr_is_mls',
+			'value'   => '1',
 			'compare' => '=',
 		),
 	),
@@ -152,7 +152,6 @@ wp_reset_query();
         <div class="row">
             <div class="col-md-12 text-right updated-info">
 				<?php
-				$horas = "00:00:00";
 				if ( $lang == "es_ES" ) {
 					echo '<p><span>Listado actualizado <strong>' . $date . '</strong></span></p>';
 				} else {

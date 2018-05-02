@@ -1701,27 +1701,9 @@ input:checked + .slider:before {
     width: 100%; }
 
 .search .updated-info {
-  margin: 20px 0 15px 0; }
+  margin: 20px 0 0 0; }
   .search .updated-info p {
-    position: relative;
-    font-size: 0.9027777778vw;
-    color: #4a4a4a;
-    letter-spacing: -0.0069444444vw;
-    margin: 0;
-    text-align: right; }
-  .search .updated-info span {
-    background-color: #fff;
-    padding-left: 10px;
-    display: inline; }
-    .search .updated-info span:before {
-      content: "";
-      position: absolute;
-      bottom: 3px;
-      left: 0;
-      right: 0;
-      height: 0.5em;
-      z-index: -1;
-      border-top: solid 2px rgba(74, 74, 74, 0.1); }
+    margin-bottom: 0.6944444444vw; }
 
 .by-broker {
   background: #033c5a;
@@ -3993,29 +3975,8 @@ body {
     font-size: 1.3020833333vw;
     letter-spacing: -0.0130208333vw;
     margin-bottom: 2.6041666667vw; }
-
-  .search .updated-info {
-    margin: 20px 0 15px 0; }
-    .search .updated-info p {
-      position: relative;
-      font-size: 1.3020833333vw;
-      color: #4a4a4a;
-      letter-spacing: -0.0130208333vw;
-      margin: 0;
-      text-align: right; }
-    .search .updated-info span {
-      background-color: #fff;
-      padding-left: 10px;
-      display: inline; }
-      .search .updated-info span:before {
-        content: "";
-        position: absolute;
-        bottom: 3px;
-        left: 0;
-        right: 0;
-        height: 0.5em;
-        z-index: -1;
-        border-top: solid 2px rgba(74, 74, 74, 0.1); }
+    .updated-info p span {
+      padding-top: 7px; }
 
   .by-broker {
     font-size: 1.171875vw; }

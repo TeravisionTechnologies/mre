@@ -132,8 +132,8 @@ $argslatest     = array(
 	'posts_per_page' => 1,
 	'meta_query'  => array(
 		array(
-			'key'     => '_pr_owner',
-			'value'   => 'Other',
+			'key'     => '_pr_is_mls',
+			'value'   => '1',
 			'compare' => '=',
 		),
 	),
@@ -680,6 +680,8 @@ if ( have_posts() ): ?>
 									<?php
 									if ( ! empty( $price ) ) {
 										echo $csymbol . number_format( $price, 0, '.', ',' );
+									}else {
+										echo "--";
 									}
 									?>
                                 </div>

@@ -19,6 +19,10 @@ $pbtn_es          = get_post_meta( get_the_ID(), '_pr_pbtn_es_id', true );
 $terms            = get_the_terms( get_the_ID(), 'nearby_places' );
 $memofiles        = wp_get_attachment_url( get_post_meta( get_the_ID(), '_pr_memofiles_id', true ) );
 $mbtn_es          = get_post_meta( get_the_ID(), '_pr_mbtn_es_id', true );
+$currentproperty = get_the_ID();
+$city      = get_post_meta( get_the_ID(), '_pr_city', true );
+$rooms     = get_post_meta( get_the_ID(), '_pr_room_count', true );
+$type      = get_post_meta( get_the_ID(), '_pr_type_of_property', true );
 $placeholder      = get_template_directory_uri() . '/assets/no-photo.jpg';
 $video_text       = get_post_meta( get_the_ID(), '_pr_video_es_id', true );
 $video            = get_post_meta( get_the_ID(), '_pr_video_embed', true );
@@ -182,7 +186,7 @@ foreach ( $video as $url ) {
 												foreach ( (array) $amenimages as $attachment_id => $attachment_url ) { ?>
                                                     <div class="col-sm-4 col-md-4">
                                                         <a href="#" class="amenimg gallery-comodidades"
-                                                           data-number2="<?php echo $counter2; ?>" data-toggle="modal"
+                                                           data-number="<?php echo $counter2; ?>" data-toggle="modal"
                                                            data-target="#myModal"
                                                            style="background: url('<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>')"></a>
                                                     </div>
@@ -285,9 +289,9 @@ foreach ( $video as $url ) {
 												<?php } ?>
                                             </div>
                                         </div>
-                                        <div class="swiper-button-next swiper-button-white"><i
+                                        <div class="swiper-button-next swiper-button-nextp swiper-button-white"><i
                                                     class="fa fa-chevron-circle-right"></i></div>
-                                        <div class="swiper-button-prev swiper-button-white"><i
+                                        <div class="swiper-button-prev swiper-button-prevp swiper-button-white"><i
                                                     class="fa fa-chevron-circle-left"></i></div>
                                         <div class="text-center">
 											<?php if ( ! empty( $pzip ) ) { ?>
@@ -423,6 +427,8 @@ foreach ( $video as $url ) {
     </div>
 
 <?php
+wp_reset_postdata();
+wp_reset_query();
 $similarproperties = array(
 	'post_type'      => 'property',
 	'post__not_in'   => array( $currentproperty ),
@@ -468,12 +474,6 @@ if ( have_posts() ): ?>
 					$csymbol     = get_post_meta( get_the_ID(), '_pr_currency_symbol', true );
 					$gallery     = get_post_meta( get_the_ID(), '_pr_photos', true );
 					$mls         = get_post_meta( get_the_ID(), '_pr_is_mls', true );
-					$bgimg       = $url['baseurl'] . '/photos/' . $sysid . '/1.jpg';
-					$headers     = get_headers( $bgimg, 1 );
-					$fsize       = $headers['Content-Length'];
-					$fsize       = (int) $fsize;
-					$urlimage    = wp_remote_head( $bgimg );
-					$urlimage    = $urlimage['response']['code'];
 					$placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
 					if ( ! empty( $csymbol ) ) {
 						$csymbol = $csymbol;
@@ -513,13 +513,11 @@ if ( have_posts() ): ?>
                     <div class="col-xs-12 col-sm-4 col-md-4">
                         <a href="<?php the_permalink(); ?>" class="property">
                             <div class="property-image" style="background: url(
-							<?php if ( ( $urlimage == 404 or $fsize < 100 ) && ( empty( $gallery ) ) ) {
+							<?php if (  empty( $gallery )  ) {
 								echo $placeholder;
-							} elseif ( ! empty( $gallery ) ) {
-								echo $first_pic;
 							} else {
-								echo $bgimg;
-							} ?>);">
+								echo $first_pic;
+							}  ?>);">
 	                            <?php if ( ! empty( $broker ) ) { ?>
                                     <div class="by-broker">
                                         <p><?php echo( $lang == "es_ES" ? 'Por' : 'By' ) ?>
@@ -532,6 +530,8 @@ if ( have_posts() ): ?>
 									<?php
 									if ( ! empty( $price ) ) {
 										echo $csymbol . number_format( $price, 0, '.', ',' );
+									}else {
+										echo "--";
 									}
 									?>
                                 </div>
