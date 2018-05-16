@@ -237,6 +237,18 @@ function header_footer_metaboxes() {
 		'type' => 'text',
 	) );
 
+	$cmb->add_group_field( $about_us, array(
+		'name' => __( 'Download brochure button text' ),
+		'id'   => $prefix . 'about_button_text',
+		'type' => 'text',
+	) );
+
+	$cmb->add_group_field( $about_us, array(
+		'name' => __( 'Download brochure button URL' ),
+		'id'   => $prefix . 'about_button_url',
+		'type' => 'text',
+	) );
+
 	// Partner Left Section
 	$partner_left = $cmb->add_field( array(
 		'id'         => $prefix . 'partner_left',

@@ -375,6 +375,8 @@ body {
   height: 50.0694444444vw;
   background-size: cover;
   text-align: center; }
+  #mre-about-us .about-buttons a:first-child {
+    margin-right: 1.3888888889vw; }
   #mre-about-us .overlay {
     background: rgba(0, 0, 0, 0.83);
     position: absolute;
@@ -1634,6 +1636,31 @@ a.al-phone-num {
       top: 0.7em;
       margin-left: 18px;
       opacity: 0.8; }
+  #about-main-text a {
+    display: block;
+    background: #ffffff;
+    text-align: center;
+    border: solid 2px #4a4a4a;
+    border-radius: 0.6944444444vw;
+    color: #4a4a4a;
+    font-family: Montserrat-Bold, sans-serif;
+    font-size: 1.25vw;
+    line-height: 1.3888888889vw;
+    word-wrap: break-word;
+    margin: 0 auto;
+    margin-top: 2.7777777778vw;
+    margin-bottom: 5.5555555556vw;
+    padding: 0.9027777778vw;
+    width: 19.4444444444vw;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out; }
+    #about-main-text a:hover, #about-main-text a:active, #about-main-text a:focus {
+      text-decoration: none;
+      background: #0976d1;
+      color: #ffffff;
+      border: solid 2px #0976d1; }
 
 #about-secondary-text {
   height: auto;
@@ -4073,6 +4100,14 @@ body.thanks {
       margin: 6.640625vw 0 1.3020833333vw 0;
       font-size: 2.6041666667vw;
       line-height: 3.125vw; }
+    #about-main-text a {
+      border-radius: 1.3020833333vw;
+      font-size: 1.8229166667vw;
+      line-height: 2.6041666667vw;
+      margin-top: 3.90625vw;
+      margin-bottom: 7.8125vw;
+      width: 26.0416666667vw;
+      padding: 1.0416666667vw; }
 
   #services-icon {
     padding-bottom: 15.625vw; }
@@ -4541,7 +4576,7 @@ body.thanks {
     height: 7.7777777778vw; }
 
   #mre-about-us {
-    height: 231.1111111111vw; }
+    height: 250vw; }
     #mre-about-us .overlay .about-us-image {
       margin: 13.8888888889vw 0 8.3333333333vw 0;
       width: 44.4444444444vw;
@@ -4570,13 +4605,16 @@ body.thanks {
           font-size: 6.6666666667vw;
           line-height: 8.3333333333vw; }
     #mre-about-us .overlay .about-us-button {
-      width: 43.8888888889vw;
+      width: 55.5555555556vw;
       height: 11.1111111111vw;
       border-radius: 2.7777777778vw;
       border: solid 2px #ffffff;
-      padding: 2.7777777778vw 12.7777777778vw;
+      padding: 2.7777777778vw 5.5555555556vw;
       font-size: 3.8888888889vw;
-      line-height: 5.5555555556vw; }
+      line-height: 5.5555555556vw;
+      display: block;
+      margin: 0 auto !important;
+      margin-bottom: 5.5555555556vw !important; }
 
   #mre-partners {
     height: 133.3333333333vw; }
@@ -5166,6 +5204,15 @@ body.thanks {
     #about-main-text .servs h2 {
       font-size: 4.4444444444vw !important;
       margin-top: 5.5555555556vw; }
+    #about-main-text a {
+      border-radius: 2.2222222222vw;
+      font-size: 3.8888888889vw;
+      height: 11.1111111111vw;
+      line-height: 5.5555555556vw;
+      margin-top: 8.3333333333vw;
+      margin-bottom: 16.6666666667vw;
+      width: 56.6666666667vw;
+      padding: 2.2222222222vw; }
 
   #about-secondary-text {
     height: auto;
