@@ -74,7 +74,7 @@ $url_wp       = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 			}
 			?>
 			<?php if ( ! empty( $aboutUs[0]['_hf_about_button_url'] ) ) { ?>
-                <a href="<?php echo $aboutUs[0]['_hf_about_button_url'] ?>" class="about-us-button" download>
+                <a href="<?php echo $aboutUs[0]['_hf_about_button_url'] ?>" class="about-us-button" target="_blank" download>
 					<?php if ( false !== strpos( $url_wp, '/en' ) ) { ?>
 						<?php echo( ! empty( $aboutUs[0]['_hf_about_button_text'] ) ? $aboutUs[0]['_hf_about_button_text'] : "Download Brochure" ) ?>
 					<?php } else { ?>
