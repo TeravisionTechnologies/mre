@@ -20,11 +20,11 @@
       margin: 0
     a
       display: block
-      background: $white
+      background: transparent
       text-align: center
-      border: solid 2px $grey-2
+      border: solid 2px $white
       border-radius: get-vw-desktop(10px)
-      color: $grey-2
+      color: $white
       font-family: Montserrat-Bold, sans-serif
       font-size: get-vw-desktop(18px)
       line-height: get-vw-desktop(20px)
@@ -40,9 +40,9 @@
       transition: .5s ease-in-out
       &:hover, &:active, &:focus
         text-decoration: none
-        background: $light-blue
+        background: rgba($white, 0.4)
         color: $white
-        border: solid 2px $light-blue
+        border: solid 2px $white
 .page-template-page-services
   #about-main-text
     h2
@@ -84,32 +84,6 @@
         top: 0.7em
         margin-left: 18px
         opacity: 0.8
-  a
-    display: block
-    background: $white
-    text-align: center
-    border: solid 2px $grey-2
-    border-radius: get-vw-desktop(10px)
-    color: $grey-2
-    font-family: Montserrat-Bold, sans-serif
-    font-size: get-vw-desktop(18px)
-    line-height: get-vw-desktop(20px)
-    word-wrap: break-word
-    margin: 0 auto
-    margin-top: get-vw-desktop(40px)
-    margin-bottom: get-vw-desktop(80px)
-    padding: get-vw-desktop(13px)
-    width: get-vw-desktop(280px)
-    -webkit-transition: .5s ease-in-out
-    -moz-transition: .5s ease-in-out
-    -o-transition: .5s ease-in-out
-    transition: .5s ease-in-out
-    &:hover, &:active, &:focus
-      text-decoration: none
-      background: $light-blue
-      color: $white
-      border: solid 2px $light-blue
-
 #about-secondary-text
   height: auto
   width: get-vw-desktop(970px)

@@ -1603,11 +1603,11 @@ a.al-phone-num {
       margin: 0; }
     #about-hero-section .about-hero-overlay a {
       display: block;
-      background: #ffffff;
+      background: transparent;
       text-align: center;
-      border: solid 2px #4a4a4a;
+      border: solid 2px #ffffff;
       border-radius: 0.69444vw;
-      color: #4a4a4a;
+      color: #ffffff;
       font-family: Montserrat-Bold, sans-serif;
       font-size: 1.25vw;
       line-height: 1.38889vw;
@@ -1623,9 +1623,9 @@ a.al-phone-num {
       transition: 0.5s ease-in-out; }
       #about-hero-section .about-hero-overlay a:hover, #about-hero-section .about-hero-overlay a:active, #about-hero-section .about-hero-overlay a:focus {
         text-decoration: none;
-        background: #0976d1;
+        background: rgba(255, 255, 255, 0.4);
         color: #ffffff;
-        border: solid 2px #0976d1; }
+        border: solid 2px #ffffff; }
 
 .page-template-page-services #about-main-text h2:first-of-type {
   font-size: 1.94444vw;
@@ -1664,31 +1664,6 @@ a.al-phone-num {
       top: 0.7em;
       margin-left: 18px;
       opacity: 0.8; }
-  #about-main-text a {
-    display: block;
-    background: #ffffff;
-    text-align: center;
-    border: solid 2px #4a4a4a;
-    border-radius: 0.69444vw;
-    color: #4a4a4a;
-    font-family: Montserrat-Bold, sans-serif;
-    font-size: 1.25vw;
-    line-height: 1.38889vw;
-    word-wrap: break-word;
-    margin: 0 auto;
-    margin-top: 2.77778vw;
-    margin-bottom: 5.55556vw;
-    padding: 0.90278vw;
-    width: 19.44444vw;
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out; }
-    #about-main-text a:hover, #about-main-text a:active, #about-main-text a:focus {
-      text-decoration: none;
-      background: #0976d1;
-      color: #ffffff;
-      border: solid 2px #0976d1; }
 
 #about-secondary-text {
   height: auto;
@@ -4116,6 +4091,14 @@ body.thanks {
         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         padding-top: 21.48438vw;
         margin: 0; }
+      #about-hero-section .about-hero-overlay a {
+        border-radius: 1.30208vw;
+        font-size: 1.82292vw;
+        line-height: 2.60417vw;
+        margin-top: 3.90625vw;
+        margin-bottom: 7.8125vw;
+        width: 26.04167vw;
+        padding: 1.04167vw; }
 
   #about-main-text {
     height: auto;
@@ -4128,14 +4111,6 @@ body.thanks {
       margin: 6.64063vw 0 1.30208vw 0;
       font-size: 2.60417vw;
       line-height: 3.125vw; }
-    #about-main-text a {
-      border-radius: 1.30208vw;
-      font-size: 1.82292vw;
-      line-height: 2.60417vw;
-      margin-top: 3.90625vw;
-      margin-bottom: 7.8125vw;
-      width: 26.04167vw;
-      padding: 1.04167vw; }
 
   #services-icon {
     padding-bottom: 15.625vw; }
@@ -5211,6 +5186,15 @@ body.thanks {
         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         padding-top: 50vw;
         margin: 0; }
+      #about-hero-section .about-hero-overlay a {
+        border-radius: 2.22222vw;
+        font-size: 3.88889vw;
+        height: 11.11111vw;
+        line-height: 5.55556vw;
+        margin-top: 8.33333vw;
+        margin-bottom: 16.66667vw;
+        width: 56.66667vw;
+        padding: 2.22222vw; }
 
   .page-template-page-services #about-main-text h2:first-of-type {
     font-size: 4.44444vw;
@@ -5232,15 +5216,6 @@ body.thanks {
     #about-main-text .servs h2 {
       font-size: 4.44444vw !important;
       margin-top: 5.55556vw; }
-    #about-main-text a {
-      border-radius: 2.22222vw;
-      font-size: 3.88889vw;
-      height: 11.11111vw;
-      line-height: 5.55556vw;
-      margin-top: 8.33333vw;
-      margin-bottom: 16.66667vw;
-      width: 56.66667vw;
-      padding: 2.22222vw; }
 
   #about-secondary-text {
     height: auto;
