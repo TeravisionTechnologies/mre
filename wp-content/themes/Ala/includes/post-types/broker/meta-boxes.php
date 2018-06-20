@@ -142,7 +142,7 @@ function broker_metaboxes( ) {
 	$cmb->add_field(
 		array(
 			'name'       => __( 'Plains button text' ),
-			'id'         => $prefix . 'pbtn_es_id',
+			'id'         => $prefix . 'pbtn_id',
 			'type'       => 'text',
 			'repeatable' => false,
 			'desc'       => 'Example: Descargar Planos / Download plains'
@@ -177,7 +177,7 @@ function broker_metaboxes( ) {
 	$cmb->add_field(
 		array(
 			'name'       => __( 'Memory button text' ),
-			'id'         => $prefix . 'mbtn_es_id',
+			'id'         => $prefix . 'mbtn_id',
 			'type'       => 'text',
 			'repeatable' => false,
 			'desc'       => 'Example: Descargar Memoria / Download Mememory'
@@ -242,7 +242,7 @@ function broker_metaboxes( ) {
 	$cmb->add_field(
 		array(
 			'name'       => __( 'Brochure button text' ),
-			'id'         => $prefix . 'brochure_es_id',
+			'id'         => $prefix . 'brbtn_id',
 			'type'       => 'text',
 			'repeatable' => false,
 			'desc'       => 'Example: Descargar PDF / Download PDF'
