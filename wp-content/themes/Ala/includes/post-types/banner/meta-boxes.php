@@ -27,4 +27,18 @@ function banner_metaboxes() {
         )
     ));
 
+    $cmb->add_field(array(
+        'name' => 'CTA Link',
+        'desc' => 'Set call to action link',
+        'id' => $prefix . 'bannerurl',
+        'type' => 'text'
+    ));
+
+    $cmb->add_field(array(
+        'name' => 'CTA Text',
+        'desc' => 'Set call to action text',
+        'id' => $prefix . 'bannerctatxt',
+        'type' => 'text'
+    ));
+
 }

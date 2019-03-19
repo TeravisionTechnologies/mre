@@ -70,12 +70,18 @@ $placeholder = get_template_directory_uri() . '/assets/no-photo.jpg';
             $banners = array('post_type' => 'banner');
             query_posts($banners);
             if (have_posts()): while (have_posts()): the_post();
-                $background_image = wp_get_attachment_url(get_post_meta(get_the_ID(), '_br_bannerimg_id', true)); ?>
+                $background_image = wp_get_attachment_url(get_post_meta(get_the_ID(), '_br_bannerimg_id', true));
+                $cta_link = get_post_meta(get_the_ID(), '_br_bannerurl', true);
+                $cta_text = get_post_meta(get_the_ID(), '_br_bannerctatxt', true);
+                ?>
                 <div class="swiper-slide"
                      style="background-image: url('<?php echo $background_image; ?>');">
                     <div class="slide-overlay"></div>
                     <div class="slide-text">
                         <h2><?php the_title(); ?></h2>
+                        <?php if(!empty($cta_link) && !empty($cta_text)) { ?>
+                            <a href="<?php echo $cta_link; ?>"><?php echo $cta_text; ?></a>
+                        <?php } ?>
                     </div>
                 </div>
             <?php endwhile; endif;

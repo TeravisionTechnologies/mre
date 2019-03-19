@@ -7,7 +7,6 @@ jQuery(document).ready(function () {
         slidesPerView: 1,
         loop: true,
         nested: true,
-        autoplay: 5000,
         effect: 'fade'
     });
 

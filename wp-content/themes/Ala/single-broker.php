@@ -24,13 +24,15 @@ $mbtn_es          = get_post_meta( get_the_ID(), '_br_mbtn_id', true );
 $placeholder      = get_template_directory_uri() . '/assets/no-photo.jpg';
 $video_text       = get_post_meta( get_the_ID(), '_br_video_es_id', true );
 $video            = get_post_meta( get_the_ID(), '_br_video_embed', true );
-foreach ( $video as $url ) {
-	$i = 0;
-	$parts = parse_url($url);
-	if($parts['path'] == "/watch"){
-		$i++;
-		$sum += $i;
-	}
+if( !empty( $video ) ){
+    foreach ( $video as $url ) {
+        $i = 0;
+        $parts = parse_url($url);
+        if($parts['path'] == "/watch"){
+            $i++;
+            $sum += $i;
+        }
+    }
 }
 ?>
 
@@ -39,7 +41,7 @@ foreach ( $video as $url ) {
         <h1><?php the_title(); ?></h1>
 		<?php if ( ! empty( $location ) ) { ?><h2><?php echo $location; ?></h2><?php } ?>
         <div class="hero-buttons">
-			<?php if ( ! empty( $brochure ) ) { ?>
+			<?php if ( ! empty( $brochure ) && !empty( $bbtn_es ) ) { ?>
                 <a class="download-bro" href="<?php echo $brochure; ?>" download><?php echo $bbtn_es ?></a>
 			<?php } ?>
 	        <?php if ( ! empty( $video ) && ! empty( $sum ) ) { ?>
@@ -219,7 +221,7 @@ foreach ( $video as $url ) {
                         <div class="swiper-button-next swiper-button-white"></div>
                         <div class="swiper-button-prev swiper-button-white"></div>
                         <div class="text-center">
-							<?php if ( ! empty( $pzip ) ) { ?>
+							<?php if ( ! empty( $pzip ) && !empty( $pbtn_es ) ) { ?>
                                 <a class="btn-planos" href="<?php echo $pzip; ?>" download><?php echo $pbtn_es ?></a>
 							<?php } ?>
                         </div>
